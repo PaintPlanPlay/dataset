@@ -1,0 +1,79 @@
+# Mise à jour du Dataset depuis les Upstream Sources.
+#
+# Chaque jour (ou à la demande), l'automatisation récupère les derniers commits
+# de BSData, du Munitorum Field Manual et de 40kdc-data, reconstruit le Dataset
+# et ouvre — ou met à jour — une PR avec le changement et le rapport de dérive :
+# chiffres modifiés, désaccords entre sources, état des Corrections, Effects
+# écartés. Sans changement amont, la construction est identique et aucune PR
+# n'est ouverte. Approuver une mise à jour : relire la PR, la fusionner, puis
+# publier une Release (`dataset-tool release`).
+#
+# Configuration du dépôt :
+#   vars.DATASET_TOOL_REPOSITORY  « owner/repo » du Dataset Tool
+#   secrets.DATASET_BOT_TOKEN     jeton (GitHub App ou PAT) : une PR ouverte avec
+#                                 le GITHUB_TOKEN par défaut ne déclencherait pas
+#                                 la CI, qui doit s'appliquer à ces PR.
+name: Mise à jour du Dataset
+
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: dataset-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dépôt du Dataset
+        uses: actions/checkout@v4
+
+      - name: Dataset Tool
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.DATASET_TOOL_REPOSITORY }}
+          path: .tool
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: .tool/package-lock.json
+
+      - name: Dépendances de l'outil
+        run: npm ci
+        working-directory: .tool
+
+      - name: Instantané des Upstream Sources
+        run: npm --prefix .tool run tool -- fetch --out "$GITHUB_WORKSPACE/.snapshot"
+        env:
+          # Relève la limite de l'API GitHub pour la lecture des sources.
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Construction et rapport de dérive
+        run: npm --prefix .tool run tool -- build --snapshot "$GITHUB_WORKSPACE/.snapshot" --dataset "$GITHUB_WORKSPACE" --report "$RUNNER_TEMP/report.md"
+
+      - name: Contrôle (schéma, aucun texte de règles)
+        run: npm --prefix .tool run tool -- check --dataset "$GITHUB_WORKSPACE"
+
+      - name: PR de mise à jour
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.DATASET_BOT_TOKEN }}
+          # Une seule branche : une PR déjà ouverte est mise à jour, jamais dupliquée.
+          branch: dataset/upstream-update
+          delete-branch: true
+          add-paths: |
+            wh40k-11e/**
+            registry/**
+          commit-message: Mise à jour du Dataset depuis les Upstream Sources
+          title: Mise à jour du Dataset depuis les Upstream Sources
+          body-path: ${{ runner.temp }}/report.md
+          labels: upstream-update

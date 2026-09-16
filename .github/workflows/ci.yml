@@ -1,0 +1,40 @@
+# Contrôles de toute PR et de la branche principale, PR d'automatisation
+# comprises : le Dataset est conforme au schéma et ne contient aucun texte de
+# règles, Corrections comprises.
+name: Contrôle du Dataset
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dataset Tool
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.DATASET_TOOL_REPOSITORY }}
+          path: .tool
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: .tool/package-lock.json
+
+      - run: npm ci
+        working-directory: .tool
+
+      # Tant que la première Dataset Release n'est pas construite, le dépôt ne
+      # contient que Corrections et contenus écrits par le projet : il n'y a pas
+      # de Game System à valider.
+      - name: Schéma et aucun texte de règles
+        if: hashFiles('wh40k-11e/**') != ''
+        run: npm --prefix .tool run tool -- check --dataset "$GITHUB_WORKSPACE"
