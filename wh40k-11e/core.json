@@ -1,0 +1,556 @@
+{
+  "schemaVersion": "0.7.0",
+  "gameSystem": "wh40k-11e",
+  "stratagems": [
+    {
+      "id": "command-re-roll",
+      "name": "COMMAND RE-ROLL",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "effect": {
+        "type": "re-roll",
+        "target": "unit",
+        "modifier": {
+          "roll": "any",
+          "result_scope": "any-result"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "counter-offensive",
+      "name": "COUNTER-OFFENSIVE",
+      "detachmentId": null,
+      "cp": 2,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "effect": {
+        "type": "fight-first",
+        "target": "unit"
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "crushing-impact",
+      "name": "CRUSHING IMPACT",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Monster",
+          "Vehicle"
+        ],
+        "noneOf": []
+      },
+      "effect": {
+        "type": "dice-gated",
+        "dice": "D6",
+        "threshold": 5,
+        "comparison": "gte",
+        "on_success": {
+          "type": "mortal-wounds",
+          "target": "target",
+          "modifier": {
+            "count": 1
+          }
+        },
+        "on_fail": null
+      },
+      "scope": {
+        "range": "engagement-range",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "epic-challenge",
+      "name": "EPIC CHALLENGE",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "effect": {
+        "type": "keyword-grant",
+        "target": "unit",
+        "modifier": {
+          "keywords": [
+            "Precision"
+          ],
+          "weapon_type": "melee"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "explosives",
+      "name": "EXPLOSIVES",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Explosives",
+          "Grenades"
+        ],
+        "noneOf": []
+      },
+      "effect": {
+        "type": "dice-gated",
+        "dice": "D6",
+        "threshold": 4,
+        "comparison": "gte",
+        "on_success": {
+          "type": "mortal-wounds",
+          "target": "target",
+          "modifier": {
+            "count": 1
+          }
+        },
+        "on_fail": null
+      },
+      "scope": {
+        "range": "any-visible",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "fire-overwatch",
+      "name": "FIRE OVERWATCH",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "movement",
+        "charge"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-turn",
+      "category": "strategic-ploy",
+      "effect": {
+        "type": "ability-grant",
+        "target": "unit",
+        "modifier": {
+          "grant_type": "snap-shooting"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "heroic-intervention",
+      "name": "HEROIC INTERVENTION",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-turn",
+      "category": "strategic-ploy",
+      "effect": {
+        "type": "ability-grant",
+        "target": "unit",
+        "modifier": {
+          "grant_type": "reactive-charge"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "insane-bravery",
+      "name": "INSANE BRAVERY",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-battle",
+      "category": "battle-tactic",
+      "effect": {
+        "type": "auto-result",
+        "target": "unit",
+        "modifier": {
+          "test": "battle-shock",
+          "result": "pass"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "rapid-ingress",
+      "name": "RAPID INGRESS",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "effect": {
+        "type": "ability-grant",
+        "target": "unit",
+        "modifier": {
+          "grant_type": "ingress-move",
+          "from": "strategic-reserves"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    },
+    {
+      "id": "smokescreen",
+      "name": "SMOKESCREEN",
+      "detachmentId": null,
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Smoke"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "effect": {
+        "type": "rule-state",
+        "target": "unit",
+        "modifier": {
+          "direction": "granted",
+          "rule_kind": "core-rule",
+          "rule": "benefit-of-cover"
+        }
+      },
+      "scope": {
+        "range": "unit",
+        "duration": "phase"
+      }
+    }
+  ],
+  "battleSizes": [
+    {
+      "points": 1000,
+      "name": "Incursion",
+      "detachmentPoints": 2,
+      "enhancementLimit": 2,
+      "unitLimit": 2
+    },
+    {
+      "points": 2000,
+      "name": "Strike Force",
+      "detachmentPoints": 3,
+      "enhancementLimit": 4,
+      "unitLimit": 3
+    }
+  ],
+  "referenceTargets": [
+    {
+      "armyId": "astra-militarum",
+      "unitId": "a2aa-7688-dcb1-4132",
+      "name": "Cadian Shock Troops",
+      "models": 10
+    },
+    {
+      "armyId": "tyranids",
+      "unitId": "359c-db2c-681a-8d62",
+      "name": "Termagants",
+      "models": 20
+    },
+    {
+      "armyId": "necrons",
+      "unitId": "58e9-5212-f5a6-c12d",
+      "name": "Necron Warriors",
+      "models": 10
+    },
+    {
+      "armyId": "space-marines",
+      "unitId": "8da0-4570-c3c-819f",
+      "name": "Intercessor Squad",
+      "models": 5
+    },
+    {
+      "armyId": "death-guard",
+      "unitId": "8467-b3a2-2597-de0d",
+      "name": "Plague Marines",
+      "models": 5
+    },
+    {
+      "armyId": "space-marines",
+      "unitId": "4808-a80b-309a-7933",
+      "name": "Terminator Squad",
+      "models": 5
+    },
+    {
+      "armyId": "adeptus-custodes",
+      "unitId": "91b3-2e1c-e642-d213",
+      "name": "Custodian Guard",
+      "models": 5
+    },
+    {
+      "armyId": "space-marines",
+      "unitId": "dc24-dd64-5d97-df3c",
+      "name": "Captain in Terminator Armour",
+      "models": 1
+    },
+    {
+      "armyId": "space-marines",
+      "unitId": "a14e-75ca-ef91-397f",
+      "name": "Rhino",
+      "models": 1
+    },
+    {
+      "armyId": "space-marines",
+      "unitId": "1d94-b3c8-9205-827e",
+      "name": "Redemptor Dreadnought",
+      "models": 1
+    },
+    {
+      "armyId": "space-marines",
+      "unitId": "8cca-9318-3bec-d360",
+      "name": "Land Raider",
+      "models": 1
+    },
+    {
+      "armyId": "imperial-knights",
+      "unitId": "8441-8356-5e7c-69ee",
+      "name": "Knight Paladin",
+      "models": 1
+    }
+  ],
+  "sampleList": {
+    "armyId": "adeptus-custodes",
+    "name": "Talons of the Emperor",
+    "detachment": "Shield Host",
+    "battleSize": 2000,
+    "points": 1725,
+    "units": [
+      {
+        "unitId": "48b7-e713-d5b1-f11c",
+        "name": "Blade Champion",
+        "section": "CHARACTERS",
+        "points": 110,
+        "warlord": true,
+        "wargear": [
+          {
+            "name": "Vaultswords",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "unitId": "b61c-b815-65c0-b1cc",
+        "name": "Shield-Captain",
+        "section": "CHARACTERS",
+        "points": 110,
+        "wargear": [
+          {
+            "name": "Guardian Spear",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "unitId": "7d7c-c212-47a3-38e4",
+        "name": "Trajann Valoris",
+        "section": "CHARACTERS",
+        "points": 135,
+        "wargear": [
+          {
+            "name": "Watcher's Axe",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "unitId": "91b3-2e1c-e642-d213",
+        "name": "Custodian Guard",
+        "section": "BATTLELINE",
+        "points": 215,
+        "models": [
+          {
+            "name": "Custodian Guard",
+            "count": 5,
+            "wargear": [
+              {
+                "name": "Guardian Spear",
+                "count": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitId": "91b3-2e1c-e642-d213",
+        "name": "Custodian Guard",
+        "section": "BATTLELINE",
+        "points": 215,
+        "models": [
+          {
+            "name": "Custodian Guard",
+            "count": 5,
+            "wargear": [
+              {
+                "name": "Sentinel Blade",
+                "count": 4
+              },
+              {
+                "name": "Guardian Spear",
+                "count": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitId": "c8a6-a4c5-703e-b717",
+        "name": "Allarus Custodians",
+        "section": "OTHER DATASHEETS",
+        "points": 165,
+        "models": [
+          {
+            "name": "Allarus Custodian",
+            "count": 3,
+            "wargear": [
+              {
+                "name": "Castellan axe",
+                "count": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitId": "9610-b148-8433-93b8",
+        "name": "Custodian Wardens",
+        "section": "OTHER DATASHEETS",
+        "points": 250,
+        "models": [
+          {
+            "name": "Custodian Warden",
+            "count": 5,
+            "wargear": [
+              {
+                "name": "Guardian spear",
+                "count": 5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitId": "918b-c9ed-7af7-74df",
+        "name": "Vertus Praetors",
+        "section": "OTHER DATASHEETS",
+        "points": 145,
+        "models": [
+          {
+            "name": "Vertus Praetor",
+            "count": 2,
+            "wargear": [
+              {
+                "name": "Salvo launcher",
+                "count": 2
+              },
+              {
+                "name": "Interceptor lance",
+                "count": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unitId": "3ee2-62a9-af84-1a90",
+        "name": "Caladius Grav-tank",
+        "section": "OTHER DATASHEETS",
+        "points": 210,
+        "wargear": [
+          {
+            "name": "Twin arachnus heavy blaze cannon",
+            "count": 1
+          },
+          {
+            "name": "Twin lastrum bolt cannon",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "unitId": "188b-e48b-29f-1456",
+        "name": "Venerable Contemptor Dreadnought",
+        "section": "OTHER DATASHEETS",
+        "points": 170,
+        "wargear": [
+          {
+            "name": "Kheres pattern assault cannon",
+            "count": 1
+          },
+          {
+            "name": "Contemptor combat weapon",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  }
+}
