@@ -66,7 +66,10 @@ jobs:
       - name: PR de mise à jour
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.DATASET_BOT_TOKEN }}
+          # Sans jeton dédié, la PR s'ouvre avec celui de l'Action : elle existe, mais
+          # la CI ne s'y déclenche pas (GitHub l'interdit pour éviter les boucles).
+          # Poser DATASET_BOT_TOKEN dès qu'on veut les contrôles sur ces PR.
+          token: ${{ secrets.DATASET_BOT_TOKEN || github.token }}
           # Une seule branche : une PR déjà ouverte est mise à jour, jamais dupliquée.
           branch: dataset/upstream-update
           delete-branch: true
