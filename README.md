@@ -58,7 +58,9 @@ an older one — useful when a tournament list was submitted before an update.
 ### The easy way: use the Dataset Tool (no coding)
 
 You will need [Node.js](https://nodejs.org) 24 or newer, [git](https://git-scm.com), and a GitHub
-account.
+account. Install the [GitHub CLI](https://cli.github.com) too and run `gh auth login` once — the
+tool borrows that login to open your pull request, since GitHub has not accepted a password for
+git since 2021.
 
 ```bash
 git clone https://github.com/PaintPlanPlay/dataset-tool.git
