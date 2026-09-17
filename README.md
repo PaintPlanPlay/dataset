@@ -68,17 +68,14 @@ npm run dev
 
 Open `http://127.0.0.1:4173` in your browser, then:
 
-1. Click **Récupérer le Dataset** ("get the dataset") — it downloads this
-   repository for you. The interface is currently in French; the labels below
-   are quoted as they appear.
+1. Click **Fetch the Dataset** — it downloads this repository for you.
 2. Search for what you want to fix, for example a unit name, and click it.
 3. The sheet shows every value and **where it comes from**: which source, or
    which correction changed it.
 4. Fill in the *New correction* form at the bottom: what should change, and why.
-5. Click **Écrire la Correction** ("write the correction"). The file is created
-   and the sheet reloads.
-6. Click **Proposer mes changements** ("propose my changes"), or copy the
-   commands it shows you, to open a pull request here.
+5. Click **Write the Correction**. The file is created and the sheet reloads.
+6. Click **Propose my changes**, or copy the commands it shows you, to open a
+   pull request here.
 
 That's it. The tool checks your change against the schema and the no-rules-text
 rule before writing anything.
