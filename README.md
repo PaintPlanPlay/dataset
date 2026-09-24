@@ -72,14 +72,13 @@ Open `http://127.0.0.1:4173` in your browser, then:
 
 1. Click **Update data** — it downloads this repository and a snapshot of the
    three sources, so you never work on something that is already fixed.
-2. Search for what you want to fix, for example a unit name, and click it.
-3. The sheet shows every value and **where it comes from**: which source, or
-   which correction changed it.
-4. Fill in the *New correction* form at the bottom: what should change, and why.
-5. Click **Write the Correction**. The file is created and the sheet reloads.
-6. Click **Save and build**, so the dataset files carry your correction.
-7. Click **Propose my changes**, or copy the commands it shows you, to open a
-   pull request here.
+2. Search for what you want to fix, for example a unit name, and open it.
+3. The sheet is a form: change what is wrong, as many fields as you like. Each
+   section says which source it comes from, and a blue dot marks a value a
+   correction already changed.
+4. Click **Save** and say why, in one sentence. The tool writes the correction
+   files for you — one per thing you changed and per source.
+5. Click **Save & Build**, then **Propose my change** to open a pull request here.
 
 That's it. The tool checks your change against the schema and the no-rules-text
 rule before writing anything.
@@ -103,7 +102,7 @@ you through opening a pull request.
 
 | Field | What to put in it |
 |---|---|
-| `target` | what you are fixing — a unit's id, or an address like `<unitId>::weapon:melee\|Power klaw` |
+| `target` | what you are fixing — a unit's id, or an address like `<unitId>::weapon:melee\|Power klaw`. A weapon is always fixed whole, with all its profiles (`"patch": { "profiles": [...] }`), never one profile on its own |
 | `source` | which upstream source got it wrong: `bsdata`, `mfm` or `40kdc` |
 | `patch` | the corrected values, and only those |
 | `upstream` | what that source says today, so we can tell later whether they fixed it themselves |
