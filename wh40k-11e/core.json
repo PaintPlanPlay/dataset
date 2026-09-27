@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "2.0.0",
   "gameSystem": "wh40k-11e",
   "stratagems": [
     {
@@ -16,19 +16,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
-      "effect": {
-        "type": "re-roll",
-        "target": "unit",
-        "modifier": {
-          "roll": "any",
-          "result_scope": "any-result"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
-      }
+      "category": "battle-tactic"
     },
     {
       "id": "counter-offensive",
@@ -40,15 +28,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
-      "effect": {
-        "type": "fight-first",
-        "target": "unit"
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
-      }
+      "category": "strategic-ploy"
     },
     {
       "id": "crushing-impact",
@@ -68,24 +48,6 @@
           "Vehicle"
         ],
         "noneOf": []
-      },
-      "effect": {
-        "type": "dice-gated",
-        "dice": "D6",
-        "threshold": 5,
-        "comparison": "gte",
-        "on_success": {
-          "type": "mortal-wounds",
-          "target": "target",
-          "modifier": {
-            "count": 1
-          }
-        },
-        "on_fail": null
-      },
-      "scope": {
-        "range": "engagement-range",
-        "duration": "phase"
       }
     },
     {
@@ -105,20 +67,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "keyword-grant",
-        "target": "unit",
-        "modifier": {
-          "keywords": [
-            "Precision"
-          ],
-          "weapon_type": "melee"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -139,24 +87,6 @@
           "Grenades"
         ],
         "noneOf": []
-      },
-      "effect": {
-        "type": "dice-gated",
-        "dice": "D6",
-        "threshold": 4,
-        "comparison": "gte",
-        "on_success": {
-          "type": "mortal-wounds",
-          "target": "target",
-          "modifier": {
-            "count": 1
-          }
-        },
-        "on_fail": null
-      },
-      "scope": {
-        "range": "any-visible",
-        "duration": "phase"
       }
     },
     {
@@ -170,18 +100,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-turn",
-      "category": "strategic-ploy",
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "snap-shooting"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
-      }
+      "category": "strategic-ploy"
     },
     {
       "id": "heroic-intervention",
@@ -193,18 +112,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-turn",
-      "category": "strategic-ploy",
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "reactive-charge"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
-      }
+      "category": "strategic-ploy"
     },
     {
       "id": "insane-bravery",
@@ -216,19 +124,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-battle",
-      "category": "battle-tactic",
-      "effect": {
-        "type": "auto-result",
-        "target": "unit",
-        "modifier": {
-          "test": "battle-shock",
-          "result": "pass"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
-      }
+      "category": "battle-tactic"
     },
     {
       "id": "rapid-ingress",
@@ -240,19 +136,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "ingress-move",
-          "from": "strategic-reserves"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
-      }
+      "category": "strategic-ploy"
     },
     {
       "id": "smokescreen",
@@ -271,19 +155,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "rule-state",
-        "target": "unit",
-        "modifier": {
-          "direction": "granted",
-          "rule_kind": "core-rule",
-          "rule": "benefit-of-cover"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     }
   ],
