@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "2.0.0",
   "gameSystem": "wh40k-11e",
   "id": "titanicus-traitoris",
   "name": "Titanicus Traitoris",
@@ -252,46 +252,10 @@
           "name": "Emissary of the Great Mutator (Aura)"
         },
         {
-          "name": "Master of Magicks (Psychic)",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "keyword-grant",
-                "target": "unit",
-                "modifier": {
-                  "keywords": [
-                    "Ignores Cover"
-                  ],
-                  "weapon_type": "ranged"
-                }
-              },
-              {
-                "type": "keyword-grant",
-                "target": "unit",
-                "modifier": {
-                  "keywords": [
-                    "Lethal Hits"
-                  ],
-                  "weapon_type": "ranged"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Master of Magicks (Psychic)"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-8 wounds remaining"
         }
       ],
       "points": 315,
@@ -512,17 +476,7 @@
           "name": "Relentless Carnage"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-8 wounds remaining"
         }
       ],
       "points": 415,
@@ -664,17 +618,7 @@
           "name": "Roof Access"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         },
         {
           "name": "Comms Antenna"
@@ -856,35 +800,13 @@
       ],
       "abilities": [
         {
-          "name": "The Dark Master (Aura)",
-          "effect": {
-            "type": "terrain-area-tag",
-            "target": "self",
-            "modifier": {
-              "tag": "shadow-of-chaos"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "The Dark Master (Aura)"
         },
         {
           "name": "Shadow Form"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 wounds remaining"
         },
         {
           "name": "Disciples of Be'lakor"
@@ -988,71 +910,10 @@
       ],
       "abilities": [
         {
-          "name": "Grotesque Regeneration",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "end-of-phase"
-                  }
-                },
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "BEASTS-OF-NURGLE"
-                  }
-                },
-                {
-                  "type": "has-lost-wounds",
-                  "parameters": {}
-                },
-                {
-                  "operator": "not",
-                  "operands": [
-                    {
-                      "type": "units-destroyed",
-                      "parameters": {
-                        "side": "self",
-                        "window": "phase",
-                        "count_min": 1
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "self",
-              "modifier": {
-                "stat": "W",
-                "operation": "set",
-                "value": 7
-              }
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Grotesque Regeneration"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 80,
@@ -1177,19 +1038,7 @@
       ],
       "abilities": [
         {
-          "name": "Brass Stampede",
-          "effect": {
-            "type": "mortal-wounds",
-            "target": "defender",
-            "modifier": {
-              "count": "d3"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Brass Stampede"
         },
         {
           "name": "Murderer's Cowl"
@@ -1314,21 +1163,7 @@
       ],
       "abilities": [
         {
-          "name": "Bane of Cowards",
-          "effect": {
-            "type": "rule-state",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "direction": "suppressed",
-              "rule_kind": "core-rule",
-              "rule": "fall-back"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Bane of Cowards"
         },
         {
           "name": "Murderer's Cowl"
@@ -1431,44 +1266,10 @@
           "name": "Leader"
         },
         {
-          "name": "Bloodmaster",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Bloodmaster"
         },
         {
-          "name": "A Gory Path",
-          "effect": {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "consolidation",
-              "distance": 6,
-              "replaces_default": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "A Gory Path"
         },
         {
           "name": "Murderer's Cowl"
@@ -1668,80 +1469,13 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Khorne (Aura)",
-          "effect": {
-            "type": "aura",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "range": 6,
-              "recipient_filter": {
-                "required_keywords": [
-                  "KHORNE",
-                  "LEGIONES DAEMONICA"
-                ]
-              },
-              "effect": {
-                "type": "conditional",
-                "condition": {
-                  "type": "attack-is-type",
-                  "parameters": {
-                    "attack_type": "melee"
-                  }
-                },
-                "effect": {
-                  "type": "roll-modifier",
-                  "target": "attacker",
-                  "modifier": {
-                    "roll": "hit",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemon Lord of Khorne (Aura)"
         },
         {
-          "name": "Relentless Carnage",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "mortal-wounds",
-              "target": "defender",
-              "modifier": {
-                "count": "1"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Relentless Carnage"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 wounds remaining"
         },
         {
           "name": "Greater Daemon of Khorne (Aura)"
@@ -1960,49 +1694,13 @@
           "name": "Split"
         },
         {
-          "name": "Sullen Malevolence (Aura)",
-          "effect": {
-            "type": "leadership-modifier",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "operation": "worsen",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Sullen Malevolence (Aura)"
         },
         {
-          "name": "Exploding Horrors",
-          "effect": {
-            "type": "mortal-wounds",
-            "target": "defender",
-            "modifier": {
-              "count": "1"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Exploding Horrors"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 125,
@@ -2253,42 +1951,10 @@
       ],
       "abilities": [
         {
-          "name": "Eldritch Flames (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "ability_id": "benefit-of-cover"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Eldritch Flames (Psychic)"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 115,
@@ -2551,17 +2217,7 @@
           "name": "Stronghold"
         },
         {
-          "name": "Damaged: 1-15 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-15 Wounds Remaining"
         },
         {
           "name": "Reinforced Cover"
@@ -2896,68 +2552,16 @@
       ],
       "abilities": [
         {
-          "name": "Changecaster",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Sustained Hits 1"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Changecaster"
         },
         {
-          "name": "Storm of Mutating Sorcery (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Storm of Mutating Sorcery (Psychic)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 60,
@@ -3120,48 +2724,10 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "unit",
-                "modifier": {
-                  "stat": "S",
-                  "operation": "add",
-                  "value": 2
-                }
-              },
-              {
-                "type": "stat-modifier",
-                "target": "unit",
-                "modifier": {
-                  "stat": "D",
-                  "operation": "add",
-                  "value": 2
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Sunderer of Fortresses"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -3376,34 +2942,10 @@
       ],
       "abilities": [
         {
-          "name": "Bastion of Firepower",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Lethal Hits"
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Bastion of Firepower"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -3640,65 +3182,13 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "ability_id": "benefit-of-cover"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Searing Flames"
         },
         {
-          "name": "Unrestrained Terror (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Unrestrained Terror (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -3896,96 +3386,13 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "operation": "add",
-                  "value": 1
-                }
-              },
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "operation": "add",
-                  "value": 1
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Macro-extinction Protocols"
         },
         {
-          "name": "Consumed with Hunger (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "WAR DOG"
-                  }
-                },
-                {
-                  "operator": "or",
-                  "operands": [
-                    {
-                      "type": "target-has-keyword",
-                      "parameters": {
-                        "keyword": "TITANIC"
-                      }
-                    },
-                    {
-                      "type": "target-has-keyword",
-                      "parameters": {
-                        "keyword": "TOWERING"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent",
-            "range_inches": 6
-          },
-          "effectSource": "40kdc"
+          "name": "Consumed with Hunger (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         }
       ],
       "points": 385,
@@ -4129,60 +3536,13 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "attacker",
-              "modifier": {
-                "roll": "hit",
-                "operation": "subtract",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Storm of Bolts"
         },
         {
-          "name": "Offerings for the Dark Gods (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Sustained Hits 1"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Offerings for the Dark Gods (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -4327,49 +3687,13 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge",
-          "effect": {
-            "type": "ability-grant",
-            "target": "self",
-            "modifier": {
-              "grant_type": "tank-shock-zero-cp-unrestricted"
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Shock Charge"
         },
         {
-          "name": "Dark Fervour (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "assault"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Dark Fervour (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         }
       ],
       "points": 385,
@@ -4577,50 +3901,13 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra",
-          "effect": {
-            "type": "resurrection",
-            "target": "self",
-            "modifier": {
-              "count": "d3",
-              "type": "wounds"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Repair Auto-simulacra"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
-          "name": "Huntmaster (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "assault"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Huntmaster (Aura)"
         }
       ],
       "points": 375,
@@ -4870,97 +4157,13 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "shooting"
-                  }
-                },
-                {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "after-scoring-hit"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "INFANTRY"
-                  }
-                },
-                {
-                  "type": "attack-is-type",
-                  "parameters": {
-                    "attack_type": "graviton-crusher"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "defender",
-                  "modifier": {
-                    "stat": "M",
-                    "operation": "subtract",
-                    "value": 2
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "defender",
-                  "modifier": {
-                    "roll": "charge",
-                    "operation": "subtract",
-                    "value": 2
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle-round"
-          },
-          "effectSource": "40kdc"
+          "name": "Grav-pinned"
         },
         {
-          "name": "Preysight (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Ignores Cover"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Preysight (Aura)"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         }
       ],
       "points": 365,
@@ -5132,77 +4335,16 @@
       ],
       "abilities": [
         {
-          "name": "Swallow Energy (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "feel-no-pain",
-              "target": "unit",
-              "modifier": {
-                "threshold": 4
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Swallow Energy (Psychic)"
         },
         {
-          "name": "Horrible Fascination (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "mortal-wounds",
-              "target": "defender",
-              "modifier": {
-                "count": "d3"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Horrible Fascination (Psychic)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -5345,85 +4487,16 @@
       ],
       "abilities": [
         {
-          "name": "Prince of Darkness (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "target-has-keyword",
-              "parameters": {
-                "keyword": "legiones-daemonica"
-              }
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "keywords": [
-                  "stealth"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Prince of Darkness (Aura)"
         },
         {
-          "name": "Unholy Vigour",
-          "effect": {
-            "type": "invulnerable-save",
-            "target": "self",
-            "modifier": {
-              "invuln_sv": 3
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Unholy Vigour"
         },
         {
-          "name": "Daemonic Lord",
-          "effect": {
-            "type": "ability-grant",
-            "target": "self",
-            "modifier": {
-              "ability_id": "lone-operative"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemonic Lord"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         }
       ],
       "points": 165,
@@ -5552,95 +4625,13 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Destruction",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "unit",
-              "modifier": {
-                "stat": "A",
-                "operation": "add",
-                "value": 3
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Malefic Destruction"
         },
         {
-          "name": "Harbinger of Death",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "keyword-grant",
-                "target": "unit",
-                "modifier": {
-                  "keywords": [
-                    "Lethal Hits"
-                  ]
-                }
-              },
-              {
-                "type": "keyword-grant",
-                "target": "unit",
-                "modifier": {
-                  "keywords": [
-                    "Sustained Hits 1"
-                  ]
-                }
-              },
-              {
-                "type": "keyword-grant",
-                "target": "unit",
-                "modifier": {
-                  "keywords": [
-                    "Precision"
-                  ]
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Harbinger of Death"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         }
       ],
       "points": 190,
@@ -5742,98 +4733,19 @@
       ],
       "abilities": [
         {
-          "name": "Horrifying Beauty ",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "fight"
-                  }
-                },
-                {
-                  "type": "unit-below-half-strength"
-                }
-              ]
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Horrifying Beauty "
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
         },
         {
-          "name": "Daemonic Icon",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "self",
-            "modifier": {
-              "stat": "Ld",
-              "operation": "set",
-              "value": 6
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemonic Icon"
         },
         {
-          "name": "Instrument of Chaos",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "operation": "add",
-              "roll": "charge",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Instrument of Chaos"
         }
       ],
       "points": 100,
@@ -7327,40 +6239,10 @@
           "name": "Leader"
         },
         {
-          "name": "Blessed by the Plague God",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "invulnerable-save",
-              "target": "unit",
-              "modifier": {
-                "invuln_sv": 4
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Blessed by the Plague God"
         },
         {
-          "name": "Tally of Pestilence",
-          "effect": {
-            "type": "cp-gain",
-            "target": "self",
-            "modifier": {
-              "amount": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Tally of Pestilence"
         }
       ],
       "points": 80,
@@ -7500,80 +6382,16 @@
           "name": "Leader"
         },
         {
-          "name": "Blazing Warpfire (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "assault"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Blazing Warpfire (Psychic)"
         },
         {
-          "name": "Flames of Change (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "defender",
-              "modifier": {
-                "ability_id": "post-attack-debuff"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Flames of Change (Psychic)"
         },
         {
-          "name": "Manifestation of Destruction",
-          "effect": {
-            "type": "attack-restriction",
-            "target": "self",
-            "modifier": {
-              "restriction": "cannot-be-warlord"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Manifestation of Destruction"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 65,
@@ -7744,57 +6562,13 @@
           "name": "Leader"
         },
         {
-          "name": "Fateskimmer",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Lethal Hits"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Fateskimmer"
         },
         {
-          "name": "Rider of the Immaterial Winds",
-          "effect": {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "redeploy",
-              "to_reserves": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "one-use"
-          },
-          "effectSource": "40kdc"
+          "name": "Rider of the Immaterial Winds"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 95,
@@ -7883,78 +6657,13 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Shroud of Flies (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "nurgle"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "legiones-daemonica"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "keywords": [
-                  "stealth"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle-round"
-          },
-          "effectSource": "40kdc"
+          "name": "Shroud of Flies (Aura)"
         },
         {
-          "name": "Diseased Cover",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "ability_id": "benefit-of-cover"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Diseased Cover"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 100,
@@ -8043,46 +6752,10 @@
       ],
       "abilities": [
         {
-          "name": "Soporific Musk",
-          "effect": {
-            "type": "rule-state",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "direction": "suppressed",
-              "rule_kind": "core-rule",
-              "rule": "fall-back"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Soporific Musk"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -8468,31 +7141,10 @@
       ],
       "abilities": [
         {
-          "name": "Bounding Leaps",
-          "effect": {
-            "type": "fallback-and-act",
-            "target": "unit",
-            "modifier": {}
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Bounding Leaps"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 65,
@@ -8614,39 +7266,13 @@
       ],
       "abilities": [
         {
-          "name": "Hunters from the Warp",
-          "effect": {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "redeploy",
-              "to_reserves": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Hunters from the Warp"
         },
         {
           "name": "Murderer's Cowl"
         },
         {
-          "name": "Collar of Khorne",
-          "effect": {
-            "type": "feel-no-pain",
-            "target": "unit",
-            "modifier": {
-              "threshold": 3,
-              "scope": "psychic"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Collar of Khorne"
         }
       ],
       "points": 75,
@@ -8795,59 +7421,13 @@
           "name": "Leader"
         },
         {
-          "name": "Fluxmaster",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "attacker",
-              "modifier": {
-                "roll": "hit",
-                "operation": "subtract",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Fluxmaster"
         },
         {
-          "name": "Altered Reality (Psychic)",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "self",
-            "modifier": {
-              "roll": "any",
-              "operation": "set",
-              "value": 6,
-              "uses": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "one-use"
-          },
-          "effectSource": "40kdc"
+          "name": "Altered Reality (Psychic)"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 70,
@@ -8997,31 +7577,10 @@
       ],
       "abilities": [
         {
-          "name": "Vantage Point",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1,
-              "weapon_type": "ranged"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Vantage Point"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 Wounds Remaining"
         },
         {
           "name": "Reinforced Cover"
@@ -9123,75 +7682,22 @@
       ],
       "abilities": [
         {
-          "name": "Prey on the Weak",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Prey on the Weak"
         },
         {
           "name": "Murderer's Cowl"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 40,
@@ -9305,59 +7811,16 @@
           "name": "Murderer's Cowl"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 130,
@@ -9549,87 +8012,19 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Nurgle (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "nurgle"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "legiones-daemonica"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "operation": "add",
-                "stat": "T",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle-round"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemon Lord of Nurgle (Aura)"
         },
         {
-          "name": "Nurgle’s Rot (Psychic)",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "stat": "T",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Nurgle’s Rot (Psychic)"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
           "name": "Greater Daemon of Nurgle (Aura)"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 265,
@@ -9840,17 +8235,7 @@
       ],
       "abilities": [
         {
-          "name": "Drone Commander (Aura)",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Drone Commander (Aura)"
         }
       ],
       "points": 45,
@@ -10003,77 +8388,10 @@
       ],
       "abilities": [
         {
-          "name": "Cutting Down the Foe",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "fight"
-                  }
-                },
-                {
-                  "type": "charged-this-turn"
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "stat": "S",
-                    "operation": "add",
-                    "value": 1
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "stat": "D",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Cutting Down the Foe"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -10215,71 +8533,16 @@
       ],
       "abilities": [
         {
-          "name": "Lethal Caress",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Lethal Caress"
         },
         {
-          "name": "Symphony of Pain (Psychic)",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "all-failures"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Symphony of Pain (Psychic)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -10412,73 +8675,10 @@
           "name": "Leader"
         },
         {
-          "name": "Beast Handler",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "charge",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "one-use"
-          },
-          "effectSource": "40kdc"
+          "name": "Beast Handler"
         },
         {
-          "name": "Seed the Garden of Nurgle",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "movement"
-                  }
-                },
-                {
-                  "type": "player-turn-is",
-                  "parameters": {
-                    "turn": "own"
-                  }
-                },
-                {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "end-of-turn"
-                  }
-                },
-                {
-                  "type": "unit-within-range-of",
-                  "parameters": {
-                    "target_type": "area-terrain"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "terrain-area-tag",
-              "target": "unit",
-              "modifier": {
-                "tag": "shadow-of-chaos"
-              }
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Seed the Garden of Nurgle"
         }
       ],
       "points": 120,
@@ -11092,17 +9292,7 @@
           "name": "Infernal Attendants"
         },
         {
-          "name": "Font of Unreality",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Font of Unreality"
         }
       ],
       "points": 180,
@@ -11322,17 +9512,7 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-30 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-30 Wounds Remaining"
         },
         {
           "name": "Fortress"
@@ -11534,78 +9714,13 @@
           "name": "Leader"
         },
         {
-          "name": "Harmonic Alignment",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "resurrection",
-              "target": "unit",
-              "modifier": {
-                "count": "d3",
-                "type": "models"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Harmonic Alignment"
         },
         {
-          "name": "Discordant Disruption (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "target-has-keyword",
-              "parameters": {
-                "keyword": "psyker"
-              }
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "keywords": [
-                  "hazardous"
-                ],
-                "weapon_name": "psychic"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Discordant Disruption (Aura)"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -11754,58 +9869,13 @@
       ],
       "abilities": [
         {
-          "name": "One Head Looks Forward",
-          "effect": {
-            "type": "cp-gain",
-            "target": "self",
-            "modifier": {
-              "amount": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "One Head Looks Forward"
         },
         {
-          "name": "One Head Looks Back (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "target-has-keyword",
-              "parameters": {
-                "keyword": "A"
-              }
-            },
-            "effect": {
-              "type": "stratagem-cost-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "operation": "increase",
-                "amount": 1,
-                "applies_to": "stratagems-targeting-bearer"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "One Head Looks Back (Aura)"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
           "name": "Greater Daemon of Tzeentch (Aura)"
@@ -11933,70 +10003,16 @@
       ],
       "abilities": [
         {
-          "name": "Pack Leader",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "charge",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Pack Leader"
         },
         {
-          "name": "Prey of the Blood God",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Prey of the Blood God"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Brass Collar of Bloody Vengeance",
-          "effect": {
-            "type": "feel-no-pain",
-            "target": "unit",
-            "modifier": {
-              "threshold": 3,
-              "scope": "psychic"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Brass Collar of Bloody Vengeance"
         }
       ],
       "points": 70,
@@ -12197,131 +10213,25 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Slaanesh (Aura)",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemon Lord of Slaanesh (Aura)"
         },
         {
-          "name": "Mesmerising Form",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "attacker",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Mesmerising Form"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 wounds remaining"
         },
         {
-          "name": "Greater Daemon of Slaanesh (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "slaanesh"
-                  }
-                },
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "legiones-daemonica"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "grant_type": "shadow-of-chaos"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Greater Daemon of Slaanesh (Aura)"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
         },
         {
-          "name": "Shining aegis",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "self",
-            "modifier": {
-              "stat": "Sv",
-              "operation": "set",
-              "value": 3
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Shining aegis"
         }
       ],
       "points": 265,
@@ -12560,17 +10470,7 @@
           "name": "Scuttling Walker"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "Murderer's Cowl"
@@ -12728,68 +10628,16 @@
       ],
       "abilities": [
         {
-          "name": "Vortex Terrors (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-custom",
-            "duration": "permanent",
-            "range_inches": 24
-          },
-          "effectSource": "40kdc"
+          "name": "Vortex Terrors (Psychic)"
         },
         {
-          "name": "Warp Storms (Psychic)",
-          "effect": {
-            "type": "dice-gated",
-            "dice": "D6",
-            "threshold": 3,
-            "comparison": "gte",
-            "on_success": {
-              "type": "mortal-wounds",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "amount": "D3",
-                "range_inches": 9
-              }
-            },
-            "on_fail": null
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Warp Storms (Psychic)"
         },
         {
           "name": "*Invulnerable Save"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         }
       ],
       "points": 355,
@@ -12985,80 +10833,13 @@
       ],
       "abilities": [
         {
-          "name": "Taskmaster (Aura)",
-          "effect": {
-            "type": "aura",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "range": 9,
-              "recipient_filter": {
-                "required_keywords": [
-                  "WAR DOG"
-                ]
-              },
-              "effect": {
-                "type": "conditional",
-                "condition": {
-                  "type": "attack-is-type",
-                  "parameters": {
-                    "attack_type": "ranged"
-                  }
-                },
-                "effect": {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "subset": "ones"
-                  }
-                }
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Taskmaster (Aura)"
         },
         {
-          "name": "Obsessive Ruthlessness",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Devastating Wounds"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Obsessive Ruthlessness"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -13438,74 +11219,13 @@
       ],
       "abilities": [
         {
-          "name": "Dread Dominion (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "unit-has-keyword",
-              "parameters": {
-                "keyword": "WAR DOG"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "friendly-within-aura",
-                  "modifier": {
-                    "stat": "Ld",
-                    "operation": "add",
-                    "value": 1
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "friendly-within-aura",
-                  "modifier": {
-                    "stat": "OC",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Dread Dominion (Aura)"
         },
         {
-          "name": "Seething Hatred",
-          "effect": {
-            "type": "re-roll",
-            "target": "self",
-            "modifier": {
-              "roll": "hit",
-              "uses": 1,
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Seething Hatred"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -13893,59 +11613,13 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Rampage (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "subset": "ones"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Frenzied Rampage (Aura)"
         },
         {
-          "name": "Bloodlust",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Devastating Wounds"
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Bloodlust"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -14116,50 +11790,13 @@
       ],
       "abilities": [
         {
-          "name": "Methodical Destruction",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Methodical Destruction"
         },
         {
-          "name": "Close-range Killers (Aura)",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Close-range Killers (Aura)"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -14429,48 +12066,13 @@
       ],
       "abilities": [
         {
-          "name": "Infernal Aegis (Aura)",
-          "effect": {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "ability_id": "benefit-of-cover"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Infernal Aegis (Aura)"
         },
         {
-          "name": "Bastion of Corruption",
-          "effect": {
-            "type": "attack-restriction",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "restriction": "reinforcement-denial",
-              "range": 12
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Bastion of Corruption"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -14749,132 +12351,19 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Tzeentch (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "unit",
-              "modifier": {
-                "stat": "S",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemon Lord of Tzeentch (Aura)"
         },
         {
-          "name": "Master of Magicks (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "keyword-grant",
-                  "target": "unit",
-                  "modifier": {
-                    "keywords": [
-                      "Lethal Hits"
-                    ]
-                  }
-                },
-                {
-                  "type": "keyword-grant",
-                  "target": "unit",
-                  "modifier": {
-                    "keywords": [
-                      "Ignores Cover"
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Master of Magicks (Psychic)"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
-          "name": "Greater Daemon of Tzeentch (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "tzeentch"
-                  }
-                },
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "legiones-daemonica"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "grant_type": "shadow-of-chaos"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Greater Daemon of Tzeentch (Aura)"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 320,
@@ -15048,17 +12537,7 @@
           "name": "Reinforced Cover"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 Wounds Remaining"
         },
         {
           "name": "Roof Access"
@@ -15227,30 +12706,10 @@
           "name": "Scuttling Walker"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 180,
@@ -15343,43 +12802,10 @@
       ],
       "abilities": [
         {
-          "name": "Mischief Makers (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "attacker",
-              "modifier": {
-                "roll": "hit",
-                "operation": "subtract",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Mischief Makers (Aura)"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 45,
@@ -15582,123 +13008,13 @@
       ],
       "abilities": [
         {
-          "name": "Split",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "after-unit-resolves-attacks"
-                  }
-                },
-                {
-                  "operator": "not",
-                  "operands": [
-                    {
-                      "type": "units-destroyed",
-                      "parameters": {
-                        "side": "self",
-                        "window": "phase",
-                        "count_min": 1
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "effect": {
-              "type": "dice-gated",
-              "dice": "D6",
-              "threshold": 4,
-              "comparison": "gte",
-              "on_success": {
-                "type": "sequence",
-                "steps": [
-                  {
-                    "type": "conditional",
-                    "condition": {
-                      "type": "unit-has-keyword",
-                      "parameters": {
-                        "keyword": "PINK-HORROR"
-                      }
-                    },
-                    "effect": {
-                      "type": "resurrection",
-                      "target": "unit",
-                      "modifier": {
-                        "count": 2,
-                        "model_type": "BLUE-HORROR"
-                      }
-                    }
-                  },
-                  {
-                    "type": "conditional",
-                    "condition": {
-                      "type": "unit-has-keyword",
-                      "parameters": {
-                        "keyword": "BLUE-HORROR"
-                      }
-                    },
-                    "effect": {
-                      "type": "resurrection",
-                      "target": "unit",
-                      "modifier": {
-                        "count": 1,
-                        "model_type": "BRIMSTONE-HORROR"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Split"
         },
         {
-          "name": "Horrors are Pink. Horrors are Blue. Where once there was one, now there are two.",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "unit-has-keyword",
-              "parameters": {
-                "keyword": "PINK HORROR"
-              },
-              "negated": true
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "grant_type": "use-the-blue-horrors-datasheet"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Horrors are Pink. Horrors are Blue. Where once there was one, now there are two."
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         },
         {
           "name": "Daemonic Icon"
@@ -15868,42 +13184,10 @@
       ],
       "abilities": [
         {
-          "name": "Death’s Heads",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Death’s Heads"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         },
         {
           "name": "Daemonic Icon"
@@ -16043,17 +13327,7 @@
           "name": "Pouncing Leap"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 120,
@@ -16148,32 +13422,10 @@
       ],
       "abilities": [
         {
-          "name": "Infected Outbreak",
-          "effect": {
-            "type": "objective-control-modifier",
-            "target": "unit",
-            "modifier": {
-              "sticky": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Infected Outbreak"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         },
         {
           "name": "Daemonic Icon"
@@ -16284,17 +13536,7 @@
           "name": "Reinforced Cover"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         }
       ],
       "points": 225,
@@ -16422,17 +13664,7 @@
           "name": "Bounding Assault"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         },
         {
           "name": "Daemonic Icon"
@@ -16545,56 +13777,13 @@
           "name": "Leader"
         },
         {
-          "name": "Poxbringer",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "operation": "crit-on",
-                "value": 5
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Poxbringer"
         },
         {
-          "name": "Feculent Despair (Aura, Psychic)",
-          "effect": {
-            "type": "leadership-modifier",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Feculent Despair (Aura, Psychic)"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 60,
@@ -16937,17 +14126,7 @@
           "name": "Battlements"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         }
       ],
       "points": 220,
@@ -17321,17 +14500,7 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-20 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-20 wounds remaining"
         },
         {
           "name": "God-machine"
@@ -17542,56 +14711,10 @@
       ],
       "abilities": [
         {
-          "name": "Blood Throne",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "unit",
-              "modifier": {
-                "stat": "AP",
-                "operation": "add",
-                "value": -1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-custom",
-            "duration": "phase",
-            "range_inches": 18
-          },
-          "effectSource": "40kdc"
+          "name": "Blood Throne"
         },
         {
-          "name": "Champion Slayer",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Champion Slayer"
         },
         {
           "name": "Murderer's Cowl"
@@ -17745,110 +14868,16 @@
       ],
       "abilities": [
         {
-          "name": "Virulent Blessing (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "unit",
-              "modifier": {
-                "stat": "D",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-custom",
-            "duration": "phase",
-            "range_inches": 24
-          },
-          "effectSource": "40kdc"
+          "name": "Virulent Blessing (Psychic)"
         },
         {
-          "name": "Deluge of Nurgle (Aura)",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "enemy-within-aura",
-                "modifier": {
-                  "stat": "M",
-                  "operation": "subtract",
-                  "value": 2
-                }
-              },
-              {
-                "type": "objective-control-modifier",
-                "target": "enemy-within-aura",
-                "modifier": {
-                  "stat": "OC",
-                  "operation": "subtract",
-                  "value": 1
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Deluge of Nurgle (Aura)"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
-          "name": "Greater Daemon of Nurgle (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "nurgle"
-                  }
-                },
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "legiones-daemonica"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "grant_type": "shadow-of-chaos"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Greater Daemon of Nurgle (Aura)"
         }
       ],
       "points": 280,
@@ -17991,17 +15020,7 @@
           "name": "Nurgle’s Rot (Psychic)"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         }
       ],
       "points": 275,
@@ -18104,33 +15123,10 @@
       ],
       "abilities": [
         {
-          "name": "Slashing Dive",
-          "effect": {
-            "type": "mortal-wounds",
-            "target": "defender",
-            "modifier": {
-              "count": "1"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Slashing Dive"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 80,
@@ -18280,29 +15276,7 @@
           "name": "Scythed Impact"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -18430,45 +15404,10 @@
       ],
       "abilities": [
         {
-          "name": "Unholy Speed",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "charge",
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Unholy Speed"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -18749,99 +15688,19 @@
       ],
       "abilities": [
         {
-          "name": "No Prey Can Evade",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "charge",
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "No Prey Can Evade"
         },
         {
-          "name": "Monarch of the Hunt",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "subset": "all-failures"
-                  }
-                },
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "subset": "all-failures"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Monarch of the Hunt"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
           "name": "Greater Daemon of Slaanesh (Aura)"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         }
       ],
       "points": 315,
@@ -18984,84 +15843,16 @@
       ],
       "abilities": [
         {
-          "name": "Rage Embodied (Aura)",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "A",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Rage Embodied (Aura)"
         },
         {
-          "name": "Murderlust",
-          "effect": {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "ability_id": "charge-after-advance"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Murderlust"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "A",
-              "operation": "add",
-              "value": 2
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
-          "name": "Greater Daemon of Khorne (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "khorne"
-                  }
-                },
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "legiones-daemonica"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "friendly-within-aura",
-              "modifier": {
-                "grant_type": "shadow-of-chaos"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Greater Daemon of Khorne (Aura)"
         }
       ],
       "points": 315,
@@ -19143,76 +15934,10 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Shadow of Khorne (Aura)",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "terrain-area-tag",
-                "target": "self",
-                "modifier": {
-                  "tag": "shadow-of-chaos"
-                }
-              },
-              {
-                "type": "conditional",
-                "condition": {
-                  "operator": "and",
-                  "operands": [
-                    {
-                      "type": "unit-has-keyword",
-                      "parameters": {
-                        "keyword": "KHORNE"
-                      }
-                    },
-                    {
-                      "type": "unit-has-keyword",
-                      "parameters": {
-                        "keyword": "LEGIONES DAEMONICA"
-                      }
-                    }
-                  ]
-                },
-                "effect": {
-                  "type": "leadership-modifier",
-                  "target": "friendly-within-aura",
-                  "modifier": {
-                    "test": "battle-shock",
-                    "operation": "re-roll"
-                  }
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Shadow of Khorne (Aura)"
         },
         {
-          "name": "Cover",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "ability_id": "benefit-of-cover"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Cover"
         },
         {
           "name": "Murderer's Cowl"
@@ -19341,28 +16066,7 @@
       ],
       "abilities": [
         {
-          "name": "Skulls of the Fallen",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Skulls of the Fallen"
         },
         {
           "name": "Murderer's Cowl"
@@ -19494,42 +16198,10 @@
       ],
       "abilities": [
         {
-          "name": "Skullmaster’s Fury",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Devastating Wounds"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Skullmaster’s Fury"
         },
         {
-          "name": "Devastating Charge",
-          "effect": {
-            "type": "leadership-modifier",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "test": "battle-shock"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Devastating Charge"
         },
         {
           "name": "Leader"
@@ -19642,65 +16314,10 @@
       ],
       "abilities": [
         {
-          "name": "Lord of Decapitations",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Devastating Wounds"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Lord of Decapitations"
         },
         {
-          "name": "Skulls for Khorne",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "target-has-keyword",
-              "parameters": {
-                "keyword": "CHARACTER"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "subset": "all-failures"
-                  }
-                },
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "subset": "all-failures"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Skulls for Khorne"
         },
         {
           "name": "Leader"
@@ -19933,42 +16550,10 @@
           "name": "Scuttling Walker"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -20070,64 +16655,13 @@
           "name": "Leader"
         },
         {
-          "name": "Jolly Gutpipes",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "unit",
-              "modifier": {
-                "stat": "M",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Jolly Gutpipes"
         },
         {
-          "name": "Disease of Mirth (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Disease of Mirth (Aura)"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 55,
@@ -20236,32 +16770,7 @@
       ],
       "abilities": [
         {
-          "name": "Threat Level Rising",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "operation": "add",
-                  "value": 1
-                }
-              },
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "operation": "add",
-                  "value": 1
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis",
-          "conditional": true
+          "name": "Threat Level Rising"
         }
       ],
       "points": 35,
@@ -20353,62 +16862,19 @@
           "name": "Warp Spines"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Murderer's Cowl"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         },
         {
           "name": "Shadow's Caress"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 145,
@@ -20533,62 +16999,13 @@
           "name": "Leader"
         },
         {
-          "name": "Keep Counting!",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Sustained Hits 1"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Keep Counting!"
         },
         {
-          "name": "Meet Your Quota!",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "objective-control-modifier",
-              "target": "unit",
-              "modifier": {
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Meet Your Quota!"
         },
         {
-          "name": "Gloam Rot",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Gloam Rot"
         }
       ],
       "points": 60,
@@ -20780,29 +17197,7 @@
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         }
       ],
       "points": 120,
@@ -21022,36 +17417,10 @@
       ],
       "abilities": [
         {
-          "name": "P’tarix’s Sorcerous Syphon (Aura)",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "P’tarix’s Sorcerous Syphon (Aura)"
         },
         {
-          "name": "Xirat’p’s Sorcerous Barrages (Psychic)",
-          "effect": {
-            "type": "mortal-wounds",
-            "target": "defender",
-            "modifier": {
-              "count": "1"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Xirat’p’s Sorcerous Barrages (Psychic)"
         }
       ],
       "points": 75,
@@ -21189,65 +17558,10 @@
       ],
       "abilities": [
         {
-          "name": "Formless Horror",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "leadership-modifier",
-                "target": "attacker",
-                "modifier": {
-                  "test": "battle-shock",
-                  "operation": "force"
-                }
-              },
-              {
-                "type": "conditional",
-                "condition": {
-                  "type": "is-battle-shocked",
-                  "parameters": {}
-                },
-                "effect": {
-                  "type": "attack-restriction",
-                  "target": "attacker",
-                  "modifier": {
-                    "restriction": "cannot-target-bearer"
-                  }
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "self",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Formless Horror"
         },
         {
-          "name": "Mischief and Confusion",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "attacker",
-              "modifier": {
-                "roll": "hit",
-                "operation": "subtract",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Mischief and Confusion"
         }
       ],
       "points": 105,
@@ -21352,84 +17666,13 @@
       ],
       "abilities": [
         {
-          "name": "The Eternal Dance",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "operation": "add",
-                    "value": 1
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "operation": "subtract",
-                    "value": 1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "The Eternal Dance"
         },
         {
-          "name": "Dazzling Acrobatics",
-          "effect": {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "ability_id": "charge-after-advance"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Dazzling Acrobatics"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         }
       ],
       "points": 95,
@@ -21593,62 +17836,16 @@
       ],
       "abilities": [
         {
-          "name": "Tormentbringer (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Sustained Hits 1"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Tormentbringer (Aura)"
         },
         {
-          "name": "Hysterical Frenzy",
-          "effect": {
-            "type": "fight-on-death",
-            "target": "self",
-            "modifier": {}
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Hysterical Frenzy"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -21769,77 +17966,16 @@
       ],
       "abilities": [
         {
-          "name": "Tranceweaver",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "subset": "ones"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Tranceweaver"
         },
         {
-          "name": "Symphony of Pain (Psychic)",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "all-failures"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Symphony of Pain (Psychic)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         },
         {
           "name": "Shadow's Caress"
@@ -22019,31 +18155,10 @@
           "name": "Scuttling Walker"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
-          "name": "Penumbral Puppetry",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1,
-              "weapon_type": "melee"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Penumbral Puppetry"
         }
       ],
       "points": 180,
@@ -22167,18 +18282,7 @@
       ],
       "abilities": [
         {
-          "name": "Automated Defences",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "add",
-              "value": 1,
-              "weapon_type": "ranged"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Automated Defences"
         },
         {
           "name": "Reinforced Cover"
@@ -22376,17 +18480,7 @@
           "name": "Vortex"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 Wounds Remaining"
         },
         {
           "name": "Roof Access"
@@ -22803,54 +18897,10 @@
       ],
       "abilities": [
         {
-          "name": "Brigand",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "shooting"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "A"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Ignores Cover"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Brigand"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -23046,51 +19096,10 @@
       ],
       "abilities": [
         {
-          "name": "Executioner",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-below-half-strength"
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "A"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Executioner"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -23294,53 +19303,10 @@
       ],
       "abilities": [
         {
-          "name": "Huntsman",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "or",
-              "operands": [
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "MONSTER"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "VEHICLE"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Huntsman"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -23536,33 +19502,10 @@
       ],
       "abilities": [
         {
-          "name": "Karnivore",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "charge",
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Karnivore"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -23813,32 +19756,10 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols",
-          "effect": {
-            "type": "cp-refund",
-            "target": "self",
-            "modifier": {
-              "stratagem": "fire-overwatch-or-heroic"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Protection Protocols"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -24136,34 +20057,10 @@
       ],
       "abilities": [
         {
-          "name": "Stalker",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Stalker"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -24509,30 +20406,10 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-26 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-26 wounds remaining"
         },
         {
-          "name": "Titanic Fire Support",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Titanic Fire Support"
         },
         {
           "name": "Striding Colossus"
@@ -24833,17 +20710,7 @@
           "name": "Flank Speed"
         },
         {
-          "name": "Damaged: 1-13 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-13 wounds remaining"
         },
         {
           "name": "Striding Colossus"
@@ -25213,17 +21080,7 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-33 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-33 wounds remaining"
         },
         {
           "name": "Wrath of the Omnissiah"
@@ -25500,55 +21357,13 @@
           "name": "Emissary of the Prince of Excess (Aura)"
         },
         {
-          "name": "Mesmerising Form",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Mesmerising Form"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         },
         {
-          "name": "Seductive Gambit",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "ones"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Seductive Gambit"
         }
       ],
       "points": 320,

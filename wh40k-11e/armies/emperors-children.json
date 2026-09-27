@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "2.0.0",
   "gameSystem": "wh40k-11e",
   "id": "emperors-children",
   "name": "Emperor's Children",
@@ -311,17 +311,7 @@
           "name": "Roof Access"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         },
         {
           "name": "Comms Antenna"
@@ -687,17 +677,7 @@
           "name": "Stronghold"
         },
         {
-          "name": "Damaged: 1-15 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-15 Wounds Remaining"
         },
         {
           "name": "Reinforced Cover"
@@ -1478,33 +1458,7 @@
           "name": "Leader"
         },
         {
-          "name": "Euphoric Strikes",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "unit",
-                "modifier": {
-                  "stat": "A",
-                  "operation": "add",
-                  "value": 3,
-                  "weapon_type": "melee"
-                }
-              },
-              {
-                "type": "stat-modifier",
-                "target": "unit",
-                "modifier": {
-                  "stat": "AP",
-                  "operation": "add",
-                  "value": -1,
-                  "weapon_type": "melee"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Euphoric Strikes"
         }
       ],
       "points": 80,
@@ -1644,48 +1598,10 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "unit",
-                "modifier": {
-                  "stat": "S",
-                  "operation": "add",
-                  "value": 2
-                }
-              },
-              {
-                "type": "stat-modifier",
-                "target": "unit",
-                "modifier": {
-                  "stat": "D",
-                  "operation": "add",
-                  "value": 2
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Sunderer of Fortresses"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -1900,34 +1816,10 @@
       ],
       "abilities": [
         {
-          "name": "Bastion of Firepower",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Lethal Hits"
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Bastion of Firepower"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -2164,65 +2056,13 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "ability_id": "benefit-of-cover"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Searing Flames"
         },
         {
-          "name": "Unrestrained Terror (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Unrestrained Terror (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -2420,96 +2260,13 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "operation": "add",
-                  "value": 1
-                }
-              },
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "operation": "add",
-                  "value": 1
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Macro-extinction Protocols"
         },
         {
-          "name": "Consumed with Hunger (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "WAR DOG"
-                  }
-                },
-                {
-                  "operator": "or",
-                  "operands": [
-                    {
-                      "type": "target-has-keyword",
-                      "parameters": {
-                        "keyword": "TITANIC"
-                      }
-                    },
-                    {
-                      "type": "target-has-keyword",
-                      "parameters": {
-                        "keyword": "TOWERING"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent",
-            "range_inches": 6
-          },
-          "effectSource": "40kdc"
+          "name": "Consumed with Hunger (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         }
       ],
       "points": 385,
@@ -2653,60 +2410,13 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "attacker",
-              "modifier": {
-                "roll": "hit",
-                "operation": "subtract",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Storm of Bolts"
         },
         {
-          "name": "Offerings for the Dark Gods (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Sustained Hits 1"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Offerings for the Dark Gods (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -2851,49 +2561,13 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge",
-          "effect": {
-            "type": "ability-grant",
-            "target": "self",
-            "modifier": {
-              "grant_type": "tank-shock-zero-cp-unrestricted"
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Shock Charge"
         },
         {
-          "name": "Dark Fervour (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "assault"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Dark Fervour (Aura)"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         }
       ],
       "points": 385,
@@ -3095,33 +2769,10 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp",
-          "effect": {
-            "type": "disembark-after-move",
-            "target": "self",
-            "modifier": {
-              "after": "normal-move",
-              "can_charge": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Assault Ramp"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         }
       ],
       "points": 220,
@@ -3352,50 +3003,13 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra",
-          "effect": {
-            "type": "resurrection",
-            "target": "self",
-            "modifier": {
-              "count": "d3",
-              "type": "wounds"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Repair Auto-simulacra"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
-          "name": "Huntmaster (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "assault"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Huntmaster (Aura)"
         }
       ],
       "points": 375,
@@ -3645,97 +3259,13 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "shooting"
-                  }
-                },
-                {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "after-scoring-hit"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "INFANTRY"
-                  }
-                },
-                {
-                  "type": "attack-is-type",
-                  "parameters": {
-                    "attack_type": "graviton-crusher"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "defender",
-                  "modifier": {
-                    "stat": "M",
-                    "operation": "subtract",
-                    "value": 2
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "defender",
-                  "modifier": {
-                    "roll": "charge",
-                    "operation": "subtract",
-                    "value": 2
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle-round"
-          },
-          "effectSource": "40kdc"
+          "name": "Grav-pinned"
         },
         {
-          "name": "Preysight (Aura)",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Ignores Cover"
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Preysight (Aura)"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         }
       ],
       "points": 365,
@@ -3940,21 +3470,7 @@
       ],
       "abilities": [
         {
-          "name": "Assault Vehicle",
-          "effect": {
-            "type": "disembark-after-move",
-            "target": "self",
-            "modifier": {
-              "after": "advance",
-              "can_charge": false,
-              "counts_as_normal_move": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Assault Vehicle"
         }
       ],
       "points": 70,
@@ -4069,19 +3585,7 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Horrors",
-          "effect": {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "reactive"
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Scuttling Horrors"
         }
       ],
       "points": 70,
@@ -4307,42 +3811,10 @@
       ],
       "abilities": [
         {
-          "name": "Lethal Obsession",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "charge",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Lethal Obsession"
         },
         {
-          "name": "Frenzied Ferocity",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Sustained Hits 1"
-              ]
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Frenzied Ferocity"
         }
       ],
       "points": 145,
@@ -4677,85 +4149,13 @@
       ],
       "abilities": [
         {
-          "name": "Lord of Excess",
-          "effect": {
-            "type": "ability-grant",
-            "target": "self",
-            "modifier": {
-              "ability_id": "lone-operative"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Lord of Excess"
         },
         {
-          "name": "Excessive Vigour (Aura)",
-          "effect": {
-            "type": "aura",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "range": 6,
-              "recipient_filter": {
-                "required_keywords": [
-                  "SLAANESH"
-                ]
-              },
-              "effect": {
-                "type": "conditional",
-                "condition": {
-                  "type": "charged-this-turn"
-                },
-                "effect": {
-                  "type": "conditional",
-                  "condition": {
-                    "type": "attack-is-type",
-                    "parameters": {
-                      "attack_type": "melee"
-                    }
-                  },
-                  "effect": {
-                    "type": "stat-modifier",
-                    "target": "unit",
-                    "modifier": {
-                      "stat": "AP",
-                      "operation": "improve",
-                      "value": 1
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Excessive Vigour (Aura)"
         },
         {
-          "name": "Ecstatic Death",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "fight-on-death",
-              "target": "self",
-              "modifier": {}
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Ecstatic Death"
         }
       ],
       "points": 170,
@@ -4894,34 +4294,10 @@
       ],
       "abilities": [
         {
-          "name": "Daemonic Destruction",
-          "effect": {
-            "type": "mortal-wounds",
-            "target": "defender",
-            "modifier": {
-              "count": "1"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemonic Destruction"
         },
         {
-          "name": "Stimulated by Pain",
-          "effect": {
-            "type": "damage-reduction",
-            "target": "unit",
-            "modifier": {
-              "reduction": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Stimulated by Pain"
         }
       ],
       "points": 205,
@@ -6722,31 +6098,10 @@
           "name": "Scuttling Walker"
         },
         {
-          "name": "Revel in Desecration",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis",
-          "conditional": true
+          "name": "Revel in Desecration"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 wounds remaining"
         }
       ],
       "points": 300,
@@ -7974,64 +7329,7 @@
       ],
       "abilities": [
         {
-          "name": "Daemonic Patrons",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "keyword-grant",
-                "target": "unit",
-                "modifier": {
-                  "keywords": [
-                    "Critical Wounds 3+"
-                  ]
-                }
-              },
-              {
-                "type": "conditional",
-                "condition": {
-                  "operator": "and",
-                  "operands": [
-                    {
-                      "type": "phase-is",
-                      "parameters": {
-                        "phase": "fight"
-                      }
-                    },
-                    {
-                      "type": "timing-is",
-                      "parameters": {
-                        "timing": "end-of-phase"
-                      }
-                    },
-                    {
-                      "operator": "not",
-                      "operands": [
-                        {
-                          "type": "units-destroyed",
-                          "parameters": {
-                            "side": "enemy",
-                            "window": "phase",
-                            "count_min": 1
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "effect": {
-                  "type": "model-destruction",
-                  "target": "unit",
-                  "modifier": {}
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemonic Patrons"
         },
         {
           "name": "Eager Patrons"
@@ -8753,31 +8051,10 @@
       ],
       "abilities": [
         {
-          "name": "Vantage Point",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1,
-              "weapon_type": "ranged"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Vantage Point"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 Wounds Remaining"
         },
         {
           "name": "Reinforced Cover"
@@ -8929,95 +8206,22 @@
       ],
       "abilities": [
         {
-          "name": "Daemonic Poisons",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "mortal-wounds",
-              "target": "defender",
-              "modifier": {
-                "count": "d3"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Daemonic Poisons"
         },
         {
           "name": "Daemon Prince of Slaanesh"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         },
         {
-          "name": "Supreme Commander",
-          "effect": {
-            "type": "attack-restriction",
-            "target": "self",
-            "modifier": {
-              "restriction": "must-be-warlord"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Supreme Commander"
         },
         {
-          "name": "Serpentine",
-          "effect": {
-            "type": "movement-modifier",
-            "target": "self",
-            "modifier": {
-              "passthrough": [
-                "terrain-le-4"
-              ],
-              "vertical_limit": 4,
-              "applies_to_moves": [
-                "normal",
-                "advance",
-                "fall-back"
-              ]
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Serpentine"
         },
         {
-          "name": "Beguiling Form",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Beguiling Form"
         },
         {
           "name": "Daemonic Speed"
@@ -9160,17 +8364,7 @@
       ],
       "abilities": [
         {
-          "name": "Drone Commander (Aura)",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Drone Commander (Aura)"
         }
       ],
       "points": 45,
@@ -9297,43 +8491,10 @@
       ],
       "abilities": [
         {
-          "name": "Airborne Predator",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "target-has-keyword",
-              "parameters": {
-                "keyword": "A"
-              }
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Airborne Predator"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-4 wounds remaining"
         }
       ],
       "points": 175,
@@ -9975,17 +9136,7 @@
           "name": "Infernal Attendants"
         },
         {
-          "name": "Font of Unreality",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Font of Unreality"
         }
       ],
       "points": 180,
@@ -10205,17 +9356,7 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-30 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-30 Wounds Remaining"
         },
         {
           "name": "Fortress"
@@ -10466,29 +9607,7 @@
       ],
       "abilities": [
         {
-          "name": "Excessive Assault",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "subset": "ones"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Excessive Assault"
         },
         {
           "name": "Icon of Excess"
@@ -10756,30 +9875,10 @@
           "name": "Daemon Lord of Slaanesh (Aura)"
         },
         {
-          "name": "Mesmerising Form",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Mesmerising Form"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 wounds remaining"
         },
         {
           "name": "Shining aegis"
@@ -11001,68 +10100,16 @@
       ],
       "abilities": [
         {
-          "name": "Vortex Terrors (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "leadership-modifier",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "test": "battle-shock"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-custom",
-            "duration": "permanent",
-            "range_inches": 24
-          },
-          "effectSource": "40kdc"
+          "name": "Vortex Terrors (Psychic)"
         },
         {
-          "name": "Warp Storms (Psychic)",
-          "effect": {
-            "type": "dice-gated",
-            "dice": "D6",
-            "threshold": 3,
-            "comparison": "gte",
-            "on_success": {
-              "type": "mortal-wounds",
-              "target": "enemy-within-aura",
-              "modifier": {
-                "amount": "D3",
-                "range_inches": 9
-              }
-            },
-            "on_fail": null
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Warp Storms (Psychic)"
         },
         {
           "name": "*Invulnerable Save"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         }
       ],
       "points": 355,
@@ -11258,80 +10305,13 @@
       ],
       "abilities": [
         {
-          "name": "Taskmaster (Aura)",
-          "effect": {
-            "type": "aura",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "range": 9,
-              "recipient_filter": {
-                "required_keywords": [
-                  "WAR DOG"
-                ]
-              },
-              "effect": {
-                "type": "conditional",
-                "condition": {
-                  "type": "attack-is-type",
-                  "parameters": {
-                    "attack_type": "ranged"
-                  }
-                },
-                "effect": {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "subset": "ones"
-                  }
-                }
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Taskmaster (Aura)"
         },
         {
-          "name": "Obsessive Ruthlessness",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Devastating Wounds"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Obsessive Ruthlessness"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -11711,74 +10691,13 @@
       ],
       "abilities": [
         {
-          "name": "Dread Dominion (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "unit-has-keyword",
-              "parameters": {
-                "keyword": "WAR DOG"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "friendly-within-aura",
-                  "modifier": {
-                    "stat": "Ld",
-                    "operation": "add",
-                    "value": 1
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "friendly-within-aura",
-                  "modifier": {
-                    "stat": "OC",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Dread Dominion (Aura)"
         },
         {
-          "name": "Seething Hatred",
-          "effect": {
-            "type": "re-roll",
-            "target": "self",
-            "modifier": {
-              "roll": "hit",
-              "uses": 1,
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Seething Hatred"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -12166,59 +11085,13 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Rampage (Aura)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "subset": "ones"
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Frenzied Rampage (Aura)"
         },
         {
-          "name": "Bloodlust",
-          "effect": {
-            "type": "keyword-grant",
-            "target": "unit",
-            "modifier": {
-              "keywords": [
-                "Devastating Wounds"
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Bloodlust"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -12389,50 +11262,13 @@
       ],
       "abilities": [
         {
-          "name": "Methodical Destruction",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Methodical Destruction"
         },
         {
-          "name": "Close-range Killers (Aura)",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Close-range Killers (Aura)"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-9 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -12702,48 +11538,13 @@
       ],
       "abilities": [
         {
-          "name": "Infernal Aegis (Aura)",
-          "effect": {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "ability_id": "benefit-of-cover"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Infernal Aegis (Aura)"
         },
         {
-          "name": "Bastion of Corruption",
-          "effect": {
-            "type": "attack-restriction",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "restriction": "reinforcement-denial",
-              "range": 12
-            }
-          },
-          "scope": {
-            "range": "aura-12",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Bastion of Corruption"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -13089,103 +11890,13 @@
       ],
       "abilities": [
         {
-          "name": "Perfectionists",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Lethal Hits"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Perfectionists"
         },
         {
-          "name": "Euphoric Strikes",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "stat": "A",
-                    "operation": "add",
-                    "value": 3
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "stat": "AP",
-                    "operation": "add",
-                    "value": -1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Euphoric Strikes"
         },
         {
-          "name": "Lord of the Host",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached",
-              "parameters": {
-                "keyword": "EMPEROR'S CHILDREN BATTLELINE"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "ability-grant",
-                  "target": "self",
-                  "modifier": {
-                    "ability_id": "infiltrators"
-                  }
-                },
-                {
-                  "type": "ability-grant",
-                  "target": "self",
-                  "modifier": {
-                    "ability_id": "scouts-6"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          },
-          "effectSource": "40kdc"
+          "name": "Lord of the Host"
         },
         {
           "name": "Leader"
@@ -13434,51 +12145,10 @@
           "name": "Leader"
         },
         {
-          "name": "Obsessive Annunciation",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "is-attached"
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Sustained Hits 1"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Obsessive Annunciation"
         },
         {
-          "name": "Doom Siren",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "mortal-wounds",
-              "target": "defender",
-              "modifier": {
-                "count": "1"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Doom Siren"
         }
       ],
       "points": 70,
@@ -13638,81 +12308,10 @@
           "name": "Leader"
         },
         {
-          "name": "Duellist’s Hubris",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "fight-first",
-              "target": "unit",
-              "modifier": {}
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          },
-          "effectSource": "40kdc"
+          "name": "Duellist’s Hubris"
         },
         {
-          "name": "A Challenge Worthy of Skill",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "or",
-              "operands": [
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "CHARACTER"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "MONSTER"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "WALKER"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "subset": "all-failures"
-                  }
-                },
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "subset": "all-failures"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "A Challenge Worthy of Skill"
         }
       ],
       "points": 120,
@@ -13835,17 +12434,7 @@
           "name": "Reinforced Cover"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 Wounds Remaining"
         },
         {
           "name": "Roof Access"
@@ -13969,62 +12558,10 @@
       ],
       "abilities": [
         {
-          "name": "Glutton for Punishment",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-below-starting-strength"
-                },
-                {
-                  "type": "unit-below-half-strength"
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "operation": "add",
-                    "value": 1
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Glutton for Punishment"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-4 wounds remaining"
         }
       ],
       "points": 120,
@@ -14265,28 +12802,7 @@
       ],
       "abilities": [
         {
-          "name": "Terrifying Crescendo",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "shooting"
-              }
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "defender",
-              "modifier": {
-                "ability_id": "post-attack-debuff"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Terrifying Crescendo"
         }
       ],
       "points": 145,
@@ -14485,17 +13001,7 @@
           "name": "Reinforced Cover"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         }
       ],
       "points": 225,
@@ -14811,17 +13317,7 @@
           "name": "Battlements"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-6 Wounds Remaining"
         }
       ],
       "points": 220,
@@ -15196,17 +13692,7 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-20 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-20 wounds remaining"
         },
         {
           "name": "God-machine"
@@ -15694,44 +14180,10 @@
           "name": "No Prey Can Evade"
         },
         {
-          "name": "Monarch of the Hunt",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "subset": "all-failures",
-                  "weapon_type": "melee"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "subset": "all-failures",
-                  "weapon_type": "melee"
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis"
+          "name": "Monarch of the Hunt"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-7 wounds remaining"
         }
       ],
       "points": 315,
@@ -15954,87 +14406,10 @@
           "name": "Leader"
         },
         {
-          "name": "Warped Interference (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "shooting"
-                  }
-                },
-                {
-                  "type": "is-attached"
-                }
-              ]
-            },
-            "effect": {
-              "type": "ability-grant",
-              "target": "unit",
-              "modifier": {
-                "ability_id": "benefit-of-cover"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Warped Interference (Psychic)"
         },
         {
-          "name": "Wracking Agonies (Psychic)",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "after-unit-resolves-attacks"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "INFANTRY"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "defender",
-                  "modifier": {
-                    "stat": "M",
-                    "operation": "subtract",
-                    "value": 2
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "defender",
-                  "modifier": {
-                    "roll": "charge",
-                    "operation": "subtract",
-                    "value": 2
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          },
-          "effectSource": "40kdc"
+          "name": "Wracking Agonies (Psychic)"
         }
       ],
       "points": 55,
@@ -16155,32 +14530,7 @@
       ],
       "abilities": [
         {
-          "name": "Threat Level Rising",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "operation": "add",
-                  "value": 1
-                }
-              },
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "operation": "add",
-                  "value": 1
-                }
-              }
-            ]
-          },
-          "effectSource": "analysis",
-          "conditional": true
+          "name": "Threat Level Rising"
         }
       ],
       "points": 35,
@@ -16535,43 +14885,10 @@
       ],
       "abilities": [
         {
-          "name": "Objective Defiled",
-          "effect": {
-            "type": "objective-control-modifier",
-            "target": "unit",
-            "modifier": {
-              "sticky": true
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Objective Defiled"
         },
         {
-          "name": "Icon of Excess",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "phase-is",
-              "parameters": {
-                "phase": "fight"
-              }
-            },
-            "effect": {
-              "type": "cp-gain",
-              "target": "self",
-              "modifier": {
-                "amount": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Icon of Excess"
         }
       ],
       "points": 80,
@@ -16823,18 +15140,7 @@
       ],
       "abilities": [
         {
-          "name": "Automated Defences",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "add",
-              "value": 1,
-              "weapon_type": "ranged"
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Automated Defences"
         },
         {
           "name": "Reinforced Cover"
@@ -17032,17 +15338,7 @@
           "name": "Vortex"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-10 Wounds Remaining"
         },
         {
           "name": "Roof Access"
@@ -17459,54 +15755,10 @@
       ],
       "abilities": [
         {
-          "name": "Brigand",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "phase-is",
-                  "parameters": {
-                    "phase": "shooting"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "A"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keywords": [
-                  "Ignores Cover"
-                ]
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Brigand"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -17702,51 +15954,10 @@
       ],
       "abilities": [
         {
-          "name": "Executioner",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "and",
-              "operands": [
-                {
-                  "type": "unit-below-half-strength"
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "A"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "roll-modifier",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Executioner"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -17950,53 +16161,10 @@
       ],
       "abilities": [
         {
-          "name": "Huntsman",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "or",
-              "operands": [
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "MONSTER"
-                  }
-                },
-                {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "VEHICLE"
-                  }
-                }
-              ]
-            },
-            "effect": {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "subset": "all-failures"
-              }
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Huntsman"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -18192,33 +16360,10 @@
       ],
       "abilities": [
         {
-          "name": "Karnivore",
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "charge",
-              "subset": "all-failures"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Karnivore"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -18469,32 +16614,10 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols",
-          "effect": {
-            "type": "cp-refund",
-            "target": "self",
-            "modifier": {
-              "stratagem": "fire-overwatch-or-heroic"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Protection Protocols"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -18792,34 +16915,10 @@
       ],
       "abilities": [
         {
-          "name": "Stalker",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "permanent"
-          },
-          "effectSource": "40kdc"
+          "name": "Stalker"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-5 wounds remaining"
         },
         {
           "name": "*Invulnerable Save"
@@ -19166,30 +17265,10 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-26 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-26 wounds remaining"
         },
         {
-          "name": "Titanic Fire Support",
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Titanic Fire Support"
         },
         {
           "name": "Striding Colossus"
@@ -19491,17 +17570,7 @@
           "name": "Flank Speed"
         },
         {
-          "name": "Damaged: 1-13 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-13 wounds remaining"
         },
         {
           "name": "Striding Colossus"
@@ -19872,17 +17941,7 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-33 wounds remaining",
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "subtract",
-              "value": 1
-            }
-          },
-          "effectSource": "analysis"
+          "name": "Damaged: 1-33 wounds remaining"
         },
         {
           "name": "Wrath of the Omnissiah"
@@ -20064,33 +18123,7 @@
       "rules": [
         {
           "id": "daemonic-empowerment",
-          "name": "Daemonic Empowerment",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "unit-within-range-of",
-              "parameters": {
-                "range": 6,
-                "target_type": "friendly-keyword",
-                "keyword": "LEGIONS OF EXCESS"
-              }
-            },
-            "effect": {
-              "type": "keyword-grant",
-              "target": "unit",
-              "modifier": {
-                "keyword": "Sustained Hits",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "permanent",
-            "applies_to": [
-              "EMPEROR'S CHILDREN"
-            ]
-          }
+          "name": "Daemonic Empowerment"
         }
       ],
       "enhancements": [
@@ -20107,18 +18140,7 @@
               "Infantry"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "invulnerable-save",
-            "target": "bearer",
-            "modifier": {
-              "invuln_sv": 3
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "phase"
-          }
+          "excludes": []
         },
         {
           "id": "empyric-suffusion",
@@ -20132,18 +18154,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "cp-refund",
-            "target": "unit",
-            "modifier": {
-              "amount": 1
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "possessed-blade",
@@ -20157,33 +18168,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "bearer",
-                "modifier": {
-                  "stat": "A",
-                  "operation": "add",
-                  "value": 1,
-                  "weapon_type": "melee"
-                }
-              },
-              {
-                "type": "ability-grant",
-                "target": "bearer",
-                "modifier": {
-                  "grant_type": "empower-possessed-blade"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "warp-walker",
@@ -20200,28 +18185,7 @@
               "Keeper of Secrets"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "ability-grant",
-                "target": "unit",
-                "modifier": {
-                  "grant_type": "advance-6-instead-of-roll"
-                }
-              },
-              {
-                "type": "engagement-passthrough",
-                "target": "unit",
-                "modifier": {}
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         }
       ]
     },
@@ -20235,100 +18199,7 @@
       "rules": [
         {
           "id": "pledges-to-the-dark-prince",
-          "name": "Pledges to the Dark Prince",
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "conditional",
-                "condition": {
-                  "operator": "and",
-                  "operands": [
-                    {
-                      "type": "timing-is",
-                      "parameters": {
-                        "timing": "start-of-battle-round"
-                      }
-                    },
-                    {
-                      "type": "unit-has-keyword",
-                      "parameters": {
-                        "keyword": "WARLORD"
-                      }
-                    }
-                  ]
-                },
-                "effect": {
-                  "type": "resource-gain",
-                  "target": "self",
-                  "modifier": {
-                    "pool_id": "pact-pledge",
-                    "amount": "variable"
-                  }
-                }
-              },
-              {
-                "type": "conditional",
-                "condition": {
-                  "type": "timing-is",
-                  "parameters": {
-                    "timing": "end-of-battle-round"
-                  }
-                },
-                "effect": {
-                  "type": "sequence",
-                  "steps": [
-                    {
-                      "type": "conditional",
-                      "condition": {
-                        "type": "units-destroyed-comparison",
-                        "parameters": {
-                          "side": "enemy",
-                          "window": "battle-round",
-                          "comparison": "greater-or-equal"
-                        }
-                      },
-                      "effect": {
-                        "type": "resource-gain",
-                        "target": "self",
-                        "modifier": {
-                          "pool_id": "pact-points-pool",
-                          "amount": "variable"
-                        }
-                      }
-                    },
-                    {
-                      "type": "conditional",
-                      "condition": {
-                        "operator": "not",
-                        "operands": [
-                          {
-                            "type": "units-destroyed-comparison",
-                            "parameters": {
-                              "side": "enemy",
-                              "window": "battle-round",
-                              "comparison": "greater-or-equal"
-                            }
-                          }
-                        ]
-                      },
-                      "effect": {
-                        "type": "mortal-wounds",
-                        "target": "bearer",
-                        "modifier": {
-                          "dice": "D3"
-                        }
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle-round"
-          }
+          "name": "Pledges to the Dark Prince"
         }
       ],
       "enhancements": [
@@ -20344,40 +18215,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "model-is-leader"
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "stat-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "stat": "Ld",
-                    "operation": "add",
-                    "value": -1
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "stat": "OC",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "pledge-of-eternal-servitude",
@@ -20391,22 +18229,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "resurrection",
-            "target": "self",
-            "modifier": {
-              "count": 1,
-              "trigger": "first-destruction",
-              "timing": "end-of-phase",
-              "wounds_remaining": "D6",
-              "placement": "closest-to-destruction"
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "pledge-of-mortal-pain",
@@ -20420,31 +18243,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "designate-target",
-            "designation": "pledge-of-mortal-pain",
-            "select": {
-              "scope": "enemy-unit",
-              "count": 1,
-              "within_inches": 12
-            },
-            "applies": {
-              "to": "target",
-              "effect": {
-                "type": "ability-grant",
-                "target": "unit",
-                "modifier": {
-                  "grant_type": "leadership-test-or-3-mortal-wounds"
-                }
-              }
-            },
-            "duration": "phase"
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          }
+          "excludes": []
         },
         {
           "id": "pledge-of-unholy-fortune",
@@ -20458,18 +18257,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "ability-grant",
-            "target": "bearer",
-            "modifier": {
-              "grant_type": "treat-roll-as-unmodified-6"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          }
+          "excludes": []
         }
       ]
     },
@@ -20483,71 +18271,11 @@
       "rules": [
         {
           "id": "sensational-performance",
-          "name": "Sensational Performance",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "charged-this-turn"
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "attack-restriction",
-                  "target": "self",
-                  "modifier": {
-                    "restriction": "cannot-target-unit-in-engagement-range-at-turn-start"
-                  }
-                },
-                {
-                  "type": "attack-restriction",
-                  "target": "self",
-                  "modifier": {
-                    "restriction": "cannot-target-unit-already-attacked-this-phase"
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "self",
-                  "modifier": {
-                    "stat": "S",
-                    "operation": "add",
-                    "value": 1,
-                    "attack_type": "melee"
-                  }
-                },
-                {
-                  "type": "stat-modifier",
-                  "target": "self",
-                  "modifier": {
-                    "stat": "AP",
-                    "operation": "add",
-                    "value": 1,
-                    "attack_type": "melee"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "phase"
-          }
+          "name": "Sensational Performance"
         },
         {
           "id": "master-of-the-pageant",
-          "name": "Master of the Pageant",
-          "effect": {
-            "type": "cp-refund",
-            "target": "unit",
-            "modifier": {
-              "amount": 1
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "permanent"
-          }
+          "name": "Master of the Pageant"
         }
       ],
       "enhancements": [
@@ -20566,20 +18294,7 @@
           "excludes": [],
           "leaderTo": [
             "Flawless Blades"
-          ],
-          "effect": {
-            "type": "stat-modifier",
-            "target": "bearer",
-            "modifier": {
-              "stat": "M",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          }
+          ]
         },
         {
           "id": "soulstain-made-manifest",
@@ -20593,31 +18308,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "ability-grant",
-                "target": "enemy-within-aura",
-                "modifier": {
-                  "grant_type": "battle-shock-test"
-                }
-              },
-              {
-                "type": "bs-modifier",
-                "target": "enemy-within-aura",
-                "modifier": {
-                  "operation": "subtract",
-                  "value": 1
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "engagement-range",
-            "duration": "phase"
-          }
+          "excludes": []
         },
         {
           "id": "spiritsliver",
@@ -20632,36 +18323,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "bearer",
-                "modifier": {
-                  "stat": "S",
-                  "operation": "add",
-                  "value": 1,
-                  "weapon_type": "melee"
-                }
-              },
-              {
-                "type": "stat-modifier",
-                "target": "bearer",
-                "modifier": {
-                  "stat": "A",
-                  "operation": "add",
-                  "value": 1,
-                  "weapon_type": "melee"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "tears-of-the-phoenix",
@@ -20675,34 +18337,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "hit",
-                  "operation": "ignore-modifiers",
-                  "attack_type": "melee"
-                }
-              },
-              {
-                "type": "roll-modifier",
-                "target": "unit",
-                "modifier": {
-                  "roll": "wound",
-                  "operation": "ignore-modifiers",
-                  "attack_type": "melee"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         }
       ]
     },
@@ -20716,28 +18351,7 @@
       "rules": [
         {
           "id": "eager-to-kill",
-          "name": "Eager to Kill",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "timing-is",
-              "parameters": {
-                "timing": "unit-set-up"
-              }
-            },
-            "effect": {
-              "type": "charge-roll-modifier",
-              "target": "unit",
-              "modifier": {
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "turn"
-          }
+          "name": "Eager to Kill"
         }
       ],
       "enhancements": [
@@ -20754,32 +18368,7 @@
               "Lord Kakophonist"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "deep-strike",
-                "target": "bearer",
-                "modifier": {}
-              },
-              {
-                "type": "keyword-grant",
-                "target": "bearer",
-                "modifier": {
-                  "keywords": [
-                    "Ignores Cover"
-                  ],
-                  "scope": "weapon",
-                  "attack_type": "ranged"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "self",
-            "duration": "permanent"
-          }
+          "excludes": []
         },
         {
           "id": "frenzied-ferocity",
@@ -20794,21 +18383,7 @@
               "Terminator Squad"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "keyword-grant",
-            "target": "bearer",
-            "modifier": {
-              "keywords": [
-                "Sustained Hits 1"
-              ],
-              "scope": "weapon"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          }
+          "excludes": []
         }
       ]
     },
@@ -20822,29 +18397,7 @@
       "rules": [
         {
           "id": "frantic-focus",
-          "name": "Frantic Focus",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "advanced-this-turn",
-              "parameters": {
-                "move": "advance-or-fall-back"
-              }
-            },
-            "effect": {
-              "type": "stat-modifier",
-              "target": "all-friendly",
-              "modifier": {
-                "stat": "S",
-                "operation": "add",
-                "value": 1
-              }
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "turn"
-          }
+          "name": "Frantic Focus"
         }
       ],
       "enhancements": [
@@ -20861,21 +18414,7 @@
               "Lord Exultant"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "stat-modifier",
-            "target": "bearer",
-            "modifier": {
-              "stat": "S",
-              "operation": "add",
-              "value": 1,
-              "attack_type": "melee"
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "permanent"
-          }
+          "excludes": []
         },
         {
           "id": "howling-plate",
@@ -20890,21 +18429,7 @@
               "Lord Exultant"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "improve",
-              "value": 1,
-              "attack_type": "ranged"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          }
+          "excludes": []
         }
       ]
     },
@@ -20918,18 +18443,7 @@
       "rules": [
         {
           "id": "quicksilver-grace",
-          "name": "Quicksilver Grace",
-          "effect": {
-            "type": "ability-grant",
-            "target": "self",
-            "modifier": {
-              "grant_type": "re-roll-advance"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "name": "Quicksilver Grace"
         }
       ],
       "enhancements": [
@@ -20945,23 +18459,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "subtract",
-              "value": 1,
-              "incoming": true,
-              "attack_type": "melee",
-              "applies_when": "attacker-strength-greater-than-target-toughness"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "loathsome-dexterity",
@@ -20975,16 +18473,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "engagement-passthrough",
-            "target": "unit",
-            "modifier": {}
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "steeped-in-suffering",
@@ -20998,52 +18487,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "conditional",
-                "condition": {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "below-starting-strength"
-                  }
-                },
-                "effect": {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              },
-              {
-                "type": "conditional",
-                "condition": {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "below-half-strength"
-                  }
-                },
-                "effect": {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "operation": "add",
-                    "value": 1
-                  }
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "tactical-perfection",
@@ -21057,31 +18501,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "movement-modifier",
-                "target": "unit",
-                "modifier": {
-                  "move_type": "redeploy",
-                  "to_reserves": true
-                }
-              },
-              {
-                "type": "ability-grant",
-                "target": "unit",
-                "modifier": {
-                  "grant_type": "reserves-limit-exempt"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "battle"
-          }
+          "excludes": []
         }
       ]
     },
@@ -21095,44 +18515,7 @@
       "rules": [
         {
           "id": "exquisite-swordsmanship",
-          "name": "Exquisite Swordsmanship",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "charged-this-turn",
-              "parameters": {}
-            },
-            "effect": {
-              "type": "choice",
-              "options": [
-                {
-                  "type": "keyword-grant",
-                  "target": "self",
-                  "modifier": {
-                    "keywords": [
-                      "Lethal Hits"
-                    ],
-                    "weapon_type": "melee"
-                  }
-                },
-                {
-                  "type": "keyword-grant",
-                  "target": "self",
-                  "modifier": {
-                    "keywords": [
-                      "Sustained Hits 1"
-                    ],
-                    "weapon_type": "melee"
-                  }
-                }
-              ],
-              "choice_label": "exquisite-swordsmanship-keyword"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          }
+          "name": "Exquisite Swordsmanship"
         }
       ],
       "enhancements": [
@@ -21148,16 +18531,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "fight-first",
-            "target": "unit",
-            "modifier": {}
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "phase"
-          }
+          "excludes": []
         },
         {
           "id": "distortion",
@@ -21171,36 +18545,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "stat-modifier",
-                "target": "bearer",
-                "modifier": {
-                  "stat": "A",
-                  "operation": "add",
-                  "value": 1,
-                  "weapon_type": "melee"
-                }
-              },
-              {
-                "type": "stat-modifier",
-                "target": "bearer",
-                "modifier": {
-                  "stat": "D",
-                  "operation": "add",
-                  "value": 1,
-                  "weapon_type": "melee"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "faultless-opportunist",
@@ -21214,30 +18559,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "cp-refund",
-                "target": "unit",
-                "modifier": {
-                  "amount": 1
-                }
-              },
-              {
-                "type": "ability-grant",
-                "target": "unit",
-                "modifier": {
-                  "grant_type": "heroic-intervention-limit-exempt"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "rise-to-the-challenge",
@@ -21252,18 +18574,7 @@
               "Infantry"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "ability-grant",
-            "target": "bearer",
-            "modifier": {
-              "grant_type": "fight-one-additional-time"
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "phase"
-          }
+          "excludes": []
         }
       ]
     },
@@ -21277,53 +18588,7 @@
       "rules": [
         {
           "id": "mechanised-murder",
-          "name": "Mechanised Murder",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "operator": "or",
-              "operands": [
-                {
-                  "type": "unit-has-keyword",
-                  "parameters": {
-                    "keyword": "TRANSPORT"
-                  }
-                },
-                {
-                  "type": "disembarked-from-transport",
-                  "parameters": {}
-                }
-              ]
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "hit",
-                    "subset": "ones"
-                  }
-                },
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "subset": "ones"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "permanent",
-            "applies_to": [
-              "EMPEROR'S CHILDREN"
-            ]
-          }
+          "name": "Mechanised Murder"
         }
       ],
       "enhancements": [
@@ -21340,18 +18605,7 @@
               "Infantry"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "ability-grant",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "grant_type": "embark-after-enemy-shooting"
-            }
-          },
-          "scope": {
-            "range": "aura-9",
-            "duration": "phase"
-          }
+          "excludes": []
         },
         {
           "id": "heretek-adept",
@@ -21366,18 +18620,7 @@
               "Infantry"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "damage-reduction",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "reduction": "to-zero"
-            }
-          },
-          "scope": {
-            "range": "aura-6",
-            "duration": "phase"
-          }
+          "excludes": []
         },
         {
           "id": "spearhead-striker",
@@ -21392,38 +18635,7 @@
               "Infantry"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "disembarked-from-transport",
-              "parameters": {}
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "charge",
-                    "result_scope": "any-result"
-                  }
-                },
-                {
-                  "type": "ability-grant",
-                  "target": "unit",
-                  "modifier": {
-                    "grant_type": "cannot-be-targeted-by-fire-overwatch"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "turn"
-          }
+          "excludes": []
         },
         {
           "id": "sublime-prescience",
@@ -21438,18 +18650,7 @@
               "Infantry"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "grant_type": "treat-battle-round-one-higher-for-reserves"
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "phase"
-          }
+          "excludes": []
         }
       ]
     },
@@ -21463,59 +18664,7 @@
       "rules": [
         {
           "id": "internal-rivalries",
-          "name": "Internal Rivalries",
-          "effect": {
-            "type": "conditional",
-            "condition": {
-              "type": "unit-has-keyword",
-              "parameters": {
-                "keyword": "CHARACTER"
-              }
-            },
-            "effect": {
-              "type": "sequence",
-              "steps": [
-                {
-                  "type": "modifier-immunity",
-                  "target": "unit",
-                  "modifier": {
-                    "scope": "characteristics"
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "advance",
-                    "operation": "ignore-modifiers"
-                  }
-                },
-                {
-                  "type": "roll-modifier",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "charge",
-                    "operation": "ignore-modifiers"
-                  }
-                },
-                {
-                  "type": "re-roll",
-                  "target": "unit",
-                  "modifier": {
-                    "roll": "wound",
-                    "subset": "all-failures"
-                  }
-                }
-              ]
-            }
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "permanent",
-            "applies_to": [
-              "EMPEROR'S CHILDREN"
-            ]
-          }
+          "name": "Internal Rivalries"
         }
       ],
       "enhancements": [
@@ -21531,19 +18680,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "charge",
-              "result_scope": "any-result"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "proud-and-vainglorious",
@@ -21557,32 +18694,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "battle-shock",
-                  "result_scope": "any-result"
-                }
-              },
-              {
-                "type": "re-roll",
-                "target": "unit",
-                "modifier": {
-                  "roll": "leadership",
-                  "result_scope": "any-result"
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "repulsed-by-weakness",
@@ -21596,18 +18708,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "grant_type": "desperate-escape-tests-on-fall-back"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "battle"
-          }
+          "excludes": []
         },
         {
           "id": "slayer-of-champions",
@@ -21621,60 +18722,7 @@
               "Emperor’s Children"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "sequence",
-            "steps": [
-              {
-                "type": "keyword-grant",
-                "target": "bearer",
-                "modifier": {
-                  "keywords": [
-                    "Precision"
-                  ],
-                  "weapon_type": "melee"
-                }
-              },
-              {
-                "type": "conditional",
-                "condition": {
-                  "type": "target-has-keyword",
-                  "parameters": {
-                    "keyword": "CHARACTER"
-                  }
-                },
-                "effect": {
-                  "type": "sequence",
-                  "steps": [
-                    {
-                      "type": "stat-modifier",
-                      "target": "bearer",
-                      "modifier": {
-                        "stat": "S",
-                        "operation": "add",
-                        "value": 1,
-                        "weapon_type": "melee"
-                      }
-                    },
-                    {
-                      "type": "stat-modifier",
-                      "target": "bearer",
-                      "modifier": {
-                        "stat": "AP",
-                        "operation": "add",
-                        "value": -1,
-                        "weapon_type": "melee"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          "scope": {
-            "range": "self",
-            "duration": "battle"
-          }
+          "excludes": []
         }
       ]
     },
@@ -21688,16 +18736,7 @@
       "rules": [
         {
           "id": "entitled-to-victory",
-          "name": "Entitled to Victory",
-          "effect": {
-            "type": "fight-first",
-            "target": "all-friendly",
-            "modifier": {}
-          },
-          "scope": {
-            "range": "any-on-battlefield",
-            "duration": "battle"
-          }
+          "name": "Entitled to Victory"
         }
       ],
       "enhancements": [
@@ -21714,19 +18753,7 @@
               "Flawless Blades"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "attack-restriction",
-            "target": "bearer",
-            "modifier": {
-              "restriction": "cannot-be-targeted",
-              "by": "all-enemy"
-            }
-          },
-          "scope": {
-            "range": "unit",
-            "duration": "permanent"
-          }
+          "excludes": []
         },
         {
           "id": "eager-patrons",
@@ -21741,21 +18768,7 @@
               "Flawless Blades"
             ]
           ],
-          "excludes": [],
-          "effect": {
-            "type": "stat-modifier",
-            "target": "bearer",
-            "modifier": {
-              "stat": "M",
-              "operation": "add",
-              "value": 2,
-              "unit": "inches"
-            }
-          },
-          "scope": {
-            "range": "self",
-            "duration": "permanent"
-          }
+          "excludes": []
         }
       ]
     }
@@ -21778,17 +18791,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "remain-hidden-after-shooting"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -21809,17 +18811,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "objective-control-modifier",
-        "target": "unit",
-        "modifier": {
-          "sticky": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "battle"
       }
     },
     {
@@ -21839,21 +18830,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "all-enemy",
-        "modifier": {
-          "grant_type": "detection-range-modifier",
-          "value": 6,
-          "unit": "inches",
-          "target_scope": "one-visible-enemy",
-          "range_inches": 12
-        }
-      },
-      "scope": {
-        "range": "any-visible",
-        "duration": "turn"
       }
     },
     {
@@ -21874,20 +18850,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "stat-modifier",
-        "target": "unit",
-        "modifier": {
-          "stat": "AP",
-          "operation": "add",
-          "value": 1,
-          "incoming": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -21908,33 +18870,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "conditional",
-        "condition": {
-          "operator": "not",
-          "operands": [
-            {
-              "type": "has-fought-this-phase",
-              "parameters": {}
-            }
-          ]
-        },
-        "effect": {
-          "type": "dice-gated",
-          "dice": "D6",
-          "threshold": 4,
-          "comparison": "gte",
-          "on_success": {
-            "type": "fight-on-death",
-            "target": "unit",
-            "modifier": {}
-          }
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -21954,20 +18889,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "roll-modifier",
-        "target": "unit",
-        "modifier": {
-          "roll": "hit",
-          "operation": "subtract",
-          "value": 1,
-          "incoming": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -21987,18 +18908,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "surge",
-          "distance": "D6"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22018,17 +18927,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "charge-after-disembark"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22048,33 +18946,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "S",
-              "operation": "add",
-              "value": 1
-            }
-          },
-          {
-            "type": "stat-modifier",
-            "target": "unit",
-            "modifier": {
-              "stat": "AP",
-              "operation": "add",
-              "value": -1
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22095,20 +18966,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "roll-modifier",
-        "target": "unit",
-        "modifier": {
-          "roll": "wound",
-          "operation": "subtract",
-          "value": 1,
-          "incoming": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22129,21 +18986,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "roll-modifier",
-        "target": "unit",
-        "modifier": {
-          "roll": "wound",
-          "operation": "subtract",
-          "value": 1,
-          "incoming": true,
-          "applies_when": "attacker-strength-greater-than-target-toughness"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22163,20 +19005,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "stat-modifier",
-        "target": "unit",
-        "modifier": {
-          "stat": "AP",
-          "operation": "add",
-          "value": -1,
-          "weapon_type": "melee"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22196,18 +19024,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "redeploy",
-          "to_reserves": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22227,17 +19043,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "reactive-charge"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22257,30 +19062,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "redeploy",
-              "to_reserves": true
-            }
-          },
-          {
-            "type": "deep-strike",
-            "target": "unit",
-            "modifier": {
-              "min_distance": 6
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "battle"
       }
     },
     {
@@ -22301,18 +19082,6 @@
           "Beasts",
           "Vehicle"
         ]
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "reactive",
-          "distance": 6
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22332,27 +19101,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "conditional",
-        "condition": {
-          "operator": "not",
-          "operands": [
-            {
-              "type": "has-fought-this-phase",
-              "parameters": {}
-            }
-          ]
-        },
-        "effect": {
-          "type": "fight-on-death",
-          "target": "unit",
-          "modifier": {}
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22372,20 +19120,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "roll-modifier",
-        "target": "unit",
-        "modifier": {
-          "roll": "hit",
-          "operation": "subtract",
-          "value": 1,
-          "incoming": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22406,21 +19140,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "roll-modifier",
-        "target": "unit",
-        "modifier": {
-          "roll": "wound",
-          "operation": "subtract",
-          "value": 1,
-          "incoming": true,
-          "applies_when": "attacker-strength-greater-than-target-toughness"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22441,20 +19160,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "keyword-grant",
-        "target": "unit",
-        "modifier": {
-          "keywords": [
-            "Sustained Hits 1"
-          ],
-          "weapon_type": "melee"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22475,30 +19180,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "ability-grant",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "grant_type": "battle-shock-test"
-            }
-          },
-          {
-            "type": "bs-modifier",
-            "target": "enemy-within-aura",
-            "modifier": {
-              "operation": "subtract",
-              "value": 1
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "aura-6",
-        "duration": "phase"
       }
     },
     {
@@ -22519,15 +19200,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "engagement-passthrough",
-        "target": "unit",
-        "modifier": {}
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22547,17 +19219,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "reactive-charge"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22578,17 +19239,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "engaged-enemies-must-target-this-unit"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22609,25 +19259,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "aura",
-        "target": "friendly-within-aura",
-        "modifier": {
-          "range": 6,
-          "effect": {
-            "type": "re-roll",
-            "target": "unit",
-            "modifier": {
-              "roll": "charge",
-              "result_scope": "any-result"
-            }
-          }
-        }
-      },
-      "scope": {
-        "range": "aura-6",
-        "duration": "phase"
       }
     },
     {
@@ -22648,28 +19279,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "conditional",
-        "condition": {
-          "type": "unit-has-keyword",
-          "parameters": {
-            "keyword": "CHARACTER"
-          }
-        },
-        "effect": {
-          "type": "stat-modifier",
-          "target": "all-friendly",
-          "modifier": {
-            "stat": "S",
-            "operation": "add",
-            "value": 1
-          }
-        }
-      },
-      "scope": {
-        "range": "any-on-battlefield",
-        "duration": "phase"
       }
     },
     {
@@ -22688,21 +19297,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "keyword-grant",
-        "target": "unit",
-        "modifier": {
-          "keywords": [
-            "Precision"
-          ],
-          "scope": "weapon",
-          "attack_type": "melee"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22723,17 +19317,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "advance-6-instead-of-roll"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22753,18 +19336,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "consolidation",
-          "distance": 6
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22783,18 +19354,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "normal",
-          "distance": "D3+3"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22814,18 +19373,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "re-roll",
-        "target": "unit",
-        "modifier": {
-          "roll": "hit",
-          "result_scope": "any-result"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22845,17 +19392,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "embark-after-fight"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22876,18 +19412,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "redeploy",
-          "to_reserves": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22908,21 +19432,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "stat-modifier",
-        "target": "unit",
-        "modifier": {
-          "stat": "AP",
-          "operation": "worsen",
-          "value": 1,
-          "incoming": true,
-          "until": "attacker-has-attacked"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22942,40 +19451,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "conditional",
-        "condition": {
-          "type": "target-has-keyword",
-          "parameters": {
-            "keyword": "CHARACTER"
-          }
-        },
-        "effect": {
-          "type": "sequence",
-          "steps": [
-            {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "hit",
-                "result_scope": "any-result"
-              }
-            },
-            {
-              "type": "re-roll",
-              "target": "unit",
-              "modifier": {
-                "roll": "wound",
-                "result_scope": "any-result"
-              }
-            }
-          ]
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -22999,30 +19474,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "feel-no-pain",
-            "target": "unit",
-            "modifier": {
-              "threshold": 6
-            }
-          },
-          {
-            "type": "feel-no-pain",
-            "target": "unit",
-            "modifier": {
-              "threshold": 4,
-              "scope": "mortal"
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23043,19 +19494,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "stat-modifier",
-        "target": "unit",
-        "modifier": {
-          "stat": "S",
-          "operation": "add",
-          "value": 2
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23076,15 +19514,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "disembark",
-        "target": "unit",
-        "modifier": {}
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23105,18 +19534,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "re-roll",
-        "target": "unit",
-        "modifier": {
-          "roll": "charge",
-          "result_scope": "any-result"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23135,21 +19552,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "move-through-models",
-          "excludes": [
-            "Monster",
-            "Vehicle"
-          ]
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23171,24 +19573,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "passthrough": [
-            "all-terrain"
-          ],
-          "applies_to_moves": [
-            "normal",
-            "advance",
-            "charge"
-          ]
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23208,31 +19592,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "choice",
-        "choice_label": "Sustained by Agony",
-        "options": [
-          {
-            "type": "heal-wounds",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "amount": 3
-            }
-          },
-          {
-            "type": "ability-grant",
-            "target": "friendly-within-aura",
-            "modifier": {
-              "grant_type": "return-destroyed-models",
-              "amount": "D3+3"
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "aura-6",
-        "duration": "phase"
       }
     },
     {
@@ -23252,29 +19611,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "ability_id": "charge-after-advance"
-            }
-          },
-          {
-            "type": "ability-grant",
-            "target": "unit",
-            "modifier": {
-              "ability_id": "charge-after-fallback"
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23294,17 +19630,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "enemy-within-aura",
-        "modifier": {
-          "grant_type": "battle-shock-test"
-        }
-      },
-      "scope": {
-        "range": "aura-6",
-        "duration": "phase"
       }
     },
     {
@@ -23325,18 +19650,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "resource-gain",
-        "target": "self",
-        "modifier": {
-          "pool_id": "pact-pledge",
-          "amount": 1
-        }
-      },
-      "scope": {
-        "range": "self",
-        "duration": "phase"
       }
     },
     {
@@ -23356,20 +19669,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "roll-modifier",
-        "target": "unit",
-        "modifier": {
-          "roll": "hit",
-          "operation": "subtract",
-          "value": 1,
-          "incoming": true
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23389,31 +19688,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "hit",
-              "operation": "ignore-modifiers"
-            }
-          },
-          {
-            "type": "roll-modifier",
-            "target": "unit",
-            "modifier": {
-              "roll": "wound",
-              "operation": "ignore-modifiers"
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "turn"
       }
     },
     {
@@ -23434,18 +19708,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "movement-modifier",
-        "target": "unit",
-        "modifier": {
-          "move_type": "surge",
-          "distance": "D6"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23465,31 +19727,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "sequence",
-        "steps": [
-          {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "pile-in",
-              "distance": 6
-            }
-          },
-          {
-            "type": "movement-modifier",
-            "target": "unit",
-            "modifier": {
-              "move_type": "consolidation",
-              "distance": 6
-            }
-          }
-        ]
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23509,20 +19746,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "keyword-grant",
-        "target": "unit",
-        "modifier": {
-          "keywords": [
-            "Sustained Hits 1"
-          ],
-          "weapon_type": "melee"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     },
     {
@@ -23542,17 +19765,6 @@
         ],
         "anyOf": [],
         "noneOf": []
-      },
-      "effect": {
-        "type": "ability-grant",
-        "target": "unit",
-        "modifier": {
-          "grant_type": "place-in-strategic-reserves"
-        }
-      },
-      "scope": {
-        "range": "unit",
-        "duration": "phase"
       }
     }
   ]
