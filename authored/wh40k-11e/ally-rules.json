@@ -1,0 +1,89 @@
+[
+  {
+    "id": "assigned-agents",
+    "name": "Assigned Agents",
+    "exceptArmies": ["agents-of-the-imperium"],
+    "requires": ["Imperium"],
+    "admits": { "factionKeywords": ["Agents of the Imperium"] },
+    "limits": [
+      { "battleSize": 1000, "units": [{ "keyword": "Retinue", "max": 1 }, { "keyword": "Character", "max": 1 }, { "keyword": "Requisitioned", "max": 1 }] },
+      { "battleSize": 2000, "units": [{ "keyword": "Retinue", "max": 2 }, { "keyword": "Character", "max": 2 }, { "keyword": "Requisitioned", "max": 1 }] },
+      { "battleSize": 3000, "units": [{ "keyword": "Retinue", "max": 3 }, { "keyword": "Character", "max": 3 }, { "keyword": "Requisitioned", "max": 2 }] }
+    ],
+    "assignedCost": true,
+    "transportReminder": true,
+    "reason": "Army Rule of the Agents of the Imperium: any Imperium army may include Agents, at the cost the Munitorum Field Manual lists under “Every Model Has The Imperium Keyword”, up to a number of Retinue, Character and Requisitioned units set by the battle size; a Dedicated Transport must start the battle with a unit embarked."
+  },
+  {
+    "id": "corsairs-and-travelling-players",
+    "name": "Corsairs and Travelling Players",
+    "armies": ["drukhari"],
+    "admits": { "factionKeywords": ["Harlequins"], "keywords": ["Anhrathe"] },
+    "limits": [
+      { "battleSize": 1000, "points": 250 },
+      { "battleSize": 2000, "points": 500 },
+      { "battleSize": 3000, "points": 750 }
+    ],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "reason": "Army Rule of the Drukhari (errata): Harlequins and Anhrathe units up to a points total set by the battle size, never the Warlord and without Enhancements. BSData lists them in the codex itself."
+  },
+  {
+    "id": "cult-of-the-dark-gods",
+    "name": "Cult of the Dark Gods",
+    "armies": ["chaos-space-marines"],
+    "admits": { "units": ["Khorne Berzerkers", "Rubric Marines", "Plague Marines", "Noise Marines"] },
+    "limits": [
+      { "battleSize": 1000, "points": 250 },
+      { "battleSize": 2000, "points": 500 },
+      { "battleSize": 3000, "points": 750 }
+    ],
+    "reason": "Army Rule of the Chaos Space Marines: Khorne Berzerkers, Rubric Marines, Plague Marines and Noise Marines, up to a points total set by the battle size. BSData already copies them into the codex with the Heretic Astartes faction keyword, so they are named here."
+  },
+  {
+    "id": "daemonic-pact",
+    "name": "Daemonic Pact",
+    "armies": ["chaos-space-marines", "chaos-knights"],
+    "requires": ["Chaos Knights", "Heretic Astartes"],
+    "admits": { "factionKeywords": ["Legiones Daemonica"] },
+    "limits": [
+      { "battleSize": 1000, "points": 250 },
+      { "battleSize": 2000, "points": 500 },
+      { "battleSize": 3000, "points": 750 }
+    ],
+    "battlelineRatio": ["Khorne", "Tzeentch", "Nurgle", "Slaanesh"],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "armyRulesInactive": true,
+    "reason": "Army Rule of the Chaos Space Marines and Chaos Knights: Legiones Daemonica units up to a points total set by the battle size, never the Warlord, without Enhancements, no more non-Battleline than Battleline units of each god; per the FAQ, their Shadow of Chaos army rules are not in effect."
+  },
+  {
+    "id": "dreadblades",
+    "name": "Dreadblades",
+    "exceptArmies": ["chaos-knights"],
+    "requires": ["Chaos"],
+    "admits": { "factionKeywords": ["Chaos Knights"] },
+    "modelsOneOf": [{ "keyword": "Titanic", "max": 1 }, { "keyword": "War Dog", "max": 3 }],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "reason": "Army Rule of the Chaos Knights: any Chaos army may include one Titanic Chaos Knights model or up to three War Dog models, never the Warlord and without Enhancements."
+  },
+  {
+    "id": "freeblades",
+    "name": "Freeblades",
+    "exceptArmies": ["imperial-knights"],
+    "requires": ["Imperium"],
+    "admits": { "factionKeywords": ["Imperial Knights"] },
+    "modelsOneOf": [{ "keyword": "Titanic", "max": 1 }, { "keyword": "Armiger", "max": 3 }],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "reason": "Army Rule of the Imperial Knights: any Imperium army may include one Titanic Imperial Knights model or up to three Armiger models, never the Warlord and without Enhancements."
+  },
+  {
+    "id": "harlequins",
+    "name": "Harlequins",
+    "armies": ["craftworlds"],
+    "admits": { "factionKeywords": ["Harlequins"] },
+    "reason": "Army Rule of the Aeldari: a Craftworlds army may include Harlequins units, with no limit; only the badge tells them apart."
+  }
+]

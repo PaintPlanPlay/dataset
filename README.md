@@ -16,7 +16,7 @@ is a point-and-click way to do it, described below.
 | Folder | What it holds |
 |---|---|
 | `corrections/` | one small file per fix, saying what was wrong, what it should be, and why |
-| `authored/` | things no source publishes: battle sizes, the default targets used by the simulator, the sample list, and effects written by this project |
+| `authored/` | things no source publishes: battle sizes, ally rules, the default targets used by the simulator, the sample list, and effects written by this project |
 | `.github/` | the automation: scheduled rebuilds, and the checks that run on every pull request |
 
 Three more appear with the first release, because they are produced by a build
