@@ -1,0 +1,89 @@
+[
+  {
+    "id": "assigned-agents",
+    "name": "Assigned Agents",
+    "exceptArmies": ["agents-of-the-imperium"],
+    "requires": ["Imperium"],
+    "admits": { "factionKeywords": ["Agents of the Imperium"] },
+    "limits": [
+      { "battleSize": 1000, "units": [{ "keyword": "Retinue", "max": 1 }, { "keyword": "Character", "max": 1 }, { "keyword": "Requisitioned", "max": 1 }] },
+      { "battleSize": 2000, "units": [{ "keyword": "Retinue", "max": 2 }, { "keyword": "Character", "max": 2 }, { "keyword": "Requisitioned", "max": 1 }] },
+      { "battleSize": 3000, "units": [{ "keyword": "Retinue", "max": 3 }, { "keyword": "Character", "max": 3 }, { "keyword": "Requisitioned", "max": 2 }] }
+    ],
+    "assignedCost": true,
+    "transportReminder": true,
+    "reason": "Army Rule of the Agents of the Imperium; no source publishes it."
+  },
+  {
+    "id": "corsairs-and-travelling-players",
+    "name": "Corsairs and Travelling Players",
+    "armies": ["drukhari"],
+    "admits": { "factionKeywords": ["Harlequins"], "keywords": ["Anhrathe"] },
+    "limits": [
+      { "battleSize": 1000, "points": 250 },
+      { "battleSize": 2000, "points": 500 },
+      { "battleSize": 3000, "points": 750 }
+    ],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "reason": "Army Rule of the Drukhari (errata); BSData lists these units in the codex itself."
+  },
+  {
+    "id": "cult-of-the-dark-gods",
+    "name": "Cult of the Dark Gods",
+    "armies": ["chaos-space-marines"],
+    "admits": { "units": ["Khorne Berzerkers", "Rubric Marines", "Plague Marines", "Noise Marines"] },
+    "limits": [
+      { "battleSize": 1000, "points": 250 },
+      { "battleSize": 2000, "points": 500 },
+      { "battleSize": 3000, "points": 750 }
+    ],
+    "reason": "Army Rule of the Chaos Space Marines; BSData already copies these datasheets into the codex."
+  },
+  {
+    "id": "daemonic-pact",
+    "name": "Daemonic Pact",
+    "armies": ["chaos-space-marines", "chaos-knights"],
+    "requires": ["Chaos Knights", "Heretic Astartes"],
+    "admits": { "factionKeywords": ["Legiones Daemonica"] },
+    "limits": [
+      { "battleSize": 1000, "points": 250 },
+      { "battleSize": 2000, "points": 500 },
+      { "battleSize": 3000, "points": 750 }
+    ],
+    "battlelineRatio": ["Khorne", "Tzeentch", "Nurgle", "Slaanesh"],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "armyRulesInactive": true,
+    "reason": "Army Rule of the Chaos Space Marines and Chaos Knights, with its FAQ on army rules."
+  },
+  {
+    "id": "dreadblades",
+    "name": "Dreadblades",
+    "exceptArmies": ["chaos-knights"],
+    "requires": ["Chaos"],
+    "admits": { "factionKeywords": ["Chaos Knights"] },
+    "modelsOneOf": [{ "keyword": "Titanic", "max": 1 }, { "keyword": "War Dog", "max": 3 }],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "reason": "Army Rule of the Chaos Knights; no source publishes it."
+  },
+  {
+    "id": "freeblades",
+    "name": "Freeblades",
+    "exceptArmies": ["imperial-knights"],
+    "requires": ["Imperium"],
+    "admits": { "factionKeywords": ["Imperial Knights"] },
+    "modelsOneOf": [{ "keyword": "Titanic", "max": 1 }, { "keyword": "Armiger", "max": 3 }],
+    "noWarlord": true,
+    "noEnhancements": true,
+    "reason": "Army Rule of the Imperial Knights; no source publishes it."
+  },
+  {
+    "id": "harlequins",
+    "name": "Harlequins",
+    "armies": ["craftworlds"],
+    "admits": { "factionKeywords": ["Harlequins"] },
+    "reason": "Army Rule of the Aeldari; no source publishes it."
+  }
+]
