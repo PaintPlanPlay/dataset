@@ -4,7 +4,7 @@ Open data about Warhammer 40,000 — units, detachments, enhancements and
 stratagems — used by the Paint Plan Play apps.
 
 **This dataset contains no rules text.** What a rule *does* is described either
-in a structured form we call an *Effect*, or by a short one-line summary written
+in a structured form we call *Modifiers*, or by a short one-line summary written
 by this project, or simply by the rule's name. Keep your codex at hand: this is
 a set of numbers and references, not a copy of the rulebook.
 
@@ -13,20 +13,24 @@ is a point-and-click way to do it, described below.
 
 ## What's in here
 
+Written by people:
+
 | Folder | What it holds |
 |---|---|
-| `corrections/` | one small file per fix, saying what was wrong, what it should be, and why |
-| `authored/` | things no source publishes: battle sizes, ally rules, the default targets used by the simulator, the sample list, and effects written by this project |
+| `corrections/` | one small file per fix to a source, saying what was wrong, what it should be, and why |
+| `authored/` | what no source publishes: what rules do (`effects.json`), battle sizes, ally rules, the default targets used by the simulator, the sample list |
 | `.github/` | the automation: scheduled rebuilds, and the checks that run on every pull request |
 
-Three more appear with the first release, because they are produced by a build
-rather than written by hand:
+Written by a build, **never by hand** — the next build would erase the change:
 
 | Folder | What it holds |
 |---|---|
-| `wh40k-11e/` | the dataset itself: one file per army, plus a shared `core.json` and an `index.json` |
+| `wh40k-11e/` | the dataset itself: one file per army in `armies/`, plus a shared `core.json` and an `index.json` |
 | `registry/` | the permanent identifiers, so a saved army list keeps working across updates |
 | `manifest.json` | which published version the apps should read |
+
+So to change a value in `wh40k-11e/`, you do not edit it: you add a correction
+or a contribution, and the build applies it.
 
 ## How the data stays up to date
 
@@ -43,7 +47,7 @@ does best:
 |---|---|
 | [BSData](https://github.com/BSData/wh40k-11e) | unit profiles, weapons, wargear options, keywords |
 | [Munitorum Field Manual, via BSData](https://github.com/BSData/wh40k-11e-mfm) | points costs, requisition brackets, paid wargear, leader/support attachments, detachment points, force dispositions, enhancements |
-| [40kdc-data](https://github.com/wn-mitch/40kdc-data) | detachment rules, enhancement restrictions, stratagems and their targets, and the Effect format |
+| [40kdc-data](https://github.com/wn-mitch/40kdc-data) | which detachment rules and stratagems exist, their CP, timing and targets, enhancement restrictions |
 
 When two sources disagree, the one trusted for that field wins, and the
 disagreement is reported so a human can look at it.
@@ -65,7 +69,7 @@ git since 2021.
 ```bash
 git clone https://github.com/PaintPlanPlay/dataset-tool.git
 cd dataset-tool && npm ci
-npm run dev
+npm run dev -- --allow-push
 ```
 
 Open `http://127.0.0.1:4173` in your browser, then:
@@ -83,34 +87,47 @@ Open `http://127.0.0.1:4173` in your browser, then:
 That's it. The tool checks your change against the schema and the no-rules-text
 rule before writing anything.
 
+Never used a terminal? The tool's
+[Getting started](https://github.com/PaintPlanPlay/dataset-tool/blob/main/docs/getting-started.md)
+guide goes through every step, and its
+[Recipes](https://github.com/PaintPlanPlay/dataset-tool/blob/main/docs/recipes.md)
+show the usual fixes one by one.
+
 ### The manual way: edit a file on GitHub
 
 If you would rather not install anything, you can create a correction file
 straight from the GitHub website: browse to `corrections/wh40k-11e/<army>/`,
-click **Add file → Create new file**, paste the JSON below, and GitHub will walk
-you through opening a pull request.
+click **Add file → Create new file**, name it (`<what-it-fixes>.json`), paste
+the JSON below, and GitHub will walk you through opening a pull request.
 
 ```json
 {
-  "target": "4ea0-6b70-c17c-bc00",
+  "target": "orks::enhancement:blitz-brigade|targetin-gizmos",
   "source": "mfm",
-  "patch": { "points": 300 },
-  "upstream": { "points": 285 },
-  "reason": "The September dataslate raised this unit to 300 points."
+  "patch": { "points": 25 },
+  "upstream": { "points": 10 },
+  "reason": "MFM 1.5 raises this enhancement to 25 points."
 }
 ```
 
 | Field | What to put in it |
 |---|---|
-| `target` | what you are fixing — a unit's id, or an address like `<unitId>::weapon:melee\|Power klaw`. A weapon is always fixed whole, with all its profiles (`"patch": { "profiles": [...] }`), never one profile on its own |
+| `target` | what you are fixing — a unit's id, or an address like `<unitId>::weapon:melee\|Power klaw` or `<army>::enhancement:<detachment>\|<enhancement>`. A weapon is always fixed whole, with all its profiles (`"patch": { "profiles": [...] }`), never one profile on its own |
 | `source` | which upstream source got it wrong: `bsdata`, `mfm` or `40kdc` |
 | `patch` | the corrected values, and only those |
 | `upstream` | what that source says today, so we can tell later whether they fixed it themselves |
 | `reason` | one sentence, in your own words |
-| `upstreamPr` | optional: the link to the issue or pull request you opened with the source, so the fix lands upstream too |
+| `upstreamPr` | optional: the link to the pull request opened with the source, so the fix lands upstream too |
 
-Unit ids are the long dashed strings you see in `wh40k-11e/armies/<army>.json`;
-the Dataset Tool fills them in for you if you use the interface.
+A unit's points are fixed through its price grid (`pricing`), from which the
+base cost is computed — the
+[recipe](https://github.com/PaintPlanPlay/dataset-tool/blob/main/docs/recipes.md#change-a-units-points)
+has a full example. Unit ids are the long dashed strings you see in
+`wh40k-11e/armies/<army>.json`; the Dataset Tool fills them in for you if you
+use the interface.
+
+Every kind of target, and every field a correction may change, is listed in
+[Corrections and contributions](https://github.com/PaintPlanPlay/dataset-tool/blob/main/docs/corrections-and-contributions.md).
 
 ### The one rule: never paste rules text
 
@@ -122,8 +139,10 @@ is rejected.
 Instead, describe what the rule *does*:
 
 - a **summary**: one short line in your own words, such as `+1 to wound in melee on the charge`;
-- or an **Effect**: the structured form used by 40kdc-data, which the apps can
-  actually simulate. The Dataset Tool can suggest one and let you accept it.
+- or **Modifiers**: the structured form the apps can actually simulate — a key
+  (`hit`, `AP`, `feel-no-pain`…), a value, who is affected, and under which
+  conditions. The Dataset Tool edits them as a form; see
+  [Rules and Modifiers](https://github.com/PaintPlanPlay/dataset-tool/blob/main/docs/rules-and-modifiers.md).
 
 If you are unsure, leave the rule with just its name — that is always allowed.
 
@@ -137,6 +156,13 @@ There is also a scheduled job that rebuilds the dataset when the upstream
 sources change, and opens a pull request with a drift report: changed numbers,
 disagreements between sources, and the status of every correction.
 
+## Using the data
+
+The dataset is plain JSON, free to read. [Reading the data](docs/reading-the-data.md)
+explains where to fetch it and how the files fit together; the
+[Schema reference](https://github.com/PaintPlanPlay/dataset-tool/blob/main/docs/schema.md)
+describes every field.
+
 ## Attribution
 
 Built from three community projects, with thanks:
@@ -148,7 +174,7 @@ Built from three community projects, with thanks:
 ## Licence
 
 This project's contribution — the model, the identifiers, the corrections, and
-the effects and summaries written here — is published under
+the Modifiers and summaries written here — is published under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (see [LICENSE](LICENSE)).
 Contributions are accepted under that same licence.
 
