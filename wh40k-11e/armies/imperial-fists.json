@@ -120,10 +120,58 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 785,
@@ -335,10 +383,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         }
       ],
       "points": 725,
@@ -3206,10 +3292,41 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Protocols"
+          "name": "Suppression Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -3423,10 +3540,45 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 150,
@@ -3684,10 +3836,49 @@
       ],
       "abilities": [
         {
-          "name": "Impetuous Glory"
+          "name": "Impetuous Glory",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +1 Attack for the cleaver’s strike, +2 for its sweep"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -9140,13 +9331,50 @@
       ],
       "abilities": [
         {
-          "name": "Chainbreaker"
+          "name": "Chainbreaker",
+          "summary": "Once per battle: frees an Imperium unit 12\" or closer from Battle-shock"
         },
         {
-          "name": "Legendary Freeblade"
+          "name": "Legendary Freeblade",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, a Stratagem on it costs 1CP less"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "Using Sir Hekhtur"
@@ -12744,13 +12972,50 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Acheron’s Duty (Bondsman)"
+          "name": "Acheron’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: enemies engaged with it test Battle-shock at -1 as the Fight phase starts"
         }
       ],
       "points": 380,
@@ -12945,13 +13210,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Atrapos’ Duty (Bondsman)"
+          "name": "Atrapos’ Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll hits and wounds against Titanic or Towering models"
         }
       ],
       "points": 420,
@@ -13094,13 +13460,73 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Castigator’s Duty (Bondsman)"
+          "name": "Castigator’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1 and +1 AP when shooting"
         }
       ],
       "points": 380,
@@ -13241,13 +13667,56 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Lancer’s Duty (Bondsman)"
+          "name": "Lancer’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: can charge after Advancing"
         }
       ],
       "points": 415,
@@ -39317,13 +39786,87 @@
       ],
       "abilities": [
         {
-          "name": "Titan Hunter"
+          "name": "Titan Hunter",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll Damage when shooting Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Ion Aegis (Aura)"
+          "name": "Ion Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Armigers 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 425,
@@ -39625,13 +40168,68 @@
       ],
       "abilities": [
         {
-          "name": "Punishing Salvoes"
+          "name": "Punishing Salvoes",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Crusader's Duty (Bondsman)"
+          "name": "Crusader's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: +1 to hit when shooting"
         }
       ],
       "points": 395,
@@ -39962,13 +40560,62 @@
       ],
       "abilities": [
         {
-          "name": "Selfless Protector"
+          "name": "Selfless Protector",
+          "summary": "Knights it partly hides get cover and a 4+ invulnerable against ranged attacks"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Warden's Duty (Bondsman)"
+          "name": "Warden's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1, and Ignores Cover when shooting"
         }
       ],
       "points": 385,
@@ -40211,16 +40858,75 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Thundercharge"
+          "name": "Thundercharge",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With spear and chainsword: +2 melee Attacks"
         },
         {
-          "name": "Ram Jets"
+          "name": "Ram Jets",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "+D3\" Move for Normal and Advance moves"
         },
         {
-          "name": "Saturation Fire"
+          "name": "Saturation Fire",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         }
       ],
       "points": 265,
@@ -40576,13 +41282,76 @@
       ],
       "abilities": [
         {
-          "name": "Aggressive Assault"
+          "name": "Aggressive Assault",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting the closest target"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Errant's Duty (Bondsman)"
+          "name": "Errant's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll Advance rolls; ranged weapons gain Assault"
         }
       ],
       "points": 355,
@@ -40853,13 +41622,62 @@
       ],
       "abilities": [
         {
-          "name": "Martial Pride"
+          "name": "Martial Pride",
+          "summary": "Consolidates 3\" further into engagement"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Gallant's Duty (Bondsman)"
+          "name": "Gallant's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll charge rolls and hits in melee"
         }
       ],
       "points": 355,
@@ -41142,13 +41960,80 @@
       ],
       "abilities": [
         {
-          "name": "Seasoned Noble"
+          "name": "Seasoned Noble",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP when shooting the closest target"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Paladin’s Duty (Bondsman)"
+          "name": "Paladin’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Lethal Hits, and Lance in melee"
         }
       ],
       "points": 375,
@@ -41466,13 +42351,65 @@
       ],
       "abilities": [
         {
-          "name": "Exemplar of the Code"
+          "name": "Exemplar of the Code",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its quarry, chosen anew whenever one dies"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Mentor (Bondsman)"
+          "name": "Mentor (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll wounds against its mentor’s quarry"
         }
       ],
       "points": 365,
@@ -41744,13 +42681,64 @@
       ],
       "abilities": [
         {
-          "name": "Thundershock"
+          "name": "Thundershock",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Harpoon target and enemies 6\" or closer to it: D3 mortal wounds on a 4+"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Ion Aegis (Aura)"
+          "name": "Ion Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Armigers 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 390,
@@ -42051,13 +43039,81 @@
       ],
       "abilities": [
         {
-          "name": "Thin Their Ranks"
+          "name": "Thin Their Ranks",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Devastating Wounds when shooting non-Monster, non-Vehicle units"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Warden's Duty (Bondsman)"
+          "name": "Warden's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1, and Ignores Cover when shooting"
         }
       ],
       "points": 365,
@@ -54513,13 +55569,79 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Magaera’s Duty (Bondsman)"
+          "name": "Magaera’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: +1 S and AP when shooting the closest target"
         }
       ],
       "points": 385,
@@ -54767,13 +55889,62 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Styrix’s Duty (Bondsman)"
+          "name": "Styrix’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: after shooting or fighting, one unit it hit tests Battle-shock at -1"
         }
       ],
       "points": 375,

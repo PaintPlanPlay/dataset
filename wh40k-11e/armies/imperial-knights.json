@@ -121,10 +121,58 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 785,
@@ -340,10 +388,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         }
       ],
       "points": 725,
@@ -1517,10 +1603,41 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Protocols"
+          "name": "Suppression Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -1738,10 +1855,45 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 150,
@@ -2003,10 +2155,49 @@
       ],
       "abilities": [
         {
-          "name": "Impetuous Glory"
+          "name": "Impetuous Glory",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +1 Attack for the cleaver’s strike, +2 for its sweep"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -2632,13 +2823,50 @@
       ],
       "abilities": [
         {
-          "name": "Chainbreaker"
+          "name": "Chainbreaker",
+          "summary": "Once per battle: frees an Imperium unit 12\" or closer from Battle-shock"
         },
         {
-          "name": "Legendary Freeblade"
+          "name": "Legendary Freeblade",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, a Stratagem on it costs 1CP less"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "Using Sir Hekhtur"
@@ -3265,13 +3493,50 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Acheron’s Duty (Bondsman)"
+          "name": "Acheron’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: enemies engaged with it test Battle-shock at -1 as the Fight phase starts"
         }
       ],
       "points": 380,
@@ -3470,13 +3735,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Atrapos’ Duty (Bondsman)"
+          "name": "Atrapos’ Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll hits and wounds against Titanic or Towering models"
         }
       ],
       "points": 420,
@@ -3623,13 +3989,73 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Castigator’s Duty (Bondsman)"
+          "name": "Castigator’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1 and +1 AP when shooting"
         }
       ],
       "points": 380,
@@ -3774,13 +4200,56 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Lancer’s Duty (Bondsman)"
+          "name": "Lancer’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: can charge after Advancing"
         }
       ],
       "points": 415,
@@ -15071,13 +15540,87 @@
       ],
       "abilities": [
         {
-          "name": "Titan Hunter"
+          "name": "Titan Hunter",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll Damage when shooting Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Ion Aegis (Aura)"
+          "name": "Ion Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Armigers 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 425,
@@ -15383,13 +15926,68 @@
       ],
       "abilities": [
         {
-          "name": "Punishing Salvoes"
+          "name": "Punishing Salvoes",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Crusader's Duty (Bondsman)"
+          "name": "Crusader's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: +1 to hit when shooting"
         }
       ],
       "points": 395,
@@ -15724,13 +16322,62 @@
       ],
       "abilities": [
         {
-          "name": "Selfless Protector"
+          "name": "Selfless Protector",
+          "summary": "Knights it partly hides get cover and a 4+ invulnerable against ranged attacks"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Warden's Duty (Bondsman)"
+          "name": "Warden's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1, and Ignores Cover when shooting"
         }
       ],
       "points": 385,
@@ -15977,16 +16624,75 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Thundercharge"
+          "name": "Thundercharge",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With spear and chainsword: +2 melee Attacks"
         },
         {
-          "name": "Ram Jets"
+          "name": "Ram Jets",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "+D3\" Move for Normal and Advance moves"
         },
         {
-          "name": "Saturation Fire"
+          "name": "Saturation Fire",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         }
       ],
       "points": 265,
@@ -16346,13 +17052,76 @@
       ],
       "abilities": [
         {
-          "name": "Aggressive Assault"
+          "name": "Aggressive Assault",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting the closest target"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Errant's Duty (Bondsman)"
+          "name": "Errant's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll Advance rolls; ranged weapons gain Assault"
         }
       ],
       "points": 355,
@@ -16627,13 +17396,62 @@
       ],
       "abilities": [
         {
-          "name": "Martial Pride"
+          "name": "Martial Pride",
+          "summary": "Consolidates 3\" further into engagement"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Gallant's Duty (Bondsman)"
+          "name": "Gallant's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll charge rolls and hits in melee"
         }
       ],
       "points": 355,
@@ -16920,13 +17738,80 @@
       ],
       "abilities": [
         {
-          "name": "Seasoned Noble"
+          "name": "Seasoned Noble",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP when shooting the closest target"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Paladin’s Duty (Bondsman)"
+          "name": "Paladin’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Lethal Hits, and Lance in melee"
         }
       ],
       "points": 375,
@@ -17248,13 +18133,65 @@
       ],
       "abilities": [
         {
-          "name": "Exemplar of the Code"
+          "name": "Exemplar of the Code",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its quarry, chosen anew whenever one dies"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Mentor (Bondsman)"
+          "name": "Mentor (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll wounds against its mentor’s quarry"
         }
       ],
       "points": 365,
@@ -17530,13 +18467,64 @@
       ],
       "abilities": [
         {
-          "name": "Thundershock"
+          "name": "Thundershock",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Harpoon target and enemies 6\" or closer to it: D3 mortal wounds on a 4+"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Ion Aegis (Aura)"
+          "name": "Ion Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Armigers 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 390,
@@ -17841,13 +18829,81 @@
       ],
       "abilities": [
         {
-          "name": "Thin Their Ranks"
+          "name": "Thin Their Ranks",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Devastating Wounds when shooting non-Monster, non-Vehicle units"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Warden's Duty (Bondsman)"
+          "name": "Warden's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1, and Ignores Cover when shooting"
         }
       ],
       "points": 365,
@@ -21244,13 +22300,79 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Magaera’s Duty (Bondsman)"
+          "name": "Magaera’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: +1 S and AP when shooting the closest target"
         }
       ],
       "points": 385,
@@ -21502,13 +22624,62 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Styrix’s Duty (Bondsman)"
+          "name": "Styrix’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: after shooting or fighting, one unit it hit tests Battle-shock at -1"
         }
       ],
       "points": 375,
@@ -27790,7 +28961,49 @@
     },
     {
       "id": "code-chivalric",
-      "name": "Code Chivalric"
+      "name": "Code Chivalric",
+      "options": [
+        {
+          "name": "Martial valour: one hit and one wound re-rolled per attack",
+          "modifiers": []
+        },
+        {
+          "name": "Eager for the challenge: +2\" Move, +1 Advance and charge",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            },
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Unsullied legacy: +2 OC and +1 Ld",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 2,
+              "target": "self"
+            },
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "summary": "Choose an Oath (a Deed and a Quality) before the battle; fulfilling the Deed makes the army Honoured and gives 2-3CP"
     },
     {
       "id": "kill-team",
@@ -27809,7 +29022,28 @@
       "rules": [
         {
           "id": "rain-of-devastation",
-          "name": "Rain of Devastation"
+          "name": "Rain of Devastation",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-in-terrain"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Imperial Knights",
+              "Dominus"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Dominus Knights get +1 to hit against units in a terrain area"
         }
       ],
       "enhancements": [
@@ -27826,7 +29060,8 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Re-rolls the dice for its weapons’ Attacks"
         },
         {
           "id": "blessed-plate",
@@ -27841,7 +29076,15 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Toughness"
         }
       ]
     },
@@ -27856,7 +29099,27 @@
       "rules": [
         {
           "id": "knights-of-legend",
-          "name": "Knights of Legend"
+          "name": "Knights of Legend",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "self"
+            },
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Imperial Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Feel No Pain 6+; each Knight regains 1 wound as your Command phase starts"
         }
       ],
       "enhancements": [
@@ -27872,7 +29135,30 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 melee Attacks and +1 to hit in melee"
         },
         {
           "id": "hunters-eye",
@@ -27886,7 +29172,19 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting"
         },
         {
           "id": "mysterious-guardian",
@@ -27900,7 +29198,14 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy turn, unengaged: into Strategic Reserves, back by ingress next turn"
         },
         {
           "id": "sanctuary",
@@ -27914,7 +29219,15 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "5+ invulnerable save"
         }
       ]
     },
@@ -27928,7 +29241,27 @@
       "rules": [
         {
           "id": "dauntless-defenders",
-          "name": "Dauntless Defenders"
+          "name": "Dauntless Defenders",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "defensive-line"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Imperial Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Two objectives make a defensive line; Knights on it ignore hit modifiers and gain Sustained Hits 1"
         }
       ],
       "enhancements": [
@@ -27944,7 +29277,8 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "On an uncontested defensive line: Armigers it bonds add its OC to theirs"
         },
         {
           "id": "augury-halo",
@@ -27958,7 +29292,22 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "defensive-line"
+                }
+              ]
+            }
+          ],
+          "summary": "On the defensive line: Ignores Cover when shooting"
         },
         {
           "id": "purgations-hand",
@@ -27972,7 +29321,36 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "defensive-line"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "defensive-line"
+                }
+              ]
+            }
+          ],
+          "summary": "On the defensive line: re-roll 1s to hit and wound in melee"
         },
         {
           "id": "vengeful-tread",
@@ -27986,7 +29364,20 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, Crushing Impact on it costs 0CP"
         }
       ]
     },
@@ -28000,7 +29391,28 @@
       "rules": [
         {
           "id": "cogbound-alliance",
-          "name": "Cogbound Alliance"
+          "name": "Cogbound Alliance",
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Mechanicus"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Mechanicus units near a Knight (6\") shoot at +1 BS with Heavy; Tech-Priests heal Knights; up to 500 points of Mechanicus allies"
         }
       ],
       "enhancements": [
@@ -28016,7 +29428,46 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Mechanicus"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Mechanicus"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Mechanicus units 6\" or closer get +1 WS and AP in melee"
         },
         {
           "id": "magos-questoris",
@@ -28030,7 +29481,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its Sacristan Pledge heals 2 more wounds"
         }
       ]
     },
@@ -28045,11 +29497,13 @@
       "rules": [
         {
           "id": "heroes-of-legend",
-          "name": "Heroes of Legend"
+          "name": "Heroes of Legend",
+          "summary": "A fulfilled Oath brings another one; its Qualities stack, and each further Deed gives 1CP"
         },
         {
           "id": "valours-reward",
-          "name": "Valour’s Reward"
+          "name": "Valour’s Reward",
+          "summary": "Spent Enhancements come back whenever you fulfil your Oath"
         }
       ],
       "enhancements": [
@@ -28065,7 +29519,15 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Spent after a kill in melee: six D6 at an unengaged visible enemy 12\" or closer, each 4+ a mortal wound"
         },
         {
           "id": "herald-of-triumph",
@@ -28079,7 +29541,15 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Spent after its charge: engaged enemies test Battle-shock at -1"
         },
         {
           "id": "pennant-of-silvered-fury",
@@ -28093,7 +29563,20 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Spent when it fights: Sustained Hits 2 in melee this phase"
         },
         {
           "id": "wyrmslayer-divination",
@@ -28107,7 +29590,24 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "Spent when it shoots: re-roll hits against units that can Fly"
         }
       ]
     },
@@ -28122,7 +29622,22 @@
       "rules": [
         {
           "id": "knightly-teachings",
-          "name": "Knightly Teachings"
+          "name": "Knightly Teachings",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "A Bondsman ability reaches up to three Armigers (12\", 15\" if Honoured); Armigers are Battleline"
         }
       ],
       "enhancements": [
@@ -28138,7 +29653,22 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonding two or more Armigers: their melee weapons gain Precision"
         },
         {
           "id": "martial-tuition",
@@ -28152,7 +29682,8 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Bonding two or more Armigers: once per turn, Counter-offensive on one costs 0CP"
         },
         {
           "id": "mentors-pride",
@@ -28166,7 +29697,20 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonding two or more Armigers: they re-roll 1s to hit"
         },
         {
           "id": "tales-of-heroism",
@@ -28180,7 +29724,8 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Bonding two or more Armigers: they ignore hit and wound modifiers in melee"
         }
       ]
     },
@@ -28195,7 +29740,29 @@
       "rules": [
         {
           "id": "driven-from-their-lairs",
-          "name": "Driven from Their Lairs"
+          "name": "Driven from Their Lairs",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Armiger"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Armigers under a Bondsman ability shoot with Ignores Cover"
         }
       ],
       "enhancements": [
@@ -28211,7 +29778,15 @@
               "Armiger"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch and Heroic Intervention on it cost 1CP less"
         },
         {
           "id": "gyro-optimised-actuators",
@@ -28225,7 +29800,14 @@
               "Armiger"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mobile",
+              "target": "self"
+            }
+          ],
+          "summary": "Mobile"
         }
       ]
     },
@@ -28239,7 +29821,26 @@
       "rules": [
         {
           "id": "bold-gallantry",
-          "name": "Bold Gallantry"
+          "name": "Bold Gallantry",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Imperial Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Once a Knight Advances, Knights’ ranged weapons gain Assault that turn"
         }
       ],
       "enhancements": [
@@ -28255,7 +29856,8 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "End of your Movement phase: another visible Knight 12\" or closer gains Stealth for a turn"
         },
         {
           "id": "bearer-of-the-iron-chalice",
@@ -28269,7 +29871,23 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Imperial Knights"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "End of your Movement phase: another Knight 12\" or closer regains up to D3 wounds (3 if Honoured)"
         },
         {
           "id": "bearer-of-the-judicants-helm",
@@ -28283,7 +29901,27 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Imperial Knights"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Start of your Shooting phase: another Knight 12\" or closer shoots with Ignores Cover"
         },
         {
           "id": "bearer-of-the-lancers-sigil",
@@ -28297,7 +29935,22 @@
               "Imperial Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Imperial Knights"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Start of your Charge phase: another Knight 12\" or closer re-rolls charge rolls"
         }
       ]
     }
@@ -28338,7 +29991,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 6+ this phase"
     },
     {
       "id": "drive-them-out",
@@ -28351,7 +30021,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-on-defensive-line"
+            }
+          ]
+        }
+      ],
+      "summary": "Critical hits on 5+ against units on your defensive line this phase"
     },
     {
       "id": "driven-by-the-past",
@@ -28363,7 +30053,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can charge after Advancing this turn"
     },
     {
       "id": "exemplars-wisdom",
@@ -28375,7 +30080,31 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "after-own-action",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [
+          "Armiger",
+          "Titanic"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "One unit the Knight hit: its bonded Armigers get +1 AP against it this phase"
     },
     {
       "id": "fire-shocked",
@@ -28386,7 +30115,24 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Dominus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One unit it hit tests for Battle-shock at -1"
     },
     {
       "id": "flanking-manoeuvres",
@@ -28398,15 +30144,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Imperial Knights",
           "Armiger"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "9\" or closer to an edge, unengaged: back into Strategic Reserves"
     },
     {
       "id": "foebreaker-firestorm",
@@ -28418,6 +30171,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Imperial Knights",
@@ -28425,7 +30179,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Engaged: its Blast weapons lose Blast and get +1 Attack"
     },
     {
       "id": "fortress-of-intimidation",
@@ -28437,7 +30204,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies charging it test Battle-shock at -1 this phase"
     },
     {
       "id": "full-tilt",
@@ -28456,7 +30240,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Advances a flat 6\" (9\" for Armigers and Destriers) this phase"
     },
     {
       "id": "full-tilt-2",
@@ -28468,7 +30260,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "key": "advance",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "summary": "+2\" Move and +2 to Advance rolls this phase"
     },
     {
       "id": "ground-shaking-strides",
@@ -28480,6 +30292,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Imperial Knights",
@@ -28487,7 +30300,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "summary": "+2\" Move"
     },
     {
       "id": "helm-conditioning",
@@ -28505,7 +30326,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Its Bondsman ability reaches an Armiger 18\" away"
     },
     {
       "id": "heros-tread",
@@ -28517,7 +30339,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "end-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its objective counts 5 Level of Control for you until the enemy beats it"
     },
     {
       "id": "honoured-to-serve",
@@ -28529,14 +30361,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
-          "Imperial Knights",
           "Armiger"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Shooting does not stop it from starting an action"
     },
     {
       "id": "in-the-shadow-of-giants",
@@ -28547,7 +30380,16 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Advancing or Falling Back does not stop it from starting an action"
     },
     {
       "id": "lancebreaker",
@@ -28559,7 +30401,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "On the defensive line: attacks stronger than its Toughness get -1 to wound"
     },
     {
       "id": "let-duty-be-your-shield",
@@ -28571,7 +30434,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Armiger"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "machine-focus",
@@ -28595,7 +30474,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [
+          "Armiger",
+          "Titanic"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Bonded Armigers can shoot after Falling Back this phase"
     },
     {
       "id": "marshal-the-defence",
@@ -28607,7 +30504,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 3,
+          "target": "self"
+        }
+      ],
+      "summary": "Up to two units get +3\" Move this phase"
     },
     {
       "id": "moment-of-glory",
@@ -28619,7 +30531,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Consolidates 3\" further into engagement this phase"
     },
     {
       "id": "neural-lash",
@@ -28630,7 +30551,16 @@
         "command"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Frees a friendly Armiger 12\" or closer from Battle-shock"
     },
     {
       "id": "noble-sacrifice",
@@ -28653,7 +30583,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Just destroyed: its Deadly Demise triggers on 4+ (+1 for an Armiger)"
     },
     {
       "id": "omnissiahs-grace",
@@ -28669,7 +30600,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds"
     },
     {
       "id": "point-blank-barrage",
@@ -28688,7 +30638,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Blast weapons shoot engaged enemies without penalty; each 1 to hit costs it a mortal wound"
     },
     {
       "id": "rotate-ion-shields",
@@ -28700,7 +30651,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "run-them-through",
@@ -28712,7 +30679,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Melee weapons gain Lance this phase"
     },
     {
       "id": "squires-of-the-hunt",
@@ -28724,7 +30714,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [
+          "Armiger",
+          "Titanic"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Bonded Armigers 9\" or closer to an edge, unengaged: back into Strategic Reserves"
     },
     {
       "id": "steadfast-superiority",
@@ -28736,7 +30744,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self"
+        }
+      ],
+      "summary": "Engaged on the defensive line: re-roll hits this phase"
     },
     {
       "id": "strength-from-exile",
@@ -28756,7 +30779,30 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "isolated"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "isolated"
+            }
+          ]
+        }
+      ],
+      "summary": "No friendly unit 9\" or closer: re-roll 1s to hit and wound this phase"
     },
     {
       "id": "survivor-of-strife",
@@ -28768,6 +30814,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "epic-deed",
       "target": {
         "allOf": [
@@ -28775,7 +30822,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "Attacks stronger than its Toughness get -1 to wound this phase"
     },
     {
       "id": "tactical-foil",
@@ -28787,7 +30847,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a D6\" Normal move"
     },
     {
       "id": "thin-their-ranks",
@@ -28799,7 +30875,34 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [
+          "Armiger",
+          "Titanic"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "half-range"
+            }
+          ]
+        }
+      ],
+      "summary": "Bonded Armigers’ ranged weapons gain Rapid Fire 1 this phase"
     },
     {
       "id": "thronegheist-fury",
@@ -28823,7 +30926,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Its Feet strike with 8 Attacks (12 for titanic Feet) and +1 AP this phase"
     },
     {
       "id": "titanic-bombardment",
@@ -28835,7 +30958,31 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 2,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "stationary"
+            }
+          ]
+        }
+      ],
+      "summary": "Stationary on the defensive line: Sustained Hits 2 when shooting"
     },
     {
       "id": "titanic-duel",
@@ -28848,7 +30995,84 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Titanic"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Titanic"
+            }
+          ]
+        },
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Walker"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Walker"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to hit and wound against Monsters, Titanic units and Walkers this phase"
     },
     {
       "id": "unstoppable-warrior",
@@ -28860,7 +31084,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "after-own-action",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Imperial Knights",
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "vengeance-of-the-machine-cult",
@@ -28876,7 +31120,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "unit-destroyed",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "The killer of a Titanic Knight is marked: Mechanicus units re-roll wounds against it"
     },
     {
       "id": "virtue-of-courage",
@@ -28888,7 +31152,31 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [
+          "Armiger",
+          "Titanic"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Bonded Armigers get +1 to hit one enemy unit this phase"
     },
     {
       "id": "vow-of-retribution",
@@ -28900,7 +31188,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Imperial Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits when shooting this phase"
     }
   ]
 }
