@@ -44786,16 +44786,50 @@
       ],
       "abilities": [
         {
-          "name": "For the Khan!"
+          "name": "For the Khan!",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Assault on guns, Lance in melee"
         },
         {
-          "name": "Trophy Taker"
+          "name": "Trophy Taker",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1CP whenever it slays an enemy Character"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Inspiring Commander"
+          "name": "Inspiring Commander",
+          "summary": "In the army: Outriders (not Characters) have OC 3 unless Battle-shocked"
         }
       ],
       "points": 80,
@@ -70640,10 +70674,30 @@
       ],
       "abilities": [
         {
-          "name": "Spear of Chogoris"
+          "name": "Spear of Chogoris",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit shoots and charges after Advancing or Falling Back (else +1 to Advance and charge)"
         },
         {
-          "name": "Skilled Riders"
+          "name": "Skilled Riders",
+          "summary": "Its unit moves horizontally through terrain"
         },
         {
           "name": "Leader"

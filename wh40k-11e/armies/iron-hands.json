@@ -9370,10 +9370,49 @@
       ],
       "abilities": [
         {
-          "name": "Cold and Calculating"
+          "name": "Cold and Calculating",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit: Lethal Hits against Monsters and Vehicles, Sustained Hits 1 against the rest"
         },
         {
-          "name": "Cerebrex Logic Engine"
+          "name": "Cerebrex Logic Engine",
+          "summary": "An infantry unit gains Scouts 6\"; after deployment, one unit redeploys, Reserves allowed"
         },
         {
           "name": "Leader"
@@ -39585,19 +39624,48 @@
       ],
       "abilities": [
         {
-          "name": "Rites of Tempering"
+          "name": "Rites of Tempering",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "Iron Father"
+          "name": "Iron Father",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a friendly Adeptus Astartes Vehicle (3\"): Lone Operative"
         },
         {
-          "name": "Master of the Forge"
+          "name": "Master of the Forge",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: a Vehicle 3\" or closer regains 3 wounds and gets +1 to hit"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Inspiring Commander"
+          "name": "Inspiring Commander",
+          "summary": "In the army: Heavy Intercessors (not Characters) have OC 3 unless Battle-shocked"
         }
       ],
       "points": 85,

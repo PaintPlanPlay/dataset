@@ -20928,16 +20928,43 @@
       ],
       "abilities": [
         {
-          "name": "Icon of Obstinacy"
+          "name": "Icon of Obstinacy",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-not-below-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Attacks at least as strong as its Toughness get -1 to wound"
         },
         {
-          "name": "Rampart"
+          "name": "Rampart",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for a phase: 2+ invulnerable save"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Inspiring Commander"
+          "name": "Inspiring Commander",
+          "summary": "In the army: Terminator Squads (not Characters) have OC 2 unless Battle-shocked"
         }
       ],
       "points": 160,
@@ -55250,16 +55277,53 @@
       ],
       "abilities": [
         {
-          "name": "Oath of Rynn"
+          "name": "Oath of Rynn",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, a Command phase: +1 Attack for its unit this turn"
         },
         {
-          "name": "To the Last"
+          "name": "To the Last",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit below Starting Strength, +1 to wound as well Below Half-strength"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Inspiring Commander"
+          "name": "Inspiring Commander",
+          "summary": "In the army: Sternguard (not Characters) have OC 2 unless Battle-shocked"
         }
       ],
       "points": 80,
@@ -74936,10 +75000,124 @@
       ],
       "abilities": [
         {
-          "name": "Signum Array"
+          "name": "Signum Array",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Ignores Cover on guns"
         },
         {
-          "name": "Siege Captain"
+          "name": "Siege Captain",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Fortification"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Fortification"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Fortification"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 S, AP and Damage against Monsters, Vehicles and Fortifications"
         },
         {
           "name": "Leader"
