@@ -1,5 +1,871 @@
 [
   {
+    "target": "06f6-b870-4e43-4ed9::ability:Daemonic Icon",
+    "summary": "Its unit has Leadership 6+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "06f6-b870-4e43-4ed9::ability:Horrifying Beauty",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Start of the Fight phase: engaged enemies test Battle-shock (-1 Below Half-strength)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "06f6-b870-4e43-4ed9::ability:Instrument of Chaos",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to its unit’s charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "183e-f3bb-3ce6-7b55::ability:Beguiling Grotesquerie",
+    "summary": "Enhancement: enemies cannot snap-shoot at it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "183e-f3bb-3ce6-7b55::ability:Daemonic Patrons",
+    "modifiers": [
+      {
+        "key": "crit-wound",
+        "value": "3+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "When fighting: critical wounds on 3+, but a model dies if nothing is killed",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "183e-f3bb-3ce6-7b55::ability:Eager Patrons",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "Enhancement: +2\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1e0a-cf2b-6602-2a34::ability:Beguiling Form",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1e0a-cf2b-6602-2a34::ability:Daemonic Poisons",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits is poisoned: D3 mortal wounds on 4+ each Command phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1e0a-cf2b-6602-2a34::ability:Daemonic Speed",
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "self"
+      }
+    ],
+    "summary": "Fights First",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1e0a-cf2b-6602-2a34::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1e0a-cf2b-6602-2a34::ability:Enthralling Hypnosis (Aura)",
+    "summary": "Enemies 6\" or closer must pass Leadership to Fall Back, or stay put",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "20df-143c-fc59-77e0::ability:Damaged: 1-7 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "20df-143c-fc59-77e0::ability:Monarch of the Hunt",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-quarry"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-quarry"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits and wounds in melee against its quarry, chosen anew whenever one dies",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "20df-143c-fc59-77e0::ability:No Prey Can Evade",
+    "modifiers": [
+      {
+        "key": "reroll-advance",
+        "target": "self"
+      },
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll Advance and charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2cd1-13f5-d59d-cc7f::ability:Warped Interference (Psychic)",
+    "modifiers": [
+      {
+        "key": "cover",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2cd1-13f5-d59d-cc7f::ability:Wracking Agonies (Psychic)",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry its Agonising Energies hit: -2\" Move and -2 to charge until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3750-df25-165d-d003::ability:Airborne Predator",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: two D6, each 4+ D3 mortal wounds (+1 against flyers)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3750-df25-165d-d003::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4494-dd7d-69f7-306c::ability:Icon of Excess",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Destroyed a unit this phase: +1CP on a passed Leadership test",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4494-dd7d-69f7-306c::ability:Objective Defiled",
+    "summary": "An objective it holds as your Command phase ends stays yours until the enemy out-controls it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5817-0d6c-973c-68f8::ability:Terrifying Crescendo",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits: -1 to Battle-shock and Leadership tests until your next Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5926-4deb-a85d-c73a::ability:Frenzied Ferocity",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Enhancement: Sustained Hits 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5926-4deb-a85d-c73a::ability:Lethal Obsession",
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting: its charge is re-rollable but must reach one unit it hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "656c-8b78-8e59-0591::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "656c-8b78-8e59-0591::ability:Glutton for Punishment",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "below-starting-strength"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit while wounded, +1 to wound too Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b2b-4508-263d-f20f::ability:Daemon Lord of Slaanesh (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Legions of Excess"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly Legions of Excess 6\" or closer get +1 AP in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b2b-4508-263d-f20f::ability:Damaged: 1-6 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b2b-4508-263d-f20f::ability:Mesmerising Form",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b2b-4508-263d-f20f::ability:Shining aegis",
+    "modifiers": [
+      {
+        "key": "Sv",
+        "value": "3+",
+        "target": "self"
+      }
+    ],
+    "summary": "Save 3+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b4c-dfe0-6a0a-304a::ability:Euphoric Strikes",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 3,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, Fight phase: +3 melee Attacks and +1 AP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b4c-dfe0-6a0a-304a::ability:Lord of the Host",
+    "modifiers": [
+      {
+        "key": "infiltrators",
+        "target": "self"
+      },
+      {
+        "key": "scouts",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Leading Battleline from deployment: Infiltrators and Scouts 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7b4c-dfe0-6a0a-304a::ability:Perfectionists",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Lethal Hits",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "896c-5816-3abd-5199::ability:Scuttling Horrors",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move 8\" or closer: unengaged, a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8ae1-aa47-e1d1-1b31::ability:Assault Vehicle",
+    "summary": "Units can disembark after it Advanced, with a shock disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ad59-b823-900d-ee2d::ability:Ecstatic Death",
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "2+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain in melee before fighting: still fights on a 2+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ad59-b823-900d-ee2d::ability:Excessive Vigour (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 6\" or closer that charged get +1 AP in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ad59-b823-900d-ee2d::ability:Lord of Excess",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-infantry"
+          }
+        ]
+      }
+    ],
+    "summary": "Near friendly infantry (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b541-3292-a5cc-dbeb::ability:Damaged: 1-6 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b541-3292-a5cc-dbeb::ability:Revel in Desecration",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-not-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit against units not Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b541-3292-a5cc-dbeb::ability:Scuttling Walker",
+    "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c2ca-f754-cc05-0743::ability:Soporific Musk",
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c9df-2c38-25e5-ffc7::ability:Daemonic Icon",
+    "summary": "Its unit has Leadership 6+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c9df-2c38-25e5-ffc7::ability:Instrument of Chaos",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to its unit’s charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c9df-2c38-25e5-ffc7::ability:Unholy Speed",
+    "modifiers": [
+      {
+        "key": "reroll-advance",
+        "target": "self"
+      },
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll Advance and charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cc4d-41d6-dfea-414f::ability:Euphoric Strikes",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 3,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, Fight phase: +3 melee Attacks and +1 AP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e390-b58b-db9-816::ability:A Challenge Worthy of Skill",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Character"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Character"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Walker"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Walker"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits and wounds against Characters, Monsters and Walkers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e390-b58b-db9-816::ability:Duellist’s Hubris",
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "not-leading"
+          }
+        ]
+      }
+    ],
+    "summary": "Not leading: Fights First",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e452-08be-33e6-3864::ability:Daemonic Destruction",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 6,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge: a D6 per wound left, each 4+ a mortal wound (6 at most)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e452-08be-33e6-3864::ability:Stimulated by Pain",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e456-0afc-9b42-226c::ability:Excessive Assault",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound in melee; every wound roll against units on an objective",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e456-0afc-9b42-226c::ability:Icon of Excess",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Destroyed a unit this phase: +1CP on a passed Leadership test",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ee50-955a-0a81-41f1::ability:Doom Siren",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "3D6",
+        "target": "enemy"
+      },
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After shooting: three D6 at an infantry unit hit, each 4+ a mortal wound, then Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ee50-955a-0a81-41f1::ability:Obsessive Annunciation",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1 when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "emperors-children::armyrule:thrill-seekers",
+    "modifiers": [
+      {
+        "key": "advance-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Shoots and charges after Advancing or Falling Back, but not at its old foes or others’ targets",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
     "target": "emperors-children::enhancement:carnival-of-excess|dark-blessings",
     "requires": [
       [
@@ -7,7 +873,20 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "3+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, when targeted: 3+ invulnerable save this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:carnival-of-excess|empyric-suffusion",
@@ -16,7 +895,15 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Heroic Intervention on its unit costs 1CP less",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:carnival-of-excess|possessed-blade",
@@ -25,7 +912,20 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Attack for one weapon; when fighting, +1 Damage with Devastating Wounds and Hazardous",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:carnival-of-excess|warp-walker",
@@ -37,7 +937,15 @@
         "Keeper of Secrets"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit Advances a flat 6\" and moves through enemy models",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:coterie-of-the-conceited|pledge-of-dark-glory",
@@ -46,7 +954,20 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": 1,
+        "target": "attached"
+      },
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 Leadership and OC",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:coterie-of-the-conceited|pledge-of-eternal-servitude",
@@ -55,7 +976,8 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "First death: returns with D6 wounds on a passed Leadership test",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:coterie-of-the-conceited|pledge-of-mortal-pain",
@@ -64,7 +986,15 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 3,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Start of your Shooting phase: a visible enemy 12\" or closer takes 3 mortal wounds if it fails Leadership",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:coterie-of-the-conceited|pledge-of-unholy-fortune",
@@ -73,7 +1003,8 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per turn: one hit, wound or save of its unit becomes a 6",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:court-of-the-phoenician|exalted-patron",
@@ -82,7 +1013,15 @@
         "Lord Exultant"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1\" Move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:court-of-the-phoenician|soulstain-made-manifest",
@@ -91,7 +1030,15 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Start of the Fight phase: an engaged enemy tests Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:court-of-the-phoenician|spiritsliver",
@@ -101,7 +1048,30 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 melee S and A",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:court-of-the-phoenician|tears-of-the-phoenix",
@@ -110,7 +1080,8 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its unit ignores WS, hit and wound modifiers in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:elegant-brutes|cacophonic-accompaniment",
@@ -120,7 +1091,23 @@
         "Lord Kakophonist"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "deep-strike",
+        "target": "self"
+      },
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Deep Strike; its unit shoots with Ignores Cover",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:elegant-brutes|frenzied-ferocity",
@@ -131,7 +1118,15 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Sustained Hits 1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:frenzied-host|euphoric-crown",
@@ -141,7 +1136,20 @@
         "Lord Exultant"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 S in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:frenzied-host|howling-plate",
@@ -151,7 +1159,20 @@
         "Lord Exultant"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit gets +1 AP when shooting",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:mercurial-host|intoxicating-musk",
@@ -160,7 +1181,23 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Melee attacks stronger than its unit’s Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:mercurial-host|loathsome-dexterity",
@@ -169,7 +1206,8 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its unit moves through enemy models",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:mercurial-host|steeped-in-suffering",
@@ -178,7 +1216,30 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-starting-strength"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit weakened units, +1 to wound too Below Half-strength",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:mercurial-host|tactical-perfection",
@@ -187,7 +1248,8 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "After deployment, redeploy up to two units, even into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:peerless-bladesmen|blinding-speed",
@@ -196,7 +1258,19 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: its unit Fights First",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:peerless-bladesmen|distortion",
@@ -205,7 +1279,30 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 melee Attack and Damage",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:peerless-bladesmen|faultless-opportunist",
@@ -214,7 +1311,19 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "heroic-intervention",
+        "target": "self"
+      },
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Heroic Intervention on it costs 1CP less and is not limited by other uses",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:peerless-bladesmen|rise-to-the-challenge",
@@ -224,7 +1333,8 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle, among three or more enemy models: fights once more",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:rapid-evisceration|accomplished-tactician",
@@ -234,7 +1344,8 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per turn, a unit 9\" or closer that was shot embarks in a Transport 6\" or closer",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:rapid-evisceration|heretek-adept",
@@ -244,7 +1355,8 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle round, a failed save on a nearby Vehicle deals no damage",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:rapid-evisceration|spearhead-striker",
@@ -254,7 +1366,19 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "disembarked"
+          }
+        ]
+      }
+    ],
+    "summary": "Disembarked: re-roll charges, and enemies cannot Fire Overwatch at its unit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:rapid-evisceration|sublime-prescience",
@@ -264,7 +1388,8 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per turn, a Transport in Strategic Reserves arrives as if a round later",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:slaaneshs-chosen|eager-to-prove",
@@ -273,7 +1398,24 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      },
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "favoured-champions"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll charges; +2\" Move as Favoured Champions",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:slaaneshs-chosen|proud-and-vainglorious",
@@ -282,7 +1424,20 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "favoured-champions"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll Battle-shock and Leadership; +1 OC as Favoured Champions",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:slaaneshs-chosen|repulsed-by-weakness",
@@ -291,7 +1446,14 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Favoured)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:slaaneshs-chosen|slayer-of-champions",
@@ -300,7 +1462,47 @@
         "Emperor’s Children"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "precision",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Character"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Character"
+          }
+        ]
+      }
+    ],
+    "summary": "Precision in melee; +1 S and AP against Characters",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:spectacle-of-slaughter|beguiling-grotesquerie",
@@ -311,7 +1513,8 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemies cannot snap-shoot at it",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::enhancement:spectacle-of-slaughter|eager-patrons",
@@ -322,84 +1525,416 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2\" Move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:carnival-of-excess|daemonic-empowerment",
     "rule": {
       "name": "Daemonic Empowerment"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "empowered"
+          }
+        ]
+      }
+    ],
+    "summary": "Up to 500-1500 points of Legions of Excess; Emperor’s Children and daemons 6\" apart gain Sustained Hits 1 (or crits on 5+)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:coterie-of-the-conceited|pledges-to-the-dark-prince",
     "rule": {
       "name": "Pledges to the Dark Prince"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "options": [
+      {
+        "name": "1+ Pact points: re-roll 1s to hit",
+        "modifiers": [
+          {
+            "key": "reroll-hit",
+            "value": 1,
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "3+: also re-roll 1s to wound",
+        "modifiers": [
+          {
+            "key": "reroll-hit",
+            "value": 1,
+            "target": "self"
+          },
+          {
+            "key": "reroll-wound",
+            "value": 1,
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "5+: also Lethal Hits and Sustained Hits 1 in melee",
+        "modifiers": [
+          {
+            "key": "reroll-hit",
+            "value": 1,
+            "target": "self"
+          },
+          {
+            "key": "reroll-wound",
+            "value": 1,
+            "target": "self"
+          },
+          {
+            "key": "lethal-hits",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              }
+            ]
+          },
+          {
+            "key": "sustained-hits",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "7+: also critical hits on 5+",
+        "modifiers": [
+          {
+            "key": "reroll-hit",
+            "value": 1,
+            "target": "self"
+          },
+          {
+            "key": "reroll-wound",
+            "value": 1,
+            "target": "self"
+          },
+          {
+            "key": "lethal-hits",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              }
+            ]
+          },
+          {
+            "key": "sustained-hits",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              }
+            ]
+          },
+          {
+            "key": "crit-hit",
+            "value": "5+",
+            "target": "self"
+          }
+        ]
+      }
+    ],
+    "summary": "Pledge a kill count each round; meeting it earns Pact points that unlock re-rolls, Lethal and Sustained Hits, crits on 5+",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:court-of-the-phoenician|master-of-the-pageant",
     "rule": {
       "name": "Master of the Pageant"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle round, Sinuous Breach or Prideful Superiority on Fulgrim costs 1CP less",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:court-of-the-phoenician|sensational-performance",
     "rule": {
       "name": "Sensational Performance"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "After charging, against fresh foes only: +1 S and AP in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:elegant-brutes|eager-to-kill",
     "rule": {
       "name": "Eager to Kill"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children",
+        "Terminator"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "arrived-this-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "Terminators get +1 to charge the turn they are set up",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:frenzied-host|frantic-focus",
     "rule": {
       "name": "Frantic Focus"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children",
+        "Battleline"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "advanced-or-fell-back"
+          }
+        ]
+      }
+    ],
+    "summary": "Battleline units that Advance or Fall Back get +1 Strength that turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:mercurial-host|quicksilver-grace",
     "rule": {
       "name": "Quicksilver Grace"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-advance",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll Advance rolls",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:peerless-bladesmen|exquisite-swordsmanship",
     "rule": {
       "name": "Exquisite Swordsmanship"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "options": [
+      {
+        "name": "Lethal Hits",
+        "modifiers": [
+          {
+            "key": "lethal-hits",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              },
+              {
+                "key": "charged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sustained Hits 1",
+        "modifiers": [
+          {
+            "key": "sustained-hits",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              },
+              {
+                "key": "charged"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "After charging: Lethal Hits or Sustained Hits 1 in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:rapid-evisceration|mechanised-murder",
     "rule": {
       "name": "Mechanised Murder"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "disembarked"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "disembarked"
+          }
+        ]
+      }
+    ],
+    "summary": "Transports and units that left one this turn re-roll 1s to hit and wound",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:slaaneshs-chosen|internal-rivalries",
     "rule": {
       "name": "Internal Rivalries"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Emperor’s Children",
+        "Character"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "favoured-champions"
+          }
+        ]
+      }
+    ],
+    "summary": "Characters ignore Move, Advance and charge penalties; your Favoured Champions re-roll wounds",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::rule:spectacle-of-slaughter|entitled-to-victory",
     "rule": {
       "name": "Entitled to Victory"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Flawless Blades"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "self"
+      }
+    ],
+    "summary": "Flawless Blades Fight First",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:absolute-sensory-overload",
@@ -412,16 +1947,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Battleline"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its shooting does not stop it from being hidden",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:advance-and-claim",
@@ -437,14 +1974,15 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Transport"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Carrying Tormentors: its objective stays yours until the enemy out-controls it",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:agonised-cacophony",
@@ -457,16 +1995,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Battleline"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A visible enemy 12\" or closer gets +6\" detection range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:armour-of-abhorrence",
@@ -480,16 +2020,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "wargear",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it lose 1 AP until the attacker is done",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:beautiful-death",
@@ -502,17 +2051,31 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Character"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: still fights on a 4+ (+1 if Favoured)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:capricious-reactions",
@@ -525,16 +2088,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:catalytic-stimulus",
@@ -547,16 +2119,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
+      "trigger": "after-enemy-attacks",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "surge-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Lost wounds to shooting: a D6\" surge move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:ceaseless-onslaught",
@@ -572,13 +2152,20 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "Disembarked after a Normal move: counts as an assault disembark",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:close-quarters-excruciation",
@@ -591,16 +2178,40 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      }
+    ],
+    "summary": "+1 S and AP against targets 12\" or closer this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:combat-stimms",
@@ -613,17 +2224,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to wound this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:contemptuous-disregard",
@@ -637,16 +2257,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:cruel-bladesman",
@@ -662,13 +2294,29 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "Charged this turn: +1 AP in melee this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:cruel-raiders",
@@ -681,16 +2329,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Wholly 9\" or closer to an edge, 3\" from enemies: back into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:cut-down-the-weak",
@@ -703,16 +2359,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "An enemy Falls Back 6\" or closer: charges it, without the charge bonus",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:dark-apparitions",
@@ -725,6 +2383,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -734,7 +2393,14 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Unengaged: into Strategic Reserves, back 6\" from enemies near Emperor’s Children",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:dark-vigour",
@@ -747,9 +2413,12 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-moved",
       "category": "strategic-ploy",
       "target": {
-        "allOf": [],
+        "allOf": [
+          "Emperor’s Children"
+        ],
         "anyOf": [],
         "noneOf": [
           "Beasts",
@@ -757,7 +2426,15 @@
         ]
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:death-ecstasy",
@@ -770,16 +2447,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "2+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: always fights back",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:deft-parry",
@@ -792,16 +2483,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:delight-in-agony",
@@ -815,16 +2515,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Terminator"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:devoted-duellists",
@@ -840,14 +2554,30 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Character"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "Characters get Sustained Hits 1 in melee against one enemy unit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:diabolic-majesty",
@@ -864,13 +2594,21 @@
       "category": "epic-deed",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per battle round: enemies 6\" or closer test Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:dynamic-breakthrough",
@@ -886,14 +2624,15 @@
       "category": "epic-deed",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Vehicle"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves through non-Monster, non-Vehicle enemies this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:ecstatic-slaughter",
@@ -909,13 +2648,14 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Legions of Excess"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A nearby unengaged Emperor’s Children unit declares a charge",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:embrace-the-pain",
@@ -928,17 +2668,19 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Engaged enemies must attack it this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:euphoric-inspiration",
@@ -951,17 +2693,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Daemon"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "aura",
+        "range": 6
+      }
+    ],
+    "summary": "Emperor’s Children 6\" or closer re-roll charges this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:heightened-jealousy",
@@ -978,13 +2727,28 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Character"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Your other Characters get +1 Strength this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:honour-is-for-fools",
@@ -997,6 +2761,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Flawless Blades"
@@ -1005,7 +2770,19 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "precision",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Precision in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:honour-the-prince",
@@ -1021,14 +2798,22 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Advances a flat 6\" this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:incessant-violence",
@@ -1044,13 +2829,14 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Consolidates 6\" if it stays engaged",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:intoxicated-by-triumph",
@@ -1063,6 +2849,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Flawless Blades"
@@ -1071,7 +2858,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D3+3",
+        "target": "self"
+      }
+    ],
+    "summary": "A D3+3\" Normal move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:martial-perfection",
@@ -1087,13 +2882,26 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:on-to-the-next",
@@ -1106,16 +2914,18 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Destroyed a unit: embarks in a Transport 6\" or closer, even after disembarking",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:outflanking-strike",
@@ -1128,17 +2938,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Transport"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "One Transport or two Dedicated Transports near an edge: into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:possessive-mania",
@@ -1152,16 +2970,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Battleline"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it lose 1 AP until the attacker is done",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:prideful-superiority",
@@ -1174,16 +3001,40 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Character"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Character"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits and wounds against Characters this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:protection-of-the-dark-prince",
@@ -1203,13 +3054,31 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "6+",
+        "target": "self"
+      },
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Feel No Pain 6+, and 4+ against mortal wounds, this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:psychedelic-soulflame",
@@ -1223,16 +3092,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Terminator"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2 Strength",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:reactive-disembarkation",
@@ -1245,17 +3123,19 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Transport"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Shot at: one passenger unit disembarks wholly 6\" or closer",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:refusal-to-be-outdone",
@@ -1268,17 +3148,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "charge-declared",
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Character"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll its charge, but it must reach a target",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:single-minded-strike",
@@ -1299,7 +3187,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves through non-Monster, non-Vehicle models",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:sinuous-breach",
@@ -1313,17 +3202,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Daemon"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves and charges through terrain this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:sustained-by-agony",
@@ -1339,13 +3228,21 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 3,
+        "target": "self"
+      }
+    ],
+    "summary": "A Legions of Excess unit 6\" or closer heals 3 wounds (Daemonettes: D3+3 models)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:sycophantic-surge",
@@ -1367,7 +3264,18 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Can charge after Advancing or Falling Back, toward foes engaged with Emperor’s Children",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:terrifying-spectacle",
@@ -1383,13 +3291,20 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a charge and a kill: enemies 6\" or closer test Battle-shock (-1 Below Half-strength)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:unbound-arrogance",
@@ -1406,13 +3321,14 @@
       "category": "epic-deed",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle round: raise your pledge by 1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:uncanny-reactions",
@@ -1425,6 +3341,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -1434,7 +3351,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:unshakeable-opponents",
@@ -1450,13 +3375,14 @@
       "category": "epic-deed",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Ignores BS, WS, hit and wound modifiers this turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:vengeful-surge",
@@ -1469,17 +3395,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Character"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "surge-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Shot at: a D6\" surge move (re-rollable unless Favoured)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:violent-crescendo",
@@ -1497,11 +3432,23 @@
         "allOf": [
           "Slaanesh"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Beasts",
+          "Infantry",
+          "Mounted"
+        ],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "pile-in",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Piles in and consolidates 6\" toward the closest enemy unit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:violent-excess",
@@ -1517,13 +3464,26 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Emperor's Children"
+          "Emperor’s Children"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Sustained Hits 1 in melee this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "emperors-children::stratagem:warp-plunge",
@@ -1536,15 +3496,51 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "target": {
         "allOf": [
-          "Emperor's Children",
+          "Emperor’s Children",
           "Terminator"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Unengaged: back into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f10c-5f3e-c09d-0b12::ability:Assault Ramp",
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "Units disembarking after its Normal move make an assault disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f10c-5f3e-c09d-0b12::ability:Damaged: 1-5 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
   }
 ]
