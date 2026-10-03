@@ -3064,10 +3064,48 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3286,10 +3324,38 @@
       ],
       "abilities": [
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3530,13 +3596,34 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Unrestrained Terror (Aura)"
+          "name": "Unrestrained Terror (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "War Dogs 6\" or closer: enemies engaged with them test Battle-shock as the Fight phase starts"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3738,13 +3825,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Consumed with Hunger (Aura)"
+          "name": "Consumed with Hunger (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer re-roll hits against Titanic or Towering units"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -3892,13 +4080,55 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Offerings for the Dark Gods (Aura)"
+          "name": "Offerings for the Dark Gods (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer get Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -4047,13 +4277,54 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Dark Fervour (Aura)"
+          "name": "Dark Fervour (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -4265,13 +4536,64 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Huntmaster (Aura)"
+          "name": "Huntmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         }
       ],
       "points": 375,
@@ -4525,13 +4847,69 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Preysight (Aura)"
+          "name": "Preysight (Aura)",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer shoot with Ignores Cover"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 365,
@@ -11988,16 +12366,54 @@
       ],
       "abilities": [
         {
-          "name": "Vortex Terrors (Psychic)"
+          "name": "Vortex Terrors (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible enemy 24\" or closer tests Battle-shock"
         },
         {
-          "name": "Warp Storms (Psychic)"
+          "name": "Warp Storms (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 9\" or closer take D3 mortal wounds on 3+"
         },
         {
           "name": "*Invulnerable Save"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 350,
@@ -12197,13 +12613,58 @@
       ],
       "abilities": [
         {
-          "name": "Taskmaster (Aura)"
+          "name": "Taskmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit when shooting"
         },
         {
-          "name": "Obsessive Ruthlessness"
+          "name": "Obsessive Ruthlessness",
+          "summary": "Shooting Monsters and Vehicles: ignores BS, hit and wound modifiers"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -12587,13 +13048,66 @@
       ],
       "abilities": [
         {
-          "name": "Dread Dominion (Aura)"
+          "name": "Dread Dominion (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 Leadership and OC"
         },
         {
-          "name": "Seething Hatred"
+          "name": "Seething Hatred",
+          "summary": "Shooting or fighting: one hit or one wound may be re-rolled"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -12985,13 +13499,73 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Rampage (Aura)"
+          "name": "Frenzied Rampage (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit in melee"
         },
         {
-          "name": "Bloodlust"
+          "name": "Bloodlust",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: Sustained Hits 1 in melee; once per battle, charges after Advancing"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -13166,13 +13740,70 @@
       ],
       "abilities": [
         {
-          "name": "Methodical Destruction"
+          "name": "Methodical Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its victim, chosen anew whenever one dies"
         },
         {
-          "name": "Close-range Killers (Aura)"
+          "name": "Close-range Killers (Aura)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 AP against the closest enemy"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -13446,13 +14077,42 @@
       ],
       "abilities": [
         {
-          "name": "Infernal Aegis (Aura)"
+          "name": "Infernal Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer have the benefit of cover"
         },
         {
-          "name": "Bastion of Corruption"
+          "name": "Bastion of Corruption",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -21537,10 +22197,38 @@
       ],
       "abilities": [
         {
-          "name": "Brigand"
+          "name": "Brigand",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -21740,10 +22428,36 @@
       ],
       "abilities": [
         {
-          "name": "Executioner"
+          "name": "Executioner",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Below Half-strength units; its kills force Battle-shock 3\" around"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -21951,10 +22665,48 @@
       ],
       "abilities": [
         {
-          "name": "Huntsman"
+          "name": "Huntsman",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -22154,10 +22906,34 @@
       ],
       "abilities": [
         {
-          "name": "Karnivore"
+          "name": "Karnivore",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -22412,10 +23188,35 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -22717,10 +23518,36 @@
       ],
       "abilities": [
         {
-          "name": "Stalker"
+          "name": "Stalker",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-isolated"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound targets with no other enemy 6\" or closer"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -24128,7 +24955,103 @@
   "armyRules": [
     {
       "id": "harbingers-of-dread",
-      "name": "Harbingers of Dread"
+      "name": "Harbingers of Dread",
+      "options": [
+        {
+          "name": "Deathly Terror only: enemies 9\" or closer get -1 Leadership",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ]
+        },
+        {
+          "name": "Despair: a further -1 Leadership",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -2,
+              "target": "enemy"
+            }
+          ]
+        },
+        {
+          "name": "Doom: +1 to wound Battle-shocked units",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Darkness: Stealth",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Dismay: weakened enemies 9\" or closer must test Battle-shock",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ]
+        },
+        {
+          "name": "Delirium: Below Half-strength enemies failing Battle-shock take D3",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ]
+        },
+        {
+          "name": "Dominion: +3\" to Aura ranges",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ]
+        }
+      ],
+      "summary": "Deathly Terror from the start; rounds 1, 3 and 5 add one chosen Dread ability, or two rolled at random"
     },
     {
       "id": "warp-rifts",
@@ -24146,7 +25069,27 @@
       "rules": [
         {
           "id": "annihilate-the-unworthy",
-          "name": "Annihilate the Unworthy"
+          "name": "Annihilate the Unworthy",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Knight Tyrant"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Knight Tyrants get +1 to hit Battle-shocked units"
         }
       ],
       "enhancements": [
@@ -24163,7 +25106,8 @@
               "Knight Tyrant"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Re-rolls the dice for its weapons’ Attacks"
         },
         {
           "id": "pterrorshade-rookery",
@@ -24178,7 +25122,8 @@
               "Knight Tyrant"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Shooting: an enemy 24\" or closer gets +6\" detection range"
         }
       ]
     },
@@ -24192,7 +25137,8 @@
       "rules": [
         {
           "id": "masters-of-the-pack",
-          "name": "Masters of the Pack"
+          "name": "Masters of the Pack",
+          "summary": "A Titanic Knight with two War Dogs in its War Dog Aura benefits from that Aura too"
         }
       ],
       "enhancements": [
@@ -24208,7 +25154,8 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: gains one more Dread ability until the next"
         },
         {
           "id": "hunters-helm",
@@ -24222,7 +25169,18 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls Advance and charge rolls"
         },
         {
           "id": "octagram-of-conjuration",
@@ -24236,7 +25194,14 @@
               "Knight Abominant"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "War Dogs 9\" or closer: after shooting, one unit they hit tests Battle-shock"
         },
         {
           "id": "throne-tyrannicus",
@@ -24251,7 +25216,8 @@
               "Titanic"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: another Knight Character 9\" or closer shares its War Dog Auras"
         }
       ]
     },
@@ -24265,7 +25231,27 @@
       "rules": [
         {
           "id": "marked-prey",
-          "name": "Marked Prey"
+          "name": "Marked Prey",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "War Dog"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Command phase: name a prey; War Dogs gain Sustained Hits 1 against it. War Dogs are Battleline, three are Characters"
         }
       ],
       "enhancements": [
@@ -24281,7 +25267,23 @@
               "War Dog"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer re-roll 1s to wound"
         },
         {
           "id": "loping-predator",
@@ -24295,7 +25297,19 @@
               "War Dog"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged weapons gain Assault"
         },
         {
           "id": "panoply-of-the-cursed-knights",
@@ -24309,7 +25323,8 @@
               "War Dog"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "War Dog only"
         },
         {
           "id": "preyslayers-mantle",
@@ -24323,7 +25338,8 @@
               "War Dog"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Gains the Super-heavy Walker ability"
         }
       ]
     },
@@ -24337,7 +25353,8 @@
       "rules": [
         {
           "id": "scenting-fear",
-          "name": "Scenting Fear"
+          "name": "Scenting Fear",
+          "summary": "Once per battle round: an enemy 12\" or closer to a War Dog gets +6\" detection range"
         }
       ],
       "enhancements": [
@@ -24353,7 +25370,19 @@
               "Executioner"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting"
         },
         {
           "id": "soul-spoor-auspicator",
@@ -24367,7 +25396,8 @@
               "Huntsman"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+6\" range when shooting"
         }
       ]
     },
@@ -24381,7 +25411,8 @@
       "rules": [
         {
           "id": "wretched-thralls",
-          "name": "Wretched Thralls"
+          "name": "Wretched Thralls",
+          "summary": "Up to 500 points of Damned, who re-roll Leadership"
         }
       ],
       "enhancements": [
@@ -24397,7 +25428,23 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Damned"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Damned 6\" or closer get +2\" Move"
         },
         {
           "id": "iconoclast-idol",
@@ -24411,7 +25458,23 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Damned"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Heroic Intervention on Damned 6\" or closer costs 1CP less"
         }
       ]
     },
@@ -24426,7 +25489,66 @@
       "rules": [
         {
           "id": "malefic-surge",
-          "name": "Malefic Surge"
+          "name": "Malefic Surge",
+          "options": [
+            {
+              "name": "Unholy Hunger: +3\" Move",
+              "modifiers": [
+                {
+                  "key": "M",
+                  "value": 3,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Diabolic Power: Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Diabolic Power: Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Unnatural Fortitude: 5+ invulnerable",
+              "modifiers": [
+                {
+                  "key": "invulnerable-save",
+                  "value": "5+",
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Unnatural Fortitude: Feel No Pain 6+",
+              "modifiers": [
+                {
+                  "key": "feel-no-pain",
+                  "value": "6+",
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Chaos Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Command phase: a Leadership test (D3 if failed) empowers a Knight for one boost: speed, Lethal or Sustained Hits, or protection"
         }
       ],
       "enhancements": [
@@ -24442,7 +25564,19 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged weapons gain Assault; ignores Move penalties with Unholy Hunger"
         },
         {
           "id": "blasphemous-engine",
@@ -24456,7 +25590,15 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2 Wounds; re-roll its Malefic Surge test"
         },
         {
           "id": "fleshmetal-fusion",
@@ -24470,7 +25612,15 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Toughness; +1 to save against Damage 1 with Unnatural Fortitude"
         },
         {
           "id": "knight-diabolus",
@@ -24484,7 +25634,20 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 WS in melee; Lance with Diabolic Power"
         }
       ]
     },
@@ -24498,7 +25661,23 @@
       "rules": [
         {
           "id": "tyrannical-court",
-          "name": "Tyrannical Court"
+          "name": "Tyrannical Court",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Chaos Knights",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Knight Characters get +2 OC; with your Warlord on the field, Claimed for the Dark Gods is free once per round"
         }
       ],
       "enhancements": [
@@ -24514,7 +25693,28 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged weapons gain Assault; once per battle, Fights First"
         },
         {
           "id": "blessing-of-the-dark-master",
@@ -24528,7 +25728,14 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "summary": "Stealth; once per battle a failed save deals no damage"
         },
         {
           "id": "mirror-of-fates",
@@ -24542,7 +25749,15 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an enemy Stratagem on a unit 12\" or closer costs 1CP more"
         },
         {
           "id": "putrid-carapace",
@@ -24556,7 +25771,25 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "2+",
+              "target": "self"
+            },
+            {
+              "key": "heal",
+              "value": "D6",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Save 2+; once per battle, regains up to D6 wounds"
         },
         {
           "id": "throne-mechanicum-of-skulls",
@@ -24570,7 +25803,14 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll charges; once per battle, charges after Advancing"
         },
         {
           "id": "warp-borne-stalker",
@@ -24584,7 +25824,14 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike; once per battle, back into Strategic Reserves"
         }
       ]
     },
@@ -24598,7 +25845,8 @@
       "rules": [
         {
           "id": "paragons-of-terror",
-          "name": "Paragons of Terror"
+          "name": "Paragons of Terror",
+          "summary": "Round 1: one more Dread ability of your choice"
         }
       ],
       "enhancements": [
@@ -24614,7 +25862,8 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Random Dread ability dice may be re-rolled"
         },
         {
           "id": "nightmares-master",
@@ -24628,7 +25877,14 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: engaged enemies test for Battle-shock"
         },
         {
           "id": "tyrants-shadow",
@@ -24642,7 +25898,8 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its objective stays yours and radiates Deathly Terror while held"
         },
         {
           "id": "veil-of-medrengard",
@@ -24656,7 +25913,30 @@
               "Chaos Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "4+ invulnerable against shooting, 5+ in melee"
         }
       ]
     }
@@ -24672,7 +25952,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Abhorrent"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Two War Dogs count as inside its Auras until your next Command phase"
     },
     {
       "id": "animalistic-rage",
@@ -24685,7 +25973,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "unit-destroyed",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Just destroyed: shoots or fights its killer before exploding"
     },
     {
       "id": "avenge-the-masters",
@@ -24701,7 +25998,33 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "unit-destroyed",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "aura",
+          "keywords": {
+            "allOf": [
+              "Damned"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A Knight’s killer is marked: Damned gain Lethal Hits against it"
     },
     {
       "id": "beasthide-manifestation",
@@ -24714,7 +26037,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "claimed-for-the-dark-gods",
@@ -24726,7 +26065,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its objective holds at Level of Control 5 until the enemy out-controls it"
     },
     {
       "id": "conquerors-without-mercy",
@@ -24738,7 +26087,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Charged: +1 AP in melee; a kill forces Battle-shock tests 6\" around"
     },
     {
       "id": "contemptuous-volleys",
@@ -24750,7 +26122,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "corrupting-taint",
@@ -24762,7 +26153,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its objective stays yours until the enemy out-controls it"
     },
     {
       "id": "coursing-thralls",
@@ -24773,7 +26173,16 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Damned"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A visible enemy 12\" or closer gets +6\" detection range"
     },
     {
       "id": "crushed-like-vermin",
@@ -24785,7 +26194,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "after-own-action",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "After a move over infantry: six D6, each 4+ a mortal wound, then Battle-shock"
     },
     {
       "id": "cunning-hunter",
@@ -24797,7 +26223,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "dark-sacrifice",
@@ -24808,7 +26253,24 @@
         "command"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Damned"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Accursed Cultists"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "Damned take D3+3 mortal wounds; a Knight 9\" or closer heals as many"
     },
     {
       "id": "diabolic-bulwark",
@@ -24820,7 +26282,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "disdain-for-the-weak",
@@ -24832,7 +26310,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 6+ (5+ against Battle-shocked attackers) this phase"
     },
     {
       "id": "encircling-pack",
@@ -24844,7 +26338,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Wholly 12\" or closer to an edge, unengaged: back into Strategic Reserves"
     },
     {
       "id": "feral-arrogance",
@@ -24860,7 +26369,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds this phase"
     },
     {
       "id": "flush-the-quarry",
@@ -24872,7 +26401,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [
+          "Titanic",
+          "War Dog"
+        ],
+        "noneOf": []
+      },
+      "summary": "Up to three War Dogs 6\" or closer move through models and terrain this phase"
     },
     {
       "id": "goaded-beast",
@@ -24884,7 +26425,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Lost wounds to shooting: a D6\" surge move"
     },
     {
       "id": "harrying-hounds",
@@ -24896,7 +26453,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move"
     },
     {
       "id": "hellforged-construction",
@@ -24908,7 +26481,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "hungry-for-combat",
@@ -24920,7 +26509,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Two War Dogs on one foe: critical hits on 5+ against it"
     },
     {
       "id": "imperious-advance",
@@ -24933,7 +26538,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [
+          "Titanic",
+          "War Dog"
+        ],
+        "noneOf": []
+      },
+      "summary": "Two War Dogs or one Titanic Knight move through models and terrain"
     },
     {
       "id": "insensate-bloodthirst",
@@ -24941,10 +26557,30 @@
       "detachmentId": "hunting-warpack",
       "cp": 1,
       "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 5+"
     },
     {
       "id": "intimidating-reminder",
@@ -24955,7 +26591,23 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Knight Tyrant"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One unit it hit is suppressed: -1 to hit until your next Command phase"
     },
     {
       "id": "leash-of-the-masters",
@@ -24963,10 +26615,19 @@
       "detachmentId": "hunting-warpack",
       "cp": 1,
       "phases": [
-        "shooting"
+        "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Shooting does not stop it from starting an action"
     },
     {
       "id": "merciless-fusillade",
@@ -24979,7 +26640,31 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [
+          "Titanic",
+          "War Dog"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A Titanic Knight and two War Dogs focus one enemy with Sustained Hits 1"
     },
     {
       "id": "pitiless-focus",
@@ -24990,7 +26675,22 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Knight Tyrant"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Falling Back does not stop it from shooting"
     },
     {
       "id": "profane-symbiosis",
@@ -25006,7 +26706,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "end-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle round: makes a Malefic Surge now"
     },
     {
       "id": "pterrorshades",
@@ -25022,7 +26731,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        },
+        {
+          "key": "heal",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy 12\" or closer: six D6, each 4+ a mortal wound and a wound back"
     },
     {
       "id": "rune-cursed-stronghold",
@@ -25037,7 +26766,27 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Knight Tyrant"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds"
     },
     {
       "id": "runes-of-disdain",
@@ -25050,7 +26799,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to it this phase"
     },
     {
       "id": "spiteful-demise",
@@ -25066,7 +26832,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "unit-destroyed",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Just destroyed: its Deadly Demise triggers on 4+"
     },
     {
       "id": "stalking-focus",
@@ -25077,7 +26853,28 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "War Dog"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "storm-of-darkness",
@@ -25085,11 +26882,37 @@
       "detachmentId": "traitoris-lance",
       "cp": 1,
       "phases": [
-        "shooting"
+        "shooting",
+        "fight"
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        },
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Stealth, and -1 to hit it in melee"
     },
     {
       "id": "titanic-duel",
@@ -25102,7 +26925,62 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "Against one Monster or Vehicle: re-roll 1s to hit and wound (all of them against Titanic)"
     },
     {
       "id": "trophy-hunter",
@@ -25114,7 +26992,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Chaos Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Consolidates 3\" further into engagement this phase"
     },
     {
       "id": "unleash-balefire",
@@ -25126,7 +27013,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": -2,
+          "target": "enemy"
+        },
+        {
+          "key": "charge",
+          "value": -2,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One unit it hits tests Battle-shock; if it fails, -2\" Move and -2 to charge"
     },
     {
       "id": "vox-howl",
@@ -25139,7 +27046,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "War Dog",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies 6\" or closer test Battle-shock; nearby shocked War Dogs may recover"
     },
     {
       "id": "warp-vision",
@@ -25151,7 +27074,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Chaos Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover when shooting this phase"
     }
   ]
 }
