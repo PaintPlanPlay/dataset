@@ -716,16 +716,69 @@
       ],
       "abilities": [
         {
-          "name": "Implacable Vanguard"
+          "name": "Implacable Vanguard",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, after shooting: move 6\", then no charge this turn"
         },
         {
-          "name": "Turbo Boost"
+          "name": "Turbo Boost",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 225,
@@ -872,25 +925,106 @@
       ],
       "abilities": [
         {
-          "name": "Tactical Perception"
+          "name": "Tactical Perception",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: the unit has Fights First"
         },
         {
-          "name": "Tenacious Spirit"
+          "name": "Tenacious Spirit",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit below Starting Strength, +1 to wound too Below Half-strength"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Daughter of the Abyss"
+          "name": "Daughter of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Ceaseless Vigilance"
+          "name": "Ceaseless Vigilance",
+          "summary": "When shooting: one visible enemy within 12\" is nulled, +3\" detection range"
         }
       ],
       "points": 55,
@@ -1079,19 +1213,107 @@
       ],
       "abilities": [
         {
-          "name": "Slayers of Tyrants"
+          "name": "Slayers of Tyrants",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Characters, Monsters and Vehicles"
         },
         {
-          "name": "From Golden Light"
+          "name": "From Golden Light",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy turn: unengaged, it can go back into Strategic Reserves"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Vexilla"
+          "name": "Vexilla",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for the unit"
         }
       ],
       "points": 120,
@@ -1398,19 +1620,78 @@
       ],
       "abilities": [
         {
-          "name": "Self Repair"
+          "name": "Self Repair",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Regains 1 wound each Command phase"
         },
         {
-          "name": "Daughter of the Abyss"
+          "name": "Daughter of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Ceaseless Vigilance"
+          "name": "Ceaseless Vigilance",
+          "summary": "When shooting: one visible enemy within 12\" is nulled, +3\" detection range"
         }
       ],
       "points": 65,
@@ -2285,16 +2566,76 @@
       ],
       "abilities": [
         {
-          "name": "Heavy Assault Infantry"
+          "name": "Heavy Assault Infantry",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound when shooting the closest target"
         },
         {
-          "name": "From Golden Light"
+          "name": "From Golden Light",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy turn: unengaged, it can go back into Strategic Reserves"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 195,
@@ -2501,16 +2842,74 @@
       ],
       "abilities": [
         {
-          "name": "Infernus Firebombs"
+          "name": "Infernus Firebombs",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: one enemy within 24\" loses cover and takes a mortal wound per 6 rolled per model"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 580,
@@ -3457,16 +3856,72 @@
           "name": "Leader"
         },
         {
-          "name": "Martial Inspiration"
+          "name": "Martial Inspiration",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, its unit can charge after Advancing"
         },
         {
-          "name": "Swift Onslaught"
+          "name": "Swift Onslaught",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: the unit re-rolls charges"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 110,
@@ -3712,16 +4167,67 @@
       ],
       "abilities": [
         {
-          "name": "Advanced Firepower"
+          "name": "Advanced Firepower",
+          "summary": "Its Iliastus cannon gets Lethal Hits against infantry, its Arachnus cannon against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 210,
@@ -5451,13 +5957,58 @@
       ],
       "abilities": [
         {
-          "name": "Dread Foe"
+          "name": "Dread Foe",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "When it fights: D6 (+2 after charging) for D3 or 3 mortal wounds to an engaged enemy"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 155,
@@ -5632,13 +6183,63 @@
       ],
       "abilities": [
         {
-          "name": "Galatus Shield"
+          "name": "Galatus Shield",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee attacks against it get -1 to wound"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 165,
@@ -5784,16 +6385,67 @@
       ],
       "abilities": [
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "summary": "Units that disembarked re-roll wounds against one unit it hit"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 180,
@@ -6427,22 +7079,94 @@
       ],
       "abilities": [
         {
-          "name": "Stand Vigil"
+          "name": "Stand Vigil",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound; every wound roll on an objective you control"
         },
         {
-          "name": "Sentinel Storm"
+          "name": "Sentinel Storm",
+          "summary": "Once per battle, shoots again after shooting"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Praesidium Shield"
+          "name": "Praesidium Shield",
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Wound for the bearer"
         },
         {
-          "name": "Vexilla"
+          "name": "Vexilla",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for the unit"
         }
       ],
       "points": 180,
@@ -6670,16 +7394,98 @@
       ],
       "abilities": [
         {
-          "name": "Stand Vigil"
+          "name": "Stand Vigil",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound; every wound roll on an objective you control"
         },
         {
-          "name": "No Foe Shall Stand"
+          "name": "No Foe Shall Stand",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: Lethal Hits and Ignores Cover when shooting"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 250,
@@ -6877,19 +7683,93 @@
       ],
       "abilities": [
         {
-          "name": "Resolute Will"
+          "name": "Resolute Will",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                },
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Character: -1 to wound for attacks with S above its T"
         },
         {
-          "name": "Living Fortress"
+          "name": "Living Fortress",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for a phase: Feel No Pain 4+"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Vexilla"
+          "name": "Vexilla",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for the unit"
         }
       ],
       "points": 210,
@@ -21196,22 +22076,98 @@
           "name": "Leader"
         },
         {
-          "name": "Seeker's Instincts"
+          "name": "Seeker's Instincts",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "attached"
+            },
+            {
+              "key": "advance",
+              "value": 2,
+              "target": "attached"
+            },
+            {
+              "key": "charge",
+              "value": 2,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +2\" Move and +2 to Advance and charge rolls"
         },
         {
-          "name": "Corner the Quarry"
+          "name": "Corner the Quarry",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry falling back from its unit takes Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
-          "name": "Daughter of the Abyss"
+          "name": "Daughter of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Ceaseless Vigilance"
+          "name": "Ceaseless Vigilance",
+          "summary": "When shooting: one visible enemy within 12\" is nulled, +3\" detection range"
         }
       ],
       "points": 55,
@@ -23260,7 +24216,20 @@
           "name": "Leader"
         },
         {
-          "name": "Daughter of the Abyss"
+          "name": "Daughter of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         }
       ],
       "points": 65,
@@ -23435,16 +24404,73 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Assault Dropship"
+          "name": "Assault Dropship",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking before it moves can charge after Advancing"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 690,
@@ -23578,13 +24604,66 @@
       ],
       "abilities": [
         {
-          "name": "Merciless Hunter"
+          "name": "Merciless Hunter",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound when shooting units Below Half-strength"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 100,
@@ -24290,19 +25369,99 @@
       ],
       "abilities": [
         {
-          "name": "Purity of Execution"
+          "name": "Purity of Execution",
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Psyker"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Precision and Devastating Wounds when shooting Psykers"
         },
         {
-          "name": "Daughters of the Abyss"
+          "name": "Daughters of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Ceaseless Vigilance"
+          "name": "Ceaseless Vigilance",
+          "summary": "When shooting: one visible enemy within 12\" is nulled, +3\" detection range"
         }
       ],
       "points": 50,
@@ -26503,16 +27662,69 @@
       ],
       "abilities": [
         {
-          "name": "Disintegration Beams"
+          "name": "Disintegration Beams",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: Devastating Wounds when shooting"
         },
         {
-          "name": "Saturation Volleys"
+          "name": "Saturation Volleys",
+          "summary": "One infantry unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 225,
@@ -27166,22 +28378,76 @@
       ],
       "abilities": [
         {
-          "name": "Master of the Stances"
+          "name": "Master of the Stances",
+          "summary": "Once per battle, both Ka’tah stances at once"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Strategic Mastery"
+          "name": "Strategic Mastery",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, one Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Praesidium Shield"
+          "name": "Praesidium Shield",
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Wound for the bearer"
         }
       ],
       "points": 110,
@@ -27432,13 +28698,58 @@
           "name": "Auramite and Adamantite"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Strategic Mastery"
+          "name": "Strategic Mastery",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, one Stratagem on its unit costs 1CP less"
         }
       ],
       "points": 130,
@@ -27626,16 +28937,62 @@
           "name": "Leader"
         },
         {
-          "name": "Sweeping Advance"
+          "name": "Sweeping Advance",
+          "summary": "Once per battle, after fighting: Fall Back or a Normal move"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Strategic Mastery"
+          "name": "Strategic Mastery",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, one Stratagem on its unit costs 1CP less"
         }
       ],
       "points": 150,
@@ -29644,19 +31001,78 @@
       ],
       "abilities": [
         {
-          "name": "Guardian Eternal"
+          "name": "Guardian Eternal",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage on attacks against it"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Devoted to Destruction"
+          "name": "Devoted to Destruction",
+          "summary": "With two Telemon caestus, each gets +2 Attacks"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 225,
@@ -29940,16 +31356,71 @@
           "name": "Leader"
         },
         {
-          "name": "Captain-General"
+          "name": "Captain-General",
+          "summary": "Leading: the unit ignores modifiers to its skill and hit rolls"
         },
         {
-          "name": "Moment Shackle"
+          "name": "Moment Shackle",
+          "options": [
+            {
+              "name": "Watcher’s Axe: 12 Attacks",
+              "modifiers": []
+            },
+            {
+              "name": "2+ invulnerable save",
+              "modifiers": [
+                {
+                  "key": "invulnerable-save",
+                  "value": "2+",
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for the Fight phase: Watcher’s Axe at 12 Attacks, or a 2+ invulnerable save"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 135,
@@ -30195,16 +31666,70 @@
           "name": "Leader"
         },
         {
-          "name": "Golden Laurels"
+          "name": "Golden Laurels",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": 1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: melee attacks against the unit get AP worsened by 1"
         },
         {
-          "name": "Hero of Lion's Gate"
+          "name": "Hero of Lion's Gate",
+          "summary": "Once per battle, turns a hit, wound or save roll into an unmodified 6"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 120,
@@ -30377,19 +31902,69 @@
       ],
       "abilities": [
         {
-          "name": "Strike from the Skies"
+          "name": "Strike from the Skies",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shoots and charges after Falling Back"
         },
         {
-          "name": "Swooping Dive"
+          "name": "Swooping Dive",
+          "summary": "Once per battle, Rapid Ingress on it for 0CP"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Tarsis Buckler"
+          "name": "Tarsis Buckler",
+          "summary": "The bearer has 4 Wounds"
         }
       ],
       "points": 150,
@@ -30613,13 +32188,51 @@
       ],
       "abilities": [
         {
-          "name": "Unyielding Ancient"
+          "name": "Unyielding Ancient",
+          "summary": "First death: no Deadly Demise, and on a 2+ it returns with D6 wounds once the phase ends"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 170,
@@ -30840,16 +32453,73 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units leaving it after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 Wounds remaining"
+          "name": "Damaged: 1-5 Wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 220,
@@ -31171,16 +32841,69 @@
       ],
       "abilities": [
         {
-          "name": "Turbo Boost"
+          "name": "Turbo Boost",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         },
         {
-          "name": "Quicksilver Execution"
+          "name": "Quicksilver Execution",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle, after moving over infantry: 2 mortal wounds per model on a 2+"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         }
       ],
       "points": 155,
@@ -31967,19 +33690,83 @@
       ],
       "abilities": [
         {
-          "name": "Deft Parry"
+          "name": "Deft Parry",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee attacks against it get -1 to hit"
         },
         {
-          "name": "Daughters of the Abyss"
+          "name": "Daughters of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Ceaseless Vigilance"
+          "name": "Ceaseless Vigilance",
+          "summary": "When shooting: one visible enemy within 12\" is nulled, +3\" detection range"
         }
       ],
       "points": 50,
@@ -34248,19 +36035,77 @@
       ],
       "abilities": [
         {
-          "name": "Sanctified Flames"
+          "name": "Sanctified Flames",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Daughters of the Abyss"
+          "name": "Daughters of the Abyss",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Null Aegis (Aura)"
+          "name": "Null Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Custodes units within 6\": Feel No Pain 5+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Deadly Unity (Aura)"
+          "name": "Deadly Unity (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Anathema Psykana"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Anathema Psykana units within 6\": +1 to hit"
         },
         {
-          "name": "Ceaseless Vigilance"
+          "name": "Ceaseless Vigilance",
+          "summary": "When shooting: one visible enemy within 12\" is nulled, +3\" detection range"
         }
       ],
       "points": 50,
@@ -34336,15 +36181,49 @@
   "armyRules": [
     {
       "id": "assigned-agents",
-      "name": "Assigned Agents"
+      "name": "Assigned Agents",
+      "summary": "Imperium armies can include a few Agents of the Imperium, by battle size"
     },
     {
       "id": "kill-team",
-      "name": "Kill Team"
+      "name": "Kill Team",
+      "summary": "Wounds against it use the majority Toughness; bulky models count double when embarking"
     },
     {
       "id": "martial-katah",
-      "name": "Martial Ka'tah"
+      "name": "Martial Ka'tah",
+      "options": [
+        {
+          "name": "Dacatarai: Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rendax: Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Each fight, pick a stance: Sustained Hits 1 or Lethal Hits in melee"
     }
   ],
   "detachments": [
@@ -34358,7 +36237,28 @@
       "rules": [
         {
           "id": "assemblage-of-might",
-          "name": "Assemblage of Might"
+          "name": "Assemblage of Might",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Command phase: mark one enemy unit; Custodes Characters get +1 to wound against it until your next one"
         }
       ],
       "enhancements": [
@@ -34374,7 +36274,15 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After charging: D3 mortal wounds on a 4+ to an engaged enemy; once per battle, nearby enemies test Battle-shock"
         },
         {
           "id": "inspirational-exemplar",
@@ -34388,7 +36296,8 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leadership 5+; once per battle, frees a Custodes unit within 12\" from Battle-shock"
         },
         {
           "id": "martial-philosopher",
@@ -34402,7 +36311,18 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shoots and charges after Falling Back; once per battle, a 6\" reactive move"
         },
         {
           "id": "veiled-blade",
@@ -34416,7 +36336,20 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 Attacks in melee; once per battle, triple OC for a turn"
         }
       ]
     },
@@ -34432,7 +36365,39 @@
       "rules": [
         {
           "id": "against-all-odds",
-          "name": "Against All Odds"
+          "name": "Against All Odds",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "isolated"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "isolated"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes"
+            ],
+            "anyOf": [],
+            "noneOf": [
+              "Vehicle"
+            ]
+          },
+          "summary": "No other friendly unit within 6\": +1 to hit and +1 to wound"
         }
       ],
       "enhancements": [
@@ -34448,7 +36413,40 @@
               "Shield-Captain"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee: +3 S, +1 AP, +1 D"
         },
         {
           "id": "fierce-conqueror",
@@ -34462,7 +36460,8 @@
               "Shield-Captain"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Fight phase: +2 melee Attacks per 5 enemy models within 6\""
         },
         {
           "id": "praesidius",
@@ -34476,7 +36475,18 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self"
+            },
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "summary": "Lone Operative and Stealth"
         },
         {
           "id": "superior-creation",
@@ -34491,7 +36501,8 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "First death: on a 2+ he comes back at full wounds once the phase ends"
         }
       ]
     },
@@ -34506,7 +36517,33 @@
       "rules": [
         {
           "id": "march-of-the-honoured-dead",
-          "name": "March of the Honoured Dead"
+          "name": "March of the Honoured Dead",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            },
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes",
+              "Walker"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Custodes Walkers: +2\" Move, +1 to Advance and charge rolls"
         }
       ],
       "enhancements": [
@@ -34523,7 +36560,15 @@
               "Walker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact costs it 1CP less"
         },
         {
           "id": "interred-expertise",
@@ -34538,7 +36583,20 @@
               "Walker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll 1s to hit and to wound"
         }
       ]
     },
@@ -34552,7 +36610,21 @@
       "rules": [
         {
           "id": "creeping-dread-aura",
-          "name": "Creeping Dread (Aura)"
+          "name": "Creeping Dread (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Anathema Psykana"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Enemy Psykers, and units below Starting Strength, within 12\" test for Battle-shock in your opponent’s Command phase"
         }
       ],
       "enhancements": [
@@ -34568,7 +36640,15 @@
               "Anathema Psykana"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage on attacks against the bearer; attacks from Psykers or Battle-shocked models deal 1"
         },
         {
           "id": "huntress-eye",
@@ -34582,7 +36662,14 @@
               "Anathema Psykana"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Command phase: one enemy unit within 12\" tests for Battle-shock"
         },
         {
           "id": "oblivion-knight",
@@ -34596,7 +36683,26 @@
               "Anathema Psykana"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit, and +1 to wound against Psykers"
         },
         {
           "id": "raptor-blade",
@@ -34610,7 +36716,40 @@
               "Anathema Psykana"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee: +1 A, S and D; +2 each when engaged with a Battle-shocked Psyker"
         }
       ]
     },
@@ -34624,7 +36763,47 @@
       "rules": [
         {
           "id": "martial-mastery",
-          "name": "Martial Mastery"
+          "name": "Martial Mastery",
+          "options": [
+            {
+              "name": "Critical hits on 5+ in melee",
+              "modifiers": [
+                {
+                  "key": "crit-hit",
+                  "value": "5+",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "+1 AP in melee",
+              "modifiers": [
+                {
+                  "key": "AP",
+                  "value": -1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Each battle round, Ka’tah fighters get critical hits on 5+ or +1 AP in melee"
         }
       ],
       "enhancements": [
@@ -34643,7 +36822,15 @@
               "Shield-Captain"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2 Wounds"
         },
         {
           "id": "castellans-mark",
@@ -34657,7 +36844,8 @@
               "Shield-Captain"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to two Custodes units, even into Strategic Reserves"
         },
         {
           "id": "from-the-hall-of-armouries",
@@ -34671,7 +36859,30 @@
               "Shield-Captain"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and D in melee"
         },
         {
           "id": "panoptispex",
@@ -34688,7 +36899,19 @@
               "Shield-Captain"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: the unit shoots with Ignores Cover"
         }
       ]
     },
@@ -34702,7 +36925,15 @@
       "rules": [
         {
           "id": "skin-crawling-disorientation",
-          "name": "Skin-Crawling Disorientation"
+          "name": "Skin-Crawling Disorientation",
+          "eligibility": {
+            "allOf": [
+              "Anathema Psykana"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Advancing does not stop them starting an action; when shooting, they null one enemy within 12\" (+3\" detection range)"
         }
       ],
       "enhancements": [
@@ -34718,7 +36949,8 @@
               "Anathema Psykana"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three Anathema Psykana Infantry units, even into Strategic Reserves"
         },
         {
           "id": "psyk-out-grenades",
@@ -34732,7 +36964,15 @@
               "Anathema Psykana"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Explosives",
+              "target": "self"
+            }
+          ],
+          "summary": "The unit gains Explosives, re-rolling its mortal wound rolls against Psykers"
         }
       ]
     },
@@ -34747,11 +36987,78 @@
       "rules": [
         {
           "id": "auric-armour",
-          "name": "Auric Armour"
+          "name": "Auric Armour",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "at-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes",
+              "Vehicle"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Vehicles: +2 OC at Starting Strength; below it, re-roll 1s to hit; Below Half-strength, 1s to wound too"
         },
         {
           "id": "moritoi-ancients",
-          "name": "Moritoi Ancients"
+          "name": "Moritoi Ancients",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            },
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes",
+              "Walker"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Walkers: +2\" Move and +1 to Advance and charge rolls; up to two of them become Characters"
         }
       ],
       "enhancements": [
@@ -34767,7 +37074,40 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 A, S and D in melee"
         },
         {
           "id": "augury-uplink",
@@ -34781,7 +37121,15 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Feel No Pain 5+"
         },
         {
           "id": "honoured-fallen",
@@ -34796,7 +37144,26 @@
               "Vehicle"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Custodes"
+                ],
+                "anyOf": [
+                  "Infantry",
+                  "Mounted"
+                ],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Custodes Infantry and Mounted within 6\" re-roll 1s to hit"
         },
         {
           "id": "veteran-of-the-kataphraktoi",
@@ -34815,7 +37182,8 @@
               "Mounted"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: a Vehicle or Mounted unit within 6\" can shoot after Falling Back until your next one"
         }
       ]
     },
@@ -34830,7 +37198,8 @@
       "rules": [
         {
           "id": "revered-companions",
-          "name": "Revered Companions"
+          "name": "Revered Companions",
+          "summary": "Custodes near Anathema Psykana (6\"): Feel No Pain 5+ against Psychic and mortal wounds; Anathema Psykana near Custodes: +1 to hit"
         }
       ],
       "enhancements": [
@@ -34846,7 +37215,8 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per turn, the first failed save of its unit deals no damage"
         },
         {
           "id": "champion-of-the-imperium",
@@ -34860,7 +37230,8 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its Null Aegis or Deadly Unity aura reaches 9\""
         },
         {
           "id": "gift-of-terran-artifice",
@@ -34874,7 +37245,20 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound in melee"
         },
         {
           "id": "radiant-mantle",
@@ -34888,7 +37272,21 @@
               "Adeptus Custodes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "target-within",
+                  "value": 12
+                }
+              ]
+            }
+          ],
+          "summary": "Attacks from 12\" or closer against its unit get -1 to hit"
         }
       ]
     },
@@ -34903,7 +37301,27 @@
       "rules": [
         {
           "id": "the-hammer-falls",
-          "name": "The Hammer Falls"
+          "name": "The Hammer Falls",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Custodes",
+              "Terminator"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Custodes Terminators re-roll charges in a turn they made an ingress move"
         }
       ],
       "enhancements": [
@@ -34920,7 +37338,15 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+1",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per turn, shot and wounded: surge D6+1\""
         },
         {
           "id": "mnemo-locked-shrine-cipher",
@@ -34935,7 +37361,14 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ingress",
+              "target": "self"
+            }
+          ],
+          "summary": "Can make an ingress move in your first Movement phase"
         }
       ]
     }
@@ -34958,7 +37391,34 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "target-keyword",
+              "value": "Psyker"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits in melee; wounds too against Psykers or Battle-shocked units"
     },
     {
       "id": "arcane-genetic-alchemy",
@@ -34981,7 +37441,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 4+ against mortal wounds this phase"
     },
     {
       "id": "archeotech-munitions",
@@ -34999,8 +37472,42 @@
           "Adeptus Custodes"
         ],
         "anyOf": [],
-        "noneOf": []
-      }
+        "noneOf": [
+          "Anathema Psykana"
+        ]
+      },
+      "options": [
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Lethal Hits or Sustained Hits 1"
     },
     {
       "id": "avenge-the-fallen",
@@ -35012,14 +37519,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
           "Adeptus Custodes"
         ],
         "anyOf": [],
-        "noneOf": []
-      }
+        "noneOf": [
+          "Anathema Psykana"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Below Starting Strength: +1 melee Attack (+2 if Below Half-strength)"
     },
     {
       "id": "deathsong-scythes",
@@ -35031,13 +37554,44 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Vigilators"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        },
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "target-keyword",
+              "value": "Psyker"
+            }
+          ]
+        }
+      ],
+      "summary": "Lance in melee, and +1 Attack against Psykers"
     },
     {
       "id": "defiant-to-the-last",
@@ -35049,6 +37603,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -35056,7 +37611,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "Models slain before fighting still fight on a 4+ (Characters on a 2+)"
     },
     {
       "id": "desperations-price",
@@ -35079,7 +37642,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 3,
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy Psyker that just used its powers tests Leadership: Battle-shocked, plus 3 mortal wounds if it fails"
     },
     {
       "id": "earning-of-a-name",
@@ -35099,7 +37670,54 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "Up to two Characters re-roll hits and wounds against Monsters and Vehicles"
     },
     {
       "id": "electroexorcist-saturation",
@@ -35111,6 +37729,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Adeptus Custodes",
@@ -35118,7 +37737,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Ballistus Grenade Launchers fire D3+3 Attacks"
     },
     {
       "id": "emperors-executioners",
@@ -35130,6 +37750,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -35137,7 +37758,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-below-starting-strength"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound against units below Starting Strength"
     },
     {
       "id": "emperors-vengeance",
@@ -35149,6 +37783,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -35156,7 +37791,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "Models slain before fighting still fight on a 4+ (+1 for Walkers)"
     },
     {
       "id": "empyric-severance",
@@ -35169,6 +37812,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -35176,7 +37820,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Next to Anathema Psykana: Feel No Pain 4+ against Psychic and mortal wounds"
     },
     {
       "id": "flawless-construction",
@@ -35189,6 +37846,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
           "Adeptus Custodes",
@@ -35196,7 +37854,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "-1 to wound for attacks with S above its T"
     },
     {
       "id": "flawless-construction-2",
@@ -35209,6 +37880,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -35217,7 +37889,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "-1 to wound for attacks with S above its T"
     },
     {
       "id": "gilded-champion",
@@ -35241,7 +37926,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A Character uses a once-per-battle ability one more time"
     },
     {
       "id": "hardened-resolve",
@@ -35254,6 +37940,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
           "Adeptus Custodes",
@@ -35261,7 +37948,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "T",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 Toughness"
     },
     {
       "id": "hunt-as-one",
@@ -35273,6 +37968,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -35280,7 +37976,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Up to two units can shoot and charge after Falling Back"
     },
     {
       "id": "manoeuvre-and-fire",
@@ -35292,6 +37999,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -35299,7 +38007,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "After Falling Back, can still shoot and charge"
     },
     {
       "id": "multipotentiality",
@@ -35318,7 +38037,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "peerless-warrior",
@@ -35337,7 +38067,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "precision",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Melee weapons gain Precision"
     },
     {
       "id": "prioritised-eradication",
@@ -35349,13 +38091,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Telemon Heavy Dreadnought"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Arachnus Storm Cannons gain Rapid Fire 6, Iliastus Culverins Rapid Fire 2"
     },
     {
       "id": "psy-chaff-volley",
@@ -35374,7 +38118,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "One unit hit is prosecuted: Anathema Psykana get +1 AP against it, and a Psyker or Battle-shocked one gets -1 to hit"
     },
     {
       "id": "psychic-abominations",
@@ -35386,6 +38131,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -35394,7 +38140,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        }
+      ],
+      "summary": "Stealth; Psykers and Battle-shocked models can only shoot it from 12\" or closer"
     },
     {
       "id": "punishment-inescapable",
@@ -35413,7 +38166,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover, and ignores modifiers to its BS and hit rolls"
     },
     {
       "id": "purgation-sweep",
@@ -35432,7 +38197,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Torrent weapons get +1 Attack (+2 against Psykers or Battle-shocked units)"
     },
     {
       "id": "relentless-persecution",
@@ -35452,7 +38230,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "After Advancing it can still shoot; a Walker can also charge"
     },
     {
       "id": "shield-of-honour",
@@ -35464,6 +38249,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "epic-deed",
       "target": {
         "allOf": [
@@ -35472,7 +38258,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Attacks aimed at the Anathema Psykana unit go to a Custodes unit within 6\" instead"
     },
     {
       "id": "shoulder-the-mantle",
@@ -35484,6 +38271,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "reinforcements",
       "category": "epic-deed",
       "target": {
         "allOf": [
@@ -35492,7 +38280,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A lone Character joins a nearby unit it could lead"
     },
     {
       "id": "slayer-of-champions",
@@ -35516,7 +38305,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "cp",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Killed the marked unit: mark a new one; +1CP if it was a Character"
     },
     {
       "id": "superhuman-reserves",
@@ -35540,7 +38337,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Your Warlord uses a once-per-battle ability one more time"
     },
     {
       "id": "swift-as-the-eagle",
@@ -35552,14 +38350,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
           "Adeptus Custodes"
         ],
         "anyOf": [],
-        "noneOf": []
-      }
+        "noneOf": [
+          "Vehicle"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "After being shot: Normal move of D6\""
     },
     {
       "id": "synchronised-inferno",
@@ -35571,13 +38380,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Witchseekers"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "blast",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Torrent attacks gain Blast 1"
     },
     {
       "id": "taloned-pincer",
@@ -35589,6 +38411,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-moved",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -35596,7 +38419,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Enemy ended a move within 8\": up to two units move 6\""
     },
     {
       "id": "talons-interlocked",
@@ -35616,7 +38447,30 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Up to two Infantry units focus one target: +1 S and AP when shooting"
     },
     {
       "id": "the-emperors-auspice",
@@ -35629,6 +38483,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "epic-deed",
       "target": {
         "allOf": [
@@ -35637,7 +38492,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "Character models gain Feel No Pain 4+"
     },
     {
       "id": "umbral-prosecution",
@@ -35649,13 +38512,40 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Prosecutors"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 2,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "half-range"
+            }
+          ]
+        },
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Boltguns gain Rapid Fire 2 and +1 AP"
     },
     {
       "id": "unleash-the-lions",
@@ -35669,12 +38559,14 @@
       "timing": "once-per-phase",
       "category": "strategic-ploy",
       "target": {
-        "allOf": [
-          "Adeptus Custodes"
+        "allOf": [],
+        "anyOf": [
+          "Allarus Custodians",
+          "Aquilon Custodians"
         ],
-        "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Allarus or Aquilon split into single-model units"
     },
     {
       "id": "unleash-the-lions-2",
@@ -35685,14 +38577,16 @@
         "command"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-turn",
+      "timing": "once-per-phase",
       "target": {
-        "allOf": [
-          "Allarus Custodians"
+        "allOf": [],
+        "anyOf": [
+          "Allarus Custodians",
+          "Aquilon Custodians"
         ],
-        "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Allarus or Aquilon split into single-model units"
     },
     {
       "id": "unstoppable",
@@ -35700,7 +38594,8 @@
       "detachmentId": "solar-spearhead",
       "cp": 1,
       "phases": [
-        "movement"
+        "movement",
+        "charge"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
@@ -35709,9 +38604,13 @@
         "allOf": [
           "Adeptus Custodes"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Vehicle",
+          "Mounted"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "Moves through terrain features this phase"
     },
     {
       "id": "unstoppable-advance",
@@ -35723,6 +38622,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Adeptus Custodes",
@@ -35730,7 +38630,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mobile",
+          "target": "self"
+        }
+      ],
+      "summary": "The Walker gains MOBILE"
     },
     {
       "id": "unwavering-sentinels",
@@ -35742,6 +38649,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -35749,8 +38657,23 @@
           "Infantry"
         ],
         "anyOf": [],
-        "noneOf": []
-      }
+        "noneOf": [
+          "Anathema Psykana"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "On an objective you control: melee attacks against it get -1 to hit"
     },
     {
       "id": "vigil-unending",
@@ -35770,7 +38693,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "target": "self"
+        }
+      ],
+      "summary": "A Character slain before fighting still fights"
     },
     {
       "id": "vigilance-eternal",
@@ -35789,8 +38719,11 @@
           "Battleline"
         ],
         "anyOf": [],
-        "noneOf": []
-      }
+        "noneOf": [
+          "Anathema Psykana"
+        ]
+      },
+      "summary": "Battleline: the objective stays yours after it leaves"
     },
     {
       "id": "witch-hunters",
@@ -35810,7 +38743,29 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "options": [
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits or Sustained Hits 1, but the unit may only target Psykers"
     },
     {
       "id": "wrathful-advance",
@@ -35829,7 +38784,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "Pile-in moves of D3+3\" instead of 3\""
     }
   ]
 }
