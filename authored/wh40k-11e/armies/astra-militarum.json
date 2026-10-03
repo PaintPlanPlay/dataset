@@ -1,5 +1,780 @@
 [
   {
+    "target": "18f9-56ec-7334-69a7::ability:Bomb Drop",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "6D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "18f9-56ec-7334-69a7::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2408-cf76-fe11-c6da::ability:Heroic Example",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self"
+      }
+    ],
+    "summary": "While Minka Lesk lives: re-roll hits",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2408-cf76-fe11-c6da::ability:Lesk’s Heroes",
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 Ld and re-roll Battle-shock and Leadership tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2408-cf76-fe11-c6da::ability:Regimental Banner",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC for its unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "37ad-63e5-1786-87cf::ability:Brute Shield",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has a 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "37ad-63e5-1786-87cf::ability:Slabshield",
+    "modifiers": [
+      {
+        "key": "W",
+        "value": 4,
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has 4 Wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "37ad-63e5-1786-87cf::ability:Wall of Muscle",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3962-1fa9-7088-aedd::ability:Hero of Hades Hive",
+    "summary": "Command phase: picks one of his Hero of Hades Hive abilities until the next",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3962-1fa9-7088-aedd::ability:Will of Iron",
+    "summary": "First death: on a 2+ he returns with 3 wounds once the phase ends",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "497-36ad-8ecb-f7c7::ability:Command Rod",
+    "summary": "Leading: its unit can be under two different Orders",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "497-36ad-8ecb-f7c7::ability:Master Vox",
+    "summary": "Its Officer can issue Orders to units up to 24\" away",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "497-36ad-8ecb-f7c7::ability:Medi-pack",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase, below Starting Strength: returns up to D3 Tempestus Scions",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "497-36ad-8ecb-f7c7::ability:Regimental Standard",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC for its unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "497-36ad-8ecb-f7c7::ability:Tempestor Prime",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "With a Tempestor Prime: Sustained Hits 1 when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4aa7-5845-84ad-2d7d::ability:Hero of the Imperium (Aura)",
+    "summary": "Friendly units within 6\" re-roll Battle-shock tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4aa7-5845-84ad-2d7d::ability:Psychic Blank",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Feel No Pain 4+ against Psychic attacks and mortal wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4aa7-5845-84ad-2d7d::ability:Trapped by Excuses",
+    "summary": "Must deploy on the battlefield; cannot be redeployed or put in Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4aa7-5845-84ad-2d7d::ability:Unparalleled Luck (Once per battle, per army)",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "2+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, for one phase: 2+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4d50-e535-616a-259c::ability:Like Fighting a Shadow",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting, unengaged: makes a Normal move, then cannot charge this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4d50-e535-616a-259c::ability:One-man Army",
+    "summary": "Once per turn, a Regiment within 3\" shot at: shoots back at the attacker",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "50b8-1f13-9807-0069::ability:Aquiline Prow",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-3, 3 on 4-5, D3+3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "50b8-1f13-9807-0069::ability:Brutal Disciplinarian",
+    "summary": "Once per turn: a Battle-shocked infantry unit within 24\" (not a lone model) loses a model and recovers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "50b8-1f13-9807-0069::ability:Mechanised Spearhead",
+    "summary": "A Regiment disembarking 6\" or closer to him gets a free Order",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "532c-2c97-357a-fa1e::ability:Damaged: 1-5 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "532c-2c97-357a-fa1e::ability:Fiery Vengeance",
+    "summary": "Once per turn, a friendly unit within 6\" killed by a flyer: shoots back at that flyer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5c5f-8f23-7f13-2af6::ability:Mindlock",
+    "modifiers": [
+      {
+        "key": "BS",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "led"
+          }
+        ]
+      },
+      {
+        "key": "WS",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "Led by an Enginseer: Servitors get +1 BS and WS",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5c5f-8f23-7f13-2af6::ability:Servitor Retinue",
+    "summary": "Joins a unit led by an Enginseer at deployment",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "653d-80-d715-7d55::ability:Covert Stealth Team",
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "End of the enemy turn, unengaged: into Strategic Reserves with Deep Strike, back next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "653d-80-d715-7d55::ability:Tanith Camo-cloaks",
+    "modifiers": [
+      {
+        "key": "cover",
+        "target": "self"
+      }
+    ],
+    "summary": "Always has the benefit of cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "679b-f37f-2388-748::ability:Storm Troopers",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound; every wound roll against units on an objective",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "679b-f37f-2388-748::ability:Vox-caster",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d5b-1aae-55-2f5b::ability:Shoot Sharp and Scarper",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting, unengaged: makes a Normal move, then cannot charge this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d5b-1aae-55-2f5b::ability:The Ratling Twins",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "at-starting-strength"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "at-starting-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "Both alive: re-roll hits and wounds when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7f1f-38c8-1bdc-55d7::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7f1f-38c8-1bdc-55d7::ability:Heavy Bombs",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "9D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: nine D6, each 5+ a mortal wound (+1 against Monsters and Vehicles)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7f1f-38c8-1bdc-55d7::ability:Inferno Bombs",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "9D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: nine D6, each 5+ a mortal wound (+1 against others)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8293-a070-2c87-de30::ability:Demolition Gear",
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Grenades",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit has the Grenades keyword",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8293-a070-2c87-de30::ability:Ratling Battlemutt",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: Lethal Hits when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8293-a070-2c87-de30::ability:Shoot Sharp and Scarper",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting, unengaged: makes a Normal move, then cannot charge this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9033-d07c-3e1c-f6f0::ability:Leading the Charge",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "After charging: Devastating Wounds in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9033-d07c-3e1c-f6f0::ability:Tough to Kill",
+    "summary": "First death: on a 2+ he returns with D3 wounds once the phase ends",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "913f-3cb6-fb80-7f6a::ability:Been There, Seen it, Killed it",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "After charging: re-roll hits and wounds in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "913f-3cb6-fb80-7f6a::ability:Cold Steel and Courage",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Lethal Hits in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a7c2-1534-93b0-c0eb::ability:Brute Shield",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has a 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a7c2-1534-93b0-c0eb::ability:Loyal Protector",
+    "summary": "Must join a Command Squad at deployment; takes three Transport places; never the Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a7c2-1534-93b0-c0eb::ability:Ogryn Bodyguard",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Officer"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Officers in its unit have Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a7c2-1534-93b0-c0eb::ability:Slabshield",
+    "modifiers": [
+      {
+        "key": "W",
+        "value": 7,
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has 7 Wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a8d5-81f9-96a0-fd12::ability:Harker’s Hellraisers",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: attackers more than 12\" away get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a8d5-81f9-96a0-fd12::ability:Payback Time",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 3,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: Payback has 6 Attacks and Sustained Hits 3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a979-5b21-dc69-b949::ability:Political Overwatch",
+    "summary": "With another Officer in its unit: re-roll Battle-shock tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a979-5b21-dc69-b949::ability:Summary Execution",
+    "summary": "Once per battle round: a Battle-shocked infantry unit within 12\" loses a model and recovers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a9d-55c1-3d24-fa25::ability:The Collegiate Astrolex",
+    "summary": "After deployment, redeploy up to three units, even into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a9d-55c1-3d24-fa25::ability:The Lord Solar",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1CP each Command phase while on the battlefield",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aa9f-f137-1638-0369::ability:Precision Drop",
+    "summary": "Can Deep Strike 6\" from enemies, then no charge that turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aa9f-f137-1638-0369::ability:Servo-sentry",
+    "summary": "Deep Striking: the Tempestor Aquilon fires its sentry weapon",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aa9f-f137-1638-0369::ability:Signal Flares",
+    "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "astra-militarum::armyrule:voice-of-command",
+    "options": [
+      {
+        "name": "Move! Move! Move!: +3\" Move",
+        "modifiers": [
+          {
+            "key": "M",
+            "value": 3,
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "Fix Bayonets!: +1 WS",
+        "modifiers": [
+          {
+            "key": "WS",
+            "value": -1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "melee"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Take Aim!: +1 BS",
+        "modifiers": [
+          {
+            "key": "BS",
+            "value": -1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "First Rank, Fire! Second Rank, Fire!: +1 Attack for Rapid Fire weapons",
+        "modifiers": [
+          {
+            "key": "A",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              },
+              {
+                "key": "weapon-keyword",
+                "value": "Rapid Fire"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Take Cover!: +1 Save (not past 3+)",
+        "modifiers": [
+          {
+            "key": "Sv",
+            "value": -1,
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "Duty and Honour!: +1 Ld and OC",
+        "modifiers": [
+          {
+            "key": "Ld",
+            "value": 1,
+            "target": "self"
+          },
+          {
+            "key": "OC",
+            "value": 1,
+            "target": "self"
+          }
+        ]
+      }
+    ],
+    "summary": "Officers issue Orders to friendly units within 6\", which last until your next Command phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
     "target": "astra-militarum::enhancement:abhuman-auxiliaries|exemplar-of-duty",
     "requires": [
       [
@@ -7,7 +782,15 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:abhuman-auxiliaries|sharp-eyes",
@@ -18,7 +801,8 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Ratlings only",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:armoured-infantry|exemplary-officer",
@@ -28,7 +812,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "An Order to its own unit also goes to up to two Platoon units within 3\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:armoured-infantry|grand-strategist",
@@ -37,7 +822,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "After deployment, redeploy up to two Regiment or Squadron units, even into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:armoured-infantry|master-manoeuvrist",
@@ -47,7 +833,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "End of the enemy Fight phase, unengaged and all 3\" or closer to a Transport: embarks",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:armoured-infantry|omnissian-unguents",
@@ -57,7 +844,23 @@
         "Tech-Priest Enginseer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Armoured Skirmisher"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Armoured Skirmishers within 3\" have Feel No Pain 5+",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:bridgehead-strike|bombast-class-vox-array",
@@ -68,7 +871,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "With a Master Vox, its Order goes to up to three Regiment units",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:bridgehead-strike|priority-drop-beacon",
@@ -79,7 +883,14 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "ingress",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit can make an ingress move in your first Movement phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:combined-arms|death-mask-of-ollanius",
@@ -88,7 +899,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Battle-shocked, its unit loses only 1 OC instead of all",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:combined-arms|drill-commander",
@@ -97,7 +909,23 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading, Stationary: critical hits on 5+ when shooting",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:combined-arms|grand-strategist",
@@ -106,7 +934,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Issues one more Order each Command phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:combined-arms|reactive-command",
@@ -115,7 +944,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "An enemy set up 8\" or closer to its unit: issues a free Order",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:designation-force|long-range-scout",
@@ -126,7 +956,14 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "infiltrators",
+        "target": "self"
+      }
+    ],
+    "summary": "Its Scout Sentinel unit has Infiltrators",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:designation-force|recon-star",
@@ -138,7 +975,14 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "ingress",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit can make an ingress move in your first Movement phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:grizzled-company|abhuman-detail",
@@ -147,7 +991,8 @@
         "Commissar"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Can order Ogryns and lead an Ogryn or Bullgryn squad",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:grizzled-company|aquilan-eye",
@@ -157,7 +1002,27 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "under-order"
+          },
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      }
+    ],
+    "summary": "New Order, Target Weak Spot: +1 AP when shooting targets within 12\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:grizzled-company|laud-hailer",
@@ -167,7 +1032,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its Orders reach units within 12\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:grizzled-company|spec-ops-veteran",
@@ -178,7 +1044,19 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "under-order"
+          }
+        ]
+      }
+    ],
+    "summary": "New Order, Move to the Shadows: Stealth against ranged attacks",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:hammer-of-the-emperor|calm-under-fire",
@@ -188,7 +1066,8 @@
         "Vehicle"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per turn, an Order to a Squadron goes to a second Squadron too",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:hammer-of-the-emperor|indomitable-steed",
@@ -198,7 +1077,15 @@
         "Vehicle"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "6+",
+        "target": "self"
+      }
+    ],
+    "summary": "Feel No Pain 6+",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:hammer-of-the-emperor|regimental-banner",
@@ -208,7 +1095,15 @@
         "Vehicle"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 3,
+        "target": "self"
+      }
+    ],
+    "summary": "+3 OC",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:hammer-of-the-emperor|veteran-crew",
@@ -218,7 +1113,20 @@
         "Vehicle"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit re-rolls 1s to hit when shooting",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:mechanised-assault|bold-leadership",
@@ -228,7 +1136,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "An objective it holds as your Command phase ends stays yours after it leaves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:mechanised-assault|sacred-unguents",
@@ -238,7 +1147,8 @@
         "Tech-Priest Enginseer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Shooting phase: a Transport within 3\" re-rolls hits this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:mechanised-assault|smoke-grenades",
@@ -248,7 +1158,28 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-transport"
+          }
+        ]
+      },
+      {
+        "key": "stealth",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-transport"
+          }
+        ]
+      }
+    ],
+    "summary": "Wholly 3\" or closer to a friendly Transport: cover and Stealth",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:mechanised-assault|vanguard-honours",
@@ -258,7 +1189,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its unit can disembark after the Transport Advanced, with a shock disembark",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:recon-element|guerrilla-honours",
@@ -268,7 +1200,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "After deployment, redeploy up to three infantry units, even into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:recon-element|scare-gas-grenades",
@@ -278,7 +1211,14 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per battle: a non-Monster, non-Vehicle enemy within 8\" tests for Battle-shock",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:recon-element|survival-gear",
@@ -288,7 +1228,15 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "scouts",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Scouts 6\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:recon-element|tripwires",
@@ -298,7 +1246,15 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry or Mounted enemies ending a move within 8\": stunned on a 4+, -1 to hit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:siege-regiment|eager-advance",
@@ -308,7 +1264,15 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "scouts",
+        "value": 6,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading a Regiment: Scouts 6\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:siege-regiment|flash-grenades",
@@ -318,7 +1282,8 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemies cannot Fire Overwatch at its unit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:siege-regiment|legacy-sidearm",
@@ -328,7 +1293,21 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "weapon-keyword",
+            "value": "Pistol"
+          }
+        ]
+      }
+    ],
+    "summary": "+2 Attacks for its Pistols",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:siege-regiment|stalwarts-honours",
@@ -337,7 +1316,20 @@
         "Officer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "Sv",
+        "value": -1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "under-order"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: any Order to its unit adds Take Cover!",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:steel-hammer|assault-hatches",
@@ -348,7 +1340,14 @@
         "Transport"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "Units disembarking after its Normal move make an assault disembark",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:steel-hammer|battalion-commander",
@@ -358,7 +1357,8 @@
         "Titanic"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Becomes an Officer issuing two Orders to Titanic and Squadron units",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:steel-hammer|engine-speaker",
@@ -368,7 +1368,22 @@
         "Tech-Priest Enginseer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 3,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Omnissiah’s Blessing also gives +3\" Move until your next Command phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::enhancement:steel-hammer|titan-killer",
@@ -378,84 +1393,331 @@
         "Titanic"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-damage",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll Damage when shooting",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:abhuman-auxiliaries|absolutist-principles",
     "rule": {
       "name": "Absolutist Principles"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Bullgryns, Ogryns and Ratlings become Abhuman; Commissars can issue Take Aim! and one Order to an Abhuman unit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:armoured-infantry|squadron-command",
     "rule": {
       "name": "Squadron Command"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Officers can order Squadrons, which become Armoured Skirmishers; On My Signal: a D6\" move when an enemy ends a move within 8\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:bridgehead-strike|fire-zone-purge",
     "rule": {
       "name": "Fire Zone Purge"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Militarum Tempestus"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "arrived-this-turn"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Tempestus Scions"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "warlord"
+          }
+        ]
+      }
+    ],
+    "summary": "Tempestus units set up this turn get +1 to hit; with a Tempestus Warlord, Scions are Battleline with +1 OC",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:combined-arms|born-soldiers",
     "rule": {
       "name": "Born Soldiers"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Regiment",
+        "Squadron"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Regiment"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Monster"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      },
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ],
+        "keywords": {
+          "allOf": [
+            "Squadron"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      },
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ],
+        "keywords": {
+          "allOf": [
+            "Squadron"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Regiments shoot with Lethal Hits against non-Monster, non-Vehicle units; Squadrons against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:designation-force|designated-targets",
     "rule": {
       "name": "Designated Targets"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Scout Sentinels and Smoke infantry mark a visible enemy within 12\" when shooting: +3\" detection range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:grizzled-company|ruthless-discipline",
     "rule": {
       "name": "Ruthless Discipline"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Astra Militarum"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "under-order"
+          }
+        ]
+      }
+    ],
+    "summary": "Officers issue one more Order; units under an Order re-roll 1s to hit",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:hammer-of-the-emperor|iron-tread",
     "rule": {
       "name": "Iron Tread"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Squadron"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Squadrons Advance a flat 6\" and can pass through enemy engagement range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:mechanised-assault|armoured-fist",
     "rule": {
       "name": "Armoured Fist"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Astra Militarum"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "disembarked"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound when shooting in a turn the unit disembarked",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:recon-element|masters-of-camouflage",
     "rule": {
       "name": "Masters of Camouflage"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Astra Militarum"
+      ],
+      "anyOf": [],
+      "noneOf": [
+        "Titanic"
+      ]
+    },
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "self"
+      }
+    ],
+    "summary": "Stealth (Titanic units excepted)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:siege-regiment|artillery-support",
     "rule": {
       "name": "Artillery Support"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "options": [
+      {
+        "name": "Creeping Barrage: far enemies shaken on a 5+",
+        "modifiers": [
+          {
+            "key": "M",
+            "value": -2,
+            "target": "enemy"
+          },
+          {
+            "key": "charge",
+            "value": -2,
+            "target": "enemy"
+          }
+        ]
+      },
+      {
+        "name": "Incendiary Bombardment: far enemies lose cover",
+        "modifiers": []
+      },
+      {
+        "name": "Smoke Shells: some of your units gain Stealth",
+        "modifiers": [
+          {
+            "key": "stealth",
+            "target": "self"
+          }
+        ]
+      }
+    ],
+    "summary": "Each battle round: shake or strip cover from enemies 12\" away, or give Stealth to some of your units",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::rule:steel-hammer|ceaseless-cannonade",
     "rule": {
       "name": "Ceaseless Cannonade"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Astra Militarum"
+      ],
+      "anyOf": [
+        "Titanic",
+        "Squadron"
+      ],
+      "noneOf": []
+    },
+    "summary": "Titanic and Squadron units shoot engaged enemies without penalty; Titanic units can be Characters",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:ablative-plating",
@@ -468,9 +1730,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:accuracy-under-pressure",
@@ -492,7 +1771,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll hits this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:adamantine-behemoth",
@@ -516,7 +1803,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves and charges through terrain this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:additional-armour",
@@ -529,9 +1817,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it lose 1 AP until the attacker is done",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:blazing-advance",
@@ -544,9 +1847,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Squadron"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "trigger": "after-own-action"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "advance-and-shoot",
+        "target": "self"
+      }
+    ],
+    "summary": "Advanced: can still shoot this turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:burst-of-speed",
@@ -559,6 +1877,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -568,7 +1887,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "A unit that moved: an extra Normal move of D6\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:callous-sacrifice",
@@ -581,9 +1908,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Platoon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Engaged: shoots as if unengaged, but may lose models on 4+s as the enemy is hurt",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:clear-and-secure",
@@ -596,9 +1931,39 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Disembarked this turn: re-roll hits and wounds against units on an objective",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:close-range-detection",
@@ -611,15 +1976,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
-        "allOf": [
-          "Astra Militarum Infantry"
+        "allOf": [],
+        "anyOf": [
+          "Scout Sentinels",
+          "Infantry"
         ],
-        "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Visible enemies within 6\" get +3\" detection range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:combined-fire",
@@ -632,6 +2000,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -641,7 +2010,20 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits loses cover, and Armoured Skirmishers get +2 S against it this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:coordinated-action",
@@ -658,9 +2040,19 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Regiment",
+          "Squadron"
+        ],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A Regiment and a Squadron within 6\" share each other’s Orders this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:courageous-diversion",
@@ -673,9 +2065,33 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "6+",
+        "target": "self"
+      },
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Feel No Pain 6+, and -1 to hit it as the closest target this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:crack-shots",
@@ -688,9 +2104,28 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Platoon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "precision",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Precision when shooting this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:crash-through",
@@ -704,9 +2139,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves and charges through terrain this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:draw-them-out",
@@ -719,9 +2163,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Platoon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:engine-of-wrath",
@@ -744,7 +2204,30 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 6,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Against one engaged enemy: +6 melee Attacks and +2 AP this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:fields-of-fire",
@@ -757,9 +2240,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Regiment",
+          "Squadron"
+        ],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "A Regiment and a Squadron get +1 AP against one enemy unit this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:final-hour",
@@ -772,9 +2276,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Squadron"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Officer"
+        ]
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "hazardous",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Below Half-strength: ranged weapons gain Hazardous, and it ignores hit and BS modifiers this round",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:firing-hot",
@@ -787,16 +2312,48 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
+      "trigger": "after-own-action",
       "target": {
-        "allOf": [
-          "Astra Militarum"
+        "allOf": [],
+        "anyOf": [
+          "Militarum Tempestus",
+          "Kasrkin"
         ],
-        "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      }
+    ],
+    "summary": "Hot-shot weapons get +1 S and AP against targets within 12\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:flare-burst",
@@ -809,9 +2366,31 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against visible targets within 12\" this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:flexible-command",
@@ -824,9 +2403,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Officer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Officers can order Regiments and Squadrons this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:furious-cannonade",
@@ -839,9 +2427,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Squadron"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-within",
+            "value": 12
+          }
+        ]
+      }
+    ],
+    "summary": "+1 AP against targets within 12\" this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:furious-fusillade",
@@ -854,9 +2463,32 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Platoon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Attack for ranged weapons at half range this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:hasty-extraction",
@@ -869,9 +2501,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Chosen as a charge target: embarks in a Transport 3\" or closer to all its models",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:imposing-arrival",
@@ -884,6 +2525,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "reinforcements",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -894,7 +2536,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "From round 2: arrives from Reserves 8\" or closer to an edge, 6\" from enemies",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:inspired-command",
@@ -907,9 +2550,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Officer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "The Officer issues one Order in the enemy Command phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:low-profile",
@@ -922,6 +2574,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Ratlings"
@@ -930,7 +2583,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its shooting does not stop it from being hidden",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:minefield",
@@ -943,9 +2597,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "start-of-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Platoon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 6,
+        "target": "enemy"
+      }
+    ],
+    "summary": "An enemy charging into it: a D6 per model, each 5+ a mortal wound (6 at most)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:mobile-firebase",
@@ -958,6 +2628,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -967,7 +2638,18 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "advance-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      }
+    ],
+    "summary": "Advanced or Fell Back: can still shoot this turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:mordian-minute",
@@ -980,9 +2662,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Under First Rank, Fire!: +1 S this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:move-out",
@@ -991,13 +2688,26 @@
       "detachmentId": "mechanised-assault",
       "cp": 1,
       "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
         "fight"
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-turn",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "End of the enemy turn: embarks in a Transport 3\" or closer to all its models",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:no-retreat",
@@ -1010,9 +2720,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Under Duty and Honour!, on an objective: it stays yours after the unit leaves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:on-my-position",
@@ -1021,21 +2738,28 @@
       "detachmentId": "bridgehead-strike",
       "cp": 1,
       "phases": [
-        "fight"
+        "charge"
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed",
+      "trigger": "end-of-phase",
       "target": {
         "allOf": [
-          "Astra Militarum",
           "Regiment"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Each engaged enemy takes D6 mortal wounds on a 2+, then the unit takes 3D3",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:opening-salvo",
@@ -1057,7 +2781,20 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "disembarked"
+          }
+        ]
+      }
+    ],
+    "summary": "Disembarked this turn: +1 to wound this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:order-the-advance",
@@ -1070,16 +2807,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "Astra Militarum"
+          "Astra Militarum",
+          "Officer"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-advance",
+        "target": "aura",
+        "range": 6
+      }
+    ],
+    "summary": "Units 6\" or closer to the Officer re-roll Advance rolls this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:over-the-top",
@@ -1092,9 +2839,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Infantry",
+          "Officer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Move! Move! Move! reaches any number of infantry Regiments at any range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:purging-fire",
@@ -1107,9 +2864,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Under an Order, on an objective: Lethal Hits when shooting this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:rapid-dispersal",
@@ -1122,9 +2900,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Disembarked this phase: an extra Normal move of D6\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:reinforcements",
@@ -1141,9 +2935,18 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Infantry",
+          "Regiment"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle: a destroyed infantry Regiment unit returns whole into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:scouting-outriders",
@@ -1152,13 +2955,35 @@
       "detachmentId": "recon-element",
       "cp": 1,
       "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
         "fight"
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "end-of-turn",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Walker"
+        ],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Wholly 10\" or closer to an edge, unengaged: back into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:scramble-field",
@@ -1171,9 +2996,19 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "start-of-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemy Reinforcements cannot arrive within 12\" this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:servo-designators",
@@ -1186,17 +3021,31 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
-          "Astra Militarum",
           "Militarum Tempestus"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits: Tempestus units shoot it with Ignores Cover",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:shattering-salvo",
@@ -1209,6 +3058,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -1219,7 +3069,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "One unit it hits loses the benefit of cover this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:snap-to-it",
@@ -1236,9 +3087,18 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Officer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "The Officer issues one Order at the start of any phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:stalwart-protector",
@@ -1251,9 +3111,19 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Infantry partly hidden by the Vehicle get the benefit of cover this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:stirred-to-action",
@@ -1266,15 +3136,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
-        "allOf": [
-          "Astra Militarum"
+        "allOf": [],
+        "anyOf": [
+          "Bullgryn Squad",
+          "Ogryn Squad"
         ],
-        "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "surge-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Shot at while unengaged: makes a D6\" surge move once the attacker is done",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:sump-smog-screen",
@@ -1287,15 +3167,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
-          "Astra Militarum Infantry"
+          "Astra Militarum",
+          "Infantry",
+          "Smoke"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "cover",
+        "target": "self"
+      }
+    ],
+    "summary": "It and units it partly hides have the benefit of cover this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:supporting-ordnance",
@@ -1317,7 +3207,32 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against Monsters and Vehicles this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:swift-interception",
@@ -1330,9 +3245,28 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "enemy-moved",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Transport"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Aircraft",
+          "Titanic"
+        ]
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": the Transport makes a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:tactical-withdrawal",
@@ -1345,9 +3279,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Squadron"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      }
+    ],
+    "summary": "Fell Back: can still shoot this turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:tanglefoot-grenades",
@@ -1360,9 +3309,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "start-of-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Grenades"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "A visible enemy within 12\" gets -1 to its charge rolls this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:thick-skulled-obdurance",
@@ -1375,16 +3341,26 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-turn",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
-        "allOf": [
-          "Astra Militarum"
+        "allOf": [],
+        "anyOf": [
+          "Bullgryn Squad",
+          "Ogryn Squad"
         ],
-        "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "On an objective: attacks against it lose 1 AP",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:trench-fighters",
@@ -1397,9 +3373,31 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Astra Militarum",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: still fights on a 4+ (+2 for Regiment models)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:triggered-alerts",
@@ -1412,15 +3410,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-moved",
       "target": {
         "allOf": [
-          "Astra Militarum Infantry"
+          "Astra Militarum",
+          "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D3+3",
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": a Normal move of D3+3\"",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:veteran-sharpshooters",
@@ -1433,9 +3441,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Astra Militarum"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover when shooting this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:vox-relay",
@@ -1448,9 +3474,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Infantry",
+          "Officer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Embarked Officer issues Orders, including to any Transport at any distance",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "astra-militarum::stratagem:withering-firepower",
@@ -1463,6 +3498,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -1473,6 +3509,268 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits tests for Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b6b2-9971-ec0c-349e::ability:Lord Castellan",
+    "summary": "Leading: its unit can be under two different Orders",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b6b2-9971-ec0c-349e::ability:Tactical Genius",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle round, a Stratagem on a Regiment within 12\" costs 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ba72-7b05-33c9-a1c0::ability:Holy Piety",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Not Battle-shocked: re-roll hits in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ba72-7b05-33c9-a1c0::ability:War Hymns",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1 in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bcda-f4bb-e726-9bfe::ability:Loyal Protector",
+    "summary": "Must join a Command Squad at deployment; takes three Transport places; never the Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bcda-f4bb-e726-9bfe::ability:Ogryn Bodyguard",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Officer"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Officers in its unit have Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bcda-f4bb-e726-9bfe::ability:Thunderous Head-butt",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "When its unit fights: one engaged enemy takes D3 mortal wounds on 2-5, D3+3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c9eb-2007-af01-a853::ability:Point-blank Barrage",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "closest-target"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 AP when shooting the closest target",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d58c-e97f-5062-d9e1::ability:Political Overwatch",
+    "summary": "With another Officer in its unit: re-roll Battle-shock tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d58c-e97f-5062-d9e1::ability:Summary Execution",
+    "summary": "Once per battle round: a Battle-shocked infantry or mounted unit within 12\" loses a model and recovers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d624-2be1-87a3-41ca::ability:Brutal Disciplinarian",
+    "summary": "Once per turn: a Battle-shocked infantry unit within 12\" (not a lone model) loses a model and recovers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d624-2be1-87a3-41ca::ability:Icon of Discipline",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Fell Back: its unit can still shoot and charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d624-2be1-87a3-41ca::ability:Using Commissar Graves",
+    "summary": "Only one Commissar Graves, mounted or on foot",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ed3d-fa87-4f0d-d10c::ability:Agile Dogfighter",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ed3d-fa87-4f0d-d10c::ability:Damaged: 1-5 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f4d1-cea9-f487-4501::ability:A Hearty 'Pick Me Up'",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Leading, Command phase: returns up to D3 destroyed models",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f4d1-cea9-f487-4501::ability:Well-stocked Supplies",
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": 1,
+        "target": "attached"
+      },
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 Ld and OC",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f556-a33d-dc90-d6fc::ability:Enginseer",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Near a friendly Vehicle (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f556-a33d-dc90-d6fc::ability:Omnissiah’s Blessing",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      },
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Command phase: a Vehicle within 3\" regains up to D3 wounds and has a 4+ invulnerable",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f556-a33d-dc90-d6fc::ability:Vengeance for the Omnissiah",
+    "summary": "A friendly Vehicle destroyed within 12\": its axe has 6 Attacks for the rest of the battle",
+    "reason": "Read from the rules, in our own words."
   }
 ]

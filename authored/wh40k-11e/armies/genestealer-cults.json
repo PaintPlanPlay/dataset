@@ -1,10 +1,2875 @@
 [
   {
+    "target": "0595-6d6c-a783-12ab::ability:Remorseless Barrage",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit its Indirect Fire hits tests for Battle-shock (-1 for infantry hit by rockets)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "05de-5701-33a0-b23d::ability:Independent Operatives",
+    "summary": "Its Orders last until a new one, Battle-shock or the end of the battle",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "05de-5701-33a0-b23d::ability:Signal Flares",
+    "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "05de-5701-33a0-b23d::ability:Vox-caster",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "05de-5701-33a0-b23d::ability:Vox-relay beacon",
+    "summary": "Places a beacon outside the enemy zone: Officers order Regiments near it as if they were close",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "11e5-d4ab-d140-ac38::ability:Rapid Deployment",
+    "summary": "Units can disembark after it Advanced, with a shock disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1502-bae3-93b4-c89a::ability:Sentry Programming",
+    "summary": "Fire Overwatch on it costs 0CP, even if already used this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1653-dc47-25b-c71f::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1653-dc47-25b-c71f::ability:Tracking Target",
+    "modifiers": [
+      {
+        "key": "crit-wound",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "crit-wound",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Stationary: its siege mortar gains Anti-Monster 5+ and Anti-Vehicle 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1669-d311-eff9-243b::ability:Embarking",
+    "summary": "In a Transport, each team takes two places and counts as two for Firing Deck",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1669-d311-eff9-243b::ability:Final Duty",
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "3+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "With the Fire Coordinator: slain gunners still shoot on a 3+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "173e-ddd1-354c-583b::ability:Ancient Conquest",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-in-deployment-zone"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-in-deployment-zone"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit and wound against units in the enemy deployment zone",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "173e-ddd1-354c-583b::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1b48-2f2-8e9c-1308::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1b48-2f2-8e9c-1308::ability:Titan-killer",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Its volcano cannon gains Devastating Wounds against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1d02-5302-f162-65d6::ability:Medicae Medi-packs",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "With a Medicae Servitor: Feel No Pain 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1d02-5302-f162-65d6::ability:Mindlock",
+    "modifiers": [
+      {
+        "key": "WS",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "With a Revenant: +1 WS for its medical scalpels",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2127-efcc-1f62-7fab::ability:Ablative Plating",
+    "summary": "Once per battle: an attack allocated to it deals no damage",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2127-efcc-1f62-7fab::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2299-bed9-3e-2b60::ability:Horsemasters",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Fell Back: can still shoot and charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "247-2938-79b6-ff4b::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "247-2938-79b6-ff4b::ability:Targeting Coordinates",
+    "summary": "Under an Order: its launcher shoots unseen targets without penalty",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "286e-8e39-b807-5981::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "286e-8e39-b807-5981::ability:Urban Warfare",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "cover"
+          }
+        ]
+      }
+    ],
+    "summary": "In cover: -1 Damage to ranged attacks against it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "28d1-70b2-70be-c998::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "28d1-70b2-70be-c998::ability:Tank Hunter",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound when shooting Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2b49-4d03-aaf5-3532::ability:Get Back in the Fight",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Fell Back, can still shoot",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2b49-4d03-aaf5-3532::ability:Senior Officer",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1 when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "30f5-d90a-9811-d763::ability:Armour Obliteration",
+    "summary": "Models its quake cannon destroys explode on 3+ instead of 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "30f5-d90a-9811-d763::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "31ec-a804-92ad-97::ability:Powerful Volley",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          },
+          {
+            "key": "under-order"
+          }
+        ]
+      }
+    ],
+    "summary": "Under an Order and Stationary: Heavy weapons gain Lethal Hits",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3597-3243-6870-70a1::ability:Defence Searchlight",
+    "summary": "One visible enemy within 24\" loses the benefit of cover this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3597-3243-6870-70a1::ability:Fortification",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Enemies only engaged with it can be shot at -1 to hit (Pistols excepted)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3597-3243-6870-70a1::ability:Sentinel Directives",
+    "modifiers": [
+      {
+        "key": "overwatch",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Fire Overwatch on it hits on 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3936-a532-dc5e-8498::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3936-a532-dc5e-8498::ability:Power Overload",
+    "modifiers": [
+      {
+        "key": "reroll-damage",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-damage",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll Damage against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3e90-9359-2aaa-205e::ability:Grenadiers",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per turn, Explosives on it costs 0CP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3e90-9359-2aaa-205e::ability:Remote mine",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: a visible enemy within 9\" takes D3 mortal wounds on 3+ (2D3 for a Vehicle)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3e90-9359-2aaa-205e::ability:Signal Flares",
+    "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "41be-48c9-5476-f47a::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "41be-48c9-5476-f47a::ability:Furious Barrage",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One non-Monster, non-Vehicle unit its rockets hit: -1 OC until your next Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "421a-6683-9e78-fb7::ability:Desert Riders",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Ignores Move, Advance and charge penalties; Fell Back, can still shoot and charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4424-a6ec-6d9e-a936::ability:Daring Recon",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One visible enemy within 18\": friendly units re-roll 1s to hit it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4424-a6ec-6d9e-a936::ability:Signal Flares",
+    "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4946-40d2-ee8b-a71c::ability:Anti-armour Gunship",
+    "modifiers": [
+      {
+        "key": "reroll-damage",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-damage",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s for Damage against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4946-40d2-ee8b-a71c::ability:Damaged: 1-5 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4967-19b6-1e2a-a300::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4967-19b6-1e2a-a300::ability:Flak Battery",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Fly"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against units that can Fly",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4ad0-e988-a513-9530::ability:Malign Wardings (Psychic)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Feel No Pain 4+ against Psychic attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4ad0-e988-a513-9530::ability:Psychic Barrier (Psychic)",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "Enemy Shooting phase: 4+ invulnerable on a 2+, D3 mortal wounds on a 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4b67-f814-358e-f776::ability:Transport Support",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits: units that left it this turn re-roll hits against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4b76-f049-77b1-38bf::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4b76-f049-77b1-38bf::ability:Overwhelming Short-range Firepower",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "closest-target"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "closest-target"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit and wound against the closest target",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4d28-f2a7-67c1-eb2e::ability:Cadia Stands!",
+    "summary": "With an Officer, on an objective: re-roll Battle-shock tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4d28-f2a7-67c1-eb2e::ability:Master Vox",
+    "summary": "Its Officer can issue Orders to units up to 24\" away",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4d28-f2a7-67c1-eb2e::ability:Medi-pack",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase, below Starting Strength: returns up to D3 Platoon models",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4d28-f2a7-67c1-eb2e::ability:Regimental Standard",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC for its unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4fc5-184d-b305-3551::ability:Get Back in the Fight",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Fell Back, can still shoot",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5430-18e-d7b0-1d54::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5430-18e-d7b0-1d54::ability:Death Befitting An Officer",
+    "summary": "Killed by shooting: on a 2+ shoots back at the attacker before exploding",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5430-18e-d7b0-1d54::ability:Vox-net",
+    "summary": "Its Orders reach units up to 12\" away",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5762-f71e-7693-49a6::ability:Suppression Bombardment",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "59c4-e4de-fe70-b221::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "59c4-e4de-fe70-b221::ability:Rolling Fortress",
+    "summary": "Friendly models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5d8e-2b2a-6ed1-8309::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5d8e-2b2a-6ed1-8309::ability:Mount Up!",
+    "summary": "End of the enemy Movement phase, empty: one infantry unit wholly within 6\" can embark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5da1-9869-294e-8187::ability:Aeronautica Commander",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Aircraft"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One enemy within 30\": friendly Aircraft get +1 to hit it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5da1-9869-294e-8187::ability:Artillery Commander",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Artillery"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One enemy within 30\": friendly Artillery Blast weapons gain Sustained Hits 1 against it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5da1-9869-294e-8187::ability:Attachés",
+    "summary": "Must join a Command Squad at deployment",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5da1-9869-294e-8187::ability:Divination (Psychic)",
+    "summary": "Enemy Reinforcements cannot arrive within 12\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5e59-657b-5c85-1d92::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5e59-657b-5c85-1d92::ability:Explosive Death",
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "3+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Destroyed: on a 3+ fires its inferno gun once more before removal",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "60c8-fd76-c98b-304a::ability:Siege Bombardment",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits tests for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "64a9-4cb2-400e-efd1::ability:Rearm, Reload, Fire",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          },
+          {
+            "key": "under-order"
+          }
+        ]
+      }
+    ],
+    "summary": "Under an Order and Stationary: Heavy weapons gain Sustained Hits 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "67bc-a760-7ed5-9952::ability:Concussive Wave",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Its target and units within 3\": on a 5+, D3 mortal wounds once it has shot",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "67bc-a760-7ed5-9952::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6800-f1ce-7deb-d9eb::ability:Turbo-boost",
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Advances a flat 6\" without rolling",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "731f-e022-6394-3690::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "731f-e022-6394-3690::ability:Tank Hunter",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Its twin vanquisher cannon re-rolls hits against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "739e-cb18-c050-fca1::ability:Damaged: 1-5 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "739e-cb18-c050-fca1::ability:Gunship Barrage",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits tests for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "73b2-edbf-eec3-563d::ability:Outflank",
+    "summary": "From Strategic Reserves: can arrive in the enemy deployment zone",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "78b6-f280-bba9-0594::ability:Called Shots",
+    "summary": "When it shoots: one hit, one wound and one Damage roll may be re-rolled",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "78b6-f280-bba9-0594::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "78b6-f280-bba9-0594::ability:Vox-net",
+    "summary": "Its Orders reach units up to 12\" away",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7be8-bfe0-6416-8ed7::ability:Suppression Bombardment",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d22-9fb6-a7e0-c21b::ability:Gung-ho Command",
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "With an Officer: ranged weapons gain Assault",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d22-9fb6-a7e0-c21b::ability:Master Vox",
+    "summary": "Its Officer can issue Orders to units up to 24\" away",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d22-9fb6-a7e0-c21b::ability:Medi-pack",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase, below Starting Strength: returns up to D3 Platoon models",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d22-9fb6-a7e0-c21b::ability:Regimental Standard",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC for its unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7e34-20cf-1149-74a1::ability:Mobile Hunter-killers",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll wounds against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "81d4-2ed9-b0a4-6bdd::ability:Blistering Advance",
+    "summary": "Units can disembark after it Advanced, with a shock disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8277-6399-5d74-760d::ability:Close-quarters Warfare",
+    "summary": "No hit penalty when shooting while engaged",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8277-6399-5d74-760d::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8342-57dd-69d3-e698::ability:Close-range Titan Killer",
+    "summary": "Its magma cannon is always at half range against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8342-57dd-69d3-e698::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "892b-678c-72e6-ee58::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "892b-678c-72e6-ee58::ability:Mount Up!",
+    "summary": "End of the enemy Movement phase, empty: one infantry unit wholly within 6\" can embark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8a25-2a0c-87d2-3ea6::ability:Grenadier Squad",
+    "summary": "Leaders of Combat Engineers can lead it instead",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8a25-2a0c-87d2-3ea6::ability:Grenadiers",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per turn, Grenade on it costs 0CP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8b13-7c06-de12-4227::ability:Aerial Deployment",
+    "summary": "In Hover mode from Strategic Reserves: can arrive in rounds 1 to 3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8cc1-8512-710f-f15f::ability:Powerlifter Charge",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-5, 3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "91a9-15e-b5f0-700f::ability:Covering Fire",
+    "modifiers": [
+      {
+        "key": "overwatch",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Fire Overwatch on it hits on 5+ (4+ near a Platoon unit)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "91a9-15e-b5f0-700f::ability:Embarking",
+    "summary": "In a Transport, each team takes two places and counts as two for Firing Deck",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "92a9-a820-b7f-7dc2::ability:Armoured Frontis",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "92a9-a820-b7f-7dc2::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "95b4-68d6-26cf-188e::ability:Compact",
+    "summary": "Embarks like infantry, taking seven places",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "95b4-68d6-26cf-188e::ability:Demolition Charges",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "An enemy 3\" or closer after a move: blows up, D3 mortal wounds on 2-5, D6 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "95b4-68d6-26cf-188e::ability:Unstable Payload",
+    "summary": "Its Deadly Demise hits units within 6\" on a 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9665-3160-8a04-d2bc::ability:Airborne Insertion",
+    "summary": "Units can disembark from it as the enemy Movement phase ends",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9665-3160-8a04-d2bc::ability:Damaged: 1-5 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9673-7eaa-8ed9-bc7c::ability:Recovery Vehicle",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "End of your Movement phase: a Vehicle within 3\" regains up to D3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9fb1-876b-ac2d-6c9b::ability:Auspex Surveyor",
+    "summary": "One unit it hits loses the benefit of cover this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a185-ae7a-4503-8ceb::ability:Armoured Defender",
+    "modifiers": [
+      {
+        "key": "overwatch",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Fire Overwatch on it hits on 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a185-ae7a-4503-8ceb::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a2aa-7688-dcb1-4132::ability:Shock Troops",
+    "summary": "An objective it holds as your Command phase ends stays yours after it leaves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a2aa-7688-dcb1-4132::ability:Vox-caster",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a6a1-1612-f982-31::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a6a1-1612-f982-31::ability:Rolling Fortress",
+    "summary": "Friendly models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a93c-9d4b-8fd9-15b4::ability:Close-range Devastation",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Its plasma blastgun re-rolls hits at half range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a93c-9d4b-8fd9-15b4::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a95f-9dd6-de66-fa59::ability:Mobile Hunter-killer",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll wounds against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a96a-83e1-9200-c88b::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a96a-83e1-9200-c88b::ability:Pinning Bombardment",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Hits an infantry unit: that unit tests for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "abe4-ca71-d5a7-3883::ability:Melta mine",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: an enemy within 3\" takes D3 mortal wounds on a 2+ (2D3 for a Vehicle)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "abe4-ca71-d5a7-3883::ability:Vox-caster",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "abe4-ca71-d5a7-3883::ability:Warrior Elite",
+    "summary": "Once per battle round: takes one Order of your choice on top of any other",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "adbb-4624-738f-61ec::ability:Furious Barrage",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-5-plus-models"
+          }
+        ]
+      }
+    ],
+    "summary": "Its rockets re-roll hits against units of five or more models",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "adbb-4624-738f-61ec::ability:Reinforced Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ade0-fa44-d4cf-4fc8::ability:Death Korps of Krieg Medi-pack",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase, below Starting Strength: returns up to D3 models",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ade0-fa44-d4cf-4fc8::ability:Grim Demeanour",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "below-starting-strength"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit below Starting Strength, +1 to wound too Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ade0-fa44-d4cf-4fc8::ability:Vox-caster",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b44d-ecac-2542-e584::ability:Aerial Deployment",
+    "summary": "In Hover mode from Strategic Reserves: can arrive in rounds 1 to 3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b44d-ecac-2542-e584::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b566-8903-3a36-62f1::ability:Convoy Escort Vehicle",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting: a D6\" Normal move, then no charge this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b6a7-4d64-1155-70c1::ability:Mobile Command Vehicle",
+    "summary": "An Officer embarked within it can issue Orders, measuring from the Transport",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "badd-6133-a469-613c::ability:Meteoric Descent",
+    "summary": "Can Deep Strike 6\" from enemies, then no charge that turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bc69-45ff-789c-90bb::ability:Battlefield Dominance",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover at half range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bc69-45ff-789c-90bb::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bf53-4ab3-ff75-9aa0::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bf53-4ab3-ff75-9aa0::ability:Earthshaker Rounds",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Hits an infantry unit: it is shaken, -2\" Move and -2 to charge until your next Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c28b-c3af-38b2-8865::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c28b-c3af-38b2-8865::ability:Flush Them Out",
+    "summary": "One unit it hits loses the benefit of cover until your next Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c581-3ab5-49a0-9ec0::ability:Armoured Spearhead",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit; every hit roll against units on an objective you do not hold",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c581-3ab5-49a0-9ec0::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c7cc-ad05-15f6-a4f3::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c7cc-ad05-15f6-a4f3::ability:Fire Support",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c871-4769-71ed-c4b3::ability:Rapid Strike Vehicle",
+    "summary": "+1 OC per three models embarked within it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c8fc-b9fa-d126-a296::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c8fc-b9fa-d126-a296::ability:Gung-ho Executioners",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "Its plasma cannon gets +1 to hit against units Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb82-5250-6959-d2c3::ability:Earthshaker Rounds",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Hits an infantry unit: it is shaken, -2\" Move and -2 to charge until your next Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb82-5250-6959-d2c3::ability:Fortification",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Enemies only engaged with it can be shot at -1 to hit (Pistols excepted)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb82-5250-6959-d2c3::ability:Reinforced Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb99-456-f100-40ed::ability:Defence Line",
+    "summary": "Infantry in cover behind it have a 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb99-456-f100-40ed::ability:Deployment",
+    "summary": "Set up as one connected line of sections, treated as a single model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb99-456-f100-40ed::ability:Emplacement Platform",
+    "summary": "Friendly infantry can stand on its platform",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cb99-456-f100-40ed::ability:Reinforced Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cbcc-e0ad-4b9-2c76::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cbcc-e0ad-4b9-2c76::ability:Line-breaker",
+    "summary": "Its demolisher cannon can shoot engaged enemies, without the engaged hit penalty",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cf23-58db-8ba4-9ec8::ability:Mobile Command Vehicle",
+    "summary": "An Officer embarked within it can issue Orders, measuring from the Transport",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d10-48db-3241-ec72::ability:Damaged: 1-8 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d10-48db-3241-ec72::ability:Tremor Quake",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Its tremor cannon’s target and nearby infantry (3\") test for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d11b-c49d-41bf-1f36::ability:Suppression Bombardment",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d4da-78a0-ef0-1e7e::ability:Mark the Target",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          }
+        ]
+      }
+    ],
+    "summary": "Stationary: Devastating Wounds when shooting until your next Movement phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d4da-78a0-ef0-1e7e::ability:Sniper Teams",
+    "summary": "Each sniper team embarks as a heavy weapons team",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d7a-7abb-831b-1c67::ability:Battlefield Control",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "On an objective you hold: re-roll 1s to hit when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d7a-7abb-831b-1c67::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d8c8-ea02-21bf-de0b::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d8c8-ea02-21bf-de0b::ability:Withering Hail",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit its autocannon hits: friendly units get +1 AP against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d8c8-ea02-21bf-de0b::option:9fa3-afd7-4ce7-f888|7b2f-1a9b-4188-dd21",
+    "reason": "Update cost of default lascannon",
     "wargearCost": {
       "item": "Lascannon"
-    },
-    "target": "d8c8-ea02-21bf-de0b::option:9fa3-afd7-4ce7-f888|7b2f-1a9b-4188-dd21",
-    "reason": "Update cost of default lascannon"
+    }
+  },
+  {
+    "target": "ddf2-228b-edd9-7e83::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ddf2-228b-edd9-7e83::ability:Tank-killer",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Its vanquisher cannon re-rolls wounds against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dfcb-7854-1d6d-cd02::ability:Bring it Down!",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit and wound when shooting Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dfcb-7854-1d6d-cd02::ability:Embarking",
+    "summary": "In a Transport, each team takes two places and counts as two for Firing Deck",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e184-bfe9-ea12-a5e3::ability:Rearm, Reload, Fire",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          },
+          {
+            "key": "under-order"
+          }
+        ]
+      }
+    ],
+    "summary": "Under an Order and Stationary: Sustained Hits 1 when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e19f-b9b8-75d5-8520::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e19f-b9b8-75d5-8520::ability:Deathstrike Missile",
+    "summary": "Places or moves a target marker for its one-shot missile",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e529-5853-d7e2-17ad::ability:Damaged: 1-4 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e529-5853-d7e2-17ad::ability:Mow Down the Enemy",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Monster"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Its gatling cannon gains Devastating Wounds against non-Monster, non-Vehicle units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e951-f9f2-3dd4-d5b8::ability:Armoured Aggressor",
+    "summary": "No hit penalty when shooting while engaged",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e951-f9f2-3dd4-d5b8::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ed8d-9053-9d33-61da::ability:Subterranean Assault",
+    "summary": "Deep Striking: brings an infantry unit from Reserves within 9\", 8\" from enemies",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "efc7-ac4c-1fcd-5b39::ability:Earthshaker Rounds",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Hits an infantry unit: it is shaken, -2\" Move and -2 to charge until your next Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f1a-7c78-ffdc-bf5b::ability:Screening Line",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": unengaged, a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f46c-76ef-3d9c-98ea::ability:Flak Battery",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Fly"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against units that can Fly",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f46c-76ef-3d9c-98ea::ability:Reinforced Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f706-c35a-a325-38bf::ability:Damaged: 1-6 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f706-c35a-a325-38bf::ability:Rugged Reliability",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged attacks against it lose 1 AP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f8cc-73b7-6caa-f741::ability:Damaged: 1-5 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f8cc-73b7-6caa-f741::ability:Fire Support",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbaf-15f6-37d8-c5b::ability:Support Vehicle",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Command phase: a Vehicle within 3\" regains up to D3 wounds and re-rolls 1s to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbcd-274b-0196-b4f6::ability:Alchemyk Counteragents",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "6+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit has Feel No Pain 6+ against mortal wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbcd-274b-0196-b4f6::ability:Grim Determination",
+    "summary": "With an Officer: Stratagems and Orders still work while Battle-shocked",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbcd-274b-0196-b4f6::ability:Master Vox",
+    "summary": "Its Officer can issue Orders to units up to 24\" away",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbcd-274b-0196-b4f6::ability:Regimental Standard",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC for its unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbcd-274b-0196-b4f6::ability:Servo-scribes",
+    "summary": "Once per battle, the Lord Commissar issues one more Order",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fc41-a899-8d5a-dc01::ability:Damaged: 1-7 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fc41-a899-8d5a-dc01::ability:Pinning Bombardment",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Hits an infantry unit: that unit tests for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fe5a-764e-37ed-7cef::ability:Jungle Fighters",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "was-charged"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound in melee in a turn it charged or was charged",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fe5a-764e-37ed-7cef::ability:Vox-caster",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "genestealer-cults::enhancement:biosanctic-broodsurge|alien-majesty",
