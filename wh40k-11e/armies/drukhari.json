@@ -351,19 +351,65 @@
           "name": "Leader"
         },
         {
-          "name": "Overlord"
+          "name": "Overlord",
+          "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock"
         },
         {
-          "name": "Devious Mastermind"
+          "name": "Devious Mastermind",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Hatred Eternal (Pain)"
+          "name": "Hatred Eternal (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: its unit re-rolls hits"
         },
         {
-          "name": "Shadowfield"
+          "name": "Shadowfield",
+          "summary": "Its invulnerable save cannot be re-rolled and is lost on its first wound"
         },
         {
-          "name": "Soul Trap"
+          "name": "Soul Trap",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee A and S, +1 more after its first kill"
         }
       ],
       "points": 80,
@@ -869,7 +915,20 @@
       ],
       "abilities": [
         {
-          "name": "Hatred Eternal (Pain)"
+          "name": "Hatred Eternal (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: its unit re-rolls hits"
         },
         {
           "name": "Cruel Example"
@@ -1271,10 +1330,46 @@
       ],
       "abilities": [
         {
-          "name": "Beastmaster"
+          "name": "Beastmaster",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "With its Beastmaster: re-roll charges"
         },
         {
-          "name": "Goaded Savagery (Pain)"
+          "name": "Goaded Savagery (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: beasts re-roll hits and wounds in melee"
         }
       ],
       "points": 135,
@@ -4643,13 +4738,44 @@
       ],
       "abilities": [
         {
-          "name": "Court of the Archon"
+          "name": "Court of the Archon",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Character"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Its leading Character has Feel No Pain 4+"
         },
         {
-          "name": "Deadly Retinue (Pain)"
+          "name": "Deadly Retinue (Pain)",
+          "summary": "Empowered: each courtier type adds Lethal Hits, Ignores Cover, -1 to wound or Fights First"
         },
         {
-          "name": "Court of the Archon [Legends]"
+          "name": "Court of the Archon [Legends]",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Character"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Its leading Character has Feel No Pain 4+"
         }
       ],
       "points": 95,
@@ -4805,10 +4931,24 @@
       ],
       "abilities": [
         {
-          "name": "Pain Engine (Aura)"
+          "name": "Pain Engine (Aura)",
+          "summary": "Empowering a unit 9\" or closer refunds a Pain token on 5+"
         },
         {
-          "name": "Pain Parasite (Pain)"
+          "name": "Pain Parasite (Pain)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: after a kill, regains 3 wounds or a model"
         }
       ],
       "points": 55,
@@ -5115,13 +5255,60 @@
           "name": "Leader"
         },
         {
-          "name": "Master of Blades (Pain)"
+          "name": "Master of Blades (Pain)",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: +1 to wound in melee"
         },
         {
-          "name": "Onslaught"
+          "name": "Onslaught",
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: piles in and consolidates 6\""
         },
         {
-          "name": "Silent Executioner"
+          "name": "Silent Executioner",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against weakened units, and wounds too Below Half-strength"
         }
       ],
       "points": 85,
@@ -5788,10 +5975,24 @@
       ],
       "abilities": [
         {
-          "name": "Fleshcraft (Pain)"
+          "name": "Fleshcraft (Pain)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+1",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Command phase, Empowered: returns up to D3+1 Bodyguard models"
         },
         {
-          "name": "Pain Adept"
+          "name": "Pain Adept",
+          "summary": "Command phase: +1 Pain token on 4+"
         },
         {
           "name": "Leader"
@@ -6098,13 +6299,37 @@
       ],
       "abilities": [
         {
-          "name": "Monstrous Hulks"
+          "name": "Monstrous Hulks",
+          "summary": "No Venom; takes three places in other Transports"
         },
         {
-          "name": "Macro-steroids (Pain)"
+          "name": "Macro-steroids (Pain)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: melee Strength 8 and Lethal Hits"
         },
         {
-          "name": "Monstrous Charge"
+          "name": "Monstrous Charge",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per engaged model, each 4+ D3 mortal wounds"
         }
       ],
       "points": 80,
@@ -6382,13 +6607,39 @@
           "name": "Leader"
         },
         {
-          "name": "Fear Incarnate (Aura)"
+          "name": "Fear Incarnate (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer: -1 Leadership, and must test Battle-shock if weakened"
         },
         {
-          "name": "Pain Adept"
+          "name": "Pain Adept",
+          "summary": "Command phase: +1 Pain token on 4+"
         },
         {
-          "name": "Fleshcraft (Pain)"
+          "name": "Fleshcraft (Pain)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+1",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Command phase, Empowered: returns up to D3+1 Bodyguard models"
         }
       ],
       "points": 50,
@@ -6738,22 +6989,74 @@
       ],
       "abilities": [
         {
-          "name": "Assassins' Poisons (Pain)"
+          "name": "Assassins' Poisons (Pain)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: Lethal Hits and Precision (blasters and lances excepted)"
         },
         {
-          "name": "Archon's Will"
+          "name": "Archon's Will",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "On its chosen objective: 5+ invulnerable and OC 3"
         },
         {
-          "name": "Archon's Retinue"
+          "name": "Archon's Retinue",
+          "summary": "Its Leader attached at deployment gains Scouts 7\""
         },
         {
-          "name": "Phantasm Grenade Launcher"
+          "name": "Phantasm Grenade Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has the Smoke keyword"
         },
         {
-          "name": "Kabalite icon"
+          "name": "Kabalite icon",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for the bearer while not Battle-shocked"
         },
         {
-          "name": "Stimm-needler"
+          "name": "Stimm-needler",
+          "summary": "Once per turn: the first failed save on its unit deals no damage"
         }
       ],
       "points": 115,
@@ -7166,13 +7469,63 @@
       ],
       "abilities": [
         {
-          "name": "Battlefield Butchery (Pain)"
+          "name": "Battlefield Butchery (Pain)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: +1 melee A and S"
         },
         {
-          "name": "Skyboard Evasion"
+          "name": "Skyboard Evasion",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
-          "name": "Phantasm Grenade Launcher"
+          "name": "Phantasm Grenade Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            },
+            {
+              "key": "gain-keyword",
+              "value": "Grenades",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has the Smoke and Grenades keywords"
         }
       ],
       "points": 90,
@@ -7567,13 +7920,40 @@
       ],
       "abilities": [
         {
-          "name": "Tormentors"
+          "name": "Tormentors",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: engaged enemies test for Battle-shock"
         },
         {
-          "name": "Decapitating Strikes (Pain)"
+          "name": "Decapitating Strikes (Pain)",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: Devastating Wounds in melee against Infantry"
         },
         {
-          "name": "Incubi Shrine Token"
+          "name": "Incubi Shrine Token",
+          "summary": "Once per battle per token: one hit or wound becomes a 6"
         }
       ],
       "points": 90,
@@ -7902,16 +8282,64 @@
       ],
       "abilities": [
         {
-          "name": "Cruel Enforcers"
+          "name": "Cruel Enforcers",
+          "summary": "An objective it holds as your Command phase ends stays yours until the enemy out-controls it"
         },
         {
-          "name": "Sadistic Raiders (Pain)"
+          "name": "Sadistic Raiders (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: re-roll 1s to wound, all of them against units on objectives"
         },
         {
-          "name": "Phantasm Grenade Launcher"
+          "name": "Phantasm Grenade Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            },
+            {
+              "key": "gain-keyword",
+              "value": "Grenades",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has the Smoke and Grenades keywords"
         },
         {
-          "name": "Kabalite Icon"
+          "name": "Kabalite Icon",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for the bearer while not Battle-shocked"
         }
       ],
       "points": 110,
@@ -8310,13 +8738,54 @@
           "name": "Leader"
         },
         {
-          "name": "Archon of the Poisoned Tongue (Pain)"
+          "name": "Archon of the Poisoned Tongue (Pain)",
+          "options": [
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "empowered"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "empowered"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: her unit gains Sustained Hits 1 or Lethal Hits"
         },
         {
-          "name": "Precognisant"
+          "name": "Precognisant",
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         },
         {
-          "name": "Mind Like a Steel Trap"
+          "name": "Mind Like a Steel Trap",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an enemy Stratagem on a unit 12\" or closer costs 1CP more"
         }
       ],
       "points": 100,
@@ -8427,13 +8896,62 @@
           "name": "Leader"
         },
         {
-          "name": "Brides of Death (Pain)"
+          "name": "Brides of Death (Pain)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: +1 S and AP in melee"
         },
         {
-          "name": "Thrilling Spectacle"
+          "name": "Thrilling Spectacle",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: 3+ invulnerable and 12 melee Attacks"
         },
         {
-          "name": "Blur of Blades"
+          "name": "Blur of Blades",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Fights First"
         }
       ],
       "points": 80,
@@ -8657,10 +9175,23 @@
       ],
       "abilities": [
         {
-          "name": "Fade Away (Pain)"
+          "name": "Fade Away (Pain)",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "End of the enemy Fight phase, unengaged, Empowered: into Strategic Reserves"
         },
         {
-          "name": "Shade Weavers"
+          "name": "Shade Weavers",
+          "summary": "Can only be shot from 18\" or closer"
         }
       ],
       "points": 80,
@@ -9560,10 +10091,27 @@
       ],
       "abilities": [
         {
-          "name": "Splinter Racks (Pain)"
+          "name": "Splinter Racks (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered with passengers: re-roll hits with Anti weapons"
         },
         {
-          "name": "Vanguard of the Dark City"
+          "name": "Vanguard of the Dark City",
+          "summary": "Command phase: picks one Vanguard of the Dark City ability"
         }
       ],
       "points": 75,
@@ -9737,13 +10285,52 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Eradicate the Foe"
+          "name": "Eradicate the Foe",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-at-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against units at Starting Strength"
         },
         {
-          "name": "Agonising Suppression (Pain)"
+          "name": "Agonising Suppression (Pain)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: one unit it hits is suppressed, -1 to hit until your next turn"
         }
       ],
       "points": 110,
@@ -9915,10 +10502,43 @@
       ],
       "abilities": [
         {
-          "name": "Ground-attack Craft"
+          "name": "Ground-attack Craft",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         },
         {
-          "name": "Shredding Fire (Pain)"
+          "name": "Shredding Fire (Pain)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: +1 AP when shooting"
         }
       ],
       "points": 170,
@@ -10141,10 +10761,50 @@
       ],
       "abilities": [
         {
-          "name": "Ground-attack Craft"
+          "name": "Ground-attack Craft",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         },
         {
-          "name": "Nowhere to Run (Pain)"
+          "name": "Nowhere to Run (Pain)",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: one infantry unit it hits is pinned, -2\" Move and -2 to charge"
         }
       ],
       "points": 170,
@@ -10366,10 +11026,36 @@
       ],
       "abilities": [
         {
-          "name": "Eradicate the Foe"
+          "name": "Eradicate the Foe",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-at-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit against units at Starting Strength"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
           "name": "Electromagnetic Cascade (Pain)"
@@ -10561,10 +11247,31 @@
       ],
       "abilities": [
         {
-          "name": "Eviscerating Fly-by"
+          "name": "Eviscerating Fly-by",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over infantry: a D6 per model, each 4+ a mortal wound"
         },
         {
-          "name": "Matchless Swiftness (Pain)"
+          "name": "Matchless Swiftness (Pain)",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: Advances a flat 8\""
         }
       ],
       "points": 75,
@@ -10984,10 +11691,34 @@
       ],
       "abilities": [
         {
-          "name": "Airborne Evasion"
+          "name": "Airborne Evasion",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: a 6\" Normal move, then no charge"
         },
         {
-          "name": "Winged Strike (Pain)"
+          "name": "Winged Strike (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: re-roll hits when shooting"
         }
       ],
       "points": 110,
@@ -11348,10 +12079,27 @@
       ],
       "abilities": [
         {
-          "name": "Murderous Crossfire"
+          "name": "Murderous Crossfire",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Drukhari get +1 AP when shooting it this phase"
         },
         {
-          "name": "Swooping Descent (Pain)"
+          "name": "Swooping Descent (Pain)",
+          "summary": "Empowered: Deep Strikes 6\" from enemies (no charge if 8\" or closer)"
         }
       ],
       "points": 75,
@@ -12669,16 +13417,86 @@
       ],
       "abilities": [
         {
-          "name": "Lithe Agility (Pain)"
+          "name": "Lithe Agility (Pain)",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "reroll-charge",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: re-roll Advance and charge rolls"
         },
         {
-          "name": "Storm of Blades"
+          "name": "Storm of Blades",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Bloody Spectacle"
+          "name": "Bloody Spectacle",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll melee hits and wounds against Characters; each one killed gives 1CP"
         }
       ],
       "points": 50,
@@ -12937,13 +13755,42 @@
       ],
       "abilities": [
         {
-          "name": "Torture Device"
+          "name": "Torture Device",
+          "summary": "One more Pain token for each unit it destroys"
         },
         {
-          "name": "Devoted to Pain"
+          "name": "Devoted to Pain",
+          "modifiers": [
+            {
+              "key": "twin-linked",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With two macro-scalpels: Twin-linked"
         },
         {
-          "name": "Mindless Killing Machines (Pain)"
+          "name": "Mindless Killing Machines (Pain)",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: slain in melee before fighting, still fights on a 2+"
         }
       ],
       "points": 70,
@@ -13222,13 +14069,63 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Scything Charge"
+          "name": "Scything Charge",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-3, 3 on 4-5, D3+3 on a 6"
         },
         {
-          "name": "Engine of Destruction (Pain)"
+          "name": "Engine of Destruction (Pain)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "empowered"
+                },
+                {
+                  "key": "half-range"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: its pulse disintegrators gain Rapid Fire 8"
         }
       ],
       "points": 230,
@@ -14139,13 +15036,43 @@
           "name": "Leader"
         },
         {
-          "name": "Horrific Regeneration"
+          "name": "Horrific Regeneration",
+          "summary": "First death: on a 2+ returns whole once the phase ends"
         },
         {
-          "name": "Sculptor of Torments (Pain)"
+          "name": "Sculptor of Torments (Pain)",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: +1 to wound in melee"
         },
         {
-          "name": "Father of Pain"
+          "name": "Father of Pain",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damage-1"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Damage 1 attacks"
         }
       ],
       "points": 80,
@@ -14445,10 +15372,12 @@
       ],
       "abilities": [
         {
-          "name": "Aerialists"
+          "name": "Aerialists",
+          "summary": "End of the Fight phase: a small infantry unit wholly 6\" or closer embarks, even after leaving"
         },
         {
-          "name": "Rapid Deployment (Pain)"
+          "name": "Rapid Deployment (Pain)",
+          "summary": "Empowered: units can disembark after it Advanced, with a shock disembark"
         }
       ],
       "points": 65,
@@ -14709,13 +15638,35 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Void Mine"
+          "name": "Void Mine",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: units D6\" around a visible enemy model 24\" or closer take D6 on 4+"
         },
         {
-          "name": "Nowhere to Hide (Pain)"
+          "name": "Nowhere to Hide (Pain)",
+          "summary": "Empowered: one unit it hits loses cover this phase"
         }
       ],
       "points": 245,
@@ -15543,10 +16494,18 @@
       ],
       "abilities": [
         {
-          "name": "Torturer’s Craft"
+          "name": "Torturer’s Craft",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After shooting or fighting: one non-Vehicle unit it hit tests Battle-shock"
         },
         {
-          "name": "Experimental Enhancements (Pain)"
+          "name": "Experimental Enhancements (Pain)",
+          "summary": "Empowered: non-Characters’ melee weapons get 3 Attacks, or 4 with Hazardous"
         }
       ],
       "points": 55,
@@ -15874,10 +16833,39 @@
       ],
       "abilities": [
         {
-          "name": "No Escape"
+          "name": "No Escape",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
-          "name": "Acrobatic Gladiators (Pain)"
+          "name": "Acrobatic Gladiators (Pain)",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "empowered"
+                }
+              ]
+            }
+          ],
+          "summary": "Empowered: can charge after Advancing or Falling Back"
         }
       ],
       "points": 90,
@@ -16015,7 +17003,8 @@
   "armyRules": [
     {
       "id": "power-from-pain",
-      "name": "Power from Pain"
+      "name": "Power from Pain",
+      "summary": "Pain tokens come each Command phase, kill and failed enemy Battle-shock; spend one to Empower a unit’s Pain ability for a phase"
     }
   ],
   "detachments": [
@@ -16030,7 +17019,27 @@
       "rules": [
         {
           "id": "stitchflesh-abominations",
-          "name": "Stitchflesh Abominations"
+          "name": "Stitchflesh Abominations",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Haemonculus Covens"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Attacks stronger than a Covens unit’s Toughness get -1 to wound"
         }
       ],
       "enhancements": [
@@ -16046,7 +17055,20 @@
               "Haemonculus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "T",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "+1 Wound, and +1 Toughness for its unit"
         },
         {
           "id": "master-nemesine",
@@ -16060,7 +17082,32 @@
               "Haemonculus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Beast"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            }
+          ],
+          "summary": "Anti-Beast 2+ and Anti-Monster 4+"
         },
         {
           "id": "master-regenesist",
@@ -16074,7 +17121,15 @@
               "Haemonculus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+3",
+              "target": "self"
+            }
+          ],
+          "summary": "Its Fleshcraft returns up to D3+3 models"
         },
         {
           "id": "master-repugnomancer",
@@ -16088,7 +17143,8 @@
               "Haemonculus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+3\" Fear Incarnate; nearby friendly losses earn Pain tokens on 4+"
         }
       ]
     },
@@ -16103,7 +17159,34 @@
       "rules": [
         {
           "id": "exacting-cruelty",
-          "name": "Exacting Cruelty"
+          "name": "Exacting Cruelty",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Wych Cult"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Wych Cult units gain Lethal Hits in melee against non-Monster, non-Vehicle units"
         }
       ],
       "enhancements": [
@@ -16120,7 +17203,15 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Toughness for its unit"
         },
         {
           "id": "periapt-of-torments",
@@ -16135,7 +17226,8 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies cannot snap-shoot at its unit"
         }
       ]
     },
@@ -16150,7 +17242,36 @@
       "rules": [
         {
           "id": "contracted-harvest",
-          "name": "Contracted Harvest"
+          "name": "Contracted Harvest",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Kabal",
+              "Blades for Hire"
+            ],
+            "noneOf": []
+          },
+          "summary": "Kabal and Blades for Hire gain Sustained Hits 1 when shooting non-Monster, non-Vehicle units"
         }
       ],
       "enhancements": [
@@ -16167,7 +17288,14 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Precision"
         },
         {
           "id": "towering-arrogance",
@@ -16182,7 +17310,20 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Leadership and OC for its unit"
         }
       ]
     },
@@ -16197,7 +17338,84 @@
       "rules": [
         {
           "id": "murderous-agenda",
-          "name": "Murderous Agenda"
+          "name": "Murderous Agenda",
+          "options": [
+            {
+              "name": "Trophy Hunters (a Character): Precision against it",
+              "modifiers": [
+                {
+                  "key": "precision",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-marked"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sow Fear and Terror (infantry or mounted): Sustained Hits 1 against those",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Infantry"
+                    }
+                  ]
+                },
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Mounted"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Show of Strength (a Monster or Vehicle): Lethal Hits against those",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Monster"
+                    }
+                  ]
+                },
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Vehicle"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Kabal",
+              "Blades for Hire"
+            ],
+            "noneOf": []
+          },
+          "summary": "Pick a Contract and its target at the start; Kabal units gain its ability, and the kill pays 3 Pain tokens"
         }
       ],
       "enhancements": [
@@ -16213,7 +17431,22 @@
               "Archon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self",
+              "keywords": {
+                "allOf": [],
+                "anyOf": [
+                  "Kabalite Warriors",
+                  "Hand of the Archon"
+                ],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Up to three Kabalite Warriors or Hand of the Archon units gain Infiltrators"
         },
         {
           "id": "leechbite-plate",
@@ -16227,7 +17460,15 @@
               "Archon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "3+",
+              "target": "self"
+            }
+          ],
+          "summary": "Save 3+; a Pain token each Command phase heals it fully"
         },
         {
           "id": "towering-arrogance",
@@ -16241,7 +17482,20 @@
               "Archon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 Leadership and OC"
         },
         {
           "id": "webway-awl",
@@ -16255,7 +17509,19 @@
               "Archon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Deep Strike, and Rapid Ingress on it costs 0CP"
         }
       ]
     },
@@ -16269,7 +17535,8 @@
       "rules": [
         {
           "id": "alliance-of-agony",
-          "name": "Alliance of Agony"
+          "name": "Alliance of Agony",
+          "summary": "2 Pain tokens at the start for each Archon, Succubus or Haemonculus paired with their troops"
         }
       ],
       "enhancements": [
@@ -16285,7 +17552,24 @@
               "Haemonculus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            },
+            {
+              "key": "mortal-wounds",
+              "value": 3,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: enemies 12\" or closer test Battle-shock; failed Psykers take 3 mortal wounds"
         },
         {
           "id": "dark-vitality",
@@ -16299,7 +17583,8 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit is always Empowered"
         },
         {
           "id": "eye-of-spite",
@@ -16313,7 +17598,30 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee A and AP, or +2 for a Pain token"
         },
         {
           "id": "labyrinthine-cunning",
@@ -16327,7 +17635,15 @@
               "Archon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: +1CP for a Pain token, or on a 4+"
         }
       ]
     },
@@ -16342,7 +17658,33 @@
       "rules": [
         {
           "id": "callous-competition",
-          "name": "Callous Competition"
+          "name": "Callous Competition",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "losing-the-wager"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Drukhari",
+              "Harlequins"
+            ],
+            "noneOf": []
+          },
+          "summary": "Up to 500-1500 points of Harlequins; re-roll 1s to hit, and 1s to wound for the side losing the wager"
         }
       ],
       "enhancements": [
@@ -16361,7 +17703,15 @@
               "Harlequins"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 9,
+              "target": "self"
+            }
+          ],
+          "summary": "Its Dedicated Transport has Scouts 9\""
         },
         {
           "id": "conductor-of-torment",
@@ -16375,7 +17725,8 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: trade a Pain token to swing the wager"
         },
         {
           "id": "reapers-cowl",
@@ -16389,7 +17740,18 @@
               "Harlequins"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "infiltrators",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Stealth and Infiltrators"
         },
         {
           "id": "webway-walker",
@@ -16406,7 +17768,14 @@
               "Harlequins"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike; re-roll charges after landing while losing the wager"
         }
       ]
     },
@@ -16420,7 +17789,45 @@
       "rules": [
         {
           "id": "rain-of-cruelty",
-          "name": "Rain of Cruelty"
+          "name": "Rain of Cruelty",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "disembarked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                },
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Drukhari"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Units that disembarked this turn gain Ignores Cover when shooting and Lance in melee"
         }
       ],
       "enhancements": [
@@ -16436,7 +17843,8 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Disembarked this turn: enemies cannot Fire Overwatch at its unit"
         },
         {
           "id": "phantasmal-smoke",
@@ -16450,7 +17858,31 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-transport"
+                }
+              ]
+            },
+            {
+              "key": "cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "near-transport"
+                }
+              ]
+            }
+          ],
+          "summary": "Wholly 6\" or closer to a friendly Transport: Stealth and cover"
         },
         {
           "id": "sadistic-fulcrum",
@@ -16464,7 +17896,8 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Empowered while shooting: a nearby Transport re-rolls hits this phase"
         },
         {
           "id": "spiteful-raider",
@@ -16478,7 +17911,8 @@
               "Drukhari"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Destroying a unit that held an objective earns one more Pain token"
         }
       ]
     },
@@ -16493,7 +17927,102 @@
       "rules": [
         {
           "id": "combat-drugs",
-          "name": "Combat Drugs"
+          "name": "Combat Drugs",
+          "options": [
+            {
+              "name": "Adrenalight: +1 melee Attack",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hypex: +2\" Move",
+              "modifiers": [
+                {
+                  "key": "M",
+                  "value": 2,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Serpentin: +1 WS",
+              "modifiers": [
+                {
+                  "key": "WS",
+                  "value": -1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Painbringer: +1 Toughness",
+              "modifiers": [
+                {
+                  "key": "T",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Grave Lotus: +1 melee Strength",
+              "modifiers": [
+                {
+                  "key": "S",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Splintermind: +1 Ld and BS",
+              "modifiers": [
+                {
+                  "key": "Ld",
+                  "value": 1,
+                  "target": "self"
+                },
+                {
+                  "key": "BS",
+                  "value": -1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Wych Cult"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Each Command phase: one Combat Drug of your choice for Wych Cult units, or two rolled at random"
         }
       ],
       "enhancements": [
@@ -16509,7 +18038,19 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: its unit Fights First"
         },
         {
           "id": "morghennas-curse",
@@ -16523,7 +18064,30 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP and Damage in melee"
         },
         {
           "id": "periapt-of-torments",
@@ -16537,7 +18101,8 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies cannot Fire Overwatch at its unit"
         },
         {
           "id": "pharmacophex",
@@ -16551,7 +18116,8 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit rolls one more Combat Drug each Command phase"
         }
       ]
     },
@@ -16566,7 +18132,28 @@
       "rules": [
         {
           "id": "darkest-artifice",
-          "name": "Darkest Artifice"
+          "name": "Darkest Artifice",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Cronos",
+              "Talos"
+            ],
+            "noneOf": []
+          },
+          "summary": "Attacks stronger than a Cronos’ or Talos’ Toughness get -1 to wound"
         }
       ],
       "enhancements": [
@@ -16587,7 +18174,15 @@
               "Talos"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "5+ invulnerable save"
         },
         {
           "id": "gnarlskin-experimentor",
@@ -16602,7 +18197,20 @@
               "Haemonculus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Attacks stronger than its unit’s Toughness get -1 to wound"
         }
       ]
     }
@@ -16618,7 +18226,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "enemy-moved",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Charges an enemy that Fell Back 6\" or closer"
     },
     {
       "id": "acrobatic-display",
@@ -16629,7 +18246,23 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "5+ invulnerable save"
     },
     {
       "id": "acrobatic-display-2",
@@ -16641,7 +18274,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "5+ invulnerable save this phase"
     },
     {
       "id": "berserk-fugue",
@@ -16653,7 +18302,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "2+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: always fights back"
     },
     {
       "id": "connoisseurs-of-pain",
@@ -16666,7 +18336,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "For a Pain token: attacks against it lose 1 AP (Covens units earn it back)"
     },
     {
       "id": "dance-macabre",
@@ -16678,7 +18364,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Infantry"
+        ],
+        "anyOf": [
+          "Drukhari",
+          "Harlequins"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a D6\" Normal move (6\" if losing)"
     },
     {
       "id": "dark-harvest",
@@ -16690,7 +18395,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Two Wracks units or one other unit: Lethal Hits in melee"
     },
     {
       "id": "deadly-debut",
@@ -16702,7 +18427,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Charged this turn: Lethal Hits in melee (Wyches also +1 AP)"
     },
     {
       "id": "deadly-deceivers",
@@ -16714,7 +18461,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Kabal",
+          "Blades for Hire"
+        ],
+        "noneOf": []
+      },
+      "summary": "Can only be shot from 18\" or closer this phase"
     },
     {
       "id": "distillers-of-fear",
@@ -16726,7 +18483,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Haemonculus Covens"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-battle-shocked"
+            }
+          ]
+        }
+      ],
+      "summary": "Devastating Wounds against Battle-shocked units this phase"
     },
     {
       "id": "dividends-of-agony",
@@ -16737,7 +18513,22 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Haemonculus Covens"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "A visible enemy 12\" or closer tests Battle-shock at -1"
     },
     {
       "id": "double-cross",
@@ -16749,7 +18540,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Kabal",
+          "Blades for Hire"
+        ],
+        "noneOf": []
+      },
+      "summary": "An engaged friendly unit soaks the attacks as mortal wounds"
     },
     {
       "id": "eager-for-the-kill",
@@ -16761,7 +18562,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Two Wyches units or one other unit Advance a flat 6\""
     },
     {
       "id": "enemies-without-number",
@@ -16773,7 +18590,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Archon",
+          "Warlord"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Your Archon Warlord picks a new Contract and target"
     },
     {
       "id": "enfolding-nightmare",
@@ -16785,7 +18611,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Haemonculus Covens"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a D6\" surge move"
     },
     {
       "id": "fateful-role",
@@ -16797,7 +18639,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Drukhari",
+          "Harlequins"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+ (+1 if losing)"
     },
     {
       "id": "feigned-weakness",
@@ -16809,7 +18673,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "fighting-shadows",
@@ -16822,7 +18705,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Haemonculus Covens"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to hit this phase"
     },
     {
       "id": "insensible-to-pain",
@@ -16835,7 +18736,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Haemonculus Covens"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to it this phase"
     },
     {
       "id": "instinctive-spite",
@@ -16848,7 +18765,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-below-half-strength"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to hit Below Half-strength units (and to wound for a Pain token)"
     },
     {
       "id": "killers-from-the-dark-spires",
@@ -16859,7 +18797,27 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Kabalite Warriors"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover when shooting"
     },
     {
       "id": "making-a-point",
@@ -16871,7 +18829,38 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Kabalite Warriors",
+          "Hand of the Archon"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "BS",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 BS and AP when shooting this phase"
     },
     {
       "id": "malicious-frenzy",
@@ -16884,7 +18873,37 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Drukhari",
+          "Harlequins"
+        ],
+        "noneOf": []
+      },
+      "options": [
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits or Sustained Hits 1 this phase"
     },
     {
       "id": "murderers-circus",
@@ -16896,7 +18915,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Drukhari",
+          "Harlequins"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to hit this phase"
     },
     {
       "id": "night-shield",
@@ -16908,7 +18944,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Drukhari",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "planned-strikes",
@@ -16919,7 +18972,27 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits in melee"
     },
     {
       "id": "poisoners-art",
@@ -16931,7 +19004,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "after-own-action",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Haemonculus Covens"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "One non-Vehicle unit it hit is poisoned: D3 mortal wounds on 4+ each Command phase"
     },
     {
       "id": "postmortality",
@@ -16947,7 +19036,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Haemonculus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle: a slain Haemonculus returns alone with 1-3 wounds, one per Pain token spent"
     },
     {
       "id": "pounce-on-the-prey",
@@ -16959,7 +19056,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault-disembark",
+          "target": "self"
+        }
+      ],
+      "summary": "Disembarking: makes an assault disembark"
     },
     {
       "id": "preternatural-agility",
@@ -16972,7 +19084,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Ignores Move, Advance and charge penalties, and moves through models"
     },
     {
       "id": "prioritised-victim",
@@ -16984,7 +19105,40 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Blades for Hire",
+          "Kabal"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Character"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Character"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit and wound against Characters"
     },
     {
       "id": "raid-and-fade",
@@ -16996,7 +19150,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Scourges",
+          "Aircraft"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Two Kabalite units or one other unengaged unit: a 6\" Normal move, then no charge"
     },
     {
       "id": "salting-the-wound",
@@ -17007,7 +19180,28 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Cronos",
+          "Talos"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-battle-shocked"
+            }
+          ]
+        }
+      ],
+      "summary": "Devastating Wounds against Battle-shocked units"
     },
     {
       "id": "scintillating-tempo",
@@ -17020,7 +19214,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "charge-declared",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Drukhari",
+          "Harlequins"
+        ],
+        "noneOf": []
+      },
+      "summary": "Enemies cannot Fire Overwatch at it this turn"
     },
     {
       "id": "sculpting-the-stage",
@@ -17031,7 +19235,16 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Wych Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its move does not stop it from starting an action"
     },
     {
       "id": "shadows-reach",
@@ -17042,7 +19255,17 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Blades for Hire",
+          "Kabal"
+        ],
+        "noneOf": []
+      },
+      "summary": "Its shooting does not stop it from being hidden"
     },
     {
       "id": "shorten-the-odds",
@@ -17054,7 +19277,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Drukhari",
+          "Harlequins"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Advanced: can still shoot and charge this turn"
     },
     {
       "id": "skyborne-annihilation",
@@ -17066,7 +19309,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "disembarked"
+            }
+          ]
+        }
+      ],
+      "summary": "Disembarked this turn: Sustained Hits 1 when shooting (2 for Kabalites and the Hand)"
     },
     {
       "id": "swooping-mockery",
@@ -17078,7 +19344,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari",
+          "Transport"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: the Transport makes a 6\" Normal move"
     },
     {
       "id": "symphony-of-suffering",
@@ -17090,7 +19373,21 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Visible enemies 9\" or closer test Battle-shock (-1 for a Covens unit)"
     },
     {
       "id": "tailored-toxins",
@@ -17103,7 +19400,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Kabal",
+          "Blades for Hire"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Critical hits on 5+ against your Contract unit"
     },
     {
       "id": "taken-alive",
@@ -17115,7 +19433,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Drukhari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 to hit this phase; killing the Contract unit forces Battle-shock tests army-wide"
     },
     {
       "id": "urgent-metamorphosis",
@@ -17126,7 +19459,26 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
+      "target": {
+        "allOf": [
+          "Haemonculus Covens"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Its move does not stop it from charging"
     },
     {
       "id": "vicious-blades",
@@ -17138,7 +19490,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari",
+          "Transport"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After it fights: a D6 per passenger, each 5+ a mortal wound (6 at most)"
     },
     {
       "id": "wraithlike-retreat",
@@ -17150,7 +19519,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Drukhari",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "After fighting: moves and re-embarks in a Transport 3\" or closer"
     }
   ]
 }
