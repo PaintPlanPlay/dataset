@@ -72,7 +72,7 @@ army's file.
 
 ```json
 { "id": "orks", "name": "Orks", "faction": "", "units": 95,
-  "refs": { "bsdata": "Orks", "mfm": "orks", "kdc": "orks" } }
+  "refs": { "bsdata": "Orks", "mfm": "orks" } }
 ```
 
 → `wh40k-11e/armies/orks.json`
@@ -122,9 +122,10 @@ the Modifiers and summaries written here — is published under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (see
 [LICENSE](../LICENSE)): credit the Paint Plan Play Dataset when you use it.
 
-It is built from three community projects, which have their own terms:
-[BSData/wh40k-11e](https://github.com/BSData/wh40k-11e),
-[BSData/wh40k-11e-mfm](https://github.com/BSData/wh40k-11e-mfm) and
+It is built from two community projects, which have their own terms:
+[BSData/wh40k-11e](https://github.com/BSData/wh40k-11e) and
+[BSData/wh40k-11e-mfm](https://github.com/BSData/wh40k-11e-mfm). Its detachment
+rules, stratagems and enhancement restrictions were first seeded from
 [wn-mitch/40kdc-data](https://github.com/wn-mitch/40kdc-data).
 
 Warhammer 40,000 and the names related to it belong to Games Workshop Limited.

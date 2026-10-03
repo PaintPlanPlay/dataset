@@ -37,17 +37,17 @@ or a contribution, and the build applies it.
 ```
 BSData ─────────┐
 MFM (via BSData)├──▶  Dataset Tool  ──▶  a pull request here  ──▶  a release
-40kdc-data ─────┘      (builds it)        (reviewed by a human)     (apps read it)
+contributions ──┘      (builds it)        (reviewed by a human)     (apps read it)
 ```
 
-Three community projects feed this dataset, and each one is trusted for what it
-does best:
+Two community projects feed this dataset, each one trusted for what it does
+best; the rest is written here, as contributions:
 
 | Source | Trusted for |
 |---|---|
 | [BSData](https://github.com/BSData/wh40k-11e) | unit profiles, weapons, wargear options, keywords |
 | [Munitorum Field Manual, via BSData](https://github.com/BSData/wh40k-11e-mfm) | points costs, requisition brackets, paid wargear, leader/support attachments, detachment points, force dispositions, enhancements |
-| [40kdc-data](https://github.com/wn-mitch/40kdc-data) | which detachment rules and stratagems exist, their CP, timing and targets, enhancement restrictions |
+| contributions, in `authored/` | detachment rules and stratagems — which exist, their CP, timing and targets —, enhancement restrictions, and what every rule does |
 
 When two sources disagree, the one trusted for that field wins, and the
 disagreement is reported so a human can look at it.
@@ -113,7 +113,7 @@ the JSON below, and GitHub will walk you through opening a pull request.
 | Field | What to put in it |
 |---|---|
 | `target` | what you are fixing — a unit's id, or an address like `<unitId>::weapon:melee\|Power klaw` or `<army>::enhancement:<detachment>\|<enhancement>`. A weapon is always fixed whole, with all its profiles (`"patch": { "profiles": [...] }`), never one profile on its own |
-| `source` | which upstream source got it wrong: `bsdata`, `mfm` or `40kdc` |
+| `source` | which upstream source got it wrong: `bsdata` or `mfm` |
 | `patch` | the corrected values, and only those |
 | `upstream` | what that source says today, so we can tell later whether they fixed it themselves |
 | `reason` | one sentence, in your own words |
@@ -165,11 +165,14 @@ describes every field.
 
 ## Attribution
 
-Built from three community projects, with thanks:
+Built from two community projects, with thanks:
 
 - [BSData/wh40k-11e](https://github.com/BSData/wh40k-11e)
 - [BSData/wh40k-11e-mfm](https://github.com/BSData/wh40k-11e-mfm)
-- [wn-mitch/40kdc-data](https://github.com/wn-mitch/40kdc-data)
+
+The detachment rules, stratagems and enhancement restrictions were first seeded
+from [wn-mitch/40kdc-data](https://github.com/wn-mitch/40kdc-data), also with
+thanks; they are maintained here since.
 
 ## Licence
 
