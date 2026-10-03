@@ -1,12 +1,1081 @@
 [
   {
+    "target": "1d85-475f-5ab-9823::ability:Lethal Ichor",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 6,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Each melee attack allocated to it: a D6, each 4+ a mortal wound back (six dice at most)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1ffc-27de-8aea-e7bb::ability:Sickening Vitality",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 1,
+        "target": "attached"
+      },
+      {
+        "key": "reroll-advance",
+        "target": "attached"
+      },
+      {
+        "key": "reroll-charge",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1\" Move, and re-roll Advance and charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1ffc-27de-8aea-e7bb::ability:Tocsin of Misery (Aura)",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies 9\" or closer below Starting Strength must test for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2425-13a7-77f0-0112::ability:Daemon Lord of Nurgle (Aura)",
+    "modifiers": [
+      {
+        "key": "T",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Plague Legions"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Friendly Plague Legions 6\" or closer get +1 Toughness",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2425-13a7-77f0-0112::ability:Damaged: 1-7 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2425-13a7-77f0-0112::ability:Nurgle’s Rot (Psychic)",
+    "summary": "End of your Movement phase: an enemy 12\" or closer gets -1 Toughness until the next",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "26d5-ec73-3517-f3f::ability:Hovering Death",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Fell Back: can still shoot and charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2a2b-643e-860e-b524::ability:Diseased Malice",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound against Afflicted units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2a2b-643e-860e-b524::ability:Froth-spattered Frenzy",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "With two melee weapons: +2 Attacks for each",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2dfd-cddb-9fef-494b::ability:Mischief Makers (Aura)",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Enemies 6\" or closer get -1 to hit in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "35b2-7490-1a7b-cd99::ability:Tank Hunters",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit and wound when shooting Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3e5b-23db-4ccd-ea97::ability:Blessed Icon of Disease",
+    "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3e5b-23db-4ccd-ea97::ability:Unclean Icon",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 OC",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3e86-ef61-9b87-3658::ability:Interceptor",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Fly"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit when shooting units that can Fly",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4cb3-e6b6-4e82-23bf::ability:Death Guard Defenders",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-infantry"
+          }
+        ]
+      }
+    ],
+    "summary": "Near friendly infantry (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4cb3-e6b6-4e82-23bf::ability:Fevered Strategist",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle round, a Stratagem on a unit 12\" or closer costs 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4cb3-e6b6-4e82-23bf::ability:Miasma of Pestilence (Aura)",
+    "modifiers": [
+      {
+        "key": "cover",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 6\" or closer have the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "506c-16a8-68f7-c08a::ability:Malicious Calculations",
+    "summary": "Leading: ignores hit, BS and WS modifiers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "506c-16a8-68f7-c08a::ability:Seven-fold Chant",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase: +1CP on 7+ on 2D6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "55c7-e5b8-9737-f58e::ability:Deployment",
+    "summary": "Its two parts are set up 1\" apart and count as one model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "55c7-e5b8-9737-f58e::ability:Diseased Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "55c7-e5b8-9737-f58e::ability:Putrescent Fog (Aura)",
+    "summary": "Enemy Reinforcements cannot arrive 12\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5b4e-dcf1-5c6f-4d35::ability:Blistering Fusillade",
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "Five strong or led: +1 S and AP when shooting Afflicted units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5f38-3bbb-ce09-485b::ability:Grotesque Regeneration",
+    "summary": "Wounded Beasts heal fully as each phase ends",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "66dd-f8c9-f9a6-0e6b::ability:Damaged: 1-7 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "66dd-f8c9-f9a6-0e6b::ability:Deluge of Nurgle (Aura)",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "OC",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies 6\" or closer get -2\" Move and -1 OC",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "66dd-f8c9-f9a6-0e6b::ability:Virulent Blessing (Psychic)",
+    "modifiers": [
+      {
+        "key": "D",
+        "value": 1,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Plague Legions"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "Fight phase: Plague Legions get +1 Damage against one visible enemy 24\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "690b-a189-5935-f32e::ability:Extraction of Fresh Disease",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "After its unit’s first melee kill of a unit: +6 OC for good",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "690b-a189-5935-f32e::ability:Foul Infusion",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "attached"
+      },
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Lethal Hits, critical hits on 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6d29-1c06-c787-64e0::ability:Fearsome (Aura)",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies 6\" or closer: -1 to Battle-shock and Leadership tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7c30-1e92-2faa-eb03::ability:Curse of the Walking Pox",
+    "summary": "Each non-Monster, non-Vehicle model it kills returns a Poxwalker",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7e32-0162-71e2-57a0::ability:Mischief Makers (Aura)",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Enemies engaged with it get -1 to hit in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "83e8-ebb7-785a-2115::ability:Death Approaches",
+    "summary": "Deep Strikes 6\" from Afflicted enemies, 8\" from the rest",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "83e8-ebb7-785a-2115::ability:Icon of Despair (Aura)",
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies 6\" or closer get -1 Leadership",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "83e8-ebb7-785a-2115::ability:Silent Bodyguard",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Character"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Its leading Character has Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8467-b3a2-2597-de0d::ability:Icon of Despair (Aura)",
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies 6\" or closer get -1 Leadership",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8467-b3a2-2597-de0d::ability:Infused with the Blessings of Nurgle",
+    "summary": "One unit it shoots and hits is Afflicted until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8700-3d3-efbb-ef8d::ability:Unholy Resilience",
+    "summary": "First death in a battle round: on a 2+ returns with 3 wounds (once per battle)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8700-3d3-efbb-ef8d::ability:Vector of Disease",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1 and Lance in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "89d-b0c0-6e19-f017::ability:Assault Ramp",
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "Units disembarking after its Normal move make an assault disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "89d-b0c0-6e19-f017::ability:Damaged: 1-5 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "89d8-7e90-be47-59b6::ability:Gift of Poxes",
+    "summary": "+3\" Contagion Range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8cba-21cc-a3b3-91ed::ability:Bomb Rack",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "6D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8cba-21cc-a3b3-91ed::ability:Damaged: 1-5 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "904b-0319-7b2e-2145::ability:Daemonic Icon",
+    "summary": "Its unit has Leadership 6+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "904b-0319-7b2e-2145::ability:Infected Outbreak",
+    "summary": "An objective it holds as your Command phase ends stays yours after it leaves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "904b-0319-7b2e-2145::ability:Instrument of Chaos",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to its unit’s charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "93ac-1b31-4238-d60e::ability:Pestilent Familiar (Psychic)",
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: +2 S and Damage for one Psychic weapon this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "93ac-1b31-4238-d60e::ability:Putrescent Vitality (Psychic)",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Fight phase: -1 Damage against its unit on a 2+, D3 mortal wounds on a 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9900-77d7-10e3-5c91::ability:Gift of Contagion (Psychic)",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1 against Afflicted units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9900-77d7-10e3-5c91::ability:Pestilent Fallout (Psychic)",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry its Plague Wind hits: -2\" Move through the enemy’s next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9a82-ea13-3511-6c08::ability:Inflamed Infections",
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One engaged enemy: critical hits on 5+ against it (4+ Below Half-strength)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9a82-ea13-3511-6c08::ability:Tainted Narthecium",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Leading, Command phase: returns one destroyed Bodyguard model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9b58-210d-c12f-4d46::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9b58-210d-c12f-4d46::ability:Metalophagic Infection",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "One Monster or Vehicle it hits: D3 mortal wounds on 5+ (+1 if Afflicted)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ab4e-466d-e9e8-89d5::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ab4e-466d-e9e8-89d5::ability:Hail of Corrosive Disease",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One non-Monster, non-Vehicle unit it hits: Death Guard get +1 AP against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b899-92e2-693a-975f::ability:Fire Support",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bacc-4f1-649-a051::ability:Chaos Lord",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: re-roll 1s to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bc88-0833-743e-0146::ability:Barrage of Filth",
+    "summary": "One unit it hits loses the benefit of cover this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bc88-0833-743e-0146::ability:Damaged: 1-6 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bc88-0833-743e-0146::ability:Scuttling Walker",
+    "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c15c-2b5a-dcab-7627::ability:Blight Bombardment",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One visible enemy 30\" or closer: Death Guard re-roll 1s to hit it (all with Blast)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c15c-2b5a-dcab-7627::ability:Virulent Aura",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: re-roll wounds when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c5a7-5f07-2b1a-8f98::ability:Gift of Poxes",
+    "summary": "+3\" Contagion Range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c5a7-5f07-2b1a-8f98::ability:Shroud of Disease",
+    "summary": "Leading: its unit can only be shot from 18\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c88f-d4dc-84b3-1b31::ability:Blinding Spray",
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: its unit Fights First",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c88f-d4dc-84b3-1b31::ability:Putrefying Stink",
+    "summary": "Enemies cannot start or end an Advance 9\" or closer to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cd03-e1f3-fa31-a271::ability:Daemonic Icon",
+    "summary": "Its unit has Leadership 6+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cd03-e1f3-fa31-a271::ability:Death’s Heads",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "One unit it hits: Plague Legions re-roll wounds against it this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cd03-e1f3-fa31-a271::ability:Instrument of Chaos",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to its unit’s charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cfc1-1741-530c-3335::ability:Chaos Lord",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: re-roll 1s to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d037-162a-ac85-9c88::ability:Gift of Contagion (Psychic)",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1 against Afflicted units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d055-25eb-eb2b-7f6a::ability:Explosive Blight",
+    "summary": "Destroys a unit: on 5+ enemies 6\" or closer are Afflicted until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "death-guard::armyrule:nurgles-gift-aura",
+    "options": [
+      {
+        "name": "Skullsquirm Blight: cover against its shots, -1 to hit in melee",
+        "modifiers": [
+          {
+            "key": "hit",
+            "value": -1,
+            "target": "enemy",
+            "conditions": [
+              {
+                "key": "melee"
+              },
+              {
+                "key": "target-afflicted"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rattlejoint Ague: Save worsened by 1",
+        "modifiers": []
+      },
+      {
+        "name": "Scabrous Soulrot: -1 Move, Leadership and OC",
+        "modifiers": [
+          {
+            "key": "Ld",
+            "value": -1,
+            "target": "enemy",
+            "conditions": [
+              {
+                "key": "target-afflicted"
+              }
+            ]
+          },
+          {
+            "key": "OC",
+            "value": -1,
+            "target": "enemy",
+            "conditions": [
+              {
+                "key": "target-afflicted"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "Enemies in Contagion Range are Afflicted: -1 Toughness and the Plague chosen at deployment",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
     "target": "death-guard::enhancement:champions-of-contagion|cornucophagus",
     "requires": [
       [
         "Lord of Poxes"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemies in its Contagion Range also suffer a second Plague chosen at deployment",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:champions-of-contagion|final-ingredient",
@@ -15,7 +1084,8 @@
         "Biologus Putrifier"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle, after killing a Character in melee: Afflicted enemies suffer one more Plague",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:champions-of-contagion|needle-of-nurgle",
@@ -24,7 +1094,15 @@
         "Plague Surgeon"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Its Tainted Narthecium returns up to D3 models",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:champions-of-contagion|visions-of-virulence",
@@ -33,7 +1111,8 @@
         "Malignant Plaguecaster"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Units enfeebled by its Pestilent Fallout are also Afflicted",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:contagion-engines|lancet-of-the-worldsore",
@@ -48,7 +1127,14 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mobile",
+        "target": "self"
+      }
+    ],
+    "summary": "Mobile",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:contagion-engines|parasitic-woe-reaper",
@@ -58,7 +1144,15 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "After fighting: one model heals D3 wounds",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:death-lords-chosen|face-of-death",
@@ -67,7 +1161,14 @@
         "Terminator"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Start of the Fight phase: engaged enemies test for Battle-shock",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:death-lords-chosen|helm-of-the-fly-king",
@@ -76,7 +1177,8 @@
         "Terminator"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Leading: its unit can only be shot from 18\" or closer",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:death-lords-chosen|vile-vigour",
@@ -85,7 +1187,19 @@
         "Terminator"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 1,
+        "target": "attached"
+      },
+      {
+        "key": "reroll-advance",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1\" Move and re-roll Advance rolls",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:death-lords-chosen|warprot-talisman",
@@ -94,7 +1208,14 @@
         "Terminator"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle, end of the enemy turn, unengaged: into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:flyblown-host|insectile-murmuration",
@@ -105,7 +1226,20 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound against units in a friendly Contagion Range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:flyblown-host|plagueveil",
@@ -116,7 +1250,8 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "-3\" detection range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:mortarions-hammer|bilemaw-blight",
@@ -125,7 +1260,8 @@
         "Malignant Plaguecaster"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "+12\" range for its Plague Wind this Shooting phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:mortarions-hammer|eye-of-affliction",
@@ -134,7 +1270,22 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit shoots Afflicted enemies with Ignores Cover",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:mortarions-hammer|shriekworm-familiar",
@@ -143,7 +1294,15 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle round, Fire Overwatch on its unit costs 0CP",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:mortarions-hammer|tendrilous-emissions",
@@ -152,7 +1311,19 @@
         "Lord of Virulence"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Near a friendly Vehicle (3\"): Lone Operative, and those Vehicles re-roll 1s to wound targets it sees",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:paragons-of-putrescence|host-of-the-hybridised-pox",
@@ -162,7 +1333,8 @@
         "Infantry"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle: enemies in its Contagion Range suffer a second Plague for good",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:paragons-of-putrescence|rejuvenating-swarm",
@@ -175,7 +1347,20 @@
     "excludes": [
       "Terminator"
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:shamblerot-vectorium|lord-of-the-walking-pox",
@@ -184,7 +1369,8 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Leading Poxwalkers in Strategic Reserves: arrives as if in round 3",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:shamblerot-vectorium|sorrowsyphon",
@@ -193,7 +1379,20 @@
         "Malignant Plaguecaster"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "D",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading Poxwalkers: +1 Damage for its Plague Wind, which kills D3 of them",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:shamblerot-vectorium|talisman-of-burgeoning",
@@ -202,7 +1401,15 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "T",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Poxwalkers get +1 Toughness",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:shamblerot-vectorium|witherbone-pipes",
@@ -211,7 +1418,15 @@
         "Noxious Blightbringer"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading Poxwalkers: +1 OC and +1 to Battle-shock and Leadership tests",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:tallyband-summoners|beckoning-blight",
@@ -220,7 +1435,8 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Plague Legions Deep Striking wholly 12\" or closer to it can land 6\" from enemies",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:tallyband-summoners|entropic-knell",
@@ -229,7 +1445,15 @@
         "Great Unclean One"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies 6\" or closer below Starting Strength test Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:tallyband-summoners|fell-harvester",
@@ -238,7 +1462,20 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+2 melee Attacks",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:tallyband-summoners|tome-of-bounteous-blessings",
@@ -247,7 +1484,23 @@
         "Malignant Plaguecaster"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 12,
+        "keywords": {
+          "allOf": [
+            "Plague Legions"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Plague Legions 12\" or closer: +1 to Battle-shock tests, and heal D3 when passed",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:virulent-vectorium|arch-contaminator",
@@ -256,7 +1509,20 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "On an objective you hold: its unit re-rolls wounds",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:virulent-vectorium|daemon-weapon-of-nurgle",
@@ -265,7 +1531,20 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Critical hits on 5+ in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:virulent-vectorium|furnace-of-plagues",
@@ -274,7 +1553,39 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 melee S and A, with Devastating Wounds",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::enhancement:virulent-vectorium|revolting-regeneration",
@@ -283,70 +1594,147 @@
         "Death Guard"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Feel No Pain 5+",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:champions-of-contagion|manifold-maladies",
     "rule": {
       "name": "Manifold Maladies"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Each battle round you may switch your chosen Plague",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:contagion-engines|warped-and-rusted-animus",
     "rule": {
       "name": "Warped and Rusted Animus"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Contagion Engine"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Bloat-drones, Helbrutes and Blight-haulers are Contagion Engines, with Assault on their ranged weapons",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:death-lords-chosen|deadly-vectors",
     "rule": {
       "name": "Deadly Vectors"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemy Command phase: each Afflicted unit rolls 2D6, D3 mortal wounds on 6 or less",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:flyblown-host|verminous-haze",
     "rule": {
       "name": "Verminous Haze"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "infiltrators",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Plague Marines"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Up to two Plague Marines units gain Infiltrators",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:mortarions-hammer|miasmic-bombardment",
     "rule": {
       "name": "Miasmic Bombardment"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Each battle round: 1-3 enemy units 12\" from your army are Afflicted",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:paragons-of-putrescence|hypervirulent-strains",
     "rule": {
       "name": "Hypervirulent Strains"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "eligibility": {
+      "allOf": [
+        "Death Guard",
+        "Character"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "summary": "Characters get +3\" Contagion Range (12\" at most)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:shamblerot-vectorium|numberless-horde",
     "rule": {
       "name": "Numberless Horde"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Battleline",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Poxwalkers"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "From round 2, a new Poxwalkers unit of 10 joins your Strategic Reserves each Command phase; Poxwalkers are Battleline",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:tallyband-summoners|reverberant-rancidity",
     "rule": {
       "name": "Reverberant Rancidity"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Up to 500-1500 points of Plague Legions; they and Death Guard 7\" apart share Nurgle’s Gift and +3\" Contagion Range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::rule:virulent-vectorium|worldblight",
     "rule": {
       "name": "Worldblight"
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Objectives you hold as your Command phase ends stay yours, and enemies on them are Afflicted",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:aggravus-spasms",
@@ -359,6 +1747,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Death Guard",
@@ -368,7 +1757,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A visible enemy in its Contagion Range gets +6\" detection range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:all-is-rot",
@@ -381,9 +1771,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Engaged: shoots as if unengaged, but may take mortal wounds as the enemy is hurt",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:avatars-of-decay",
@@ -396,9 +1794,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemies 6\" or closer are Afflicted this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:blessings-of-filth",
@@ -412,9 +1818,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Attached unit: critical hits on 5+ this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:blighted-land",
@@ -427,9 +1848,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemies 3\" or closer to a visible terrain feature are Afflicted until your next turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:bloodrust-deluge",
@@ -442,6 +1873,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Contagion Engine"
@@ -450,7 +1882,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A visible enemy is Afflicted until the unit has attacked",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:blooming-pestilence",
@@ -467,9 +1900,18 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "+3\" Contagion Range this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:clutching-corruption",
@@ -482,9 +1924,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-engaged-with-legions"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against enemies engaged with Plague Legions",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:creeping-blight",
@@ -497,9 +1959,46 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-afflicted"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits and wounds when shooting Afflicted units",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:deaths-heads",
@@ -512,9 +2011,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Biologus Putrifier"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A visible non-Vehicle enemy 8\" or closer suffers every Plague until your next turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:disgustingly-resilient",
@@ -528,9 +2035,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:drawn-to-despair",
@@ -543,9 +2066,29 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-in-deployment-zone"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against units in the enemy deployment zone (Aircraft excepted)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:droning-horror",
@@ -558,7 +2101,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Plague Marines"
@@ -567,7 +2110,33 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit when shooting, and 1s to wound at half range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:eye-of-the-swarm",
@@ -580,7 +2149,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Plague Marines"
@@ -589,7 +2158,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Ranged weapons gain Close-quarters",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:eyestinger-storm",
@@ -602,9 +2172,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Afflicted enemies on a visible objective test for Battle-shock",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:fleshy-avalanche",
@@ -618,9 +2203,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves and charges through terrain this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:font-of-filth",
@@ -633,9 +2227,29 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged weapons gain Assault this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:fresh-vectors",
@@ -649,6 +2263,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Contagion Engine"
@@ -657,7 +2272,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll 1s to wound",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:gnawing-hunger",
@@ -670,9 +2293,44 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Move and +1 melee A and S this turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:grim-reapers",
@@ -685,9 +2343,34 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-not-keyword",
+            "value": "Monster"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits against non-Monster, non-Vehicle units this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:grip-of-the-walking-pox",
@@ -700,9 +2383,18 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "After the attacker fights: a D6 per Poxwalker lost, each 6 a mortal wound back",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:grotesque-fortitude",
@@ -716,9 +2408,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "T",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "Attached unit: +2 Toughness this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:hidden-amongst-the-dead",
@@ -731,9 +2439,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "deep-strike",
+        "target": "self"
+      }
+    ],
+    "summary": "In Strategic Reserves: gains Deep Strike this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:leechspore-eruption",
@@ -746,9 +2469,29 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 6,
+        "target": "enemy"
+      },
+      {
+        "key": "heal",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "A D6 per wound lost: each 5+ a mortal wound to an enemy 3\" or closer and a wound back (6 at most)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:malignance-magnified",
@@ -762,9 +2505,39 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-starting-strength"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-starting-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "Attached unit: re-roll hits and wounds against units below Starting Strength",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:mireslick",
@@ -777,9 +2550,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-falls-back",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Engaged enemies must pass Leadership to Fall Back, or stay put",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:mobile-vector",
@@ -792,9 +2574,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A lone Character joins a nearby unit it can lead",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:mortarions-teachings",
@@ -807,9 +2599,41 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "short-move"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged weapons gain Assault and Heavy this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:nauseating-paroxysms",
@@ -822,7 +2646,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Plague Marines"
@@ -831,7 +2655,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "An engaged enemy tests Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:overwhelming-generosity",
@@ -844,9 +2676,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "start-of-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Death Guard may re-roll their random Attacks against one visible enemy",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:persistent-pests",
@@ -863,9 +2705,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Nurglings"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Once per battle: a destroyed Nurglings unit returns whole into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:plaguesurge",
@@ -878,9 +2728,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Warlord"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Your Warlord: +3\" Contagion Range for the army until your next Command phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:putrid-detonation",
@@ -897,9 +2756,21 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Monster"
+        ],
+        "anyOf": [
+          "Vehicle",
+          "Death Guard"
+        ],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Just destroyed: its Deadly Demise always triggers and Afflicts the units it hurts",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:rabid-infusion",
@@ -912,9 +2783,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "self"
+      }
+    ],
+    "summary": "A unit with two Characters: Fights First this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:relentless-grind",
@@ -928,9 +2815,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Moves and charges through terrain this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:shambling-wall",
@@ -943,9 +2839,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A nearby visible Poxwalkers unit loses models instead, one per point of Damage",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:shock-and-horror",
@@ -958,9 +2863,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge: engaged enemies test Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:sickening-impact",
@@ -973,9 +2894,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 6,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge: a D6 per engaged model, each 2+ a mortal wound (6 at most)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:signal-pox",
@@ -988,9 +2925,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Lord of Virulence"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Enemies on a visible objective 30\" or closer are Afflicted until your next turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:simultaneous-contamination",
@@ -1012,7 +2957,8 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Starting an action does not stop it from shooting",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:smeared-with-filth",
@@ -1025,9 +2971,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Just destroyed: one unit that attacked it is Afflicted for the battle",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:soulrot-flux",
@@ -1039,9 +2993,25 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
+      "target": {
+        "allOf": [
+          "Contagion Engine"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "An enemy Falls Back from it: 1 mortal wound on a 1, D3 on 2-5, 3 on a 6",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:stinking-mire",
@@ -1054,9 +3024,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "A visible enemy 12\" or closer gets -1 to its charge rolls",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:territorial-infection",
@@ -1067,8 +3054,9 @@
       "phases": [
         "command"
       ],
-      "playerTurn": "your-turn",
+      "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Death Guard",
@@ -1078,7 +3066,15 @@
         "noneOf": []
       }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC this turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "death-guard::stratagem:undying-spite",
@@ -1091,8 +3087,181 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: still fights on a 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e58b-507a-937f-7abf::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e58b-507a-937f-7abf::ability:Spore-laced Shock Waves",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Its mortar target and enemies 3\" or closer: D3 mortal wounds on a 6 (+1 if Afflicted)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e6a4-7055-fd23-5123::ability:Eater Plague (Psychic)",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "A visible enemy 18\" or closer: D6 mortal wounds on 2-5, D3+3 on a 6 (D3 to itself on a 1)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e6a4-7055-fd23-5123::ability:The Destroyer Hive",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: melee attacks against its unit get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "efa6-3620-2b6c-ce70::ability:Diseased icon",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit has Lethal Hits in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "efa6-3620-2b6c-ce70::ability:Infectious Bloodshed",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "After charging: Sustained Hits 1 this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f4d7-244d-16c4-f2f3::ability:Enfeebling Miasma (Aura)",
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry 6\" or closer Falling Back take Desperate Escape tests (-1 if Battle-shocked)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f4d7-244d-16c4-f2f3::ability:Horrifying Visage",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge: one engaged enemy tests Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f5ac-4f37-fe7b-36b6::ability:Damaged: 1-6 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (6 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f5ac-4f37-fe7b-36b6::ability:Host of Plagues",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "End of your Movement phase: enemies 6\" or closer take D3 mortal wounds on 3+ (+1 if Afflicted)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f5ac-4f37-fe7b-36b6::ability:Lord of the Death Guard",
+    "summary": "Once per turn, uses one of its Lord of the Death Guard abilities",
+    "reason": "Read from the rules, in our own words."
   }
 ]
