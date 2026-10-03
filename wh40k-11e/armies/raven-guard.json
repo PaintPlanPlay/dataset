@@ -2935,13 +2935,44 @@
       ],
       "abilities": [
         {
-          "name": "Death to the Alien"
+          "name": "Death to the Alien",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Imperium"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Chaos"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against non-Imperium, non-Chaos units"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Astartes shield"
+          "name": "Astartes shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 110,
@@ -8993,16 +9024,27 @@
       ],
       "abilities": [
         {
-          "name": "Reign of Confusion"
+          "name": "Reign of Confusion",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an enemy Stratagem within 12\" costs 1CP more"
         },
         {
-          "name": "Acrobatic Escape"
+          "name": "Acrobatic Escape",
+          "summary": "Falls back D6\" after fighting; can vanish into Strategic Reserves and must return next turn"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
-          "name": "Decoy Targets"
+          "name": "Decoy Targets",
+          "summary": "Extremis: twice per battle, swaps places with another friendly Infantry model, which is destroyed"
         }
       ],
       "points": 100,
@@ -18662,16 +18704,57 @@
       ],
       "abilities": [
         {
-          "name": "Blackstar Cluster Launcher"
+          "name": "Blackstar Cluster Launcher",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 5+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Auspex Array"
+          "name": "Auspex Array",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting"
         },
         {
-          "name": "Infernum Halo-launcher"
+          "name": "Infernum Halo-launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has the Smoke keyword"
         }
       ],
       "points": 180,
@@ -18869,19 +18952,43 @@
       ],
       "abilities": [
         {
-          "name": "Abomination"
+          "name": "Abomination",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 2+ against Psychic attacks"
         },
         {
-          "name": "Soulless Horror"
+          "name": "Soulless Horror",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: enemies within 9\" test Battle-shock at -1 (-2 for Psykers)"
         },
         {
-          "name": "Etheric Emergence"
+          "name": "Etheric Emergence",
+          "summary": "Can Deep Strike 6\" from enemies, then no charge that turn"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
-          "name": "Esoteric Explosives"
+          "name": "Esoteric Explosives",
+          "summary": "Extremis: the Explosives Stratagem on it inflicts mortal wounds on 3+"
         }
       ],
       "points": 85,
@@ -19013,13 +19120,28 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Warding"
+          "name": "Malefic Warding",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by an Inquisitor: 5+ invulnerable save"
         },
         {
-          "name": "Bound Daemon"
+          "name": "Bound Daemon",
+          "summary": "Led by an Inquisitor: OC 1"
         },
         {
-          "name": "Inquisitorial Retinue"
+          "name": "Inquisitorial Retinue",
+          "summary": "Joins an Inquisitor-led Inquisitorial Agents unit; frees a Retinue slot for allies"
         }
       ],
       "points": 40,
@@ -19349,7 +19471,15 @@
       ],
       "abilities": [
         {
-          "name": "Grim Spectres"
+          "name": "Grim Spectres",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests Battle-shock at -1"
         }
       ],
       "points": 90,
@@ -20887,10 +21017,41 @@
       ],
       "abilities": [
         {
-          "name": "Death to the Alien"
+          "name": "Death to the Alien",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Imperium"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Chaos"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against non-Imperium, non-Chaos units"
         },
         {
-          "name": "Astartes shield"
+          "name": "Astartes shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 115,
@@ -21463,16 +21624,25 @@
       ],
       "abilities": [
         {
-          "name": "Terminatus Assault"
+          "name": "Terminatus Assault",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: engaged enemies test for Battle-shock"
         },
         {
-          "name": "Teleport Homer"
+          "name": "Teleport Homer",
+          "summary": "Once per battle, Rapid Ingress for 0CP next to its homer"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Storm shield"
+          "name": "Storm shield",
+          "summary": "The bearer has 4 Wounds"
         }
       ],
       "points": 190,
@@ -25794,13 +25964,41 @@
       ],
       "abilities": [
         {
-          "name": "Frenzon"
+          "name": "Frenzon",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shoots and charges after Advancing"
         },
         {
-          "name": "Overkill"
+          "name": "Overkill",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +6\" Move and +3 melee Attacks this turn"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
           "name": "Intra-neural Biotech"
@@ -26084,16 +26282,64 @@
       ],
       "abilities": [
         {
-          "name": "Imperial Law"
+          "name": "Imperial Law",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits and Precision against one enemy unit chosen at the start"
         },
         {
-          "name": "Nuncio-aquila"
+          "name": "Nuncio-aquila",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: infantry on an objective within 6\" test for Battle-shock"
         },
         {
-          "name": "Arbites medi-kit"
+          "name": "Arbites medi-kit",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 Vigilants"
         },
         {
-          "name": "Soulguilt scanner"
+          "name": "Soulguilt scanner",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         }
       ],
       "points": 90,
@@ -28311,7 +28557,20 @@
       ],
       "abilities": [
         {
-          "name": "Fortis Doctrines"
+          "name": "Fortis Doctrines",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units Below Half-strength"
         },
         {
           "name": "Attached Unit"
@@ -29508,16 +29767,48 @@
       ],
       "abilities": [
         {
-          "name": "Rites of Teleportation"
+          "name": "Rites of Teleportation",
+          "summary": "Inquisitors attached at deployment gain Deep Strike"
         },
         {
-          "name": "Hammerhand (Psychic)"
+          "name": "Hammerhand (Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits in melee after charging"
         },
         {
-          "name": "Narthecium"
+          "name": "Narthecium",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns one destroyed model"
         },
         {
-          "name": "Ancient's Banner"
+          "name": "Ancient's Banner",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         }
       ],
       "points": 175,
@@ -31186,16 +31477,58 @@
       ],
       "abilities": [
         {
-          "name": "Breaching Team"
+          "name": "Breaching Team",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound; every wound roll against units on an objective"
         },
         {
-          "name": "Gheistskull"
+          "name": "Gheistskull",
+          "summary": "Once per battle, Explosives on it reaches an unengaged target within 18\""
         },
         {
-          "name": "CAT Unit"
+          "name": "CAT Unit",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: Ignores Cover when shooting"
         },
         {
-          "name": "Endurant shield"
+          "name": "Endurant shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 90,
@@ -31481,7 +31814,15 @@
       ],
       "abilities": [
         {
-          "name": "Self-repair"
+          "name": "Self-repair",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Regains 1 wound each Command phase"
         }
       ],
       "points": 65,
@@ -32792,13 +33133,37 @@
       ],
       "abilities": [
         {
-          "name": "Indomitor Doctrines"
+          "name": "Indomitor Doctrines",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit below Starting Strength, +1 to wound too Below Half-strength"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Jump pack"
+          "name": "Jump pack",
+          "summary": "Move 10\" (12\" for some), over models and terrain"
         }
       ],
       "points": 280,
@@ -33486,16 +33851,41 @@
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Power of the Rosette"
+          "name": "Power of the Rosette",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 3+"
         },
         {
-          "name": "Blessed Wardings"
+          "name": "Blessed Wardings",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 6+ invulnerable save"
         },
         {
-          "name": "Psychic gifts"
+          "name": "Psychic gifts",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Psyker",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer is a Psyker"
         }
       ],
       "points": 55,
@@ -33727,19 +34117,37 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Wardings (Psychic)"
+          "name": "Malefic Wardings (Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 6+ invulnerable, 4+ against Psychic and Daemon attacks"
         },
         {
-          "name": "Spy Network"
+          "name": "Spy Network",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each CP your opponent gains from an ability: +1CP for you on a 2+"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Glovodan Psyber-eagle"
+          "name": "Glovodan Psyber-eagle",
+          "summary": "Command phase: an enemy within 18\" loses the benefit of cover until your next one"
         }
       ],
       "points": 75,
@@ -33908,16 +34316,36 @@
       ],
       "abilities": [
         {
-          "name": "Xenos Hunter"
+          "name": "Xenos Hunter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Imperium"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Chaos"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit against non-Imperium, non-Chaos units"
         },
         {
-          "name": "Psychic Veil (Psychic)"
+          "name": "Psychic Veil (Psychic)",
+          "summary": "Command phase: on 2+ its unit can only be shot from 18\" (D3 mortal wounds on a 1)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         }
       ],
       "points": 75,
@@ -34089,13 +34517,16 @@
           "name": "Leader"
         },
         {
-          "name": "Malus Codicium"
+          "name": "Malus Codicium",
+          "summary": "Leading: Daemonhosts double their melee Attacks"
         },
         {
-          "name": "Dominate Will (Psychic)"
+          "name": "Dominate Will (Psychic)",
+          "summary": "Enemy Shooting phase: an infantry unit within 12\" gets -1 to hit (2-5) or cannot shoot (6)"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         }
       ],
       "points": 65,
@@ -34260,16 +34691,47 @@
       ],
       "abilities": [
         {
-          "name": "Psyoculum"
+          "name": "Psyoculum",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: ranged weapons gain Anti-Psyker 4+"
         },
         {
-          "name": "No Mercy"
+          "name": "No Mercy",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit against units Below Half-strength"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         }
       ],
       "points": 65,
@@ -34502,16 +34964,41 @@
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Power of the Rosette"
+          "name": "Power of the Rosette",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 3+"
         },
         {
-          "name": "Psychic Gifts"
+          "name": "Psychic Gifts",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Psyker",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer is a Psyker"
         },
         {
-          "name": "Blessed Wardings"
+          "name": "Blessed Wardings",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 6+ invulnerable save"
         }
       ],
       "points": 70,
@@ -34723,10 +35210,19 @@
       ],
       "abilities": [
         {
-          "name": "Unsubtle Crusader"
+          "name": "Unsubtle Crusader",
+          "summary": "Up to three Agents Infantry units, or one Imperium Battleline unit, gain Scouts 6\""
         },
         {
-          "name": "Throne of Judgement (Aura)"
+          "name": "Throne of Judgement (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Friendly units within 6\": better Ld; enemy units there: worse Ld"
         }
       ],
       "points": 140,
@@ -34887,10 +35383,12 @@
       ],
       "abilities": [
         {
-          "name": "On My Signal, Fire!"
+          "name": "On My Signal, Fire!",
+          "summary": "One unit it hits: Agents and Imperium Battleline re-roll hits against it this phase"
         },
         {
-          "name": "Tox‑cycler"
+          "name": "Tox‑cycler",
+          "summary": "Once it hits, the Jindarii tox-cycler keeps +2 S and D (max D6) all battle"
         }
       ],
       "points": 100,
@@ -35060,19 +35558,30 @@
       ],
       "abilities": [
         {
-          "name": "Ward Against the Malefic Arts"
+          "name": "Ward Against the Malefic Arts",
+          "summary": "Leading: Psychic attacks against the unit get -1 to hit and to wound"
         },
         {
-          "name": "Vox‑cast Proclamations (Aura)"
+          "name": "Vox‑cast Proclamations (Aura)",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Stratagems on units within 12\" cost 1CP more"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Vox-skull"
+          "name": "Vox-skull",
+          "summary": "Once per battle: an infantry unit within 12\" tests Battle-shock; if it fails, it loses cover"
         }
       ],
       "points": 65,
@@ -35361,13 +35870,28 @@
       ],
       "abilities": [
         {
-          "name": "Loyal Henchmen"
+          "name": "Loyal Henchmen",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by an Inquisitor: attacks against it get -1 to wound"
         },
         {
-          "name": "Inquisitorial Henchmen"
+          "name": "Inquisitorial Henchmen",
+          "summary": "In an allied army, one per Inquisitor does not count as a Retinue"
         },
         {
-          "name": "Tome-skull"
+          "name": "Tome-skull",
+          "summary": "Once per battle per skull: frees a unit within 6\" from Battle-shock, or makes an enemy test"
         }
       ],
       "points": 50,
@@ -35716,7 +36240,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Deployment"
+          "name": "Rapid Deployment",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         }
       ],
       "points": 60,
@@ -37330,10 +37855,12 @@
           "name": "Leader"
         },
         {
-          "name": "Backroom Deals"
+          "name": "Backroom Deals",
+          "summary": "One of them gives Infiltrators to the unit it leads"
         },
         {
-          "name": "Warrant of Trade"
+          "name": "Warrant of Trade",
+          "summary": "After deployment, redeploy up to D3 Imperium Battleline units, even into Strategic Reserves"
         }
       ],
       "points": 40,
@@ -37732,16 +38259,30 @@
       ],
       "abilities": [
         {
-          "name": "Inconceivable Augmentation"
+          "name": "Inconceivable Augmentation",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits when shooting"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Inquisitorial Agent"
+          "name": "Inquisitorial Agent",
+          "summary": "Paired with Inquisitorial Agents in an allied army: one more Character slot"
         },
         {
-          "name": "A Weaponsmith, Not a Warlord"
+          "name": "A Weaponsmith, Not a Warlord",
+          "summary": "Cannot be your Warlord; OC 1 when led by an Inquisitor"
         }
       ],
       "points": 30,
@@ -38592,16 +39133,43 @@
       ],
       "abilities": [
         {
-          "name": "Catechism of Death"
+          "name": "Catechism of Death",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With Cassius: Devastating Wounds in melee"
         },
         {
-          "name": "Unflinching"
+          "name": "Unflinching",
+          "summary": "Re-roll Battle-shock tests"
         },
         {
-          "name": "Jump Pack"
+          "name": "Jump Pack",
+          "summary": "Move 12\", over models and terrain"
         },
         {
-          "name": "Psychic Hood"
+          "name": "Psychic Hood",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Psychic attacks"
         }
       ],
       "points": 220,
@@ -50491,10 +51059,52 @@
       ],
       "abilities": [
         {
-          "name": "Zealot"
+          "name": "Zealot",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 S and A in melee"
         },
         {
-          "name": "Holy Hatred"
+          "name": "Holy Hatred",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
           "name": "Support"
@@ -51064,10 +51674,19 @@
       ],
       "abilities": [
         {
-          "name": "Third Eye (Psychic)"
+          "name": "Third Eye (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 3,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: an enemy within 12\" tests Battle-shock (-2 Infantry); 3 mortal wounds if it fails"
         },
         {
-          "name": "Gaze into the Empyrean (Psychic)"
+          "name": "Gaze into the Empyrean (Psychic)",
+          "summary": "Enemy Reinforcements cannot set up within 12\""
         },
         {
           "name": "Leader"
@@ -51209,10 +51828,12 @@
           "name": "Leader"
         },
         {
-          "name": "Backroom Deals"
+          "name": "Backroom Deals",
+          "summary": "One of them gives Infiltrators to the unit it leads"
         },
         {
-          "name": "Warrant of Trade"
+          "name": "Warrant of Trade",
+          "summary": "After deployment, redeploy up to D3 Imperium Battleline units, even into Strategic Reserves"
         }
       ],
       "points": 40,
@@ -53315,7 +53936,20 @@
       ],
       "abilities": [
         {
-          "name": "Proteus Doctrines"
+          "name": "Proteus Doctrines",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units not Below Half-strength"
         },
         {
           "name": "Attached Unit"
@@ -53324,13 +53958,23 @@
           "name": "Invulnerable Save"
         },
         {
-          "name": "Storm shield"
+          "name": "Storm shield",
+          "summary": "The bearer has 4 Wounds"
         },
         {
-          "name": "Jump Pack"
+          "name": "Jump Pack",
+          "summary": "Move 12\", over models and terrain"
         },
         {
-          "name": "Astartes shield"
+          "name": "Astartes shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 160,
@@ -58208,16 +58852,26 @@
       ],
       "abilities": [
         {
-          "name": "Backroom Deals"
+          "name": "Backroom Deals",
+          "summary": "One of them gives Infiltrators to the unit it leads"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Warrant of Trade"
+          "name": "Warrant of Trade",
+          "summary": "After deployment, redeploy up to D3 Imperium Battleline units, even into Strategic Reserves"
         },
         {
-          "name": "Healing Serum"
+          "name": "Healing Serum",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 models"
         }
       ],
       "points": 75,
@@ -58539,19 +59193,42 @@
       ],
       "abilities": [
         {
-          "name": "Ministorum Sermon"
+          "name": "Ministorum Sermon",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With a Priest: +1 to wound in melee"
         },
         {
-          "name": "Cherub"
+          "name": "Cherub",
+          "summary": "Once per battle, Command Re-roll on it for 0CP"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Salvationist Medikit"
+          "name": "Salvationist Medikit",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to D3 destroyed models"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "+1 Leadership for its unit"
         }
       ],
       "points": 110,
@@ -61419,7 +62096,8 @@
       ],
       "abilities": [
         {
-          "name": "Purge and Cleanse"
+          "name": "Purge and Cleanse",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         }
       ],
       "points": 90,
@@ -61925,13 +62603,16 @@
       ],
       "abilities": [
         {
-          "name": "Defenders of the Faith"
+          "name": "Defenders of the Faith",
+          "summary": "Holding an objective as your Command phase ends keeps it yours after it leaves"
         },
         {
-          "name": "Incensor Cherub"
+          "name": "Incensor Cherub",
+          "summary": "Once per battle, Command Re-roll on it for 0CP"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "+1 Leadership for its unit"
         }
       ],
       "points": 100,
@@ -63121,16 +63802,40 @@
           "name": "Attached Unit"
         },
         {
-          "name": "Spectrus Doctrines"
+          "name": "Spectrus Doctrines",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, 6\" from enemies: can go back into Strategic Reserves"
         },
         {
-          "name": "Helix Gauntlet"
+          "name": "Helix Gauntlet",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "self"
+            }
+          ],
+          "summary": "Feel No Pain 6+"
         },
         {
-          "name": "Infiltrator Comms Array"
+          "name": "Infiltrator Comms Array",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Jump pack"
+          "name": "Jump pack",
+          "summary": "Move 10\" (12\" for some), over models and terrain"
         }
       ],
       "points": 185,
@@ -65950,10 +66655,30 @@
       ],
       "abilities": [
         {
-          "name": "Dedication to Duty"
+          "name": "Dedication to Duty",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 4+"
         },
         {
-          "name": "Nuncio-aquila"
+          "name": "Nuncio-aquila",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: infantry on an objective within 6\" test for Battle-shock"
         }
       ],
       "points": 85,
@@ -70425,10 +71150,25 @@
       ],
       "abilities": [
         {
-          "name": "Self Repair"
+          "name": "Self Repair",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Regains 1 wound each Command phase"
         },
         {
-          "name": "Evade and Survive"
+          "name": "Evade and Survive",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move within 8\": unengaged, it makes a Normal move"
         }
       ],
       "points": 55,
@@ -72872,10 +73612,26 @@
       ],
       "abilities": [
         {
-          "name": "Turbo-boost"
+          "name": "Turbo-boost",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         },
         {
-          "name": "Astartes Shield"
+          "name": "Astartes Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 70,
@@ -73200,10 +73956,33 @@
       ],
       "abilities": [
         {
-          "name": "Merciless Judgement"
+          "name": "Merciless Judgement",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound when shooting units Below Half-strength"
         },
         {
-          "name": "Nuncio-aquila"
+          "name": "Nuncio-aquila",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: infantry on an objective within 6\" test for Battle-shock"
         }
       ],
       "points": 85,
@@ -73444,16 +74223,48 @@
       ],
       "abilities": [
         {
-          "name": "Shieldbreaker"
+          "name": "Shieldbreaker",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +1 to wound and every wound is critical with the exitus rifle"
         },
         {
-          "name": "Dead-shot"
+          "name": "Dead-shot",
+          "summary": "Its shooting ignores Lone Operative and gives hidden enemies +15\" detection range"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
-          "name": "Micromelta Rounds"
+          "name": "Micromelta Rounds",
+          "summary": "Extremis: its exitus rifle gains Anti-Monster 4+ and Anti-Vehicle 4+"
         }
       ],
       "points": 110,
@@ -74059,7 +74870,22 @@
       ],
       "abilities": [
         {
-          "name": "Masters of Close Confines"
+          "name": "Masters of Close Confines",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits when shooting the closest target"
         },
         {
           "name": "Navy Bodyguards"
@@ -75612,10 +76438,18 @@
       ],
       "abilities": [
         {
-          "name": "Tactical Instinct"
+          "name": "Tactical Instinct",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Unstoppable Champion"
+          "name": "Unstoppable Champion",
+          "summary": "First death: on a 2+ he returns with 1 wound once the phase ends"
         },
         {
           "name": "Leader"
@@ -75751,10 +76585,37 @@
       ],
       "abilities": [
         {
-          "name": "Strategic Knowledge"
+          "name": "Strategic Knowledge",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "attached"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "attached"
+            },
+            {
+              "key": "fall-back-and-shoot",
+              "target": "attached"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: shoots and charges after Advancing or Falling Back"
         },
         {
-          "name": "Rites of Battle"
+          "name": "Rites of Battle",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
