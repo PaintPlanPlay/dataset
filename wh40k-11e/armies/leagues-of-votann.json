@@ -314,13 +314,39 @@
       ],
       "abilities": [
         {
-          "name": "Science Guild Support"
+          "name": "Science Guild Support",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Near other friendly infantry (3\"): Lone Operative"
         },
         {
-          "name": "Resource Transmutation"
+          "name": "Resource Transmutation",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, for 1YP: Sustained Hits 1, and up to 2YP back for a kill"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         }
       ],
       "points": 70,
@@ -623,10 +649,35 @@
       ],
       "abilities": [
         {
-          "name": "Break the Foe"
+          "name": "Break the Foe",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit has Sustained Hits 1 in melee"
         },
         {
-          "name": "Relentless Avalanche"
+          "name": "Relentless Avalanche",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited"
         },
         {
           "name": "Leader"
@@ -942,10 +993,35 @@
       ],
       "abilities": [
         {
-          "name": "Multi-spectral visor"
+          "name": "Multi-spectral visor",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit when shooting"
         },
         {
-          "name": "Brôkhyr Guild Support"
+          "name": "Brôkhyr Guild Support",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Unattached, near a Vehicle or Steeljacks (3\"): Lone Operative"
         },
         {
           "name": "Leader"
@@ -954,10 +1030,20 @@
           "name": "Unit Composition"
         },
         {
-          "name": "Forgewrought Expertise"
+          "name": "Forgewrought Expertise",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3
+            }
+          ],
+          "summary": "End of your Movement phase: repairs a nearby Vehicle, Exoframe or Steeljacks for D3 (3 with an assistant)"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         }
       ],
       "points": 70,
@@ -1153,10 +1239,12 @@
       ],
       "abilities": [
         {
-          "name": "Breaching Fire"
+          "name": "Breaching Fire",
+          "summary": "One unit it hits loses cover until your next Shooting phase"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         }
       ],
       "points": 80,
@@ -1344,13 +1432,23 @@
       ],
       "abilities": [
         {
-          "name": "Grudge-fuelled Fortitude"
+          "name": "Grudge-fuelled Fortitude",
+          "summary": "First death: on a 2+ returns whole once the phase ends"
         },
         {
-          "name": "Unhinged Vengeance"
+          "name": "Unhinged Vengeance",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+2",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost wounds to shooting: a D6+2\" surge move"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         }
       ],
       "points": 85,
@@ -1956,13 +2054,28 @@
       ],
       "abilities": [
         {
-          "name": "Cyberstimms"
+          "name": "Cyberstimms",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 4+ (+1 under Fortify Takeover)"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Subterranean Explosives"
+          "name": "Subterranean Explosives",
+          "summary": "One infantry unit its mole launcher hits cannot be targeted by Fire Overwatch until your next Shooting phase"
         }
       ],
       "points": 90,
@@ -2157,13 +2270,35 @@
       ],
       "abilities": [
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Geomantic Hunters"
+          "name": "Geomantic Hunters",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Twice per battle: re-roll wounds with its breacher ordnance"
         },
         {
-          "name": "Destabilising Quakes"
+          "name": "Destabilising Quakes",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit its tremor shells hit tests Battle-shock at -1"
         }
       ],
       "points": 100,
@@ -2343,19 +2478,56 @@
           "name": "Leader"
         },
         {
-          "name": "Exemplar of the Einhyr"
+          "name": "Exemplar of the Einhyr",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to Advance and charge"
         },
         {
-          "name": "Mass Driver Accelerators"
+          "name": "Mass Driver Accelerators",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-5, D3+3 on a 6"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Weavefield crest"
+          "name": "Weavefield crest",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Teleport crest"
+          "name": "Teleport crest",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Deep Strike"
         }
       ],
       "points": 65,
@@ -2585,16 +2757,48 @@
       ],
       "abilities": [
         {
-          "name": "Decisive Destruction"
+          "name": "Decisive Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit when shooting the closest target"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Teleport crest"
+          "name": "Teleport crest",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Deep Strike"
         },
         {
-          "name": "Weavefield crest"
+          "name": "Weavefield crest",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has a 5+ invulnerable save"
         }
       ],
       "points": 130,
@@ -3328,16 +3532,26 @@
           "name": "Leader"
         },
         {
-          "name": "Fortify (Psychic)"
+          "name": "Fortify (Psychic)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "Grimnyr's Regard"
+          "name": "Grimnyr's Regard",
+          "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock"
         },
         {
           "name": "Unit Composition"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         }
       ],
       "points": 65,
@@ -3796,16 +4010,39 @@
       ],
       "abilities": [
         {
-          "name": "Luck Has, Need Keeps, Toil Earns"
+          "name": "Luck Has, Need Keeps, Toil Earns",
+          "summary": "An objective it holds as your Command phase ends stays yours until the enemy out-controls it"
         },
         {
-          "name": "Pan-spectral Scanning"
+          "name": "Pan-spectral Scanning",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit when shooting"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Weavefield crest"
+          "name": "Weavefield crest",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has a 5+ invulnerable save"
         }
       ],
       "points": 90,
@@ -4197,19 +4434,68 @@
       ],
       "abilities": [
         {
-          "name": "MultiCOG Targeting"
+          "name": "MultiCOG Targeting",
+          "summary": "Ignores BS and hit modifiers when shooting"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Firebase Control (Aura)"
+          "name": "Firebase Control (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Brandfast: infantry wholly 6\" or closer gain Sustained Hits 1 when shooting"
         },
         {
-          "name": "Pan spectral scanner"
+          "name": "Pan spectral scanner",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit when shooting"
         }
       ],
       "points": 250,
@@ -4497,22 +4783,45 @@
       ],
       "abilities": [
         {
-          "name": "Outflanking Mag-Riders"
+          "name": "Outflanking Mag-Riders",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, wholly 9\" or closer to an edge, unengaged: back into Strategic Reserves"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
           "name": "Comms array"
         },
         {
-          "name": "Pan-spectral scanner"
+          "name": "Pan-spectral scanner",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit when shooting"
         },
         {
-          "name": "Rollbar searchlight"
+          "name": "Rollbar searchlight",
+          "summary": "Its unit ignores hit modifiers when shooting"
         },
         {
-          "name": "Pan-spectral Lockons"
+          "name": "Pan-spectral Lockons",
+          "summary": "Enhancement: a visible enemy 12\" or closer gets +3\" detection range"
         }
       ],
       "points": 85,
@@ -4837,13 +5146,23 @@
       ],
       "abilities": [
         {
-          "name": "Pragmatic Hunters"
+          "name": "Pragmatic Hunters",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Shroudwërke Talismans"
+          "name": "Shroudwërke Talismans",
+          "summary": "Enhancement: -3\" detection range"
         }
       ],
       "points": 90,
@@ -5277,13 +5596,23 @@
       ],
       "abilities": [
         {
-          "name": "Purge Response"
+          "name": "Purge Response",
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it hits on 5+ (4+ under Fortify Takeover)"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Preymark crest"
+          "name": "Preymark crest",
+          "summary": "Its unit’s critical wounds against units on objectives gain Precision"
         }
       ],
       "points": 80,
@@ -5471,13 +5800,23 @@
       ],
       "abilities": [
         {
-          "name": "Merciless Eradication"
+          "name": "Merciless Eradication",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Preymark crest"
+          "name": "Preymark crest",
+          "summary": "Its unit’s critical wounds against units on objectives gain Precision"
         }
       ],
       "points": 75,
@@ -5710,22 +6049,46 @@
       ],
       "abilities": [
         {
-          "name": "Kindred Hero"
+          "name": "Kindred Hero",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seized Opportunity"
+          "name": "Seized Opportunity",
+          "summary": "Once per phase, its unit destroys a unit: +1YP"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Rampart crest"
+          "name": "Rampart crest",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 5+ invulnerable save"
         },
         {
-          "name": "Teleport crest"
+          "name": "Teleport crest",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Deep Strike"
         }
       ],
       "points": 65,
@@ -5927,16 +6290,54 @@
       ],
       "abilities": [
         {
-          "name": "Scanner Uplinks"
+          "name": "Scanner Uplinks",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Firebase Control (Aura)"
+          "name": "Firebase Control (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Brandfast: infantry wholly 6\" or closer gain Sustained Hits 1 when shooting"
         },
         {
-          "name": "Smoke Launcher"
+          "name": "Smoke Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "Has the Smoke keyword"
         }
       ],
       "points": 70,
@@ -6108,13 +6509,30 @@
       ],
       "abilities": [
         {
-          "name": "Opportunistic Manoeuvre"
+          "name": "Opportunistic Manoeuvre",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting: a D6\" Normal move, then no charge"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Smoke Launcher"
+          "name": "Smoke Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "Has the Smoke keyword"
         }
       ],
       "points": 75,
@@ -6847,7 +7265,8 @@
           "name": "Leader"
         },
         {
-          "name": "Seized Opportunity"
+          "name": "Seized Opportunity",
+          "summary": "Once per phase, its unit destroys a unit: +1YP"
         }
       ],
       "points": 65,
@@ -7586,7 +8005,8 @@
           "name": "Leader"
         },
         {
-          "name": "Grimnyr's Regard"
+          "name": "Grimnyr's Regard",
+          "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock"
         }
       ],
       "points": 70,
@@ -7877,16 +8297,26 @@
       ],
       "abilities": [
         {
-          "name": "Computational Mastermind"
+          "name": "Computational Mastermind",
+          "summary": "Each held objective it stands on: spend or gain 1YP before the army’s ability is set"
         },
         {
-          "name": "Predictive Guidance"
+          "name": "Predictive Guidance",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Fire Overwatch or Heroic Intervention on it costs 1CP less"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         }
       ],
       "points": 45,
@@ -8676,19 +9106,61 @@
       ],
       "abilities": [
         {
-          "name": "Blistering Advance"
+          "name": "Blistering Advance",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Firebase Control (Aura)"
+          "name": "Firebase Control (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Brandfast: infantry wholly 6\" or closer gain Sustained Hits 1 when shooting"
         },
         {
-          "name": "Saturation Rounds"
+          "name": "Saturation Rounds",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Enhancement: Ignores Cover when shooting"
         },
         {
-          "name": "Optimised Attack Lines"
+          "name": "Optimised Attack Lines",
+          "modifiers": [
+            {
+              "key": "mobile",
+              "target": "self"
+            }
+          ],
+          "summary": "Enhancement: Mobile"
         }
       ],
       "points": 85,
@@ -9933,19 +10405,37 @@
       ],
       "abilities": [
         {
-          "name": "Ancestral Fortune"
+          "name": "Ancestral Fortune",
+          "summary": "Once per turn, 1YP turns one of his hit, wound or save rolls into a 6"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Grim Efficiency"
+          "name": "Grim Efficiency",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on a unit 12\" or closer costs 1CP less"
         },
         {
-          "name": "Guerrilla Adepts"
+          "name": "Guerrilla Adepts",
+          "summary": "Persecution Prospect: focusing one infantry target marks it assailed, and pins it if already assailed"
         },
         {
-          "name": "Rampart crest"
+          "name": "Rampart crest",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 5+ invulnerable save"
         }
       ],
       "points": 100,
@@ -10575,7 +11065,58 @@
     },
     {
       "id": "prioritised-efficiency",
-      "name": "Prioritised Efficiency"
+      "name": "Prioritised Efficiency",
+      "options": [
+        {
+          "name": "Hostile Acquisition: +1 to hit units on objectives, re-roll Advance and charge",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            },
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Fortify Takeover: on your objective +1 to hit, and stronger attacks get -1 to wound",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Yield points from objectives: under 7 your units have Hostile Acquisition, at 7 or more Fortify Takeover"
     }
   ],
   "detachments": [
@@ -10589,7 +11130,22 @@
       "rules": [
         {
           "id": "sagitaur-spearhead",
-          "name": "Sagitaur Spearhead"
+          "name": "Sagitaur Spearhead",
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Sagitaur"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Sagitaurs have Scouts 6\""
         }
       ],
       "enhancements": [
@@ -10606,7 +11162,14 @@
               "Sagitaur"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mobile",
+              "target": "self"
+            }
+          ],
+          "summary": "Mobile"
         },
         {
           "id": "saturation-rounds",
@@ -10621,7 +11184,19 @@
               "Sagitaur"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting"
         }
       ]
     },
@@ -10635,7 +11210,30 @@
       "rules": [
         {
           "id": "mobile-sensor-relays",
-          "name": "Mobile Sensor Relays"
+          "name": "Mobile Sensor Relays",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "near-transport"
+                }
+              ]
+            }
+          ],
+          "summary": "Infantry wholly 6\" or closer to a friendly Transport gain Sustained Hits 1 when shooting"
         }
       ],
       "enhancements": [
@@ -10651,7 +11249,20 @@
               "Kâhl"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Near a Transport: Fire Overwatch on its unit costs 0CP and hits on 5+"
         },
         {
           "id": "signature-restoration",
@@ -10665,7 +11276,8 @@
               "Brôkhyr"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its repairs heal 1 more wound"
         },
         {
           "id": "tactical-alchemy",
@@ -10679,7 +11291,15 @@
               "Kâhl"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "On an objective outside your zone: 1YP for 1CP on a 4+"
         },
         {
           "id": "trivarg-cyber-implant",
@@ -10693,7 +11313,23 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "summary": "Disembarked this turn (or for 2YP): Sustained Hits 2 when shooting"
         }
       ]
     },
@@ -10707,7 +11343,26 @@
       "rules": [
         {
           "id": "fury-from-the-delve",
-          "name": "Fury From The Dêlve"
+          "name": "Fury From The Dêlve",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            },
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Cthonian Beserks"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Cthonian Beserks have Deep Strike and are Battleline"
         }
       ],
       "enhancements": [
@@ -10723,7 +11378,8 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leagues of Votann only"
         },
         {
           "id": "multiwave-system-jammer",
@@ -10737,7 +11393,8 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle: a Cthonian unit in Reserves arrives as if a round later"
         },
         {
           "id": "piledriver",
@@ -10751,7 +11408,20 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Fighting: +1 melee Damage per YP spent (2 at most)"
         },
         {
           "id": "quake-supervisor",
@@ -10765,7 +11435,37 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Artillery"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Near Artillery (3\"): Lone Operative, and they get +1 to hit targets it sees"
         }
       ]
     },
@@ -10779,7 +11479,31 @@
       "rules": [
         {
           "id": "eye-of-the-hunt",
-          "name": "Eye of the Hunt"
+          "name": "Eye of the Hunt",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-within",
+                  "value": 12
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Hernkyn"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Hernkyn get +1 to hit targets 12\" or closer"
         }
       ],
       "enhancements": [
@@ -10795,7 +11519,8 @@
               "Pioneers"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Shooting phase: a visible enemy 12\" or closer gets +3\" detection range"
         },
         {
           "id": "shroudwerke-talismans",
@@ -10809,7 +11534,8 @@
               "Yaegirs"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "-3\" detection range"
         }
       ]
     },
@@ -10825,7 +11551,46 @@
       "rules": [
         {
           "id": "methodical-annihilation",
-          "name": "Methodical Annihilation"
+          "name": "Methodical Annihilation",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "keywords": {
+                "allOf": [],
+                "anyOf": [
+                  "Kâhl",
+                  "Einhyr Hearthguard",
+                  "Ûthar the Destined"
+                ],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Leagues of Votann"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Against the closest or an engaged target: re-roll 1s to wound; Kâhls and Hearthguard also +1 AP"
         }
       ],
       "enhancements": [
@@ -10841,7 +11606,24 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": 1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-within",
+                  "value": 12
+                }
+              ]
+            }
+          ],
+          "summary": "Shooters 12\" or closer (18\" for 1YP) lose 1 AP against its unit"
         },
         {
           "id": "high-kahl",
@@ -10856,7 +11638,20 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit’s models slain in melee before fighting still fight on a 4+"
         },
         {
           "id": "ironskein",
@@ -10870,7 +11665,15 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2 Wounds"
         },
         {
           "id": "quake-multigenerator",
@@ -10885,7 +11688,15 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits is suppressed: -1 to hit until your next turn"
         }
       ]
     },
@@ -10899,7 +11710,29 @@
       "rules": [
         {
           "id": "optimal-application",
-          "name": "Optimal Application"
+          "name": "Optimal Application",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Brôkhyr",
+              "Ironkin Steeljacks",
+              "Arkanyst Evaluator"
+            ],
+            "noneOf": []
+          },
+          "summary": "Iron-masters and Strategists on far objectives earn YP; Brôkhyr units spend 1YP to re-roll 1s to hit"
         }
       ],
       "enhancements": [
@@ -10918,7 +11751,15 @@
               "Memnyr Strategist"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC"
         },
         {
           "id": "farstrydr-node",
@@ -10935,7 +11776,14 @@
               "Brôkhyr"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Deep Strike"
         },
         {
           "id": "graviton-vault",
@@ -10949,7 +11797,15 @@
               "Brôkhyr"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "A Monster or Vehicle it hits is suppressed: -1 to hit until your next turn"
         },
         {
           "id": "mantle-of-elders",
@@ -10963,7 +11819,8 @@
               "Memnyr Strategist"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Spending YP when shooting: 1YP back on a 2+"
         }
       ]
     },
@@ -10978,7 +11835,34 @@
       "rules": [
         {
           "id": "avatars-of-the-ancestors",
-          "name": "Avatars of the Ancestors"
+          "name": "Avatars of the Ancestors",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-within",
+                  "value": 9
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Kâhl",
+              "Einhyr Champion",
+              "Einhyr Hearthguard",
+              "Ûthar the Destined"
+            ],
+            "noneOf": []
+          },
+          "summary": "Kâhls, Champions and Hearthguard re-roll 1s to wound shooting targets 9\" or closer"
         }
       ],
       "enhancements": [
@@ -10994,7 +11878,20 @@
               "Kâhl"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Fight phase: its unit’s slain models still fight on a 4+"
         },
         {
           "id": "ironskein",
@@ -11008,7 +11905,15 @@
               "Kâhl"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2 Wounds"
         }
       ]
     },
@@ -11022,7 +11927,8 @@
       "rules": [
         {
           "id": "ruthless-reinvestment",
-          "name": "Ruthless Reinvestment"
+          "name": "Ruthless Reinvestment",
+          "summary": "Starts with Hostile Acquisition; 3YP as your Command phase ends swaps to Fortify Takeover or back"
         }
       ],
       "enhancements": [
@@ -11038,7 +11944,15 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "For 3YP: enemies 3\" or closer get -1 OC this turn"
         },
         {
           "id": "etacarn-sb9-targeting-implant",
@@ -11052,7 +11966,15 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit (and gains Sustained Hits 1 for 3YP)"
         },
         {
           "id": "mercenary-prospector",
@@ -11066,7 +11988,8 @@
               "Kâhl"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Each unit its unit destroys: +2YP"
         },
         {
           "id": "metaphysical-brokerage",
@@ -11080,7 +12003,8 @@
               "Memnyr Strategist"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Tops your turn’s YP gain up to 3"
         }
       ]
     },
@@ -11094,7 +12018,8 @@
       "rules": [
         {
           "id": "martial-leverage",
-          "name": "Martial Leverage"
+          "name": "Martial Leverage",
+          "summary": "+1YP whenever an enemy unit is destroyed"
         }
       ],
       "enhancements": [
@@ -11110,7 +12035,20 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, 1YP makes Command Re-roll on its unit 1CP cheaper"
         },
         {
           "id": "dead-reckoning",
@@ -11124,7 +12062,8 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "A turn with no YP spent: +1YP"
         },
         {
           "id": "iron-ambassador",
@@ -11138,7 +12077,23 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +1 ranged Damage per YP spent (3 at most)"
         },
         {
           "id": "oathbound-speculator",
@@ -11152,7 +12107,15 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to wound (+1 to wound for 3YP)"
         }
       ]
     },
@@ -11166,7 +12129,20 @@
       "rules": [
         {
           "id": "assailed-from-every-angle",
-          "name": "Assailed From Every Angle"
+          "name": "Assailed From Every Angle",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Units focusing one infantry target mark it assailed; hit again while assailed, it is pinned (-2\" Move, -2 charge)"
         }
       ],
       "enhancements": [
@@ -11182,7 +12158,20 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit gets +1 to wound assailed units"
         },
         {
           "id": "nomad-strategist",
@@ -11196,7 +12185,14 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle: Hernkyn units (one more per 2YP) go back into Strategic Reserves"
         },
         {
           "id": "surgical-saboteur",
@@ -11210,7 +12206,20 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "A Monster or Vehicle its unit hits is pinned until your next Shooting phase"
         },
         {
           "id": "writ-of-acquisition",
@@ -11224,7 +12233,8 @@
               "Leagues of Votann"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+1YP per assailed unit its unit hits (3 at most)"
         }
       ]
     }
@@ -11244,7 +12254,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Spend YP: at 6 or fewer, your army switches to Hostile Acquisition"
     },
     {
       "id": "ancestral-sentence",
@@ -11256,7 +12276,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Sustained Hits 1 when shooting (2 for 3YP)"
     },
     {
       "id": "augmented-assault",
@@ -11268,7 +12308,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cthonian Beserks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 2,
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "+1\" Move per YP spent (2 at most), and can charge after Advancing"
     },
     {
       "id": "auxiliary-contract",
@@ -11281,7 +12340,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "precision",
+          "target": "self"
+        }
+      ],
+      "summary": "Precision this phase"
     },
     {
       "id": "bastion-running",
@@ -11293,7 +12369,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Hekaton Land Fortress"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves through terrain this phase"
     },
     {
       "id": "brekkeknots-2",
@@ -11305,7 +12389,23 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Einhyr Hearthguard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save"
     },
     {
       "id": "brekkeknots",
@@ -11313,12 +12413,31 @@
       "detachmentId": "hearthband",
       "cp": 1,
       "phases": [
-        "shooting",
-        "fight"
+        "shooting"
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [
+          "Kâhl",
+          "Ûthar the Destined",
+          "Einhyr Hearthguard"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "built-to-last",
@@ -11326,10 +12445,35 @@
       "detachmentId": "armoured-trailblazers",
       "cp": 1,
       "phases": [
-        "shooting"
+        "shooting",
+        "fight"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Sagitaur"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged attacks stronger than its Toughness get -1 to wound"
     },
     {
       "id": "claimstaker-reflex",
@@ -11341,7 +12485,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Artillery",
+          "Vehicle"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a D6\" Normal move (6\" for 2YP)"
     },
     {
       "id": "cogitated-need",
@@ -11353,7 +12516,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Ironkin Steeljacks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "target": "self"
+        }
+      ],
+      "summary": "A Normal move toward the closest objective"
     },
     {
       "id": "coordinated-crossfire",
@@ -11364,7 +12542,44 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Sagitaur"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Two Sagitaurs re-roll 1s to hit and wound one enemy unit"
     },
     {
       "id": "cyberstimm-infusion",
@@ -11376,7 +12591,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Cthonian Beserks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Re-roll 1s to wound (all of them for 2YP)"
     },
     {
       "id": "delayed-fire-rounds",
@@ -11388,7 +12618,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "after-own-action",
+      "category": "wargear",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Brôkhyr",
+          "Ironkin Steeljacks",
+          "Arkanyst Evaluator"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One infantry unit it hit: each 1 rolled per model when it moves costs a mortal wound"
     },
     {
       "id": "dispersed-formation",
@@ -11400,7 +12648,34 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        },
+        {
+          "key": "cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Stealth and the benefit of cover against shooting this phase"
     },
     {
       "id": "economy-of-motion",
@@ -11411,7 +12686,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "enemy-moved",
+      "target": {
+        "allOf": [
+          "Pioneers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move nearby: a D3+3\" Normal move"
     },
     {
       "id": "exposed-flaws",
@@ -11423,7 +12714,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Hernkyn"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll wounds against assailed units (all units for 2YP)"
     },
     {
       "id": "first-concern",
@@ -11435,7 +12746,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Brôkhyr",
+          "Ironkin Steeljacks",
+          "Arkanyst Evaluator"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "target": "self"
+        }
+      ],
+      "summary": "Stationary this turn: a Normal move after shooting"
     },
     {
       "id": "frontier-momentum",
@@ -11447,7 +12775,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Hernkyn"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Advances a flat 6\" this phase"
     },
     {
       "id": "fury-of-the-hearth-2",
@@ -11458,7 +12801,28 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Einhyr Hearthguard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 S when shooting (and Sustained Hits 1 for 1YP)"
     },
     {
       "id": "fury-of-the-hearth",
@@ -11470,7 +12834,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Einhyr Hearthguard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 S when shooting (and Sustained Hits 1 for 1YP)"
     },
     {
       "id": "grand-artifice",
@@ -11482,7 +12866,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "hidden-accessways",
@@ -11494,7 +12897,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [
+          "Cthonian Beserks",
+          "Hearthkyn Warriors",
+          "Hernkyn Yaegirs"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "honour-of-the-hold",
@@ -11506,7 +12928,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 AP in melee against one engaged enemy (+2 for 3YP)"
     },
     {
       "id": "huntrs-mark",
@@ -11518,7 +12963,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Re-roll 1s to hit and wound this phase"
     },
     {
       "id": "illuminated-priority",
@@ -11530,7 +12995,36 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "after-own-action",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "aura",
+          "keywords": {
+            "allOf": [
+              "Infantry"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "One unit it hit: your infantry re-roll 1s to hit it this phase"
     },
     {
       "id": "inexorable-efficiency",
@@ -11542,7 +13036,21 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Can shoot after Falling Back this phase"
     },
     {
       "id": "materialisation-matrices-2",
@@ -11553,7 +13061,16 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Einhyr Hearthguard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Deep Strikes 6\" from enemies, even in their zone, then no charge"
     },
     {
       "id": "materialisation-matrices",
@@ -11565,7 +13082,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Deep Strikes 6\" from enemies, then no charge"
     },
     {
       "id": "mobile-exploitation",
@@ -11577,7 +13103,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Hernkyn"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "One unengaged Hernkyn unit (two for 2YP): back into Strategic Reserves"
     },
     {
       "id": "new-horizons",
@@ -11589,7 +13130,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "End of the Fight phase: embarks in a Transport wholly 6\" or closer"
     },
     {
       "id": "no-shot-wasted",
@@ -11600,7 +13151,27 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Hernkyn"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits when shooting"
     },
     {
       "id": "opportunistic-escalation",
@@ -11612,7 +13183,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Hekaton Land Fortress"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a D6\" Normal move"
     },
     {
       "id": "optimal-expenditure",
@@ -11624,7 +13214,38 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit and wound in melee (all wounds for 3YP)"
     },
     {
       "id": "ordered-retreat",
@@ -11636,7 +13257,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "outflanking-armour",
@@ -11647,7 +13287,22 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Sagitaur"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ingress",
+          "target": "self"
+        }
+      ],
+      "summary": "Two Sagitaurs in Strategic Reserves make ingress moves"
     },
     {
       "id": "preventative-purge",
@@ -11659,7 +13314,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Thunderkyn",
+          "Ironkin Steeljacks"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move nearby: shoots it at -1 to hit"
     },
     {
       "id": "privateer-arsenal",
@@ -11671,7 +13343,38 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit and wound when shooting (all hits for 3YP)"
     },
     {
       "id": "ranger-tactics",
@@ -11683,7 +13386,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits against assailed units (Hernkyn: against all)"
     },
     {
       "id": "reactive-reprisal",
@@ -11695,7 +13418,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Shot at: shoots back at the attacker"
     },
     {
       "id": "scornful-analysis",
@@ -11706,7 +13438,27 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Hernkyn"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "aura",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A visible enemy 12\" or closer: your units shoot it with Ignores Cover"
     },
     {
       "id": "secure-positions",
@@ -11720,9 +13472,19 @@
         "charge",
         "fight"
       ],
-      "playerTurn": "your-turn",
+      "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Transport"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A passenger disembarks wholly 6\" or closer, but cannot charge"
     },
     {
       "id": "superior-craftsmanship",
@@ -11734,7 +13496,39 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "D",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "D",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 Damage against Monsters and Vehicles this phase"
     },
     {
       "id": "sure-of-purpose",
@@ -11746,7 +13540,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Piles in and consolidates 6\""
     },
     {
       "id": "tectonic-fracture",
@@ -11758,7 +13567,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cthonian",
+          "Earthshakers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": -2,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One unit it hit: -2\" Move (and -2 to charge for 2YP) until your next Shooting phase"
     },
     {
       "id": "unstoppable-force",
@@ -11770,7 +13596,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Piles in and consolidates 6\""
     },
     {
       "id": "unwavering-accuracy",
@@ -11782,7 +13623,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Brôkhyr",
+          "Thunderkyn"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Ignores BS, hit, wound and AP modifiers this phase"
     },
     {
       "id": "unyielding-aggression",
@@ -11794,7 +13644,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "vengeance-flare",
@@ -11806,7 +13676,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Shot at: a nearby Kapricus or Sagitaur (Hekaton for 2YP) shoots back"
     },
     {
       "id": "void-hardened",
@@ -11819,7 +13699,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Leagues of Votann"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "wall-of-steel",
@@ -11831,7 +13727,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "after-own-action",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Ironkin Steeljacks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: a D6 per model (+2 for 2YP) at engaged infantry, each 4+ a mortal wound"
     },
     {
       "id": "weavewerke-buttress",
@@ -11843,7 +13755,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Leagues of Votann",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to wound this phase"
     }
   ]
 }
