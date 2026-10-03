@@ -1,5 +1,563 @@
 [
   {
+    "target": "152b-a271-df2b-21a9::ability:Icon of Old Caliban (Aura)",
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "aura",
+        "range": 6
+      }
+    ],
+    "summary": "Friendly units 6\" or closer have Stealth",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "15d3-ebc7-d28b-daf4::ability:Dark Angels Bodyguard",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-infantry"
+          }
+        ]
+      }
+    ],
+    "summary": "Near friendly infantry (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "15d3-ebc7-d28b-daf4::ability:Primarch of the First Legion",
+    "summary": "Command phase: picks two Primarch abilities",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "15d3-ebc7-d28b-daf4::ability:The Emperor's Shield",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "212d-f302-aaaf-5c12::ability:Knights of Caliban",
+    "modifiers": [
+      {
+        "key": "crit-wound",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "crit-wound",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "After charging: Anti-Monster 4+ and Anti-Vehicle 4+ in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "38c9-66a1-fe60-46af::ability:Book of Salvation",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: +1 melee Attack; its death shakes nearby friends",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "38c9-66a1-fe60-46af::ability:Psychic Hood",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Feel No Pain 4+ against Psychic attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "48fb-ebd6-dd17-729b::ability:Astartes Banner",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 OC",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "48fb-ebd6-dd17-729b::ability:Honour or Death",
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 1,
+        "target": "attached"
+      },
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 to Advance and charge; Heroic Intervention costs 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "48fb-ebd6-dd17-729b::ability:Narthecium",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase: returns one destroyed model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "48fb-ebd6-dd17-729b::ability:Storm Shield",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has a 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "48fb-ebd6-dd17-729b::ability:Watcher in the Dark",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: Feel No Pain 4+ against mortal wounds for a phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4b0d-45ff-fab3-7472::ability:Intractable Will",
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: models slain in melee before fighting still fight on a 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4b0d-45ff-fab3-7472::ability:The Spiritshield Helm",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "3+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4f36-6609-efac-baa6::ability:Damaged: 1-3 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (3 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4f36-6609-efac-baa6::ability:Lightning-fast Manoeuvres",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged attacks against it get -1 to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6135-d842-8e61-889d::ability:Deathwing",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-oath"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores BS, WS and hit modifiers; +1 to hit its Oath target",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6135-d842-8e61-889d::ability:Teleport Homer",
+    "summary": "Once per battle, Rapid Ingress for 0CP next to its homer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6135-d842-8e61-889d::ability:Watcher in the Dark",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: Feel No Pain 4+ against mortal wounds for a phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "81bd-ce4e-229f-a88::ability:Masterful Tactician",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1CP as your Command phase starts",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "81bd-ce4e-229f-a88::ability:Supreme Grand Master",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Sustained Hits 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "81bd-ce4e-229f-a88::ability:The Lion Helm",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit has a 4+ invulnerable; once per battle, FNP 4+ against mortal wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8f4b-c343-bef5-6779::ability:Cut Off Their Escape",
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry Falling Back from its unit take Desperate Escape tests as if Battle-shocked",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8f4b-c343-bef5-6779::ability:Grand Master of the Ravenwing",
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      },
+      {
+        "key": "mobile",
+        "target": "self"
+      }
+    ],
+    "summary": "Assault, Mobile, and can charge after Advancing",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9b3d-e812-4248-522::ability:Damaged: 1-3 Wounds Remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (3 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9b3d-e812-4248-522::ability:Stasis Bomb",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "End of the enemy Fight phase: a visible enemy is slowed, taking mortal wounds and losing Move if it moves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9bf9-1e30-e4b4-939c::ability:Exemplar of Hate",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: re-roll hits in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9bf9-1e30-e4b4-939c::ability:Feared Interrogator",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      },
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Fight phase: enemy Characters 6\" or closer test Battle-shock at -1; Character kills give 1CP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a2b6-e35-67a8-d76e::ability:Master of Manoeuvre",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move 8\" or closer: unengaged, a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a2b6-e35-67a8-d76e::ability:Nowhere To Hide",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly Mounted and flying Vehicles 6\" or closer shoot with Ignores Cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a2b6-e35-67a8-d76e::ability:Talonmaster",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Near a friendly Mounted or flying Vehicle unit (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a6cc-9a65-dbf1-71b0::ability:Inner Circle",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a6cc-9a65-dbf1-71b0::ability:Teleport Homer",
+    "summary": "Once per battle, Rapid Ingress for 0CP next to its homer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a6cc-9a65-dbf1-71b0::ability:Watcher in the Dark",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: Feel No Pain 4+ against mortal wounds for a phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b4a0-d2fe-a988-f28b::ability:Storm of Vengeance",
+    "summary": "Once per turn, a friendly unit 6\" or closer dies to shooting: shoots back at the killer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bf62-244b-f9db-6cf::ability:Grand Master of the Deathwing",
+    "modifiers": [
+      {
+        "key": "precision",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: critical hits gain Precision",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "bf62-244b-f9db-6cf::ability:Strikes of Retribution",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 6,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Each melee attack allocated to it: a D6, each 4+ a mortal wound back (six dice at most)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dark-angels::enhancement:darkflight-pursuit|nightforged-battery-upgarde",
+    "summary": "Ravenwing upgrade",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
     "target": "dark-angels::enhancement:darkflight-pursuit|thundercowl-turbines",
     "requires": [
       [
@@ -8,7 +566,14 @@
       ]
     ],
     "maxTargets": 3,
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "ingress",
+        "target": "self"
+      }
+    ],
+    "summary": "Can make an ingress move in your first Movement phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::enhancement:inner-circle-task-force|champion-of-the-deathwing",
@@ -17,7 +582,32 @@
         "Deathwing"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "on-vowed-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Lethal Hits in melee; critical hits on 5+ on your Vowed objective",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::enhancement:inner-circle-task-force|singular-will",
@@ -26,7 +616,15 @@
         "Deathwing"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "pile-in",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit piles in and consolidates 3\" further",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::enhancement:wrath-of-the-rock|ancient-weapons",
@@ -35,7 +633,40 @@
         "Adeptus Astartes"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+2 S, +1 AP and Damage in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::enhancement:wrath-of-the-rock|deathwing-assault",
@@ -44,7 +675,8 @@
         "Deathwing"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Its unit can Deep Strike in rounds 1 to 3",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::enhancement:wrath-of-the-rock|lord-of-the-ravenwing",
@@ -53,7 +685,18 @@
         "Ravenwing"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-advance",
+        "target": "self"
+      },
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit re-rolls Advance and charge rolls",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::enhancement:wrath-of-the-rock|tempered-in-battle",
@@ -62,7 +705,93 @@
         "Adeptus Astartes"
       ]
     ],
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Friendly units 6\" or closer re-roll Battle-shock and Leadership tests",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dark-angels::rule:darkflight-pursuit|black-winged-vigilance",
+    "rule": {
+      "name": "Black-winged Vigilance"
+    },
+    "eligibility": {
+      "allOf": [
+        "Ravenwing",
+        "Fly"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ravenwing flyers shoot with Ignores Cover; Dark Angels only",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dark-angels::rule:inner-circle-task-force|vowed-target",
+    "rule": {
+      "name": "Vowed Target"
+    },
+    "eligibility": {
+      "allOf": [
+        "Deathwing",
+        "Infantry"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-vowed-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Movement phase: vow to hold one objective or take others; Deathwing infantry get +1 to wound units on them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dark-angels::rule:wrath-of-the-rock|dutiful-tenacity",
+    "rule": {
+      "name": "Dutiful Tenacity"
+    },
+    "eligibility": {
+      "allOf": [
+        "Adeptus Astartes"
+      ],
+      "anyOf": [
+        "Infantry",
+        "Mounted"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than an infantry or mounted unit’s Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:armour-of-contempt",
@@ -107,9 +836,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Deathwing"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: still fights on a 4+ (+1 on your Vowed objective)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:inescapable-justice",
@@ -126,9 +876,19 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "unit-destroyed",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "A visible enemy 12\" or closer becomes your Oath of Moment target",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:leonine-aggression",
@@ -141,9 +901,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "End of the enemy Charge phase: charges an enemy 3\" away (6\" for Deathwing), without the bonus",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:lions-will",
@@ -156,9 +925,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Engaged: +1 OC, and +1 to hit this turn (not Deathwing, Ravenwing or Vehicles)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:martial-mastery",
@@ -171,9 +960,35 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Deathwing",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "on-vowed-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound, all of them on your Vowed objective",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:relic-teleportarium",
@@ -186,9 +1001,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Deathwing"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Deep Strikes 6\" from enemies, then no charge",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:relics-of-the-dark-age",
@@ -201,9 +1024,32 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "+2 S when shooting this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:skyborne-surveillance",
@@ -215,9 +1061,19 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Ravenwing",
+          "Fly"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "summary": "Visible enemies 6\" or closer get +3\" detection range",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:tactical-mastery",
@@ -230,9 +1086,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "advance-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Shoots and charges after Advancing (Ravenwing: after Falling Back too)",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:unmatched-fortitude",
@@ -245,9 +1119,31 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Deathwing",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound this phase",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:we-are-vengeance",
@@ -259,9 +1155,26 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Ravenwing",
+          "Fly"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D3+3",
+        "target": "self"
+      }
+    ],
+    "summary": "Shot at: a D3+3\" Normal move",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:wings-of-shadow",
@@ -273,9 +1186,25 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Ravenwing",
+          "Fly"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "self"
+      }
+    ],
+    "summary": "Stealth",
+    "reason": "Read from the rules, in our own words."
   },
   {
     "target": "dark-angels::stratagem:wrath-of-the-lion",
@@ -288,8 +1217,136 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Deathwing",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
     },
-    "reason": "Frozen from 40kdc-data before dropping it as a source."
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 3,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge: a D6 per model, each 4+ a mortal wound (3 at most)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e87d-f173-88b9-aa84::ability:Astartes Banner",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 OC",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e87d-f173-88b9-aa84::ability:Honour or Death",
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 1,
+        "target": "attached"
+      },
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 to Advance and charge; Heroic Intervention costs 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e87d-f173-88b9-aa84::ability:Narthecium",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase: returns one destroyed model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ebd0-6939-6305-6d16::ability:Storm Shield",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has a 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ebd0-6939-6305-6d16::ability:Tactical Precision",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Lethal Hits",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ebd0-6939-6305-6d16::ability:Vanquish the Foe",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit and wound units Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f34-e2f9-c98e-1916::ability:Braziers of Judgement",
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "self"
+      },
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Stealth, and -1 to hit it in melee",
+    "reason": "Read from the rules, in our own words."
   }
 ]
