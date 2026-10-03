@@ -708,10 +708,18 @@
           "name": "Leader"
         },
         {
-          "name": "Auto-Tapestry of the Emperor's Judgement"
+          "name": "Auto-Tapestry of the Emperor's Judgement",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached"
+            }
+          ],
+          "summary": "With Aestred Thurga, leading: Devastating Wounds"
         },
         {
-          "name": "Recount the Deeds of the Saints"
+          "name": "Recount the Deeds of the Saints",
+          "summary": "With Agathae Dolan, leading: a Miracle dice per enemy unit destroyed; D3 when she dies"
         }
       ],
       "points": 80,
@@ -1592,7 +1600,22 @@
       ],
       "abilities": [
         {
-          "name": "Extremis Trigger Word"
+          "name": "Extremis Trigger Word",
+          "modifiers": [
+            {
+              "key": "hazardous",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "trigger-word"
+                }
+              ]
+            }
+          ],
+          "summary": "Optional when fighting: arco-flails go to 6 Attacks, with Hazardous"
         }
       ],
       "points": 50,
@@ -2470,10 +2493,12 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Consecrated Ground"
+          "name": "Consecrated Ground",
+          "summary": "Sororitas Infantry can stand on it; units within 1\" perform an extra Act of Faith"
         },
         {
-          "name": "Holy Cover"
+          "name": "Holy Cover",
+          "summary": "Models partly hidden by it get the benefit of cover"
         }
       ],
       "points": 170,
@@ -2874,13 +2899,16 @@
       ],
       "abilities": [
         {
-          "name": "Defenders of the Faith"
+          "name": "Defenders of the Faith",
+          "summary": "Holding an objective as your Command phase ends keeps it yours after it leaves"
         },
         {
-          "name": "Cherub"
+          "name": "Cherub",
+          "summary": "Once per battle, after an Act of Faith: gain a Miracle dice"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "End of your Command phase: a Miracle dice on 4+ per objective you hold with it"
         }
       ],
       "points": 100,
@@ -3701,19 +3729,61 @@
       ],
       "abilities": [
         {
-          "name": "The Emperor's Grace"
+          "name": "The Emperor's Grace",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for a phase: 2+ invulnerable save"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Sacred Command"
+          "name": "Sacred Command",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Null Rod"
+          "name": "Null Rod",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Rod of Office"
+          "name": "Rod of Office",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit"
         }
       ],
       "points": 60,
@@ -3973,16 +4043,53 @@
       ],
       "abilities": [
         {
-          "name": "Divine Deliverance"
+          "name": "Divine Deliverance",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 melee Attacks with Devastating Wounds"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Sacred Command"
+          "name": "Sacred Command",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Condemnatory Psalms"
+          "name": "Condemnatory Psalms",
+          "summary": "When shooting: one visible enemy within 12\" is condemned, +3\" detection range"
         }
       ],
       "points": 75,
@@ -4667,10 +4774,24 @@
       ],
       "abilities": [
         {
-          "name": "Rites of Castigation"
+          "name": "Rites of Castigation",
+          "summary": "One unit it hits: Sororitas get +1 AP shooting it this turn"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 165,
@@ -4947,19 +5068,56 @@
       ],
       "abilities": [
         {
-          "name": "Rituale Nullificatus"
+          "name": "Rituale Nullificatus",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Virtue of Intolerance"
+          "name": "Virtue of Intolerance",
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Against its chosen quarry: Precision and re-roll hits"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Denuncia Oratory"
+          "name": "Denuncia Oratory",
+          "summary": "Its quarry destroyed: pick a new one"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "End of your Command phase: a Miracle dice on 4+ per objective you hold with it"
         }
       ],
       "points": 115,
@@ -5184,10 +5342,63 @@
       ],
       "abilities": [
         {
-          "name": "Instrument of the Emperor's Wrath"
+          "name": "Instrument of the Emperor's Wrath",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 melee Attacks with Devastating Wounds"
         },
         {
-          "name": "Daemonbreaker"
+          "name": "Daemonbreaker",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Daemon"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Daemon"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits and wounds against Daemons"
         }
       ],
       "points": 45,
@@ -5420,10 +5631,31 @@
       ],
       "abilities": [
         {
-          "name": "Sworn Protectors"
+          "name": "Sworn Protectors",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Character: attacks against it get -1 to wound"
         },
         {
-          "name": "Writ of Compunction"
+          "name": "Writ of Compunction",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC"
         }
       ],
       "points": 75,
@@ -6546,7 +6778,20 @@
       ],
       "abilities": [
         {
-          "name": "Spiritual Fortitude"
+          "name": "Spiritual Fortitude",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Psychic attacks and mortal wounds"
         },
         {
           "name": "Attached Unit"
@@ -6985,10 +7230,19 @@
       ],
       "abilities": [
         {
-          "name": "Holy Judgement"
+          "name": "Holy Judgement",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 3,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: an enemy within 12\" tests Battle-shock (-2 if Chaos); a failure costs it 3 mortal wounds"
         },
         {
-          "name": "Mysterious Saviours"
+          "name": "Mysterious Saviours",
+          "summary": "Heroic Intervention costs it 1CP less and does not block other uses"
         }
       ],
       "points": 85,
@@ -7539,7 +7793,21 @@
       ],
       "abilities": [
         {
-          "name": "Death Cult"
+          "name": "Death Cult",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Characters"
         }
       ],
       "points": 55,
@@ -9644,10 +9912,12 @@
       ],
       "abilities": [
         {
-          "name": "Laud Hailer"
+          "name": "Laud Hailer",
+          "summary": "Once per battle, frees a Sororitas unit within 12\" from Battle-shock"
         },
         {
-          "name": "Stirring Rhetoric"
+          "name": "Stirring Rhetoric",
+          "summary": "Leading: one Miracle dice of each Act of Faith becomes a 6"
         },
         {
           "name": "Support"
@@ -9778,10 +10048,26 @@
       ],
       "abilities": [
         {
-          "name": "Executioner of Heretics (Aura)"
+          "name": "Executioner of Heretics (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies within 6\": Leadership worsened by 1"
         },
         {
-          "name": "Unflinching Determination"
+          "name": "Unflinching Determination",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC"
         },
         {
           "name": "Support"
@@ -10153,16 +10439,27 @@
       ],
       "abilities": [
         {
-          "name": "Holy Vanguard"
+          "name": "Holy Vanguard",
+          "summary": "Starting embarked with a Leader: the Leader gains Scouts 6\""
         },
         {
-          "name": "Righteous Awareness"
+          "name": "Righteous Awareness",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move within 8\": unengaged, it moves D6\""
         },
         {
-          "name": "Cherub"
+          "name": "Cherub",
+          "summary": "Once per battle, after an Act of Faith: gain a Miracle dice"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "End of your Command phase: a Miracle dice on 4+ per objective you hold with it"
         }
       ],
       "points": 90,
@@ -11964,13 +12261,34 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Devastating Refrain"
+          "name": "Devastating Refrain",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "A unit hit by its Indirect Fire tests for Battle-shock; Deadly Demise of its kills goes off on 5+"
         },
         {
-          "name": "Symphonic Payload"
+          "name": "Symphonic Payload",
+          "summary": "The Exorcist re-rolls its random Attacks"
         }
       ],
       "points": 180,
@@ -13495,10 +13813,26 @@
       ],
       "abilities": [
         {
-          "name": "Medicus Ministorum"
+          "name": "Medicus Ministorum",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "Sacred Healing"
+          "name": "Sacred Healing",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading, Command phase: returns a destroyed model (D3+1 for a Miracle dice)"
         },
         {
           "name": "Support"
@@ -13657,10 +13991,24 @@
       ],
       "abilities": [
         {
-          "name": "Litany of Deeds"
+          "name": "Litany of Deeds",
+          "summary": "Miracle dice from Sororitas dying within 12\" can be re-rolled"
         },
         {
-          "name": "Stanchion of Holy Martyrs"
+          "name": "Stanchion of Holy Martyrs",
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "2+",
+              "target": "attached"
+            },
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 2+ save and 4+ invulnerable save"
         },
         {
           "name": "Support"
@@ -13876,7 +14224,8 @@
           "name": "Transport"
         },
         {
-          "name": "Purge and Cleanse"
+          "name": "Purge and Cleanse",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         }
       ],
       "points": 100,
@@ -18698,10 +19047,19 @@
       ],
       "abilities": [
         {
-          "name": "Righteous Denunciation"
+          "name": "Righteous Denunciation",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: enemies within 6\" test Battle-shock at -1"
         },
         {
-          "name": "Judged for Execution"
+          "name": "Judged for Execution",
+          "summary": "End of your Movement phase: Sororitas get Lethal Hits against one enemy within 18\""
         }
       ],
       "points": 135,
@@ -19117,10 +19475,35 @@
       ],
       "abilities": [
         {
-          "name": "The Pulpit of Saint Holline’s Basilica"
+          "name": "The Pulpit of Saint Holline’s Basilica",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Stealth, and -1 to hit for melee attacks against it"
         },
         {
-          "name": "Fiery Conviction"
+          "name": "Fiery Conviction",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: spend a Miracle dice or pass a Leadership test for +1CP"
         },
         {
           "name": "Leader"
@@ -24359,7 +24742,15 @@
       ],
       "abilities": [
         {
-          "name": "Sacred Command"
+          "name": "Sacred Command",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
@@ -24593,13 +24984,56 @@
       ],
       "abilities": [
         {
-          "name": "Righteous Smiting"
+          "name": "Righteous Smiting",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to wound in melee"
         },
         {
-          "name": "Zealot"
+          "name": "Zealot",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 S and A in melee"
         },
         {
-          "name": "Holy Mission"
+          "name": "Holy Mission",
+          "summary": "Joins Dominions with Scouts 6\", Novitiates with Infiltrators"
         },
         {
           "name": "Leader"
@@ -25074,10 +25508,24 @@
       ],
       "abilities": [
         {
-          "name": "Anguish of the Unredeemed"
+          "name": "Anguish of the Unredeemed",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 2+"
         },
         {
-          "name": "Anchorite Sarcophagus"
+          "name": "Anchorite Sarcophagus",
+          "summary": "Move 7\" and a 3+ save"
         }
       ],
       "points": 70,
@@ -25333,10 +25781,24 @@
       ],
       "abilities": [
         {
-          "name": "Abbess Sanctorum"
+          "name": "Abbess Sanctorum",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "attached"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll hits and wounds"
         },
         {
-          "name": "Righteous Repugnance"
+          "name": "Righteous Repugnance",
+          "summary": "Spend a Miracle dice: +3 Attacks for Fidelis and the Lance; kills earn Miracle dice"
         },
         {
           "name": "Leader"
@@ -25776,10 +26238,18 @@
       ],
       "abilities": [
         {
-          "name": "Fury of the Righteous"
+          "name": "Fury of the Righteous",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Rapturous Blows"
+          "name": "Rapturous Blows",
+          "summary": "Spend a Miracle dice: each of her melee wounds adds a mortal wound"
         },
         {
           "name": "Leader"
@@ -26039,7 +26509,54 @@
       ],
       "abilities": [
         {
-          "name": "Righteous Paragons"
+          "name": "Righteous Paragons",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit and wound against Monsters and Vehicles"
         }
       ],
       "points": 165,
@@ -26460,7 +26977,14 @@
       ],
       "abilities": [
         {
-          "name": "Endless Suffering"
+          "name": "Endless Suffering",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         }
       ],
       "points": 70,
@@ -29706,7 +30230,30 @@
       ],
       "abilities": [
         {
-          "name": "Overseer of Redemption"
+          "name": "Overseer of Redemption",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With its Superior: Repentia re-roll hits and wounds in melee"
         }
       ],
       "points": 70,
@@ -29896,7 +30443,8 @@
           "name": "Transport"
         },
         {
-          "name": "Emergency Combat Embarkation"
+          "name": "Emergency Combat Embarkation",
+          "summary": "Once per turn, a unit charged nearby (3\") can jump inside before the charge"
         }
       ],
       "points": 130,
@@ -30304,10 +30852,34 @@
       ],
       "abilities": [
         {
-          "name": "Cherubs"
+          "name": "Cherubs",
+          "summary": "Twice per battle, after an Act of Faith: gain a Miracle dice"
         },
         {
-          "name": "Storm of Retribution"
+          "name": "Storm of Retribution",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and wound; +1 to both against units that destroyed Sororitas"
         }
       ],
       "points": 105,
@@ -30872,13 +31444,23 @@
       ],
       "abilities": [
         {
-          "name": "Healing Tears"
+          "name": "Healing Tears",
+          "summary": "Command phase: brings back a Geminae Superia"
         },
         {
-          "name": "Lifewards"
+          "name": "Lifewards",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "With a Geminae, Celestine has Feel No Pain 4+"
         },
         {
-          "name": "Miraculous Intervention"
+          "name": "Miraculous Intervention",
+          "summary": "Celestine’s first death: on 2+ she returns at full wounds once the phase ends"
         },
         {
           "name": "Leader"
@@ -31519,19 +32101,42 @@
       ],
       "abilities": [
         {
-          "name": "Ministorum Sermon"
+          "name": "Ministorum Sermon",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With a Priest: Sustained Hits 1 in melee"
         },
         {
-          "name": "Cherub"
+          "name": "Cherub",
+          "summary": "Once per battle, after an Act of Faith: gain a Miracle dice"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "End of your Command phase: a Miracle dice on 4+ per objective you hold with it"
         },
         {
-          "name": "Salvationist Medikit"
+          "name": "Salvationist Medikit",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to D3 destroyed models"
         }
       ],
       "points": 110,
@@ -31905,10 +32510,19 @@
       ],
       "abilities": [
         {
-          "name": "Angelic Ascent"
+          "name": "Angelic Ascent",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting: move 6\", then no charge this turn"
         },
         {
-          "name": "Condemnatory Psalms"
+          "name": "Condemnatory Psalms",
+          "summary": "When shooting: one visible enemy within 12\" is condemned, +3\" detection range"
         }
       ],
       "points": 75,
@@ -32325,13 +32939,43 @@
       ],
       "abilities": [
         {
-          "name": "Impetuous Fervour"
+          "name": "Impetuous Fervour",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective"
         },
         {
-          "name": "Sacred Banner"
+          "name": "Sacred Banner",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "End of your Command phase: a Miracle dice on 4+ per objective you hold with it"
         }
       ],
       "points": 90,
@@ -33602,7 +34246,15 @@
           "name": "Transport"
         },
         {
-          "name": "Self Repair"
+          "name": "Self Repair",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Regains 1 wound each Command phase"
         }
       ],
       "points": 65,
@@ -34572,10 +35224,12 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "summary": "Damaged (6 wounds or fewer): Attacks halved, one relic instead of two"
         },
         {
-          "name": "Relics of the Matriarchs"
+          "name": "Relics of the Matriarchs",
+          "summary": "Each battle round, up to two relic abilities"
         },
         {
           "name": "Relic of the Matriarch - The Fiery Heart (Aura)"
@@ -34596,7 +35250,8 @@
           "name": "Relic of the Matriarch - Petals of the Bloody Rose (Aura)"
         },
         {
-          "name": "Solemn Procession"
+          "name": "Solemn Procession",
+          "summary": "The battle round’s Miracle dice is a 6"
         },
         {
           "name": "Leader"
@@ -37783,13 +38438,57 @@
       ],
       "abilities": [
         {
-          "name": "Embodied Prophecy"
+          "name": "Embodied Prophecy",
+          "options": [
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Fighting: Sustained Hits 1 or Lethal Hits in melee — both after charging"
         },
         {
-          "name": "Condemnatory Psalms"
+          "name": "Condemnatory Psalms",
+          "summary": "When shooting: one visible enemy within 12\" is condemned, +3\" detection range"
         },
         {
-          "name": "Sacred Banner"
+          "name": "Sacred Banner",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         }
       ],
       "points": 75,
@@ -37854,7 +38553,8 @@
   "armyRules": [
     {
       "id": "acts-of-faith",
-      "name": "Acts of Faith"
+      "name": "Acts of Faith",
+      "summary": "Spend Miracle dice to replace one dice of a hit, wound, damage, save, Advance, charge or Battle-shock roll"
     },
     {
       "id": "assigned-agents",
@@ -37878,7 +38578,15 @@
       "rules": [
         {
           "id": "sacred-rites",
-          "name": "Sacred Rites"
+          "name": "Sacred Rites",
+          "eligibility": {
+            "allOf": [
+              "Adepta Sororitas"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Units can perform two Acts of Faith per phase"
         }
       ],
       "enhancements": [
@@ -37894,7 +38602,39 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee: +1 S and AP, Precision; a kill earns a Miracle dice"
         },
         {
           "id": "divine-aspect",
@@ -37908,7 +38648,14 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Movement phase: an enemy within 12\" tests for Battle-shock; a failure earns a Miracle dice"
         },
         {
           "id": "litanies-of-faith",
@@ -37925,7 +38672,8 @@
               "Palatine"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: pass a Leadership test to gain a Miracle dice"
         },
         {
           "id": "triptych-of-the-macharian-crusade",
@@ -37939,7 +38687,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "A save replaced by a Miracle dice always succeeds"
         }
       ]
     },
@@ -37953,7 +38702,40 @@
       "rules": [
         {
           "id": "fervent-purgation",
-          "name": "Fervent Purgation"
+          "name": "Fervent Purgation",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-within",
+                  "value": 6
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adepta Sororitas"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Ranged weapons gain Assault and +1 S against targets within 6\""
         }
       ],
       "enhancements": [
@@ -37969,7 +38751,20 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Torrent weapons +1 Attack, other ranged weapons Sustained Hits 1"
         },
         {
           "id": "iron-surplice-of-saint-istalela",
@@ -37986,7 +38781,20 @@
               "Canoness"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "2+",
+              "target": "self"
+            },
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "2+ save and Feel No Pain 5+"
         },
         {
           "id": "manual-of-saint-griselda",
@@ -38000,7 +38808,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: merge two Miracle dice into one worth their sum (max 6)"
         },
         {
           "id": "righteous-rage",
@@ -38014,7 +38823,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Fighting: discard up to 3 Miracle dice for +1 A and S each in melee"
         }
       ]
     },
@@ -38029,7 +38839,37 @@
       "rules": [
         {
           "id": "righteous-purpose",
-          "name": "Righteous Purpose"
+          "name": "Righteous Purpose",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "righteous"
+                }
+              ]
+            },
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "righteous"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adepta Sororitas"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Up to 3 units become Righteous: +1\" Move, better Leadership, and better WS/BS for some squads"
         }
       ],
       "enhancements": [
@@ -38045,7 +38885,14 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self"
+            }
+          ],
+          "summary": "Precision; +1CP for every Character its unit slays"
         },
         {
           "id": "mark-of-devotion",
@@ -38059,7 +38906,20 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee Attack; Righteous: +2 A and +1 D"
         },
         {
           "id": "sanctified-amulet",
@@ -38073,7 +38933,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies arriving from Reserves cannot set up within 12\""
         },
         {
           "id": "triptych-of-judgement",
@@ -38087,7 +38948,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit ignores modifiers to its skill and hit rolls"
         }
       ]
     },
@@ -38101,7 +38963,17 @@
       "rules": [
         {
           "id": "angelic-judgement",
-          "name": "Angelic Judgement"
+          "name": "Angelic Judgement",
+          "eligibility": {
+            "allOf": [
+              "Adepta Sororitas",
+              "Infantry",
+              "Fly"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Flying Infantry condemn one enemy within 12\" when shooting: +3\" detection range"
         }
       ],
       "enhancements": [
@@ -38118,7 +38990,14 @@
               "Canoness with Jump Pack"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: unengaged, it can go into Strategic Reserves"
         },
         {
           "id": "symphonic-payload",
@@ -38133,7 +39012,8 @@
               "Exorcist"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "The Exorcist re-rolls its random Attacks"
         }
       ]
     },
@@ -38148,7 +39028,37 @@
       "rules": [
         {
           "id": "the-blood-of-martyrs",
-          "name": "The Blood of Martyrs"
+          "name": "The Blood of Martyrs",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adepta Sororitas"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "+1 to hit below Starting Strength, +1 to wound too Below Half-strength"
         }
       ],
       "enhancements": [
@@ -38164,7 +39074,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: one Miracle dice may be rolled again (three if its unit is below Starting Strength)"
         },
         {
           "id": "mantle-of-ophelia",
@@ -38181,7 +39092,8 @@
               "Canoness"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Every attack allocated to the bearer deals 1 Damage"
         },
         {
           "id": "saintly-example",
@@ -38195,7 +39107,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Slain: gain D3 more Miracle dice"
         },
         {
           "id": "through-suffering-strength",
@@ -38209,7 +39122,40 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 A, S and D in melee (+2 once wounded)"
         }
       ]
     },
@@ -38223,7 +39169,68 @@
       "rules": [
         {
           "id": "desperate-for-redemption",
-          "name": "Desperate For Redemption"
+          "name": "Desperate For Redemption",
+          "options": [
+            {
+              "name": "Path of the Penitent: +3\" Move",
+              "modifiers": [
+                {
+                  "key": "M",
+                  "value": 3,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Absolution in Battle: +1 A and S after charging",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    },
+                    {
+                      "key": "charged"
+                    }
+                  ]
+                },
+                {
+                  "key": "S",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    },
+                    {
+                      "key": "charged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Death Before Disgrace: fight on death 2+",
+              "modifiers": [
+                {
+                  "key": "fight-on-death",
+                  "value": "2+",
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Penitent"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Each battle round, one Vow for Penitents (each once): +3\" Move, +1 A and S after charging, or fight on 2+ when slain"
         }
       ],
       "enhancements": [
@@ -38248,7 +39255,15 @@
           "excludes": [],
           "leaderTo": [
             "Repentia Squad"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Penitent",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer becomes Penitent"
         },
         {
           "id": "psalm-of-righteous-judgement",
@@ -38262,7 +39277,8 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Each enemy unit a Penitent unit destroys: swap a Miracle dice for a 6"
         },
         {
           "id": "refrain-of-enduring-faith",
@@ -38276,7 +39292,15 @@
               "Penitent"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 5+ invulnerable save for the unit"
         },
         {
           "id": "verse-of-holy-piety",
@@ -38290,7 +39314,8 @@
               "Penitent"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle, a second Vow for its unit that round, even one already used"
         }
       ]
     },
@@ -38305,7 +39330,27 @@
       "rules": [
         {
           "id": "holy-quest",
-          "name": "Holy Quest"
+          "name": "Holy Quest",
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "self"
+            },
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Celestian"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Celestians get +1 BS and WS"
         }
       ],
       "enhancements": [
@@ -38321,7 +39366,15 @@
               "Adepta Sororitas"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1\" Move"
         },
         {
           "id": "writ-of-compunction",
@@ -38336,7 +39389,15 @@
               "Celestian Sacresants"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC"
         }
       ]
     },
@@ -38350,7 +39411,23 @@
       "rules": [
         {
           "id": "hymns-of-battle",
-          "name": "Hymns of Battle"
+          "name": "Hymns of Battle",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adepta Sororitas",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Its Enhancements are free of the Enhancement limit; Characters get +1 Ld"
         }
       ],
       "enhancements": [
@@ -38369,7 +39446,53 @@
           ],
           "excludes": [
             "Penitent"
-          ]
+          ],
+          "options": [
+            {
+              "name": "Rite of Revelation",
+              "modifiers": []
+            },
+            {
+              "name": "Sermon of Intolerance",
+              "modifiers": []
+            },
+            {
+              "name": "Catechism of Raging Fervour: +1\" Move",
+              "modifiers": [
+                {
+                  "key": "M",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Psalm of Righteous Smiting: +1 S",
+              "modifiers": [
+                {
+                  "key": "S",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Chorus of Repudiation: -1 to wound by stronger attacks",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": -1,
+                  "target": "enemy",
+                  "conditions": [
+                    {
+                      "key": "strength-above-toughness"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, at a phase start: pick one psalm, from +6\" detection on its targets to +1 S or -1 to wound against it"
         }
       ]
     }
@@ -38385,6 +39508,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -38393,7 +39517,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Fight phase: a Jump Pack unit goes back into Strategic Reserves"
     },
     {
       "id": "bastion-of-faith",
@@ -38405,6 +39536,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -38412,7 +39544,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against the Sacresants get -1 to hit (a second unit too, if Righteous)"
     },
     {
       "id": "blazing-ire",
@@ -38424,6 +39564,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -38432,7 +39573,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Shot at: a unit inside the Transport disembarks and shoots back at the attacker"
     },
     {
       "id": "blinding-radiance",
@@ -38445,14 +39587,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
           "Adepta Sororitas"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Jump Pack"
+        ],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against the unit get -1 to hit (a Jump Pack unit shields Infantry within 3\" too)"
     },
     {
       "id": "boundless-zeal",
@@ -38464,6 +39618,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -38471,7 +39626,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can shoot or charge (Penitents both)"
     },
     {
       "id": "carry-forth-the-faithful",
@@ -38491,7 +39653,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-advance",
+          "target": "self"
+        }
+      ],
+      "summary": "The Transport re-rolls Advance, and units can still disembark after it Advanced"
     },
     {
       "id": "cleansing-flames",
@@ -38510,7 +39679,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Torrent weapons gain Devastating Wounds"
     },
     {
       "id": "devastating-reprise",
@@ -38522,6 +39703,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Adepta Sororitas",
@@ -38530,7 +39712,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "After an Exorcist shoots: flying Infantry get Devastating Wounds against one infantry target it hit"
     },
     {
       "id": "devout-fanaticism",
@@ -38542,6 +39736,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -38549,7 +39744,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: surge D6\""
     },
     {
       "id": "divine-guidance",
@@ -38569,7 +39772,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 AP; a kill earns a Miracle dice"
     },
     {
       "id": "divine-intervention",
@@ -38593,7 +39804,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A slain Character comes back once the phase ends, with D3 wounds (+1 per Miracle dice spent)"
     },
     {
       "id": "faith-and-fury",
@@ -38612,7 +39824,23 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Lance in melee; a kill earns a Miracle dice"
     },
     {
       "id": "faithful-fortitude",
@@ -38634,7 +39862,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds this phase"
     },
     {
       "id": "final-redemption",
@@ -38657,7 +39898,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A Penitent unit destroyed on your objective keeps it yours"
     },
     {
       "id": "harmonised-exorcism",
@@ -38669,13 +39911,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Exorcist"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to hit against a target spotted by flying Infantry within 9\""
     },
     {
       "id": "indefatigable-dedication",
@@ -38687,6 +39943,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -38694,7 +39951,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot (and charge, if Righteous)"
     },
     {
       "id": "inspirational-battle-canticles",
@@ -38706,13 +39970,18 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Adepta Sororitas"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Exorcist",
+          "Fly"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "A Battle-shocked unit within 6\" recovers"
     },
     {
       "id": "lash-of-guilt",
@@ -38731,7 +40000,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can charge after Advancing; Penitent Engines Advance a flat 6\""
     },
     {
       "id": "light-of-the-emperor",
@@ -38750,7 +40026,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Blessed until end of turn: ignores modifiers to its characteristics, skill and rolls (saves excepted)"
     },
     {
       "id": "passion-of-the-penitent",
@@ -38769,7 +40046,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Critical hits on 5+ in melee"
     },
     {
       "id": "path-of-the-righteous",
@@ -38788,7 +40078,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Pile-in and Consolidation moves of 6\""
     },
     {
       "id": "praise-the-fallen",
@@ -38800,6 +40098,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -38807,7 +40106,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Lost models to shooting: shoot back at the attacker"
     },
     {
       "id": "purity-of-suffering",
@@ -38820,6 +40120,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -38827,7 +40128,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 4+"
     },
     {
       "id": "righteous-blows",
@@ -38846,7 +40155,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits in melee; a kill forces a Battle-shock test"
     },
     {
       "id": "righteous-vengeance",
@@ -38865,7 +40186,33 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "below-half-strength"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits in melee; wounds too Below Half-strength"
     },
     {
       "id": "rites-of-fire",
@@ -38884,7 +40231,27 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-within",
+              "value": 6
+            },
+            {
+              "key": "target-on-objective"
+            }
+          ]
+        }
+      ],
+      "summary": "Just disembarked: +1 to wound against targets within 6\" on an objective"
     },
     {
       "id": "sanctified-blows",
@@ -38896,13 +40263,37 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Celestian Sacresants"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 A and S in melee"
     },
     {
       "id": "sanctified-immolation",
@@ -38926,7 +40317,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A destroyed Vehicle’s Deadly Demise goes off without a roll"
     },
     {
       "id": "shield-of-aversion",
@@ -38939,6 +40331,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -38946,7 +40339,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against the unit: AP worsened by 1"
     },
     {
       "id": "shield-of-denial",
@@ -38969,7 +40370,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 6+ against mortal wounds (5+ if Righteous)"
     },
     {
       "id": "shield-of-faith",
@@ -38992,7 +40406,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds this phase"
     },
     {
       "id": "spirit-of-the-martyr",
@@ -39004,6 +40431,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -39011,7 +40439,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "target": "self"
+        }
+      ],
+      "summary": "Models slain before fighting still fight"
     },
     {
       "id": "suffer-not-the-unfaithful",
@@ -39031,7 +40466,29 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "options": [
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "summary": "A Righteous unit gains Lethal Hits or Sustained Hits 1"
     },
     {
       "id": "suffering-and-sacrifice",
@@ -39043,14 +40500,19 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
           "Adepta Sororitas"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Walker"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "Engaged enemies must attack this unit"
     },
     {
       "id": "to-the-heart-of-heresy",
@@ -39069,7 +40531,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 S in melee; +1 AP too if Righteous"
     },
     {
       "id": "unflinching-determination",
@@ -39081,13 +40556,38 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Celestian Sacresants"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Advancing or Falling Back: Assault, and can still shoot and charge"
     }
   ]
 }
