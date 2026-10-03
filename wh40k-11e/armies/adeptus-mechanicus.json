@@ -1443,13 +1443,37 @@
       ],
       "abilities": [
         {
-          "name": "Bomb Rack"
+          "name": "Bomb Rack",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: six D6 against an enemy within 24\", each 4+ a mortal wound"
         },
         {
-          "name": "Chaff Launcher"
+          "name": "Chaff Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has the Smoke keyword"
         },
         {
-          "name": "Command Uplink"
+          "name": "Command Uplink",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 160,
@@ -1605,13 +1629,46 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units without Fly"
         },
         {
-          "name": "Chaff Launcher"
+          "name": "Chaff Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has the Smoke keyword"
         },
         {
-          "name": "Command Uplink"
+          "name": "Command Uplink",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 185,
@@ -1739,13 +1796,36 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Deployment"
+          "name": "Aerial Deployment",
+          "modifiers": [
+            {
+              "key": "ingress",
+              "target": "self"
+            }
+          ],
+          "summary": "Can make an ingress move in your first Movement phase"
         },
         {
-          "name": "Chaff Launcher"
+          "name": "Chaff Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has the Smoke keyword"
         },
         {
-          "name": "Command Uplink"
+          "name": "Command Uplink",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 145,
@@ -2709,19 +2789,41 @@
       ],
       "abilities": [
         {
-          "name": "Canticles of the Omnissiah"
+          "name": "Canticles of the Omnissiah",
+          "summary": "Each Command phase, one Canticle ability until your next one"
         },
         {
-          "name": "Mechanicus Bodyguard"
+          "name": "Mechanicus Bodyguard",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative near other Mechanicus units (3\")"
         },
         {
-          "name": "Self-repair Mechanisms"
+          "name": "Self-repair Mechanisms",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains D3 wounds each Command phase"
         },
         {
           "name": "Supreme Commander"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 220,
@@ -5251,7 +5353,8 @@
       ],
       "abilities": [
         {
-          "name": "Electro-shock"
+          "name": "Electro-shock",
+          "summary": "One infantry unit it hits is shocked: -2\" Move and -2 to Advance and charge rolls"
         }
       ],
       "points": 60,
@@ -5802,13 +5905,58 @@
           "name": "Support"
         },
         {
-          "name": "Battle Protocols"
+          "name": "Battle Protocols",
+          "options": [
+            {
+              "name": "Protector: +2 ranged Attacks",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 2,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Conqueror: +2 melee Attacks",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 2,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Aegis: +1 T",
+              "modifiers": [
+                {
+                  "key": "T",
+                  "value": 1,
+                  "target": "attached"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading Kastelans: Protector (+2 ranged A), Conqueror (+2 melee A) or Aegis (+1 T)"
         },
         {
-          "name": "Data-severed"
+          "name": "Data-severed",
+          "summary": "With no Kastelan left: becomes Infantry instead of Vehicle"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 20,
@@ -10920,7 +11068,20 @@
       ],
       "abilities": [
         {
-          "name": "Electro-Infusion"
+          "name": "Electro-Infusion",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Character: attacks against it get -1 to wound"
         }
       ],
       "points": 65,
@@ -11522,7 +11683,8 @@
           "name": "Attached Unit"
         },
         {
-          "name": "Broad‑spectrum Targeting Augurs"
+          "name": "Broad‑spectrum Targeting Augurs",
+          "summary": "Eradication casters get Sustained Hits 1 against infantry"
         }
       ],
       "points": 100,
@@ -11706,7 +11868,8 @@
           "name": "Attached Unit"
         },
         {
-          "name": "Monocular Targeting Helms"
+          "name": "Monocular Targeting Helms",
+          "summary": "Neutron fusils ignore cover against Monsters and Vehicles"
         }
       ],
       "points": 105,
@@ -16552,10 +16715,29 @@
       ],
       "abilities": [
         {
-          "name": "Elevated Strider"
+          "name": "Elevated Strider",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Shoots after Falling Back or Advancing; re-rolls Desperate Escape tests"
         },
         {
-          "name": "Broad Spectrum Data-tether"
+          "name": "Broad Spectrum Data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 80,
@@ -17124,10 +17306,19 @@
       ],
       "abilities": [
         {
-          "name": "Robotic Bodyguard"
+          "name": "Robotic Bodyguard",
+          "summary": "Its Datasmith has Feel No Pain 4+"
         },
         {
-          "name": "Repulsor Grid"
+          "name": "Repulsor Grid",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Each unmodified 6 on its saves against shooting: 1 mortal wound back"
         }
       ],
       "points": 150,
@@ -17385,7 +17576,25 @@
       ],
       "abilities": [
         {
-          "name": "Breaching Command"
+          "name": "Breaching Command",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "battleline-near"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll near Battleline (6\")"
         }
       ],
       "points": 140,
@@ -22070,7 +22279,8 @@
           "name": "Technoarcane Zealotry"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 70,
@@ -23841,16 +24051,60 @@
       ],
       "abilities": [
         {
-          "name": "Emanatus Forcefield (Aura)"
+          "name": "Emanatus Forcefield (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Mechanicus",
+                  "Battleline"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Battleline wholly within 6\": 4+ invulnerable save against shooting"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves through friendly Monsters, Vehicles and terrain up to 4\" tall"
         },
         {
-          "name": "Broad spectrum data-tether"
+          "name": "Broad spectrum data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 150,
@@ -25596,7 +25850,15 @@
       ],
       "abilities": [
         {
-          "name": "Ride the Thermals"
+          "name": "Ride the Thermals",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting: move 6\" (12\" ending near Battleline), then no charge"
         }
       ],
       "points": 75,
@@ -27466,16 +27728,38 @@
       ],
       "abilities": [
         {
-          "name": "Titan Guard"
+          "name": "Titan Guard",
+          "summary": "Heroic Intervention on it for 0CP; its charge is re-rolled with Titanicus on the table"
         },
         {
-          "name": "Secutarii"
+          "name": "Secutarii",
+          "summary": "Leaders that join Skitarii Vanguard can join it instead"
         },
         {
-          "name": "Enhanced data-tether"
+          "name": "Enhanced data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Omnispex"
+          "name": "Omnispex",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         }
       ],
       "points": 65,
@@ -27728,16 +28012,38 @@
       ],
       "abilities": [
         {
-          "name": "Blind Barrage"
+          "name": "Blind Barrage",
+          "summary": "One infantry unit it hits gets -1 to hit until your next turn"
         },
         {
-          "name": "Secutarii"
+          "name": "Secutarii",
+          "summary": "Leaders that join Skitarii Vanguard can join it instead"
         },
         {
-          "name": "Enhanced data-tether"
+          "name": "Enhanced data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Omnispex"
+          "name": "Omnispex",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         }
       ],
       "points": 50,
@@ -28035,13 +28341,37 @@
       ],
       "abilities": [
         {
-          "name": "Tactica Obliqua"
+          "name": "Tactica Obliqua",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Enemy ended a move within 8\": moves D6\" (6\" ending near Battleline)"
         },
         {
-          "name": "Enhanced data-tether"
+          "name": "Enhanced data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Stealth-screened Cybercanids"
+          "name": "Stealth-screened Cybercanids",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "value": 15,
+              "target": "self"
+            }
+          ],
+          "summary": "Lone Operative 15\""
         }
       ],
       "points": 60,
@@ -28288,7 +28618,15 @@
       ],
       "abilities": [
         {
-          "name": "Line-breakers"
+          "name": "Line-breakers",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per engaged model, each 4+ a mortal wound (+2 near Battleline)"
         }
       ],
       "points": 55,
@@ -28591,7 +28929,8 @@
       ],
       "abilities": [
         {
-          "name": "Network Override"
+          "name": "Network Override",
+          "summary": "With a Tech-Priest: acts after Advancing and shoots after starting an action"
         },
         {
           "name": "Attached Unit"
@@ -29079,7 +29418,15 @@
       ],
       "abilities": [
         {
-          "name": "Neurostatic Interference (Aura)"
+          "name": "Neurostatic Interference (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies within 6\": -1 to Battle-shock and Leadership tests (-2 near Battleline)"
         }
       ],
       "points": 75,
@@ -29306,7 +29653,20 @@
       ],
       "abilities": [
         {
-          "name": "Optimised Gait"
+          "name": "Optimised Gait",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to Advance and charge rolls (+2 near Battleline)"
         }
       ],
       "points": 75,
@@ -30500,10 +30860,19 @@
           "name": "Support"
         },
         {
-          "name": "Control Edict"
+          "name": "Control Edict",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll hits"
         },
         {
-          "name": "Servo-skull Uplink"
+          "name": "Servo-skull Uplink",
+          "summary": "Once per battle, frees a Skitarii unit within 6\" from Battle-shock"
         }
       ],
       "points": 35,
@@ -30737,13 +31106,34 @@
       ],
       "abilities": [
         {
-          "name": "Objective Scouted"
+          "name": "Objective Scouted",
+          "summary": "Holding an objective as your Command phase ends keeps it yours after it leaves"
         },
         {
-          "name": "Enhanced data-tether"
+          "name": "Enhanced data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Omnispex"
+          "name": "Omnispex",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         }
       ],
       "points": 85,
@@ -31035,13 +31425,41 @@
       ],
       "abilities": [
         {
-          "name": "Rad-saturation (Aura)"
+          "name": "Rad-saturation (Aura)",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies within 3\" (Vehicles excepted): -1 OC"
         },
         {
-          "name": "Omnispex"
+          "name": "Omnispex",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         },
         {
-          "name": "Enhanced data-tether"
+          "name": "Enhanced data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 85,
@@ -31281,13 +31699,35 @@
       ],
       "abilities": [
         {
-          "name": "Broad spectrum data-tether"
+          "name": "Broad spectrum data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Blistering Salvoes"
+          "name": "Blistering Salvoes",
+          "summary": "+1 to hit: belleros cannon against infantry, ferrumite cannon against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -31459,10 +31899,19 @@
       ],
       "abilities": [
         {
-          "name": "Broad spectrum data-tether"
+          "name": "Broad spectrum data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "summary": "Units that disembarked re-roll wounds against one unit it hit"
         }
       ],
       "points": 75,
@@ -32397,10 +32846,31 @@
       ],
       "abilities": [
         {
-          "name": "Focused Hunters"
+          "name": "Focused Hunters",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against one enemy unit chosen at the start"
         },
         {
-          "name": "Broad Spectrum Data-tether"
+          "name": "Broad Spectrum Data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 55,
@@ -32544,10 +33014,29 @@
       ],
       "abilities": [
         {
-          "name": "Dynamic Efficiency"
+          "name": "Dynamic Efficiency",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Charges after Advancing or Falling Back; re-rolls Desperate Escape tests"
         },
         {
-          "name": "Broad Spectrum Data-tether"
+          "name": "Broad Spectrum Data-tether",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         }
       ],
       "points": 60,
@@ -32727,13 +33216,22 @@
       ],
       "abilities": [
         {
-          "name": "Dread Snipers"
+          "name": "Dread Snipers",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Sydonian Sentinel"
+          "name": "Sydonian Sentinel",
+          "summary": "Cannot be your Warlord"
         },
         {
-          "name": "Achillan Eye"
+          "name": "Achillan Eye",
+          "summary": "Re-roll wounds: jezzail against infantry, arquebus against Monsters and Vehicles"
         }
       ],
       "points": 45,
@@ -32961,13 +33459,30 @@
           "name": "Leader"
         },
         {
-          "name": "Lord of the Machine Cult"
+          "name": "Lord of the Machine Cult",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+ (4+ for Electro-Priests)"
         },
         {
-          "name": "Data-spike"
+          "name": "Data-spike",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: an engaged enemy Vehicle takes D6 mortal wounds on 4+ and loses 1 WS"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 60,
@@ -33188,19 +33703,49 @@
       ],
       "abilities": [
         {
-          "name": "Enginseer"
+          "name": "Enginseer",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative near a Mechanicus Vehicle (3\"), unless leading"
         },
         {
-          "name": "Omnissiah's Blessing"
+          "name": "Omnissiah's Blessing",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Adeptus Mechanicus"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a model within 3\" regains D3 wounds; a Vehicle also gets Feel No Pain 5+"
         },
         {
-          "name": "Vengeance for the Omnissiah"
+          "name": "Vengeance for the Omnissiah",
+          "summary": "Once a Vehicle dies within 12\", its axe gets 6 Attacks"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 55,
@@ -33357,13 +33902,34 @@
           "name": "Leader"
         },
         {
-          "name": "Galvanic Field"
+          "name": "Galvanic Field",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Defend the Divine Work"
+          "name": "Defend the Divine Work",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for a phase: 4+ invulnerable save for its unit"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 60,
@@ -33531,16 +34097,26 @@
       ],
       "abilities": [
         {
-          "name": "Seekers of Divine Arcana"
+          "name": "Seekers of Divine Arcana",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC"
         },
         {
-          "name": "Cogitative Instincts"
+          "name": "Cogitative Instincts",
+          "summary": "Enemy Reinforcements cannot set up within 12\""
         },
         {
           "name": "Support"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 45,
@@ -33729,10 +34305,24 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Termite Assault"
+          "name": "Termite Assault",
+          "summary": "Starts in Reserves, arrives turns 1-3; passengers disembark more than 9\" from enemies"
         },
         {
           "name": "Deadly Demise"
@@ -34034,19 +34624,41 @@
           "name": "Icon of War"
         },
         {
-          "name": "Mechanicus Bodyguard"
+          "name": "Mechanicus Bodyguard",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative near other Mechanicus units (3\")"
         },
         {
-          "name": "Secutor of Olympus"
+          "name": "Secutor of Olympus",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3+1",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: an enemy Vehicle within 12\" takes D3+1 mortal wounds on 2+"
         },
         {
           "name": "Supreme Commander"
         },
         {
-          "name": "Rod of the War Forge"
+          "name": "Rod of the War Forge",
+          "summary": "Each Command phase, one Icon of War ability until your next one"
         },
         {
-          "name": "Baffling Data Screed"
+          "name": "Baffling Data Screed",
+          "summary": "When shooting, on a 2+: an enemy Vehicle within 12\" takes a Battle-shock roll at -1, or the unit stays hidden"
         }
       ],
       "points": 180,
@@ -37131,7 +37743,85 @@
     },
     {
       "id": "doctrina-imperatives",
-      "name": "Doctrina Imperatives"
+      "name": "Doctrina Imperatives",
+      "options": [
+        {
+          "name": "Protector",
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "short-move"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "battleline-near"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Conqueror",
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "battleline-near"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Each battle round: Protector (Heavy, +1 BS) or Conqueror (Assault, +1 WS), with more near Battleline"
     },
     {
       "id": "kill-team",
@@ -37150,7 +37840,26 @@
       "rules": [
         {
           "id": "noospheric-recon",
-          "name": "Noospheric Recon"
+          "name": "Noospheric Recon",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Recon Augury",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Pteraxii",
+              "Infiltrators",
+              "Rangers",
+              "Serberys Raiders",
+              "Serberys Sulphurhounds"
+            ],
+            "noneOf": []
+          },
+          "summary": "Scouting units gain Recon Augury: when shooting, they analyse an enemy within 12\" (+3\" detection range)"
         }
       ],
       "enhancements": [
@@ -37167,7 +37876,14 @@
               "Skitarii Marshal"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self"
+            }
+          ],
+          "summary": "The unit has Infiltrators"
         },
         {
           "id": "stealth-screened-cybercanids",
@@ -37182,7 +37898,15 @@
               "Serberys Raiders"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "value": 15,
+              "target": "self"
+            }
+          ],
+          "summary": "Lone Operative 15\""
         }
       ]
     },
@@ -37196,7 +37920,27 @@
       "rules": [
         {
           "id": "cyber-psalm-programming",
-          "name": "Cyber-psalm Programming"
+          "name": "Cyber-psalm Programming",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Legio Cybernetica"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Legio Cybernetica: +2\" Move and +1 OC unless Battle-shocked"
         }
       ],
       "enhancements": [
@@ -37212,7 +37956,24 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its ranged weapons gain Anti-Vehicle 4+"
         },
         {
           "id": "emotionless-clarity",
@@ -37226,7 +37987,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per turn, a Cybernetica or Mechanicus Vehicle dying within 12\" explodes without a roll"
         },
         {
           "id": "lord-of-machines",
@@ -37240,7 +38002,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per turn, enemy Shooting phase: an enemy Vehicle within 12\" tests Leadership: -1 to hit if passed, cannot shoot if failed"
         },
         {
           "id": "necromechanic",
@@ -37254,7 +38017,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle round, a failed save of a Vehicle within 12\" deals no damage"
         }
       ]
     },
@@ -37269,7 +38033,66 @@
       "rules": [
         {
           "id": "benedictions-of-the-omnissiah",
-          "name": "Benedictions of the Omnissiah"
+          "name": "Benedictions of the Omnissiah",
+          "options": [
+            {
+              "name": "Panegyric Procession: +1 AP within half range",
+              "modifiers": [
+                {
+                  "key": "AP",
+                  "value": -1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    },
+                    {
+                      "key": "half-range"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Citation in Savagery: +1 S and A after charging",
+              "modifiers": [
+                {
+                  "key": "S",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    },
+                    {
+                      "key": "charged"
+                    }
+                  ]
+                },
+                {
+                  "key": "A",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    },
+                    {
+                      "key": "charged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Cult Mechanicus"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "For the battle, Cult Mechanicus get +1 AP within half range, or +1 S and A in melee after charging"
         }
       ],
       "enhancements": [
@@ -37285,7 +38108,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle, its unit also gets the other Benediction until your next Command phase"
         },
         {
           "id": "mantle-of-the-gnosticarch",
@@ -37299,7 +38123,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Every attack allocated to the bearer deals 1 Damage"
         },
         {
           "id": "mechanicus-locum",
@@ -37313,7 +38138,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leadership 6+; once per battle, frees a Cult Mechanicus unit within 12\" from Battle-shock"
         },
         {
           "id": "temporcopia",
@@ -37327,7 +38153,14 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Fights First"
         }
       ]
     },
@@ -37341,7 +38174,37 @@
       "rules": [
         {
           "id": "murderous-imperative",
-          "name": "Murderous Imperative"
+          "name": "Murderous Imperative",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "protector-imperative"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "conqueror-imperative"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Skitarii"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Skitarii re-roll 1s to hit under Protector, 1s to wound under Conqueror"
         }
       ],
       "enhancements": [
@@ -37357,7 +38220,20 @@
               "Adeptus Mechanicus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit’s ranged weapons get +6\" range and +1 S"
         },
         {
           "id": "martial-signatum-amplificator",
@@ -37371,7 +38247,15 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Skitarii",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit gains the Skitarii keyword"
         },
         {
           "id": "omnicogitator",
@@ -37386,7 +38270,8 @@
               "Skitarii"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Both Imperatives active for its unit"
         },
         {
           "id": "omnissiahs-fury",
@@ -37401,7 +38286,40 @@
               "Skitarii"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee: +2 A, +1 AP and D"
         }
       ]
     },
@@ -37415,7 +38333,27 @@
       "rules": [
         {
           "id": "acquisition-at-any-cost",
-          "name": "Acquisition at any Cost"
+          "name": "Acquisition at any Cost",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "acquisition-objective"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Mechanicus"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Re-roll 1s to wound when it or its target is on your Acquisition objective"
         }
       ],
       "enhancements": [
@@ -37431,7 +38369,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leading on the Acquisition objective: once per phase, turn a hit, wound or save into a 6"
         },
         {
           "id": "genetor",
@@ -37445,7 +38384,20 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "acquisition-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading on the Acquisition objective: 4+ invulnerable save"
         },
         {
           "id": "logis",
@@ -37459,7 +38411,20 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-on-acquisition-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit against units on the Acquisition objective"
         },
         {
           "id": "magos",
@@ -37473,7 +38438,15 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "On the Acquisition objective as your Command phase ends: +1CP on a 4+"
         }
       ]
     },
@@ -37488,7 +38461,55 @@
       "rules": [
         {
           "id": "noospheric-transference",
-          "name": "Noospheric Transference"
+          "name": "Noospheric Transference",
+          "options": [
+            {
+              "name": "Electromotive Energisation: +2\" Move",
+              "modifiers": [
+                {
+                  "key": "M",
+                  "value": 2,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Microactuator Bracing: +1 T",
+              "modifiers": [
+                {
+                  "key": "T",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Predation Protocols: charge after Advancing",
+              "modifiers": [
+                {
+                  "key": "advance-and-charge",
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Muted Servomotors: Stealth",
+              "modifiers": [
+                {
+                  "key": "stealth",
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Halo Override"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Command phase: 1-3 units get Halo Override and one boost: +2\" Move, +1 T, charge after Advancing, or Stealth"
         }
       ],
       "enhancements": [
@@ -37506,7 +38527,8 @@
           ],
           "excludes": [
             "Cybernetica Datasmith"
-          ]
+          ],
+          "summary": "Both Imperatives active for its unit"
         },
         {
           "id": "inloaded-lethality",
@@ -37523,7 +38545,30 @@
               "Dominus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+3 A and +1 D in melee"
         },
         {
           "id": "sanctified-ordnance",
@@ -37537,7 +38582,8 @@
               "Adeptus Mechanicus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit’s ranged weapons get +6\" range and re-roll Hazardous tests"
         },
         {
           "id": "transoracular-dyad-wafers",
@@ -37551,7 +38597,8 @@
               "Cybernetica Datasmith"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leading Kastelans: they keep Halo Override all battle"
         }
       ]
     },
@@ -37565,7 +38612,27 @@
       "rules": [
         {
           "id": "war-form-mantles",
-          "name": "War-form Mantles"
+          "name": "War-form Mantles",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            },
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Tech-Priest"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Tech-Priests: 4+ invulnerable and Feel No Pain 5+; they can shake an enemy Vehicle or stay hidden while shooting"
         }
       ],
       "enhancements": [
@@ -37597,7 +38664,19 @@
               "Cybernetica Datasmith"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mobile",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "leading"
+                }
+              ]
+            }
+          ],
+          "summary": "Attached when battle begins: MOBILE for the whole battle"
         }
       ]
     },
@@ -37612,7 +38691,34 @@
       "rules": [
         {
           "id": "cyber-static-canticles",
-          "name": "Cyber-static Canticles"
+          "name": "Cyber-static Canticles",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Corpuscarii"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Corpuscarii",
+              "Fulgurite"
+            ],
+            "noneOf": []
+          },
+          "summary": "Corpuscarii shoot with Lethal Hits; Fulgurites heal D3 after fighting"
         }
       ],
       "enhancements": [
@@ -37629,7 +38735,14 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Stealth"
         },
         {
           "id": "voltagheist-reliquary",
@@ -37644,7 +38757,8 @@
               "Tech-Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies cannot snap shoot at its unit"
         }
       ]
     },
@@ -37658,7 +38772,15 @@
       "rules": [
         {
           "id": "rad-bombardment",
-          "name": "Rad-Bombardment"
+          "name": "Rad-Bombardment",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Round 1, enemies in their deployment zone risk D3 mortal wounds; later rounds, 1 mortal wound and a Battle-shock test on 3+"
         }
       ],
       "enhancements": [
@@ -37674,7 +38796,38 @@
               "Adeptus Mechanicus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged weapons gain Anti-Infantry 2+ and Anti-Monster 4+"
         },
         {
           "id": "malphonic-susurrus",
@@ -37688,7 +38841,14 @@
               "Adeptus Mechanicus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Stealth"
         },
         {
           "id": "peerless-eradicator",
@@ -37702,7 +38862,20 @@
               "Adeptus Mechanicus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 when shooting"
         },
         {
           "id": "radial-suffusion",
@@ -37716,7 +38889,8 @@
               "Adeptus Mechanicus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Fallout also hits enemy units up to 6\" outside their deployment zone"
         }
       ]
     },
@@ -37730,7 +38904,22 @@
       "rules": [
         {
           "id": "stealth-optimisation",
-          "name": "Stealth Optimisation"
+          "name": "Stealth Optimisation",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Skitarii",
+              "Ironstrider Ballistarii"
+            ],
+            "noneOf": []
+          },
+          "summary": "Skitarii Infantry and Mounted, and Ironstriders, have Stealth"
         }
       ],
       "enhancements": [
@@ -37746,7 +38935,15 @@
               "Skitarii"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting: move 6\", then no charge this turn"
         },
         {
           "id": "cantic-thrallnet",
@@ -37760,7 +38957,8 @@
               "Marshal"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Each battle round, one Skitarii unit within 12\" gets both Imperatives"
         },
         {
           "id": "clandestine-infiltrator",
@@ -37774,7 +38972,19 @@
               "Skitarii"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self"
+            },
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer and its unit have Infiltrators and Scouts 6\""
         },
         {
           "id": "veiled-hunter",
@@ -37788,7 +38998,8 @@
               "Marshal"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three Skitarii Infantry units, even into Strategic Reserves"
         }
       ]
     }
@@ -37804,7 +39015,21 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Skorpius Dunerider"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault-disembark",
+          "target": "self"
+        }
+      ],
+      "summary": "Units leaving the Dunerider after its Normal move make an assault disembark"
     },
     {
       "id": "aggressor-imperative",
@@ -37816,7 +39041,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Skitarii"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Advances a flat 6\" (a second Skitarii unit too, if Battleline)"
     },
     {
       "id": "analytic-reprisals",
@@ -37828,6 +39068,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -37836,7 +39077,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Lost models to shooting: shoot back at the attacker"
     },
     {
       "id": "analytical-divination",
@@ -37848,7 +39090,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Kataphron"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Enemy ended a move within 8\": infantry moves D6\" (6\" with Halo Override)"
     },
     {
       "id": "auto-divinatory-targeting",
@@ -37860,7 +39121,29 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Vehicle"
+        ],
+        "anyOf": [
+          "Legio Cybernetica",
+          "Adeptus Mechanicus"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "BS 3+ and Ignores Cover, but only against units on one chosen objective"
     },
     {
       "id": "auto-oracular-retrieval",
@@ -37872,7 +39155,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-on-acquisition-objective"
+            }
+          ]
+        }
+      ],
+      "summary": "Just disembarked: +1 to wound against targets on the Acquisition objective"
     },
     {
       "id": "baleful-halo",
@@ -37884,7 +39190,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Vehicle"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to wound this turn (a second Skitarii unit too, if Battleline)"
     },
     {
       "id": "benevolence-of-the-omnissiah",
@@ -37896,7 +39220,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Vehicle"
+        ],
+        "anyOf": [
+          "Legio Cybernetica",
+          "Adeptus Mechanicus"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 6+, 5+ against mortal wounds, until your next Command phase"
     },
     {
       "id": "binharic-offence",
@@ -37909,7 +39251,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Skitarii"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self"
+        }
+      ],
+      "summary": "Two Skitarii units focus one enemy: +1 AP"
     },
     {
       "id": "bionic-endurance",
@@ -37922,7 +39280,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Sicarian",
+          "Pteraxii",
+          "Sydonian"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 5+"
     },
     {
       "id": "bulwark-imperative",
@@ -37934,7 +39310,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Skitarii"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save (a second Skitarii unit too, if Battleline)"
     },
     {
       "id": "cached-acquisition",
@@ -37950,7 +39342,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A unit destroyed on your objective keeps it yours"
     },
     {
       "id": "chant-of-electrotraction",
@@ -37962,13 +39362,21 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Electro-Priests"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Advancing does not stop it charging"
     },
     {
       "id": "chant-of-the-remorseless-fist",
@@ -37980,7 +39388,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Cult Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound in melee"
     },
     {
       "id": "clandestine-reposition",
@@ -37992,13 +39420,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "target": {
-        "allOf": [
-          "Adeptus Mechanicus"
+        "allOf": [],
+        "anyOf": [
+          "Infiltrators",
+          "Pteraxii"
         ],
-        "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Fight phase: unengaged Infiltrators or Pteraxii go into Strategic Reserves"
     },
     {
       "id": "defect-scrutiny",
@@ -38010,13 +39447,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Adeptus Mechanicus"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover against one enemy a Recon Augury unit sees within 12\""
     },
     {
       "id": "echoes-of-the-conduit-wars",
@@ -38029,13 +39479,37 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Electro-Priests"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-on-objective"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-on-objective"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit and wound against units on an objective"
     },
     {
       "id": "eradication-protocols",
@@ -38048,7 +39522,32 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "halo-override"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to wound (and to hit with Halo Override)"
     },
     {
       "id": "expedited-purge-protocol",
@@ -38060,7 +39559,21 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Skitarii"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can charge after Advancing"
     },
     {
       "id": "extinction-order",
@@ -38072,7 +39585,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tech-Priest"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies on one objective within 24\": a mortal wound and a Battle-shock test on 4+"
     },
     {
       "id": "guided-retreat",
@@ -38084,7 +39612,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge"
     },
     {
       "id": "holy-avarice",
@@ -38102,7 +39648,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Starting an action does not stop it shooting"
     },
     {
       "id": "incantation-of-the-iron-soul",
@@ -38118,7 +39665,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Cult Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 4+ against mortal wounds this phase"
     },
     {
       "id": "incense-exhausts",
@@ -38130,7 +39697,27 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        },
+        {
+          "key": "cover",
+          "target": "self"
+        }
+      ],
+      "summary": "With a Smoke unit within 6\": both get Stealth and cover"
     },
     {
       "id": "infoslave-skull",
@@ -38142,7 +39729,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Tech-Priest"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A second objective within 24\" also counts as your Acquisition objective"
     },
     {
       "id": "isolate-and-destroy",
@@ -38154,7 +39749,31 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Sicarian",
+          "Pteraxii",
+          "Sydonian",
+          "Ironstrider Ballistarii",
+          "Skitarii"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-isolated"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound against a target with no other enemy unit within 6\""
     },
     {
       "id": "lethal-dosage",
@@ -38166,7 +39785,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits when shooting"
     },
     {
       "id": "litany-of-the-electromancer",
@@ -38178,7 +39816,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cult Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Each enemy unit within 6\": D3 mortal wounds on a 5+ (+1 for Electro-Priests)"
     },
     {
       "id": "luminescent-blessing",
@@ -38190,7 +39843,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Cult Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save"
     },
     {
       "id": "machine-spirit-resurgent",
@@ -38202,7 +39871,40 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Vehicle"
+        ],
+        "anyOf": [
+          "Legio Cybernetica",
+          "Adeptus Mechanicus"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "below-starting-strength"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "below-half-strength"
+            }
+          ]
+        }
+      ],
+      "summary": "Below Starting Strength: re-roll hits; Below Half-strength, wounds too"
     },
     {
       "id": "machine-superiority",
@@ -38214,7 +39916,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Vehicle"
+        ],
+        "anyOf": [
+          "Legio Cybernetica",
+          "Adeptus Mechanicus"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Can shoot after Falling Back and ignores modifiers to its characteristics and rolls (saves excepted)"
     },
     {
       "id": "momentum-feedback",
@@ -38226,13 +39945,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
           "Electro-Priests"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at while unengaged: surge D6\""
     },
     {
       "id": "motive-imperative",
@@ -38244,7 +39972,33 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 3,
+          "target": "self"
+        },
+        {
+          "key": "advance",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "charge",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "+3\" Move and +1 to Advance and charge rolls"
     },
     {
       "id": "neural-overload",
@@ -38256,7 +40010,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "One extra Override ability until your next Command phase (D3 mortal wounds if it already has one)"
     },
     {
       "id": "overloaded-safeguards",
@@ -38266,15 +40028,27 @@
       "phases": [
         "movement"
       ],
-      "playerTurn": "either",
+      "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
       "target": {
         "allOf": [
           "Tech-Priest"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Falling Back does not stop it shooting or charging"
     },
     {
       "id": "pre-calibrated-purge-solution",
@@ -38286,7 +40060,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-in-deployment-zone"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits against targets in the enemy deployment zone"
     },
     {
       "id": "precision-onslaught",
@@ -38298,6 +40095,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "charge-declared",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -38305,7 +40103,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: a D6 per engaged model, each 4+ a mortal wound"
     },
     {
       "id": "priority-reclamation",
@@ -38317,7 +40123,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Consolidates 6\" if it ends on the Acquisition objective"
     },
     {
       "id": "programmed-withdrawal",
@@ -38329,7 +40150,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Sicarian",
+          "Skitarii"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Fight phase: two Sicarian units, or one Skitarii unit, go into Strategic Reserves"
     },
     {
       "id": "reactive-safeguard",
@@ -38341,7 +40178,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "charge-declared",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Charged on the Acquisition objective: jumps into a Transport within 3\""
     },
     {
       "id": "repolarised-augurs",
@@ -38353,13 +40200,15 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Recon Augury"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "-3\" detection range this turn"
     },
     {
       "id": "scriptural-prognosis",
@@ -38372,13 +40221,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
           "Tech-Priest"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "On an objective: attacks against it get AP worsened by 1"
     },
     {
       "id": "servo-driven-charge",
@@ -38397,7 +40255,23 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Lance in melee"
     },
     {
       "id": "shroud-protocols",
@@ -38409,7 +40283,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Skitarii",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Can only be shot from 18\" or closer this phase"
     },
     {
       "id": "targeting-override",
@@ -38422,7 +40306,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Critical hits on 5+"
     },
     {
       "id": "threat-cogitation-targeters",
@@ -38454,7 +40353,18 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Vehicle"
+        ],
+        "anyOf": [
+          "Legio Cybernetica",
+          "Adeptus Mechanicus"
+        ],
+        "noneOf": []
+      },
+      "summary": "Both Imperatives active for the unit"
     },
     {
       "id": "tribute-of-emphatic-veneration",
@@ -38466,7 +40376,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cult Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy within 18\" tests Battle-shock; if it fails, -1 to hit until your next Command phase"
     },
     {
       "id": "unrelenting-aggression",
@@ -38478,6 +40403,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -38485,7 +40411,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot (Skitarii can charge too)"
     },
     {
       "id": "unshackled-wrath",
@@ -38504,7 +40437,72 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "options": [
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Both, with Hazardous",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "hazardous",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Sustained Hits 1 or Lethal Hits — or both, with Hazardous"
     },
     {
       "id": "verse-of-vengeance",
@@ -38516,7 +40514,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cult Mechanicus"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "Models slain before fighting still fight on a 4+"
     }
   ]
 }
