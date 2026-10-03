@@ -6643,10 +6643,38 @@
       ],
       "abilities": [
         {
-          "name": "Redeemer of the Lost"
+          "name": "Redeemer of the Lost",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: models slain in melee before fighting still fight on a 4+"
         },
         {
-          "name": "Mass of Doom"
+          "name": "Mass of Doom",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After its unit charges: Devastating Wounds in melee"
         },
         {
           "name": "Leader"
@@ -7457,10 +7485,30 @@
       ],
       "abilities": [
         {
-          "name": "Overcharged Engines"
+          "name": "Overcharged Engines",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance rolls"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 135,
@@ -9443,10 +9491,46 @@
           "name": "Leader"
         },
         {
-          "name": "Rites of Battle"
+          "name": "Rites of Battle",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Finest Hour"
+          "name": "Finest Hour",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 melee Attacks with Devastating Wounds"
         }
       ],
       "points": 90,
@@ -9731,10 +9815,31 @@
       ],
       "abilities": [
         {
-          "name": "Sanguinary Priest"
+          "name": "Sanguinary Priest",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "The Red Grail"
+          "name": "The Red Grail",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 melee Attack"
         },
         {
           "name": "Leader"
@@ -12576,16 +12681,71 @@
       ],
       "abilities": [
         {
-          "name": "Gifted Commander"
+          "name": "Gifted Commander",
+          "options": [
+            {
+              "name": "Assault",
+              "modifiers": [
+                {
+                  "key": "assault",
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Heavy",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": 1,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    },
+                    {
+                      "key": "short-move"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Rapid Fire 1",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 1,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    },
+                    {
+                      "key": "half-range"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Leading, when shooting: Assault, Heavy or Rapid Fire 1"
         },
         {
-          "name": "Embittered"
+          "name": "Embittered",
+          "summary": "Once first hit, its Dead Man’s Hand has 12 Attacks"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Tycho"
+          "name": "Tycho",
+          "summary": "Only one Tycho in the army"
         },
         {
           "name": "Invulnerable Save"
@@ -18512,7 +18672,8 @@
           "name": "The Quickening [Psychic]"
         },
         {
-          "name": "Transfixing Gaze [Aura, Psychic]"
+          "name": "Transfixing Gaze [Aura, Psychic]",
+          "summary": "Enemies 6\" or closer must pass Leadership to Fall Back, or stay put"
         }
       ],
       "points": 175,
@@ -19800,7 +19961,15 @@
       ],
       "abilities": [
         {
-          "name": "Death Mask of Sanguinius"
+          "name": "Death Mask of Sanguinius",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: enemies 6\" or closer test Battle-shock at -1"
         },
         {
           "name": "Lord Regent of the Imperium Nihilus"
@@ -22311,13 +22480,42 @@
           "name": "Leader"
         },
         {
-          "name": "Forlorn Hero"
+          "name": "Forlorn Hero",
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading, unless embarked: Scouts 6\""
         },
         {
-          "name": "Death Vision of Sanguinius"
+          "name": "Death Vision of Sanguinius",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Slain in melee: its killer takes D3, 3 or D3+3 mortal wounds (better against the Warlord)"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 80,
@@ -22590,16 +22788,50 @@
       ],
       "abilities": [
         {
-          "name": "Death Vision of Sanguinius"
+          "name": "Death Vision of Sanguinius",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Slain in melee: its killer takes D3, 3 or D3+3 mortal wounds (better against the Warlord)"
         },
         {
-          "name": "Lost to Fury"
+          "name": "Lost to Fury",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 85,
@@ -22891,13 +23123,47 @@
       ],
       "abilities": [
         {
-          "name": "Driven by Fury"
+          "name": "Driven by Fury",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+2",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost wounds to shooting: a D6+2\" surge move"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 165,
@@ -23145,13 +23411,35 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Reprisal"
+          "name": "Frenzied Reprisal",
+          "summary": "Once per turn, after an enemy fights it: fights again at once"
         },
         {
-          "name": "Magna-grapple"
+          "name": "Magna-grapple",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2 to charge Monsters and Vehicles"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 145,
@@ -23532,13 +23820,39 @@
       ],
       "abilities": [
         {
-          "name": "An Honourable Death in Combat"
+          "name": "An Honourable Death in Combat",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 below Starting Strength, 2 Below Half-strength"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 90,
@@ -24028,10 +24342,35 @@
           "name": "Attached Unit"
         },
         {
-          "name": "Visions of Heresy"
+          "name": "Visions of Heresy",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll charges; Fire Overwatch and Heroic Intervention on it cost 1CP less"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 80,
@@ -24494,13 +24833,39 @@
       ],
       "abilities": [
         {
-          "name": "An Honourable Death in Combat"
+          "name": "An Honourable Death in Combat",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 below Starting Strength, 2 Below Half-strength"
         },
         {
           "name": "Attached Leader"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 125,
@@ -24943,7 +25308,20 @@
           "name": "Attached Leader"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 140,
@@ -25335,13 +25713,33 @@
       ],
       "abilities": [
         {
-          "name": "Savage Fury"
+          "name": "Savage Fury",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll charges"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 130,
@@ -35409,10 +35807,26 @@
       ],
       "abilities": [
         {
-          "name": "Wrathful Rampage"
+          "name": "Wrathful Rampage",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "When it fights: an engaged enemy takes D3 on 4-5, 3 on 6+ (+2 after charging)"
         },
         {
-          "name": "Magna-grapple"
+          "name": "Magna-grapple",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "Loses Smoke; +2 to charge Monsters and Vehicles"
         }
       ],
       "points": 150,
@@ -35713,7 +36127,14 @@
       ],
       "abilities": [
         {
-          "name": "Lord of Slaughter"
+          "name": "Lord of Slaughter",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: can charge after Advancing"
         },
         {
           "name": "Whirlwind of Rage"
@@ -53772,10 +54193,30 @@
       ],
       "abilities": [
         {
-          "name": "Guardian of the Lost"
+          "name": "Guardian of the Lost",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: -1 Damage to attacks against its unit"
         },
         {
-          "name": "Fury Unbound"
+          "name": "Fury Unbound",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits in melee"
         },
         {
           "name": "Leader"
@@ -54581,10 +55022,25 @@
       ],
       "abilities": [
         {
-          "name": "Shield of Sanguinius (Aura, Psychic)"
+          "name": "Shield of Sanguinius (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly units 6\" or closer: Feel No Pain 5+ against mortal wounds and Psychic attacks"
         },
         {
-          "name": "Wings of Sanguinius (Psychic)"
+          "name": "Wings of Sanguinius (Psychic)",
+          "summary": "Once per turn, on a 2+: an infantry unit 12\" or closer redeploys 8\" from enemies"
         }
       ],
       "points": 170,
@@ -68356,16 +68812,53 @@
       ],
       "abilities": [
         {
-          "name": "Angelic Visage"
+          "name": "Angelic Visage",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee attacks against it get -1 to hit"
         },
         {
-          "name": "Heirs of Azkaellon"
+          "name": "Heirs of Azkaellon",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Character: melee attacks against it get -1 to wound"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Sanguinary Banner"
+          "name": "Sanguinary Banner",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         }
       ],
       "points": 135,
@@ -68578,10 +69071,31 @@
       ],
       "abilities": [
         {
-          "name": "Sanguinary Priest"
+          "name": "Sanguinary Priest",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "Blood Chalice"
+          "name": "Blood Chalice",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 AP in melee"
         },
         {
           "name": "Support"
@@ -68942,13 +69456,34 @@
       ],
       "abilities": [
         {
-          "name": "Blood Chalice"
+          "name": "Blood Chalice",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 AP in melee"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Sanguinary Priest"
+          "name": "Sanguinary Priest",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         }
       ],
       "points": 135,
@@ -69253,10 +69788,31 @@
       ],
       "abilities": [
         {
-          "name": "Sanguinary Priest"
+          "name": "Sanguinary Priest",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "Blood Chalice"
+          "name": "Blood Chalice",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 AP in melee"
         },
         {
           "name": "Support"
@@ -80687,7 +81243,8 @@
       ],
       "abilities": [
         {
-          "name": "Aura of Fervour (Aura)"
+          "name": "Aura of Fervour (Aura)",
+          "summary": "Friendly units 6\" or closer re-roll Battle-shock and Leadership tests"
         },
         {
           "name": "Miraculous Savior"
@@ -81497,13 +82054,21 @@
       ],
       "abilities": [
         {
-          "name": "Forlorn Hero"
+          "name": "Forlorn Hero",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: can charge after Advancing"
         },
         {
           "name": "Death Visions of Sanguinius"
         },
         {
-          "name": "Tycho"
+          "name": "Tycho",
+          "summary": "Only one Tycho in the army"
         },
         {
           "name": "Leader"
@@ -81512,7 +82077,20 @@
           "name": "Invulnerable Save"
         },
         {
-          "name": "Black Rage"
+          "name": "Black Rage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits in melee; far from a Blood Angels Character or Chaplain it cannot Fall Back and has OC 0"
         }
       ],
       "points": 90,
@@ -88295,7 +88873,90 @@
         "priority-assets",
         "purge-the-foe"
       ],
-      "rules": [],
+      "rules": [
+        {
+          "id": "legacy-of-the-angel",
+          "name": "Legacy of the Angel",
+          "options": [
+            {
+              "name": "Sanguinary Grace + Carmine Wrath",
+              "modifiers": [
+                {
+                  "key": "fall-back-and-shoot",
+                  "target": "self"
+                },
+                {
+                  "key": "fall-back-and-charge",
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-hit",
+                  "value": 1,
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-wound",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Sanguinary Grace + Their Appointed Hour",
+              "modifiers": [
+                {
+                  "key": "fall-back-and-shoot",
+                  "target": "self"
+                },
+                {
+                  "key": "fall-back-and-charge",
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-advance",
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-charge",
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Carmine Wrath + Their Appointed Hour",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": 1,
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-wound",
+                  "value": 1,
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-advance",
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-charge",
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Astartes",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Characters gain two Legacies for the battle: act after Falling Back, re-roll 1s to hit and wound, or re-roll Advance and charge"
+        }
+      ],
       "enhancements": [
         {
           "id": "blazing-icon",
@@ -88310,7 +88971,8 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies cannot Fire Overwatch at its unit"
         },
         {
           "id": "ordained-sacrifice",
@@ -88324,7 +88986,8 @@
               "Adeptus Astartes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "First death: on a 2+ returns with 3 wounds once the phase ends"
         },
         {
           "id": "prescient-flash",
@@ -88338,7 +89001,15 @@
               "Adeptus Astartes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Scouts 6\""
         },
         {
           "id": "unto-death",
@@ -88348,7 +89019,8 @@
           "aura": false,
           "maxTargets": 1,
           "requires": [],
-          "excludes": []
+          "excludes": [],
+          "summary": "Adeptus Astartes only"
         }
       ]
     },
@@ -88444,7 +89116,30 @@
       "forceDispositions": [
         "disruption"
       ],
-      "rules": [],
+      "rules": [
+        {
+          "id": "wrath-of-angels",
+          "name": "Wrath of Angels",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Sanguinary Guard"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Sanguinary Guard shoot and charge after Falling Back; Blood Angels only"
+        }
+      ],
       "enhancements": [
         {
           "id": "angelic-executioner",
@@ -88459,7 +89154,39 @@
               "Jump Pack"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "options": [
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "When its unit fights: Lethal Hits or Sustained Hits 1 in melee"
         },
         {
           "id": "shadow-of-abomination",
@@ -88474,7 +89201,23 @@
               "Jump Pack"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, fighting: +1 melee Damage"
         }
       ]
     },
@@ -89028,7 +89771,26 @@
       "forceDispositions": [
         "purge-the-foe"
       ],
-      "rules": [],
+      "rules": [
+        {
+          "id": "fanatical-celerity",
+          "name": "Fanatical Celerity",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Death Company"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Death Company may take D3+1 mortal wounds when Advancing to still charge; Blood Angels only"
+        }
+      ],
       "enhancements": [
         {
           "id": "instinctive-interception",
@@ -89042,7 +89804,15 @@
               "Death Company"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on its unit costs 1CP less"
         },
         {
           "id": "on-the-archtraitors-bridge",
@@ -89056,7 +89826,20 @@
               "Death Company"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 melee Attacks"
         }
       ]
     }
@@ -89239,7 +90022,22 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Sanguinary Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        }
+      ],
+      "summary": "Stealth"
     },
     {
       "id": "blitzing-fusillade",
@@ -89285,7 +90083,35 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "unit-destroyed",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "aura",
+          "keywords": {
+            "allOf": [
+              "Death Company"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A killer of your unit is hated: Death Company get +1 to wound it"
     },
     {
       "id": "focused-fury",
@@ -89297,7 +90123,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits in melee (and Lance for Characters) this phase"
     },
     {
       "id": "full-throttle",
@@ -89376,7 +90221,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A Character unit can only be shot from 18\" or closer this phase"
     },
     {
       "id": "inexorable-valour",
@@ -89387,7 +90242,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Sanguinary Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "A D3+3\" Normal move"
     },
     {
       "id": "instant-of-grace",
@@ -89399,7 +90270,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "One model becomes a Character until your next Command phase"
     },
     {
       "id": "judgement-of-the-golden-host",
@@ -89410,7 +90290,23 @@
         "charge"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Sanguinary Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: a D6 per engaged model, each 3+ a mortal wound"
     },
     {
       "id": "mercy-is-weakness",
@@ -89451,10 +90347,26 @@
       "detachmentId": "wrath-of-the-doomed",
       "cp": 1,
       "phases": [
-        "shooting"
+        "movement",
+        "charge"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Death Company Dreadnought"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mobile",
+          "target": "self"
+        }
+      ],
+      "summary": "Mobile"
     },
     {
       "id": "only-in-death-does-duty-end",
@@ -89520,7 +90432,23 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Death Company"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a D6\" surge move"
     },
     {
       "id": "ride-hard-ride-fast",
@@ -89661,7 +90589,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Sustained Hits 1 when shooting this phase"
     },
     {
       "id": "unbowed-conviction",
@@ -89693,7 +90641,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Jump Pack"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged (the Sanguinor even engaged): back into Strategic Reserves"
     },
     {
       "id": "vengeful-animus",
