@@ -11754,10 +11754,31 @@
       ],
       "abilities": [
         {
-          "name": "Press the Attack"
+          "name": "Press the Attack",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Its unit has Sustained Hits 1"
         },
         {
-          "name": "Honour of Ultramar"
+          "name": "Honour of Ultramar",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: fights on a 2+, and survives with D3 wounds if it kills"
         },
         {
           "name": "Leader"
@@ -12998,10 +13019,31 @@
       ],
       "abilities": [
         {
-          "name": "Knight Champion of Macragge"
+          "name": "Knight Champion of Macragge",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a 6\" Normal move"
         },
         {
-          "name": "Honour or Death"
+          "name": "Honour or Death",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to Advance and charge; Heroic Intervention costs 1CP less"
         },
         {
           "name": "Support"
@@ -16404,10 +16446,35 @@
       ],
       "abilities": [
         {
-          "name": "Catechism of Death"
+          "name": "Catechism of Death",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With Cassius: Devastating Wounds in melee"
         },
         {
-          "name": "Inspired Retribution"
+          "name": "Inspired Retribution",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: models slain in melee before fighting still fight on a 4+"
         },
         {
           "name": "Leader"
@@ -17953,10 +18020,40 @@
       ],
       "abilities": [
         {
-          "name": "Hood of Hellfire"
+          "name": "Hood of Hellfire",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Feel No Pain 4+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Master of Prescience (Psychic)"
+          "name": "Master of Prescience (Psychic)",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "attached"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Stealth, -1 to hit it in melee; once per round a reactive Stratagem on it costs 1CP less"
         },
         {
           "name": "Leader"
@@ -52893,7 +52990,15 @@
       ],
       "abilities": [
         {
-          "name": "Press the Attack"
+          "name": "Press the Attack",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Its unit has Sustained Hits 1"
         },
         {
           "name": "Honour of the Chapter"
@@ -53277,10 +53382,37 @@
       ],
       "abilities": [
         {
-          "name": "Inspiring Leader"
+          "name": "Inspiring Leader",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit shoots and charges after Advancing or Falling Back"
         },
         {
-          "name": "Master Tactician"
+          "name": "Master Tactician",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "As Warlord on the table: +1CP as your Command phase starts"
         },
         {
           "name": "Leader"
@@ -62919,13 +63051,27 @@
       ],
       "abilities": [
         {
-          "name": "Author of the Codex"
+          "name": "Author of the Codex",
+          "summary": "Command phase: picks two Author of the Codex abilities"
         },
         {
-          "name": "Ultramarines Bodyguard"
+          "name": "Ultramarines Bodyguard",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Near friendly infantry (3\"): Lone Operative"
         },
         {
-          "name": "Armour of Fate"
+          "name": "Armour of Fate",
+          "summary": "First death: on a 3+ returns with 6 wounds once the phase ends"
         },
         {
           "name": "Supreme Commander"
@@ -65207,10 +65353,12 @@
       ],
       "abilities": [
         {
-          "name": "Tank Commander"
+          "name": "Tank Commander",
+          "summary": "Commanding a Vehicle: its guns hit on 2+ and it may roll one wound again per shooting"
         },
         {
-          "name": "Chronus"
+          "name": "Chronus",
+          "summary": "Leaving the Vehicle it commanded: Lone Operative for the battle"
         }
       ],
       "points": 75,
@@ -65338,10 +65486,54 @@
       ],
       "abilities": [
         {
-          "name": "Voice of Experience"
+          "name": "Voice of Experience",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC and +1 to hit"
         },
         {
-          "name": "Guiding Hand"
+          "name": "Guiding Hand",
+          "options": [
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "attached"
+                }
+              ]
+            },
+            {
+              "name": "Precision",
+              "modifiers": [
+                {
+                  "key": "precision",
+                  "target": "attached"
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "attached"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading, when its unit shoots or fights: Lethal Hits, Precision or Sustained Hits 1"
         },
         {
           "name": "Leader"
@@ -76386,7 +76578,20 @@
       ],
       "abilities": [
         {
-          "name": "Tyrannic War Veterans"
+          "name": "Tyrannic War Veterans",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Tyranids"
+                }
+              ]
+            }
+          ],
+          "summary": "Devastating Wounds against Tyranids"
         }
       ],
       "points": 85,
@@ -76701,7 +76906,8 @@
           "name": "Unorthodox Strategist [Aura]"
         },
         {
-          "name": "Master of the Fleet"
+          "name": "Master of the Fleet",
+          "summary": "Battle formations: a Phobos, Gravis or Tacticus infantry unit gains Deep Strike"
         },
         {
           "name": "Leader"
@@ -79431,16 +79637,66 @@
       ],
       "abilities": [
         {
-          "name": "Ultramarines Honour Guard"
+          "name": "Ultramarines Honour Guard",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Captain or Chapter Master: -1 to wound it"
         },
         {
-          "name": "Glory of Ultramar"
+          "name": "Glory of Ultramar",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost a model to shooting: a D6\" surge move"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Banner of Macragge"
+          "name": "Banner of Macragge",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +1 S and A in melee"
         }
       ],
       "points": 120,
@@ -81769,19 +82025,44 @@
       ],
       "abilities": [
         {
-          "name": "Second Company Banner"
+          "name": "Second Company Banner",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "With Gadriel: +1 OC (and +1 Ld with Titus too)"
         },
         {
-          "name": "Strategium Command"
+          "name": "Strategium Command",
+          "summary": "After deployment: redeploys up to three units, Reserves allowed"
         },
         {
           "name": "Support"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Refractor Field"
+          "name": "Refractor Field",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 5+ invulnerable save"
         }
       ],
       "points": 115,
