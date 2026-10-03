@@ -12389,10 +12389,51 @@
           "name": "Support"
         },
         {
-          "name": "Vehement Aggression"
+          "name": "Vehement Aggression",
+          "options": [
+            {
+              "name": "Leadership passed",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": "all",
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Leadership failed",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": 1,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Leading, when its unit fights: pass Leadership to re-roll all hits, else only 1s"
         },
         {
-          "name": "Prioritised Eradication"
+          "name": "Prioritised Eradication",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit kills a unit in melee: 1CP on a 4+"
         }
       ],
       "points": 75,
@@ -16352,10 +16393,24 @@
       ],
       "abilities": [
         {
-          "name": "Litanies of the Devout"
+          "name": "Litanies of the Devout",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: re-roll hits in melee"
         },
         {
-          "name": "Temple Relics"
+          "name": "Temple Relics",
+          "summary": "With Cenobyte Servitors: Grimaldus picks a relic each Command phase"
         },
         {
           "name": "Leader"
@@ -20586,10 +20641,31 @@
       ],
       "abilities": [
         {
-          "name": "Vengeful Exhortation"
+          "name": "Vengeful Exhortation",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: models slain in melee before fighting still fight on a 4+"
         },
         {
-          "name": "Martial Honour"
+          "name": "Martial Honour",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 5,
+              "target": "self"
+            }
+          ],
+          "summary": "Once its unit kills a unit in melee: +5 OC for the battle, unless Battle-shocked"
         },
         {
           "name": "Support"
@@ -20904,7 +20980,15 @@
       ],
       "abilities": [
         {
-          "name": "Righteous Zeal"
+          "name": "Righteous Zeal",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+2",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost models to shooting: a D6+2\" surge move"
         },
         {
           "name": "Attached Unit"
@@ -26983,16 +27067,41 @@
       ],
       "abilities": [
         {
-          "name": "Armour of Faith"
+          "name": "Armour of Faith",
+          "summary": "Once per phase, after a failed save: the attack deals no damage"
         },
         {
-          "name": "Sigismund's Heir"
+          "name": "Sigismund's Heir",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll charges at Characters; once per battle, Devastating Wounds against one"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Chosen of the Emperor"
+          "name": "Chosen of the Emperor",
+          "summary": "Only one Emperor’s Champion in the army"
         }
       ],
       "points": 100,
@@ -27134,16 +27243,41 @@
       ],
       "abilities": [
         {
-          "name": "Armour of Faith"
+          "name": "Armour of Faith",
+          "summary": "Once per phase, after a failed save: the attack deals no damage"
         },
         {
-          "name": "Sigismund's Heir"
+          "name": "Sigismund's Heir",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll charges at Characters; once per battle, Devastating Wounds against one"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Chosen of the Emperor"
+          "name": "Chosen of the Emperor",
+          "summary": "Only one Emperor’s Champion in the army"
         },
         {
           "name": "Invulnerable Save"
@@ -29435,10 +29569,24 @@
           "name": "Leader"
         },
         {
-          "name": "Remorseless Persecution"
+          "name": "Remorseless Persecution",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: can charge after Advancing"
         },
         {
-          "name": "Condemnatory Annihilation"
+          "name": "Condemnatory Annihilation",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Its unit kills a unit: enemies 6\" or closer test Battle-shock"
         }
       ],
       "points": 65,
@@ -32549,10 +32697,24 @@
       ],
       "abilities": [
         {
-          "name": "Aquilon Optics"
+          "name": "Aquilon Optics",
+          "summary": "Shooting: one hit, one wound and one damage roll may be rolled again"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 165,
@@ -32851,10 +33013,40 @@
       ],
       "abilities": [
         {
-          "name": "Rotating Death"
+          "name": "Rotating Death",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Its gatling cannon gains Sustained Hits 2 against Infantry"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 165,
@@ -33337,10 +33529,60 @@
       ],
       "abilities": [
         {
-          "name": "Ferocious Assault"
+          "name": "Ferocious Assault",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit the closest Monster or Vehicle"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 145,
@@ -35068,10 +35310,41 @@
       ],
       "abilities": [
         {
-          "name": "Crusade of Wrath"
+          "name": "Crusade of Wrath",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 A and S in melee"
         },
         {
-          "name": "High Marshal"
+          "name": "High Marshal",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fight phase starts: an engaged enemy takes D3, 3 or D3+3 mortal wounds (+1 per five models)"
         },
         {
           "name": "Leader"
@@ -36905,13 +37178,22 @@
           "name": "Transport"
         },
         {
-          "name": "Assault Vehicle"
+          "name": "Assault Vehicle",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         },
         {
           "name": "Orbital Comms Array [Aura]"
         },
         {
-          "name": "Shield Dome"
+          "name": "Shield Dome",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 5+ invulnerable save"
         }
       ],
       "points": 70,
@@ -49338,13 +49620,33 @@
           "name": "Transport"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
           "name": "Legacy of Jerulas"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 245,
@@ -55689,10 +55991,36 @@
           "name": "Leader"
         },
         {
-          "name": "Inspirational Exemplar"
+          "name": "Inspirational Exemplar",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: critical hits on 5+ in melee"
         },
         {
-          "name": "Pious Fervour"
+          "name": "Pious Fervour",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Fighting: +1 Attack with its power weapon per enemy unit 6\" or closer (3 at most)"
         }
       ],
       "points": 80,
@@ -64417,7 +64745,20 @@
           "name": "Stabilised Disembarkation"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 190,
@@ -65497,7 +65838,20 @@
           "name": "Interception Strike"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 265,
@@ -75254,16 +75608,38 @@
       ],
       "abilities": [
         {
-          "name": "Exploit Their Cowardice"
+          "name": "Exploit Their Cowardice",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "target": "self"
+            }
+          ],
+          "summary": "An engaged enemy Falls Back: once free, a Normal move"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Fervent Exemplars"
+          "name": "Fervent Exemplars",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "With this Enhancement: +1 to charge"
         },
         {
-          "name": "Inheritors of Sigismund"
+          "name": "Inheritors of Sigismund",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self"
+            }
+          ],
+          "summary": "With this Enhancement: Fights First"
         }
       ],
       "points": 115,
@@ -78525,7 +78901,8 @@
       ],
       "abilities": [
         {
-          "name": "Teleport Homer"
+          "name": "Teleport Homer",
+          "summary": "Once per battle, Rapid Ingress for 0CP next to its homer"
         },
         {
           "name": "Judgement of the Weak"
@@ -86722,7 +87099,63 @@
     },
     {
       "id": "templar-vows",
-      "name": "Templar Vows"
+      "name": "Templar Vows",
+      "options": [
+        {
+          "name": "Abhor the Witch, Destroy the Witch",
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Psyker"
+                }
+              ]
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Accept Any Challenge, No Matter the Odds",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "strength-not-above-toughness"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Suffer Not the Unclean to Live",
+          "modifiers": [
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Uphold the Honour of the Emperor",
+          "modifiers": []
+        }
+      ],
+      "summary": "One Vow for the battle: Precision against Psykers, +1 to wound tougher foes, charge after Falling Back, or sticky objectives"
     }
   ],
   "detachments": [
@@ -87022,7 +87455,27 @@
       "forceDispositions": [
         "priority-assets"
       ],
-      "rules": [],
+      "rules": [
+        {
+          "id": "faith-fuelled-resolve",
+          "name": "Faith-fuelled Resolve",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Sword Brethren Squad"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Sword Brethren get +1 OC; Black Templars only"
+        }
+      ],
       "enhancements": [
         {
           "id": "fervent-exemplars",
@@ -87037,7 +87490,15 @@
               "Sword Brethren Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to charge"
         },
         {
           "id": "inheritors-of-sigismund",
@@ -87052,7 +87513,14 @@
               "Sword Brethren Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self"
+            }
+          ],
+          "summary": "Fights First"
         }
       ]
     },
@@ -87472,7 +87940,23 @@
         "charge"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Sword Brethren Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: a D6 per engaged model, each 4+ a mortal wound (6 at most)"
     },
     {
       "id": "blitzing-fusillade",
@@ -87668,7 +88152,46 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Sword Brethren Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 2,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "S",
+          "value": 2,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "+2 S in melee against Monsters and Vehicles"
     },
     {
       "id": "unbowed-conviction",
@@ -87699,7 +88222,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
+      "target": {
+        "allOf": [
+          "Sword Brethren Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "desperate-escape",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies Falling Back from it must escape desperately, at -1 if Battle-shocked"
     },
     {
       "id": "vengeful-animus",
