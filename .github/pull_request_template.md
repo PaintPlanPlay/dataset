@@ -15,7 +15,7 @@ règle fait s'écrit en Effect structuré, ou en résumé d'une ligne écrit par
 
 - Source et valeur amont (`source`, `upstream`) :
 - Raison :
-- PR ou issue ouverte en retour chez BSData ou 40kdc-data (`upstreamPr`) :
+- PR ou issue ouverte en retour chez BSData (`upstreamPr`) :
 
 ## Licence
 

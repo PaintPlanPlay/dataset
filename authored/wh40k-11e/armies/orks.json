@@ -1,17 +1,488 @@
 [
   {
-    "summary": "Lone operator if ORKS INFANTERY within 3\"",
+    "target": "1291-7ba8-2c5a-4a92::ability:Pilin' Out",
+    "summary": "An enemy ends a move within 8\": units inside can rapid-disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1594-b986-e77e-d89d::ability:Dead 'Ard",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage on attacks against it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "181e-be55-d9c6-2b69::ability:Sumfin’ to Prove",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1de9-b138-28a1-9c4b::ability:Finderz Keeperz",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 AP when shooting while it or its target holds an objective",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "260d-9ce4-ea1f-a957::ability:Waaagh! Energy (psyker level 1)",
+    "summary": "Psyker level 1, with its army’s psychic abilities",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2ab7-ab71-0af4-5d39::ability:Full Throttle",
+    "summary": "Command phase: picks one Throttlerokkit Shokka Engine ability until your next Command phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2d6e-aa3b-c28c-5ef0::ability:Aerial Manoover",
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Unengaged as the enemy Fight phase ends: can go back into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2d6e-aa3b-c28c-5ef0::ability:Deff from Above",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "arrived-this-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit when shooting in a turn it made an ingress move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2d97-52db-2c1b-de5e::ability:Bizarrely Resilient",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it: AP worsened by 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2ecf-280b-32e2-3189::ability:Fortification",
+    "summary": "Enemies engaged only with Fortifications can be shot at -1 to hit, and pass their hazard rolls when falling back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2ecf-280b-32e2-3189::ability:Ramshackle Cover",
+    "summary": "Units partly hidden behind it get the benefit of cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2ecf-280b-32e2-3189::ability:Workshop",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Orks",
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "End of each Movement phase: Orks Vehicles within 6\" heal D3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2efc-c4b3-2ecc-5a37::ability:Boss' Ammo Runt (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, when he shoots: +1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2efc-c4b3-2ecc-5a37::ability:Intimidating Motivation (Once per battle round, per army)",
+    "summary": "Once per battle round, as it moves: one Orks unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2efc-c4b3-2ecc-5a37::ability:Might is Right",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 3,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "+3 A and +2 S in melee after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "303-267f-e45c-6aa9::ability:Bomb Squig (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "303-267f-e45c-6aa9::ability:Found 'Em!",
+    "summary": "Movement phase: one enemy unit within 12\" gets +3\" detection range this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "303-267f-e45c-6aa9::ability:Nowhere to Hide",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-hidden"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit against hidden units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "303-267f-e45c-6aa9::ability:Taktikal Know-wotz",
+    "summary": "Can split into two units of 5, one keeping Bomb Squig and the other Found ’Em!",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "306a-b2ac-aaf1-9a7c::ability:Mobile Fortress",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 Damage on ranged attacks against it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3832-ad97-2b3b-8775::ability:Blastajet Force Field",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "5+ invulnerable save; loses Smoke",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3832-ad97-2b3b-8775::ability:Go fer da Weak Spot",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound when shooting at Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3b2-8c11-616a-1005::ability:Clever Know-wotz",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Orks",
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "As it moves: one Orks Vehicle within 3\" heals D3 and gets +1 to hit until your next Movement phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3b2-8c11-616a-1005::ability:Kustom Dakka",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3b35-92f5-bd1a-af8d::ability:Waaagh! Banner",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3b42-b41f-d11e-bdca::ability:Strafing Run",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Fly"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit when shooting at anything without Fly",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "3bff-9fad-2d11-7866::ability:Dat’s Our Loot",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit when shooting; every hit roll against targets on an objective",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "494b-11ce-5af-5b50::ability:Intimidating Motivation (Once per battle round, per army)",
+    "summary": "Once per battle round, as it moves: one Orks unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "494b-11ce-5af-5b50::ability:Krushin' Impetus",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge: a D6 per engaged model against one enemy, each 3+ a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "4adf-8249-c6b2-dd4f::ability:Rokkit Charge",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "hazardous",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "Optional after charging: +1 A and S in melee, with Hazardous",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
     "target": "4ea0-6b70-c17c-bc00::ability:Da Grand Warlord's Ladz",
-    "reason": "Add rules summary to Ghaz",
-    "upstream": "bf21a9e8fbc5"
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-friends"
+          }
+        ]
+      }
+    ],
+    "summary": "Lone Operative while 3\" or closer to other Orks Infantry",
+    "reason": "Read from the rules, in our own words."
   },
   {
-    "summary": "Once per battle, Movement phase: pick up to N friendly Orks units (N = battle round); they are riled up until your next turn.",
     "target": "4ea0-6b70-c17c-bc00::ability:Makari, Hoist Dat Banner! (Once per battle, per army)",
-    "reason": "Update Makari ability",
-    "upstream": "bf21a9e8fbc5"
+    "summary": "Once per battle, Movement phase: up to N Orks units (N = the battle round) are riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
   },
   {
+    "target": "4ea0-6b70-c17c-bc00::ability:Prophet of Da Great Waaagh! (Aura)",
     "modifiers": [
       {
         "key": "hit",
@@ -50,17 +521,146 @@
         ]
       }
     ],
-    "target": "4ea0-6b70-c17c-bc00::ability:Prophet of Da Great Waaagh! (Aura)",
-    "reason": "Add Prophete of da grand waagh for Ghaz",
-    "upstream": "bf21a9e8fbc5"
+    "summary": "Orks units within 6\": +1 to hit and +1 to wound in melee",
+    "reason": "Read from the rules, in our own words."
   },
   {
-    "summary": "Must be the warlord",
     "target": "4ea0-6b70-c17c-bc00::ability:Supreme Commander",
-    "reason": "Add rules summary to Ghaz",
-    "upstream": "bf21a9e8fbc5"
+    "summary": "Must be the warlord",
+    "reason": "Add rules summary to Ghaz"
   },
   {
+    "target": "56d6-a7fc-fa08-4345::ability:Big an’ Stompy",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "56d6-a7fc-fa08-4345::ability:Gut Hatch",
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "After its Normal move, units inside can make an assault disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5a5d-c5a4-39b8-4a3f::ability:Dodge Dis!",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5a5d-c5a4-39b8-4a3f::ability:Keep Huntin'! (Once per battle round, per army)",
+    "summary": "Once per battle round, as it moves: one Beast Snagga unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "609a-6ef1-a3e3-3baa::ability:Spiked Ram",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge, D6 against one engaged enemy: D3 mortal wounds on 2-5, 3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6a83-8e1f-63ef-50c3::ability:Bomb Squig (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6a83-8e1f-63ef-50c3::ability:Brutal Impact",
+    "modifiers": [
+      {
+        "key": "D",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Damage after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6aed-92bb-49d6-12da::ability:Get Back in Da Race",
+    "summary": "Once per battle round, as it moves: one Speed Freeks unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6aed-92bb-49d6-12da::ability:Speedboss",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6c08-9131-14a3-a3b4::ability:Idol of Belligerence",
+    "summary": "Units disembarking from it are riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6c08-9131-14a3-a3b4::ability:Waaagh! Effigy",
+    "summary": "Always riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6cc1-586e-5d7c-9a34::ability:Scatter! (Once per phase, per unit)",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": unengaged, it moves up to 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7067-34f4-5272-e05f::ability:Arrogant Invulnerability",
     "modifiers": [
       {
         "key": "AP",
@@ -68,40 +668,2190 @@
         "value": 1
       }
     ],
-    "summary": "Ennemies has -1 AP",
-    "target": "7067-34f4-5272-e05f::ability:Arrogant Invulnerability",
-    "reason": "Update meganobz's abilities",
-    "upstream": "bf21a9e8fbc5"
+    "summary": "Attacks against it: AP worsened by 1",
+    "reason": "Read from the rules, in our own words."
   },
   {
+    "target": "7067-34f4-5272-e05f::ability:Krumpin’ Time",
     "modifiers": [
       {
         "key": "hit",
-        "target": "self",
         "value": 1,
+        "target": "self",
         "conditions": [
           {
             "key": "melee"
           },
           {
-            "key": "Riled-up"
+            "key": "riled-up"
           }
         ]
       }
     ],
-    "summary": "if riled up, +1 to hit roll",
-    "target": "7067-34f4-5272-e05f::ability:Krumpin’ Time",
-    "reason": "Update meganobz's abilities",
-    "upstream": "bf21a9e8fbc5"
+    "summary": "+1 to hit in melee while riled up",
+    "reason": "Read from the rules, in our own words."
   },
   {
+    "target": "70de-d621-8465-f7b8::ability:Fully Loaded Butchery",
+    "summary": "Butcha Boyz weapon: +2 Attacks per model aboard, up to +22",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "70de-d621-8465-f7b8::ability:Tramplasquig Charge",
+    "summary": "Crushing Impact costs it 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "71b2-e955-6588-87f4::ability:Pyromaniaks",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-within",
+            "value": 6
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound against targets 6\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7669-1442-2c0b-e0c9::ability:Catch Dat Red Bit (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle: Crude Surgery heals D3 more",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7669-1442-2c0b-e0c9::ability:Crude Surgery",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 3,
+        "target": "self"
+      }
+    ],
+    "summary": "Command phase: heals 3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "78a7-cf35-aa8d-c420::ability:Blitz Dem Gitz!",
+    "summary": "The Blitzkannon gets +6 Attacks against anything but Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "78a7-cf35-aa8d-c420::ability:Even More Dakka",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Sustained Hits 1 when shooting while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d51-e2a3-aab6-f7de::ability:Mad Dok",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 3,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Orks",
+            "Infantry"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Command phase: an Orks Infantry unit within 6\" heals 3 wounds, or a full-health one revives a Character",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7d51-e2a3-aab6-f7de::ability:One Scalpel Short of a Medpack",
+    "modifiers": [
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Can charge after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "80c4-14b2-d02d-d289::ability:Intimidating Motivation (Once per battle round, per army)",
+    "summary": "Once per battle round, as it moves: one Orks unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "80c4-14b2-d02d-d289::ability:Nazdreg's Know-wotz",
+    "modifiers": [
+      {
+        "key": "deep-strike",
+        "target": "self"
+      },
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Deep Strike, and Ignores Cover when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "80c4-14b2-d02d-d289::ability:Supreme Kunnin' (Once per phase, per army)",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": unengaged, it moves D6\" (5\" while riled up)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "83a7-ea20-ed9-d14a::ability:High-speed Carnage",
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 S and D in melee after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8bfa-c22a-ae4e-52e8::ability:Mobile Arsenal",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8c36-c946-2e0f-f648::ability:Spiteful Power Trip",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-toughness-below-7"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit against units with no model of Toughness 7+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "93a1-386a-e40f-472f::ability:Burna Bomb",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "End of the enemy Fight phase: on a 2+, D3 mortal wounds to an enemy within 36\", which can no longer hide from your guns",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "95e9-6da3-5e75-2566::ability:Fix Dat Armour Up (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 3,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle, Command phase: heals 3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "95e9-6da3-5e75-2566::ability:Kustom Force Field",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "4+ invulnerable save against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "95e9-6da3-5e75-2566::ability:More Dakka",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover when shooting; Sustained Hits 1 too while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9e51-a749-18ba-2ea4::ability:Bust 'Em",
+    "summary": "One unit it hits is busted: Speed Freeks attacking it this turn get Lethal Hits",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9e51-a749-18ba-2ea4::ability:Speednob Support",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-friends"
+          }
+        ]
+      }
+    ],
+    "summary": "Lone Operative while 3\" or closer to another Speed Freeks unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9ee5-2b39-de06-dda6::ability:Big an’ Shooty",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9ee5-2b39-de06-dda6::ability:Gut Hatch",
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "After its Normal move, units inside can make an assault disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a20-d3af-2c3e-3267::ability:Boom Bomb",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "End of the enemy Fight phase: one visible enemy within 24\" takes D3 to D3+3 mortal wounds on a D6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a596-3d99-257e-0ea1::ability:Bomb Squig (Once per turn, twice per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Twice per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a596-3d99-257e-0ea1::ability:Trophy Hunters",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a74a-107a-e2ac-7e4c::ability:Hardy Bioniks",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to wound for attacks against it with S above its T",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a74a-107a-e2ac-7e4c::ability:Push Dat Bit Back In (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 3,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Beast Snagga"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Once per battle, Command phase: a Beast Snagga unit within 6\" heals 3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a74a-107a-e2ac-7e4c::ability:Runnin' wiv da Herd",
+    "summary": "Attached to Mounted: loses Infantry, gains Mobile and Mounted, +4\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a856-30b7-e56d-57db::ability:Squig Barrage",
+    "summary": "One non-Monster/Vehicle target it hits with squigs gets -1 to hit until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a8b7-351-d911-a4d6::ability:Boss of da Hunt",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-friends"
+          }
+        ]
+      }
+    ],
+    "summary": "Lone Operative while 3\" or closer to another Beast Snagga unit (not a Monster Character)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a8b7-351-d911-a4d6::ability:Keep Huntin'! (Once per battle round, per army)",
+    "summary": "Once per battle round, as it moves: one Beast Snagga unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a8b7-351-d911-a4d6::ability:Thundering Stampede (Aura)",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Beast Snagga"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Beast Snagga units within 6\": +1 to charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aeed-c6d9-4b90-376a::ability:Gargantuan",
+    "summary": "Moves over models (Titanic excepted) and terrain up to 4\" tall",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aeed-c6d9-4b90-376a::ability:Walking Bastion",
+    "summary": "No penalty to hit when shooting while engaged",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "afab-635c-23c5-cacc::ability:Da Bigger Dey Are, Da Better Dey Drop",
+    "summary": "Monsters and Vehicles its Lifta-droppa kills explode on a 3+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b16a-7132-3f8a-abe5::ability:Ammo Runts (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, when it shoots: +1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b16a-7132-3f8a-abe5::ability:Get Out da Way!",
+    "summary": "Charges through models, Monsters and Vehicles excepted",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b16a-7132-3f8a-abe5::ability:Paired Krumpas",
+    "summary": "Its Kustom Krumpa re-rolls hit and wound rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b37a-8686-db2c-8cbd::ability:Madcap Artillery",
+    "summary": "Mek Gunz all firing the same gun leave a lasting effect on one target they hit: cover, -1 Ld, -2\" Move or grounded",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b42b-ea0-38f1-6300::ability:Beast Snagga Following",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-friends"
+          }
+        ]
+      }
+    ],
+    "summary": "Lone Operative while 3\" or closer to another Beast Snagga unit (not a Monster Character)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b42b-ea0-38f1-6300::ability:Da Bigger Dey Iz…",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll wound rolls in melee against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b42b-ea0-38f1-6300::ability:One Last Kill",
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "2+",
+        "target": "self"
+      }
+    ],
+    "summary": "Slain before fighting, it still fights on a 2+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b7c3-d00e-daf2-76fb::ability:Mobbed",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge, engaged Monsters and Vehicles take a Battle-shock roll at -1 (-2 with 13+ models)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b82a-6b65-7050-ac48::ability:Fortification",
+    "summary": "Enemies engaged only with Fortifications can be shot at -1 to hit, and pass their hazard rolls when falling back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b82a-6b65-7050-ac48::ability:Ramshackle Cover",
+    "summary": "Units partly hidden behind it get the benefit of cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b82a-6b65-7050-ac48::ability:Raucous Occupants",
+    "summary": "On your home objective, its passengers’ OC adds to its own",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b8fe-c7af-20fd-631d::ability:Da Biggest Boom",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its Tank Kannon hits: infantry around the target (3\") take a Battle-shock roll",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b8fe-c7af-20fd-631d::ability:Rolling Fortress",
+    "summary": "Orks units partly hidden behind it get the benefit of cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ca85-1d18-dc30-d64e::ability:Fuel-mixa Grot",
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 to Advance rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ca85-1d18-dc30-d64e::ability:Get Back in da Race! (Once per battle round, per army)",
+    "summary": "Once per battle round, as it moves: one Speed Freeks unit within 6\" is no longer Battle-shocked and is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ce45-db08-3795-18a9::ability:Super Runts",
+    "summary": "Always riled up; Scavenged Shivs get +1 A, WS and S",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dadc-d370-ef10-853c::ability:Bomb Squig (Once per turn, twice per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Twice per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dadc-d370-ef10-853c::ability:Pulsa Rokkit (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      },
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: +1 AP and Lethal Hits against one Monster or Vehicle within 24\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dadc-d370-ef10-853c::ability:Rokkit Barrage",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits takes a Battle-shock roll at -1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dde2-ca42-e3bc-2ef6::ability:More Dakka",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover when shooting; Sustained Hits 1 too while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dde2-ca42-e3bc-2ef6::ability:Support Shokka",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-friends"
+          }
+        ]
+      }
+    ],
+    "summary": "Lone Operative while 3\" or closer to other Orks Infantry",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "de8f-24f9-c543-92b7::ability:Downtrodden",
+    "summary": "Two Gretchin take the transport space of one model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "de8f-24f9-c543-92b7::ability:Thievin’ Scavengers",
+    "summary": "An objective it controls when your Movement phase ends becomes secured",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e3b1-1240-2476-cd86::ability:Ammo Runts (Once per battle, per unit)",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle, when it shoots: +1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e3b1-1240-2476-cd86::ability:Never Too Busy to Fight",
+    "summary": "Being engaged does not stop it starting an action",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e3b1-1240-2476-cd86::ability:Tide of Muscle",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "Lethal Hits in melee after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e651-5901-35e5-dc35::ability:Deff from the Shadows (First battle round onwards)",
+    "modifiers": [
+      {
+        "key": "ingress",
+        "target": "self"
+      }
+    ],
+    "summary": "From Strategic Reserves, can make an ingress move as the enemy Movement phase ends",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e651-5901-35e5-dc35::ability:Kunnin’ Infiltrator",
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Hidden and unengaged after the enemy Fight phase: can go back into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e969-cbc8-60a6-affb::ability:Drive-by Skorchin'",
+    "summary": "One enemy infantry unit within 6\" cannot be targeted by Fire Overwatch this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "eb21-c97f-2d9a-b363::ability:Wurrboy (psyker level 1)",
+    "summary": "Psyker level 1, with its army’s psychic abilities",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ec71-71e2-6601-31b8::ability:Drill Boss",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ec71-71e2-6601-31b8::ability:Plummeting Descent",
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "arrived-this-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll charge rolls in a turn it made an ingress move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f401-c74a-cca8-5de3::ability:That'll Learn Ya (Once per battle round, per unit)",
+    "summary": "Battle-shocked with 4+ Gretchin: lose D3 Gretchin to shake it off",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbee-427a-1c46-f621::ability:More Dakka",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover when shooting; Sustained Hits 1 too while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fbee-427a-1c46-f621::ability:Shokk-boosta",
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Optional on an Advance: count it as a 6 and move through models, then a hazard roll per model",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ffa6-66d3-dfa5-557e::ability:Ded Glowy Ammo (Aura)",
+    "modifiers": [
+      {
+        "key": "T",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemy units within 6\": -1 Toughness",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ffa6-66d3-dfa5-557e::ability:Flashiest Gitz",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hit rolls when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::armyrule:da-boss",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "warlord"
+          }
+        ]
+      }
+    ],
+    "summary": "+1CP each battle round while it is your Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::armyrule:unstable-energies",
+    "summary": "Each battle round, a Psyker uses powers whose levels add up to no more than its own",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::armyrule:waaagh",
+    "modifiers": [
+      {
+        "key": "reroll-advance",
+        "target": "self"
+      },
+      {
+        "key": "invulnerable-save",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "riled-up"
+          }
+        ]
+      },
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      },
+      {
+        "key": "advance-and-charge",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll Advances; riled up: 5+ invulnerable, Assault, charge after Advancing. Once per battle, the whole army is riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:blitz-brigade|boss-boomer",
+    "requires": [
+      [
+        "Wagon"
+      ]
+    ],
+    "maxTargets": 3,
+    "summary": "With a Warboss aboard, the Wagon gets his Intimidating Motivation / Keep Huntin’",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:blitz-brigade|targetin-gizmos",
+    "requires": [
+      [
+        "Wagon"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "big-mek-embarked"
+          }
+        ]
+      },
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "big-mek-embarked"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Big Mek aboard: the Wagon shoots with Ignores Cover, plus Sustained Hits 1 while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:brute-bosses|blitzboss",
+    "requires": [
+      [
+        "Warboss"
+      ]
+    ],
+    "summary": "The Transport carrying him (not a Walker) gets +2\" Move and a 5+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:brute-bosses|brutal-but-kunnin",
+    "requires": [
+      [
+        "Warboss"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "D",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Damage in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:brute-bosses|da-gobshot-thunderbuss",
+    "requires": [
+      [
+        "Warboss"
+      ]
+    ],
+    "summary": "Gives the Warboss Da Gobshot Thunderbuss",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:brute-bosses|morgogs-finkin-cap",
+    "requires": [
+      [
+        "Warboss"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle, end of the enemy Movement phase: unengaged, the unit moves D6\" (re-roll if riled up)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:brute-bosses|proper-killy",
+    "requires": [
+      [
+        "Warboss"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll 1s to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:brute-bosses|surly-as-a-squiggoth",
+    "requires": [
+      [
+        "Infantry",
+        "Warboss"
+      ]
+    ],
+    "summary": "Once per battle: slain, on a 2+ he stands back up with 3 wounds once the phase is over",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:bully-boyz|tellyporta-boss",
+    "requires": [
+      [
+        "Mega Armour"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "deep-strike",
+        "target": "self"
+      }
+    ],
+    "summary": "The unit (unless a Vehicle) gains Deep Strike",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:bully-boyz|wimp-kickaz",
+    "requires": [
+      [
+        "Nobz"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemies falling back from these Nobz must Desperate Escape, at -1 to its hazard rolls while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:da-big-hunt|glory-hog",
+    "requires": [
+      [
+        "Beast Snagga"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Can charge after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:da-big-hunt|it-came-from-da-drops",
+    "requires": [
+      [
+        "Beastboss on Squigosaur"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "T",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 Toughness",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:dread-mob|cybork-boosta",
+    "requires": [
+      [
+        "Big Mek"
+      ],
+      [
+        "Mek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:dread-mob|dreadherder",
+    "requires": [
+      [
+        "Big Mek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-walker"
+          }
+        ]
+      }
+    ],
+    "summary": "Near a Walker: Lone Operative; when you shoot, one Walker nearby re-rolls 1s to hit that turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:flyboyz|flyboss",
+    "requires": [
+      [
+        "Aircraft",
+        "Orks"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Character",
+        "target": "self"
+      }
+    ],
+    "summary": "The Aircraft becomes a Character; its ingress riles up Aircraft and Deffkoptas within 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:flyboyz|impulsive-recon",
+    "requires": [
+      [
+        "Aircraft",
+        "Orks"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "ingress",
+        "target": "self"
+      }
+    ],
+    "summary": "Can make an ingress move in your first Movement phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:green-tide|ardboyz",
+    "requires": [
+      [
+        "Boyz"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "Sv",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "The Boyz get a 4+ save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:green-tide|ferocious-show-off",
+    "requires": [
+      [
+        "Infantry",
+        "Orks"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Attack in melee for the bearer (+2 in a mob of 11+)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:kult-of-speed|competitive-streak",
+    "requires": [
+      [
+        "Deffkilla Wartrike"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll charge rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:kult-of-speed|smoky-gubbinz",
+    "requires": [
+      [
+        "Speed Freeks"
+      ]
+    ],
+    "excludes": [
+      "Aircraft"
+    ],
+    "maxTargets": 3,
+    "summary": "Units partly hidden behind these Speed Freeks get the benefit of cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:madcap-meks|enhanced-runt-maw",
+    "requires": [
+      [
+        "Big Mek with Shokk Attack Gun"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One unit it hits is infested with Snotlings: -1 to its Leadership rolls until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:madcap-meks|mekwaaagh-mastermind",
+    "requires": [
+      [
+        "Big Mek"
+      ]
+    ],
+    "summary": "The unit is always riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:madcap-meks|temperamental-shokka",
+    "requires": [
+      [
+        "Big Mek with Shokk Attack Gun"
+      ]
+    ],
+    "maxTargets": 3,
+    "options": [
+      {
+        "name": "1: Torrent, then the Big Mek dies",
+        "modifiers": [
+          {
+            "key": "torrent",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "2-5: +1 Attack",
+        "modifiers": [
+          {
+            "key": "A",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "6: Sustained Hits 2",
+        "modifiers": [
+          {
+            "key": "sustained-hits",
+            "value": 2,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "Optional D6 when the Shokk Attack Gun fires: 1 Torrent then he dies, 2-5 +1 A, 6 Sustained Hits 2",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:runt-swarm|extra-sneaky",
+    "requires": [
+      [
+        "Gretchin"
+      ]
+    ],
+    "maxTargets": 3,
+    "summary": "-3\" detection range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:runt-swarm|minefield-detail",
+    "requires": [
+      [
+        "Gretchin"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "scouts",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Scouts 6\" while not embarked",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:shoota-boyz|supa-glowy-fing",
+    "requires": [
+      [
+        "Infantry",
+        "Orks"
+      ]
+    ],
+    "excludes": [
+      "Weirdboy"
+    ],
+    "modifiers": [
+      {
+        "key": "crit-wound",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Infantry"
+          }
+        ]
+      },
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "hazard-rolls",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer shoots with Anti-Infantry 4+ and Devastating Wounds, then makes two hazard rolls per such weapon",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:shoota-boyz|targetin-squigs",
+    "requires": [
+      [
+        "Big Mek"
+      ],
+      [
+        "Bigboss"
+      ],
+      [
+        "Warboss"
+      ]
+    ],
+    "summary": "+3\" range on the unit’s ranged attacks, Torrent excepted",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:taktikal-brigade|kill-kommanda",
+    "requires": [
+      [
+        "Big Mek",
+        "Infantry"
+      ],
+      [
+        "Infantry",
+        "Warboss"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "infiltrators",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "leading"
+          }
+        ]
+      },
+      {
+        "key": "stealth",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "leading"
+          }
+        ]
+      }
+    ],
+    "summary": "In an attached unit, the bearer has Infiltrators and Stealth",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:taktikal-brigade|throat-slittas",
+    "requires": [
+      [
+        "Kommandos"
+      ],
+      [
+        "Stormboyz"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Monster"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Lethal Hits in melee against anything but Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:war-horde|da-boss-is-watchin",
+    "requires": [
+      [
+        "Orks"
+      ]
+    ],
+    "summary": "Once per battle, during your Movement: the unit is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:war-horde|follow-me-ladz",
+    "requires": [
+      [
+        "Orks"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:war-horde|headwoppas-killchoppa",
+    "requires": [
+      [
+        "Orks"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "The bearer gets +1 AP in melee after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:war-horde|kunnin-but-brutal",
+    "requires": [
+      [
+        "Orks"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Can shoot and charge after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:wreckas|kaptins-hat",
+    "requires": [
+      [
+        "Big Mek",
+        "Infantry"
+      ],
+      [
+        "Infantry",
+        "Warboss"
+      ]
+    ],
+    "summary": "After deployment, redeploy up to three Orks Infantry units, even into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:wreckas|supa-snazz-dakka",
+    "requires": [
+      [
+        "Flash Gitz"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Snazzguns gain Rapid Fire 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:wurrband|da-krunch",
+    "requires": [
+      [
+        "Orks",
+        "Psyker"
+      ]
+    ],
+    "summary": "Gives the Psyker the Da Krunch weapon",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:wurrband|eadbanger",
+    "requires": [
+      [
+        "Orks",
+        "Psyker"
+      ]
+    ],
+    "summary": "Gives the Psyker the ’Eadbanger weapon",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::enhancement:wurrband|warphead",
+    "requires": [
+      [
+        "Orks",
+        "Psyker"
+      ]
+    ],
+    "summary": "Psyker level 2, Deadly Demise D6, and re-rolls its psychic rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:blitz-brigade|unstoppable-momentum",
+    "rule": {
+      "name": "Unstoppable Momentum"
+    },
+    "eligibility": {
+      "allOf": [
+        "Wagon"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      },
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Wagons re-roll charges and can make an Advance roll count as a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:brute-bosses|ard-as-nails",
+    "rule": {
+      "name": "’Ard As Nails"
+    },
+    "eligibility": {
+      "allOf": [
+        "Warboss"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "3+",
+        "target": "self"
+      },
+      {
+        "key": "fight-on-death-roll",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "A Warboss slain before fighting still fights on a 3+ (+1 while riled up)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:bully-boyz|displays-of-savagery",
+    "rule": {
+      "name": "Displays of Savagery"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Meganobz",
+        "Nobz"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Nobz and Meganobz: Sustained Hits 1 in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:da-big-hunt|da-hunt-is-on",
+    "rule": {
+      "name": "Da Hunt Is On"
+    },
+    "eligibility": {
+      "allOf": [
+        "Beast Snagga"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Monster"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Beast Snagga: +1 AP against Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:dread-mob|try-dat-button",
+    "rule": {
+      "name": "Try Dat Button!"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks",
+        "Walker"
+      ],
+      "anyOf": [],
+      "noneOf": [
+        "Titanic"
+      ]
+    },
+    "options": [
+      {
+        "name": "1-2: +1 A",
+        "modifiers": [
+          {
+            "key": "A",
+            "value": 1,
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "3-4: +2 S",
+        "modifiers": [
+          {
+            "key": "S",
+            "value": 2,
+            "target": "self"
+          }
+        ]
+      },
+      {
+        "name": "5-6: +1 AP",
+        "modifiers": [
+          {
+            "key": "AP",
+            "value": -1,
+            "target": "self"
+          }
+        ]
+      }
+    ],
+    "summary": "Walkers roll for +1 A, +2 S or +1 AP when attacking; rolling 2D6 costs a hazard roll afterwards",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:flyboyz|skyborne-loons",
+    "rule": {
+      "name": "Skyborne Loons"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks"
+      ],
+      "anyOf": [
+        "Aircraft",
+        "Deffkoptas"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Orks Aircraft cost nothing towards Strategic Reserves; riled-up Aircraft and Deffkoptas get +1 to hit when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:green-tide|mob-handed-brutality",
+    "rule": {
+      "name": "Mob-Handed Brutality"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks",
+        "Infantry"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Boyz"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Monster"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "Boyz: Sustained Hits 1 in melee; after charging, Orks Infantry get Lethal Hits against non-Monsters/Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:kult-of-speed|adrenaline-junkies",
+    "rule": {
+      "name": "Adrenaline Junkies"
+    },
+    "eligibility": {
+      "allOf": [
+        "Speed Freeks"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
     "modifiers": [
       {
         "key": "gain-keyword",
         "value": "Battleline",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Warbikers"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      },
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "advanced-or-fell-back"
+          }
+        ]
+      },
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
         "target": "self"
       }
     ],
+    "summary": "Warbikers are Battleline; Speed Freeks that Advance or Fall Back gain Assault and can still charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:madcap-meks|unpredictable-genius",
+    "rule": {
+      "name": "Unpredictable Genius"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks"
+      ],
+      "anyOf": [
+        "Big Mek",
+        "Mek Gunz",
+        "Morkanaut",
+        "Wazbom Blastajet"
+      ],
+      "noneOf": []
+    },
+    "options": [
+      {
+        "name": "1 Dat’s Weird: 4+ invulnerable for the target",
+        "modifiers": [
+          {
+            "key": "invulnerable-save",
+            "value": "4+",
+            "target": "enemy"
+          }
+        ]
+      },
+      {
+        "name": "2-3 Hop Splat: D3 mortal wounds nearby",
+        "modifiers": [
+          {
+            "key": "mortal-wounds",
+            "value": "D3",
+            "target": "enemy"
+          }
+        ]
+      },
+      {
+        "name": "4 Seekerz: +1 to hit",
+        "modifiers": [
+          {
+            "key": "hit",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "5 Lifted: the target has Fly, no cover",
+        "modifiers": []
+      },
+      {
+        "name": "6 Runtified: -1 T for the target",
+        "modifiers": [
+          {
+            "key": "T",
+            "value": -1,
+            "target": "enemy"
+          }
+        ]
+      }
+    ],
+    "summary": "Shooting one target: roll D6 for a random effect, from a 4+ invulnerable for the foe to +1 to hit or -1 T on it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:runt-swarm|sneaky-little-gitz",
+    "rule": {
+      "name": "Sneaky Little Gitz"
+    },
     "eligibility": {
       "allOf": [
         "Gretchin"
@@ -109,8 +2859,1531 @@
       "anyOf": [],
       "noneOf": []
     },
-    "target": "orks::rule:runt-swarm|sneaky-little-gitz",
-    "reason": "Runt Swarm: Gretchin units gain Battleline",
-    "upstream": "a20a645c1363"
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Battleline",
+        "target": "self"
+      }
+    ],
+    "summary": "Gretchin are Battleline; Advancing or Falling Back does not stop them starting an action",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:shoota-boyz|dakka-dakka-dakka",
+    "rule": {
+      "name": "Dakka! Dakka! Dakka!"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks",
+        "Infantry"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Orks Infantry shoot with Assault; +3\" range while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:taktikal-brigade|suspiciously-well-organised",
+    "rule": {
+      "name": "Suspiciously Well Organised"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Boyz",
+        "Kommandos",
+        "Stormboyz"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Battleline",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Stormboyz"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Stormboyz are Battleline; Boyz, Kommandos and Stormboyz can charge after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:war-horde|get-stuck-in",
+    "rule": {
+      "name": "Get Stuck In"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Sustained Hits 1 in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:wreckas|wreckin-and-lootin",
+    "rule": {
+      "name": "Wreckin’ and Lootin’"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Breaka Boyz",
+        "Flash Gitz",
+        "Tankbustas"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Breaka Boyz, Flash Gitz and Tankbustas re-roll 1s to hit when they or their target hold an objective",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::rule:wurrband|powers-of-da-waaagh",
+    "rule": {
+      "name": "Powers Of Da Waaagh!"
+    },
+    "eligibility": {
+      "allOf": [
+        "Orks",
+        "Psyker"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "summary": "Psychic attacks get +1 S and +1 more per 5 models; Psykers gain Roar of Mork and Visions of Violence",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:armed-to-da-teef",
+    "stratagem": {
+      "name": "ARMED TO DA TEEF",
+      "detachmentId": "bully-boyz",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Meganobz",
+          "Nobz"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit, or every hit roll while riled up",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:breakin-heads",
+    "stratagem": {
+      "name": "BREAKIN’ HEADS",
+      "detachmentId": "war-horde",
+      "cp": 1,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "An attached unit just Battle-shocked takes D3 mortal wounds and shakes it off",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:close-range-dakka",
+    "stratagem": {
+      "name": "CLOSE-RANGE DAKKA",
+      "detachmentId": "war-horde",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Rapid Fire 1 when shooting, or +1 to a Rapid Fire the weapon already has",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:crazed-rampage",
+    "stratagem": {
+      "name": "CRAZED RAMPAGE",
+      "detachmentId": "dread-mob",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "Models slain before the Walker fights still fight on a 4+ (always, for a Deff Dread)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:dakkastorm",
+    "stratagem": {
+      "name": "DAKKASTORM",
+      "detachmentId": "kult-of-speed",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Speed Freeks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Sustained Hits 1 when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:delicious-eating-squigs",
+    "stratagem": {
+      "name": "DELICIOUS EATING SQUIGS",
+      "detachmentId": "kult-of-speed",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Rukkatrukk Squigbuggy"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 3,
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Orks",
+            "Infantry"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Orks Infantry units within 3\" each heal 3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:dread-power",
+    "stratagem": {
+      "name": "DREAD POWER",
+      "detachmentId": "dread-mob",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "The Walker is riled up until your next turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:drive-by-bustin",
+    "stratagem": {
+      "name": "DRIVE-BY BUSTIN’",
+      "detachmentId": "wreckas",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Transport"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit for weapons fired through the Firing Deck",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:dubious-restraint",
+    "stratagem": {
+      "name": "DUBIOUS RESTRAINT",
+      "detachmentId": "taktikal-brigade",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Boyz",
+          "Kommandos",
+          "Stormboyz"
+        ],
+        "noneOf": []
+      }
+    },
+    "summary": "Start or end of your Movement phase: an objective the unit controls becomes secured",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:ere-we-go",
+    "stratagem": {
+      "name": "’ERE WE GO",
+      "detachmentId": "green-tide",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Beast Snagga Boyz",
+          "Boyz"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2 to Advance rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:flyin-headbutt",
+    "stratagem": {
+      "name": "FLYIN’ HEADBUTT",
+      "detachmentId": "flyboyz",
+      "cp": 1,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Aircraft"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "8D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "A destroyed Aircraft skips Deadly Demise: 8D6 at an enemy within 12\", each 4+ is a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:fungus-fuel-injection",
+    "stratagem": {
+      "name": "FUNGUS-FUEL INJECTION",
+      "detachmentId": "war-horde",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vehicle"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:glowin-dakka",
+    "stratagem": {
+      "name": "GLOWIN’ DAKKA",
+      "detachmentId": "shoota-boyz",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-within",
+            "value": 9
+          }
+        ]
+      }
+    ],
+    "summary": "+1 AP on shots at a target within 9\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:goaded-into-action",
+    "stratagem": {
+      "name": "GOADED INTO ACTION",
+      "detachmentId": "da-big-hunt",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Beast Snagga"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "surge-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Shot and wounded: unengaged Beast Snagga surge D6\" (re-roll if riled up)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:grab-it",
+    "stratagem": {
+      "name": "GRAB IT",
+      "detachmentId": "wreckas",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Breaka Boyz",
+          "Flash Gitz",
+          "Tankbustas"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting: move up to 6\" to end on an objective, then no charge this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:grot-shields",
+    "stratagem": {
+      "name": "GROT SHIELDS",
+      "detachmentId": "runt-swarm",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Gretchin"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Hits on Orks Infantry within 3\" end there: the Grots take 1 mortal wound instead",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:gun-crazy-show-offs",
+    "stratagem": {
+      "name": "GUN-CRAZY SHOW-OFFS",
+      "detachmentId": "wreckas",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Flash Gitz",
+          "Tankbustas"
+        ],
+        "noneOf": []
+      }
+    },
+    "summary": "Shot at: Flash Gitz or Tankbustas that were hit shoot back at that enemy unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:hit-em-harder",
+    "stratagem": {
+      "name": "HIT ’EM HARDER",
+      "detachmentId": "war-horde",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Lethal Hits in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:hulking-brutes",
+    "stratagem": {
+      "name": "HULKING BRUTES",
+      "detachmentId": "bully-boyz",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Meganobz",
+          "Nobz"
+        ],
+        "noneOf": []
+      }
+    },
+    "options": [
+      {
+        "name": "1CP: attacks with S above T",
+        "modifiers": [
+          {
+            "key": "wound",
+            "value": -1,
+            "target": "enemy",
+            "conditions": [
+              {
+                "key": "ranged"
+              },
+              {
+                "key": "strength-above-toughness"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "2CP: every ranged attack",
+        "modifiers": [
+          {
+            "key": "wound",
+            "value": -1,
+            "target": "enemy",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to wound for ranged attacks with S above the unit’s T; for 1 more CP, for all ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:impending-krunch",
+    "stratagem": {
+      "name": "IMPENDING KRUNCH",
+      "detachmentId": "blitz-brigade",
+      "cp": 1,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Wagon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Wagon ends a charge: every enemy unit it engages takes a Battle-shock roll at -1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:infested-war-zone",
+    "stratagem": {
+      "name": "INFESTED WAR ZONE",
+      "detachmentId": "runt-swarm",
+      "cp": 2,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Gretchin"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "A Gretchin unit just destroyed comes back, at full strength, in Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:instinctive-hunters",
+    "stratagem": {
+      "name": "INSTINCTIVE HUNTERS",
+      "detachmentId": "da-big-hunt",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Beast Snagga"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "End of the enemy Fight phase: unengaged Beast Snagga near a battlefield edge go into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:keep-it-runnin",
+    "stratagem": {
+      "name": "KEEP IT RUNNIN’",
+      "detachmentId": "blitz-brigade",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "End of the Fight phase: unengaged Infantry that could fight boards a Transport wholly within 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:kustom-dakka",
+    "stratagem": {
+      "name": "KUSTOM DAKKA",
+      "detachmentId": "shoota-boyz",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Monster"
+          },
+          {
+            "key": "target-not-keyword",
+            "value": "Vehicle"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound when shooting anything but Monsters and Vehicles",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:long-uncontrolled-bursts",
+    "stratagem": {
+      "name": "LONG, UNCONTROLLED BURSTS",
+      "detachmentId": "flyboyz",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Aircraft",
+          "Deffkoptas"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Fly"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hit rolls when shooting at Fly units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:mind-mostly-on-the-mission",
+    "stratagem": {
+      "name": "MIND MOSTLY ON THE MISSION",
+      "detachmentId": "taktikal-brigade",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Boyz",
+          "Kommandos",
+          "Stormboyz"
+        ],
+        "noneOf": []
+      }
+    },
+    "summary": "Advancing or Falling Back does not stop the unit starting an action",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:mob-mentality",
+    "stratagem": {
+      "name": "MOB MENTALITY",
+      "detachmentId": "green-tide",
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "A mob of 13+ makes one Orks unit within 12\" pass its Battle-shock rolls",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:mow-em-down",
+    "stratagem": {
+      "name": "MOW ’EM DOWN",
+      "detachmentId": "war-horde",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Walker"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "cleave",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "After charging: Cleave 1 in melee, or +1 to a Cleave the weapon already has",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:never-enough-dakka",
+    "stratagem": {
+      "name": "NEVER ENOUGH DAKKA",
+      "detachmentId": "shoota-boyz",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Sustained Hits 1 when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:orks-is-never-beaten",
+    "stratagem": {
+      "name": "ORKS IS NEVER BEATEN",
+      "detachmentId": "war-horde",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self"
+      },
+      {
+        "key": "fight-on-death-roll",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Models slain before the unit fights still fight on a 4+ (+1 while riled up)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:readied-brawlers",
+    "stratagem": {
+      "name": "READIED BRAWLERS",
+      "detachmentId": "blitz-brigade",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Wagon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "assault-disembark",
+        "target": "self"
+      }
+    ],
+    "summary": "After the Wagon’s Normal move, units inside can make an assault disembark",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:scarper",
+    "stratagem": {
+      "name": "SCARPER!",
+      "detachmentId": "runt-swarm",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Gretchin"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": unengaged Gretchin move D6\" (6\" if attached)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:speediest-freeks",
+    "stratagem": {
+      "name": "SPEEDIEST FREEKS",
+      "detachmentId": "kult-of-speed",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Speed Freeks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Ranged attacks against the unit miss on an unmodified 1-3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:stomping-juggernaut",
+    "stratagem": {
+      "name": "STOMPING JUGGERNAUT",
+      "detachmentId": "dread-mob",
+      "cp": 1,
+      "phases": [
+        "movement",
+        "charge"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "mobile",
+        "target": "self"
+      }
+    ],
+    "summary": "The Walker gains MOBILE as it moves or declares a charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:too-arrogant-to-die",
+    "stratagem": {
+      "name": "TOO ARROGANT TO DIE",
+      "detachmentId": "bully-boyz",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Meganobz",
+          "Nobz"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self"
+      },
+      {
+        "key": "fight-on-death-roll",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "riled-up"
+          }
+        ]
+      }
+    ],
+    "summary": "Models slain before the unit fights still fight on a 4+ (+1 while riled up)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:unbridled-carnage",
+    "stratagem": {
+      "name": "UNBRIDLED CARNAGE",
+      "detachmentId": "green-tide",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Boyz"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 Attack in melee after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:vindictive-artillerists",
+    "stratagem": {
+      "name": "VINDICTIVE ARTILLERISTS",
+      "detachmentId": "madcap-meks",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Mek Gunz"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "options": [
+      {
+        "name": "Lethal Hits",
+        "modifiers": [
+          {
+            "key": "lethal-hits",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sustained Hits 1",
+        "modifiers": [
+          {
+            "key": "sustained-hits",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Both, with Hazardous",
+        "modifiers": [
+          {
+            "key": "lethal-hits",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          },
+          {
+            "key": "sustained-hits",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          },
+          {
+            "key": "hazardous",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "Mek Gunz shoot with Lethal Hits or Sustained Hits 1 — or both, with Hazardous",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:where-dya-fink-youre-going",
+    "stratagem": {
+      "name": "WHERE D’YA FINK YOU’RE GOING?",
+      "detachmentId": "da-big-hunt",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Beast Snagga"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "target": "enemy"
+      }
+    ],
+    "summary": "An enemy falling back from Beast Snagga must Desperate Escape; a Monster or Vehicle makes 3 more hazard rolls per unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:while-their-backs-are-turned",
+    "stratagem": {
+      "name": "WHILE THEIR BACKS ARE TURNED",
+      "detachmentId": "taktikal-brigade",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Boyz",
+          "Kommandos",
+          "Stormboyz"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "End of the enemy Movement phase: a unit engaged at its start, now free, moves up to 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "orks::stratagem:whirligig-evasion",
+    "stratagem": {
+      "name": "WHIRLIGIG EVASION",
+      "detachmentId": "flyboyz",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Deffkoptas"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move within 8\": unengaged Deffkoptas move D6\" (6\" while riled up)",
+    "reason": "Read from the rules, in our own words."
   }
 ]
