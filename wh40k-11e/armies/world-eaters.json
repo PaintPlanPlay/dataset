@@ -285,13 +285,28 @@
       ],
       "abilities": [
         {
-          "name": "Reborn in Blood"
+          "name": "Reborn in Blood",
+          "summary": "Destroyed: a triple 6 on Blessings brings it back by Deep Strike with 8 wounds"
         },
         {
-          "name": "Wrathful Presence"
+          "name": "Wrathful Presence",
+          "summary": "Each battle round: picks one Wrathful Presence ability"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 330,
@@ -742,13 +757,30 @@
       ],
       "abilities": [
         {
-          "name": "Brass Stampede"
+          "name": "Brass Stampede",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per model, each 4+ D3 mortal wounds"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         }
       ],
       "points": 95,
@@ -1346,13 +1378,30 @@
       ],
       "abilities": [
         {
-          "name": "Bane of Cowards"
+          "name": "Bane of Cowards",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         }
       ],
       "points": 90,
@@ -1529,13 +1578,55 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Khorne (Aura)"
+          "name": "Daemon Lord of Khorne (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Blood Legions"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Blood Legions 6\" or closer get +1 to hit in melee"
         },
         {
-          "name": "Relentless Carnage"
+          "name": "Relentless Carnage",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "8D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the Fight phase: eight D6 at an engaged enemy, each 4+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 320,
@@ -4276,10 +4367,30 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 200,
@@ -4556,10 +4667,94 @@
       ],
       "abilities": [
         {
-          "name": "Blood-hungry Annihilator"
+          "name": "Blood-hungry Annihilator",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds and Damage against the closest Monster or Vehicle 18\" or closer"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 130,
@@ -4871,10 +5066,31 @@
       ],
       "abilities": [
         {
-          "name": "Punishing Suppression"
+          "name": "Punishing Suppression",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 130,
@@ -5641,7 +5857,8 @@
       ],
       "abilities": [
         {
-          "name": "Meet Any Challenge"
+          "name": "Meet Any Challenge",
+          "summary": "An enemy arrives or moves 8\" or closer: passengers can disembark"
         }
       ],
       "points": 75,
@@ -5789,7 +6006,14 @@
       ],
       "abilities": [
         {
-          "name": "To Slake Its Rage"
+          "name": "To Slake Its Rage",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         }
       ],
       "points": 95,
@@ -6018,13 +6242,54 @@
       ],
       "abilities": [
         {
-          "name": "Bloody Fury"
+          "name": "Bloody Fury",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll hits shooting the closest target; re-roll charges against the closest"
         },
         {
-          "name": "Sanctified in Slaughter"
+          "name": "Sanctified in Slaughter",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Enhancement: +1 OC"
         },
         {
-          "name": "Gore-stained Veterans"
+          "name": "Gore-stained Veterans",
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Enhancement: +1 WS in melee"
         }
       ],
       "points": 175,
@@ -6683,13 +6948,48 @@
       ],
       "abilities": [
         {
-          "name": "Lord of Murder"
+          "name": "Lord of Murder",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Near friendly infantry (3\"): Lone Operative"
         },
         {
-          "name": "Devastating Assault"
+          "name": "Devastating Assault",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: Devastating Wounds in melee"
         },
         {
-          "name": "Direct the Slaughter"
+          "name": "Direct the Slaughter",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on a unit 12\" or closer costs 1CP less"
         }
       ],
       "points": 200,
@@ -6821,10 +7121,25 @@
       ],
       "abilities": [
         {
-          "name": "Bloodied Terror"
+          "name": "Bloodied Terror",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: engaged enemies test Battle-shock (-1 Below Half-strength)"
         },
         {
-          "name": "Swooping Predator"
+          "name": "Swooping Predator",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a move over an enemy: six D6, each 4+ a mortal wound"
         }
       ],
       "points": 170,
@@ -8532,16 +8847,39 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Unleash Wrath"
+          "name": "Unleash Wrath",
+          "summary": "End of the enemy Movement phase: shoots or charges a unit that arrived 12\" or closer"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Terror of Khorne"
+          "name": "Terror of Khorne",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Brazen Engines: start of the Fight phase, one engaged enemy tests Battle-shock at -1"
         }
       ],
       "points": 270,
@@ -9758,10 +10096,62 @@
       ],
       "abilities": [
         {
-          "name": "Beacons of Rage (Aura)"
+          "name": "Beacons of Rage (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-below-half-strength"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly units 6\" or closer get +1 to hit in melee (and to wound against weakened units)"
         },
         {
-          "name": "Brazen Fury"
+          "name": "Brazen Fury",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Possessed Slaughterband: loses a model to shooting, a D6\" surge move"
         }
       ],
       "points": 125,
@@ -9872,10 +10262,49 @@
       ],
       "abilities": [
         {
-          "name": "Rend and Tear"
+          "name": "Rend and Tear",
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 Damage in melee against Monsters and Vehicles"
         },
         {
-          "name": "Brazen Fury"
+          "name": "Brazen Fury",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Possessed Slaughterband: loses a model to shooting, a D6\" surge move"
         }
       ],
       "points": 130,
@@ -11510,10 +11939,30 @@
       ],
       "abilities": [
         {
-          "name": "Hunters from the Warp"
+          "name": "Hunters from the Warp",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, unengaged: back into Strategic Reserves"
         },
         {
-          "name": "Collar of Khorne"
+          "name": "Collar of Khorne",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks"
         }
       ],
       "points": 75,
@@ -11666,13 +12115,50 @@
       ],
       "abilities": [
         {
-          "name": "Furious Onslaught"
+          "name": "Furious Onslaught",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits when shooting the closest target 18\" or closer"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Terror of Khorne"
+          "name": "Terror of Khorne",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Brazen Engines: start of the Fight phase, one engaged enemy tests Battle-shock at -1"
         }
       ],
       "points": 140,
@@ -12057,7 +12543,15 @@
       ],
       "abilities": [
         {
-          "name": "Loping Speed"
+          "name": "Loping Speed",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         }
       ],
       "points": 70,
@@ -12759,10 +13253,24 @@
       ],
       "abilities": [
         {
-          "name": "Frenzy"
+          "name": "Frenzy",
+          "summary": "Once per turn, after an enemy fights it: fights again at once"
         },
         {
-          "name": "Devoted to Destruction"
+          "name": "Devoted to Destruction",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With two melee weapons: +2 Attacks for each"
         }
       ],
       "points": 120,
@@ -13042,13 +13550,48 @@
       ],
       "abilities": [
         {
-          "name": "Airborne Predator"
+          "name": "Airborne Predator",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units that can Fly"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Terror of Khorne"
+          "name": "Terror of Khorne",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Brazen Engines: start of the Fight phase, one engaged enemy tests Battle-shock at -1"
         }
       ],
       "points": 175,
@@ -13235,10 +13778,31 @@
       ],
       "abilities": [
         {
-          "name": "Bomb Rack"
+          "name": "Bomb Rack",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -13412,7 +13976,24 @@
       ],
       "abilities": [
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         }
       ],
       "points": 115,
@@ -14507,10 +15088,12 @@
       ],
       "abilities": [
         {
-          "name": "Objective Ravaged"
+          "name": "Objective Ravaged",
+          "summary": "An objective it holds as your Command phase ends stays yours until the enemy out-controls it"
         },
         {
-          "name": "Icon of Khorne"
+          "name": "Icon of Khorne",
+          "summary": "Each enemy unit destroyed: a Bloodshed point, an extra die for Blessings of Khorne"
         }
       ],
       "points": 65,
@@ -14749,10 +15332,34 @@
       ],
       "abilities": [
         {
-          "name": "Legendary Killer"
+          "name": "Legendary Killer",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: re-roll 1s to hit and wound in melee"
         },
         {
-          "name": "The Betrayer"
+          "name": "The Betrayer",
+          "summary": "End of your Charge phase, unengaged: a failed Leadership roll costs a bodyguard"
         },
         {
           "name": "Berserker Frenzy"
@@ -14928,13 +15535,22 @@
       ],
       "abilities": [
         {
-          "name": "Blood Surge"
+          "name": "Blood Surge",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+2",
+              "target": "self"
+            }
+          ],
+          "summary": "Loses a model to shooting: a D6+2\" surge move"
         },
         {
           "name": "Murderous Charge"
         },
         {
-          "name": "Icon of Khorne"
+          "name": "Icon of Khorne",
+          "summary": "Each enemy unit destroyed: a Bloodshed point, an extra die for Blessings of Khorne"
         }
       ],
       "points": 170,
@@ -15151,13 +15767,45 @@
       ],
       "abilities": [
         {
-          "name": "Idol of Blessed Blood"
+          "name": "Idol of Blessed Blood",
+          "summary": "One more die for each Blessings of Khorne roll"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         },
         {
-          "name": "Terror of Khorne"
+          "name": "Terror of Khorne",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Brazen Engines: start of the Fight phase, one engaged enemy tests Battle-shock at -1"
         }
       ],
       "points": 505,
@@ -18975,10 +19623,25 @@
           "name": "Leader"
         },
         {
-          "name": "Fire Riders"
+          "name": "Fire Riders",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Deep Strike, and moves through models and terrain"
         },
         {
-          "name": "Bloody Stampede"
+          "name": "Bloody Stampede",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, one engaged enemy: 1 mortal wound on 2-3, D3 on 4-5, D3+3 on a 6"
         }
       ],
       "points": 100,
@@ -19141,10 +19804,12 @@
       ],
       "abilities": [
         {
-          "name": "Aggressive Advance"
+          "name": "Aggressive Advance",
+          "summary": "Leading: Move 10\", and moves through terrain"
         },
         {
-          "name": "Crush All Who Stand Before Us"
+          "name": "Crush All Who Stand Before Us",
+          "summary": "Models 3\" or closer to the enemy can fight"
         },
         {
           "name": "Leader"
@@ -19390,10 +20055,53 @@
           "name": "Leader"
         },
         {
-          "name": "A Worthy Skull"
+          "name": "A Worthy Skull",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll hits and wounds against Characters in melee; each Character killed gives 1CP"
         },
         {
-          "name": "Forwards, For Blood!"
+          "name": "Forwards, For Blood!",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll Advance and Blood Surge distances"
         }
       ],
       "points": 60,
@@ -19868,16 +20576,74 @@
       ],
       "abilities": [
         {
-          "name": "The Scent of Blood"
+          "name": "The Scent of Blood",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to charge near a weakened enemy (+2 Below Half-strength)"
         },
         {
-          "name": "Savage Exaltation"
+          "name": "Savage Exaltation",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit weakened units in melee, +1 to wound too Below Half-strength"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Terror of Khorne"
+          "name": "Terror of Khorne",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Brazen Engines: start of the Fight phase, one engaged enemy tests Battle-shock at -1"
         }
       ],
       "points": 140,
@@ -22599,13 +23365,57 @@
       ],
       "abilities": [
         {
-          "name": "Rage Embodied (Aura)"
+          "name": "Rage Embodied (Aura)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Blood Legions"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Blood Legions 6\" or closer get +1 melee Attack"
         },
         {
-          "name": "Murderlust"
+          "name": "Murderlust",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "Damaged (7 wounds or fewer left): +2 melee Attacks"
         }
       ],
       "points": 315,
@@ -22756,16 +23566,64 @@
       ],
       "abilities": [
         {
-          "name": "Rage Eternal"
+          "name": "Rage Eternal",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Leading, Command phase: returns one Bodyguard model"
         },
         {
-          "name": "Possessed Lord"
+          "name": "Possessed Lord",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 melee Attacks with Devastating Wounds"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Lord of the Eightbound"
+          "name": "Lord of the Eightbound",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            },
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Leading Possessed from deployment: Deep Strike and Scouts 6\""
         }
       ],
       "points": 90,
@@ -27841,7 +28699,92 @@
   "armyRules": [
     {
       "id": "blessings-of-khorne",
-      "name": "Blessings of Khorne"
+      "name": "Blessings of Khorne",
+      "options": [
+        {
+          "name": "Unbridled Bloodlust: +1 to charge",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Rage-fuelled Invigoration: pile in and consolidate 6\"",
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Total Carnage: slain in melee, fights on a 4+",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Martial Excellence: Sustained Hits 1 in melee",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Warp Blades: Lethal Hits in melee",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Decapitating Strikes: Devastating Wounds against Infantry in melee",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Each battle round, roll eight D6 and spend doubles or triples on up to two Blessings for the round"
     },
     {
       "id": "conversion",
@@ -27863,7 +28806,43 @@
       "rules": [
         {
           "id": "relentless-rage",
-          "name": "Relentless Rage"
+          "name": "Relentless Rage",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "World Eaters"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "After charging: +1 Attack and +2 Strength in melee this turn"
         }
       ],
       "enhancements": [
@@ -27879,7 +28858,14 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls charges (+1 with Unbridled Bloodlust)"
         },
         {
           "id": "berzerker-glaive",
@@ -27893,7 +28879,30 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee Attack and Damage"
         },
         {
           "id": "favoured-of-khorne",
@@ -27907,7 +28916,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Re-roll up to two dice of each Blessings of Khorne roll"
         },
         {
           "id": "helm-of-brazen-ire",
@@ -27921,7 +28931,15 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         }
       ]
     },
@@ -27935,7 +28953,23 @@
       "rules": [
         {
           "id": "rampaging-terrors",
-          "name": "Rampaging Terrors"
+          "name": "Rampaging Terrors",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Daemon",
+              "Vehicle"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Daemon Vehicles: start of the Fight phase, one engaged enemy tests Battle-shock at -1"
         }
       ],
       "enhancements": [
@@ -27952,7 +28986,15 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Daemon",
+              "target": "self"
+            }
+          ],
+          "summary": "Becomes a Daemon"
         },
         {
           "id": "talons-of-butchery",
@@ -27967,7 +29009,20 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cleave",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Its fists gain Cleave 2"
         }
       ]
     },
@@ -27981,7 +29036,15 @@
       "rules": [
         {
           "id": "adamantine-avalanche",
-          "name": "Adamantine Avalanche"
+          "name": "Adamantine Avalanche",
+          "eligibility": {
+            "allOf": [
+              "Terminator Squad"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Fight phase, engaged Terminators: roll for one more Blessing of Khorne for them"
         }
       ],
       "enhancements": [
@@ -27997,7 +29060,20 @@
               "Terminator Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 WS in melee"
         },
         {
           "id": "sanctified-in-slaughter",
@@ -28011,7 +29087,15 @@
               "Terminator Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC"
         }
       ]
     },
@@ -28025,7 +29109,93 @@
       "rules": [
         {
           "id": "idols-of-khorne",
-          "name": "Idols of Khorne"
+          "name": "Idols of Khorne",
+          "options": [
+            {
+              "name": "Idol of Infinite Rage: +1 to hit and wound",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "near-idol"
+                    }
+                  ]
+                },
+                {
+                  "key": "wound",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "near-idol"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Idol of Burning Wrath: +1\" Move, +1 Advance and charge",
+              "modifiers": [
+                {
+                  "key": "M",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "near-idol"
+                    }
+                  ]
+                },
+                {
+                  "key": "advance",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "near-idol"
+                    }
+                  ]
+                },
+                {
+                  "key": "charge",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "near-idol"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Idol of Blessed Blood: 4+ invulnerable",
+              "modifiers": [
+                {
+                  "key": "invulnerable-save",
+                  "value": "4+",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "near-idol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Jakhals",
+              "Goremongers"
+            ],
+            "noneOf": []
+          },
+          "summary": "Command phase, each once per battle: Monsters and Titanic units empower Jakhals and Goremongers nearby; those are Battleline"
         }
       ],
       "enhancements": [
@@ -28042,7 +29212,20 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Toughness and Feel No Pain 5+"
         },
         {
           "id": "butcher-lord",
@@ -28061,7 +29244,14 @@
           "leaderTo": [
             "Jakhals",
             "Goremongers"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self"
+            }
+          ],
+          "summary": "Infiltrators"
         },
         {
           "id": "chosen-of-the-blood-god",
@@ -28076,7 +29266,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+3\" to its Aura ranges"
         },
         {
           "id": "strategic-slaughter",
@@ -28090,7 +29281,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three Jakhals or Goremongers, even into Strategic Reserves"
         }
       ]
     },
@@ -28104,7 +29296,43 @@
       "rules": [
         {
           "id": "rush-to-the-fray",
-          "name": "Rush to the Fray"
+          "name": "Rush to the Fray",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "disembarked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                },
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "World Eaters"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Disembarked this turn: +1 to charge, and melee weapons gain Lance"
         }
       ],
       "enhancements": [
@@ -28120,7 +29348,15 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 9,
+              "target": "self"
+            }
+          ],
+          "summary": "Its Dedicated Transport has Scouts 9\""
         },
         {
           "id": "infernal-infusion",
@@ -28134,7 +29370,19 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: its unit Fights First"
         },
         {
           "id": "murderous-onslaught",
@@ -28148,7 +29396,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Disembarked this turn: enemies cannot Fire Overwatch at its unit"
         },
         {
           "id": "unleash-hell",
@@ -28162,7 +29411,15 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "A nearby Vehicle (or its Transport) suppresses one unit it shoots: -1 to hit until your next turn"
         }
       ]
     },
@@ -28176,7 +29433,8 @@
       "rules": [
         {
           "id": "blood-tithe",
-          "name": "Blood Tithe"
+          "name": "Blood Tithe",
+          "summary": "Up to 500-1500 points of Blood Legions; kills earn Blood Tithe points to unlock FNP, Lance, a 4+ invulnerable or Blessings"
         }
       ],
       "enhancements": [
@@ -28192,7 +29450,40 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee A, S and D; its melee kills always earn a Blood Tithe point"
         },
         {
           "id": "blood-forged-armour",
@@ -28209,7 +29500,15 @@
               "Blood Legions"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "2+",
+              "target": "self"
+            }
+          ],
+          "summary": "Save 2+; its death earns a Blood Tithe point"
         },
         {
           "id": "disciple-of-khorne",
@@ -28227,7 +29526,14 @@
           "leaderTo": [
             "Bloodcrushers",
             "Flesh Hounds"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike, and counts as Blood Legions"
         },
         {
           "id": "icon-of-war",
@@ -28241,7 +29547,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Blood Legions 6\" or closer have Blessings of Khorne"
         }
       ]
     },
@@ -28255,7 +29562,23 @@
       "rules": [
         {
           "id": "brazen-fury",
-          "name": "Brazen Fury"
+          "name": "Brazen Fury",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "World Eaters",
+              "Possessed"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Possessed losing a model to shooting make a D6\" surge move"
         }
       ],
       "enhancements": [
@@ -28272,7 +29595,15 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit scores critical hits on 5+"
         },
         {
           "id": "killing-clarity",
@@ -28287,7 +29618,15 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit destroys a unit: +1CP on a 4+"
         },
         {
           "id": "malicious-vigour",
@@ -28301,7 +29640,8 @@
               "Slaughterbound"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its Brazen Fury moves are a full 6\""
         },
         {
           "id": "violent-demise",
@@ -28316,7 +29656,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its Deadly Demise is D3+1 and triggers on 2+"
         }
       ]
     },
@@ -28330,7 +29671,50 @@
       "rules": [
         {
           "id": "wrath-of-khorne",
-          "name": "Wrath of Khorne"
+          "name": "Wrath of Khorne",
+          "options": [
+            {
+              "name": "Cleave 1",
+              "modifiers": [
+                {
+                  "key": "cleave",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "+1 AP",
+              "modifiers": [
+                {
+                  "key": "AP",
+                  "value": -1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "World Eaters",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": [
+              "Epic Hero"
+            ]
+          },
+          "summary": "Characters fighting gain Cleave 1 or +1 AP in melee"
         }
       ],
       "enhancements": [
@@ -28346,7 +29730,8 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle: every Blessing of Khorne for its unit until your next turn"
         },
         {
           "id": "gateways-to-glory",
@@ -28361,7 +29746,19 @@
               "World Eaters"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mobile",
+              "target": "self"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Mobile and +1 to charge"
         }
       ]
     }
@@ -28376,7 +29773,40 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Terminator Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound against Monsters and Vehicles"
     },
     {
       "id": "a-worthy-skull",
@@ -28388,7 +29818,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "unit-destroyed",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Blood Legions",
+          "World Eaters"
+        ],
+        "noneOf": []
+      },
+      "summary": "Destroyed a unit: gain D3 Blood Tithe points and spend them at once"
     },
     {
       "id": "aggressive-disembarkation",
@@ -28408,7 +29848,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "One unit disembarks wholly 6\" or closer to the Rhino, even into engagement"
     },
     {
       "id": "apoplectic-clarity",
@@ -28421,6 +29862,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Daemon",
@@ -28428,7 +29870,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Ignores BS, WS, hit and wound modifiers"
     },
     {
       "id": "apoplectic-frenzy",
@@ -28436,11 +29879,27 @@
       "detachmentId": "berzerker-warband",
       "cp": 1,
       "phases": [
-        "movement"
+        "charge"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Khorne",
+          "Berzerkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Advanced: can still charge this turn"
     },
     {
       "id": "aspire-to-infamy",
@@ -28452,17 +29911,38 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "World Eaters",
           "Character"
         ],
         "anyOf": [],
-        "noneOf": [
-          "Epic Hero"
-        ]
-      }
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "S",
+          "value": 2,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Characters get +1 A and +2 S in melee"
     },
     {
       "id": "berzerkers-wrath",
@@ -28474,14 +29954,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Khorne Berzerkers"
+          "Khorne",
+          "Berzerkers"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": 8,
+          "target": "self"
+        }
+      ],
+      "summary": "Its Blood Surge moves a full 8\""
     },
     {
       "id": "blessing-of-burning-blood",
@@ -28494,7 +29984,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Blood Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "A nearby World Eaters unit gets a 5+ invulnerable (4+ with Boon of Blood)"
     },
     {
       "id": "blood-offering",
@@ -28510,7 +30016,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "World Eaters"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Destroyed on a held objective: it stays yours until the enemy out-controls it"
     },
     {
       "id": "bloodthirsty-horde",
@@ -28522,7 +30036,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Jakhals",
+          "Goremongers"
+        ],
+        "noneOf": []
+      },
+      "summary": "Models 3\" or closer to the enemy can fight"
     },
     {
       "id": "bloody-vengeance",
@@ -28538,7 +30061,38 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "World Eaters"
+        ],
+        "anyOf": [
+          "Monster",
+          "Titanic"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "aura",
+          "keywords": {
+            "allOf": [],
+            "anyOf": [
+              "Jakhals",
+              "Goremongers"
+            ],
+            "noneOf": []
+          },
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Its killer: Jakhals and Goremongers re-roll hits against it for the battle"
     },
     {
       "id": "brazen-idol",
@@ -28555,9 +30109,13 @@
         "allOf": [
           "World Eaters"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Monster",
+          "Titanic"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "Once per battle: picks its own Idol of Khorne, even one already used"
     },
     {
       "id": "daemonic-fury",
@@ -28569,6 +30127,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -28576,7 +30135,23 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "A World Eaters unit 6\" or closer gains Lance (and Twin-linked with Daemonic Rage)"
     },
     {
       "id": "daemonic-resistance",
@@ -28589,7 +30164,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "World Eaters",
+          "Possessed"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to wound this phase"
     },
     {
       "id": "daemonic-strength",
@@ -28609,7 +30201,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "D",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 Damage: Eightbound against non-Monsters/Vehicles, Exalted against Monsters/Vehicles"
     },
     {
       "id": "daemontide",
@@ -28624,11 +30229,19 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Blood Legions"
+          "World Eaters"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "A Blood Legions unit 6\" or closer gets models back (1 Mounted, D3 Beasts or D6 Infantry)"
     },
     {
       "id": "drawn-to-the-slaughter",
@@ -28644,7 +30257,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Jakhals"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle: a destroyed Jakhals unit returns whole into Strategic Reserves"
     },
     {
       "id": "endless-pursuit-of-violence",
@@ -28652,10 +30273,12 @@
       "detachmentId": "goretrack-onslaught",
       "cp": 1,
       "phases": [
+        "shooting",
         "fight"
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28664,7 +30287,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Wholly 6\" or closer to a Transport: embarks"
     },
     {
       "id": "fail-not-the-blood-god",
@@ -28676,7 +30300,33 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Jakhals",
+          "Goremongers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "near-idol"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit, or every hit near a friendly Monster or Titanic unit"
     },
     {
       "id": "focused-ferocity",
@@ -28687,7 +30337,28 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Terminator Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 melee Attack"
     },
     {
       "id": "frenzied-resilience",
@@ -28699,7 +30370,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "World Eaters"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to it this phase"
     },
     {
       "id": "full-throttle-assault",
@@ -28711,7 +30398,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "World Eaters",
+          "Rhino"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault-disembark",
+          "target": "self"
+        }
+      ],
+      "summary": "Units disembarking after its Normal move make an assault disembark"
     },
     {
       "id": "fury-unleashed",
@@ -28723,14 +30425,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
+          "World Eaters",
           "Rhino"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6+2",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: embarked Berzerkers disembark and surge D6+2\""
     },
     {
       "id": "goaded-to-fury",
@@ -28741,7 +30453,24 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Daemon",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a D6\" surge move"
     },
     {
       "id": "hack-and-slash",
@@ -28760,7 +30489,23 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Charged this turn: +1 AP in melee this phase"
     },
     {
       "id": "horrifying-violence",
@@ -28780,7 +30525,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Engaged enemies test Battle-shock at -1"
     },
     {
       "id": "immortal-fury",
@@ -28792,6 +30545,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -28800,7 +30554,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "2+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: always fights back"
     },
     {
       "id": "in-the-shadow-of-brass-idols",
@@ -28813,14 +30580,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
-        "allOf": [
-          "Jakhals"
+        "allOf": [],
+        "anyOf": [
+          "Jakhals",
+          "Goremongers"
         ],
-        "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 6+, or 5+ near a friendly Monster or Titanic unit"
     },
     {
       "id": "murder-call",
@@ -28832,6 +30609,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28839,7 +30617,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "punish-the-craven",
@@ -28851,7 +30636,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-falls-back",
+      "target": {
+        "allOf": [
+          "World Eaters",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "desperate-escape",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies Falling Back from it must escape desperately (-1 if Battle-shocked)"
     },
     {
       "id": "rapid-manifestation",
@@ -28863,7 +30664,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Exalted Eightbound"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Deep Strikes 6\" from enemies, then no charge"
     },
     {
       "id": "scorn-the-witch",
@@ -28878,7 +30687,28 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "World Eaters",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 4+ against mortal wounds"
     },
     {
       "id": "skulls-for-the-skull-throne",
@@ -28890,7 +30720,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "World Eaters"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Destroyed a unit: roll for one more Blessing of Khorne this round"
     },
     {
       "id": "smash-through",
@@ -28910,7 +30748,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Moves through terrain this phase"
     },
     {
       "id": "summoned-by-slaughter",
@@ -28926,7 +30765,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "unit-destroyed",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Bloodletters"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Bloodletters arrive wholly 9\" or closer to a slain model, 6\" from enemies"
     },
     {
       "id": "trail-of-destruction",
@@ -28934,10 +30782,12 @@
       "detachmentId": "brazen-engines",
       "cp": 1,
       "phases": [
-        "movement"
+        "movement",
+        "charge"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Daemon",
@@ -28945,7 +30795,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mobile",
+          "target": "self"
+        }
+      ],
+      "summary": "Mobile"
     },
     {
       "id": "unrelenting-advance",
@@ -28957,6 +30814,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28965,7 +30823,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a 6\" Normal move"
     },
     {
       "id": "warp-stalkers",
@@ -28986,7 +30852,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Moves through non-Monster, non-Vehicle enemies this phase"
     },
     {
       "id": "wrath-beyond-reason",
@@ -28998,13 +30865,27 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
           "Terminator Squad"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "-1 Damage to ranged attacks against it until the attacker is done"
     }
   ]
 }
