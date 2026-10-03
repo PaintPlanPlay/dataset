@@ -287,7 +287,15 @@
       ],
       "abilities": [
         {
-          "name": "Waaagh! Banner"
+          "name": "Waaagh! Banner",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to charge rolls"
         },
         {
           "name": "Support"
@@ -622,7 +630,20 @@
       ],
       "abilities": [
         {
-          "name": "Mobile Fortress"
+          "name": "Mobile Fortress",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 Damage on ranged attacks against it"
         }
       ],
       "points": 160,
@@ -823,7 +844,15 @@
       ],
       "abilities": [
         {
-          "name": "Mobbed"
+          "name": "Mobbed",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, engaged Monsters and Vehicles take a Battle-shock roll at -1 (-2 with 13+ models)"
         }
       ],
       "points": 80,
@@ -1011,13 +1040,22 @@
       ],
       "abilities": [
         {
-          "name": "Dodge Dis!"
+          "name": "Dodge Dis!",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to hit"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Keep Huntin'! (Once per battle round, per army)"
+          "name": "Keep Huntin'! (Once per battle round, per army)",
+          "summary": "Once per battle round, as it moves: one Beast Snagga unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         }
       ],
       "points": 85,
@@ -1193,13 +1231,42 @@
       ],
       "abilities": [
         {
-          "name": "Thundering Stampede (Aura)"
+          "name": "Thundering Stampede (Aura)",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Beast Snagga"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Beast Snagga units within 6\": +1 to charge rolls"
         },
         {
-          "name": "Boss of da Hunt"
+          "name": "Boss of da Hunt",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative while 3\" or closer to another Beast Snagga unit (not a Monster Character)"
         },
         {
-          "name": "Keep Huntin'! (Once per battle round, per army)"
+          "name": "Keep Huntin'! (Once per battle round, per army)",
+          "summary": "Once per battle round, as it moves: one Beast Snagga unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         }
       ],
       "points": 140,
@@ -1375,13 +1442,46 @@
       ],
       "abilities": [
         {
-          "name": "Shokk-boosta"
+          "name": "Shokk-boosta",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Optional on an Advance: count it as a 6 and move through models, then a hazard roll per model"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "More Dakka"
+          "name": "More Dakka",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting; Sustained Hits 1 too while riled up"
         }
       ],
       "points": 100,
@@ -1587,10 +1687,27 @@
       ],
       "abilities": [
         {
-          "name": "Even More Dakka"
+          "name": "Even More Dakka",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 when shooting while riled up"
         },
         {
-          "name": "Blitz Dem Gitz!"
+          "name": "Blitz Dem Gitz!",
+          "summary": "The Blitzkannon gets +6 Attacks against anything but Monsters and Vehicles"
         }
       ],
       "points": 160,
@@ -1842,16 +1959,62 @@
       ],
       "abilities": [
         {
-          "name": "Fix Dat Armour Up (Once per battle, per unit)"
+          "name": "Fix Dat Armour Up (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, Command phase: heals 3 wounds"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "More Dakka"
+          "name": "More Dakka",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting; Sustained Hits 1 too while riled up"
         },
         {
-          "name": "Kustom Force Field"
+          "name": "Kustom Force Field",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "4+ invulnerable save against ranged attacks"
         }
       ],
       "points": 90,
@@ -2025,13 +2188,50 @@
       ],
       "abilities": [
         {
-          "name": "Support Shokka"
+          "name": "Support Shokka",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative while 3\" or closer to other Orks Infantry"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "More Dakka"
+          "name": "More Dakka",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting; Sustained Hits 1 too while riled up"
         }
       ],
       "points": 110,
@@ -2223,7 +2423,15 @@
       ],
       "abilities": [
         {
-          "name": "Spiked Ram"
+          "name": "Spiked Ram",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, D6 against one engaged enemy: D3 mortal wounds on 2-5, 3 on a 6"
         }
       ],
       "points": 90,
@@ -2397,13 +2605,16 @@
       ],
       "abilities": [
         {
-          "name": "Fortification"
+          "name": "Fortification",
+          "summary": "Enemies engaged only with Fortifications can be shot at -1 to hit, and pass their hazard rolls when falling back"
         },
         {
-          "name": "Raucous Occupants"
+          "name": "Raucous Occupants",
+          "summary": "On your home objective, its passengers’ OC adds to its own"
         },
         {
-          "name": "Ramshackle Cover"
+          "name": "Ramshackle Cover",
+          "summary": "Units partly hidden behind it get the benefit of cover"
         }
       ],
       "points": 135,
@@ -2522,7 +2733,20 @@
       ],
       "abilities": [
         {
-          "name": "Sumfin’ to Prove"
+          "name": "Sumfin’ to Prove",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit in melee"
         },
         {
           "name": "Support"
@@ -2668,7 +2892,15 @@
       ],
       "abilities": [
         {
-          "name": "Boom Bomb"
+          "name": "Boom Bomb",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: one visible enemy within 24\" takes D3 to D3+3 mortal wounds on a D6"
         }
       ],
       "points": 115,
@@ -2797,10 +3029,24 @@
       ],
       "abilities": [
         {
-          "name": "Deff from the Shadows (First battle round onwards)"
+          "name": "Deff from the Shadows (First battle round onwards)",
+          "modifiers": [
+            {
+              "key": "ingress",
+              "target": "self"
+            }
+          ],
+          "summary": "From Strategic Reserves, can make an ingress move as the enemy Movement phase ends"
         },
         {
-          "name": "Kunnin’ Infiltrator"
+          "name": "Kunnin’ Infiltrator",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Hidden and unengaged after the enemy Fight phase: can go back into Strategic Reserves"
         },
         {
           "name": "Leader"
@@ -2925,10 +3171,35 @@
       ],
       "abilities": [
         {
-          "name": "Drill Boss"
+          "name": "Drill Boss",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit in melee"
         },
         {
-          "name": "Plummeting Descent"
+          "name": "Plummeting Descent",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll charge rolls in a turn it made an ingress move"
         },
         {
           "name": "Leader"
@@ -3304,13 +3575,45 @@
       ],
       "abilities": [
         {
-          "name": "Never Too Busy to Fight"
+          "name": "Never Too Busy to Fight",
+          "summary": "Being engaged does not stop it starting an action"
         },
         {
-          "name": "Ammo Runts (Once per battle, per unit)"
+          "name": "Ammo Runts (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, when it shoots: +1 to hit"
         },
         {
-          "name": "Tide of Muscle"
+          "name": "Tide of Muscle",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits in melee after charging"
         }
       ],
       "points": 85,
@@ -3809,10 +4112,26 @@
       ],
       "abilities": [
         {
-          "name": "Trophy Hunters"
+          "name": "Trophy Hunters",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to charge rolls"
         },
         {
-          "name": "Bomb Squig (Once per turn, twice per battle, per unit)"
+          "name": "Bomb Squig (Once per turn, twice per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Twice per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\""
         }
       ],
       "points": 120,
@@ -4098,7 +4417,21 @@
       ],
       "abilities": [
         {
-          "name": "Pyromaniaks"
+          "name": "Pyromaniaks",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-within",
+                  "value": 6
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound against targets 6\" or closer"
         }
       ],
       "points": 60,
@@ -4347,7 +4680,15 @@
       ],
       "abilities": [
         {
-          "name": "Burna Bomb"
+          "name": "Burna Bomb",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: on a 2+, D3 mortal wounds to an enemy within 36\", which can no longer hide from your guns"
         }
       ],
       "points": 125,
@@ -5134,7 +5475,24 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting at anything without Fly"
         }
       ],
       "points": 125,
@@ -5342,7 +5700,15 @@
       ],
       "abilities": [
         {
-          "name": "Dead 'Ard"
+          "name": "Dead 'Ard",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage on attacks against it"
         }
       ],
       "points": 130,
@@ -5642,10 +6008,19 @@
       ],
       "abilities": [
         {
-          "name": "Get Back in da Race! (Once per battle round, per army)"
+          "name": "Get Back in da Race! (Once per battle round, per army)",
+          "summary": "Once per battle round, as it moves: one Speed Freeks unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         },
         {
-          "name": "Fuel-mixa Grot"
+          "name": "Fuel-mixa Grot",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to Advance rolls"
         },
         {
           "name": "Leader"
@@ -5856,10 +6231,33 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Manoover"
+          "name": "Aerial Manoover",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Unengaged as the enemy Fight phase ends: can go back into Strategic Reserves"
         },
         {
-          "name": "Deff from Above"
+          "name": "Deff from Above",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting in a turn it made an ingress move"
         }
       ],
       "points": 85,
@@ -6320,7 +6718,23 @@
       ],
       "abilities": [
         {
-          "name": "Finderz Keeperz"
+          "name": "Finderz Keeperz",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP when shooting while it or its target holds an objective"
         }
       ],
       "points": 110,
@@ -6654,10 +7068,12 @@
       ],
       "abilities": [
         {
-          "name": "Gargantuan"
+          "name": "Gargantuan",
+          "summary": "Moves over models (Titanic excepted) and terrain up to 4\" tall"
         },
         {
-          "name": "Walking Bastion"
+          "name": "Walking Bastion",
+          "summary": "No penalty to hit when shooting while engaged"
         },
         {
           "name": "Damaged: 1-10 Wounds Remaining"
@@ -6871,11 +7287,22 @@
         },
         {
           "name": "Makari, Hoist Dat Banner! (Once per battle, per army)",
-          "summary": "Once per battle, Movement phase: pick up to N friendly Orks units (N = battle round); they are riled up until your next turn."
+          "summary": "Once per battle, Movement phase: up to N Orks units (N = the battle round) are riled up until your next turn"
         },
         {
           "name": "Da Grand Warlord's Ladz",
-          "summary": "Lone operator if ORKS INFANTERY within 3\""
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative while 3\" or closer to other Orks Infantry"
         },
         {
           "name": "Prophet of Da Great Waaagh! (Aura)",
@@ -6916,7 +7343,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "summary": "Orks units within 6\": +1 to hit and +1 to wound in melee"
         }
       ],
       "points": 290,
@@ -7126,10 +7554,30 @@
       ],
       "abilities": [
         {
-          "name": "Big an’ Stompy"
+          "name": "Big an’ Stompy",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit in melee"
         },
         {
-          "name": "Gut Hatch"
+          "name": "Gut Hatch",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "After its Normal move, units inside can make an assault disembark"
         }
       ],
       "points": 325,
@@ -7269,10 +7717,12 @@
       ],
       "abilities": [
         {
-          "name": "Downtrodden"
+          "name": "Downtrodden",
+          "summary": "Two Gretchin take the transport space of one model"
         },
         {
-          "name": "Thievin’ Scavengers"
+          "name": "Thievin’ Scavengers",
+          "summary": "An objective it controls when your Movement phase ends becomes secured"
         }
       ],
       "points": 45,
@@ -7502,7 +7952,15 @@
       ],
       "abilities": [
         {
-          "name": "Bizarrely Resilient"
+          "name": "Bizarrely Resilient",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Attacks against it: AP worsened by 1"
         }
       ],
       "points": 110,
@@ -7781,7 +8239,15 @@
       ],
       "abilities": [
         {
-          "name": "Scatter! (Once per phase, per unit)"
+          "name": "Scatter! (Once per phase, per unit)",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move within 8\": unengaged, it moves up to 6\""
         }
       ],
       "points": 155,
@@ -8393,7 +8859,20 @@
       ],
       "abilities": [
         {
-          "name": "Mobile Arsenal"
+          "name": "Mobile Arsenal",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit when shooting"
         }
       ],
       "points": 150,
@@ -9507,10 +9986,12 @@
       ],
       "abilities": [
         {
-          "name": "Tramplasquig Charge"
+          "name": "Tramplasquig Charge",
+          "summary": "Crushing Impact costs it 1CP less"
         },
         {
-          "name": "Fully Loaded Butchery"
+          "name": "Fully Loaded Butchery",
+          "summary": "Butcha Boyz weapon: +2 Attacks per model aboard, up to +22"
         }
       ],
       "points": 165,
@@ -9886,10 +10367,31 @@
       ],
       "abilities": [
         {
-          "name": "Flashiest Gitz"
+          "name": "Flashiest Gitz",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hit rolls when shooting"
         },
         {
-          "name": "Ded Glowy Ammo (Aura)"
+          "name": "Ded Glowy Ammo (Aura)",
+          "modifiers": [
+            {
+              "key": "T",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy units within 6\": -1 Toughness"
         },
         {
           "name": "Leader"
@@ -10102,7 +10604,8 @@
       ],
       "abilities": [
         {
-          "name": "Wurrboy (psyker level 1)"
+          "name": "Wurrboy (psyker level 1)",
+          "summary": "Psyker level 1, with its army’s psychic abilities"
         }
       ],
       "points": 175,
@@ -10427,10 +10930,18 @@
       ],
       "abilities": [
         {
-          "name": "Da Biggest Boom"
+          "name": "Da Biggest Boom",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its Tank Kannon hits: infantry around the target (3\") take a Battle-shock roll"
         },
         {
-          "name": "Rolling Fortress"
+          "name": "Rolling Fortress",
+          "summary": "Orks units partly hidden behind it get the benefit of cover"
         }
       ],
       "points": 300,
@@ -10693,7 +11204,20 @@
       ],
       "abilities": [
         {
-          "name": "Spiteful Power Trip"
+          "name": "Spiteful Power Trip",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-toughness-below-7"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units with no model of Toughness 7+"
         }
       ],
       "points": 130,
@@ -10965,16 +11489,39 @@
       ],
       "abilities": [
         {
-          "name": "Found 'Em!"
+          "name": "Found 'Em!",
+          "summary": "Movement phase: one enemy unit within 12\" gets +3\" detection range this turn"
         },
         {
-          "name": "Taktikal Know-wotz"
+          "name": "Taktikal Know-wotz",
+          "summary": "Can split into two units of 5, one keeping Bomb Squig and the other Found ’Em!"
         },
         {
-          "name": "Nowhere to Hide"
+          "name": "Nowhere to Hide",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-hidden"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against hidden units"
         },
         {
-          "name": "Bomb Squig (Once per battle, per unit)"
+          "name": "Bomb Squig (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\""
         }
       ],
       "points": 125,
@@ -11273,7 +11820,8 @@
       ],
       "abilities": [
         {
-          "name": "Da Bigger Dey Are, Da Better Dey Drop"
+          "name": "Da Bigger Dey Are, Da Better Dey Drop",
+          "summary": "Monsters and Vehicles its Lifta-droppa kills explode on a 3+"
         }
       ],
       "points": 135,
@@ -11522,7 +12070,33 @@
       ],
       "abilities": [
         {
-          "name": "Dat’s Our Loot"
+          "name": "Dat’s Our Loot",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit when shooting; every hit roll against targets on an objective"
         }
       ],
       "points": 50,
@@ -11876,10 +12450,34 @@
       ],
       "abilities": [
         {
-          "name": "Mad Dok"
+          "name": "Mad Dok",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Orks",
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: an Orks Infantry unit within 6\" heals 3 wounds, or a full-health one revives a Character"
         },
         {
-          "name": "One Scalpel Short of a Medpack"
+          "name": "One Scalpel Short of a Medpack",
+          "modifiers": [
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Falling Back"
         },
         {
           "name": "Leader"
@@ -12116,19 +12714,19 @@
           "modifiers": [
             {
               "key": "hit",
-              "target": "self",
               "value": 1,
+              "target": "self",
               "conditions": [
                 {
                   "key": "melee"
                 },
                 {
-                  "key": "Riled-up"
+                  "key": "riled-up"
                 }
               ]
             }
           ],
-          "summary": "if riled up, +1 to hit roll"
+          "summary": "+1 to hit in melee while riled up"
         },
         {
           "name": "Arrogant Invulnerability",
@@ -12139,7 +12737,7 @@
               "value": 1
             }
           ],
-          "summary": "Ennemies has -1 AP"
+          "summary": "Attacks against it: AP worsened by 1"
         }
       ],
       "points": 70,
@@ -12373,10 +12971,39 @@
       ],
       "abilities": [
         {
-          "name": "Clever Know-wotz"
+          "name": "Clever Know-wotz",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Orks",
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "As it moves: one Orks Vehicle within 3\" heals D3 and gets +1 to hit until your next Movement phase"
         },
         {
-          "name": "Kustom Dakka"
+          "name": "Kustom Dakka",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting"
         },
         {
           "name": "Support"
@@ -12565,7 +13192,8 @@
       ],
       "abilities": [
         {
-          "name": "Madcap Artillery"
+          "name": "Madcap Artillery",
+          "summary": "Mek Gunz all firing the same gun leave a lasting effect on one target they hit: cover, -1 Ld, -2\" Move or grounded"
         }
       ],
       "points": 55,
@@ -12724,13 +13352,32 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Ramshackle Cover"
+          "name": "Ramshackle Cover",
+          "summary": "Units partly hidden behind it get the benefit of cover"
         },
         {
-          "name": "Workshop"
+          "name": "Workshop",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Orks",
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "End of each Movement phase: Orks Vehicles within 6\" heal D3 wounds"
         },
         {
-          "name": "Fortification"
+          "name": "Fortification",
+          "summary": "Enemies engaged only with Fortifications can be shot at -1 to hit, and pass their hazard rolls when falling back"
         }
       ],
       "points": 80,
@@ -12909,10 +13556,30 @@
       ],
       "abilities": [
         {
-          "name": "Big an’ Shooty"
+          "name": "Big an’ Shooty",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit when shooting"
         },
         {
-          "name": "Gut Hatch"
+          "name": "Gut Hatch",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "After its Normal move, units inside can make an assault disembark"
         }
       ],
       "points": 345,
@@ -13090,13 +13757,64 @@
       ],
       "abilities": [
         {
-          "name": "Beast Snagga Following"
+          "name": "Beast Snagga Following",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative while 3\" or closer to another Beast Snagga unit (not a Monster Character)"
         },
         {
-          "name": "One Last Kill"
+          "name": "One Last Kill",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "2+",
+              "target": "self"
+            }
+          ],
+          "summary": "Slain before fighting, it still fights on a 2+"
         },
         {
-          "name": "Da Bigger Dey Iz…"
+          "name": "Da Bigger Dey Iz…",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wound rolls in melee against Monsters and Vehicles"
         }
       ],
       "points": 170,
@@ -13283,16 +14001,41 @@
       ],
       "abilities": [
         {
-          "name": "Nazdreg's Know-wotz"
+          "name": "Nazdreg's Know-wotz",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Deep Strike, and Ignores Cover when shooting"
         },
         {
-          "name": "Supreme Kunnin' (Once per phase, per army)"
+          "name": "Supreme Kunnin' (Once per phase, per army)",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move within 8\": unengaged, it moves D6\" (5\" while riled up)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Intimidating Motivation (Once per battle round, per army)"
+          "name": "Intimidating Motivation (Once per battle round, per army)",
+          "summary": "Once per battle round, as it moves: one Orks unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         }
       ],
       "points": 165,
@@ -13536,13 +14279,31 @@
       ],
       "abilities": [
         {
-          "name": "Ammo Runts (Once per battle, per unit)"
+          "name": "Ammo Runts (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, when it shoots: +1 to hit"
         },
         {
-          "name": "Get Out da Way!"
+          "name": "Get Out da Way!",
+          "summary": "Charges through models, Monsters and Vehicles excepted"
         },
         {
-          "name": "Paired Krumpas"
+          "name": "Paired Krumpas",
+          "summary": "Its Kustom Krumpa re-rolls hit and wound rolls"
         }
       ],
       "points": 115,
@@ -13741,16 +14502,46 @@
       ],
       "abilities": [
         {
-          "name": "Push Dat Bit Back In (Once per battle, per unit)"
+          "name": "Push Dat Bit Back In (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Beast Snagga"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Once per battle, Command phase: a Beast Snagga unit within 6\" heals 3 wounds"
         },
         {
-          "name": "Runnin' wiv da Herd"
+          "name": "Runnin' wiv da Herd",
+          "summary": "Attached to Mounted: loses Infantry, gains Mobile and Mounted, +4\" Move"
         },
         {
           "name": "Support"
         },
         {
-          "name": "Hardy Bioniks"
+          "name": "Hardy Bioniks",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to wound for attacks against it with S above its T"
         }
       ],
       "points": 60,
@@ -13877,10 +14668,26 @@
       ],
       "abilities": [
         {
-          "name": "Crude Surgery"
+          "name": "Crude Surgery",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: heals 3 wounds"
         },
         {
-          "name": "Catch Dat Red Bit (Once per battle, per unit)"
+          "name": "Catch Dat Red Bit (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle: Crude Surgery heals D3 more"
         },
         {
           "name": "Support"
@@ -14612,7 +15419,8 @@
       ],
       "abilities": [
         {
-          "name": "Squig Barrage"
+          "name": "Squig Barrage",
+          "summary": "One non-Monster/Vehicle target it hits with squigs gets -1 to hit until your next turn"
         }
       ],
       "points": 85,
@@ -14743,7 +15551,8 @@
       ],
       "abilities": [
         {
-          "name": "That'll Learn Ya (Once per battle round, per unit)"
+          "name": "That'll Learn Ya (Once per battle round, per unit)",
+          "summary": "Battle-shocked with 4+ Gretchin: lose D3 Gretchin to shake it off"
         },
         {
           "name": "Support"
@@ -15184,10 +15993,31 @@
       ],
       "abilities": [
         {
-          "name": "Brutal Impact"
+          "name": "Brutal Impact",
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 Damage after charging"
         },
         {
-          "name": "Bomb Squig (Once per battle, per unit)"
+          "name": "Bomb Squig (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\""
         }
       ],
       "points": 130,
@@ -15451,10 +16281,12 @@
       ],
       "abilities": [
         {
-          "name": "Waaagh! Effigy"
+          "name": "Waaagh! Effigy",
+          "summary": "Always riled up"
         },
         {
-          "name": "Idol of Belligerence"
+          "name": "Idol of Belligerence",
+          "summary": "Units disembarking from it are riled up until your next turn"
         }
       ],
       "points": 700,
@@ -15649,7 +16481,48 @@
       ],
       "abilities": [
         {
-          "name": "Rokkit Charge"
+          "name": "Rokkit Charge",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "hazardous",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Optional after charging: +1 A and S in melee, with Hazardous"
         }
       ],
       "points": 70,
@@ -15904,13 +16777,98 @@
       ],
       "abilities": [
         {
-          "name": "Rokkit Barrage"
+          "name": "Rokkit Barrage",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits takes a Battle-shock roll at -1"
         },
         {
-          "name": "Bomb Squig (Once per turn, twice per battle, per unit)"
+          "name": "Bomb Squig (Once per turn, twice per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Twice per battle, after a Normal move: D3 mortal wounds on a 3+ to one visible enemy within 12\""
         },
         {
-          "name": "Pulsa Rokkit (Once per battle, per unit)"
+          "name": "Pulsa Rokkit (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +1 AP and Lethal Hits against one Monster or Vehicle within 24\""
         }
       ],
       "points": 160,
@@ -16287,7 +17245,8 @@
       ],
       "abilities": [
         {
-          "name": "Pilin' Out"
+          "name": "Pilin' Out",
+          "summary": "An enemy ends a move within 8\": units inside can rapid-disembark"
         }
       ],
       "points": 60,
@@ -17961,7 +18920,36 @@
       ],
       "abilities": [
         {
-          "name": "High-speed Carnage"
+          "name": "High-speed Carnage",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and D in melee after charging"
         }
       ],
       "points": 75,
@@ -18185,16 +19173,62 @@
       ],
       "abilities": [
         {
-          "name": "Might is Right"
+          "name": "Might is Right",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "+3 A and +2 S in melee after charging"
         },
         {
-          "name": "Boss' Ammo Runt (Once per battle, per unit)"
+          "name": "Boss' Ammo Runt (Once per battle, per unit)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, when he shoots: +1 to hit"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Intimidating Motivation (Once per battle round, per army)"
+          "name": "Intimidating Motivation (Once per battle round, per army)",
+          "summary": "Once per battle round, as it moves: one Orks unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         }
       ],
       "points": 100,
@@ -18396,13 +19430,22 @@
       ],
       "abilities": [
         {
-          "name": "Krushin' Impetus"
+          "name": "Krushin' Impetus",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per engaged model against one enemy, each 3+ a mortal wound"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Intimidating Motivation (Once per battle round, per army)"
+          "name": "Intimidating Motivation (Once per battle round, per army)",
+          "summary": "Once per battle round, as it moves: one Orks unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         }
       ],
       "points": 115,
@@ -18573,10 +19616,24 @@
       ],
       "abilities": [
         {
-          "name": "Speedboss"
+          "name": "Speedboss",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit in melee"
         },
         {
-          "name": "Get Back in Da Race"
+          "name": "Get Back in Da Race",
+          "summary": "Once per battle round, as it moves: one Speed Freeks unit within 6\" is no longer Battle-shocked and is riled up until your next turn"
         },
         {
           "name": "Leader"
@@ -18818,7 +19875,8 @@
       ],
       "abilities": [
         {
-          "name": "Drive-by Skorchin'"
+          "name": "Drive-by Skorchin'",
+          "summary": "One enemy infantry unit within 6\" cannot be targeted by Fire Overwatch this turn"
         }
       ],
       "points": 70,
@@ -19850,10 +20908,23 @@
       ],
       "abilities": [
         {
-          "name": "Speednob Support"
+          "name": "Speednob Support",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-friends"
+                }
+              ]
+            }
+          ],
+          "summary": "Lone Operative while 3\" or closer to another Speed Freeks unit"
         },
         {
-          "name": "Bust 'Em"
+          "name": "Bust 'Em",
+          "summary": "One unit it hits is busted: Speed Freeks attacking it this turn get Lethal Hits"
         }
       ],
       "points": 70,
@@ -20049,10 +21120,49 @@
       ],
       "abilities": [
         {
-          "name": "Go fer da Weak Spot"
+          "name": "Go fer da Weak Spot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound when shooting at Monsters and Vehicles"
         },
         {
-          "name": "Blastajet Force Field"
+          "name": "Blastajet Force Field",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "5+ invulnerable save; loses Smoke"
         }
       ],
       "points": 215,
@@ -20287,7 +21397,8 @@
       ],
       "abilities": [
         {
-          "name": "Full Throttle"
+          "name": "Full Throttle",
+          "summary": "Command phase: picks one Throttlerokkit Shokka Engine ability until your next Command phase"
         }
       ],
       "points": 200,
@@ -20428,7 +21539,8 @@
       ],
       "abilities": [
         {
-          "name": "Waaagh! Energy (psyker level 1)"
+          "name": "Waaagh! Energy (psyker level 1)",
+          "summary": "Psyker level 1, with its army’s psychic abilities"
         },
         {
           "name": "Support"
@@ -20554,7 +21666,8 @@
       ],
       "abilities": [
         {
-          "name": "Super Runts"
+          "name": "Super Runts",
+          "summary": "Always riled up; Scavenged Shivs get +1 A, WS and S"
         },
         {
           "name": "Leader"
@@ -20608,15 +21721,67 @@
   "armyRules": [
     {
       "id": "da-boss",
-      "name": "Da Boss"
+      "name": "Da Boss",
+      "modifiers": [
+        {
+          "key": "cp",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "warlord"
+            }
+          ]
+        }
+      ],
+      "summary": "+1CP each battle round while it is your Warlord"
     },
     {
       "id": "unstable-energies",
-      "name": "Unstable Energies"
+      "name": "Unstable Energies",
+      "summary": "Each battle round, a Psyker uses powers whose levels add up to no more than its own"
     },
     {
       "id": "waaagh",
-      "name": "Waaagh!"
+      "name": "Waaagh!",
+      "modifiers": [
+        {
+          "key": "reroll-advance",
+          "target": "self"
+        },
+        {
+          "key": "invulnerable-save",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "riled-up"
+            }
+          ]
+        },
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "riled-up"
+            }
+          ]
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "riled-up"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll Advances; riled up: 5+ invulnerable, Assault, charge after Advancing. Once per battle, the whole army is riled up"
     }
   ],
   "detachments": [
@@ -20629,8 +21794,27 @@
       ],
       "rules": [
         {
-          "id": "eager-for-the-fight",
-          "name": "Eager for the Fight"
+          "id": "unstoppable-momentum",
+          "name": "Unstoppable Momentum",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            },
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Wagon"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Wagons re-roll charges and can make an Advance roll count as a 6"
         }
       ],
       "enhancements": [
@@ -20646,7 +21830,8 @@
               "Wagon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "With a Warboss aboard, the Wagon gets his Intimidating Motivation / Keep Huntin’"
         },
         {
           "id": "targetin-gizmos",
@@ -20660,7 +21845,38 @@
               "Wagon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "big-mek-embarked"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "big-mek-embarked"
+                },
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "summary": "Big Mek aboard: the Wagon shoots with Ignores Cover, plus Sustained Hits 1 while riled up"
         }
       ]
     },
@@ -20674,7 +21890,32 @@
       "rules": [
         {
           "id": "ard-as-nails",
-          "name": "’Ard As Nails"
+          "name": "’Ard As Nails",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "3+",
+              "target": "self"
+            },
+            {
+              "key": "fight-on-death-roll",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Warboss"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "A Warboss slain before fighting still fights on a 3+ (+1 while riled up)"
         }
       ],
       "enhancements": [
@@ -20685,8 +21926,13 @@
           "appliesTo": "character",
           "aura": false,
           "maxTargets": 1,
-          "requires": [],
-          "excludes": []
+          "requires": [
+            [
+              "Warboss"
+            ]
+          ],
+          "excludes": [],
+          "summary": "The Transport carrying him (not a Walker) gets +2\" Move and a 5+ invulnerable save"
         },
         {
           "id": "brutal-but-kunnin",
@@ -20700,7 +21946,20 @@
               "Warboss"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 Damage in melee"
         },
         {
           "id": "da-gobshot-thunderbuss",
@@ -20709,7 +21968,11 @@
           "appliesTo": "character",
           "aura": false,
           "maxTargets": 1,
-          "requires": [],
+          "requires": [
+            [
+              "Warboss"
+            ]
+          ],
           "excludes": [],
           "weapon": {
             "name": "Da Gobshot Thunderbuss",
@@ -20730,7 +21993,8 @@
                 ]
               }
             ]
-          }
+          },
+          "summary": "Gives the Warboss Da Gobshot Thunderbuss"
         },
         {
           "id": "morgogs-finkin-cap",
@@ -20739,8 +22003,20 @@
           "appliesTo": "character",
           "aura": false,
           "maxTargets": 1,
-          "requires": [],
-          "excludes": []
+          "requires": [
+            [
+              "Warboss"
+            ]
+          ],
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy Movement phase: unengaged, the unit moves D6\" (re-roll if riled up)"
         },
         {
           "id": "proper-killy",
@@ -20749,8 +22025,20 @@
           "appliesTo": "character",
           "aura": false,
           "maxTargets": 1,
-          "requires": [],
-          "excludes": []
+          "requires": [
+            [
+              "Warboss"
+            ]
+          ],
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll 1s to hit"
         },
         {
           "id": "surly-as-a-squiggoth",
@@ -20765,7 +22053,8 @@
               "Warboss"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle: slain, on a 2+ he stands back up with 3 wounds once the phase is over"
         }
       ]
     },
@@ -20779,7 +22068,28 @@
       "rules": [
         {
           "id": "displays-of-savagery",
-          "name": "Displays of Savagery"
+          "name": "Displays of Savagery",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Meganobz",
+              "Nobz"
+            ],
+            "noneOf": []
+          },
+          "summary": "Nobz and Meganobz: Sustained Hits 1 in melee"
         }
       ],
       "enhancements": [
@@ -20795,7 +22105,14 @@
               "Mega Armour"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "The unit (unless a Vehicle) gains Deep Strike"
         },
         {
           "id": "wimp-kickaz",
@@ -20809,7 +22126,14 @@
               "Nobz"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies falling back from these Nobz must Desperate Escape, at -1 to its hazard rolls while riled up"
         }
       ]
     },
@@ -20823,7 +22147,39 @@
       "rules": [
         {
           "id": "da-hunt-is-on",
-          "name": "Da Hunt Is On"
+          "name": "Da Hunt Is On",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Beast Snagga"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Beast Snagga: +1 AP against Monsters and Vehicles"
         }
       ],
       "enhancements": [
@@ -20839,7 +22195,14 @@
               "Beast Snagga"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Falling Back"
         },
         {
           "id": "it-came-from-da-drops",
@@ -20853,7 +22216,15 @@
               "Beastboss on Squigosaur"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Toughness"
         }
       ]
     },
@@ -20867,7 +22238,50 @@
       "rules": [
         {
           "id": "try-dat-button",
-          "name": "Try Dat Button!"
+          "name": "Try Dat Button!",
+          "options": [
+            {
+              "name": "1-2: +1 A",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "3-4: +2 S",
+              "modifiers": [
+                {
+                  "key": "S",
+                  "value": 2,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "5-6: +1 AP",
+              "modifiers": [
+                {
+                  "key": "AP",
+                  "value": -1,
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Orks",
+              "Walker"
+            ],
+            "anyOf": [],
+            "noneOf": [
+              "Titanic"
+            ]
+          },
+          "summary": "Walkers roll for +1 A, +2 S or +1 AP when attacking; rolling 2D6 costs a hazard roll afterwards"
         }
       ],
       "enhancements": [
@@ -20886,7 +22300,15 @@
               "Mek"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2\" Move"
         },
         {
           "id": "dreadherder",
@@ -20900,7 +22322,19 @@
               "Big Mek"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-walker"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Walker: Lone Operative; when you shoot, one Walker nearby re-rolls 1s to hit that turn"
         }
       ]
     },
@@ -20914,7 +22348,33 @@
       "rules": [
         {
           "id": "skyborne-loons",
-          "name": "Skyborne Loons"
+          "name": "Skyborne Loons",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "riled-up"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Orks"
+            ],
+            "anyOf": [
+              "Aircraft",
+              "Deffkoptas"
+            ],
+            "noneOf": []
+          },
+          "summary": "Orks Aircraft cost nothing towards Strategic Reserves; riled-up Aircraft and Deffkoptas get +1 to hit when shooting"
         }
       ],
       "enhancements": [
@@ -20931,7 +22391,15 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Character",
+              "target": "self"
+            }
+          ],
+          "summary": "The Aircraft becomes a Character; its ingress riles up Aircraft and Deffkoptas within 6\""
         },
         {
           "id": "impulsive-recon",
@@ -20946,7 +22414,14 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ingress",
+              "target": "self"
+            }
+          ],
+          "summary": "Can make an ingress move in your first Movement phase"
         }
       ]
     },
@@ -20960,7 +22435,55 @@
       "rules": [
         {
           "id": "mob-handed-brutality",
-          "name": "Mob-Handed Brutality"
+          "name": "Mob-Handed Brutality",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Boyz"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Orks",
+              "Infantry"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Boyz: Sustained Hits 1 in melee; after charging, Orks Infantry get Lethal Hits against non-Monsters/Vehicles"
         }
       ],
       "enhancements": [
@@ -20976,7 +22499,15 @@
               "Boyz"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The Boyz get a 4+ save"
         },
         {
           "id": "ferocious-show-off",
@@ -20991,7 +22522,20 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 Attack in melee for the bearer (+2 in a mob of 11+)"
         }
       ]
     },
@@ -21005,7 +22549,49 @@
       "rules": [
         {
           "id": "adrenaline-junkies",
-          "name": "Adrenaline Junkies"
+          "name": "Adrenaline Junkies",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Warbikers"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "advanced-or-fell-back"
+                }
+              ]
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Speed Freeks"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Warbikers are Battleline; Speed Freeks that Advance or Fall Back gain Assault and can still charge"
         }
       ],
       "enhancements": [
@@ -21021,7 +22607,14 @@
               "Deffkilla Wartrike"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll charge rolls"
         },
         {
           "id": "smoky-gubbinz",
@@ -21035,7 +22628,10 @@
               "Speed Freeks"
             ]
           ],
-          "excludes": []
+          "excludes": [
+            "Aircraft"
+          ],
+          "summary": "Units partly hidden behind these Speed Freeks get the benefit of cover"
         }
       ]
     },
@@ -21048,12 +22644,72 @@
       ],
       "rules": [
         {
-          "id": "try-dat-button",
-          "name": "Try Dat Button!"
-        },
-        {
           "id": "unpredictable-genius",
-          "name": "Unpredictable Genius"
+          "name": "Unpredictable Genius",
+          "options": [
+            {
+              "name": "1 Dat’s Weird: 4+ invulnerable for the target",
+              "modifiers": [
+                {
+                  "key": "invulnerable-save",
+                  "value": "4+",
+                  "target": "enemy"
+                }
+              ]
+            },
+            {
+              "name": "2-3 Hop Splat: D3 mortal wounds nearby",
+              "modifiers": [
+                {
+                  "key": "mortal-wounds",
+                  "value": "D3",
+                  "target": "enemy"
+                }
+              ]
+            },
+            {
+              "name": "4 Seekerz: +1 to hit",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "5 Lifted: the target has Fly, no cover",
+              "modifiers": []
+            },
+            {
+              "name": "6 Runtified: -1 T for the target",
+              "modifiers": [
+                {
+                  "key": "T",
+                  "value": -1,
+                  "target": "enemy"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Orks"
+            ],
+            "anyOf": [
+              "Big Mek",
+              "Mek Gunz",
+              "Morkanaut",
+              "Wazbom Blastajet"
+            ],
+            "noneOf": []
+          },
+          "summary": "Shooting one target: roll D6 for a random effect, from a 4+ invulnerable for the foe to +1 to hit or -1 T on it"
         }
       ],
       "enhancements": [
@@ -21069,7 +22725,15 @@
               "Big Mek with Shokk Attack Gun"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits is infested with Snotlings: -1 to its Leadership rolls until your next turn"
         },
         {
           "id": "mekwaaagh-mastermind",
@@ -21083,7 +22747,8 @@
               "Big Mek"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "The unit is always riled up"
         },
         {
           "id": "temperamental-shokka",
@@ -21097,7 +22762,54 @@
               "Big Mek with Shokk Attack Gun"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "options": [
+            {
+              "name": "1: Torrent, then the Big Mek dies",
+              "modifiers": [
+                {
+                  "key": "torrent",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "2-5: +1 Attack",
+              "modifiers": [
+                {
+                  "key": "A",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "6: Sustained Hits 2",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 2,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Optional D6 when the Shokk Attack Gun fires: 1 Torrent then he dies, 2-5 +1 A, 6 Sustained Hits 2"
         }
       ]
     },
@@ -21125,7 +22837,8 @@
             ],
             "anyOf": [],
             "noneOf": []
-          }
+          },
+          "summary": "Gretchin are Battleline; Advancing or Falling Back does not stop them starting an action"
         }
       ],
       "enhancements": [
@@ -21141,7 +22854,8 @@
               "Gretchin"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "-3\" detection range"
         },
         {
           "id": "minefield-detail",
@@ -21155,7 +22869,15 @@
               "Gretchin"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Scouts 6\" while not embarked"
         }
       ]
     },
@@ -21169,7 +22891,27 @@
       "rules": [
         {
           "id": "dakka-dakka-dakka",
-          "name": "Dakka! Dakka! Dakka!"
+          "name": "Dakka! Dakka! Dakka!",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Orks",
+              "Infantry"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Orks Infantry shoot with Assault; +3\" range while riled up"
         }
       ],
       "enhancements": [
@@ -21187,8 +22929,39 @@
             ]
           ],
           "excludes": [
-            "Psyker"
-          ]
+            "Weirdboy"
+          ],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "hazard-rolls",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer shoots with Anti-Infantry 4+ and Devastating Wounds, then makes two hazard rolls per such weapon"
         },
         {
           "id": "targetin-squigs",
@@ -21208,7 +22981,8 @@
               "Warboss"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+3\" range on the unit’s ranged attacks, Torrent excepted"
         }
       ]
     },
@@ -21222,7 +22996,35 @@
       "rules": [
         {
           "id": "suspiciously-well-organised",
-          "name": "Suspiciously Well Organised"
+          "name": "Suspiciously Well Organised",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Stormboyz"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Boyz",
+              "Kommandos",
+              "Stormboyz"
+            ],
+            "noneOf": []
+          },
+          "summary": "Stormboyz are Battleline; Boyz, Kommandos and Stormboyz can charge after Falling Back"
         }
       ],
       "enhancements": [
@@ -21235,7 +23037,8 @@
           "maxTargets": 1,
           "requires": [
             [
-              "Big Mek"
+              "Big Mek",
+              "Infantry"
             ],
             [
               "Infantry",
@@ -21245,7 +23048,28 @@
           "excludes": [],
           "leaderTo": [
             "Kommandos"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "leading"
+                }
+              ]
+            },
+            {
+              "key": "stealth",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "leading"
+                }
+              ]
+            }
+          ],
+          "summary": "In an attached unit, the bearer has Infiltrators and Stealth"
         },
         {
           "id": "throat-slittas",
@@ -21254,8 +23078,35 @@
           "appliesTo": "unit",
           "aura": false,
           "maxTargets": 1,
-          "requires": [],
-          "excludes": []
+          "requires": [
+            [
+              "Kommandos"
+            ],
+            [
+              "Stormboyz"
+            ]
+          ],
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits in melee against anything but Monsters and Vehicles"
         }
       ]
     },
@@ -21270,7 +23121,27 @@
       "rules": [
         {
           "id": "get-stuck-in",
-          "name": "Get Stuck In"
+          "name": "Get Stuck In",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Orks"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Sustained Hits 1 in melee"
         }
       ],
       "enhancements": [
@@ -21286,7 +23157,8 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle, during your Movement: the unit is riled up until your next turn"
         },
         {
           "id": "follow-me-ladz",
@@ -21300,7 +23172,15 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2\" Move"
         },
         {
           "id": "headwoppas-killchoppa",
@@ -21314,7 +23194,23 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "The bearer gets +1 AP in melee after charging"
         },
         {
           "id": "kunnin-but-brutal",
@@ -21328,7 +23224,18 @@
               "Orks"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot and charge after Falling Back"
         }
       ]
     },
@@ -21342,7 +23249,32 @@
       "rules": [
         {
           "id": "wreckin-and-lootin",
-          "name": "Wreckin’ and Lootin’"
+          "name": "Wreckin’ and Lootin’",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Breaka Boyz",
+              "Flash Gitz",
+              "Tankbustas"
+            ],
+            "noneOf": []
+          },
+          "summary": "Breaka Boyz, Flash Gitz and Tankbustas re-roll 1s to hit when they or their target hold an objective"
         }
       ],
       "enhancements": [
@@ -21355,7 +23287,8 @@
           "maxTargets": 1,
           "requires": [
             [
-              "Big Mek"
+              "Big Mek",
+              "Infantry"
             ],
             [
               "Infantry",
@@ -21365,7 +23298,8 @@
           "excludes": [],
           "leaderTo": [
             "Flash Gitz"
-          ]
+          ],
+          "summary": "After deployment, redeploy up to three Orks Infantry units, even into Strategic Reserves"
         },
         {
           "id": "supa-snazz-dakka",
@@ -21374,8 +23308,28 @@
           "appliesTo": "unit",
           "aura": false,
           "maxTargets": 1,
-          "requires": [],
-          "excludes": []
+          "requires": [
+            [
+              "Flash Gitz"
+            ]
+          ],
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "half-range"
+                }
+              ]
+            }
+          ],
+          "summary": "Snazzguns gain Rapid Fire 1"
         }
       ]
     },
@@ -21389,7 +23343,16 @@
       "rules": [
         {
           "id": "powers-of-da-waaagh",
-          "name": "Powers Of Da Waaagh!"
+          "name": "Powers Of Da Waaagh!",
+          "eligibility": {
+            "allOf": [
+              "Orks",
+              "Psyker"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Psychic attacks get +1 S and +1 more per 5 models; Psykers gain Roar of Mork and Visions of Violence"
         }
       ],
       "enhancements": [
@@ -21427,7 +23390,8 @@
                 ]
               }
             ]
-          }
+          },
+          "summary": "Gives the Psyker the ’Eadbanger weapon"
         },
         {
           "id": "da-krunch",
@@ -21464,7 +23428,8 @@
                 ]
               }
             ]
-          }
+          },
+          "summary": "Gives the Psyker the Da Krunch weapon"
         },
         {
           "id": "warphead",
@@ -21479,7 +23444,8 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Psyker level 2, Deadly Demise D6, and re-rolls its psychic rolls"
         }
       ]
     }
@@ -21494,7 +23460,25 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Beast Snagga Boyz",
+          "Boyz"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "summary": "+2 to Advance rolls"
     },
     {
       "id": "armed-to-da-teef",
@@ -21507,42 +23491,65 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
-    },
-    {
-      "id": "armoured-duellists",
-      "name": "Armoured Duellists",
-      "detachmentId": "blitz-brigade",
-      "cp": 1,
-      "phases": [
-        "shooting"
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Meganobz",
+          "Nobz"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "riled-up"
+            }
+          ]
+        }
       ],
-      "playerTurn": "your-turn",
-      "timing": "once-per-phase",
-      "category": "battle-tactic"
-    },
-    {
-      "id": "bigger-shells-for-bigger-gitz",
-      "name": "BIGGER SHELLS FOR BIGGER GITZ",
-      "detachmentId": "dread-mob",
-      "cp": 1,
-      "phases": [
-        "shooting"
-      ],
-      "playerTurn": "your-turn",
-      "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "summary": "Re-roll 1s to hit, or every hit roll while riled up"
     },
     {
       "id": "breakin-heads",
-      "name": "BREAKIN' HEADS",
+      "name": "BREAKIN’ HEADS",
       "detachmentId": "war-horde",
       "cp": 1,
       "phases": [
-        "command"
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "self"
+        }
+      ],
+      "summary": "An attached unit just Battle-shocked takes D3 mortal wounds and shakes it off"
     },
     {
       "id": "close-range-dakka",
@@ -21553,42 +23560,59 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
-    },
-    {
-      "id": "clownin-dakka",
-      "name": "CLOWNIN’ DAKKA",
-      "detachmentId": "shoota-boyz",
-      "cp": 1,
-      "phases": [
-        "shooting"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "half-range"
+            }
+          ]
+        }
       ],
-      "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "summary": "Rapid Fire 1 when shooting, or +1 to a Rapid Fire the weapon already has"
     },
     {
-      "id": "conniving-runts",
-      "name": "CONNIVING RUNTS",
+      "id": "crazed-rampage",
+      "name": "CRAZED RAMPAGE",
       "detachmentId": "dread-mob",
       "cp": 1,
       "phases": [
-        "movement"
+        "fight"
       ],
-      "playerTurn": "opponent-turn",
+      "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
-    },
-    {
-      "id": "dakka-dakka-dakka",
-      "name": "DAKKA! DAKKA! DAKKA!",
-      "detachmentId": "dread-mob",
-      "cp": 1,
-      "phases": [
-        "shooting"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Titanic"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        }
       ],
-      "playerTurn": "your-turn",
-      "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "summary": "Models slain before the Walker fights still fight on a 4+ (always, for a Deff Dread)"
     },
     {
       "id": "dakkastorm",
@@ -21600,7 +23624,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Speed Freeks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Sustained Hits 1 when shooting"
     },
     {
       "id": "delicious-eating-squigs",
@@ -21611,7 +23655,52 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Rukkatrukk Squigbuggy"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": 3,
+          "target": "aura",
+          "range": 3,
+          "keywords": {
+            "allOf": [
+              "Orks",
+              "Infantry"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          }
+        }
+      ],
+      "summary": "Orks Infantry units within 3\" each heal 3 wounds"
+    },
+    {
+      "id": "dread-power",
+      "name": "DREAD POWER",
+      "detachmentId": "dread-mob",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "The Walker is riled up until your next turn"
     },
     {
       "id": "drive-by-bustin",
@@ -21622,7 +23711,28 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Transport"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to hit for weapons fired through the Firing Deck"
     },
     {
       "id": "dubious-restraint",
@@ -21633,30 +23743,50 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
-    },
-    {
-      "id": "extra-gubbinz",
-      "name": "EXTRA GUBBINZ",
-      "detachmentId": "dread-mob",
-      "cp": 1,
-      "phases": [
-        "shooting"
-      ],
-      "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Boyz",
+          "Kommandos",
+          "Stormboyz"
+        ],
+        "noneOf": []
+      },
+      "summary": "Start or end of your Movement phase: an objective the unit controls becomes secured"
     },
     {
       "id": "flyin-headbutt",
-      "name": "FLYIN' HEADBUTT",
+      "name": "FLYIN’ HEADBUTT",
       "detachmentId": "flyboyz",
       "cp": 1,
       "phases": [
-        "command"
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Aircraft"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "8D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "A destroyed Aircraft skips Deadly Demise: 8D6 at an enemy within 12\", each 4+ is a mortal wound"
     },
     {
       "id": "fungus-fuel-injection",
@@ -21667,18 +23797,88 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vehicle"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "summary": "+2\" Move"
     },
     {
-      "id": "gooped-into-action",
-      "name": "GOOPED INTO ACTION",
+      "id": "glowin-dakka",
+      "name": "GLOWIN’ DAKKA",
+      "detachmentId": "shoota-boyz",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-within",
+              "value": 9
+            }
+          ]
+        }
+      ],
+      "summary": "+1 AP on shots at a target within 9\""
+    },
+    {
+      "id": "goaded-into-action",
+      "name": "GOADED INTO ACTION",
       "detachmentId": "da-big-hunt",
       "cp": 1,
       "phases": [
         "shooting"
       ],
-      "playerTurn": "either",
-      "timing": "once-per-phase"
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Beast Snagga"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot and wounded: unengaged Beast Snagga surge D6\" (re-roll if riled up)"
     },
     {
       "id": "grab-it",
@@ -21689,7 +23889,26 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Breaka Boyz",
+          "Flash Gitz",
+          "Tankbustas"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "After shooting: move up to 6\" to end on an objective, then no charge this turn"
     },
     {
       "id": "grot-shields",
@@ -21700,7 +23919,16 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Gretchin"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Hits on Orks Infantry within 3\" end there: the Grots take 1 mortal wound instead"
     },
     {
       "id": "gun-crazy-show-offs",
@@ -21711,7 +23939,18 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Flash Gitz",
+          "Tankbustas"
+        ],
+        "noneOf": []
+      },
+      "summary": "Shot at: Flash Gitz or Tankbustas that were hit shoot back at that enemy unit"
     },
     {
       "id": "hit-em-harder",
@@ -21722,7 +23961,26 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits in melee"
     },
     {
       "id": "hulking-brutes",
@@ -21734,19 +23992,79 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Meganobz",
+          "Nobz"
+        ],
+        "noneOf": []
+      },
+      "options": [
+        {
+          "name": "1CP: attacks with S above T",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "2CP: every ranged attack",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "-1 to wound for ranged attacks with S above the unit’s T; for 1 more CP, for all ranged attacks"
     },
     {
-      "id": "impervious",
-      "name": "Impervious",
+      "id": "impending-krunch",
+      "name": "IMPENDING KRUNCH",
       "detachmentId": "blitz-brigade",
       "cp": 1,
       "phases": [
-        "shooting"
+        "charge"
       ],
-      "playerTurn": "opponent-turn",
+      "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Wagon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Wagon ends a charge: every enemy unit it engages takes a Battle-shock roll at -1"
     },
     {
       "id": "infested-war-zone",
@@ -21754,10 +24072,29 @@
       "detachmentId": "runt-swarm",
       "cp": 2,
       "phases": [
-        "command"
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Gretchin"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "A Gretchin unit just destroyed comes back, at full strength, in Strategic Reserves"
     },
     {
       "id": "instinctive-hunters",
@@ -21769,19 +24106,41 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Beast Snagga"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Fight phase: unengaged Beast Snagga near a battlefield edge go into Strategic Reserves"
     },
     {
-      "id": "klankin-klaws",
-      "name": "KLANKIN’ KLAWS",
-      "detachmentId": "dread-mob",
+      "id": "keep-it-runnin",
+      "name": "KEEP IT RUNNIN’",
+      "detachmentId": "blitz-brigade",
       "cp": 1,
       "phases": [
         "fight"
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "End of the Fight phase: unengaged Infantry that could fight boards a Transport wholly within 6\""
     },
     {
       "id": "kustom-dakka",
@@ -21792,7 +24151,36 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-not-keyword",
+              "value": "Monster"
+            },
+            {
+              "key": "target-not-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound when shooting anything but Monsters and Vehicles"
     },
     {
       "id": "long-uncontrolled-bursts",
@@ -21803,19 +24191,34 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
-    },
-    {
-      "id": "mekanised-brutality",
-      "name": "Mekanised Brutality",
-      "detachmentId": "blitz-brigade",
-      "cp": 1,
-      "phases": [
-        "movement"
-      ],
-      "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Aircraft",
+          "Deffkoptas"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-keyword",
+              "value": "Fly"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hit rolls when shooting at Fly units"
     },
     {
       "id": "mind-mostly-on-the-mission",
@@ -21826,7 +24229,19 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Boyz",
+          "Kommandos",
+          "Stormboyz"
+        ],
+        "noneOf": []
+      },
+      "summary": "Advancing or Falling Back does not stop the unit starting an action"
     },
     {
       "id": "mob-mentality",
@@ -21837,19 +24252,16 @@
         "command"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
-    },
-    {
-      "id": "mount-up-ladz",
-      "name": "Mount Up, Ladz",
-      "detachmentId": "blitz-brigade",
-      "cp": 1,
-      "phases": [
-        "fight"
-      ],
-      "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A mob of 13+ makes one Orks unit within 12\" pass its Battle-shock rolls"
     },
     {
       "id": "mow-em-down",
@@ -21860,7 +24272,33 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Walker"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "cleave",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "After charging: Cleave 1 in melee, or +1 to a Cleave the weapon already has"
     },
     {
       "id": "never-enough-dakka",
@@ -21871,7 +24309,28 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Sustained Hits 1 when shooting"
     },
     {
       "id": "orks-is-never-beaten",
@@ -21883,11 +24342,37 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Titanic"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        },
+        {
+          "key": "fight-on-death-roll",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "riled-up"
+            }
+          ]
+        }
+      ],
+      "summary": "Models slain before the unit fights still fight on a 4+ (+1 while riled up)"
     },
     {
-      "id": "run-em-down",
-      "name": "Run ’em Down",
+      "id": "readied-brawlers",
+      "name": "READIED BRAWLERS",
       "detachmentId": "blitz-brigade",
       "cp": 1,
       "phases": [
@@ -21895,7 +24380,21 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Wagon"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault-disembark",
+          "target": "self"
+        }
+      ],
+      "summary": "After the Wagon’s Normal move, units inside can make an assault disembark"
     },
     {
       "id": "scarper",
@@ -21906,7 +24405,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Gretchin"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move within 8\": unengaged Gretchin move D6\" (6\" if attached)"
     },
     {
       "id": "speediest-freeks",
@@ -21918,19 +24433,42 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Speed Freeks"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Ranged attacks against the unit miss on an unmodified 1-3"
     },
     {
-      "id": "superfuelled-boiler",
-      "name": "SUPERFUELLED BOILER",
+      "id": "stomping-juggernaut",
+      "name": "STOMPING JUGGERNAUT",
       "detachmentId": "dread-mob",
       "cp": 1,
       "phases": [
-        "movement"
+        "movement",
+        "charge"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mobile",
+          "target": "self"
+        }
+      ],
+      "summary": "The Walker gains MOBILE as it moves or declares a charge"
     },
     {
       "id": "too-arrogant-to-die",
@@ -21942,7 +24480,34 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Meganobz",
+          "Nobz"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        },
+        {
+          "key": "fight-on-death-roll",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "riled-up"
+            }
+          ]
+        }
+      ],
+      "summary": "Models slain before the unit fights still fight on a 4+ (+1 while riled up)"
     },
     {
       "id": "unbridled-carnage",
@@ -21953,7 +24518,31 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Boyz"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 Attack in melee after charging"
     },
     {
       "id": "vindictive-artillerists",
@@ -21964,7 +24553,80 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks",
+          "Mek Gunz"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "options": [
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Both, with Hazardous",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "hazardous",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Mek Gunz shoot with Lethal Hits or Sustained Hits 1 — or both, with Hazardous"
     },
     {
       "id": "where-dya-fink-youre-going",
@@ -21976,14 +24638,21 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "BEAST SNAGGA"
+          "Orks",
+          "Beast Snagga"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "desperate-escape",
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy falling back from Beast Snagga must Desperate Escape; a Monster or Vehicle makes 3 more hazard rolls per unit"
     },
     {
       "id": "while-their-backs-are-turned",
@@ -21994,7 +24663,26 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Orks"
+        ],
+        "anyOf": [
+          "Boyz",
+          "Kommandos",
+          "Stormboyz"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Movement phase: a unit engaged at its start, now free, moves up to 6\""
     },
     {
       "id": "whirligig-evasion",
@@ -22005,19 +24693,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
-    },
-    {
-      "id": "yooz-in-trouble-now",
-      "name": "Yooz in Trouble Now",
-      "detachmentId": "blitz-brigade",
-      "cp": 1,
-      "phases": [
-        "shooting"
-      ],
-      "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Orks",
+          "Deffkoptas"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move within 8\": unengaged Deffkoptas move D6\" (6\" while riled up)"
     }
   ]
 }
