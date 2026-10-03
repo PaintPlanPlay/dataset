@@ -2088,7 +2088,19 @@
       ],
       "abilities": [
         {
-          "name": "Reckless Abandon"
+          "name": "Reckless Abandon",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited by other uses"
         }
       ],
       "points": 125,
@@ -2628,10 +2640,19 @@
       ],
       "abilities": [
         {
-          "name": "Reaver Band"
+          "name": "Reaver Band",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
-          "name": "Corsairs"
+          "name": "Corsairs",
+          "summary": "Leaders of Voidreavers can lead it"
         }
       ],
       "points": 125,
@@ -3212,7 +3233,15 @@
       ],
       "abilities": [
         {
-          "name": "Raid and Run"
+          "name": "Raid and Run",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D3+3",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the Fight phase: a D3+3\" move, or Falls Back as far if engaged"
         }
       ],
       "points": 75,
@@ -3620,10 +3649,36 @@
       ],
       "abilities": [
         {
-          "name": "Reavers of the Void"
+          "name": "Reavers of the Void",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective"
         },
         {
-          "name": "Mistshield"
+          "name": "Mistshield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 65,
@@ -4171,16 +4226,57 @@
       ],
       "abilities": [
         {
-          "name": "Piratical Raiders"
+          "name": "Piratical Raiders",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits and Precision against one enemy unit chosen at the start"
         },
         {
           "name": "Channeler stones"
         },
         {
-          "name": "Faolchú"
+          "name": "Faolchú",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         },
         {
-          "name": "Mistshield"
+          "name": "Mistshield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 70,
@@ -4841,16 +4937,71 @@
       ],
       "abilities": [
         {
-          "name": "Death is Not Enough"
+          "name": "Death is Not Enough",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits tests Battle-shock (-1 if it lost a model)"
         },
         {
-          "name": "Cruel Amusement"
+          "name": "Cruel Amusement",
+          "options": [
+            {
+              "name": "Ignores Cover",
+              "modifiers": [
+                {
+                  "key": "ignores-cover",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Precision",
+              "modifiers": [
+                {
+                  "key": "precision",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits 3",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 3,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Its shrieker cannon gains Ignores Cover, Precision or Sustained Hits 3 when it shoots"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         },
         {
-          "name": "Travelling Players"
+          "name": "Travelling Players",
+          "summary": "One per army unless stated otherwise"
         }
       ],
       "points": 65,
@@ -8016,10 +8167,24 @@
           "name": "Leader"
         },
         {
-          "name": "Aethersense (Psychic)"
+          "name": "Aethersense (Psychic)",
+          "summary": "Enemies from Reserves cannot arrive 12\" or closer"
         },
         {
-          "name": "Fury of the Void (Psychic)"
+          "name": "Fury of the Void (Psychic)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit its Dread of the Deep Void hits: Aeldari get +1 S against it this turn"
         }
       ],
       "points": 80,
@@ -9240,10 +9405,24 @@
           "name": "Leader"
         },
         {
-          "name": "Piratical Hero"
+          "name": "Piratical Hero",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 and +1 to hit"
         },
         {
-          "name": "Prince of Corsairs"
+          "name": "Prince of Corsairs",
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         }
       ],
       "points": 95,
@@ -11520,16 +11699,20 @@
           "name": "Leader"
         },
         {
-          "name": "Fog of Dreams (Psychic)"
+          "name": "Fog of Dreams (Psychic)",
+          "summary": "Leading: its unit can only be shot from 18\" or closer"
         },
         {
-          "name": "Treacherous Illusion (Psychic)"
+          "name": "Treacherous Illusion (Psychic)",
+          "summary": "Enemy melee weapons gain Hazardous against its unit"
         },
         {
-          "name": "Travelling Players"
+          "name": "Travelling Players",
+          "summary": "One per army unless stated otherwise"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         }
       ],
       "points": 50,
@@ -11788,7 +11971,24 @@
       ],
       "abilities": [
         {
-          "name": "Acrobatic Grace"
+          "name": "Acrobatic Grace",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 90,
@@ -11961,13 +12161,37 @@
       ],
       "abilities": [
         {
-          "name": "Blitz"
+          "name": "Blitz",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +2D6\" Move and +3 Attacks this turn"
         },
         {
-          "name": "Blur of Movement"
+          "name": "Blur of Movement",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         }
       ],
       "points": 105,
@@ -12192,7 +12416,22 @@
       ],
       "abilities": [
         {
-          "name": "Hallucinogen Grenades"
+          "name": "Hallucinogen Grenades",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "aura",
+              "range": 36,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Enemy Shooting phase: a visible friendly infantry unit 36\" or closer gains Stealth"
         }
       ],
       "points": 70,
@@ -12321,7 +12560,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Embarkation"
+          "name": "Rapid Embarkation",
+          "summary": "End of the Fight phase: a small Harlequins unit wholly 6\" or closer embarks, even after leaving"
         }
       ],
       "points": 70,
@@ -13294,10 +13534,44 @@
       ],
       "abilities": [
         {
-          "name": "Dance of Death"
+          "name": "Dance of Death",
+          "options": [
+            {
+              "name": "Hero’s Prowess: re-roll 1s to hit",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Villain’s Doom: +1 to wound",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Trickster’s Grace: -1 to hit it",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": -1,
+                  "target": "enemy"
+                }
+              ]
+            }
+          ],
+          "summary": "Start of the Fight phase: re-roll 1s to hit, +1 to wound, or -1 to hit it"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         }
       ],
       "points": 85,
@@ -13624,16 +13898,49 @@
           "name": "Leader"
         },
         {
-          "name": "Choreographer of War"
+          "name": "Choreographer of War",
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: piles in and consolidates 6\" toward the closest unit"
         },
         {
-          "name": "Cegorach’s Favour"
+          "name": "Cegorach’s Favour",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and +1 to wound in melee"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         },
         {
-          "name": "Travelling Players"
+          "name": "Travelling Players",
+          "summary": "One per army unless stated otherwise"
         }
       ],
       "points": 75,
