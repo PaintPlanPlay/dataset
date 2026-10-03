@@ -3405,10 +3405,54 @@
           "name": "Leader"
         },
         {
-          "name": "Anvil of Endurance"
+          "name": "Anvil of Endurance",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: models slain in melee before fighting still fight on a 4+"
         },
         {
-          "name": "Champion of the Kingsguard"
+          "name": "Champion of the Kingsguard",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits and wounds in melee against Characters"
         }
       ],
       "points": 105,
@@ -8682,10 +8726,31 @@
       ],
       "abilities": [
         {
-          "name": "Legendary Tenacity"
+          "name": "Legendary Tenacity",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Ancient Tactician"
+          "name": "Ancient Tactician",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1CP as your Command phase starts"
         }
       ],
       "points": 160,
@@ -9383,7 +9448,14 @@
       ],
       "abilities": [
         {
-          "name": "Berserk Charge"
+          "name": "Berserk Charge",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         }
       ],
       "points": 150,
@@ -10619,10 +10691,31 @@
           "name": "Leader"
         },
         {
-          "name": "Born of Wolves"
+          "name": "Born of Wolves",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
-          "name": "Alpha Predator"
+          "name": "Alpha Predator",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: an engaged enemy takes D3 on 2-3, 3 on 4-5, D3+3 on a 6"
         }
       ],
       "points": 75,
@@ -21130,16 +21223,48 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Hunter"
+          "name": "Alpha Hunter",
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Scouts 6\""
         },
         {
-          "name": "Close In for the Kill"
+          "name": "Close In for the Kill",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit and wound units Below Half-strength"
         },
         {
           "name": "Support"
         },
         {
-          "name": "Wolfkin"
+          "name": "Wolfkin",
+          "summary": "Never the Warlord, never given Enhancements"
         }
       ],
       "points": 20,
@@ -29944,10 +30069,31 @@
       ],
       "abilities": [
         {
-          "name": "Predatory Instinct"
+          "name": "Predatory Instinct",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
-          "name": "Hunting Hounds"
+          "name": "Hunting Hounds",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-character"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Space Wolves Character (6\"), not Battle-shocked: its wolves have OC 1"
         }
       ],
       "points": 45,
@@ -32504,7 +32650,25 @@
       ],
       "abilities": [
         {
-          "name": "Cunning Hunters"
+          "name": "Cunning Hunters",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound, all wounds against targets on an objective"
         }
       ],
       "points": 180,
@@ -33433,10 +33597,26 @@
           "name": "Leader"
         },
         {
-          "name": "Lord of the Wolfkin"
+          "name": "Lord of the Wolfkin",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading, after charging: Devastating Wounds on teeth and claws"
         },
         {
-          "name": "Mantle of the Troll King"
+          "name": "Mantle of the Troll King",
+          "summary": "Once per phase, after a save: the attack deals no damage"
         }
       ],
       "points": 85,
@@ -34147,7 +34327,14 @@
       ],
       "abilities": [
         {
-          "name": "Morkai’s Howl"
+          "name": "Morkai’s Howl",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Shooting phase: an enemy 12\" or closer tests Battle-shock; if failed, -1 to hit with Psychic attacks"
         },
         {
           "name": "Invulnerable Save"
@@ -41019,16 +41206,49 @@
       ],
       "abilities": [
         {
-          "name": "Iron Priest"
+          "name": "Iron Priest",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a friendly Adeptus Astartes Vehicle (3\"): Lone Operative"
         },
         {
-          "name": "Gift of the Iron Wolf"
+          "name": "Gift of the Iron Wolf",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: a Vehicle 3\" or closer regains D3 wounds and a gun gets Rapid Fire 1"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Judgement of the Omnissiah"
+          "name": "Judgement of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against enemies engaged with a friendly Vehicle"
         }
       ],
       "points": 60,
@@ -41245,16 +41465,58 @@
       ],
       "abilities": [
         {
-          "name": "Vengeance of the Omnissiah"
+          "name": "Vengeance of the Omnissiah",
+          "summary": "A friendly Vehicle dies 12\" or closer: its power axe has 7 Attacks for good"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Iron Priest"
+          "name": "Iron Priest",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a friendly Adeptus Astartes Vehicle (3\"): Lone Operative"
         },
         {
-          "name": "Blessing of the Omnissiah"
+          "name": "Blessing of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Vehicle 3\" or closer regains up to D3 wounds and gets +1 to hit"
         }
       ],
       "points": 95,
@@ -47460,10 +47722,40 @@
           "name": "Leader"
         },
         {
-          "name": "Refuse to Accept Defeat"
+          "name": "Refuse to Accept Defeat",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit below Starting Strength, +1 to wound as well Below Half-strength"
         },
         {
-          "name": "The Fierce Eye"
+          "name": "The Fierce Eye",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Shooting phase: a visible enemy infantry unit 12\" or closer tests Battle-shock"
         }
       ],
       "points": 65,
@@ -54621,13 +54913,16 @@
           "name": "Leader"
         },
         {
-          "name": "High King of Fenris"
+          "name": "High King of Fenris",
+          "summary": "Once per round: a Space Wolves unit in Reserves arrives as if a round later"
         },
         {
-          "name": "Guile of the Wolf (Aura)"
+          "name": "Guile of the Wolf (Aura)",
+          "summary": "Once per turn, an enemy Stratagem on a unit 12\" or closer costs 1CP more"
         },
         {
-          "name": "Embarking within Transports"
+          "name": "Embarking within Transports",
+          "summary": "Embarks in Terminator transports, taking 4 seats"
         }
       ],
       "points": 150,
@@ -54791,13 +55086,47 @@
           "name": "Leader"
         },
         {
-          "name": "Logan Grimnar"
+          "name": "Logan Grimnar",
+          "summary": "Only one Logan Grimnar in the army"
         },
         {
-          "name": "High King of Fenris"
+          "name": "High King of Fenris",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Charge phase: your units re-roll charges and melee hits this turn"
         },
         {
-          "name": "The Great Wolf"
+          "name": "The Great Wolf",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1CP whenever it destroys an enemy unit"
         }
       ],
       "points": 180,
@@ -55313,13 +55642,30 @@
       ],
       "abilities": [
         {
-          "name": "Fire Discipline"
+          "name": "Fire Discipline",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary with its leader: re-roll 1s to hit one chosen target"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Armorium Cherub"
+          "name": "Armorium Cherub",
+          "summary": "Once per battle: one hit roll becomes a 6"
         }
       ],
       "points": 120,
@@ -55693,13 +56039,22 @@
           "name": "Pelt of the Doppelgangrel:"
         },
         {
-          "name": "Last Laugh"
+          "name": "Last Laugh",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Slain in melee: on a 4+ its killer takes D6 mortal wounds and is Battle-shocked"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Master of Mischief"
+          "name": "Master of Mischief",
+          "summary": "Never the Warlord"
         }
       ],
       "points": 50,
@@ -57930,7 +58285,8 @@
           "name": "Murder-maker [Aura]"
         },
         {
-          "name": "Force of Untamed Destruction"
+          "name": "Force of Untamed Destruction",
+          "summary": "Never the Warlord"
         },
         {
           "name": "Beastial Fury"
@@ -58391,10 +58747,23 @@
           "name": "Leader"
         },
         {
-          "name": "Wind Walker (Psychic)"
+          "name": "Wind Walker (Psychic)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Assault, and Advances a flat 6\""
         },
         {
-          "name": "Tempest's Wrath (Psychic)"
+          "name": "Tempest's Wrath (Psychic)",
+          "summary": "An enemy it hits (not Monster or Vehicle) loses 6\" range, 12\" minimum"
         }
       ],
       "points": 100,
@@ -61826,10 +62195,39 @@
           "name": "Leader"
         },
         {
-          "name": "War Howl"
+          "name": "War Howl",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading Blood Claws: re-roll wounds in melee; Headtakers: charge after Advancing"
         },
         {
-          "name": "Battle-lust"
+          "name": "Battle-lust",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +2 Attacks with its Frostfang"
         }
       ],
       "points": 100,
@@ -70565,7 +70963,27 @@
       ],
       "abilities": [
         {
-          "name": "Headstrong"
+          "name": "Headstrong",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll charges; +1 to hit in melee after charging"
         },
         {
           "name": "Attached Unit"
@@ -73757,10 +74175,24 @@
       ],
       "abilities": [
         {
-          "name": "Frozen Prey"
+          "name": "Frozen Prey",
+          "summary": "A Monster or Vehicle hit by its helfrost: -2\" Move and -2 to Advance and charge"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 300,
@@ -75071,10 +75503,24 @@
       ],
       "abilities": [
         {
-          "name": "Into the Foe"
+          "name": "Into the Foe",
+          "summary": "Units disembarking before it moves can charge after Advancing"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 250,
@@ -79740,10 +80186,34 @@
       ],
       "abilities": [
         {
-          "name": "Thunderous Charge"
+          "name": "Thunderous Charge",
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +1 Damage with Wolf Guard weapons"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 115,
@@ -80315,13 +80785,40 @@
       ],
       "abilities": [
         {
-          "name": "Slayer’s Oath"
+          "name": "Slayer’s Oath",
+          "summary": "Picks Character, Monster or Vehicle; killing one such unit completes its unit’s Saga"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Oathbound"
+          "name": "Oathbound",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit in melee, +1 to wound too against its Slayer’s Oath keyword"
         }
       ],
       "points": 90,
@@ -82308,7 +82805,15 @@
           "name": "Fervour of the Ancients (Aura)"
         },
         {
-          "name": "Blizzard shield"
+          "name": "Blizzard shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 130,
@@ -87058,13 +87563,34 @@
       ],
       "abilities": [
         {
-          "name": "Chosen Companions"
+          "name": "Chosen Companions",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Character: +1 to hit"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 85,
@@ -87339,16 +87865,55 @@
       ],
       "abilities": [
         {
-          "name": "Tempered Ferocity"
+          "name": "Tempered Ferocity",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-within"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1, and re-roll 1s to hit targets 6\" or closer"
         },
         {
-          "name": "Heroic Last Stand"
+          "name": "Heroic Last Stand",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 2+"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 80,
@@ -87658,13 +88223,41 @@
           "name": "Leader"
         },
         {
-          "name": "Huskarl to the Jarl"
+          "name": "Huskarl to the Jarl",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "With another Character in its unit: Characters have Feel No Pain 4+"
         },
         {
-          "name": "Tactical Precision"
+          "name": "Tactical Precision",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Relic shield"
+          "name": "Relic shield",
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has 6 Wounds"
         }
       ],
       "points": 75,
@@ -88107,13 +88700,36 @@
           "name": "Leader"
         },
         {
-          "name": "Aggressive Hunter"
+          "name": "Aggressive Hunter",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost a model to shooting: a D6\" surge move"
         },
         {
-          "name": "Tactical Precision"
+          "name": "Tactical Precision",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 80,
@@ -88435,16 +89051,59 @@
       ],
       "abilities": [
         {
-          "name": "Let Loose the Wolves"
+          "name": "Let Loose the Wolves",
+          "summary": "Splits into Headtakers and Hunting Wolves before deployment"
         },
         {
-          "name": "Headhunters"
+          "name": "Headhunters",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Names an enemy quarry: Headtakers gain Devastating Wounds and Precision against it"
         },
         {
-          "name": "Hunting Hounds"
+          "name": "Hunting Hounds",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-character"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Space Wolves Character (6\"), not Battle-shocked: its wolves have OC 1"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 115,
@@ -88845,13 +89504,23 @@
           "name": "Support"
         },
         {
-          "name": "Inspiring Leader"
+          "name": "Inspiring Leader",
+          "summary": "Leading, once per battle: its unit may retake a failed Battle-shock test"
         },
         {
-          "name": "Pack Leader"
+          "name": "Pack Leader",
+          "summary": "Never the Warlord, never given Enhancements"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 30,
@@ -89294,16 +89963,26 @@
           "name": "Support"
         },
         {
-          "name": "Inspiring Leader"
+          "name": "Inspiring Leader",
+          "summary": "Leading, once per battle: its unit may retake a failed Battle-shock test"
         },
         {
-          "name": "Pack Leader"
+          "name": "Pack Leader",
+          "summary": "Never the Warlord, never given Enhancements"
         },
         {
           "name": "Invulnerable Save"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 40,
@@ -89789,13 +90468,23 @@
           "name": "Support"
         },
         {
-          "name": "Inspiring Leader"
+          "name": "Inspiring Leader",
+          "summary": "Leading, once per battle: its unit may retake a failed Battle-shock test"
         },
         {
-          "name": "Pack Leader"
+          "name": "Pack Leader",
+          "summary": "Never the Warlord, never given Enhancements"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 35,
@@ -90165,10 +90854,31 @@
       ],
       "abilities": [
         {
-          "name": "Rugged Resilience"
+          "name": "Rugged Resilience",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 180,
@@ -90605,13 +91315,42 @@
           "name": "Leader"
         },
         {
-          "name": "Speed of the Hunter"
+          "name": "Speed of the Hunter",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to Advance and charge"
         },
         {
-          "name": "Rites of Battle"
+          "name": "Rites of Battle",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Relic shield"
+          "name": "Relic shield",
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 7,
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has 7 Wounds"
         }
       ],
       "points": 100,
@@ -90895,10 +91634,31 @@
           "name": "Leader"
         },
         {
-          "name": "Healing Balms"
+          "name": "Healing Balms",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading, Command phase: one slain model returns (not a Character)"
         },
         {
-          "name": "Litany of Hate"
+          "name": "Litany of Hate",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to wound in melee"
         }
       ],
       "points": 75,
@@ -91205,13 +91965,52 @@
       ],
       "abilities": [
         {
-          "name": "Hunting Hounds"
+          "name": "Hunting Hounds",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-character"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Space Wolves Character (6\"), not Battle-shocked: its wolves have OC 1"
         },
         {
-          "name": "Deadly Stalkers"
+          "name": "Deadly Stalkers",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-isolated"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound a target with no other enemy 6\" or closer"
         },
         {
-          "name": "Haywire Mine"
+          "name": "Haywire Mine",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: an enemy 3\" or closer takes D3 mortal wounds on 2+ (2D3 for Vehicles)"
         },
         {
           "name": "Death in the Dark"
@@ -91874,7 +92673,14 @@
       ],
       "abilities": [
         {
-          "name": "Guerrilla Tactics"
+          "name": "Guerrilla Tactics",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, 6\" from enemies: back into Strategic Reserves"
         }
       ],
       "points": 95,
@@ -92360,10 +93166,31 @@
       ],
       "abilities": [
         {
-          "name": "Savage Frenzy"
+          "name": "Savage Frenzy",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies Falling Back from it (not Monsters or Vehicles) all test Desperate Escape, at -1 if Battle-shocked"
         },
         {
-          "name": "Death Totem"
+          "name": "Death Totem",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit in melee"
         }
       ],
       "points": 90,
@@ -92555,13 +93382,41 @@
       ],
       "abilities": [
         {
-          "name": "Bestial Rage"
+          "name": "Bestial Rage",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+2",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost wounds to shooting: a D6+2\" surge move"
         },
         {
-          "name": "Violent Fury"
+          "name": "Violent Fury",
+          "modifiers": [
+            {
+              "key": "twin-linked",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With two melee weapons: both are Twin-linked"
         },
         {
-          "name": "Blizzard shield"
+          "name": "Blizzard shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 140,
@@ -92734,13 +93589,35 @@
       ],
       "abilities": [
         {
-          "name": "Hammer Blow"
+          "name": "Hammer Blow",
+          "summary": "After fighting: a Monster or Vehicle it hit gets -1 to hit next turn"
         },
         {
-          "name": "Death Totem"
+          "name": "Death Totem",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit in melee"
         },
         {
-          "name": "Storm Shield"
+          "name": "Storm Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 125,
@@ -93002,7 +93879,20 @@
     },
     {
       "id": "curse-of-the-wulfen",
-      "name": "Curse of the Wulfen"
+      "name": "Curse of the Wulfen",
+      "modifiers": [
+        {
+          "key": "OC",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "near-character"
+            }
+          ]
+        }
+      ],
+      "summary": "Near a Space Wolves Character or a Wolf Priest, not Battle-shocked: +1 OC (+3 for Vehicles)"
     },
     {
       "id": "kill-team",
@@ -93078,7 +93968,29 @@
         "priority-assets"
       ],
       "uniqueTag": "Terminator",
-      "rules": [],
+      "rules": [
+        {
+          "id": "the-great-wolf-watches",
+          "name": "The Great Wolf Watches",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Astartes"
+            ],
+            "anyOf": [
+              "Infantry",
+              "Character"
+            ],
+            "noneOf": []
+          },
+          "summary": "Once per round, an infantry Character can Heroically Intervene even if the Stratagem was used; Space Wolves only"
+        }
+      ],
       "enhancements": [
         {
           "id": "a-giant-amongst-giants",
@@ -93093,7 +94005,25 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "W",
+              "value": 2,
+              "target": "self"
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 Wounds and +1 S in melee"
         },
         {
           "id": "preyslayer",
@@ -93108,7 +94038,18 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls Advance and charge rolls"
         }
       ]
     },
@@ -93531,7 +94472,61 @@
       "forceDispositions": [
         "purge-the-foe"
       ],
-      "rules": [],
+      "rules": [
+        {
+          "id": "legendary-slayers",
+          "name": "Legendary Slayers",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "saga-completed"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Astartes"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Lethal Hits against Characters, Monsters and Vehicles; against all once half of those enemy units are dead"
+        }
+      ],
       "enhancements": [
         {
           "id": "hunters-guile",
@@ -93545,7 +94540,8 @@
               "Adeptus Astartes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment: redeploys up to three Thunderwolf, Wulfen or Blood Claws units, Reserves allowed"
         },
         {
           "id": "wolf-touched",
@@ -93563,7 +94559,15 @@
           "leaderTo": [
             "Wulfen",
             "Wulfen With Storm Shields"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2\" Move"
         }
       ]
     },
@@ -93574,7 +94578,84 @@
       "forceDispositions": [
         "take-and-hold"
       ],
-      "rules": [],
+      "rules": [
+        {
+          "id": "howling-onslaught",
+          "name": "Howling Onslaught",
+          "summary": "Once per battle, with Logan Grimnar on the table: pick a Hunting Pack again"
+        },
+        {
+          "id": "master-of-wolves",
+          "name": "Master of Wolves",
+          "options": [
+            {
+              "name": "Encircling Jaws",
+              "modifiers": [
+                {
+                  "key": "reroll-advance",
+                  "target": "self"
+                },
+                {
+                  "key": "reroll-charge",
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Hunter's Eye",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ferocious Strike: Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ferocious Strike: Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Adeptus Astartes"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Each Command phase, one new Hunting Pack: re-roll Advance and charge, +1 to hit when shooting, or Lethal or Sustained Hits in melee"
+        }
+      ],
       "enhancements": [
         {
           "id": "chariots-of-the-storm",
@@ -93588,7 +94669,8 @@
               "Adeptus Astartes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment: redeploys up to three units, Reserves allowed"
         },
         {
           "id": "grimnars-mark",
@@ -93604,7 +94686,15 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "From round 2, once per round: Rapid Ingress or Heroic Intervention on its unit for 0CP; can lead Wolf Guard Terminators"
         },
         {
           "id": "howlmaw",
@@ -93618,7 +94708,15 @@
               "Wolf Priest"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fight phase starts: an enemy 6\" or closer tests Battle-shock at -1"
         },
         {
           "id": "skjalds-foretelling",
@@ -93633,7 +94731,20 @@
               "Wolf Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lance on its unit’s weapons"
         }
       ]
     },
@@ -93988,7 +95099,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "target": {
+        "allOf": [
+          "Space Wolves"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a D6\" Normal move"
     },
     {
       "id": "blitzing-fusillade",
@@ -94031,7 +95157,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Space Wolves"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged and 9\" or closer to an edge: back into Strategic Reserves"
     },
     {
       "id": "eye-of-the-pack",
@@ -94043,7 +95184,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound this phase"
     },
     {
       "id": "fenrisian-ferocity",
@@ -94056,7 +95216,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Walker"
+        ],
+        "noneOf": []
+      },
+      "summary": "Moves horizontally through models and terrain this phase"
     },
     {
       "id": "full-throttle",
@@ -94100,7 +95270,14 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "One unit gets a chosen Hunting Pack until your next Command phase, even a used one"
     },
     {
       "id": "honour-the-chapter",
@@ -94147,7 +95324,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Wulfen",
+          "Infantry"
+        ],
+        "anyOf": [
+          "Blood Claws"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Shot at: a D6\" surge move"
     },
     {
       "id": "mercy-is-weakness",
@@ -94225,7 +95421,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A Character, Monster or Vehicle it hits is pinned: -2\" Move and -2 to charge"
     },
     {
       "id": "power-of-the-machine-spirit",
@@ -94289,7 +95493,18 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Infantry",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "An objective it controls stays yours after it leaves"
     },
     {
       "id": "shock-assault",
@@ -94338,7 +95553,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Thunderwolf Cavalry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves through models and terrain 4\" high or less this phase"
     },
     {
       "id": "squad-tactics",
@@ -94380,7 +95603,24 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Infantry",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        }
+      ],
+      "summary": "Stealth"
     },
     {
       "id": "storm-of-fire",
@@ -94424,7 +95664,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Targeted: attacks against it get 1 worse AP"
     },
     {
       "id": "thunderous-pursuit",
@@ -94436,7 +95691,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a D6\" Normal move (6\" for wolf infantry or Thunderwolves)"
     },
     {
       "id": "unbowed-conviction",
@@ -94468,7 +95739,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Space Wolves"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound this phase"
     },
     {
       "id": "unrelenting-hunters",
@@ -94480,7 +95771,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Adeptus Astartes"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Charges after Falling Back (Space Wolves: after Advancing too)"
     },
     {
       "id": "vengeful-animus",
@@ -94552,7 +95860,29 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Adeptus Astartes",
+          "Infantry",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds"
     }
   ]
 }
