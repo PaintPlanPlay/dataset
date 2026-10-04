@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "tau-empire",
   "name": "T'au Empire",
@@ -268,13 +268,67 @@
       ],
       "abilities": [
         {
-          "name": "Inspirational Defiance"
+          "name": "Inspirational Defiance",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Martial Warrior"
+          "name": "Martial Warrior",
+          "options": [
+            {
+              "name": "Direct Grace: Precision",
+              "modifiers": [
+                {
+                  "key": "precision",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Forceful Strike: Devastating Wounds",
+              "modifiers": [
+                {
+                  "key": "devastating-wounds",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Whirling Stance: Sustained Hits 2",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 2,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "When it fights: Precision, Devastating Wounds or Sustained Hits 2"
         }
       ],
       "points": 50,
@@ -394,13 +448,40 @@
       ],
       "abilities": [
         {
-          "name": "Duality Shield"
+          "name": "Duality Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for one phase: 2+ invulnerable save"
         },
         {
-          "name": "Paradox of Duality"
+          "name": "Paradox of Duality",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Attacks against it get -1 to hit and to wound"
         },
         {
-          "name": "Supreme Loyalty (Aura)"
+          "name": "Supreme Loyalty (Aura)",
+          "summary": "Friendly units 6\" or closer get +1 to Battle-shock and Leadership tests"
         }
       ],
       "points": 65,
@@ -602,10 +683,43 @@
       ],
       "abilities": [
         {
-          "name": "Titan Hunter"
+          "name": "Titan Hunter",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "half-range"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            }
+          ],
+          "summary": "Its rail cannon and missiles gain Anti-Titanic 3+ at half range"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 315,
@@ -911,10 +1025,31 @@
       ],
       "abilities": [
         {
-          "name": "Agile Dogfighter"
+          "name": "Agile Dogfighter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Attacks against it get -1 to hit"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 220,
@@ -2237,10 +2372,27 @@
       ],
       "abilities": [
         {
-          "name": "Breach and Clear"
+          "name": "Breach and Clear",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds when shooting units on objectives"
         },
         {
-          "name": "DS8 Support Turret"
+          "name": "DS8 Support Turret",
+          "summary": "Stationary: its Shas’ui gets a missile turret until your next Movement phase"
         }
       ],
       "points": 80,
@@ -2592,10 +2744,24 @@
       ],
       "abilities": [
         {
-          "name": "Advanced Armour"
+          "name": "Advanced Armour",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Psychic attacks and mortal wounds"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 75,
@@ -2949,10 +3115,24 @@
       ],
       "abilities": [
         {
-          "name": "Volley Fire"
+          "name": "Volley Fire",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 Attack for ranged weapons"
         },
         {
-          "name": "Crack Shot"
+          "name": "Crack Shot",
+          "summary": "Its critical wounds when shooting have AP -3"
         },
         {
           "name": "Leader"
@@ -3547,10 +3727,32 @@
       ],
       "abilities": [
         {
-          "name": "Way of the Short Blade"
+          "name": "Way of the Short Blade",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-within",
+                  "value": 9
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to wound against targets 9\" or closer"
         },
         {
-          "name": "Puretide's Teachings"
+          "name": "Puretide's Teachings",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
@@ -3857,16 +4059,44 @@
           "name": "Leader"
         },
         {
-          "name": "Coldstar Commander"
+          "name": "Coldstar Commander",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Move 12\" and Assault"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can shoot after Falling Back, with the bearers only"
         },
         {
-          "name": "Shield Generator"
+          "name": "Shield Generator",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 95,
@@ -4247,19 +4477,48 @@
       ],
       "abilities": [
         {
-          "name": "Crisis Commander"
+          "name": "Crisis Commander",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: re-roll 1s to hit when shooting"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can shoot after Falling Back, with the bearers only"
         },
         {
-          "name": "Shield Generator"
+          "name": "Shield Generator",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 80,
@@ -4631,19 +4890,51 @@
       ],
       "abilities": [
         {
-          "name": "Enforcer Commander"
+          "name": "Enforcer Commander",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": 1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: ranged attacks against its unit lose 1 AP"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can shoot after Falling Back, with the bearers only"
         },
         {
-          "name": "Shield Generator"
+          "name": "Shield Generator",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 80,
@@ -4909,16 +5200,58 @@
       ],
       "abilities": [
         {
-          "name": "Agile Combatant"
+          "name": "Agile Combatant",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot after Falling Back"
         },
         {
-          "name": "Hero of the Empire (Aura)"
+          "name": "Hero of the Empire (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly units 6\" or closer re-roll 1s to hit when shooting"
         },
         {
-          "name": "Advanced Guardian Drone"
+          "name": "Advanced Guardian Drone",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged attacks against it get -1 to wound"
         },
         {
-          "name": "Command-link Drone (Aura)"
+          "name": "Command-link Drone (Aura)",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on a friendly unit 6\" or closer: +1CP on a 5+"
         },
         {
           "name": "Supreme Commander"
@@ -5228,19 +5561,43 @@
       ],
       "abilities": [
         {
-          "name": "Turbo-jets"
+          "name": "Turbo-jets",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         },
         {
           "name": "Crisis Bodyguard"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can shoot after Falling Back, with the bearers only"
         },
         {
-          "name": "Shield Generator"
+          "name": "Shield Generator",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 200,
@@ -5597,10 +5954,37 @@
       ],
       "abilities": [
         {
-          "name": "Fireknife"
+          "name": "Fireknife",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-at-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit when shooting, all of them against units at Starting Strength"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 100,
@@ -5884,10 +6268,38 @@
       ],
       "abilities": [
         {
-          "name": "Starscythe"
+          "name": "Starscythe",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP when shooting non-Monster, non-Vehicle units"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot after Falling Back"
         }
       ],
       "points": 100,
@@ -6144,7 +6556,66 @@
       ],
       "abilities": [
         {
-          "name": "Sunforge"
+          "name": "Sunforge",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds and Damage when shooting Monsters and Vehicles"
         }
       ],
       "points": 125,
@@ -6276,10 +6747,24 @@
       ],
       "abilities": [
         {
-          "name": "Structural Analyser"
+          "name": "Structural Analyser",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to wound when shooting"
         },
         {
-          "name": "Jammer Array"
+          "name": "Jammer Array",
+          "summary": "Enemies from Reserves cannot arrive 12\" or closer"
         },
         {
           "name": "Leader"
@@ -6457,7 +6942,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Deployment"
+          "name": "Rapid Deployment",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         }
       ],
       "points": 75,
@@ -6664,10 +7150,19 @@
       ],
       "abilities": [
         {
-          "name": "Reinforced Cover"
+          "name": "Reinforced Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Sentinel Protocols"
+          "name": "Sentinel Protocols",
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch with it hits on 5+"
         }
       ],
       "points": 50,
@@ -6847,16 +7342,33 @@
       ],
       "abilities": [
         {
-          "name": "Coordinated Leadership"
+          "name": "Coordinated Leadership",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "End of your Command phase: +1CP on a 4+"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Failure Is Not an Option"
+          "name": "Failure Is Not an Option",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+"
         },
         {
-          "name": "Hover Drone"
+          "name": "Hover Drone",
+          "summary": "The bearer can Fly, with Move 10\""
         }
       ],
       "points": 50,
@@ -7002,7 +7514,20 @@
       ],
       "abilities": [
         {
-          "name": "Precise Targeting"
+          "name": "Precise Targeting",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against a spotted unit"
         }
       ],
       "points": 55,
@@ -7605,16 +8130,38 @@
       ],
       "abilities": [
         {
-          "name": "Stealth Drones"
+          "name": "Stealth Drones",
+          "summary": "Twice per battle: an attack allocated to it deals no damage"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Localised Stealth Projectors (Aura)"
+          "name": "Localised Stealth Projectors (Aura)",
+          "summary": "Auxiliary Cadre: Kroot and Vespid 6\" or closer stay hidden when they shoot"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot after Falling Back, but loses Smoke"
         }
       ],
       "points": 150,
@@ -7880,13 +8427,43 @@
       ],
       "abilities": [
         {
-          "name": "Loping Stride"
+          "name": "Loping Stride",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         },
         {
-          "name": "Baggage Harness (Aura)"
+          "name": "Baggage Harness (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Kroot"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Kroot 3\" or closer gain Sustained Hits 1 when shooting"
         }
       ],
       "points": 100,
@@ -8278,13 +8855,52 @@
       ],
       "abilities": [
         {
-          "name": "Armour Hunter"
+          "name": "Armour Hunter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Targeting Array"
+          "name": "Targeting Array",
+          "summary": "When it shoots: one hit or one wound roll may be re-rolled"
         }
       ],
       "points": 150,
@@ -8511,7 +9127,8 @@
       ],
       "abilities": [
         {
-          "name": "Drone Escort"
+          "name": "Drone Escort",
+          "summary": "Once per turn, a friendly unit 6\" or closer is shot: shoots back at the attacker"
         }
       ],
       "points": 45,
@@ -9484,10 +10101,19 @@
           "name": "Leader"
         },
         {
-          "name": "War Leader"
+          "name": "War Leader",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 55,
@@ -9731,10 +10357,27 @@
       ],
       "abilities": [
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         },
         {
-          "name": "Thunderous Pounce"
+          "name": "Thunderous Pounce",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: its beaks and talons gain Lance"
         }
       ],
       "points": 110,
@@ -9904,13 +10547,16 @@
       ],
       "abilities": [
         {
-          "name": "Fieldcraft"
+          "name": "Fieldcraft",
+          "summary": "An objective it holds as your Command phase ends stays yours after it leaves"
         },
         {
-          "name": "Bodyguard"
+          "name": "Bodyguard",
+          "summary": "Twenty strong: can take two different Leaders"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 65,
@@ -10225,13 +10871,47 @@
       ],
       "abilities": [
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         },
         {
-          "name": "Pech'ra"
+          "name": "Pech'ra",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         },
         {
-          "name": "Bounty Hunters"
+          "name": "Bounty Hunters",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits and Precision against one enemy unit chosen at the start"
         }
       ],
       "points": 75,
@@ -10482,13 +11162,35 @@
           "name": "Leader"
         },
         {
-          "name": "Rites of Feasting"
+          "name": "Rites of Feasting",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 6+, 5+ once its unit destroys a unit in melee"
         },
         {
-          "name": "Ritual Butchery"
+          "name": "Ritual Butchery",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 45,
@@ -10581,13 +11283,22 @@
       ],
       "abilities": [
         {
-          "name": "Loping Pounce"
+          "name": "Loping Pounce",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Near Kroot infantry (6\") as your Command phase starts: can charge after Advancing"
         },
         {
-          "name": "Hunting Hounds"
+          "name": "Hunting Hounds",
+          "summary": "OC 1 near a Kroot Character (12\")"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 45,
@@ -10757,13 +11468,42 @@
       ],
       "abilities": [
         {
-          "name": "Fire and Fade"
+          "name": "Fire and Fade",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: a 6\" Normal move, then no charge"
         },
         {
-          "name": "Advanced Scouting"
+          "name": "Advanced Scouting",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Kroot"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Units it hits: other Kroot re-roll hits against them this turn"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 80,
@@ -10911,16 +11651,26 @@
       ],
       "abilities": [
         {
-          "name": "Kroot Ambush"
+          "name": "Kroot Ambush",
+          "summary": "After deployment, redeploys itself and another Kroot unit, even into Strategic Reserves"
         },
         {
-          "name": "Trail Finding"
+          "name": "Trail Finding",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 50,
@@ -11078,16 +11828,26 @@
       ],
       "abilities": [
         {
-          "name": "Root of Honour"
+          "name": "Root of Honour",
+          "summary": "Once per battle: frees a Kroot unit 12\" or closer from Battle-shock"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "War Leader"
+          "name": "War Leader",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 60,
@@ -11260,10 +12020,19 @@
       ],
       "abilities": [
         {
-          "name": "Kroot Linebreakers"
+          "name": "Kroot Linebreakers",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per engaged model, each 4+ D3 mortal wounds; kills force Battle-shock"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 85,
@@ -11438,10 +12207,12 @@
       ],
       "abilities": [
         {
-          "name": "Kroot Packmates"
+          "name": "Kroot Packmates",
+          "summary": "Once per turn, Kroot infantry 6\" or closer are shot: shoots back at the attacker"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         }
       ],
       "points": 45,
@@ -11716,16 +12487,75 @@
       ],
       "abilities": [
         {
-          "name": "Armour Hunter"
+          "name": "Armour Hunter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Targeting Array"
+          "name": "Targeting Array",
+          "summary": "When it shoots: one hit or one wound roll may be re-rolled"
         },
         {
-          "name": "XV02 Pilot Battlesuit"
+          "name": "XV02 Pilot Battlesuit",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Hammerhead Gunship"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Command phase: a Hammerhead 12\" or closer gains Lethal Hits"
         }
       ],
       "points": 140,
@@ -12122,13 +12952,40 @@
       ],
       "abilities": [
         {
-          "name": "Aggressive Deployment"
+          "name": "Aggressive Deployment",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it re-roll wounds against it this phase"
         },
         {
-          "name": "Air Caste Colossus"
+          "name": "Air Caste Colossus",
+          "summary": "Stratagems on it cost three times as much"
         },
         {
-          "name": "Damaged: 1-20 Wounds Remaining"
+          "name": "Damaged: 1-20 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (20 wounds or fewer left)"
         }
       ],
       "points": 2100,
@@ -12280,10 +13137,24 @@
       ],
       "abilities": [
         {
-          "name": "Jet Pack Insertion"
+          "name": "Jet Pack Insertion",
+          "summary": "Deep Strike passengers can disembark as the enemy Movement phase ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 275,
@@ -12575,16 +13446,60 @@
       ],
       "abilities": [
         {
-          "name": "Target Uploaded"
+          "name": "Target Uploaded",
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 BS and Ignores Cover against its spotted unit"
         },
         {
-          "name": "Grav-inhibitor Drone"
+          "name": "Grav-inhibitor Drone",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Charges against its unit get -2"
         },
         {
-          "name": "Pulse Accelerator Drone"
+          "name": "Pulse Accelerator Drone",
+          "summary": "+6\" range for its unit’s pulse carbines"
         },
         {
-          "name": "Recon Drone"
+          "name": "Recon Drone",
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self"
+            }
+          ],
+          "summary": "A drone burst cannon, and Infiltrators for its unit"
         }
       ],
       "points": 85,
@@ -12880,7 +13795,14 @@
       ],
       "abilities": [
         {
-          "name": "Drone Harassment Tactics"
+          "name": "Drone Harassment Tactics",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: an enemy 12\" or closer tests Battle-shock"
         }
       ],
       "points": 65,
@@ -13678,16 +14600,53 @@
       ],
       "abilities": [
         {
-          "name": "Nova Shielding"
+          "name": "Nova Shielding",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                },
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, shot at: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot after Falling Back"
         }
       ],
       "points": 200,
@@ -13874,10 +14833,40 @@
       ],
       "abilities": [
         {
-          "name": "Ground Strike Fighter"
+          "name": "Ground Strike Fighter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -14054,7 +15043,15 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Disengagement"
+          "name": "Aerial Disengagement",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a 6\" Normal move"
         }
       ],
       "points": 160,
@@ -14134,10 +15131,19 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Orbital Comms Array (Aura)"
+          "name": "Orbital Comms Array (Aura)",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on a friendly unit 6\" or closer: +1CP on a 5+"
         },
         {
-          "name": "Reinforced Cover"
+          "name": "Reinforced Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         }
       ],
       "points": 50,
@@ -14343,16 +15349,52 @@
       ],
       "abilities": [
         {
-          "name": "Nova Charge"
+          "name": "Nova Charge",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: one weapon gains Devastating Wounds"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot after Falling Back"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 190,
@@ -15273,7 +16315,20 @@
       ],
       "abilities": [
         {
-          "name": "Volley Fire"
+          "name": "Volley Fire",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 Attack for ranged weapons"
         },
         {
           "name": "Leader"
@@ -15527,16 +16582,51 @@
       ],
       "abilities": [
         {
-          "name": "Eclipse Field Generator"
+          "name": "Eclipse Field Generator",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 5+ invulnerable save"
         },
         {
-          "name": "Assassin"
+          "name": "Assassin",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against Characters"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Blacklight Marker Drones"
+          "name": "Blacklight Marker Drones",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "summary": "Twice per battle, observing: Guided units re-roll 1s to wound their spotted unit"
         }
       ],
       "points": 80,
@@ -15710,13 +16800,44 @@
       ],
       "abilities": [
         {
-          "name": "Velocity Tracker"
+          "name": "Velocity Tracker",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits when shooting units that can Fly"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Targeting Array"
+          "name": "Targeting Array",
+          "summary": "When it shoots: one hit or one wound roll may be re-rolled"
         }
       ],
       "points": 140,
@@ -16119,13 +17240,50 @@
       ],
       "abilities": [
         {
-          "name": "Forward Observers"
+          "name": "Forward Observers",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "guided"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "summary": "Observing: Guided units re-roll 1s to hit and wound their spotted unit"
         },
         {
-          "name": "Localised Stealth Projectors (Aura)"
+          "name": "Localised Stealth Projectors (Aura)",
+          "summary": "Auxiliary Cadre: Kroot and Vespid 6\" or closer stay hidden when they shoot"
         },
         {
-          "name": "Homing Beacon"
+          "name": "Homing Beacon",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: free Rapid Ingress landing 3\" from it"
         }
       ],
       "points": 100,
@@ -16495,16 +17653,72 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Heavy Walker"
+          "name": "Heavy Walker",
+          "summary": "Moves over non-Titanic models and terrain up to 4\" tall"
         },
         {
-          "name": "Support System"
+          "name": "Support System",
+          "summary": "Ignores hit modifiers when shooting"
         },
         {
-          "name": "Titan-killer"
+          "name": "Titan-killer",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits when shooting Titanic or Towering units"
         }
       ],
       "points": 375,
@@ -16833,10 +18047,19 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Volley"
+          "name": "Suppression Volley",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One infantry unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "DS8 Support Turret"
+          "name": "DS8 Support Turret",
+          "summary": "Stationary: its Shas’ui gets a missile turret until your next Movement phase"
         }
       ],
       "points": 70,
@@ -17082,10 +18305,31 @@
       ],
       "abilities": [
         {
-          "name": "Pulse Bombs"
+          "name": "Pulse Bombs",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: six D6 at a visible enemy 24\" or closer, each 4+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 150,
@@ -17391,10 +18635,46 @@
       ],
       "abilities": [
         {
-          "name": "Coordinated Strike"
+          "name": "Coordinated Strike",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "summary": "Guided: re-roll 1s to hit its spotted unit"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 790,
@@ -17700,7 +18980,20 @@
       ],
       "abilities": [
         {
-          "name": "High-intensity Markerlights"
+          "name": "High-intensity Markerlights",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "summary": "Observing: Guided units re-roll hits against their spotted unit"
         }
       ],
       "points": 80,
@@ -18060,16 +19353,65 @@
       ],
       "abilities": [
         {
-          "name": "Neocapacitor Shields"
+          "name": "Neocapacitor Shields",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Charge phase: a visible infantry unit 12\" or closer tests Battle-shock and gets -1 to charge"
         },
         {
-          "name": "Exemplars of Mont’ka"
+          "name": "Exemplars of Mont’ka",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 and Ignores Cover against the closest target"
         },
         {
-          "name": "Retro-thrusters"
+          "name": "Retro-thrusters",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "End of the Fight phase: a 6\" Normal move or a Fall Back"
         },
         {
-          "name": "MV15 Gun Drone"
+          "name": "MV15 Gun Drone",
+          "summary": "The bearer carries a twin pulse blaster"
         }
       ],
       "points": 240,
@@ -18191,10 +19533,12 @@
       ],
       "abilities": [
         {
-          "name": "Droneport"
+          "name": "Droneport",
+          "summary": "Its drone defender shoots every eligible enemy unit"
         },
         {
-          "name": "Tidewall Cover"
+          "name": "Tidewall Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         }
       ],
       "points": 85,
@@ -18285,7 +19629,8 @@
       ],
       "abilities": [
         {
-          "name": "Tidewall Cover"
+          "name": "Tidewall Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         }
       ],
       "points": 90,
@@ -18354,10 +19699,12 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Tidewall Cover"
+          "name": "Tidewall Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Tidewall Defence Platform"
+          "name": "Tidewall Defence Platform",
+          "summary": "With a defence platform: 15 Wounds"
         }
       ],
       "points": 85,
@@ -18622,13 +19969,34 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One ground unit it hits tests for Battle-shock"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Transport bay"
+          "name": "Transport bay",
+          "summary": "Transport for 12 Tactical Drones"
         }
       ],
       "points": 395,
@@ -18896,7 +20264,8 @@
       ],
       "abilities": [
         {
-          "name": "Outflank"
+          "name": "Outflank",
+          "summary": "From Strategic Reserves: can arrive in the enemy deployment zone"
         }
       ],
       "points": 60,
@@ -19285,13 +20654,36 @@
       ],
       "abilities": [
         {
-          "name": "Airborne Agility"
+          "name": "Airborne Agility",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, unengaged: back into Strategic Reserves"
         },
         {
-          "name": "Harnessed Alien Instincts"
+          "name": "Harnessed Alien Instincts",
+          "summary": "Auxiliary Cadre: when shooting, marks a visible enemy 12\" or closer as prey, +3\" detection range"
         },
         {
-          "name": "Oversight Drone"
+          "name": "Oversight Drone",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: Ignores Cover when shooting"
         }
       ],
       "points": 70,
@@ -19955,16 +21347,50 @@
       ],
       "abilities": [
         {
-          "name": "Photon Casters"
+          "name": "Photon Casters",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "advance",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry it hits are stunned: -2\" Move, Advance and charge until the enemy’s next turn ends"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can shoot after Falling Back, with the bearers only"
         },
         {
-          "name": "Shield Generator"
+          "name": "Shield Generator",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         }
       ],
       "points": 55,
@@ -20219,16 +21645,38 @@
       ],
       "abilities": [
         {
-          "name": "Nova Burst"
+          "name": "Nova Burst",
+          "summary": "Once per battle: Move 18\" for one move"
         },
         {
-          "name": "Weapon Support System"
+          "name": "Weapon Support System",
+          "summary": "Ignores hit modifiers when shooting"
         },
         {
-          "name": "Battlesuit Support System"
+          "name": "Battlesuit Support System",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Can shoot after Falling Back"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 210,
@@ -20292,7 +21740,23 @@
   "armyRules": [
     {
       "id": "for-the-greater-good",
-      "name": "For The Greater Good"
+      "name": "For The Greater Good",
+      "modifiers": [
+        {
+          "key": "BS",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "guided"
+            }
+          ]
+        }
+      ],
+      "summary": "Observer units spot an enemy each; Guided units shooting it get +1 BS (and Ignores Cover via Markerlights)"
     }
   ],
   "detachments": [
@@ -20306,7 +21770,16 @@
       "rules": [
         {
           "id": "expert-fieldcraft",
-          "name": "Expert Fieldcraft"
+          "name": "Expert Fieldcraft",
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Pathfinder Team",
+              "Stealth Battlesuits"
+            ],
+            "noneOf": []
+          },
+          "summary": "Pathfinders and Stealth Battlesuits stay hidden when they shoot"
         }
       ],
       "enhancements": [
@@ -20323,7 +21796,8 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "-3\" detection range"
         },
         {
           "id": "unmasking-suite",
@@ -20343,7 +21817,8 @@
               "Stealth Battlesuits"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Shooting: an enemy 24\" or closer gets +9\" detection range"
         }
       ]
     },
@@ -20358,7 +21833,8 @@
       "rules": [
         {
           "id": "integrated-command-structure",
-          "name": "Integrated Command Structure"
+          "name": "Integrated Command Structure",
+          "summary": "Kroot and Vespid mark prey for +3\" detection; Stealth suits keep them hidden when they shoot"
         }
       ],
       "enhancements": [
@@ -20376,7 +21852,38 @@
           ],
           "excludes": [
             "Kroot"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [],
+                "anyOf": [
+                  "Kroot",
+                  "Vespid Stingwings"
+                ],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [],
+                "anyOf": [
+                  "Kroot",
+                  "Vespid Stingwings"
+                ],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Kroot or Vespid unit 12\" or closer gets +1 Ld and OC"
         },
         {
           "id": "student-of-kauyon",
@@ -20391,7 +21898,22 @@
               "Shaper"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self",
+              "keywords": {
+                "allOf": [],
+                "anyOf": [
+                  "Kroot Carnivores",
+                  "Kroot Farstalkers"
+                ],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Up to three Carnivores or Farstalkers units gain Deep Strike"
         }
       ]
     },
@@ -20406,7 +21928,16 @@
       "rules": [
         {
           "id": "superior-craftsmanship",
-          "name": "Superior Craftsmanship"
+          "name": "Superior Craftsmanship",
+          "eligibility": {
+            "allOf": [
+              "Battlesuit",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Battlesuit Characters get +6\" range"
         }
       ],
       "enhancements": [
@@ -20422,7 +21953,50 @@
               "Battlesuit"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "One plasma rifle: +2 S, +1 A, AP and D"
         },
         {
           "id": "supernova-launcher",
@@ -20436,7 +22010,40 @@
               "Battlesuit"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "One fragmentation projector: +3 S, +1 AP and D"
         },
         {
           "id": "thermoneutronic-projector",
@@ -20450,7 +22057,40 @@
               "Battlesuit"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "One flamer: +2 S, +1 AP and D"
         }
       ]
     },
@@ -20464,7 +22104,30 @@
       "rules": [
         {
           "id": "patient-hunter",
-          "name": "Patient Hunter"
+          "name": "Patient Hunter",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "round-3-plus"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "T’au Empire"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "From round 3: Sustained Hits 1 when shooting, and Guided units ignore hit and BS modifiers"
         }
       ],
       "enhancements": [
@@ -20482,7 +22145,8 @@
           ],
           "excludes": [
             "Shaper"
-          ]
+          ],
+          "summary": "Leading: Patient Hunter applies from round 2"
         },
         {
           "id": "precision-of-the-patient-hunter",
@@ -20496,7 +22160,33 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "round-3-plus"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting, and +1 to wound from round 3"
         },
         {
           "id": "solid-image-projection-unit",
@@ -20510,7 +22200,8 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         },
         {
           "id": "through-unity-devastation",
@@ -20526,7 +22217,22 @@
           ],
           "excludes": [
             "Shaper"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit observing: Guided units gain Lethal Hits against their spotted unit"
         }
       ]
     },
@@ -20541,11 +22247,90 @@
       "rules": [
         {
           "id": "hunters-instincts",
-          "name": "Hunter’s Instincts"
+          "name": "Hunter’s Instincts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Kroot"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Kroot get +1 to hit weakened units, and +1 to wound too Below Half-strength"
+        },
+        {
+          "id": "keywords",
+          "name": "Keywords",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Kroot Carnivores"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Kroot Carnivores are Battleline"
         },
         {
           "id": "skirmish-fighters",
-          "name": "Skirmish Fighters"
+          "name": "Skirmish Fighters",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Kroot"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Kroot have a 5+ invulnerable against shooting, 6+ in melee"
         }
       ],
       "enhancements": [
@@ -20561,7 +22346,20 @@
               "Flesh Shaper"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: critical hits on 5+ in melee"
         },
         {
           "id": "kroothawk-flock",
@@ -20575,7 +22373,19 @@
               "Kroot"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover; Reinforcements cannot land 12\" or closer"
         },
         {
           "id": "nomadic-hunter",
@@ -20589,7 +22399,24 @@
               "Trail Shaper"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 3,
+              "target": "attached"
+            },
+            {
+              "key": "assault",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +3\" Move and Assault"
         },
         {
           "id": "root-carved-weapons",
@@ -20603,7 +22430,18 @@
               "War Shaper"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self"
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self"
+            }
+          ],
+          "summary": "Precision and Devastating Wounds"
         }
       ]
     },
@@ -20618,7 +22456,44 @@
       "rules": [
         {
           "id": "killing-blow",
-          "name": "Killing Blow"
+          "name": "Killing Blow",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "rounds-1-3"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "rounds-1-3"
+                },
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "T’au Empire"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Rounds 1-3: ranged weapons gain Assault, and Guided units Lethal Hits"
         }
       ],
       "enhancements": [
@@ -20636,7 +22511,23 @@
           ],
           "excludes": [
             "Shaper"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "guided"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit observing: Guided units gain Sustained Hits 1 against their spotted unit"
         },
         {
           "id": "exemplar-of-the-montka",
@@ -20652,7 +22543,8 @@
           ],
           "excludes": [
             "Shaper"
-          ]
+          ],
+          "summary": "Leading: Killing Blow lasts into round 4"
         },
         {
           "id": "strategic-conqueror",
@@ -20666,7 +22558,20 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "One objective chosen at the start: your models on it get +1 OC"
         },
         {
           "id": "strike-swiftly",
@@ -20680,7 +22585,16 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "aura",
+              "range": 6
+            }
+          ],
+          "summary": "Two units 6\" or closer without Scouts gain Scouts 6\""
         }
       ]
     },
@@ -20696,7 +22610,46 @@
       "rules": [
         {
           "id": "bonded-heroes",
-          "name": "Bonded Heroes"
+          "name": "Bonded Heroes",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-within",
+                  "value": 12
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-within",
+                  "value": 8
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "T’au Empire",
+              "Battlesuit"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Battlesuits get +1 S against targets 12\" or closer, and +1 AP 8\" or closer"
         }
       ],
       "enhancements": [
@@ -20713,7 +22666,20 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Grenades",
+              "target": "self"
+            },
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Grenades; after a Normal move over an enemy, six D6 for mortal wounds on 4+"
         },
         {
           "id": "prototype-weapon-system",
@@ -20728,7 +22694,39 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "options": [
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Whenever it shoots: Lethal Hits or Sustained Hits 1"
         },
         {
           "id": "puretide-engram-neurochip",
@@ -20743,7 +22741,15 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 4+"
         },
         {
           "id": "starflare-ignition-system",
@@ -20758,7 +22764,14 @@
               "T’au Empire"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, unengaged: back into Strategic Reserves"
         }
       ]
     }
@@ -20777,11 +22790,27 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire"
+          "T’au Empire"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-on-objective"
+            }
+          ]
+        }
+      ],
+      "summary": "From round 3: +1 to wound units on your Trap objective"
     },
     {
       "id": "a-trap-well-laid",
@@ -20801,7 +22830,27 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "aura",
+          "keywords": {
+            "allOf": [
+              "Kroot"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "One unit it hit: Kroot get +1 AP against it this phase"
     },
     {
       "id": "aggressive-mobility",
@@ -20816,11 +22865,19 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire"
+          "T’au Empire"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Advances a flat 6\" this phase"
     },
     {
       "id": "alien-expertise",
@@ -20855,7 +22912,24 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Pathfinder Team",
+          "Stealth Battlesuits"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "Sv",
+          "value": -1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 Save"
     },
     {
       "id": "combat-debarkation",
@@ -20870,12 +22944,28 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "disembarked"
+            },
+            {
+              "key": "closest-target"
+            }
+          ]
+        }
+      ],
+      "summary": "Disembarked this turn: re-roll wounds against the closest enemy"
     },
     {
       "id": "combat-embarkation",
@@ -20887,15 +22977,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "charge-declared",
       "category": "wargear",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Charged: embarks in a Transport 3\" or closer; the charger may retarget"
     },
     {
       "id": "coordinate-to-engage",
@@ -20910,11 +23002,27 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire"
+          "T’au Empire"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "BS",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Observer: +1 BS against its spotted unit (Ignores Cover with Markerlights)"
     },
     {
       "id": "counterfire-defence-systems",
@@ -20926,14 +23034,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "wargear",
       "target": {
         "allOf": [
-          "T'au Empire"
+          "T’au Empire"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to it this phase"
     },
     {
       "id": "emp-grenades",
@@ -20954,7 +23071,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "An enemy Vehicle 8\" or closer gets -1 BS and WS this phase"
     },
     {
       "id": "experimental-ammunition",
@@ -20966,7 +23084,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Battlesuit",
@@ -20974,7 +23092,59 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "options": [
+        {
+          "name": "+1 S",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "+1 S and AP, with Hazardous",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "hazardous",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "+1 S when shooting, or +1 S and AP with Hazardous"
     },
     {
       "id": "experimental-modifications",
@@ -21015,15 +23185,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "unit-destroyed",
       "category": "epic-deed",
-      "target": {
-        "allOf": [
-          "T'au Empire",
-          "Battlesuit"
-        ],
-        "anyOf": [],
-        "noneOf": []
-      }
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "A model dies: you pick its Deadly Demise roll, or nearby units take D3 on 4+"
     },
     {
       "id": "focused-fire",
@@ -21035,14 +23206,28 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire"
+          "T’au Empire"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Rounds 1-3: two units focus one enemy with +1 AP"
     },
     {
       "id": "grav-inhibitor-field",
@@ -21054,15 +23239,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "charge-declared",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Battlesuit"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Charged: the charger tests Battle-shock and takes a mortal wound per 6"
     },
     {
       "id": "guerrilla-warriors",
@@ -21074,6 +23267,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -21081,7 +23275,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "guided-by-unity",
@@ -21123,6 +23328,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -21130,7 +23336,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Can only be shot from 18\" or closer this phase"
     },
     {
       "id": "interlocking-manouevres",
@@ -21163,9 +23370,13 @@
         "allOf": [
           "Kroot"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Kroot Hounds"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "Once per battle: a destroyed Kroot unit returns whole into Strategic Reserves"
     },
     {
       "id": "marker-beacon",
@@ -21176,7 +23387,17 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Pathfinder Team",
+          "Stealth Battlesuits"
+        ],
+        "noneOf": []
+      },
+      "summary": "An objective it controls is secured"
     },
     {
       "id": "microdrone-support",
@@ -21187,7 +23408,16 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Pathfinder Team",
+          "Stealth Battlesuits"
+        ],
+        "noneOf": []
+      },
+      "summary": "Starting an action does not stop it from shooting"
     },
     {
       "id": "multisensory-scanning",
@@ -21239,12 +23469,24 @@
       "category": "wargear",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Grenades"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        },
+        {
+          "key": "charge",
+          "value": -2,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Charged, unengaged: the charger tests Battle-shock and gets -2 to charge"
     },
     {
       "id": "pinpoint-counter-offensive",
@@ -21260,7 +23502,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "T’au Empire"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Kroot"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "aura",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A unit’s killer: your non-Kroot units re-roll hits against it for the battle"
     },
     {
       "id": "point-blank-ambush",
@@ -21275,11 +23539,28 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire"
+          "T’au Empire"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-within",
+              "value": 9
+            }
+          ]
+        }
+      ],
+      "summary": "From round 3: +1 AP against targets 9\" or closer"
     },
     {
       "id": "pulse-onslaught",
@@ -21294,12 +23575,32 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Infantry"
         ],
         "anyOf": [],
-        "noneOf": []
-      }
+        "noneOf": [
+          "Kroot"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": -2,
+          "target": "enemy"
+        },
+        {
+          "key": "advance",
+          "value": -2,
+          "target": "enemy"
+        },
+        {
+          "key": "charge",
+          "value": -2,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One infantry unit it hit is shaken: -2\" Move, Advance and charge"
     },
     {
       "id": "reactive-impact-dampeners",
@@ -21325,15 +23626,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "wargear",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Battlesuit"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 6+ this phase"
     },
     {
       "id": "the-arrokon-protocol",
@@ -21348,12 +23658,25 @@
       "category": "battle-tactic",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Battlesuit"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-5-plus-models"
+            }
+          ]
+        }
+      ],
+      "summary": "Sustained Hits 1 against units of 6+ models (2 against 11+)"
     },
     {
       "id": "the-grisly-feast",
@@ -21372,7 +23695,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Destroyed a unit: enemies 6\" or closer test Battle-shock next Command phase"
     },
     {
       "id": "the-shortened-blade",
@@ -21387,12 +23717,13 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Battlesuit"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Deep Strikes 6\" from enemies, then no charge"
     },
     {
       "id": "the-torchstar-gambit",
@@ -21407,13 +23738,20 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "T'au Empire",
+          "T’au Empire",
           "Battlesuit",
           "Fly"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "target": "self"
+        }
+      ],
+      "summary": "After attacking, unengaged: a Normal move, then no charge"
     },
     {
       "id": "threat-assessment-analyser",
@@ -21437,14 +23775,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "category": "battle-tactic",
       "target": {
-        "allOf": [
-          "T'au Empire"
+        "allOf": [],
+        "anyOf": [
+          "Stealth Battlesuits",
+          "Ghostkeel Battlesuit",
+          "Commander Shadowsun"
         ],
-        "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     }
   ]
 }

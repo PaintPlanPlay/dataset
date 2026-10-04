@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "titanicus-traitoris",
   "name": "Titanicus Traitoris",
@@ -249,13 +249,73 @@
       ],
       "abilities": [
         {
-          "name": "Emissary of the Great Mutator (Aura)"
+          "name": "Emissary of the Great Mutator (Aura)",
+          "summary": "Friendly Tzeentch daemons 6\" or closer re-roll Battle-shock tests"
         },
         {
-          "name": "Master of Magicks (Psychic)"
+          "name": "Master of Magicks (Psychic)",
+          "options": [
+            {
+              "name": "Ignores Cover",
+              "modifiers": [
+                {
+                  "key": "ignores-cover",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits D3",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": "D3",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Each Shooting phase its ranged weapon gains Ignores Cover, Lethal Hits or Sustained Hits D3"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 315,
@@ -470,13 +530,35 @@
       ],
       "abilities": [
         {
-          "name": "Emissary of the Blood God (Aura)"
+          "name": "Emissary of the Blood God (Aura)",
+          "summary": "Friendly Khorne daemons 6\" or closer re-roll Battle-shock tests"
         },
         {
-          "name": "Relentless Carnage"
+          "name": "Relentless Carnage",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "8D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the Fight phase: eight D6 at an engaged enemy, each 4+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 415,
@@ -800,16 +882,38 @@
       ],
       "abilities": [
         {
-          "name": "The Dark Master (Aura)"
+          "name": "The Dark Master (Aura)",
+          "summary": "The ground 6\" or closer to it is in your Shadow of Chaos"
         },
         {
-          "name": "Shadow Form"
+          "name": "Shadow Form",
+          "summary": "Each battle round: picks one Shadow Form ability"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Disciples of Be'lakor"
+          "name": "Disciples of Be'lakor",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: Undivided units make Dark Pacts; Heretic Astartes gain Deep Strike"
         }
       ],
       "points": 390,
@@ -910,10 +1014,24 @@
       ],
       "abilities": [
         {
-          "name": "Grotesque Regeneration"
+          "name": "Grotesque Regeneration",
+          "summary": "Wounded Beasts heal fully as each phase ends"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 80,
@@ -1038,16 +1156,44 @@
       ],
       "abilities": [
         {
-          "name": "Brass Stampede"
+          "name": "Brass Stampede",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per model, each 4+ D3 mortal wounds"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         }
       ],
       "points": 95,
@@ -1163,16 +1309,44 @@
       ],
       "abilities": [
         {
-          "name": "Bane of Cowards"
+          "name": "Bane of Cowards",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         }
       ],
       "points": 110,
@@ -1267,13 +1441,33 @@
           "name": "Leader"
         },
         {
-          "name": "Bloodmaster"
+          "name": "Bloodmaster",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to wound"
         },
         {
-          "name": "A Gory Path"
+          "name": "A Gory Path",
+          "summary": "Its unit consolidates 6\""
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 65,
@@ -1470,19 +1664,73 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Khorne (Aura)"
+          "name": "Daemon Lord of Khorne (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Khorne"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Khorne daemons 6\" or closer get +1 to hit in melee"
         },
         {
-          "name": "Relentless Carnage"
+          "name": "Relentless Carnage",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "8D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the Fight phase: eight D6 at an engaged enemy, each 4+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Khorne (Aura)"
+          "name": "Greater Daemon of Khorne (Aura)",
+          "summary": "Friendly Khorne daemons 6\" or closer are in your Shadow of Chaos"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 320,
@@ -1692,16 +1940,50 @@
       ],
       "abilities": [
         {
-          "name": "Split"
+          "name": "Split",
+          "summary": "Slain Horrors split into smaller Horrors on a 4+"
         },
         {
-          "name": "Sullen Malevolence (Aura)"
+          "name": "Sullen Malevolence (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "With Blue Horrors: enemies 6\" or closer get -1 Leadership"
         },
         {
-          "name": "Exploding Horrors"
+          "name": "Exploding Horrors",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fighting: Brimstone Horrors blow up on 4+ for a mortal wound each"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 125,
@@ -1952,10 +2234,28 @@
       ],
       "abilities": [
         {
-          "name": "Eldritch Flames (Psychic)"
+          "name": "Eldritch Flames (Psychic)",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 115,
@@ -2554,16 +2854,53 @@
       ],
       "abilities": [
         {
-          "name": "Changecaster"
+          "name": "Changecaster",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 when shooting"
         },
         {
-          "name": "Storm of Mutating Sorcery (Psychic)"
+          "name": "Storm of Mutating Sorcery (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One infantry unit it hits tests for Battle-shock"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 60,
@@ -2726,10 +3063,48 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -2944,10 +3319,38 @@
       ],
       "abilities": [
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3184,13 +3587,34 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Unrestrained Terror (Aura)"
+          "name": "Unrestrained Terror (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "War Dogs 6\" or closer: enemies engaged with them test Battle-shock as the Fight phase starts"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3388,13 +3812,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Consumed with Hunger (Aura)"
+          "name": "Consumed with Hunger (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer re-roll hits against Titanic or Towering units"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -3538,13 +4063,55 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Offerings for the Dark Gods (Aura)"
+          "name": "Offerings for the Dark Gods (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer get Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3689,13 +4256,54 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Dark Fervour (Aura)"
+          "name": "Dark Fervour (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -3903,13 +4511,64 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Huntmaster (Aura)"
+          "name": "Huntmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         }
       ],
       "points": 375,
@@ -4159,13 +4818,69 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Preysight (Aura)"
+          "name": "Preysight (Aura)",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer shoot with Ignores Cover"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 365,
@@ -4338,19 +5053,64 @@
       ],
       "abilities": [
         {
-          "name": "Swallow Energy (Psychic)"
+          "name": "Swallow Energy (Psychic)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Feel No Pain 4+ against mortal wounds and Psychic attacks"
         },
         {
-          "name": "Horrible Fascination (Psychic)"
+          "name": "Horrible Fascination (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Shooting phase: a visible enemy 12\" or closer gets -1 to hit (2-5) or cannot shoot (6)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 115,
@@ -4490,16 +5250,72 @@
       ],
       "abilities": [
         {
-          "name": "Prince of Darkness (Aura)"
+          "name": "Prince of Darkness (Aura)",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "aura",
+              "range": 6
+            }
+          ],
+          "summary": "Friendly daemons 6\" or closer have Stealth"
         },
         {
-          "name": "Unholy Vigour"
+          "name": "Unholy Vigour",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for one phase: 3+ invulnerable save"
         },
         {
-          "name": "Daemonic Lord"
+          "name": "Daemonic Lord",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Near friendly daemon infantry (3\"): Lone Operative"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         }
       ],
       "points": 165,
@@ -4628,13 +5444,98 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Destruction"
+          "name": "Malefic Destruction",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 Attacks for its hellforged weapons"
         },
         {
-          "name": "Harbinger of Death"
+          "name": "Harbinger of Death",
+          "options": [
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Precision",
+              "modifiers": [
+                {
+                  "key": "precision",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "When it fights: Lethal Hits, Precision or Sustained Hits 1"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         }
       ],
       "points": 190,
@@ -4736,19 +5637,59 @@
       ],
       "abilities": [
         {
-          "name": "Horrifying Beauty "
+          "name": "Horrifying Beauty ",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: engaged enemies test Battle-shock (-1 Below Half-strength)"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 100,
@@ -6243,10 +7184,26 @@
           "name": "Leader"
         },
         {
-          "name": "Blessed by the Plague God"
+          "name": "Blessed by the Plague God",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 4+ invulnerable save"
         },
         {
-          "name": "Tally of Pestilence"
+          "name": "Tally of Pestilence",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Every 7 enemy models slain by Nurgle daemons: +1CP"
         }
       ],
       "points": 80,
@@ -6387,16 +7344,47 @@
           "name": "Leader"
         },
         {
-          "name": "Blazing Warpfire (Psychic)"
+          "name": "Blazing Warpfire (Psychic)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: ranged weapons gain Assault"
         },
         {
-          "name": "Flames of Change (Psychic)"
+          "name": "Flames of Change (Psychic)",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         },
         {
-          "name": "Manifestation of Destruction"
+          "name": "Manifestation of Destruction",
+          "summary": "Cannot be your Warlord or take Enhancements"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 65,
@@ -6568,13 +7556,49 @@
           "name": "Leader"
         },
         {
-          "name": "Fateskimmer"
+          "name": "Fateskimmer",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits in melee"
         },
         {
-          "name": "Rider of the Immaterial Winds"
+          "name": "Rider of the Immaterial Winds",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy turn, unengaged: into Strategic Reserves"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 95,
@@ -6663,13 +7687,42 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Shroud of Flies (Aura)"
+          "name": "Shroud of Flies (Aura)",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Nurgle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Friendly Nurgle daemons 6\" or closer have Stealth"
         },
         {
-          "name": "Diseased Cover"
+          "name": "Diseased Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 100,
@@ -6758,13 +7811,45 @@
       ],
       "abilities": [
         {
-          "name": "Soporific Musk"
+          "name": "Soporific Musk",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 90,
@@ -7147,10 +8232,34 @@
       ],
       "abilities": [
         {
-          "name": "Bounding Leaps"
+          "name": "Bounding Leaps",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 65,
@@ -7272,13 +8381,44 @@
       ],
       "abilities": [
         {
-          "name": "Hunters from the Warp"
+          "name": "Hunters from the Warp",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, unengaged: back into Strategic Reserves"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         },
         {
-          "name": "Collar of Khorne"
+          "name": "Collar of Khorne",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks"
         }
       ],
       "points": 80,
@@ -7428,13 +8568,48 @@
           "name": "Leader"
         },
         {
-          "name": "Fluxmaster"
+          "name": "Fluxmaster",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Stealth, and -1 to hit it in melee"
         },
         {
-          "name": "Altered Reality (Psychic)"
+          "name": "Altered Reality (Psychic)",
+          "summary": "Once per battle round: turns one of its hit, wound or save rolls into a 6"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 70,
@@ -7689,22 +8864,100 @@
       ],
       "abilities": [
         {
-          "name": "Prey on the Weak"
+          "name": "Prey on the Weak",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound Battle-shocked units"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 40,
@@ -7812,22 +9065,95 @@
       ],
       "abilities": [
         {
-          "name": "Regenerating Monstrosity"
+          "name": "Regenerating Monstrosity",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Each Command phase: regains up to D3 wounds"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 130,
@@ -8019,19 +9345,63 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Nurgle (Aura)"
+          "name": "Daemon Lord of Nurgle (Aura)",
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Nurgle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Friendly Nurgle daemons 6\" or closer get +1 Toughness"
         },
         {
-          "name": "Nurgle’s Rot (Psychic)"
+          "name": "Nurgle’s Rot (Psychic)",
+          "summary": "End of your Movement phase: an enemy 12\" or closer gets -1 Toughness until the next"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Nurgle (Aura)"
+          "name": "Greater Daemon of Nurgle (Aura)",
+          "summary": "Friendly Nurgle daemons 6\" or closer are in your Shadow of Chaos"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 265,
@@ -8395,13 +9765,66 @@
       ],
       "abilities": [
         {
-          "name": "Cutting Down the Foe"
+          "name": "Cutting Down the Foe",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +1 S and Damage in melee"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 80,
@@ -8541,19 +9964,79 @@
       ],
       "abilities": [
         {
-          "name": "Lethal Caress"
+          "name": "Lethal Caress",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 AP in melee"
         },
         {
-          "name": "Symphony of Pain (Psychic)"
+          "name": "Symphony of Pain (Psychic)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "A Battle-shocked enemy 12\" or closer: Slaanesh daemons re-roll hits and wounds against it"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 70,
@@ -8684,10 +10167,18 @@
           "name": "Leader"
         },
         {
-          "name": "Beast Handler"
+          "name": "Beast Handler",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll charges; once per battle a cheaper free Heroic Intervention"
         },
         {
-          "name": "Seed the Garden of Nurgle"
+          "name": "Seed the Garden of Nurgle",
+          "summary": "Ends its move in area terrain: that terrain joins your Shadow for good"
         }
       ],
       "points": 120,
@@ -9724,16 +11215,49 @@
           "name": "Leader"
         },
         {
-          "name": "Harmonic Alignment"
+          "name": "Harmonic Alignment",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Leading, Command phase: returns D3 Bodyguard models"
         },
         {
-          "name": "Discordant Disruption (Aura)"
+          "name": "Discordant Disruption (Aura)",
+          "summary": "Enemy Psykers 12\" or closer: their Psychic weapons gain Hazardous"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 60,
@@ -9879,16 +11403,46 @@
       ],
       "abilities": [
         {
-          "name": "One Head Looks Forward"
+          "name": "One Head Looks Forward",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "End of your Command phase: +1CP on a passed Leadership test"
         },
         {
-          "name": "One Head Looks Back (Aura)"
+          "name": "One Head Looks Back (Aura)",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Stratagems on units 12\" or closer cost 1CP more"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Tzeentch (Aura)"
+          "name": "Greater Daemon of Tzeentch (Aura)",
+          "summary": "Friendly Tzeentch daemons 6\" or closer are in your Shadow of Chaos"
         }
       ],
       "points": 305,
@@ -10014,16 +11568,56 @@
       ],
       "abilities": [
         {
-          "name": "Pack Leader"
+          "name": "Pack Leader",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "attached"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll Advance and charge rolls"
         },
         {
-          "name": "Prey of the Blood God"
+          "name": "Prey of the Blood God",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit re-rolls melee wounds against its prey, chosen anew whenever one dies"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Brass Collar of Bloody Vengeance"
+          "name": "Brass Collar of Bloody Vengeance",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 3+ against Psychic attacks and mortal wounds"
         }
       ],
       "points": 70,
@@ -10224,25 +11818,100 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Slaanesh (Aura)"
+          "name": "Daemon Lord of Slaanesh (Aura)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Slaanesh"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Slaanesh daemons 6\" or closer get +1 AP in melee"
         },
         {
-          "name": "Mesmerising Form"
+          "name": "Mesmerising Form",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Attacks against it get -1 to hit"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Slaanesh (Aura)"
+          "name": "Greater Daemon of Slaanesh (Aura)",
+          "summary": "Friendly Slaanesh daemons 6\" or closer are in your Shadow of Chaos"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         },
         {
-          "name": "Shining aegis"
+          "name": "Shining aegis",
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": "3+",
+              "target": "self"
+            }
+          ],
+          "summary": "Save 3+"
         }
       ],
       "points": 265,
@@ -10478,13 +12147,38 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 180,
@@ -10639,16 +12333,54 @@
       ],
       "abilities": [
         {
-          "name": "Vortex Terrors (Psychic)"
+          "name": "Vortex Terrors (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible enemy 24\" or closer tests Battle-shock"
         },
         {
-          "name": "Warp Storms (Psychic)"
+          "name": "Warp Storms (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 9\" or closer take D3 mortal wounds on 3+"
         },
         {
           "name": "*Invulnerable Save"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 350,
@@ -10844,13 +12576,58 @@
       ],
       "abilities": [
         {
-          "name": "Taskmaster (Aura)"
+          "name": "Taskmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit when shooting"
         },
         {
-          "name": "Obsessive Ruthlessness"
+          "name": "Obsessive Ruthlessness",
+          "summary": "Shooting Monsters and Vehicles: ignores BS, hit and wound modifiers"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -11230,13 +13007,66 @@
       ],
       "abilities": [
         {
-          "name": "Dread Dominion (Aura)"
+          "name": "Dread Dominion (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 Leadership and OC"
         },
         {
-          "name": "Seething Hatred"
+          "name": "Seething Hatred",
+          "summary": "Shooting or fighting: one hit or one wound may be re-rolled"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -11624,13 +13454,73 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Rampage (Aura)"
+          "name": "Frenzied Rampage (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit in melee"
         },
         {
-          "name": "Bloodlust"
+          "name": "Bloodlust",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: Sustained Hits 1 in melee; once per battle, charges after Advancing"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -11801,13 +13691,70 @@
       ],
       "abilities": [
         {
-          "name": "Methodical Destruction"
+          "name": "Methodical Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its victim, chosen anew whenever one dies"
         },
         {
-          "name": "Close-range Killers (Aura)"
+          "name": "Close-range Killers (Aura)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 AP against the closest enemy"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -12077,13 +14024,42 @@
       ],
       "abilities": [
         {
-          "name": "Infernal Aegis (Aura)"
+          "name": "Infernal Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer have the benefit of cover"
         },
         {
-          "name": "Bastion of Corruption"
+          "name": "Bastion of Corruption",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -12362,19 +14338,117 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Tzeentch (Aura)"
+          "name": "Daemon Lord of Tzeentch (Aura)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Tzeentch"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Tzeentch daemons 6\" or closer get +1 S when shooting"
         },
         {
-          "name": "Master of Magicks (Psychic)"
+          "name": "Master of Magicks (Psychic)",
+          "options": [
+            {
+              "name": "Ignores Cover",
+              "modifiers": [
+                {
+                  "key": "ignores-cover",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits D3",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": "D3",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Each Shooting phase its ranged weapon gains Ignores Cover, Lethal Hits or Sustained Hits D3"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Tzeentch (Aura)"
+          "name": "Greater Daemon of Tzeentch (Aura)",
+          "summary": "Friendly Tzeentch daemons 6\" or closer are in your Shadow of Chaos"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 320,
@@ -12714,13 +14788,40 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 180,
@@ -12813,10 +14914,36 @@
       ],
       "abilities": [
         {
-          "name": "Mischief Makers (Aura)"
+          "name": "Mischief Makers (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -1 to hit in melee"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 45,
@@ -13019,19 +15146,47 @@
       ],
       "abilities": [
         {
-          "name": "Split"
+          "name": "Split",
+          "summary": "Slain Horrors split into smaller Horrors on a 4+"
         },
         {
-          "name": "Horrors are Pink. Horrors are Blue. Where once there was one, now there are two."
+          "name": "Horrors are Pink. Horrors are Blue. Where once there was one, now there are two.",
+          "summary": "With no Pink Horror left, the unit uses the Blue Horrors datasheet"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 150,
@@ -13195,16 +15350,51 @@
       ],
       "abilities": [
         {
-          "name": "Death’s Heads"
+          "name": "Death’s Heads",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Nurgle daemons re-roll wounds against it this turn"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 110,
@@ -13332,13 +15522,39 @@
       ],
       "abilities": [
         {
-          "name": "Grandfather's Blessing"
+          "name": "Grandfather's Blessing",
+          "summary": "Leaders of Beasts of Nurgle can lead it"
         },
         {
-          "name": "Pouncing Leap"
+          "name": "Pouncing Leap",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited by other uses"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 120,
@@ -13433,16 +15649,39 @@
       ],
       "abilities": [
         {
-          "name": "Infected Outbreak"
+          "name": "Infected Outbreak",
+          "summary": "An objective it holds as your Command phase ends stays yours after it leaves"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 115,
@@ -13669,19 +15908,58 @@
       ],
       "abilities": [
         {
-          "name": "Grandfather's Blessing"
+          "name": "Grandfather's Blessing",
+          "summary": "Leaders of Beasts of Nurgle can lead it"
         },
         {
-          "name": "Bounding Assault"
+          "name": "Bounding Assault",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: its plagueswords gain Lance"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 160,
@@ -13789,13 +16067,42 @@
           "name": "Leader"
         },
         {
-          "name": "Poxbringer"
+          "name": "Poxbringer",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: critical hits on 5+"
         },
         {
-          "name": "Feculent Despair (Aura, Psychic)"
+          "name": "Feculent Despair (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer test Battle-shock at -1"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 60,
@@ -14512,13 +16819,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-20 wounds remaining"
+          "name": "Damaged: 1-20 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (20 wounds or fewer left)"
         },
         {
-          "name": "God-machine"
+          "name": "God-machine",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2200,
@@ -14723,13 +17065,88 @@
       ],
       "abilities": [
         {
-          "name": "Blood Throne"
+          "name": "Blood Throne",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Fight phase: Khorne daemons get +1 S, AP and D against one visible enemy 18\" or closer"
         },
         {
-          "name": "Champion Slayer"
+          "name": "Champion Slayer",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll melee wounds against Characters and Monsters; killing one heals D6"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 160,
@@ -14880,16 +17297,63 @@
       ],
       "abilities": [
         {
-          "name": "Virulent Blessing (Psychic)"
+          "name": "Virulent Blessing (Psychic)",
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Nurgle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Fight phase: Nurgle daemons get +1 Damage against one visible enemy 24\" or closer"
         },
         {
-          "name": "Deluge of Nurgle (Aura)"
+          "name": "Deluge of Nurgle (Aura)",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -2\" Move and -1 OC"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Nurgle (Aura)"
+          "name": "Greater Daemon of Nurgle (Aura)",
+          "summary": "Friendly Nurgle daemons 6\" or closer are in your Shadow of Chaos"
         }
       ],
       "points": 280,
@@ -15026,13 +17490,28 @@
       ],
       "abilities": [
         {
-          "name": "Emissary of the Plague God (Aura)"
+          "name": "Emissary of the Plague God (Aura)",
+          "summary": "Friendly Nurgle daemons 6\" or closer re-roll Battle-shock tests"
         },
         {
-          "name": "Nurgle’s Rot (Psychic)"
+          "name": "Nurgle’s Rot (Psychic)",
+          "summary": "End of your Movement phase: an enemy 12\" or closer gets -1 Toughness until the next"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 275,
@@ -15135,10 +17614,35 @@
       ],
       "abilities": [
         {
-          "name": "Slashing Dive"
+          "name": "Slashing Dive",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: a D6 per model, each 4+ a mortal wound"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 80,
@@ -15288,10 +17792,34 @@
           "name": "Scythed Impact"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 0,
@@ -15416,19 +17944,63 @@
       ],
       "abilities": [
         {
-          "name": "Unholy Speed"
+          "name": "Unholy Speed",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 85,
@@ -15700,19 +18272,96 @@
       ],
       "abilities": [
         {
-          "name": "No Prey Can Evade"
+          "name": "No Prey Can Evade",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Monarch of the Hunt"
+          "name": "Monarch of the Hunt",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits and wounds in melee against its quarry, chosen anew whenever one dies"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Greater Daemon of Slaanesh (Aura)"
+          "name": "Greater Daemon of Slaanesh (Aura)",
+          "summary": "Friendly Slaanesh daemons 6\" or closer are in your Shadow of Chaos"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         }
       ],
       "points": 315,
@@ -15855,16 +18504,61 @@
       ],
       "abilities": [
         {
-          "name": "Rage Embodied (Aura)"
+          "name": "Rage Embodied (Aura)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Khorne"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Khorne daemons 6\" or closer get +1 melee Attack"
         },
         {
-          "name": "Murderlust"
+          "name": "Murderlust",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "Damaged (7 wounds or fewer left): +2 melee Attacks"
         },
         {
-          "name": "Greater Daemon of Khorne (Aura)"
+          "name": "Greater Daemon of Khorne (Aura)",
+          "summary": "Friendly Khorne daemons 6\" or closer are in your Shadow of Chaos"
         }
       ],
       "points": 330,
@@ -15946,13 +18640,26 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Shadow of Khorne (Aura)"
+          "name": "Shadow of Khorne (Aura)",
+          "summary": "The ground 6\" or closer is in your Shadow; Khorne daemons there re-roll Battle-shock"
         },
         {
-          "name": "Cover"
+          "name": "Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 105,
@@ -16078,10 +18785,28 @@
       ],
       "abilities": [
         {
-          "name": "Skulls of the Fallen"
+          "name": "Skulls of the Fallen",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 100,
@@ -16211,16 +18936,49 @@
       ],
       "abilities": [
         {
-          "name": "Skullmaster’s Fury"
+          "name": "Skullmaster’s Fury",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading, after a charge: its Juggernauts’ horns gain Devastating Wounds"
         },
         {
-          "name": "Devastating Charge"
+          "name": "Devastating Charge",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its unit charges: engaged enemies test Battle-shock"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         }
       ],
       "points": 85,
@@ -16328,10 +19086,52 @@
       ],
       "abilities": [
         {
-          "name": "Lord of Decapitations"
+          "name": "Lord of Decapitations",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Devastating Wounds in melee"
         },
         {
-          "name": "Skulls for Khorne"
+          "name": "Skulls for Khorne",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll hits and wounds against Characters; each one killed gives 1CP"
         },
         {
           "name": "Leader"
@@ -16561,16 +19361,54 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 180,
@@ -16670,13 +19508,45 @@
           "name": "Leader"
         },
         {
-          "name": "Jolly Gutpipes"
+          "name": "Jolly Gutpipes",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "reroll-advance",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1\" Move and re-roll Advance rolls"
         },
         {
-          "name": "Disease of Mirth (Aura)"
+          "name": "Disease of Mirth (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: non-Monster, non-Vehicle enemies 6\" or closer test Battle-shock"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 55,
@@ -16874,22 +19744,95 @@
       ],
       "abilities": [
         {
-          "name": "Warp Spines"
+          "name": "Warp Spines",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-3, 3 on 4-5, D3+3 on a 6"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Murderer's Cowl"
+          "name": "Murderer's Cowl",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shadow Legion: shoots and charges after Advancing"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 145,
@@ -17015,13 +19958,47 @@
           "name": "Leader"
         },
         {
-          "name": "Keep Counting!"
+          "name": "Keep Counting!",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
-          "name": "Meet Your Quota!"
+          "name": "Meet Your Quota!",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC"
         },
         {
-          "name": "Gloam Rot"
+          "name": "Gloam Rot",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 60,
@@ -17205,16 +20182,53 @@
       ],
       "abilities": [
         {
-          "name": "Prince of Slaanesh"
+          "name": "Prince of Slaanesh",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "5+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: critical wounds on 5+ in melee"
         },
         {
-          "name": "Delightful Agonies"
+          "name": "Delightful Agonies",
+          "summary": "First death: on a 2+ returns whole once the phase ends"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         }
       ],
       "points": 120,
@@ -17434,10 +20448,31 @@
       ],
       "abilities": [
         {
-          "name": "P’tarix’s Sorcerous Syphon (Aura)"
+          "name": "P’tarix’s Sorcerous Syphon (Aura)",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies 12\" or closer get -1 to wound with Psychic attacks"
         },
         {
-          "name": "Xirat’p’s Sorcerous Barrages (Psychic)"
+          "name": "Xirat’p’s Sorcerous Barrages (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 6\" or closer take 1, D3 or D6 mortal wounds"
         }
       ],
       "points": 75,
@@ -17575,10 +20610,19 @@
       ],
       "abilities": [
         {
-          "name": "Formless Horror"
+          "name": "Formless Horror",
+          "summary": "Enemies must pass Battle-shock to target it"
         },
         {
-          "name": "Mischief and Confusion"
+          "name": "Mischief and Confusion",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Shooting phase: a visible enemy 12\" or closer gets -1 to hit (2-5) or cannot shoot (6)"
         }
       ],
       "points": 105,
@@ -17683,13 +20727,73 @@
       ],
       "abilities": [
         {
-          "name": "The Eternal Dance"
+          "name": "The Eternal Dance",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Fight phase, one enemy 6\" or closer: Slaanesh daemons +1 to wound it, it -1 to wound"
         },
         {
-          "name": "Dazzling Acrobatics"
+          "name": "Dazzling Acrobatics",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing or Falling Back"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         }
       ],
       "points": 95,
@@ -17854,19 +20958,77 @@
       ],
       "abilities": [
         {
-          "name": "Tormentbringer (Aura)"
+          "name": "Tormentbringer (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Slaanesh"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Slaanesh daemons 6\" or closer get Sustained Hits 1 in melee"
         },
         {
-          "name": "Hysterical Frenzy"
+          "name": "Hysterical Frenzy",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Models slain before fighting always fight back"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 135,
@@ -17985,19 +21147,84 @@
       ],
       "abilities": [
         {
-          "name": "Tranceweaver"
+          "name": "Tranceweaver",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective"
         },
         {
-          "name": "Symphony of Pain (Psychic)"
+          "name": "Symphony of Pain (Psychic)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "A Battle-shocked enemy 12\" or closer: Slaanesh daemons re-roll hits and wounds against it"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         },
         {
-          "name": "Shadow's Caress"
+          "name": "Shadow's Caress",
+          "summary": "Shadow Legion: enemies cannot snap-shoot at it"
         }
       ],
       "points": 60,
@@ -18171,13 +21398,44 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Penumbral Puppetry"
+          "name": "Penumbral Puppetry",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Shadow Legion: Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 180,
@@ -18916,10 +22174,38 @@
       ],
       "abilities": [
         {
-          "name": "Brigand"
+          "name": "Brigand",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -19115,10 +22401,36 @@
       ],
       "abilities": [
         {
-          "name": "Executioner"
+          "name": "Executioner",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Below Half-strength units; its kills force Battle-shock 3\" around"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -19322,10 +22634,48 @@
       ],
       "abilities": [
         {
-          "name": "Huntsman"
+          "name": "Huntsman",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -19521,10 +22871,34 @@
       ],
       "abilities": [
         {
-          "name": "Karnivore"
+          "name": "Karnivore",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -19775,10 +23149,35 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -20076,10 +23475,36 @@
       ],
       "abilities": [
         {
-          "name": "Stalker"
+          "name": "Stalker",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-isolated"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound targets with no other enemy 6\" or closer"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -20425,13 +23850,38 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-26 wounds remaining"
+          "name": "Damaged: 1-26 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (26 wounds or fewer left)"
         },
         {
-          "name": "Titanic Fire Support"
+          "name": "Titanic Fire Support",
+          "summary": "One unit it hits: friendly critical wounds get +1 AP against it this phase"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2600,
@@ -20726,13 +24176,45 @@
       ],
       "abilities": [
         {
-          "name": "Flank Speed"
+          "name": "Flank Speed",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 8,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 8\" without rolling"
         },
         {
-          "name": "Damaged: 1-13 wounds remaining"
+          "name": "Damaged: 1-13 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -8 OC while damaged (13 wounds or fewer left)"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost twice as much"
         }
       ],
       "points": 1100,
@@ -21099,13 +24581,44 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-33 wounds remaining"
+          "name": "Damaged: 1-33 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -15,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -15 OC while damaged (33 wounds or fewer left)"
         },
         {
-          "name": "Wrath of the Omnissiah"
+          "name": "Wrath of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost four times as much"
         }
       ],
       "points": 3500,
@@ -21373,16 +24886,61 @@
       ],
       "abilities": [
         {
-          "name": "Emissary of the Prince of Excess (Aura)"
+          "name": "Emissary of the Prince of Excess (Aura)",
+          "summary": "Friendly Slaanesh daemons 6\" or closer re-roll Battle-shock tests"
         },
         {
-          "name": "Mesmerising Form"
+          "name": "Mesmerising Form",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Attacks against it get -1 to hit"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Seductive Gambit"
+          "name": "Seductive Gambit",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Legion of Excess: after a charge, giving up Fights First, re-roll hits and 1s to wound"
         }
       ],
       "points": 320,

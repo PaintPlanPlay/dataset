@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "tyranids",
   "name": "Tyranids",
@@ -281,10 +281,31 @@
       ],
       "abilities": [
         {
-          "name": "Overgrown Barbs"
+          "name": "Overgrown Barbs",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Titanic unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 340,
@@ -396,7 +417,25 @@
       ],
       "abilities": [
         {
-          "name": "Disruption Bombardment"
+          "name": "Disruption Bombardment",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "advance",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry it hits: -2\" Move, Advance and charge until the enemy’s next turn ends"
         }
       ],
       "points": 50,
@@ -690,7 +729,8 @@
       ],
       "abilities": [
         {
-          "name": "Seed Spore Mines"
+          "name": "Seed Spore Mines",
+          "summary": "Instead of shooting: a new Spore Mines unit 48\" or closer, 8\" from enemies"
         }
       ],
       "points": 60,
@@ -894,10 +934,25 @@
       ],
       "abilities": [
         {
-          "name": "Vicious Insight"
+          "name": "Vicious Insight",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Devastating Wounds"
         },
         {
-          "name": "Hypnotic Gaze (Psychic)"
+          "name": "Hypnotic Gaze (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fight phase: an engaged enemy gets -1 to hit"
         },
         {
           "name": "Leader"
@@ -1165,7 +1220,15 @@
       ],
       "abilities": [
         {
-          "name": "Blistering Assault"
+          "name": "Blistering Assault",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+2",
+              "target": "self"
+            }
+          ],
+          "summary": "Lost wounds to shooting: a D6+2\" surge move"
         }
       ],
       "points": 90,
@@ -1857,13 +1920,34 @@
       ],
       "abilities": [
         {
-          "name": "Fear of the Unseen (Aura)"
+          "name": "Fear of the Unseen (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer: -1 Leadership, and must test Battle-shock if weakened"
         },
         {
-          "name": "Hunter Organism"
+          "name": "Hunter Organism",
+          "summary": "Cannot be your Warlord"
         },
         {
-          "name": "Feeder Tendrils"
+          "name": "Feeder Tendrils",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills an enemy Character: +1CP"
         }
       ],
       "points": 80,
@@ -1953,10 +2037,31 @@
       ],
       "abilities": [
         {
-          "name": "Digestion Spine"
+          "name": "Digestion Spine",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Killed non-Vehicles in melee: regains up to D3 wounds"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 200,
@@ -2062,10 +2167,36 @@
       ],
       "abilities": [
         {
-          "name": "Symbiotic Targeting"
+          "name": "Symbiotic Targeting",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Tyranids re-roll 1s to hit it this phase"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 135,
@@ -2580,7 +2711,15 @@
       ],
       "abilities": [
         {
-          "name": "Winged Swarm"
+          "name": "Winged Swarm",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: a 6\" Normal move, then no charge"
         }
       ],
       "points": 75,
@@ -2685,7 +2824,25 @@
       ],
       "abilities": [
         {
-          "name": "Vanguard Predator"
+          "name": "Vanguard Predator",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit, and 1s to wound against units on objectives"
         }
       ],
       "points": 75,
@@ -2981,10 +3138,31 @@
       ],
       "abilities": [
         {
-          "name": "Spore Mine Cysts"
+          "name": "Spore Mine Cysts",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of the enemy Fight phase: six D6 at a visible enemy (3+ each), or D3 new Spore Mines"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 185,
@@ -3139,10 +3317,36 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Frenzied Metabolism"
+          "name": "Frenzied Metabolism",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "May shoot at +1 to wound, then takes D3 mortal wounds on 2+"
         }
       ],
       "points": 610,
@@ -3287,10 +3491,30 @@
       ],
       "abilities": [
         {
-          "name": "Grisly Spectacle"
+          "name": "Grisly Spectacle",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Destroyed a unit in melee: enemies 6\" or closer test Battle-shock"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 125,
@@ -3463,13 +3687,50 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -6,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -6 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Apex-beast"
+          "name": "Apex-beast",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Battle-shocked units"
         },
         {
-          "name": "Stalking Forward"
+          "name": "Stalking Forward",
+          "summary": "Moves over non-Titanic models and terrain up to 4\" tall"
         }
       ],
       "points": 810,
@@ -3666,10 +3927,40 @@
       ],
       "abilities": [
         {
-          "name": "Airborne Predator"
+          "name": "Airborne Predator",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 170,
@@ -3820,7 +4111,15 @@
       ],
       "abilities": [
         {
-          "name": "Defensive Stance"
+          "name": "Defensive Stance",
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it hits on 5+ (4+ on an objective)"
         }
       ],
       "points": 80,
@@ -4041,13 +4340,44 @@
       ],
       "abilities": [
         {
-          "name": "Onslaught (Aura, Psychic)"
+          "name": "Onslaught (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "lethal-hits",
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly units 6\" or closer gain Assault and Lethal Hits when shooting"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Will of the Hive Mind"
+          "name": "Will of the Hive Mind",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on a Tyranids unit 12\" or closer costs 1CP less"
         }
       ],
       "points": 195,
@@ -4233,7 +4563,14 @@
       ],
       "abilities": [
         {
-          "name": "Bounding Leap"
+          "name": "Bounding Leap",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         }
       ],
       "points": 70,
@@ -4395,10 +4732,26 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Invader"
+          "name": "Alpha Invader",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Sustained Hits 1"
         },
         {
-          "name": "Hypersensory Array"
+          "name": "Hypersensory Array",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Rapid Ingress or Heroic Intervention on it costs 1CP less, unlimited"
         },
         {
           "name": "Leader"
@@ -4720,10 +5073,26 @@
       ],
       "abilities": [
         {
-          "name": "Pheromone Trail"
+          "name": "Pheromone Trail",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Rapid Ingress on it costs 0CP"
         },
         {
-          "name": "Feeder Tendrils"
+          "name": "Feeder Tendrils",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills an enemy Character: +1CP"
         }
       ],
       "points": 60,
@@ -5701,10 +6070,61 @@
       ],
       "abilities": [
         {
-          "name": "Enhanced Toxic Miasma"
+          "name": "Enhanced Toxic Miasma",
+          "summary": "Leading: its unit’s Foul Spores reach 9\""
         },
         {
-          "name": "Prey Adaptation"
+          "name": "Prey Adaptation",
+          "options": [
+            {
+              "name": "Sustained Hits 1",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lance",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": 1,
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    },
+                    {
+                      "key": "charged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "attached",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "When its unit fights: Sustained Hits 1, Lance or Lethal Hits in melee"
         },
         {
           "name": "Leader"
@@ -5831,10 +6251,31 @@
       ],
       "abilities": [
         {
-          "name": "Encephalic Diffusion (Aura, Psychic)"
+          "name": "Encephalic Diffusion (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -1 to hit (and -1 to wound Below Half-strength)"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 180,
@@ -5962,10 +6403,31 @@
       ],
       "abilities": [
         {
-          "name": "Terror from the Deep"
+          "name": "Terror from the Deep",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "On Deep Strike: enemies 12\" or closer take D3 on 2-4, 3 and Battle-shock on 5+"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 130,
@@ -6042,10 +6504,19 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Bio-minefield"
+          "name": "Bio-minefield",
+          "summary": "Enemies cannot start or end an Advance 6\" or closer"
         },
         {
-          "name": "Floating Death"
+          "name": "Floating Death",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Near an enemy after a move: explodes, D3 mortal wounds on 2-5, D6 on a 6"
         }
       ],
       "points": 30,
@@ -6113,10 +6584,19 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Bio-minefield"
+          "name": "Bio-minefield",
+          "summary": "Enemies cannot start or end an Advance 6\" or closer"
         },
         {
-          "name": "Floating Death"
+          "name": "Floating Death",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Near an enemy after a move: explodes, D3 mortal wounds on 2-5, D6 on a 6"
         }
       ],
       "points": 0,
@@ -6191,7 +6671,8 @@
       ],
       "abilities": [
         {
-          "name": "Neurocytes"
+          "name": "Neurocytes",
+          "summary": "Becomes Synapse while in another unit’s Synapse Range"
         }
       ],
       "points": 45,
@@ -6300,13 +6781,58 @@
       ],
       "abilities": [
         {
-          "name": "Feeder Tendrils"
+          "name": "Feeder Tendrils",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills an enemy Character: +1CP"
         },
         {
-          "name": "Neural Disruption"
+          "name": "Neural Disruption",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Command phase: an enemy 12\" or closer tests Battle-shock"
         },
         {
-          "name": "Psychological Saboteur (Aura)"
+          "name": "Psychological Saboteur (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Tyranids"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "Battle-shocked enemies 12\" or closer: -1 to hit, and Tyranids get +1 to wound them"
         }
       ],
       "points": 80,
@@ -6439,13 +6965,40 @@
       ],
       "abilities": [
         {
-          "name": "Node Lash (Psychic)"
+          "name": "Node Lash (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit, and +1 to wound Battle-shocked units"
         },
         {
-          "name": "Psychic Terror (Psychic)"
+          "name": "Psychic Terror (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Shadow in the Warp tests get a further -1"
         },
         {
-          "name": "Neuroloids"
+          "name": "Neuroloids",
+          "summary": "Command phase: two units 18\" or closer count as in Synapse Range"
         },
         {
           "name": "Leader"
@@ -7150,7 +7703,15 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Warrior"
+          "name": "Alpha Warrior",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1"
         },
         {
           "name": "Leader"
@@ -7376,16 +7937,81 @@
       ],
       "abilities": [
         {
-          "name": "Harpoon Barbs"
+          "name": "Harpoon Barbs",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an engaged enemy Falls Back: D6 mortal wounds on a 2+"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Singular Purpose"
+          "name": "Singular Purpose",
+          "options": [
+            {
+              "name": "Hunt: re-roll hits and wounds against one enemy",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": "all",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-quarry"
+                    }
+                  ]
+                },
+                {
+                  "key": "reroll-wound",
+                  "value": "all",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-quarry"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hold: Feel No Pain 5+ and OC 15 on one objective",
+              "modifiers": [
+                {
+                  "key": "feel-no-pain",
+                  "value": "5+",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "on-objective"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "At the start: hunt one enemy, re-rolling hits and wounds, or hold one objective with FNP 5+ and OC 15"
         },
         {
-          "name": "Protean Purpose"
+          "name": "Protean Purpose",
+          "summary": "Talons of the Norn Queen: once per battle, may change its Singular Purpose"
         }
       ],
       "points": 250,
@@ -7567,13 +8193,70 @@
       ],
       "abilities": [
         {
-          "name": "Singular Purpose"
+          "name": "Singular Purpose",
+          "options": [
+            {
+              "name": "Hunt: re-roll hits and wounds against one enemy",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": "all",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-quarry"
+                    }
+                  ]
+                },
+                {
+                  "key": "reroll-wound",
+                  "value": "all",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-quarry"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hold: Feel No Pain 5+ and OC 15 on one objective",
+              "modifiers": [
+                {
+                  "key": "feel-no-pain",
+                  "value": "5+",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "on-objective"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "At the start: hunt one enemy, re-rolling hits and wounds, or hold one objective with FNP 5+ and OC 15"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Protean Purpose"
+          "name": "Protean Purpose",
+          "summary": "Talons of the Norn Queen: once per battle, may change its Singular Purpose"
         },
         {
           "name": "Unnatural Resistance"
@@ -7701,10 +8384,26 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Leader"
+          "name": "Alpha Leader",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll hits"
         },
         {
-          "name": "Unstoppable Monster"
+          "name": "Unstoppable Monster",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Each Command phase: regains up to D3 wounds"
         },
         {
           "name": "Leader"
@@ -7826,10 +8525,18 @@
       ],
       "abilities": [
         {
-          "name": "Parasitic Infection"
+          "name": "Parasitic Infection",
+          "summary": "Infantry its ovipositor kills spawn new Ripper Swarms"
         },
         {
-          "name": "It Itches!"
+          "name": "It Itches!",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: an engaged enemy tests Battle-shock"
         }
       ],
       "points": 65,
@@ -9323,10 +10030,55 @@
       ],
       "abilities": [
         {
-          "name": "Bio-stimulus"
+          "name": "Bio-stimulus",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Tyranids get +1 AP in melee against it this turn"
         },
         {
-          "name": "Feeding Frenzy"
+          "name": "Feeding Frenzy",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit weakened units in melee, +1 to wound too Below Half-strength"
         }
       ],
       "points": 110,
@@ -9442,7 +10194,8 @@
       ],
       "abilities": [
         {
-          "name": "Burning Spray"
+          "name": "Burning Spray",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         }
       ],
       "points": 40,
@@ -9576,7 +10329,14 @@
       ],
       "abilities": [
         {
-          "name": "Death From Below"
+          "name": "Death From Below",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, unengaged: back into Strategic Reserves"
         }
       ],
       "points": 125,
@@ -9698,7 +10458,8 @@
       ],
       "abilities": [
         {
-          "name": "Chitinous Horrors (Aura)"
+          "name": "Chitinous Horrors (Aura)",
+          "summary": "Engaged enemies have their OC halved"
         }
       ],
       "points": 30,
@@ -9825,7 +10586,8 @@
       ],
       "abilities": [
         {
-          "name": "Chitinous Horrors (Aura)"
+          "name": "Chitinous Horrors (Aura)",
+          "summary": "Engaged enemies have their OC halved"
         }
       ],
       "points": 0,
@@ -9920,7 +10682,15 @@
       ],
       "abilities": [
         {
-          "name": "Death Scream"
+          "name": "Death Scream",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests Battle-shock at -1"
         }
       ],
       "points": 125,
@@ -10043,10 +10813,30 @@
       ],
       "abilities": [
         {
-          "name": "Irresistible Force"
+          "name": "Irresistible Force",
+          "modifiers": [
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Falling Back"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 330,
@@ -10236,7 +11026,8 @@
       ],
       "abilities": [
         {
-          "name": "Chitinous Horrors"
+          "name": "Chitinous Horrors",
+          "summary": "Engaged enemies have their OC halved"
         }
       ],
       "points": 60,
@@ -10482,10 +11273,19 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Bio-minefield"
+          "name": "Bio-minefield",
+          "summary": "Enemies cannot start or end an Advance 6\" or closer"
         },
         {
-          "name": "Floating Death"
+          "name": "Floating Death",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Near an enemy after a move: explodes, 1 mortal wound on 2-5, D3 on a 6"
         }
       ],
       "points": 55,
@@ -10553,10 +11353,19 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Floating Death"
+          "name": "Floating Death",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Near an enemy after a move: explodes, D3 mortal wounds on 2-5, D6 on a 6"
         },
         {
-          "name": "Bio-minefield"
+          "name": "Bio-minefield",
+          "summary": "Enemies cannot start or end an Advance 6\" or closer"
         }
       ],
       "points": 0,
@@ -10603,10 +11412,19 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Floating Death"
+          "name": "Floating Death",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Near an enemy after a move: explodes, D3 mortal wounds on 2-5, D6 on a 6"
         },
         {
-          "name": "Bio-minefield"
+          "name": "Bio-minefield",
+          "summary": "Enemies cannot start or end an Advance 6\" or closer"
         }
       ],
       "points": 0,
@@ -10688,10 +11506,19 @@
       ],
       "abilities": [
         {
-          "name": "Seed Mucolids"
+          "name": "Seed Mucolids",
+          "summary": "Instead of shooting: a new Mucolid Spore 18\" or closer, 8\" from enemies"
         },
         {
-          "name": "Hive Defences"
+          "name": "Hive Defences",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it costs 0CP, even if already used"
         }
       ],
       "points": 145,
@@ -10913,7 +11740,15 @@
       ],
       "abilities": [
         {
-          "name": "Skulking Horrors"
+          "name": "Skulking Horrors",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         }
       ],
       "points": 55,
@@ -11158,13 +11993,62 @@
       ],
       "abilities": [
         {
-          "name": "Spawn Termagants"
+          "name": "Spawn Termagants",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+3",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Termagants"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Termagants unit 6\" or closer gets up to D3+3 models back"
         },
         {
-          "name": "Brood Progenitor (Aura, Psychic)"
+          "name": "Brood Progenitor (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Termagants"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Termagants 6\" or closer gain Lethal Hits when shooting"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 150,
@@ -11422,10 +12306,34 @@
       ],
       "abilities": [
         {
-          "name": "Swallow Whole"
+          "name": "Swallow Whole",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Its maw wounds Infantry, Mounted and Beasts critically, healing D3+2 per kill"
         },
         {
-          "name": "Subterranean Hunter"
+          "name": "Subterranean Hunter",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the Fight phase, unengaged: back into Strategic Reserves"
         }
       ],
       "points": 120,
@@ -11549,13 +12457,30 @@
       ],
       "abilities": [
         {
-          "name": "Hive Commander"
+          "name": "Hive Commander",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1CP as your Command phase starts"
         },
         {
-          "name": "Malign Presence (Aura)"
+          "name": "Malign Presence (Aura)",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "As Warlord: enemy Stratagems on units 12\" or closer cost 1CP more"
         },
         {
-          "name": "Domination of the Hive Mind (Aura)"
+          "name": "Domination of the Hive Mind (Aura)",
+          "summary": "Units 9\" or closer are in Synapse Range"
         },
         {
           "name": "Leader"
@@ -11676,13 +12601,35 @@
       ],
       "abilities": [
         {
-          "name": "Grasping Tendrils"
+          "name": "Grasping Tendrils",
+          "summary": "Enemies Falling Back from it stay put on a 3+"
         },
         {
-          "name": "Hypertoxic Miasma (Aura)"
+          "name": "Hypertoxic Miasma (Aura)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 6\" or closer take 1, D3 or D6 mortal wounds"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 120,
@@ -11798,10 +12745,24 @@
       ],
       "abilities": [
         {
-          "name": "Subterranean Tunnels"
+          "name": "Subterranean Tunnels",
+          "summary": "Deep Strikes 6\" from enemies, then no charge"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 135,
@@ -11938,10 +12899,26 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Warrior"
+          "name": "Alpha Warrior",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1"
         },
         {
-          "name": "Aggressive Leader‑beast"
+          "name": "Aggressive Leader‑beast",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Loses a model to shooting: a D6\" surge move"
         },
         {
           "name": "Leader"
@@ -12065,7 +13042,35 @@
       ],
       "abilities": [
         {
-          "name": "Adaptive Instincts (Once per turn, per unit)"
+          "name": "Adaptive Instincts (Once per turn, per unit)",
+          "options": [
+            {
+              "name": "+1 melee Strength",
+              "modifiers": [
+                {
+                  "key": "S",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "+1 Toughness",
+              "modifiers": [
+                {
+                  "key": "T",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, in a fight: +1 melee S or +1 Toughness"
         }
       ],
       "points": 75,
@@ -12281,7 +13286,18 @@
       ],
       "abilities": [
         {
-          "name": "Adaptable Predators"
+          "name": "Adaptable Predators",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         }
       ],
       "points": 60,
@@ -12529,7 +13545,8 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Seeding"
+          "name": "Aerial Seeding",
+          "summary": "Starts in Reserves without counting, lands in rounds 1-3; passengers disembark 8\" from enemies"
         }
       ],
       "points": 80,
@@ -12710,10 +13727,24 @@
       ],
       "abilities": [
         {
-          "name": "Resilient Organism"
+          "name": "Resilient Organism",
+          "summary": "Once per battle: an attack allocated to it deals no damage"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 170,
@@ -12914,7 +13945,22 @@
       ],
       "abilities": [
         {
-          "name": "Guardian Organism"
+          "name": "Guardian Organism",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Character"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Its leading Character has Feel No Pain 5+"
         }
       ],
       "points": 80,
@@ -13215,7 +14261,15 @@
       ],
       "abilities": [
         {
-          "name": "Foul Spores (Aura)"
+          "name": "Foul Spores (Aura)",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "aura",
+              "range": 6
+            }
+          ],
+          "summary": "Friendly Tyranids 6\" or closer have Stealth"
         }
       ],
       "points": 55,
@@ -13365,7 +14419,19 @@
       ],
       "abilities": [
         {
-          "name": "Pouncing Leap"
+          "name": "Pouncing Leap",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited"
         }
       ],
       "points": 55,
@@ -13917,10 +14983,26 @@
       ],
       "abilities": [
         {
-          "name": "Paroxysm (Psychic)"
+          "name": "Paroxysm (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fight phase: a visible enemy 12\" or closer gets -1 Attack on a 2+"
         },
         {
-          "name": "Will of the Hive Mind"
+          "name": "Will of the Hive Mind",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on a Tyranids unit 12\" or closer costs 1CP less"
         }
       ],
       "points": 185,
@@ -14074,10 +15156,31 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Warrior"
+          "name": "Alpha Warrior",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1"
         },
         {
-          "name": "Death Blow"
+          "name": "Death Blow",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 4+"
         },
         {
           "name": "Leader"
@@ -14213,10 +15316,27 @@
       ],
       "abilities": [
         {
-          "name": "Spirit Leech (Aura, Psychic)"
+          "name": "Spirit Leech (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "With a Neurothrope: enemies 6\" or closer failing Battle-shock take D3, healing it"
         },
         {
-          "name": "Warp Field (Aura, Psychic)"
+          "name": "Warp Field (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "aura",
+              "range": 6
+            }
+          ],
+          "summary": "Friendly units 6\" or closer have a 6+ invulnerable save"
         }
       ],
       "points": 90,
@@ -14268,11 +15388,39 @@
   "armyRules": [
     {
       "id": "shadow-in-the-warp",
-      "name": "Shadow in the Warp"
+      "name": "Shadow in the Warp",
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "once-per-battle"
+            }
+          ]
+        }
+      ],
+      "summary": "Once per battle, in a Command phase: every enemy unit tests Battle-shock (-1 near Synapse)"
     },
     {
       "id": "synapse",
-      "name": "Synapse"
+      "name": "Synapse",
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "in-synapse"
+            }
+          ]
+        }
+      ],
+      "summary": "Units 6\" or closer to a Synapse model test Battle-shock on 3D6 and get +1 melee Strength"
     }
   ],
   "detachments": [
@@ -14286,7 +15434,35 @@
       "rules": [
         {
           "id": "mindhunger",
-          "name": "Mindhunger"
+          "name": "Mindhunger",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Deathleaper",
+              "Lictor",
+              "Neurolictor",
+              "Von Ryan’s Leapers"
+            ],
+            "noneOf": []
+          },
+          "summary": "Deathleaper and Lictors have Deep Strike; Lictors re-roll 1s to hit Characters"
         }
       ],
       "enhancements": [
@@ -14303,7 +15479,8 @@
               "Von Ryan’s Leapers"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "-3\" detection range"
         },
         {
           "id": "encircling-horrors",
@@ -14326,7 +15503,15 @@
               "Von Ryan’s Leapers"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D3+3",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: a D3+3\" Normal move"
         }
       ]
     },
@@ -14340,7 +15525,23 @@
       "rules": [
         {
           "id": "feed-the-swarm",
-          "name": "Feed the Swarm"
+          "name": "Feed the Swarm",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+1",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Tyranids"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: each Harvester heals a unit 6\" or closer D3+1 wounds, or returns a model (3 for Endless Multitudes)"
         }
       ],
       "enhancements": [
@@ -14356,7 +15557,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Near a Harvester: its regeneration reaches 9\""
         },
         {
           "id": "instinctive-defence",
@@ -14370,7 +15572,24 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-harvester"
+                }
+              ]
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Near a Harvester: Fights First, and Heroic Intervention costs 1CP less"
         },
         {
           "id": "parasitic-biomorphology",
@@ -14384,7 +15603,20 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee S; +1 Attack too after a kill near a Harvester"
         },
         {
           "id": "regenerating-monstrosity",
@@ -14400,7 +15632,8 @@
           ],
           "excludes": [
             "Monster"
-          ]
+          ],
+          "summary": "Its unit can regenerate twice per phase"
         }
       ]
     },
@@ -14414,7 +15647,48 @@
       "rules": [
         {
           "id": "enraged-behemoths",
-          "name": "Enraged Behemoths"
+          "name": "Enraged Behemoths",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "at-starting-strength"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Tyranids",
+              "Monster"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Monsters get +1 to hit when wounded, +1 to wound too below half, and +2 OC unhurt"
         }
       ],
       "enhancements": [
@@ -14431,7 +15705,20 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 3+"
         },
         {
           "id": "monstrous-nemesis",
@@ -14446,7 +15733,38 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound Monsters and Vehicles in melee"
         },
         {
           "id": "null-nodules",
@@ -14461,7 +15779,23 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: Feel No Pain 5+ against Psychic attacks for a phase"
         },
         {
           "id": "ominous-presence",
@@ -14476,7 +15810,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "+3 OC"
         }
       ]
     },
@@ -14491,7 +15833,73 @@
       "rules": [
         {
           "id": "hyper-adaptations",
-          "name": "Hyper-adaptations"
+          "name": "Hyper-adaptations",
+          "options": [
+            {
+              "name": "Swarming Instincts: Sustained Hits 1 against Infantry and Swarms",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Infantry"
+                    }
+                  ]
+                },
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Swarm"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hyper-aggression: Lethal Hits against Monsters and Vehicles",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Monster"
+                    }
+                  ]
+                },
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "target-keyword",
+                      "value": "Vehicle"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hive Predators: Precision on critical hits against Characters",
+              "modifiers": []
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Tyranids"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Pick one Hyper-adaptation for the battle: against Infantry, against Monsters and Vehicles, or against Characters"
         }
       ],
       "enhancements": [
@@ -14507,7 +15915,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Feel No Pain 5+, 4+ once wounded"
         },
         {
           "id": "alien-cunning",
@@ -14521,7 +15937,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         },
         {
           "id": "perfectly-adapted",
@@ -14535,7 +15952,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per turn: one of its rolls may be re-rolled"
         },
         {
           "id": "synaptic-linchpin",
@@ -14549,7 +15967,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Units 9\" or closer to it are in Synapse Range"
         }
       ]
     },
@@ -14564,7 +15983,22 @@
       "rules": [
         {
           "id": "surprise-assault",
-          "name": "Surprise Assault"
+          "name": "Surprise Assault",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Tyranids"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Re-roll 1s to hit; Burrowers leave Tunnel Markers that let Reserves arrive nearby"
         }
       ],
       "enhancements": [
@@ -14580,7 +16014,20 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Rapid Ingress on its unit costs 0CP"
         },
         {
           "id": "tremor-senses",
@@ -14594,7 +16041,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         },
         {
           "id": "trygon-prime",
@@ -14608,7 +16056,35 @@
               "Trygon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Synapse",
+              "target": "self"
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Becomes Synapse, with +1 melee S and WS"
         },
         {
           "id": "vanguard-intellect",
@@ -14622,7 +16098,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit can Deep Strike in rounds 1 to 3"
         }
       ]
     },
@@ -14636,7 +16113,75 @@
       "rules": [
         {
           "id": "synaptic-imperatives",
-          "name": "Synaptic Imperatives"
+          "name": "Synaptic Imperatives",
+          "options": [
+            {
+              "name": "Synaptic Augmentation: 5+ invulnerable",
+              "modifiers": [
+                {
+                  "key": "invulnerable-save",
+                  "value": "5+",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "in-synapse"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Surging Vitality: +1 Advance and charge",
+              "modifiers": [
+                {
+                  "key": "advance",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "in-synapse"
+                    }
+                  ]
+                },
+                {
+                  "key": "charge",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "in-synapse"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Goaded to Slaughter: +1 to hit in melee",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    },
+                    {
+                      "key": "in-synapse"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Tyranids"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Each battle round, one Imperative (each once per battle) for units in Synapse Range"
         }
       ],
       "enhancements": [
@@ -14653,7 +16198,30 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and AP for its Psychic weapons"
         },
         {
           "id": "psychostatic-disruption",
@@ -14668,7 +16236,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Reserves cannot arrive 12\" or closer; once per battle may delay an arrival on 4+"
         },
         {
           "id": "synaptic-control",
@@ -14683,7 +16252,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
           "id": "the-dirgeheart-of-kharis",
@@ -14698,7 +16275,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 9\" or closer get -1 Leadership"
         }
       ]
     },
@@ -14712,7 +16297,8 @@
       "rules": [
         {
           "id": "higher-imperatives",
-          "name": "Higher Imperatives"
+          "name": "Higher Imperatives",
+          "summary": "Once per battle, a Norn may change its Singular Purpose"
         }
       ],
       "enhancements": [
@@ -14729,7 +16315,24 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged weapons gain Anti-Character 2+"
         },
         {
           "id": "synaptoprescience",
@@ -14744,7 +16347,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "4+ invulnerable save"
         }
       ]
     },
@@ -14758,7 +16369,22 @@
       "rules": [
         {
           "id": "insurmountable-odds",
-          "name": "Insurmountable Odds"
+          "name": "Insurmountable Odds",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Endless Multitude"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Endless Multitudes losing models to shooting surge D6\""
         }
       ],
       "enhancements": [
@@ -14774,7 +16400,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit piles in and consolidates 3\" further"
         },
         {
           "id": "naturalised-camouflage",
@@ -14788,7 +16422,27 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "Endless Multitude"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Round 1: three Endless Multitudes 9\" or closer have cover against shooting"
         },
         {
           "id": "piercing-talons",
@@ -14802,7 +16456,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit’s critical wounds get +1 AP"
         },
         {
           "id": "relentless-hunger",
@@ -14816,7 +16471,15 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            }
+          ],
+          "summary": "+2\" Move for its unit"
         }
       ]
     },
@@ -14830,7 +16493,25 @@
       "rules": [
         {
           "id": "questing-tendrils",
-          "name": "Questing Tendrils"
+          "name": "Questing Tendrils",
+          "modifiers": [
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Vanguard Invader"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Charge after Falling Back; Vanguard Invaders also after Advancing"
         },
         {
           "id": "vanguard-prime",
@@ -14850,7 +16531,14 @@
               "Vanguard Invader"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "summary": "Stealth"
         },
         {
           "id": "hunting-grounds",
@@ -14864,7 +16552,14 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies arriving from Reserves test Battle-shock on a 2+"
         },
         {
           "id": "neuronode",
@@ -14878,7 +16573,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three Vanguard Invaders, even into Strategic Reserves"
         },
         {
           "id": "stalker",
@@ -14892,7 +16588,30 @@
               "Vanguard Invader"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit and wound one enemy chosen at the start"
         }
       ]
     },
@@ -14906,7 +16625,36 @@
       "rules": [
         {
           "id": "leader-beasts",
-          "name": "Leader-beasts"
+          "name": "Leader-beasts",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            },
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Tyranid Warriors"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Tyranid Warriors",
+              "Tyranid Prime with Lash Whip",
+              "Winged Tyranid Prime"
+            ],
+            "noneOf": []
+          },
+          "summary": "Warriors are Battleline; Warriors and Primes have a 5+ invulnerable"
         }
       ],
       "enhancements": [
@@ -14927,7 +16675,30 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds and +1 AP in melee"
         },
         {
           "id": "ocular-adaptation",
@@ -14946,7 +16717,20 @@
               "Winged Tyranid Prime"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit gets +1 to hit in melee"
         }
       ]
     }
@@ -14963,7 +16747,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Harvester"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 5+ (4+ on your objective) this phase"
     },
     {
       "id": "adaptive-optimisation",
@@ -14975,7 +16775,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Mawloc",
+          "Trygon"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "gain-keyword",
+          "value": "Synapse",
+          "target": "self"
+        }
+      ],
+      "summary": "Becomes Synapse until your next Command phase"
     },
     {
       "id": "adrenal-surge",
@@ -14987,7 +16803,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Two units in Synapse Range, or one other: critical hits on 5+ this phase"
     },
     {
       "id": "alien-physiology",
@@ -14999,7 +16831,28 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Tyranid Warriors"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "Attacks stronger than its Toughness get -1 to wound"
     },
     {
       "id": "assassin-beasts",
@@ -15011,7 +16864,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Vanguard Invader",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "precision",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Precision in melee this phase"
     },
     {
       "id": "bounding-advance",
@@ -15023,7 +16896,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Advances a flat 6\" this phase"
     },
     {
       "id": "broodguard-impulse",
@@ -15039,7 +16927,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Harvester"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "aura",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A Harvester’s killer: Tyranids get +1 to wound it for the battle"
     },
     {
       "id": "catalytic-biofortification",
@@ -15054,7 +16962,27 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Norn Assimilator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 4+ against mortal wounds"
     },
     {
       "id": "corrosive-viscera",
@@ -15067,7 +16995,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "unit-destroyed",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Just destroyed: its Deadly Demise always triggers"
     },
     {
       "id": "counterpredation",
@@ -15078,7 +17016,41 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Deathleaper",
+          "Lictor",
+          "Neurolictor",
+          "Von Ryan’s Leapers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-hidden"
+            }
+          ]
+        },
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-hidden"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 S and AP against hidden units"
     },
     {
       "id": "death-frenzy",
@@ -15090,7 +17062,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+"
     },
     {
       "id": "endless-swarm",
@@ -15102,7 +17095,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "Two Endless Multitudes in Synapse Range, or one other: D3+3 models back each"
     },
     {
       "id": "enfilading-emergence",
@@ -15114,7 +17122,37 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "arrived-this-turn"
+            }
+          ]
+        },
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "arrived-this-turn"
+            }
+          ]
+        }
+      ],
+      "summary": "Arrived this turn: Sustained Hits 1 and Ignores Cover until your next Fight phase ends"
     },
     {
       "id": "hypersensory-adaptations",
@@ -15125,7 +17163,19 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Deathleaper",
+          "Lictor",
+          "Neurolictor",
+          "Von Ryan’s Leapers"
+        ],
+        "noneOf": []
+      },
+      "summary": "A visible enemy 12\" or closer gets +6\" detection range"
     },
     {
       "id": "hypersensory-scillia",
@@ -15137,7 +17187,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [
+          "Vanguard Invader",
+          "Infantry"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: two Vanguard units or one infantry unit move 6\""
     },
     {
       "id": "imperative-dominance",
@@ -15149,7 +17218,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Takes an Imperative of its own, even one already used"
     },
     {
       "id": "invisible-hunter",
@@ -15161,7 +17239,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [
+          "Vanguard Invader",
+          "Infantry"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Two Vanguard units or one infantry unit, 3\" from enemies: back into Strategic Reserves"
     },
     {
       "id": "irresistible-will",
@@ -15174,7 +17270,39 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "aura",
+          "range": 6,
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "aura",
+          "range": 6,
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Tyranids 6\" or closer to it re-roll 1s to hit and wound one visible enemy"
     },
     {
       "id": "lesser-prey",
@@ -15185,7 +17313,29 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Norn Assimilator",
+          "Norn Emissary"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "S",
+          "value": 2,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+2 S in melee"
     },
     {
       "id": "massive-impact",
@@ -15197,7 +17347,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "after-own-action",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: six D6 at an engaged enemy, each 4+ a mortal wound"
     },
     {
       "id": "override-instincts",
@@ -15209,7 +17376,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back in Synapse Range: can still shoot and charge"
     },
     {
       "id": "overrun",
@@ -15221,7 +17407,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Consolidates 3\" further, or makes a 6\" move in Synapse Range"
     },
     {
       "id": "parasitic-payload",
@@ -15233,7 +17427,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Tyranid Warriors"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover when shooting"
     },
     {
       "id": "predatory-imperative",
@@ -15245,7 +17458,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Two units in Synapse Range, or one other: a second Hyper-adaptation until your next Command phase"
     },
     {
       "id": "preservation-imperative",
@@ -15257,7 +17479,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Counts as under five models against Blast this phase"
     },
     {
       "id": "rampaging-monstrosities",
@@ -15269,7 +17500,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits this phase"
     },
     {
       "id": "rapacious-hunger",
@@ -15281,7 +17533,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D3+1",
+          "target": "self"
+        }
+      ],
+      "summary": "Destroyed a unit: regenerates at once"
     },
     {
       "id": "rapid-regeneration",
@@ -15294,7 +17561,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "6+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 6+ (5+ in Synapse Range) this phase"
     },
     {
       "id": "reclaim-biomass",
@@ -15310,7 +17593,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "unit-destroyed",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harvester"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D3+1",
+          "target": "aura",
+          "range": 6
+        }
+      ],
+      "summary": "A unit died nearby: a unit 6\" or closer regenerates"
     },
     {
       "id": "reinforced-hive-node",
@@ -15323,7 +17623,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "replenishing-swarms",
@@ -15335,7 +17651,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D3+1",
+          "target": "self"
+        }
+      ],
+      "summary": "Near a Tunnel Marker: D3+1 wounds or 1-wound models back"
     },
     {
       "id": "restorative-impulse",
@@ -15359,7 +17690,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "One unit, or two Burrowers, unengaged: back into Strategic Reserves"
     },
     {
       "id": "savage-roar",
@@ -15371,7 +17717,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        },
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "The attacker tests Battle-shock and gets -1 to hit it (and -1 to wound if it fails)"
     },
     {
       "id": "scanner-gheist",
@@ -15382,7 +17749,25 @@
         "fight"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Deathleaper",
+          "Lictor",
+          "Neurolictor",
+          "Von Ryan’s Leapers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "secure-biomass",
@@ -15394,7 +17779,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits in melee (Harvesters: crits on 5+ too)"
     },
     {
       "id": "seeded-broods",
@@ -15406,7 +17810,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Units in Reserves arrive as if a round later"
     },
     {
       "id": "spontaneous-hypercorrosion",
@@ -15432,7 +17844,32 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Vanguard Invader"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        },
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A unit it targets tests Battle-shock; +1 to hit it (and wound if it fails)"
     },
     {
       "id": "swarm-guided-salvoes",
@@ -15444,7 +17881,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover, and BS and hit modifiers, this phase"
     },
     {
       "id": "swarming-assault",
@@ -15456,7 +17913,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-charge",
+          "target": "aura",
+          "range": 6
+        }
+      ],
+      "summary": "Arrived this turn: Tyranids 6\" or closer re-roll charges"
     },
     {
       "id": "swarming-masses",
@@ -15469,7 +17942,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Sustained Hits 1 (crits on 5+ at 15 models) this phase"
     },
     {
       "id": "synaptic-amplification",
@@ -15494,7 +17982,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its Synapse Range reaches 9\" this turn"
     },
     {
       "id": "synaptic-goading",
@@ -15510,7 +18006,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its surge may be re-rolled and head for an objective"
     },
     {
       "id": "synaptic-micronodes",
@@ -15522,7 +18026,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Tyranid Warriors"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "An objective it controls is secured"
     },
     {
       "id": "synaptic-shield",
@@ -15545,7 +18057,23 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Norn Assimilator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": -2,
+          "target": "enemy"
+        }
+      ],
+      "summary": "One unit it hits gets -2\" Move until your next Command phase"
     },
     {
       "id": "teeming-masses",
@@ -15558,7 +18086,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to hit this phase"
     },
     {
       "id": "the-smothering-shadow",
@@ -15574,7 +18118,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Synapse"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy 12\" or closer: six D6, each 3+ a mortal wound"
     },
     {
       "id": "tunnel-network",
@@ -15586,7 +18145,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Near a Tunnel Marker: re-emerges near another, 6\" from enemies"
     },
     {
       "id": "tyrannoformed",
@@ -15598,7 +18166,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harvester"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its objective stays yours after it leaves"
     },
     {
       "id": "unending-waves",
@@ -15614,7 +18190,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Endless Multitude"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle: a destroyed Endless Multitude returns whole into Strategic Reserves"
     },
     {
       "id": "unseen-lurkers",
@@ -15626,7 +18210,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Vanguard Invader"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Can only be shot from 18\" (6\" for Lone Operatives) this phase"
     },
     {
       "id": "untrammelled-ferocity",
@@ -15638,7 +18231,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves through models and low terrain this phase"
     }
   ]
 }

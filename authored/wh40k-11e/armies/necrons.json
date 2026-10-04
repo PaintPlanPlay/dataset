@@ -1,5 +1,592 @@
 [
   {
+    "target": "14fa-6813-e51b-7942::ability:Targeting Relay",
+    "summary": "One unit it hits loses cover this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1d4b-a179-ae99-3283::ability:Infectious Murder‑madness (Aura)",
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "closest-target"
+          }
+        ]
+      }
+    ],
+    "summary": "Units 6\" or closer gain Sustained Hits 1 against the closest target (Destroyers always)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1d4b-a179-ae99-3283::ability:Nullstone Field Generator (Aura)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 6\" or closer: Feel No Pain 5+ against mortal wounds and Psychic attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1d4b-a179-ae99-3283::ability:Prophet of Destruction",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "aura",
+        "range": 9,
+        "keywords": {
+          "allOf": [
+            "Destroyer Cult"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Destroys a unit: another Destroyer unit 9\" or closer re-rolls 1s to wound this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1d4b-a179-ae99-3283::ability:Protective Disciples",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-infantry"
+          }
+        ]
+      }
+    ],
+    "summary": "Near other Destroyer Cult units (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "1ff-6384-ef1a-8297::ability:Malevolent Arcing",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Its tesla destructor’s target and units 3\" or closer: D3 mortal wounds on a 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "256d-92cd-5d14-bbab::ability:Damaged: 1-8 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "256d-92cd-5d14-bbab::ability:Gravitic Pulse",
+    "summary": "An enemy 18\" or closer moves and charges at half; flyers risk D3 mortal wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "256d-92cd-5d14-bbab::ability:Mortality Shroud (Aura)",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enhancement: Obelisk: weakened enemies 8\" or closer must test Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "259b-a8e3-928f-1d0c::ability:Chittering Swarm",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Engaged enemies get -1 OC; OC 1 near a Cryptek",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "259b-a8e3-928f-1d0c::ability:Self-destruction",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Fight phase: sacrifices a model for D3 mortal wounds on 2-5, 3 on 6+ (+1 against Vehicles)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "276e-bc21-e1d0-3c41::ability:C'tan Shard",
+    "summary": "Cannot take Enhancements",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "276e-bc21-e1d0-3c41::ability:Distortion Fields (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Pantheon of Woe: enemies 6\" or closer unravel, +1 AP against them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "276e-bc21-e1d0-3c41::ability:Enslaved Star God",
+    "summary": "Cannot be your Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "276e-bc21-e1d0-3c41::ability:Necrodermis",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "276e-bc21-e1d0-3c41::ability:Reletavistic Tether",
+    "summary": "Enhancement: Its displacement can end 6\" from enemies, without charging if 8\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "276e-bc21-e1d0-3c41::ability:Transdimensional Displacement",
+    "summary": "Advances any distance through models, ending 8\" from enemies",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2a86-2d6-6446-7f1::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2a86-2d6-6446-7f1::ability:Invasion Beams",
+    "summary": "End of the Fight phase, empty: an infantry unit wholly 6\" or closer embarks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2a86-2d6-6446-7f1::ability:Quantum Invader",
+    "summary": "Can arrive from Reserves in rounds 1 to 3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2e4-afdd-efdd-c5c8::ability:My Will Be Done",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle round, a Stratagem on its unit costs 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2e4-afdd-efdd-c5c8::ability:Resurrection orb",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D6",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: its unit reanimates D6 wounds instead of D3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "2e4-afdd-efdd-c5c8::ability:Translocation Shroud",
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit Advances a flat 6\" and moves through models and terrain",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "379b-d6a0-cd05-ef89::ability:Adaptive Strategy",
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit shoots and charges after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "379b-d6a0-cd05-ef89::ability:Engrammatic Logic",
+    "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "37d1-5b3e-b4e6-f8ef::ability:Phase-shifted Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "37d1-5b3e-b4e6-f8ef::ability:Teleportation Matrix",
+    "summary": "Once per battle: relocates via Reserves, 8\" from enemies",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "43b5-f4f9-f7c6-327a::ability:Lord of the Pyrrhian Eternals",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1 to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "43b5-f4f9-f7c6-327a::ability:Mind in the Machine",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemy Shooting phase: a Vehicle 12\" or closer gets -1 to hit, or cannot shoot if it fails Leadership",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "49fd-a80d-8cc0-c76b::ability:Grand Strategist",
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1CP as your Command phase starts while on the battlefield",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "49fd-a80d-8cc0-c76b::ability:Lord of the Storm",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: enemies 12\" or closer take D3 mortal wounds on 2-5, D3+3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "50cd-aa29-f506-8ed1::ability:Targeting Relay",
+    "summary": "One unit it hits loses cover this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "52fb-edb1-c747-415a::ability:Atavistic Instigation",
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Its death ray’s target either suffers crits on 5+ or ducks for -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "52fb-edb1-c747-415a::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5451-67b5-a66c-71d2::ability:Damaged: 1-8 wounds remaining",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": -4,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "Damaged (8 wounds or fewer left): -4 OC and only one C’tan Power",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5451-67b5-a66c-71d2::ability:Powers of the C’tan",
+    "summary": "Picks two C’tan Powers to shoot with each Shooting phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "58e9-5212-f5a6-c12d::ability:Enlivened Sentinels",
+    "modifiers": [
+      {
+        "key": "scouts",
+        "value": 5,
+        "target": "self"
+      }
+    ],
+    "summary": "Enhancement: Scouts 5\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "58e9-5212-f5a6-c12d::ability:Their Number is Legion",
+    "summary": "Re-roll its Reanimation Protocols dice",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5b7d-54ea-f7a8-9688::ability:Chronometron",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 5,
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting, unengaged: its unit makes a 5\" Normal move, then no charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "5b7d-54ea-f7a8-9688::ability:Timesplinter Mantle",
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "self"
+      },
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Stealth, and -1 to hit it in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "66e-26f2-7c38-e4d8::ability:Plasmacyte",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle per Plasmacyte: Devastating Wounds in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "66e-26f2-7c38-e4d8::ability:Whirling Onslaught",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "charged"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit in melee, all of them after charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6829-6dcb-b342-afe4::ability:Relentless Combatants",
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Re-roll charges, and charge after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "6f72-b8f7-fd8d-5c2c::ability:Hard-wired for Destruction",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "closest-target"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit the closest target (all of them on an enemy objective)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7422-7fbf-8694-364c::ability:Damaged: 1-6 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "Damaged (6 wounds or fewer left): half Attacks and -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7422-7fbf-8694-364c::ability:The Silent King (Aura)",
+    "modifiers": [
+      {
+        "key": "Ld",
+        "value": 1,
+        "target": "aura",
+        "range": 6
+      }
+    ],
+    "summary": "Friendly units 6\" or closer get +1 Leadership",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7422-7fbf-8694-364c::ability:Triarchal Menhirs",
+    "summary": "The Menhirs fall when Szarekh does",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7422-7fbf-8694-364c::ability:Voice of the Triarch",
     "options": [
       {
         "name": "Phaeron of the Stars (Aura)",
@@ -43,7 +630,7 @@
         "name": "Relentless March (Aura)",
         "modifiers": [
           {
-            "key": "move",
+            "key": "M",
             "target": "aura",
             "value": 2,
             "range": 6
@@ -51,8 +638,4792 @@
         ]
       }
     ],
-    "target": "7422-7fbf-8694-364c::ability:Voice of the Triarch",
-    "reason": "setup voice if the triarch",
-    "upstream": "bf21a9e8fbc5"
+    "summary": "Each battle round: picks one Triarch ability",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "77d-d442-a3-422c::ability:Evasion Engrams",
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "After shooting: a 6\" Normal move, then no charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "77d-d442-a3-422c::ability:Nebuloscope",
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ignores Cover when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "77d-d442-a3-422c::ability:Recursive Reanimation",
+    "summary": "Enhancement: +1 to its Reanimation Protocols roll",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "77d-d442-a3-422c::ability:Shadowloom",
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "self"
+      }
+    ],
+    "summary": "Stealth",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "77d-d442-a3-422c::ability:Shieldvanes",
+    "modifiers": [
+      {
+        "key": "Sv",
+        "value": "3+",
+        "target": "self"
+      }
+    ],
+    "summary": "Save 3+ and Move 8\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "7c45-2aab-7526-febe::ability:Nanoscarab Reanimation Beam (Aura)",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 3
+      }
+    ],
+    "summary": "Units 3\" or closer reanimate D3 more wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8005-b0eb-72ab-aed5::ability:Relentless March",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 1,
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: +1\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8005-b0eb-72ab-aed5::ability:Resurrection orb",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D6",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: its unit reanimates D6 wounds instead of D3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8005-b0eb-72ab-aed5::ability:The Lord’s Will",
+    "summary": "Leading: Stratagems still work on its unit while Battle-shocked",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8065-e9c0-dcb5-be1d::ability:Animus Damper",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enhancement: Once per turn: a visible enemy Vehicle gets -1 to hit (and to wound if it fails Leadership)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8065-e9c0-dcb5-be1d::ability:Distortion Fields (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Pantheon of Woe: enemies 6\" or closer unravel, +1 AP against them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8065-e9c0-dcb5-be1d::ability:Enslaved Star God",
+    "summary": "Cannot be your Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8065-e9c0-dcb5-be1d::ability:Matter Absorption",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      },
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "A Vehicle 12\" or closer takes D3 mortal wounds on 2+, which it regains",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8065-e9c0-dcb5-be1d::ability:Necrodermis",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8386-4191-ac3a-aa28::ability:Counter-tactics",
+    "summary": "Once per battle: an enemy Stratagem costs 1CP more for good",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8386-4191-ac3a-aa28::ability:Transient Madness",
+    "options": [
+      {
+        "name": "1-2: Sustained Hits 1",
+        "modifiers": [
+          {
+            "key": "sustained-hits",
+            "value": 1,
+            "target": "attached"
+          }
+        ]
+      },
+      {
+        "name": "3-4: Lethal Hits",
+        "modifiers": [
+          {
+            "key": "lethal-hits",
+            "target": "attached"
+          }
+        ]
+      },
+      {
+        "name": "5-6: Devastating Wounds",
+        "modifiers": [
+          {
+            "key": "devastating-wounds",
+            "target": "attached"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading, each Command phase: a D6 gives Sustained Hits 1, Lethal Hits or Devastating Wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "84bc-87b1-1eec-f574::ability:Harbinger of Destruction",
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: critical hits on 5+ when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "84bc-87b1-1eec-f574::ability:Living Lightning",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "4D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Shooting phase: four D6 at a visible enemy 18\" or closer, each 4+ a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "852a-ba39-e93f-6b62::ability:Rites of Reanimation",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Feel No Pain 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "852a-ba39-e93f-6b62::ability:Technomancer",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 6
+      }
+    ],
+    "summary": "End of your Movement phase: a model 6\" or closer regains up to D3 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8725-de36-7ef7-45f6::ability:Destroyer Cult",
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: critical hits on 5+ when shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8725-de36-7ef7-45f6::ability:Driven by Hatred",
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll hits and wounds against units Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8725-de36-7ef7-45f6::ability:Nanoscarab amulet",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Feel No Pain 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "8725-de36-7ef7-45f6::ability:Resurrection orb",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D6",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: its unit reanimates D6 wounds instead of D3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "919f-7076-c827-b844::ability:Ancient Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "919f-7076-c827-b844::ability:Deployment",
+    "summary": "Its pieces are set up 12\" apart and then act as separate units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "919f-7076-c827-b844::ability:Reanimation Nodes (Aura)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "6+",
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Infantry"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Friendly infantry 6\" or closer have Feel No Pain 6+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "92cc-9d54-5d0c-6663::ability:Obelisk Node Control",
+    "summary": "On a held objective: enemies from Reserves cannot arrive 12\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "92cc-9d54-5d0c-6663::ability:Tectonic Reverberations",
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Movement phase: a visible enemy 18\" or closer is pinned, -2\" Move and -2 to charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "92cc-9d54-5d0c-6663::ability:Vanguard Protocols",
+    "modifiers": [
+      {
+        "key": "scouts",
+        "value": 8,
+        "target": "self"
+      }
+    ],
+    "summary": "Leading Macrocytes from deployment: Scouts 8\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9519-5dbc-ab5-c720::ability:Aggressor Guardian",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "on-objective"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "On an objective: attacks against it lose 1 AP; +1 AP against units on objectives",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9519-5dbc-ab5-c720::ability:Distortion Fields (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Pantheon of Woe: enemies 6\" or closer unravel, +1 AP against them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9519-5dbc-ab5-c720::ability:Gloom Prism (Aura)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 6\" or closer: Feel No Pain 4+ against Psychic attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "97d7-4b22-46b7-dae0::ability:Accelerator Mandible",
+    "modifiers": [
+      {
+        "key": "WS",
+        "value": -1,
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Canoptek"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Fight phase: a Canoptek unit 3\" or closer gets +1 WS",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "97d7-4b22-46b7-dae0::ability:Harassment Swarm (Aura)",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Infantry enemies 3\" or closer get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "97d7-4b22-46b7-dae0::ability:Nanoscarab Projector",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": 1,
+        "target": "aura",
+        "range": 3
+      }
+    ],
+    "summary": "Once per battle round: a unit 3\" or closer reanimates 1 more wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "9928-da6-4e86-ec9f::ability:Repair Barge",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Necron Warriors"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Once per turn: wounded Warriors 3\" or closer reanimate",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a022-9bf6-f08b-c416::ability:Wraith Form",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: a D6 per model, each 4+ a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "a7e1-5b53-1d89-e1e3::ability:Damaged Armour",
+    "summary": "One unit it hits: your critical wounds get +1 AP against it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aea6-b6a1-a924-d31::ability:Harbinger of Despair",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per turn: an enemy 18\" or closer tests Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "aea6-b6a1-a924-d31::ability:Nightmare Shroud (Aura)",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Weakened enemies 6\" or closer must test Battle-shock at -1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b5c3-317e-df69-53bb::ability:Ghostwalk Mantle",
+    "modifiers": [
+      {
+        "key": "fights-first",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Fights First",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b5c3-317e-df69-53bb::ability:The Vargard’s Duty",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Character"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "With Zahndrekh: Characters in its unit have Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b6b0-9a60-d2e4-7ef0::ability:Damaged: 1-7 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b6b0-9a60-d2e4-7ef0::ability:Phase Shift Generator (Aura)",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "5+",
+        "target": "aura",
+        "range": 3,
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 3\" or closer have a 5+ invulnerable against shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b6b0-9a60-d2e4-7ef0::ability:Phase-shifted Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b7d7-14c9-63c1-ded5::ability:Hyperspace Hunters",
+    "summary": "Once per turn, an enemy arrives 18\" or closer: shoots it at once",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b7ee-a0fa-5736-b58f::ability:Canoptek Retinue",
+    "summary": "Joins a unit led by a Cryptek at deployment",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "b7ee-a0fa-5736-b58f::ability:Weapon Sentinels",
+    "summary": "Shooting targets 12\" or closer: ignores BS, hit and wound modifiers",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ba86-eaad-5396-fc07::ability:Master Chronomancer",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ba86-eaad-5396-fc07::ability:The Stars Are Right",
+    "modifiers": [
+      {
+        "key": "crit-wound",
+        "value": "2+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: triple A and S with his staff, every wound critical",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c1e6-b88a-2003-174d::ability:Ancient Collector",
+    "summary": "Leading: an objective it holds as your Command phase ends stays yours after it leaves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c1e6-b88a-2003-174d::ability:Surrogate Hosts",
+    "summary": "Command phase: swaps places with another infantry Character, who is destroyed",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c219-a708-f5b0-f0e7::ability:Flesh Hunger",
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "2+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "Every melee hit is critical against units Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c401-d95f-c5ce-7738::ability:Crimson Harvest",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-5, D3+3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c401-d95f-c5ce-7738::ability:United In Destruction",
+    "modifiers": [
+      {
+        "key": "lethal-hits",
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading: Lethal Hits in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c4e3-f6b0-f3aa-9d90::ability:Dispersion Shield",
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "The bearer has a 4+ invulnerable save",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c4e3-f6b0-f3aa-9d90::ability:Guardian Protocols",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "led"
+          },
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Led by a Noble: attacks stronger than its Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c6db-9736-4d53-3ef6::ability:Plasmacyte",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle per Plasmacyte: Devastating Wounds in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "c6db-9736-4d53-3ef6::ability:Tunnelling Horrors",
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "End of the enemy turn, unengaged: into Strategic Reserves, back by ingress",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cae9-5277-87f4-54b8::ability:Canoptek Swarm",
+    "summary": "Command phase: a Scarab Swarm 6\" or closer gets a model back per Spyder",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cae9-5277-87f4-54b8::ability:Fabricator Claw Array (Aura)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "6+",
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Vehicle"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "Friendly Vehicles 6\" or closer have Feel No Pain 6+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "cae9-5277-87f4-54b8::ability:Gloom Prism (Aura)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "5+",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 6\" or closer: Feel No Pain 5+ against mortal wounds and Psychic attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d3ee-bc80-1eea-6463::ability:Damaged: 1-15 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (15 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d3ee-bc80-1eea-6463::ability:Phased Cover",
+    "summary": "Models it partly hides get the benefit of cover against ranged attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d3ee-bc80-1eea-6463::ability:Ziggurat Dock",
+    "summary": "A Monolith, Obelisk, Vault or Pylon can start on its platform, gaining Heavy",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d504-e79e-f4d9-90aa::ability:Inescapable Death",
+    "modifiers": [
+      {
+        "key": "overwatch",
+        "value": "2+",
+        "target": "self"
+      },
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per turn, free Fire Overwatch, hitting on 2+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d504-e79e-f4d9-90aa::ability:Multi-threat Eliminator",
+    "summary": "Once per turn, a unit 3\" or closer is shot: shoots back at the attacker",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d977-6a26-bc03-4722::ability:Atomic Energy Manipulator",
+    "summary": "A kill in melee: +3\" to its augmentation aura (12\" at most)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d977-6a26-bc03-4722::ability:Illuminor",
+    "modifiers": [
+      {
+        "key": "lone-operative",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "near-infantry"
+          }
+        ]
+      }
+    ],
+    "summary": "Near other friendly units (3\"): Lone Operative",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d977-6a26-bc03-4722::ability:Mechanical Augmentation (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "range": 3,
+        "keywords": {
+          "allOf": [
+            "Battleline"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      },
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Battleline 3\" or closer get +1 AP, and attacks against them lose 1 AP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "d9ea-2965-24-d3a3::ability:Optimised for Slaughter",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound with the gun suited to the target",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "db10-2662-da6a-516e::ability:Damaged: 1-7 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (7 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "db10-2662-da6a-516e::ability:Eternity Gate",
+    "summary": "From round 2: an infantry unit arrives (or relocates) wholly 6\" from it, without charging",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dbe5-257e-e2bd-1b40::ability:Implacable Resilience",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dbe5-257e-e2bd-1b40::ability:My Will Be Done",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle round, a Stratagem on its unit costs 1CP less",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "dbe5-257e-e2bd-1b40::ability:Resurrection orb",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D6",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: its unit reanimates D6 wounds instead of D3",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e046-8220-d8a2-1d19::ability:Damaged: 1-5 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e046-8220-d8a2-1d19::ability:Overwhelming Obliteration",
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "stationary"
+          }
+        ]
+      }
+    ],
+    "summary": "Stationary: its doomsday cannon gains Devastating Wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e09-d7d6-e4e3-42c1::ability:Distortion Fields (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Pantheon of Woe: enemies 6\" or closer unravel, +1 AP against them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e09-d7d6-e4e3-42c1::ability:Enslaved Star God",
+    "summary": "Cannot be your Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e09-d7d6-e4e3-42c1::ability:Grand Illusion",
+    "summary": "After deployment, redeploy up to three units, even into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e09-d7d6-e4e3-42c1::ability:Lord of Deceit (Aura)",
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enhancement: Enemy Stratagems on units 12\" or closer cost 1CP more",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e09-d7d6-e4e3-42c1::ability:Necrodermis",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e667-b37c-61c-4893::ability:Advanced Quantum Shielding",
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e667-b37c-61c-4893::ability:Carrier Wave (Aura)",
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "aura",
+        "range": 6
+      }
+    ],
+    "summary": "Friendly units 6\" or closer get +1 OC",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e667-b37c-61c-4893::ability:Resurrection orb",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D6",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "once-per-battle"
+          }
+        ]
+      }
+    ],
+    "summary": "Once per battle: an infantry or mounted unit 6\" or closer reanimates D6 wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e6d4-56e1-3bbd-475::ability:Damaged: 1-5 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (5 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "e6d4-56e1-3bbd-475::ability:Death Sphere Bombardment",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "6D6",
+        "target": "enemy"
+      }
+    ],
+    "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ef1-14e1-cf28-4701::ability:Gravitational Field",
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Charges against it get -2",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ef7a-c413-c779-2d18::ability:Bound Creation",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Cryptek"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        }
+      }
+    ],
+    "summary": "The Cryptek in its unit has Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ef7a-c413-c779-2d18::ability:Cryptek Retinue",
+    "summary": "Joins a unit led by an infantry Cryptek at deployment",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ef7a-c413-c779-2d18::ability:Systematic Vigour",
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "2+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain in melee before fighting: still fights on a 2+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f81-b23c-e183-39d7::ability:Implacable Eradication",
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-wound",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to wound; every wound roll against units on an objective",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f81-b23c-e183-39d7::ability:Tools of Dominion",
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Enhancement: Ranged weapons gain Rapid Fire 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f868-afbc-9f6b-e4e9::ability:Distortion Fields (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Pantheon of Woe: enemies 6\" or closer unravel, +1 AP against them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f868-afbc-9f6b-e4e9::ability:Gloom Prism (Aura)",
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "aura",
+        "range": 6,
+        "conditions": [
+          {
+            "key": "mortal-or-psychic"
+          }
+        ]
+      }
+    ],
+    "summary": "Friendly units 6\" or closer: Feel No Pain 4+ against Psychic attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f868-afbc-9f6b-e4e9::ability:Snaking Ambush",
+    "modifiers": [
+      {
+        "key": "heroic-intervention",
+        "target": "self"
+      },
+      {
+        "key": "stratagem-cost",
+        "value": -1,
+        "target": "self"
+      }
+    ],
+    "summary": "Heroic Intervention on it costs 1CP less and is not limited",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f926-a2fe-3494-24b7::ability:Distortion Fields (Aura)",
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Pantheon of Woe: enemies 6\" or closer unravel, +1 AP against them",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f926-a2fe-3494-24b7::ability:Drain Life",
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "End of the Fight phase: enemies 6\" or closer take D3 mortal wounds on 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f926-a2fe-3494-24b7::ability:Enslaved Star God",
+    "summary": "Cannot be your Warlord",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f926-a2fe-3494-24b7::ability:Necrodermis",
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "f926-a2fe-3494-24b7::ability:Quantum Goad",
+    "modifiers": [
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Enhancement: Can charge after Advancing",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fa11-cd65-fcf6-427c::ability:Damaged: 1-9 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      },
+      {
+        "key": "OC",
+        "value": -5,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "fa11-cd65-fcf6-427c::ability:Terrifying Monstrosity",
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Start of the Fight phase: engaged enemies test for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ff8f-2e43-8af1-3470::ability:Damaged: 1-4 wounds remaining",
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "damaged"
+          }
+        ]
+      }
+    ],
+    "summary": "-1 to hit while damaged (4 wounds or fewer left)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "ff8f-2e43-8af1-3470::ability:Sentinel Construct",
+    "modifiers": [
+      {
+        "key": "overwatch",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Fire Overwatch on it hits on 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::armyrule:reanimation-protocols",
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "End of your Command phase: each unit heals D3 wounds, bringing back fallen models",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:annihilation-legion|eldritch-nightmare",
+    "requires": [
+      [
+        "Destroyer Cult"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Start of the Fight phase: engaged enemies test for Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:annihilation-legion|eternal-madness",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit’s models slain before fighting still fight on a 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:annihilation-legion|ingrained-superiority",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "summary": "Its unit’s critical wounds get +1 AP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:annihilation-legion|soulless-reaper",
+    "requires": [
+      [
+        "Destroyer Cult"
+      ]
+    ],
+    "summary": "An engaged enemy trying to Fall Back stays put on a 3+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:awakened-dynasty|enaegic-dermal-bond",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "feel-no-pain",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "Feel No Pain 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:awakened-dynasty|nether-realm-casket",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "stealth",
+        "target": "attached"
+      }
+    ],
+    "summary": "Leading: Stealth",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:awakened-dynasty|phasal-subjugator",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Necrons"
+          ],
+          "anyOf": [],
+          "noneOf": [
+            "Character"
+          ]
+        }
+      }
+    ],
+    "summary": "Non-Character units 6\" or closer get +1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:awakened-dynasty|veil-of-darkness",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "Once per battle, end of the enemy turn, unengaged: into Strategic Reserves, back by ingress",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:canoptek-court|autodivinator",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each CP your opponent gains from an ability: +1CP for you on a 2+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:canoptek-court|dimensional-sanctum",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "infiltrators",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit has Infiltrators",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:canoptek-court|hyperphasic-fulcrum",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "attached",
+        "conditions": [
+          {
+            "key": "power-matrix"
+          }
+        ]
+      }
+    ],
+    "summary": "Leading, in the Power Matrix: re-roll 1s to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:canoptek-court|metalodermal-tesla-weave",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per phase, charged: D3 mortal wounds on 2-5, 3 on a 6",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cryptek-conclave|atomic-disintegrators",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "summary": "Its augmentation choice adds Anti-Monster 5+ and Anti-Vehicle 5+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cryptek-conclave|gauntlet-of-compression",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "summary": "+6\" range for its unit’s ranged weapons",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cryptek-conclave|gravitic-bolas",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "M",
+        "value": -2,
+        "target": "enemy"
+      },
+      {
+        "key": "charge",
+        "value": -2,
+        "target": "enemy"
+      }
+    ],
+    "summary": "One non-Titanic unit it hits is pinned: -2\" Move and -2 to charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cryptek-conclave|quantum-abacus",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "cp",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Each Stratagem on its unit: +1CP on 4+ (+1 on an objective)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cursed-legion|cursed-circlet",
+    "requires": [
+      [
+        "Destroyer Cult"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "surge-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Loses a model to shooting: a D6\" surge move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cursed-legion|destroyer-ankh",
+    "requires": [
+      [
+        "Catacomb Command Barge"
+      ],
+      [
+        "Overlord"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Destroyer Cult",
+        "target": "self"
+      },
+      {
+        "key": "M",
+        "value": 2,
+        "target": "self"
+      },
+      {
+        "key": "A",
+        "value": 2,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Becomes Destroyer Cult; +2\" Move for its unit and +2 melee Attacks",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cursed-legion|mark-of-the-nekrosor",
+    "requires": [
+      [
+        "Destroyer Cult"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit gets +1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:cursed-legion|murdermind",
+    "requires": [
+      [
+        "Cryptek"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "gain-keyword",
+        "value": "Destroyer Cult",
+        "target": "self"
+      },
+      {
+        "key": "M",
+        "value": 3,
+        "target": "self"
+      }
+    ],
+    "summary": "Becomes Destroyer Cult with +3\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:hand-of-the-dynasty|enlivened-sentinels",
+    "requires": [
+      [
+        "Necron Warriors",
+        "Necrons"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "scouts",
+        "value": 5,
+        "target": "self"
+      }
+    ],
+    "summary": "Scouts 5\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:hand-of-the-dynasty|tools-of-dominion",
+    "requires": [
+      [
+        "Immortals",
+        "Necrons"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "A",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "half-range"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged weapons gain Rapid Fire 1",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:hypercrypt-legion|arisen-tyrant",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "arrived-this-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit re-rolls 1s to hit, all of them the turn it arrives",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:hypercrypt-legion|dimensional-overseer",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "summary": "Hyperphasing takes one more unit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:hypercrypt-legion|hyperspatial-transfer-node",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit Advances a flat 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:hypercrypt-legion|osteoclave-fulcrum",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "deep-strike",
+        "target": "self"
+      }
+    ],
+    "summary": "Its unit has Deep Strike",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:obeisance-phalanx|eternal-conqueror",
+    "requires": [
+      [
+        "Overlord"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit re-rolls hits against units on objectives",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:obeisance-phalanx|honourable-combatant",
+    "requires": [
+      [
+        "Overlord"
+      ]
+    ],
+    "summary": "Each Character its unit kills costs your opponent 1CP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:obeisance-phalanx|unflinching-will",
+    "requires": [
+      [
+        "Overlord"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "precision",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "crit-wound",
+        "value": "5+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "target-keyword",
+            "value": "Infantry"
+          }
+        ]
+      }
+    ],
+    "summary": "Precision and Anti-Infantry 5+ in melee",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:obeisance-phalanx|warrior-noble",
+    "requires": [
+      [
+        "Overlord"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Melee attacks against its unit get -1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:pantheon-of-woe|animus-damper",
+    "requires": [
+      [
+        "DNU",
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per turn: a visible enemy Vehicle gets -1 to hit (and to wound if it fails Leadership)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:pantheon-of-woe|quantum-goad",
+    "requires": [
+      [
+        "DNU",
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Can charge after Advancing",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:pantheon-of-woe|reletavistic-tether",
+    "requires": [
+      [
+        "DNU",
+        "Necrons"
+      ]
+    ],
+    "summary": "Its displacement can end 6\" from enemies, without charging if 8\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:pantheon-of-woe|singularity-matrix",
+    "requires": [
+      [
+        "DNU",
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "stratagem-cost",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Enemy Stratagems on units 12\" or closer cost 1CP more",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:skyshroud-spearhead|deepening-madness",
+    "requires": [
+      [
+        "Destroyer Cult",
+        "Mounted"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged weapons gain Assault",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:skyshroud-spearhead|recursive-reanimation",
+    "requires": [
+      [
+        "Necrons",
+        "Tomb Blades"
+      ]
+    ],
+    "maxTargets": 3,
+    "summary": "+1 to its Reanimation Protocols roll",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:starshatter-arsenal|chrono-impedance-fields",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Necrons"
+          ],
+          "anyOf": [
+            "Vehicle",
+            "Mounted"
+          ],
+          "noneOf": [
+            "Titanic"
+          ]
+        }
+      }
+    ],
+    "summary": "Command phase: a Vehicle or Mounted unit 6\" or closer takes -1 Damage until the next",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:starshatter-arsenal|demanding-leader",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "fall-back-and-shoot",
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Necrons"
+          ],
+          "anyOf": [
+            "Vehicle",
+            "Mounted"
+          ],
+          "noneOf": [
+            "Titanic"
+          ]
+        }
+      }
+    ],
+    "summary": "Command phase: a Vehicle or Mounted unit 6\" or closer can shoot after Falling Back",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:starshatter-arsenal|dread-majesty",
+    "requires": [
+      [
+        "Overlord"
+      ],
+      [
+        "Catacomb Command Barge"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Necrons"
+          ],
+          "anyOf": [],
+          "noneOf": [
+            "Monster",
+            "Titanic"
+          ]
+        }
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "aura",
+        "range": 6,
+        "keywords": {
+          "allOf": [
+            "Necrons"
+          ],
+          "anyOf": [],
+          "noneOf": [
+            "Monster",
+            "Titanic"
+          ]
+        }
+      }
+    ],
+    "summary": "Units 6\" or closer (not Monsters or Titanic) re-roll 1s to hit and wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:starshatter-arsenal|miniaturised-nebuloscope",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Its unit shoots with Ignores Cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:the-phaerons-armoury|mortality-shroud",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "maxTargets": 3,
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Obelisk: weakened enemies 8\" or closer must test Battle-shock",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::enhancement:the-phaerons-armoury|prelocational-optimiser",
+    "requires": [
+      [
+        "Necrons"
+      ]
+    ],
+    "summary": "Necrons only",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:annihilation-legion|annihilation-protocol",
+    "rule": {
+      "name": "Annihilation Protocol"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Destroyer Cult",
+        "Flayed Ones"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-charge",
+        "target": "self"
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Destroyer Cult"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "closest-target"
+          }
+        ]
+      }
+    ],
+    "summary": "Destroyers and Flayed Ones re-roll charges (+1 against weakened foes); Destroyers get +1 AP shooting the closest target",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:awakened-dynasty|command-protocols",
+    "rule": {
+      "name": "Command Protocols"
+    },
+    "eligibility": {
+      "allOf": [
+        "Necrons"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "Units led by a Character get +1 to hit",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:canoptek-court|power-matrix",
+    "rule": {
+      "name": "Power Matrix"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Cryptek",
+        "Canoptek"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "power-matrix"
+          }
+        ]
+      }
+    ],
+    "summary": "Crypteks and Canoptek re-roll 1s to hit, all of them wholly in your Power Matrix",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:cryptek-conclave|technosorcerous-augmentations",
+    "rule": {
+      "name": "Technosorcerous Augmentations"
+    },
+    "eligibility": {
+      "allOf": [
+        "Cryptek"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "options": [
+      {
+        "name": "Anti-Infantry 3+",
+        "modifiers": [
+          {
+            "key": "crit-wound",
+            "value": "3+",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              },
+              {
+                "key": "target-keyword",
+                "value": "Infantry"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Anti-Mounted 4+",
+        "modifiers": [
+          {
+            "key": "crit-wound",
+            "value": "4+",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              },
+              {
+                "key": "target-keyword",
+                "value": "Mounted"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Assault",
+        "modifiers": [
+          {
+            "key": "assault",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Heavy",
+        "modifiers": [
+          {
+            "key": "hit",
+            "value": 1,
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              },
+              {
+                "key": "short-move"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ignores Cover",
+        "modifiers": [
+          {
+            "key": "ignores-cover",
+            "target": "self",
+            "conditions": [
+              {
+                "key": "ranged"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "Crypteks’ guns have Assault, plus one ability per shot: Anti-Infantry 3+, Anti-Mounted 4+, Assault, Heavy or Ignores Cover",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:cursed-legion|cold-fervour",
+    "rule": {
+      "name": "Cold Fervour"
+    },
+    "eligibility": {
+      "allOf": [
+        "Destroyer Cult"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "Destroyers get +2 S; their first kill each turn gives your other units +2 S",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:hand-of-the-dynasty|hypermotility-protocols",
+    "rule": {
+      "name": "Hypermotility Protocols"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Immortals",
+        "Necron Warriors"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Immortals and Warriors gain Assault, and Advancing does not stop their actions",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:hypercrypt-legion|hyperphasing",
+    "rule": {
+      "name": "Hyperphasing"
+    },
+    "modifiers": [
+      {
+        "key": "strategic-reserves",
+        "target": "self"
+      }
+    ],
+    "summary": "End of the enemy turn: up to 1-3 unengaged units go into Strategic Reserves",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:obeisance-phalanx|worthy-foes",
+    "rule": {
+      "name": "Worthy Foes"
+    },
+    "eligibility": {
+      "allOf": [],
+      "anyOf": [
+        "Noble",
+        "Lychguard",
+        "Triarch"
+      ],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "Command phase: name a foe; Nobles, Lychguard and Triarch get +1 to wound it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:pantheon-of-woe|cosmic-distortion",
+    "rule": {
+      "name": "Cosmic Distortion"
+    },
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Enemies 6\" or closer to a C’tan unravel: +1 AP against them; 3 mortal wounds stretch it to 9\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:skyshroud-spearhead|transdimensional-deployment",
+    "rule": {
+      "name": "Transdimensional Deployment"
+    },
+    "eligibility": {
+      "allOf": [
+        "Tomb Blades"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "deep-strike",
+        "target": "self"
+      },
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "arrived-this-turn"
+          }
+        ]
+      }
+    ],
+    "summary": "Tomb Blades have Deep Strike and +1 to hit after an ingress move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:starshatter-arsenal|relentless-onslaught",
+    "rule": {
+      "name": "Relentless Onslaught"
+    },
+    "eligibility": {
+      "allOf": [
+        "Necrons"
+      ],
+      "anyOf": [],
+      "noneOf": [
+        "Monster"
+      ]
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      },
+      {
+        "key": "assault",
+        "target": "self",
+        "keywords": {
+          "allOf": [
+            "Necrons"
+          ],
+          "anyOf": [
+            "Vehicle",
+            "Mounted"
+          ],
+          "noneOf": [
+            "Titanic"
+          ]
+        },
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit units on objectives; Vehicles and Mounted (not Titanic) gain Assault",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::rule:the-phaerons-armoury|empowered-engines",
+    "rule": {
+      "name": "Empowered Engines"
+    },
+    "eligibility": {
+      "allOf": [
+        "Necrons",
+        "Titanic",
+        "Fly"
+      ],
+      "anyOf": [],
+      "noneOf": []
+    },
+    "modifiers": [
+      {
+        "key": "M",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Titanic flyers get +6\" Move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:animus-curse",
+    "stratagem": {
+      "name": "ANIMUS CURSE",
+      "detachmentId": "cryptek-conclave",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Cryptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "A Cryptek’s killer: your units re-roll hits against it for the battle",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:blood-fuelled-cruelty",
+    "stratagem": {
+      "name": "BLOOD-FUELLED CRUELTY",
+      "detachmentId": "annihilation-legion",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "enemy-moved",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Destroyer Cult",
+          "Flayed Ones"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "mortal-wounds",
+        "value": "D3",
+        "target": "enemy"
+      }
+    ],
+    "summary": "An engaged enemy moves away: D3 mortal wounds on 2-5, 3 on a 6, then follows it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:chronodistortion",
+    "stratagem": {
+      "name": "CHRONODISTORTION",
+      "detachmentId": "pantheon-of-woe",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: still fights on a 4+ (+1 against an unravelling attacker)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:chronoshift",
+    "stratagem": {
+      "name": "CHRONOSHIFT",
+      "detachmentId": "starshatter-arsenal",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [
+          "Vehicle",
+          "Mounted"
+        ],
+        "noneOf": [
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "advance",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Advances a flat 6\" this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:cosmic-precision",
+    "stratagem": {
+      "name": "COSMIC PRECISION",
+      "detachmentId": "hypercrypt-legion",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster"
+        ]
+      }
+    },
+    "summary": "Arrives 6\" from enemies, then no charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:cosmic-storm",
+    "stratagem": {
+      "name": "Cosmic Storm",
+      "detachmentId": "the-phaerons-armoury",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Obelisk",
+          "Tesseract Vault"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      }
+    ],
+    "summary": "Its Tesla Spheres get +1 AP",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:countertemporal-shift",
+    "stratagem": {
+      "name": "COUNTERTEMPORAL SHIFT",
+      "detachmentId": "canoptek-court",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Canoptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Can only be shot from 18\" or closer this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:curse-of-the-cryptek",
+    "stratagem": {
+      "name": "CURSE OF THE CRYPTEK",
+      "detachmentId": "canoptek-court",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Cryptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Canoptek"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "aura",
+        "keywords": {
+          "allOf": [
+            "Canoptek"
+          ],
+          "anyOf": [],
+          "noneOf": []
+        },
+        "conditions": [
+          {
+            "key": "target-marked"
+          }
+        ]
+      }
+    ],
+    "summary": "A Cryptek’s killer: Canoptek get +1 to hit and wound it for the battle",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:cynosure-of-eradication",
+    "stratagem": {
+      "name": "CYNOSURE OF ERADICATION",
+      "detachmentId": "canoptek-court",
+      "cp": 2,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Cryptek",
+          "Canoptek"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "devastating-wounds",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "power-matrix"
+          }
+        ]
+      }
+    ],
+    "summary": "Wholly in the Power Matrix: Devastating Wounds this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:dimensional-corridor",
+    "stratagem": {
+      "name": "DIMENSIONAL CORRIDOR",
+      "detachmentId": "hypercrypt-legion",
+      "cp": 2,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Monolith"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Came through an Eternity Gate this turn: can still charge",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:dimensional-tunnel",
+    "stratagem": {
+      "name": "DIMENSIONAL TUNNEL",
+      "detachmentId": "starshatter-arsenal",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [
+          "Vehicle",
+          "Mounted"
+        ],
+        "noneOf": [
+          "Titanic"
+        ]
+      }
+    },
+    "summary": "Moves through models and terrain this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:disharmonisation-cascade",
+    "stratagem": {
+      "name": "DISHARMONISATION CASCADE",
+      "detachmentId": "pantheon-of-woe",
+      "cp": 1,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "unit-destroyed",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Just destroyed: its Deadly Demise triggers on 3+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:dominance-protocols",
+    "stratagem": {
+      "name": "Dominance Protocols",
+      "detachmentId": "hand-of-the-dynasty",
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Immortals"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC this turn",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:driven-to-butchery",
+    "stratagem": {
+      "name": "DRIVEN TO BUTCHERY",
+      "detachmentId": "cursed-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "charge"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Destroyer Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "advance-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "advance-and-charge",
+        "target": "self"
+      }
+    ],
+    "summary": "Once per turn: can shoot and charge after Advancing",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:endless-servitude",
+    "stratagem": {
+      "name": "ENDLESS SERVITUDE",
+      "detachmentId": "starshatter-arsenal",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Its Reanimation Protocols activate",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:enslaved-artifice",
+    "stratagem": {
+      "name": "ENSLAVED ARTIFICE",
+      "detachmentId": "obeisance-phalanx",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "crit-hit",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Critical hits on 5+ this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:entrophasic-aura-targeting",
+    "stratagem": {
+      "name": "ENTROPHASIC AURA TARGETING",
+      "detachmentId": "pantheon-of-woe",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self"
+      },
+      {
+        "key": "reroll-wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-unravelling"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit, and 1s to wound against unravelling units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:entropic-damping",
+    "stratagem": {
+      "name": "ENTROPIC DAMPING",
+      "detachmentId": "hypercrypt-legion",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Titanic"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Attackers 18\" or closer: their weapons gain Hazardous this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:evasive-protocols",
+    "stratagem": {
+      "name": "Evasive Protocols",
+      "detachmentId": "skyshroud-spearhead",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Mounted"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "ranged"
+          },
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged attacks stronger than its Toughness get -1 to wound",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:hyperphasic-recall",
+    "stratagem": {
+      "name": "HYPERPHASIC RECALL",
+      "detachmentId": "hypercrypt-legion",
+      "cp": 2,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Lost models: redeploys wholly 6\" or closer to a Monolith",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:image-of-death",
+    "stratagem": {
+      "name": "IMAGE OF DEATH",
+      "detachmentId": "cursed-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Destroyer Cult"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:insanitys-ire",
+    "stratagem": {
+      "name": "INSANITY’S IRE",
+      "detachmentId": "annihilation-legion",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Destroyer Cult",
+          "Flayed Ones"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "surge-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Shot at: a D6\" surge move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:masks-of-death",
+    "stratagem": {
+      "name": "MASKS OF DEATH",
+      "detachmentId": "annihilation-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Destroyer Cult",
+          "Flayed Ones"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it get -1 to hit this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:mass-transmogrification",
+    "stratagem": {
+      "name": "MASS TRANSMOGRIFICATION",
+      "detachmentId": "pantheon-of-woe",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Once per turn: a unit near a C’tan that hit an unravelling foe reanimates",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:merciless-reclamation",
+    "stratagem": {
+      "name": "MERCILESS RECLAMATION",
+      "detachmentId": "starshatter-arsenal",
+      "cp": 2,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to wound against units on objectives this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:methodical-murder",
+    "stratagem": {
+      "name": "METHODICAL MURDER",
+      "detachmentId": "cursed-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Vehicle"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "sustained-hits",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "Sustained Hits 1 this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:microscarab-swarm",
+    "stratagem": {
+      "name": "MICROSCARAB SWARM",
+      "detachmentId": "cryptek-conclave",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Cryptek",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "5+",
+        "target": "self"
+      }
+    ],
+    "summary": "Warriors get a 5+ invulnerable, Immortals 4+, this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:molecular-erosion",
+    "stratagem": {
+      "name": "MOLECULAR EROSION",
+      "detachmentId": "pantheon-of-woe",
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      },
+      {
+        "key": "mortal-wounds",
+        "value": "D3+1",
+        "target": "enemy"
+      }
+    ],
+    "summary": "Once per battle round: an unravelling enemy tests Battle-shock at -1, D3+1 mortal wounds if it fails",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:molecular-targeting",
+    "stratagem": {
+      "name": "MOLECULAR TARGETING",
+      "detachmentId": "cryptek-conclave",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Ignores BS, WS and hit modifiers (and wound modifiers for Crypteks)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:mortis-protocols",
+    "stratagem": {
+      "name": "MORTIS PROTOCOLS",
+      "detachmentId": "cursed-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Vehicle"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "A Destroyer killed something: a unit 9\" or closer reanimates",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:murderous-reanimation",
+    "stratagem": {
+      "name": "MURDEROUS REANIMATION",
+      "detachmentId": "annihilation-legion",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Destroyer Cult",
+          "Flayed Ones"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Its Reanimation Protocols activate",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:nanoassembly-protocols",
+    "stratagem": {
+      "name": "NANOASSEMBLY PROTOCOLS",
+      "detachmentId": "obeisance-phalanx",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "damage-reduction",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "-1 Damage to attacks allocated to it this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:nanosaturation",
+    "stratagem": {
+      "name": "Nanosaturation",
+      "detachmentId": "hand-of-the-dynasty",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Immortals",
+          "Necron Warriors"
+        ],
+        "noneOf": []
+      }
+    },
+    "summary": "Snap-shoots at the unit that just moved near it",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:omnilocked-strafing",
+    "stratagem": {
+      "name": "Omnilocked Strafing",
+      "detachmentId": "skyshroud-spearhead",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Mounted"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "advance-and-shoot",
+        "target": "self"
+      },
+      {
+        "key": "fall-back-and-shoot",
+        "target": "self"
+      }
+    ],
+    "summary": "Its move does not stop it from shooting",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:particle-pulse",
+    "stratagem": {
+      "name": "Particle Pulse",
+      "detachmentId": "the-phaerons-armoury",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Titanic",
+          "Fly"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "A visible enemy 12\" or closer gets +3\" detection range",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:phase-melding",
+    "stratagem": {
+      "name": "PHASE MELDING",
+      "detachmentId": "pantheon-of-woe",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "desperate-escape",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "The enemy Falling Back from it takes Desperate Escape tests (-1 if Battle-shocked)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:pitiless-hunters",
+    "stratagem": {
+      "name": "PITILESS HUNTERS",
+      "detachmentId": "annihilation-legion",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Destroyer Cult",
+          "Flayed Ones"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "pile-in",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "Piles in and consolidates 6\"",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:potentiality-syphon",
+    "stratagem": {
+      "name": "POTENTIALITY SYPHON",
+      "detachmentId": "cryptek-conclave",
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Its Reanimation Protocols activate",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:protocol-of-the-conquering-tyrant",
+    "stratagem": {
+      "name": "PROTOCOL OF THE CONQUERING TYRANT",
+      "detachmentId": "awakened-dynasty",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "reroll-hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "half-range"
+          }
+        ]
+      },
+      {
+        "key": "reroll-hit",
+        "value": "all",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "half-range"
+          },
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "Re-roll 1s to hit at half range (all of them if led)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:protocol-of-the-eternal-revenant",
+    "stratagem": {
+      "name": "PROTOCOL OF THE ETERNAL REVENANT",
+      "detachmentId": "awakened-dynasty",
+      "cp": 1,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Infantry",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Once per model: a slain infantry Character returns alone with half its wounds",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:protocol-of-the-hungry-void",
+    "stratagem": {
+      "name": "PROTOCOL OF THE HUNGRY VOID",
+      "detachmentId": "awakened-dynasty",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "S",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      },
+      {
+        "key": "AP",
+        "value": -1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          },
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 melee S (and +1 AP if led)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:protocol-of-the-sudden-storm",
+    "stratagem": {
+      "name": "PROTOCOL OF THE SUDDEN STORM",
+      "detachmentId": "awakened-dynasty",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "assault",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "ranged"
+          }
+        ]
+      },
+      {
+        "key": "reroll-advance",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "led"
+          }
+        ]
+      }
+    ],
+    "summary": "Ranged weapons gain Assault (and re-roll Advances if led)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:protocol-of-the-undying-legions",
+    "stratagem": {
+      "name": "PROTOCOL OF THE UNDYING LEGIONS",
+      "detachmentId": "awakened-dynasty",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Lost models: reanimates D3 wounds (D3+1 if led)",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:protocol-of-the-vengeful-stars",
+    "stratagem": {
+      "name": "PROTOCOL OF THE VENGEFUL STARS",
+      "detachmentId": "awakened-dynasty",
+      "cp": 2,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "A unit 6\" or closer was destroyed: shoots back at the killer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:quantum-deflection",
+    "stratagem": {
+      "name": "QUANTUM DEFLECTION",
+      "detachmentId": "hypercrypt-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "invulnerable-save",
+        "value": "4+",
+        "target": "self"
+      }
+    ],
+    "summary": "4+ invulnerable save this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:reactive-reposition",
+    "stratagem": {
+      "name": "REACTIVE REPOSITION",
+      "detachmentId": "starshatter-arsenal",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D6",
+        "target": "self"
+      }
+    ],
+    "summary": "Shot at: a D6\" Normal move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:reactive-subroutines",
+    "stratagem": {
+      "name": "REACTIVE SUBROUTINES",
+      "detachmentId": "canoptek-court",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Canoptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": 6,
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:reanimation-crypts",
+    "stratagem": {
+      "name": "REANIMATION CRYPTS",
+      "detachmentId": "hypercrypt-legion",
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Warlord"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Every unit in Reserves reanimates",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:sentinels-of-eternity",
+    "stratagem": {
+      "name": "SENTINELS OF ETERNITY",
+      "detachmentId": "obeisance-phalanx",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Lychguard",
+          "Triarch Praetorians"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "fight-on-death",
+        "value": "4+",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Slain before fighting: still fights on a 4+",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:solar-pulse",
+    "stratagem": {
+      "name": "SOLAR PULSE",
+      "detachmentId": "canoptek-court",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cryptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "ignores-cover",
+        "target": "aura",
+        "conditions": [
+          {
+            "key": "target-on-objective"
+          }
+        ]
+      }
+    ],
+    "summary": "Your units ignore cover against units on one objective 18\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:spreading-madness",
+    "stratagem": {
+      "name": "SPREADING MADNESS",
+      "detachmentId": "cursed-legion",
+      "cp": 1,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Vehicle"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "charge",
+        "value": 2,
+        "target": "self"
+      }
+    ],
+    "summary": "+2 to charge enemies already engaged with your units",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:suboptimal-facade",
+    "stratagem": {
+      "name": "SUBOPTIMAL FACADE",
+      "detachmentId": "canoptek-court",
+      "cp": 1,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "charge-declared",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Canoptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "heal",
+        "value": "D3",
+        "target": "self"
+      }
+    ],
+    "summary": "Its Reanimation Protocols activate",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:subsurface-quantumweave",
+    "stratagem": {
+      "name": "Subsurface Quantumweave",
+      "detachmentId": "the-phaerons-armoury",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Titanic",
+          "Fly"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "AP",
+        "value": 1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Attacks against it lose 1 AP until the attacker is done",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:suffer-no-rival",
+    "stratagem": {
+      "name": "SUFFER NO RIVAL",
+      "detachmentId": "obeisance-phalanx",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Lychguard",
+          "Triarch"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "precision",
+        "target": "self",
+        "conditions": [
+          {
+            "key": "melee"
+          }
+        ]
+      }
+    ],
+    "summary": "Precision in melee this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:swift-as-death",
+    "stratagem": {
+      "name": "Swift As Death",
+      "detachmentId": "skyshroud-spearhead",
+      "cp": 1,
+      "phases": [
+        "movement"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "enemy-moved",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Mounted"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "normal-move",
+        "value": "D3+3",
+        "target": "self"
+      }
+    ],
+    "summary": "An enemy ends a move nearby: a D3+3\" Normal move",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:synergistic-empowerment",
+    "stratagem": {
+      "name": "SYNERGISTIC EMPOWERMENT",
+      "detachmentId": "cryptek-conclave",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Cryptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "A nearby non-Monster, non-Vehicle model counts as a Cryptek this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:territorial-obsession",
+    "stratagem": {
+      "name": "TERRITORIAL OBSESSION",
+      "detachmentId": "obeisance-phalanx",
+      "cp": 1,
+      "phases": [
+        "command"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Lychguard",
+          "Triarch"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "OC",
+        "value": 1,
+        "target": "self"
+      }
+    ],
+    "summary": "+1 OC (+3 for Vehicles) until your next Command phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:the-spoor-of-frailty",
+    "stratagem": {
+      "name": "THE SPOOR OF FRAILTY",
+      "detachmentId": "annihilation-legion",
+      "cp": 1,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Destroyer Cult",
+          "Flayed Ones"
+        ],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "hit",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-starting-strength"
+          }
+        ]
+      },
+      {
+        "key": "wound",
+        "value": 1,
+        "target": "self",
+        "conditions": [
+          {
+            "key": "target-below-half-strength"
+          }
+        ]
+      }
+    ],
+    "summary": "+1 to hit weakened units, +1 to wound too Below Half-strength",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:unnatural-aggression",
+    "stratagem": {
+      "name": "UNNATURAL AGGRESSION",
+      "detachmentId": "cursed-legion",
+      "cp": 2,
+      "phases": [
+        "charge"
+      ],
+      "playerTurn": "opponent-turn",
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Monster",
+          "Vehicle"
+        ]
+      }
+    },
+    "summary": "End of the enemy Charge phase: charges an enemy 6\" or closer",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:untapped-power",
+    "stratagem": {
+      "name": "UNTAPPED POWER",
+      "detachmentId": "cryptek-conclave",
+      "cp": 1,
+      "phases": [
+        "shooting"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Cryptek"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "summary": "Picks one more augmentation this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:unyielding-forms",
+    "stratagem": {
+      "name": "UNYIELDING FORMS",
+      "detachmentId": "starshatter-arsenal",
+      "cp": 2,
+      "phases": [
+        "shooting",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Necrons"
+        ],
+        "anyOf": [
+          "Vehicle",
+          "Mounted"
+        ],
+        "noneOf": [
+          "Titanic"
+        ]
+      }
+    },
+    "modifiers": [
+      {
+        "key": "wound",
+        "value": -1,
+        "target": "enemy",
+        "conditions": [
+          {
+            "key": "strength-above-toughness"
+          }
+        ]
+      }
+    ],
+    "summary": "Attacks stronger than its Toughness get -1 to wound this phase",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:will-of-the-conqueror",
+    "stratagem": {
+      "name": "Will of the Conqueror",
+      "detachmentId": "hand-of-the-dynasty",
+      "cp": 1,
+      "phases": [
+        "fight"
+      ],
+      "playerTurn": "your-turn",
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Immortals",
+          "Necron Warriors"
+        ],
+        "noneOf": []
+      }
+    },
+    "summary": "An objective it controls is secured",
+    "reason": "Read from the rules, in our own words."
+  },
+  {
+    "target": "necrons::stratagem:your-time-is-nigh",
+    "stratagem": {
+      "name": "YOUR TIME IS NIGH",
+      "detachmentId": "obeisance-phalanx",
+      "cp": 1,
+      "phases": [
+        "command",
+        "movement",
+        "shooting",
+        "charge",
+        "fight"
+      ],
+      "playerTurn": "either",
+      "timing": "once-per-phase",
+      "trigger": "unit-destroyed",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Necrons",
+          "Warlord"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      }
+    },
+    "modifiers": [
+      {
+        "key": "battle-shock",
+        "value": -1,
+        "target": "enemy"
+      }
+    ],
+    "summary": "Your Warlord died: enemies take -1 on Battle-shock and Leadership tests for the battle",
+    "reason": "Read from the rules, in our own words."
   }
 ]

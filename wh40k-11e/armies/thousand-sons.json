@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "thousand-sons",
   "name": "Thousand Sons",
@@ -234,16 +234,19 @@
       ],
       "abilities": [
         {
-          "name": "Scryer of Fates (Psychic)"
+          "name": "Scryer of Fates (Psychic)",
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         },
         {
-          "name": "Arch-Sorcerer of Tzeentch (Psychic)"
+          "name": "Arch-Sorcerer of Tzeentch (Psychic)",
+          "summary": "+1 to its Psychic tests"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 105,
@@ -654,16 +657,55 @@
       ],
       "abilities": [
         {
-          "name": "Split"
+          "name": "Split",
+          "summary": "Slain Horrors split into smaller Horrors on a 4+"
         },
         {
-          "name": "Sullen Malevolence (Aura)"
+          "name": "Sullen Malevolence (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "With Blue Horrors: enemies 6\" or closer get -1 Leadership"
         },
         {
-          "name": "Exploding Horrors"
+          "name": "Exploding Horrors",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fighting: Brimstone Horrors blow up on 4+ for a mortal wound each"
         },
         {
-          "name": "Daemonic Illusions (Aura)"
+          "name": "Daemonic Illusions (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Changehost: visible Thousand Sons Psykers 6\" or closer have a 4+ invulnerable against shooting"
         }
       ],
       "points": 90,
@@ -1751,10 +1793,19 @@
           "name": "Leader"
         },
         {
-          "name": "Bestial Prophet"
+          "name": "Bestial Prophet",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to hit"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 60,
@@ -2469,10 +2520,38 @@
       ],
       "abilities": [
         {
-          "name": "Atomantic Arc-reactor"
+          "name": "Atomantic Arc-reactor",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: its neutron pulse array gains Lethal Hits"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 270,
@@ -2736,10 +2815,48 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -2954,10 +3071,38 @@
       ],
       "abilities": [
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3194,13 +3339,34 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Unrestrained Terror (Aura)"
+          "name": "Unrestrained Terror (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "War Dogs 6\" or closer: enemies engaged with them test Battle-shock as the Fight phase starts"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3398,13 +3564,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Consumed with Hunger (Aura)"
+          "name": "Consumed with Hunger (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer re-roll hits against Titanic or Towering units"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -3548,13 +3815,55 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Offerings for the Dark Gods (Aura)"
+          "name": "Offerings for the Dark Gods (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer get Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -3699,13 +4008,54 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Dark Fervour (Aura)"
+          "name": "Dark Fervour (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -3906,13 +4256,34 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 220,
@@ -4183,13 +4554,98 @@
       ],
       "abilities": [
         {
-          "name": "Ensorcelled Annihilation"
+          "name": "Ensorcelled Annihilation",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-hit-by-psychic"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-hit-by-psychic"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-hit-by-psychic"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-hit-by-psychic"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits and Damage against Monsters and Vehicles a Psyker hit this phase"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 140,
@@ -4496,13 +4952,56 @@
       ],
       "abilities": [
         {
-          "name": "Ensorcelled Destruction"
+          "name": "Ensorcelled Destruction",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-hit-by-psychic"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-hit-by-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and AP against non-Monster, non-Vehicle units a Psyker hit this phase"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 140,
@@ -4799,13 +5298,64 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Huntmaster (Aura)"
+          "name": "Huntmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         }
       ],
       "points": 375,
@@ -5055,13 +5605,69 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Preysight (Aura)"
+          "name": "Preysight (Aura)",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer shoot with Ignores Cover"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 365,
@@ -5265,10 +5871,40 @@
       ],
       "abilities": [
         {
-          "name": "Sorcerous Support"
+          "name": "Sorcerous Support",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Psychic attacks from units that left it get +1 to hit and wound"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 80,
@@ -5412,10 +6048,19 @@
       ],
       "abilities": [
         {
-          "name": "Regenerating Monstrosities"
+          "name": "Regenerating Monstrosities",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Command phase: one model regains up to 3 wounds"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 65,
@@ -5501,10 +6146,19 @@
       ],
       "abilities": [
         {
-          "name": "Regenerating Monstrosities"
+          "name": "Regenerating Monstrosities",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Command phase: one model regains up to 3 wounds"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 65,
@@ -5665,13 +6319,41 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Aerial Assault"
+          "name": "Aerial Assault",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Thunderhawk cluster bombs"
+          "name": "Thunderhawk cluster bombs",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound"
         }
       ],
       "points": 840,
@@ -5887,13 +6569,28 @@
       ],
       "abilities": [
         {
-          "name": "Siege Shield"
+          "name": "Siege Shield",
+          "summary": "Its demolisher cannon shoots engaged enemies, without the engaged hit penalty"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 185,
@@ -6105,16 +6802,45 @@
       ],
       "abilities": [
         {
-          "name": "Spirit Snare"
+          "name": "Spirit Snare",
+          "summary": "Psykers dying 9\" or closer give it +1 to Psychic tests (+2 at most)"
         },
         {
-          "name": "Servile Pawns"
+          "name": "Servile Pawns",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Near friendly infantry (3\"): Lone Operative"
         },
         {
-          "name": "Glamour of Tzeentch (Aura, Psychic)"
+          "name": "Glamour of Tzeentch (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Friendly infantry 6\" or closer have Stealth"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 170,
@@ -6277,13 +7003,40 @@
       ],
       "abilities": [
         {
-          "name": "Aetherstride (Psychic)"
+          "name": "Aetherstride (Psychic)",
+          "summary": "Deep Strikes 6\" from enemies with Sustained Hits D3 that turn, but no charge"
         },
         {
-          "name": "Hunter of Souls"
+          "name": "Hunter of Souls",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and wound against Characters (all against Psykers); kills heal it"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 170,
@@ -7993,16 +8746,39 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Destroyer of Futures (Once per phase, per unit)"
+          "name": "Destroyer of Futures (Once per phase, per unit)",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Counter-offensive on it costs 1CP less and is not limited by other uses"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 300,
@@ -8458,10 +9234,39 @@
       ],
       "abilities": [
         {
-          "name": "Deredeo Strike"
+          "name": "Deredeo Strike",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits when shooting units not Below Half-strength"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -8738,16 +9543,33 @@
       ],
       "abilities": [
         {
-          "name": "Arcane Shield (Psychic)"
+          "name": "Arcane Shield (Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 4+ invulnerable save"
         },
         {
-          "name": "Rebind Rubricae (Psychic)"
+          "name": "Rebind Rubricae (Psychic)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, leading: returns 1 model on 2-5, 2 on a 6 (D3 mortal wounds on a 1)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 100,
@@ -8925,16 +9747,38 @@
       ],
       "abilities": [
         {
-          "name": "Arcane Shield (Psychic)"
+          "name": "Arcane Shield (Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 4+ invulnerable save"
         },
         {
-          "name": "Binding Tendrils (Psychic)"
+          "name": "Binding Tendrils (Psychic)",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its Arcane Fire hits: -2\" Move and -2 to charge until your next turn"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 95,
@@ -9215,10 +10059,62 @@
       ],
       "abilities": [
         {
-          "name": "Titan-killer"
+          "name": "Titan-killer",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its volcano cannon gains Devastating Wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 420,
@@ -9714,10 +10610,34 @@
       ],
       "abilities": [
         {
-          "name": "Rolling Fortress"
+          "name": "Rolling Fortress",
+          "summary": "Friendly models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 480,
@@ -10067,10 +10987,40 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 290,
@@ -10488,10 +11438,39 @@
       ],
       "abilities": [
         {
-          "name": "Bounding Leaps"
+          "name": "Bounding Leaps",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot"
         },
         {
-          "name": "Daemonic Illusions (Aura)"
+          "name": "Daemonic Illusions (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Changehost: visible Thousand Sons Psykers 6\" or closer have a 4+ invulnerable against shooting"
         }
       ],
       "points": 65,
@@ -10642,10 +11621,24 @@
           "name": "Blazing Salvos"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 135,
@@ -11305,13 +12298,34 @@
       ],
       "abilities": [
         {
-          "name": "Terrifying Assault"
+          "name": "Terrifying Assault",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After shooting or fighting: one unit it hit tests Battle-shock (-1 near a Psyker)"
         },
         {
-          "name": "Devoted to Destruction"
+          "name": "Devoted to Destruction",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With two melee weapons: +2 Attacks for each"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 110,
@@ -11583,10 +12597,12 @@
       ],
       "abilities": [
         {
-          "name": "Flame-wreathed"
+          "name": "Flame-wreathed",
+          "summary": "After a Normal move: one unit it flew over loses cover this turn"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 175,
@@ -11767,13 +12783,35 @@
       ],
       "abilities": [
         {
-          "name": "Bomb Rack"
+          "name": "Bomb Rack",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 140,
@@ -11941,10 +12979,28 @@
       ],
       "abilities": [
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 115,
@@ -13025,16 +14081,26 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Maelstrom (Psychic)"
+          "name": "Malefic Maelstrom (Psychic)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1"
         },
         {
-          "name": "Glimpse of Eternity (Psychic)"
+          "name": "Glimpse of Eternity (Psychic)",
+          "summary": "Once per turn: one hit, wound or save of its own becomes a 6"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 105,
@@ -13179,16 +14245,67 @@
       ],
       "abilities": [
         {
-          "name": "One Head Looks Forward"
+          "name": "One Head Looks Forward",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "End of your Command phase: +1CP on a passed Leadership test"
         },
         {
-          "name": "One Head Looks Back (Aura)"
+          "name": "One Head Looks Back (Aura)",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Stratagems on units 12\" or closer cost 1CP more"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Daemonic Illusions (Aura)"
+          "name": "Daemonic Illusions (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Changehost: visible Thousand Sons Psykers 6\" or closer have a 4+ invulnerable against shooting"
         }
       ],
       "points": 305,
@@ -13349,16 +14466,54 @@
       ],
       "abilities": [
         {
-          "name": "Vortex Terrors (Psychic)"
+          "name": "Vortex Terrors (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible enemy 24\" or closer tests Battle-shock"
         },
         {
-          "name": "Warp Storms (Psychic)"
+          "name": "Warp Storms (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 9\" or closer take D3 mortal wounds on 3+"
         },
         {
           "name": "*Invulnerable Save"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 350,
@@ -13554,13 +14709,58 @@
       ],
       "abilities": [
         {
-          "name": "Taskmaster (Aura)"
+          "name": "Taskmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit when shooting"
         },
         {
-          "name": "Obsessive Ruthlessness"
+          "name": "Obsessive Ruthlessness",
+          "summary": "Shooting Monsters and Vehicles: ignores BS, hit and wound modifiers"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -13940,13 +15140,66 @@
       ],
       "abilities": [
         {
-          "name": "Dread Dominion (Aura)"
+          "name": "Dread Dominion (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 Leadership and OC"
         },
         {
-          "name": "Seething Hatred"
+          "name": "Seething Hatred",
+          "summary": "Shooting or fighting: one hit or one wound may be re-rolled"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -14334,13 +15587,73 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Rampage (Aura)"
+          "name": "Frenzied Rampage (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit in melee"
         },
         {
-          "name": "Bloodlust"
+          "name": "Bloodlust",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: Sustained Hits 1 in melee; once per battle, charges after Advancing"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -14511,13 +15824,70 @@
       ],
       "abilities": [
         {
-          "name": "Methodical Destruction"
+          "name": "Methodical Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its victim, chosen anew whenever one dies"
         },
         {
-          "name": "Close-range Killers (Aura)"
+          "name": "Close-range Killers (Aura)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 AP against the closest enemy"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -14787,13 +16157,42 @@
       ],
       "abilities": [
         {
-          "name": "Infernal Aegis (Aura)"
+          "name": "Infernal Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer have the benefit of cover"
         },
         {
-          "name": "Bastion of Corruption"
+          "name": "Bastion of Corruption",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -15261,10 +16660,24 @@
       ],
       "abilities": [
         {
-          "name": "Line-breaker"
+          "name": "Line-breaker",
+          "summary": "Its Blast weapons shoot engaged enemies, without the engaged hit penalty"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 240,
@@ -15789,10 +17202,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         }
       ],
       "points": 230,
@@ -16123,13 +17556,34 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Explorator Augury Web"
+          "name": "Explorator Augury Web",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer, but its capacity is halved"
         }
       ],
       "points": 220,
@@ -16461,10 +17915,31 @@
       ],
       "abilities": [
         {
-          "name": "Duty Eternal"
+          "name": "Duty Eternal",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -16724,16 +18199,118 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         },
         {
-          "name": "Daemon Lord of Tzeentch (Aura)"
+          "name": "Daemon Lord of Tzeentch (Aura)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Scintillating Legions"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Scintillating Legions 6\" or closer get +1 S when shooting"
         },
         {
-          "name": "Master of Magicks (Aura)"
+          "name": "Master of Magicks (Aura)",
+          "options": [
+            {
+              "name": "Ignores Cover",
+              "modifiers": [
+                {
+                  "key": "ignores-cover",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits D3",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": "D3",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Each Shooting phase its Bolt of Change gains Ignores Cover, Lethal Hits or Sustained Hits D3"
         },
         {
-          "name": "Daemonic Illusions (Aura)"
+          "name": "Daemonic Illusions (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Changehost: visible Thousand Sons Psykers 6\" or closer have a 4+ invulnerable against shooting"
         }
       ],
       "points": 320,
@@ -17447,7 +19024,8 @@
           "name": "Leader"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 105,
@@ -17584,16 +19162,32 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Unearthly Power"
+          "name": "Unearthly Power",
+          "summary": "Each battle round: picks one Crimson King ability"
         },
         {
-          "name": "Lord of the Planet of the Sorcerers (Psychic)"
+          "name": "Lord of the Planet of the Sorcerers (Psychic)",
+          "summary": "Two Rituals per turn, +2 to its Psychic tests"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 455,
@@ -17805,10 +19399,34 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -6,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -6 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Inviolable Transport"
+          "name": "Inviolable Transport",
+          "summary": "Once per battle round: an attack allocated to it deals no damage"
         }
       ],
       "points": 540,
@@ -18055,13 +19673,39 @@
       ],
       "abilities": [
         {
-          "name": "Snarling Protector"
+          "name": "Snarling Protector",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less; re-rolls charges to help an engaged Psyker"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 120,
@@ -18258,16 +19902,43 @@
       ],
       "abilities": [
         {
-          "name": "Mutating Vortex (Aura)"
+          "name": "Mutating Vortex (Aura)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            },
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 6\" or closer take 1, D3 or D6 mortal wounds, then test Battle-shock"
         },
         {
-          "name": "Immaterial Flare (Aura)"
+          "name": "Immaterial Flare (Aura)",
+          "summary": "Psykers 6\" or closer get +1 when Channelling the Warp"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 170,
@@ -18481,19 +20152,52 @@
       ],
       "abilities": [
         {
-          "name": "Split"
+          "name": "Split",
+          "summary": "Slain Horrors split into smaller Horrors on a 4+"
         },
         {
-          "name": "Horrors are Pink. Horrors are Blue. Where once there was one, now there are two."
+          "name": "Horrors are Pink. Horrors are Blue. Where once there was one, now there are two.",
+          "summary": "With no Pink Horror left, the unit uses the Blue Horrors datasheet"
         },
         {
-          "name": "Daemonic Illusions (Aura)"
+          "name": "Daemonic Illusions (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Changehost: visible Thousand Sons Psykers 6\" or closer have a 4+ invulnerable against shooting"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 115,
@@ -19300,7 +21004,22 @@
       ],
       "abilities": [
         {
-          "name": "Powerful Volley"
+          "name": "Powerful Volley",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Heavy weapons gain Lethal Hits"
         }
       ],
       "points": 90,
@@ -19574,13 +21293,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-20 wounds remaining"
+          "name": "Damaged: 1-20 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (20 wounds or fewer left)"
         },
         {
-          "name": "God-machine"
+          "name": "God-machine",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2200,
@@ -20080,7 +21834,8 @@
       ],
       "abilities": [
         {
-          "name": "Even In Death I Serve"
+          "name": "Even In Death I Serve",
+          "summary": "First death: no Deadly Demise, and on a 2+ it returns with D6 wounds once the phase ends"
         }
       ],
       "points": 140,
@@ -20452,13 +22207,52 @@
       ],
       "abilities": [
         {
-          "name": "Bringers of Change"
+          "name": "Bringers of Change",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound when shooting; every wound roll against units on an objective you do not hold"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         },
         {
-          "name": "Icon of Flame"
+          "name": "Icon of Flame",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover (Characters excepted)"
         }
       ],
       "points": 115,
@@ -20803,10 +22597,19 @@
       ],
       "abilities": [
         {
-          "name": "Rites of Coalescence"
+          "name": "Rites of Coalescence",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "With a Psyker: attacks against it get -1 to wound"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 200,
@@ -21032,10 +22835,40 @@
       ],
       "abilities": [
         {
-          "name": "Slashing Dive"
+          "name": "Slashing Dive",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: a D6 per model, each 4+ a mortal wound"
         },
         {
-          "name": "Daemonic Illusions (Aura)"
+          "name": "Daemonic Illusions (Aura)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Changehost: visible Thousand Sons Psykers 6\" or closer have a 4+ invulnerable against shooting"
         }
       ],
       "points": 80,
@@ -21225,10 +23058,24 @@
       ],
       "abilities": [
         {
-          "name": "Prophetic Sentinels"
+          "name": "Prophetic Sentinels",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, Fire Overwatch or Heroic Intervention on it costs 1CP less"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 85,
@@ -21559,10 +23406,41 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Spearhead"
+          "name": "Armoured Spearhead",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective you do not hold"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -21779,10 +23657,40 @@
       ],
       "abilities": [
         {
-          "name": "Rotating Death"
+          "name": "Rotating Death",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Its rotary cannon gains Sustained Hits 1 against Infantry"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -21999,10 +23907,60 @@
       ],
       "abilities": [
         {
-          "name": "Ferocious Assault"
+          "name": "Ferocious Assault",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting the closest Monster or Vehicle"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 180,
@@ -22240,10 +24198,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-13 wounds remaining"
+          "name": "Damaged: 1-13 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (13 wounds or fewer left)"
         },
         {
-          "name": "Aerial Assault"
+          "name": "Aerial Assault",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike units disembarking after its Normal move make an assault disembark"
         }
       ],
       "points": 900,
@@ -22402,13 +24380,50 @@
           "name": "Leader"
         },
         {
-          "name": "Twisted Sorceries (Psychic)"
+          "name": "Twisted Sorceries (Psychic)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +3 S and Attacks for its Psychic weapons"
         },
         {
-          "name": "Empyric Guidance (Psychic)"
+          "name": "Empyric Guidance (Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 100,
@@ -22600,13 +24615,34 @@
           "name": "Leader"
         },
         {
-          "name": "Marked by Fate (Psychic)"
+          "name": "Marked by Fate (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Start of your Shooting phase: +1 to hit one visible enemy"
         },
         {
-          "name": "Empyric Guidance (Psychic)"
+          "name": "Empyric Guidance (Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 110,
@@ -22903,10 +24939,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         }
       ],
       "points": 300,
@@ -23348,10 +25404,31 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Resilience"
+          "name": "Armoured Resilience",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 250,
@@ -23592,10 +25669,24 @@
       ],
       "abilities": [
         {
-          "name": "Termite Assault"
+          "name": "Termite Assault",
+          "summary": "Starts in Reserves without counting, lands in rounds 1-3; passengers disembark 9\" from enemies"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 200,
@@ -23947,10 +26038,48 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 320,
@@ -24193,10 +26322,19 @@
       ],
       "abilities": [
         {
-          "name": "Prophesied Doom"
+          "name": "Prophesied Doom",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per engaged model, each 4+ a mortal wound"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 50,
@@ -24373,10 +26511,19 @@
       ],
       "abilities": [
         {
-          "name": "Malign Trickery"
+          "name": "Malign Trickery",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 55,
@@ -24504,16 +26651,48 @@
       ],
       "abilities": [
         {
-          "name": "Sacrificial Blessing"
+          "name": "Sacrificial Blessing",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": "D3",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": "D3",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: sacrifices a Bodyguard for +D3 A and S on its Psychic weapons"
         },
         {
-          "name": "Bestial Prophet"
+          "name": "Bestial Prophet",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to hit"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         }
       ],
       "points": 65,
@@ -24647,16 +26826,36 @@
       ],
       "abilities": [
         {
-          "name": "Ambushing Hunters"
+          "name": "Ambushing Hunters",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, 6\" from enemies: back into Strategic Reserves"
         },
         {
-          "name": "Mortal Sorcery (Aura)"
+          "name": "Mortal Sorcery (Aura)",
+          "summary": "Changehost: Scintillating Legions Psykers 6\" or closer and visible can attempt Rituals"
         },
         {
-          "name": "Brayhorn"
+          "name": "Brayhorn",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls Advance and charge rolls"
         },
         {
-          "name": "Herd banner"
+          "name": "Herd banner",
+          "summary": "On an objective you hold: +1 Leadership for its unit"
         }
       ],
       "points": 75,
@@ -25398,10 +27597,38 @@
       ],
       "abilities": [
         {
-          "name": "Brigand"
+          "name": "Brigand",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -25597,10 +27824,36 @@
       ],
       "abilities": [
         {
-          "name": "Executioner"
+          "name": "Executioner",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Below Half-strength units; its kills force Battle-shock 3\" around"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -25804,10 +28057,48 @@
       ],
       "abilities": [
         {
-          "name": "Huntsman"
+          "name": "Huntsman",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -26003,10 +28294,34 @@
       ],
       "abilities": [
         {
-          "name": "Karnivore"
+          "name": "Karnivore",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -26257,10 +28572,35 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -26558,10 +28898,36 @@
       ],
       "abilities": [
         {
-          "name": "Stalker"
+          "name": "Stalker",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-isolated"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound targets with no other enemy 6\" or closer"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -26908,13 +29274,38 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-26 wounds remaining"
+          "name": "Damaged: 1-26 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (26 wounds or fewer left)"
         },
         {
-          "name": "Titanic Fire Support"
+          "name": "Titanic Fire Support",
+          "summary": "One unit it hits: friendly critical wounds get +1 AP against it this phase"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2600,
@@ -27210,13 +29601,45 @@
       ],
       "abilities": [
         {
-          "name": "Flank Speed"
+          "name": "Flank Speed",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 8,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 8\" without rolling"
         },
         {
-          "name": "Damaged: 1-13 wounds remaining"
+          "name": "Damaged: 1-13 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -8 OC while damaged (13 wounds or fewer left)"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost twice as much"
         }
       ],
       "points": 1100,
@@ -27584,13 +30007,44 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-33 wounds remaining"
+          "name": "Damaged: 1-33 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -15,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -15 OC while damaged (33 wounds or fewer left)"
         },
         {
-          "name": "Wrath of the Omnissiah"
+          "name": "Wrath of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost four times as much"
         }
       ],
       "points": 3500,
@@ -27848,10 +30302,30 @@
       ],
       "abilities": [
         {
-          "name": "Pinning Bombardment"
+          "name": "Pinning Bombardment",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: that unit tests for Battle-shock"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -27975,10 +30449,40 @@
       ],
       "abilities": [
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -28017,7 +30521,60 @@
   "armyRules": [
     {
       "id": "cabal-of-sorcerers",
-      "name": "Cabal of Sorcerers"
+      "name": "Cabal of Sorcerers",
+      "options": [
+        {
+          "name": "Destiny’s Ruin (5): re-roll 1s to hit one enemy (all on 10+)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Temporal Surge (6): a friendly unit makes a D6\" move (6\" on 10+)",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Doombolt (7): D3 mortal wounds (D3+3 on 11+)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ]
+        },
+        {
+          "name": "Twist of Fate (9): +1 AP against one enemy (+2 on 12+)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Start of your Shooting phase: Psykers attempt Rituals on 2D6 (+1D6 to Channel the Warp); doubles cost D3 mortal wounds"
     },
     {
       "id": "conversion",
@@ -28039,7 +30596,29 @@
       "rules": [
         {
           "id": "infernal-pacts",
-          "name": "Infernal Pacts"
+          "name": "Infernal Pacts",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Thousand Sons",
+                  "Psyker"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Up to 500-1500 points of Scintillating Legions; they give nearby Psykers a 4+ invulnerable against shooting and share Rituals"
         }
       ],
       "enhancements": [
@@ -28056,7 +30635,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Near Scintillating Legions (6\"): +1 to its Psychic tests when Channelling the Warp"
         },
         {
           "id": "duplicitous-malediction",
@@ -28073,7 +30653,8 @@
               "Lord of Change"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         },
         {
           "id": "nethershriek-mind-eater",
@@ -28090,7 +30671,15 @@
               "Lord of Change"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 3,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible enemy 12\" or closer tests Battle-shock, 3 mortal wounds if it fails"
         },
         {
           "id": "tome-of-true-names",
@@ -28105,7 +30694,20 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for one phase: 2+ invulnerable save"
         }
       ]
     },
@@ -28120,7 +30722,50 @@
       "rules": [
         {
           "id": "kindred-sorcery",
-          "name": "Kindred Sorcery"
+          "name": "Kindred Sorcery",
+          "options": [
+            {
+              "name": "Imbued Manifestation: +6\" range for Psychic weapons",
+              "modifiers": []
+            },
+            {
+              "name": "Psychic Maelstrom: +1 to wound with Psychic weapons",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "psychic"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Wrath of the Immaterium: Psychic weapons gain Devastating Wounds",
+              "modifiers": [
+                {
+                  "key": "devastating-wounds",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "psychic"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Thousand Sons"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Command phase, each once per battle: +6\" Psychic range, +1 to wound with Psychic weapons, or Devastating Wounds"
         }
       ],
       "enhancements": [
@@ -28136,7 +30781,30 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage for its Psychic weapons"
         },
         {
           "id": "incandaeum",
@@ -28150,7 +30818,8 @@
               "Exalted Sorcerer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle, may attempt Doombolt even if already attempted"
         },
         {
           "id": "lord-of-forbidden-lore",
@@ -28165,7 +30834,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+6\" range for its Rituals"
         },
         {
           "id": "umbralefic-crystal",
@@ -28179,7 +30849,14 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, Command phase, unengaged: into Strategic Reserves, back by ingress"
         }
       ]
     },
@@ -28194,7 +30871,40 @@
       "rules": [
         {
           "id": "flow-of-magic",
-          "name": "Flow of Magic"
+          "name": "Flow of Magic",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "flow-of-magic"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Thousand Sons"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Psychic attacks re-roll 1s to wound, or +1 to wound wholly in your Flow of Magic"
         }
       ],
       "enhancements": [
@@ -28210,7 +30920,20 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S for its unit’s Psychic weapons (+2 in the Flow of Magic)"
         },
         {
           "id": "empowered-manifestation",
@@ -28224,7 +30947,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "In the Flow of Magic: +6\" Psychic range, and re-roll Hazardous tests"
         },
         {
           "id": "empyric-onslaught",
@@ -28238,7 +30962,23 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "flow-of-magic"
+                }
+              ]
+            }
+          ],
+          "summary": "In the Flow of Magic: +3 Attacks for its ranged Psychic weapons"
         },
         {
           "id": "noctilith-mantle",
@@ -28252,7 +30992,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit is always in the Flow of Magic but cannot use Rituals"
         }
       ]
     },
@@ -28266,7 +31007,15 @@
       "rules": [
         {
           "id": "sorcerous-invigoration",
-          "name": "Sorcerous Invigoration"
+          "name": "Sorcerous Invigoration",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per turn, a Psyker unit that manifests a Ritual heals D3 wounds"
         }
       ],
       "enhancements": [
@@ -28289,7 +31038,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Heals 3 more from Sorcerous Invigoration"
         },
         {
           "id": "eruption-of-vitality",
@@ -28310,7 +31060,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle: returns alone with 3 wounds on a 2+ once the phase ends"
         }
       ]
     },
@@ -28325,7 +31076,27 @@
       "rules": [
         {
           "id": "all-is-dust",
-          "name": "All is Dust"
+          "name": "All is Dust",
+          "modifiers": [
+            {
+              "key": "Sv",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damage-1"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Rubricae"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Rubricae get +1 to armour saves against Damage 1 attacks"
         }
       ],
       "enhancements": [
@@ -28341,7 +31112,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Rubricae 9\" or closer re-roll Battle-shock tests"
         },
         {
           "id": "lord-of-the-rubricae",
@@ -28355,7 +31127,15 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Rubricae get +1 to hit"
         },
         {
           "id": "risen-rubricae",
@@ -28369,7 +31149,21 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Rubricae"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Two Rubricae Battleline units, or one other Rubricae unit, gain Infiltrators"
         },
         {
           "id": "stave-abominus",
@@ -28384,7 +31178,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Thousand Sons Infantry only"
         }
       ]
     },
@@ -28398,7 +31193,30 @@
       "rules": [
         {
           "id": "ensorcelled-animus",
-          "name": "Ensorcelled Animus"
+          "name": "Ensorcelled Animus",
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Sekhetar Robots"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "near-psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Sekhetar Robots’ attacks are Psychic, with +1 WS in melee near a Psyker (12\")"
         }
       ],
       "enhancements": [
@@ -28417,7 +31235,28 @@
               "Exalted Sorcerer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Sekhetar Robots"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Movement phase: Sekhetar Robots 6\" or closer get +1 BS until your next turn"
         },
         {
           "id": "walking-rampart",
@@ -28434,7 +31273,23 @@
               "Exalted Sorcerer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+1",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Sekhetar Robots"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Heals nearby Sekhetar Robots D3+1 wounds; Lone Operative beside them"
         }
       ]
     },
@@ -28449,7 +31304,22 @@
       "rules": [
         {
           "id": "all-seeing-mutant-hordes",
-          "name": "All-Seeing Mutant Hordes"
+          "name": "All-Seeing Mutant Hordes",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Tzaangors"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Tzaangors are Battleline; enemies get +6\" detection range against shooting Mutants"
         }
       ],
       "enhancements": [
@@ -28465,7 +31335,30 @@
               "Chaos Spawn"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "cleave",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP and Cleave 1 in melee"
         },
         {
           "id": "unravelled-fates",
@@ -28480,7 +31373,8 @@
               "Tzaangor Shaman"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Movement phase: frees a Mutant unit 6\" or closer from Battle-shock"
         }
       ]
     },
@@ -28494,7 +31388,16 @@
       "rules": [
         {
           "id": "warpfire-infusion",
-          "name": "Warpfire Infusion"
+          "name": "Warpfire Infusion",
+          "eligibility": {
+            "allOf": [
+              "Thousand Sons",
+              "Vehicle"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Vehicles get one re-roll among hit, wound and Damage dice (one of each near a Psyker); near one, they explode on 5+"
         }
       ],
       "enhancements": [
@@ -28510,7 +31413,23 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Vehicle 6\" or closer regains up to D3 wounds"
         },
         {
           "id": "perplexing-cloak",
@@ -28525,7 +31444,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Thousand Sons Infantry only"
         },
         {
           "id": "warp-syphon",
@@ -28539,7 +31459,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Near a Vehicle: re-roll its Channel the Warp die for a mortal wound on that Vehicle"
         },
         {
           "id": "warp-cursed-runemaster",
@@ -28553,7 +31474,8 @@
               "Thousand Sons"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Near a Vehicle: +6\" range for its Rituals"
         }
       ]
     },
@@ -28568,7 +31490,38 @@
       "rules": [
         {
           "id": "warpmeld-sacrifice",
-          "name": "Warpmeld Sacrifice"
+          "name": "Warpmeld Sacrifice",
+          "options": [
+            {
+              "name": "Targeted: -1 to wound it",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": -1,
+                  "target": "enemy"
+                }
+              ]
+            },
+            {
+              "name": "Attacking: +1 to wound",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Tzeentch",
+              "Mutant"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Tzeentch Mutants may take D3 mortal wounds: -1 to wound them, or +1 to wound; Tzaangors are Battleline with +1 OC"
         }
       ],
       "enhancements": [
@@ -28590,7 +31543,15 @@
           "excludes": [],
           "leaderTo": [
             "Tzaangors"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Scouts 6\""
         },
         {
           "id": "diamond-of-distortion",
@@ -28604,7 +31565,20 @@
               "Tzaangor Shaman"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: attacks against its unit get -1 to hit"
         },
         {
           "id": "flowing-flesh",
@@ -28618,7 +31592,20 @@
               "Tzaangor Shaman"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self"
+            },
+            {
+              "key": "W",
+              "value": 5,
+              "target": "self"
+            }
+          ],
+          "summary": "Feel No Pain 4+ and 5 Wounds"
         },
         {
           "id": "warpmeld-dagger",
@@ -28632,7 +31619,8 @@
               "Tzaangor Shaman"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Takes D3 mortal wounds to add as much to a Psychic test"
         }
       ]
     }
@@ -28655,7 +31643,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Re-roll every die of a Psychic test"
     },
     {
       "id": "arcane-venting",
@@ -28667,13 +31656,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "end-of-phase",
       "target": {
         "allOf": [
           "Sekhetar Robots"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "An objective it controls is secured"
     },
     {
       "id": "ardent-automata",
@@ -28685,6 +31676,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28692,7 +31684,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "blessed-transmutations",
@@ -28707,11 +31710,28 @@
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Tzaangors"
+          "Thousand Sons",
+          "Psyker"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": "D3+1",
+          "target": "aura",
+          "range": 12,
+          "keywords": {
+            "allOf": [
+              "Tzaangors"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          }
+        }
+      ],
+      "summary": "A Tzaangors unit 12\" or closer gets up to D3+1 models back"
     },
     {
       "id": "chronosorcerous-bleed",
@@ -28723,7 +31743,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Psyker",
+          "Scintillating Legions"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "charge",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "A visible enemy 12\" or closer gets -1 to its charge rolls"
     },
     {
       "id": "cyberspirit-machinations",
@@ -28735,6 +31772,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28743,7 +31781,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back near a Psyker: can still shoot and charge this turn"
     },
     {
       "id": "deceptive-glamour",
@@ -28755,6 +31804,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28762,7 +31812,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Engaged enemies must attack Scintillating Legions first if they can"
     },
     {
       "id": "deranged-ferocity",
@@ -28774,6 +31825,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -28782,7 +31834,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Piles in and consolidates 6\"; models 3\" or closer to the enemy can fight"
     },
     {
       "id": "desecration-of-worlds",
@@ -28802,7 +31862,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Its objective stays yours until the enemy out-controls it"
     },
     {
       "id": "destined-by-fate",
@@ -28818,15 +31879,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-roll",
       "category": "epic-deed",
       "target": {
         "allOf": [
-          "Thousand Sons",
           "Psyker"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A failed save on the Psyker: that attack deals no damage"
     },
     {
       "id": "devastating-sorcery",
@@ -28846,7 +31908,30 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "psychic"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "+9\" Psychic range, and re-roll hits and wounds with Psychic weapons"
     },
     {
       "id": "ectoplasmic-extrusion",
@@ -28864,7 +31949,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Starting an action does not stop it from shooting"
     },
     {
       "id": "egotistical-power",
@@ -28884,7 +31970,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Takes a Kindred Sorcery ability of its own, even one already used"
     },
     {
       "id": "ensorcelled-infusion",
@@ -28904,7 +31991,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Near a Psyker: ranged weapons become Psychic with +1 to wound"
     },
     {
       "id": "ethereal-phantasm",
@@ -28916,7 +32016,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Scintillating Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a D6\" Normal move (6\" near Thousand Sons)"
     },
     {
       "id": "fractal-disjunction",
@@ -28928,14 +32044,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
-        "allOf": [],
+        "allOf": [
+          "Scintillating Legions"
+        ],
         "anyOf": [],
-        "noneOf": [
-          "Monster"
-        ]
-      }
+        "noneOf": []
+      },
+      "summary": "Can only be shot from 18\" or closer this phase"
     },
     {
       "id": "gift-of-change",
@@ -28951,7 +32069,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Thousand Sons",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle round, a slain Character becomes a Tzeentch Chaos Spawn"
     },
     {
       "id": "glimmershift-portal",
@@ -28963,7 +32090,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Scintillating Legions",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Two units, or one Monster, 6\" from enemies: back into Strategic Reserves"
     },
     {
       "id": "hex-marked-armour",
@@ -28976,6 +32119,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -28984,7 +32128,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "implacable-guardians",
@@ -28996,6 +32148,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -29004,7 +32157,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to non-Psyker models this phase"
     },
     {
       "id": "inexorable-advance",
@@ -29023,7 +32184,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Move and Advance penalties; ranged weapons gain Assault this turn"
     },
     {
       "id": "infernal-fusillade",
@@ -29043,7 +32216,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Inferno bolt weapons become Psychic with Strength 5 this phase"
     },
     {
       "id": "kaleidoscopic-tempest",
@@ -29055,7 +32229,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Thousand Sons",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        }
+      ],
+      "summary": "Stealth, and -3\" detection range in the Flow of Magic"
     },
     {
       "id": "malevolent-animus",
@@ -29075,7 +32265,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Near a Psyker: ignores modifiers to its characteristics and rolls (saves excepted)"
     },
     {
       "id": "multitudinous-limbs",
@@ -29083,18 +32274,23 @@
       "detachmentId": "ritual-of-regeneration",
       "cp": 1,
       "phases": [
-        "movement"
+        "shooting"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Thousand Sons",
           "Psyker"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "Advancing or Falling Back does not stop it from starting an action"
     },
     {
       "id": "mutagenic-magicks",
@@ -29105,7 +32301,24 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Thousand Sons",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "One engaged enemy: six D6, each 4+ a mortal wound"
     },
     {
       "id": "mutate-landscape",
@@ -29125,7 +32338,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Its objective stays yours and is mutated: enemies moving onto it take D3 mortal wounds on 4+"
     },
     {
       "id": "prismatic-displacement",
@@ -29133,17 +32354,41 @@
       "detachmentId": "servants-of-change",
       "cp": 1,
       "phases": [
-        "movement"
+        "shooting"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Mutant"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Ranged weapons gain Assault, and its move does not stop it from shooting or charging"
     },
     {
       "id": "psychic-dominion",
@@ -29159,6 +32404,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "epic-deed",
       "target": {
         "allOf": [
@@ -29166,7 +32412,20 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "The attacker’s Psychic weapons gain Hazardous; Feel No Pain 4+ against Psychic attacks"
     },
     {
       "id": "relentless-rebirth",
@@ -29187,9 +32446,25 @@
           "Thousand Sons",
           "Psyker"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds"
     },
     {
       "id": "revenge-of-the-rubricae",
@@ -29201,14 +32476,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "unit-destroyed",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
-          "Rubricae"
+          "Rubricae",
+          "Psyker"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A Psyker 6\" or closer was shot dead: the Rubricae shoot back at the killer"
     },
     {
       "id": "scouring-warpflame",
@@ -29220,7 +32498,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Thousand Sons",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "In the Flow of Magic: Ignores Cover, and one unit it hits loses cover"
     },
     {
       "id": "strands-of-time",
@@ -29232,7 +32530,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Thousand Sons",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can shoot or charge (both in the Flow of Magic) this turn"
     },
     {
       "id": "sulphurous-veil",
@@ -29245,7 +32559,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Thousand Sons",
+          "Scintillating Legions"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to hit this phase"
     },
     {
       "id": "temporal-instability",
@@ -29253,17 +32584,22 @@
       "detachmentId": "servants-of-change",
       "cp": 1,
       "phases": [
-        "movement"
+        "shooting"
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Mutant"
         ],
-        "anyOf": [],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
         "noneOf": []
-      }
+      },
+      "summary": "Advancing or Falling Back does not stop it from starting an action"
     },
     {
       "id": "the-land-writhes",
@@ -29275,6 +32611,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Monster",
@@ -29282,7 +32619,14 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mobile",
+          "target": "self"
+        }
+      ],
+      "summary": "Mobile"
     },
     {
       "id": "through-the-veil",
@@ -29294,7 +32638,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Thousand Sons"
+        ],
+        "anyOf": [
+          "Rubric Marines",
+          "Scarab Occult Terminators"
+        ],
+        "noneOf": []
+      },
+      "summary": "Rubric Marines gain Deep Strike; Scarabs land in the Flow of Magic 6\" from enemies"
     },
     {
       "id": "touched-by-tzeentch",
@@ -29306,6 +32662,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -29314,7 +32671,18 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can shoot or charge after Advancing this turn"
     },
     {
       "id": "twisted-mirage",
@@ -29326,6 +32694,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "reinforcements",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -29334,7 +32703,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Arrives from Strategic Reserves 6\" from enemies (8\" for Monsters), no charge"
     },
     {
       "id": "unwavering-phalanx",
@@ -29346,6 +32716,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "charge-ended",
       "category": "battle-tactic",
       "target": {
         "allOf": [
@@ -29353,7 +32724,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Charged: attacks against it get -1 to wound this turn"
     },
     {
       "id": "warding-hex",
@@ -29365,7 +32744,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Thousand Sons",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its objective in the Flow of Magic stays yours until the enemy out-controls it"
     },
     {
       "id": "warp-fields",
@@ -29377,13 +32765,30 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "target": {
         "allOf": [
           "Sekhetar Robots"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged attacks stronger than its Toughness get -1 to wound"
     },
     {
       "id": "warped-vicissitude",
@@ -29396,6 +32801,7 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "targeted",
       "category": "strategic-ploy",
       "target": {
         "allOf": [
@@ -29403,7 +32809,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "warpflame-gargoyles",
@@ -29415,6 +32829,7 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "charge-ended",
       "category": "wargear",
       "target": {
         "allOf": [
@@ -29423,7 +32838,19 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        },
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Charged: six D6, each 5+ a mortal wound, then the charger tests Battle-shock"
     },
     {
       "id": "wrath-of-the-doomed",
@@ -29435,7 +32862,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Thousand Sons"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+ (+1 in the Flow of Magic)"
     }
   ]
 }

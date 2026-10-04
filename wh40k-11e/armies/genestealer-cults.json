@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "genestealer-cults",
   "name": "Genestealer Cults",
@@ -68,7 +68,23 @@
           "name": "Feel No Pain 5+"
         },
         {
-          "name": "Hulking Bodyguards"
+          "name": "Hulking Bodyguards",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                },
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Led: attacks stronger than its Toughness get -1 to wound"
         }
       ],
       "points": 140,
@@ -190,10 +206,24 @@
           "name": "Feel No Pain 5+"
         },
         {
-          "name": "The Chosen One"
+          "name": "The Chosen One",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: models slain in melee before fighting still fight on a 4+"
         },
         {
-          "name": "Regenerating Gene-mass"
+          "name": "Regenerating Gene-mass",
+          "summary": "First death: on a 2+ returns whole once the phase ends"
         },
         {
           "name": "Leader"
@@ -373,16 +403,55 @@
       ],
       "abilities": [
         {
-          "name": "Crossfire"
+          "name": "Crossfire",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: cult units get +1 AP against it this turn"
         },
         {
-          "name": "Flare Launcher"
+          "name": "Flare Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Smoke, and Smokescreen on it costs 0CP"
         },
         {
-          "name": "Spotter"
+          "name": "Spotter",
+          "summary": "The bearer shoots at BS 3+"
         },
         {
-          "name": "Survey Augur"
+          "name": "Survey Augur",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit the bearer hits: cult units shoot it with Ignores Cover this phase"
         }
       ],
       "points": 95,
@@ -612,10 +681,26 @@
       ],
       "abilities": [
         {
-          "name": "Claimed for the Cult"
+          "name": "Claimed for the Cult",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: +1CP if any of its held objectives rolls a 4+"
         },
         {
-          "name": "Cult Icon"
+          "name": "Cult Icon",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to D3 models (3 on a held objective)"
         }
       ],
       "points": 65,
@@ -856,10 +941,36 @@
       ],
       "abilities": [
         {
-          "name": "Industrialised Destruction"
+          "name": "Industrialised Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound; every wound roll against units on an objective"
         },
         {
-          "name": "Cult Icon"
+          "name": "Cult Icon",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to D3 models (3 on a held objective)"
         }
       ],
       "points": 75,
@@ -1054,10 +1165,19 @@
       ],
       "abilities": [
         {
-          "name": "Nexus of Devotion"
+          "name": "Nexus of Devotion",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Feel No Pain 5+ (4+ for Metamorphs)"
         },
         {
-          "name": "Summon the Cult"
+          "name": "Summon the Cult",
+          "summary": "Once per battle: saves a Cult Ambush marker by moving it 12\" or closer to it"
         },
         {
           "name": "Leader"
@@ -1137,16 +1257,20 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Emplacement Platform"
+          "name": "Emplacement Platform",
+          "summary": "Friendly infantry can stand on its platform"
         },
         {
-          "name": "Reinforced Cover"
+          "name": "Reinforced Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Defence Line"
+          "name": "Defence Line",
+          "summary": "Infantry in cover behind it have a 4+ invulnerable save"
         },
         {
-          "name": "Deployment"
+          "name": "Deployment",
+          "summary": "Set up as one connected line of sections, treated as a single model"
         }
       ],
       "points": 145,
@@ -1488,10 +1612,24 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Deployment"
+          "name": "Aerial Deployment",
+          "summary": "In Hover mode from Strategic Reserves: can arrive in rounds 1 to 3"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 120,
@@ -1797,10 +1935,34 @@
       ],
       "abilities": [
         {
-          "name": "Rolling Fortress"
+          "name": "Rolling Fortress",
+          "summary": "Friendly models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 480,
@@ -2124,10 +2286,30 @@
       ],
       "abilities": [
         {
-          "name": "Pinning Bombardment"
+          "name": "Pinning Bombardment",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: that unit tests for Battle-shock"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 105,
@@ -2476,7 +2658,32 @@
       ],
       "abilities": [
         {
-          "name": "Mobile Hunter-killers"
+          "name": "Mobile Hunter-killers",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Monsters and Vehicles"
         }
       ],
       "points": 65,
@@ -2762,7 +2969,14 @@
       ],
       "abilities": [
         {
-          "name": "Remorseless Barrage"
+          "name": "Remorseless Barrage",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit its Indirect Fire hits tests for Battle-shock (-1 for infantry hit by rockets)"
         }
       ],
       "points": 95,
@@ -2909,7 +3123,8 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Deployment"
+          "name": "Aerial Deployment",
+          "summary": "In Hover mode from Strategic Reserves: can arrive in rounds 1 to 3"
         }
       ],
       "points": 95,
@@ -3137,10 +3352,19 @@
       ],
       "abilities": [
         {
-          "name": "Outrider Gangs"
+          "name": "Outrider Gangs",
+          "summary": "Returns from Cult Ambush wholly 9\" from an edge, touching a marker"
         },
         {
-          "name": "Demolition Run"
+          "name": "Demolition Run",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 6,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, after moving: a D6 per model at a visible enemy 6\" or closer, each 4+ a mortal wound"
         }
       ],
       "points": 85,
@@ -3453,7 +3677,23 @@
       ],
       "abilities": [
         {
-          "name": "Recovery Vehicle"
+          "name": "Recovery Vehicle",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "End of your Movement phase: a Vehicle within 3\" regains up to D3 wounds"
         }
       ],
       "points": 80,
@@ -3699,7 +3939,18 @@
       ],
       "abilities": [
         {
-          "name": "Horsemasters"
+          "name": "Horsemasters",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         }
       ],
       "points": 60,
@@ -4810,10 +5061,34 @@
       ],
       "abilities": [
         {
-          "name": "Rolling Fortress"
+          "name": "Rolling Fortress",
+          "summary": "Friendly models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 415,
@@ -5092,13 +5367,43 @@
       ],
       "abilities": [
         {
-          "name": "Tremor Quake"
+          "name": "Tremor Quake",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Its tremor cannon’s target and nearby infantry (3\") test for Battle-shock"
         },
         {
           "name": "Banehammer"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -5362,10 +5667,34 @@
       ],
       "abilities": [
         {
-          "name": "Armour Obliteration"
+          "name": "Armour Obliteration",
+          "summary": "Models its quake cannon destroys explode on 3+ instead of 6"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 415,
@@ -5630,10 +5959,36 @@
       ],
       "abilities": [
         {
-          "name": "Earthshaker Rounds"
+          "name": "Earthshaker Rounds",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: it is shaken, -2\" Move and -2 to charge until your next Shooting phase"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -5985,10 +6340,35 @@
       ],
       "abilities": [
         {
-          "name": "Bio-horror Disruption (Psychic)"
+          "name": "Bio-horror Disruption (Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits when shooting"
         },
         {
-          "name": "Psionic Shield (Psychic)"
+          "name": "Psionic Shield (Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for one phase: 4+ invulnerable save"
         },
         {
           "name": "Leader"
@@ -6132,16 +6512,74 @@
       ],
       "abilities": [
         {
-          "name": "Twisted Science"
+          "name": "Twisted Science",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits in melee"
         },
         {
-          "name": "Biological Warfare"
+          "name": "Biological Warfare",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +3 A and D for its injector goad"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Alchemicus Familiar"
+          "name": "Alchemicus Familiar",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, fighting: +1 to wound Infantry"
         }
       ],
       "points": 50,
@@ -6472,10 +6910,30 @@
       ],
       "abilities": [
         {
-          "name": "Senior Officer"
+          "name": "Senior Officer",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 when shooting"
         },
         {
-          "name": "Get Back in the Fight"
+          "name": "Get Back in the Fight",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Fell Back, can still shoot"
         },
         {
           "name": "Leader"
@@ -6934,19 +7392,37 @@
       ],
       "abilities": [
         {
-          "name": "Cadia Stands!"
+          "name": "Cadia Stands!",
+          "summary": "With an Officer, on an objective: re-roll Battle-shock tests"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Regimental Standard"
+          "name": "Regimental Standard",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         },
         {
-          "name": "Master Vox"
+          "name": "Master Vox",
+          "summary": "Its Officer can issue Orders to units up to 24\" away"
         },
         {
-          "name": "Medi-pack"
+          "name": "Medi-pack",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 Platoon models"
         }
       ],
       "points": 60,
@@ -7459,10 +7935,19 @@
       ],
       "abilities": [
         {
-          "name": "Covering Fire"
+          "name": "Covering Fire",
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it hits on 5+ (4+ near a Platoon unit)"
         },
         {
-          "name": "Embarking"
+          "name": "Embarking",
+          "summary": "In a Transport, each team takes two places and counts as two for Firing Deck"
         }
       ],
       "points": 65,
@@ -7797,16 +8282,27 @@
       ],
       "abilities": [
         {
-          "name": "Independent Operatives"
+          "name": "Independent Operatives",
+          "summary": "Its Orders last until a new one, Battle-shock or the end of the battle"
         },
         {
-          "name": "Signal Flares"
+          "name": "Signal Flares",
+          "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range"
         },
         {
-          "name": "Vox-caster"
+          "name": "Vox-caster",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")"
         },
         {
-          "name": "Vox-relay beacon"
+          "name": "Vox-relay beacon",
+          "summary": "Places a beacon outside the enemy zone: Officers order Regiments near it as if they were close"
         }
       ],
       "points": 80,
@@ -8205,13 +8701,22 @@
       ],
       "abilities": [
         {
-          "name": "Shock Troops"
+          "name": "Shock Troops",
+          "summary": "An objective it holds as your Command phase ends stays yours after it leaves"
         },
         {
           "name": "Unit Composition"
         },
         {
-          "name": "Vox-caster"
+          "name": "Vox-caster",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")"
         }
       ],
       "points": 70,
@@ -8709,10 +9214,46 @@
       ],
       "abilities": [
         {
-          "name": "Ancient Conquest"
+          "name": "Ancient Conquest",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-in-deployment-zone"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-in-deployment-zone"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and wound against units in the enemy deployment zone"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -9718,19 +10259,48 @@
       ],
       "abilities": [
         {
-          "name": "Gung-ho Command"
+          "name": "Gung-ho Command",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "With an Officer: ranged weapons gain Assault"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Master Vox"
+          "name": "Master Vox",
+          "summary": "Its Officer can issue Orders to units up to 24\" away"
         },
         {
-          "name": "Regimental Standard"
+          "name": "Regimental Standard",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         },
         {
-          "name": "Medi-pack"
+          "name": "Medi-pack",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 Platoon models"
         }
       ],
       "points": 60,
@@ -10195,10 +10765,70 @@
       ],
       "abilities": [
         {
-          "name": "Bring it Down!"
+          "name": "Bring it Down!",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and wound when shooting Monsters and Vehicles"
         },
         {
-          "name": "Embarking"
+          "name": "Embarking",
+          "summary": "In a Transport, each team takes two places and counts as two for Firing Deck"
         }
       ],
       "points": 70,
@@ -10425,13 +11055,50 @@
       ],
       "abilities": [
         {
-          "name": "Jungle Fighters"
+          "name": "Jungle Fighters",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "was-charged"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound in melee in a turn it charged or was charged"
         },
         {
           "name": "Unit Composition"
         },
         {
-          "name": "Vox-caster"
+          "name": "Vox-caster",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")"
         }
       ],
       "points": 70,
@@ -10696,7 +11363,8 @@
       ],
       "abilities": [
         {
-          "name": "Blistering Advance"
+          "name": "Blistering Advance",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         }
       ],
       "points": 40,
@@ -10814,7 +11482,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Strike Vehicle"
+          "name": "Rapid Strike Vehicle",
+          "summary": "+1 OC per three models embarked within it"
         }
       ],
       "points": 65,
@@ -11053,7 +11722,8 @@
       ],
       "abilities": [
         {
-          "name": "Mobile Command Vehicle"
+          "name": "Mobile Command Vehicle",
+          "summary": "An Officer embarked within it can issue Orders, measuring from the Transport"
         }
       ],
       "points": 75,
@@ -11291,10 +11961,18 @@
       ],
       "abilities": [
         {
-          "name": "Voice of New Truths"
+          "name": "Voice of New Truths",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Command phase: an enemy 18\" or closer tests Battle-shock"
         },
         {
-          "name": "Scrambler Array"
+          "name": "Scrambler Array",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer"
         },
         {
           "name": "Leader"
@@ -11475,10 +12153,60 @@
       ],
       "abilities": [
         {
-          "name": "Tracking Target"
+          "name": "Tracking Target",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: its siege mortar gains Anti-Monster 5+ and Anti-Vehicle 5+"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -11678,10 +12406,36 @@
       ],
       "abilities": [
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 180,
@@ -12364,7 +13118,15 @@
       ],
       "abilities": [
         {
-          "name": "Battlefield Analysis"
+          "name": "Battlefield Analysis",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
@@ -13074,7 +13836,15 @@
       ],
       "abilities": [
         {
-          "name": "Cult Demagogue"
+          "name": "Cult Demagogue",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to hit"
         },
         {
           "name": "Leader"
@@ -13217,13 +13987,23 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Demolition Charges"
+          "name": "Demolition Charges",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "An enemy 3\" or closer after a move: blows up, D3 mortal wounds on 2-5, D6 on a 6"
         },
         {
-          "name": "Unstable Payload"
+          "name": "Unstable Payload",
+          "summary": "Its Deadly Demise hits units within 6\" on a 4+"
         },
         {
-          "name": "Compact"
+          "name": "Compact",
+          "summary": "Embarks like infantry, taking seven places"
         }
       ],
       "points": 40,
@@ -13554,10 +14334,24 @@
       ],
       "abilities": [
         {
-          "name": "Grenadiers"
+          "name": "Grenadiers",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, Grenade on it costs 0CP"
         },
         {
-          "name": "Grenadier Squad"
+          "name": "Grenadier Squad",
+          "summary": "Leaders of Combat Engineers can lead it instead"
         }
       ],
       "points": 110,
@@ -14056,16 +14850,55 @@
       ],
       "abilities": [
         {
-          "name": "Grim Demeanour"
+          "name": "Grim Demeanour",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit below Starting Strength, +1 to wound too Below Half-strength"
         },
         {
           "name": "Unit Composition"
         },
         {
-          "name": "Death Korps of Krieg Medi-pack"
+          "name": "Death Korps of Krieg Medi-pack",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 models"
         },
         {
-          "name": "Vox-caster"
+          "name": "Vox-caster",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")"
         }
       ],
       "points": 70,
@@ -14710,7 +15543,15 @@
       ],
       "abilities": [
         {
-          "name": "Screening Line"
+          "name": "Screening Line",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move within 8\": unengaged, a 6\" Normal move"
         }
       ],
       "points": 60,
@@ -14817,13 +15658,34 @@
       ],
       "abilities": [
         {
-          "name": "Fear of the Unseen (Aura)"
+          "name": "Fear of the Unseen (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            },
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer: -1 Leadership, and must test Battle-shock if weakened"
         },
         {
-          "name": "Hunter Organism"
+          "name": "Hunter Organism",
+          "summary": "Cannot be your Warlord"
         },
         {
-          "name": "Feeder Tendrils"
+          "name": "Feeder Tendrils",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills an enemy Character: +1CP"
         }
       ],
       "points": 80,
@@ -14993,10 +15855,24 @@
       ],
       "abilities": [
         {
-          "name": "Deathstrike Missile"
+          "name": "Deathstrike Missile",
+          "summary": "Places or moves a target marker for its one-shot missile"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 125,
@@ -15294,10 +16170,30 @@
       ],
       "abilities": [
         {
-          "name": "Pinning Bombardment"
+          "name": "Pinning Bombardment",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: that unit tests for Battle-shock"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 325,
@@ -15564,10 +16460,34 @@
       ],
       "abilities": [
         {
-          "name": "Close-range Titan Killer"
+          "name": "Close-range Titan Killer",
+          "summary": "Its magma cannon is always at half range against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 380,
@@ -15772,7 +16692,20 @@
       ],
       "abilities": [
         {
-          "name": "Earthshaker Rounds"
+          "name": "Earthshaker Rounds",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: it is shaken, -2\" Move and -2 to charge until your next Shooting phase"
         }
       ],
       "points": 120,
@@ -15883,13 +16816,40 @@
       ],
       "abilities": [
         {
-          "name": "Earthshaker Rounds"
+          "name": "Earthshaker Rounds",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: it is shaken, -2\" Move and -2 to charge until your next Shooting phase"
         },
         {
-          "name": "Reinforced Cover"
+          "name": "Reinforced Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Fortification"
+          "name": "Fortification",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies only engaged with it can be shot at -1 to hit (Pistols excepted)"
         }
       ],
       "points": 110,
@@ -16062,7 +17022,8 @@
       ],
       "abilities": [
         {
-          "name": "Meteoric Descent"
+          "name": "Meteoric Descent",
+          "summary": "Can Deep Strike 6\" from enemies, then no charge that turn"
         }
       ],
       "points": 85,
@@ -16241,10 +17202,26 @@
       ],
       "abilities": [
         {
-          "name": "Mark the Target"
+          "name": "Mark the Target",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Devastating Wounds when shooting until your next Movement phase"
         },
         {
-          "name": "Sniper Teams"
+          "name": "Sniper Teams",
+          "summary": "Each sniper team embarks as a heavy weapons team"
         }
       ],
       "points": 65,
@@ -16448,7 +17425,26 @@
       ],
       "abilities": [
         {
-          "name": "Rearm, Reload, Fire"
+          "name": "Rearm, Reload, Fire",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                },
+                {
+                  "key": "under-order"
+                }
+              ]
+            }
+          ],
+          "summary": "Under an Order and Stationary: Heavy weapons gain Sustained Hits 1"
         }
       ],
       "points": 90,
@@ -17602,7 +18598,14 @@
       ],
       "abilities": [
         {
-          "name": "Get Back in the Fight"
+          "name": "Get Back in the Fight",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Fell Back, can still shoot"
         },
         {
           "name": "Leader"
@@ -17795,7 +18798,15 @@
       ],
       "abilities": [
         {
-          "name": "Winged Swarm"
+          "name": "Winged Swarm",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: a 6\" Normal move, then no charge"
         }
       ],
       "points": 75,
@@ -17998,7 +19009,20 @@
           "name": "Grinding Line-breaker"
         },
         {
-          "name": "Damaged: 1-3 Wounds Remaining"
+          "name": "Damaged: 1-3 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (3 wounds or fewer left)"
         }
       ],
       "points": 110,
@@ -18212,7 +19236,20 @@
       ],
       "abilities": [
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase"
         }
       ],
       "points": 75,
@@ -18446,10 +19483,24 @@
       ],
       "abilities": [
         {
-          "name": "Mount Up!"
+          "name": "Mount Up!",
+          "summary": "End of the enemy Movement phase, empty: one infantry unit wholly within 6\" can embark"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 275,
@@ -18702,7 +19753,15 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Bombardment"
+          "name": "Suppression Bombardment",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         }
       ],
       "points": 115,
@@ -18983,7 +20042,8 @@
       ],
       "abilities": [
         {
-          "name": "Subterranean Assault"
+          "name": "Subterranean Assault",
+          "summary": "Deep Striking: brings an infantry unit from Reserves within 9\", 8\" from enemies"
         }
       ],
       "points": 110,
@@ -19092,7 +20152,26 @@
       ],
       "abilities": [
         {
-          "name": "Rearm, Reload, Fire"
+          "name": "Rearm, Reload, Fire",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                },
+                {
+                  "key": "under-order"
+                }
+              ]
+            }
+          ],
+          "summary": "Under an Order and Stationary: Sustained Hits 1 when shooting"
         }
       ],
       "points": 50,
@@ -19205,7 +20284,15 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Bombardment"
+          "name": "Suppression Bombardment",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         }
       ],
       "points": 50,
@@ -19433,10 +20520,34 @@
       ],
       "abilities": [
         {
-          "name": "Close-quarters Warfare"
+          "name": "Close-quarters Warfare",
+          "summary": "No hit penalty when shooting while engaged"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -19774,10 +20885,24 @@
       ],
       "abilities": [
         {
-          "name": "Flush Them Out"
+          "name": "Flush Them Out",
+          "summary": "One unit it hits loses the benefit of cover until your next Shooting phase"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -20097,7 +21222,15 @@
       ],
       "abilities": [
         {
-          "name": "Convoy Escort Vehicle"
+          "name": "Convoy Escort Vehicle",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting: a D6\" Normal move, then no charge this turn"
         }
       ],
       "points": 70,
@@ -20370,10 +21503,26 @@
       ],
       "abilities": [
         {
-          "name": "Brood Surge"
+          "name": "Brood Surge",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "Loses a model to shooting: a D6\" surge move"
         },
         {
-          "name": "Cult Icon"
+          "name": "Cult Icon",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to D3 models (3 on a held objective)"
         }
       ],
       "points": 75,
@@ -20652,10 +21801,37 @@
       ],
       "abilities": [
         {
-          "name": "Flak Battery"
+          "name": "Flak Battery",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against units that can Fly"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 90,
@@ -20809,10 +21985,25 @@
       ],
       "abilities": [
         {
-          "name": "Flak Battery"
+          "name": "Flak Battery",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits against units that can Fly"
         },
         {
-          "name": "Reinforced Cover"
+          "name": "Reinforced Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         }
       ],
       "points": 95,
@@ -20964,10 +22155,26 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Invader"
+          "name": "Alpha Invader",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Sustained Hits 1"
         },
         {
-          "name": "Hypersensory Array"
+          "name": "Hypersensory Array",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Rapid Ingress or Heroic Intervention on it costs 1CP less, unlimited"
         },
         {
           "name": "Leader"
@@ -21325,10 +22532,31 @@
       ],
       "abilities": [
         {
-          "name": "Priority Target"
+          "name": "Priority Target",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit its sniper rifle hits: cult units re-roll 1s to hit it this phase"
         },
         {
-          "name": "Master Outrider"
+          "name": "Master Outrider",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: its unit makes a 6\" Normal move, then no charge"
         },
         {
           "name": "Leader"
@@ -21713,13 +22941,35 @@
       ],
       "abilities": [
         {
-          "name": "Warrior Elite"
+          "name": "Warrior Elite",
+          "summary": "Once per battle round: takes one Order of your choice on top of any other"
         },
         {
-          "name": "Melta mine"
+          "name": "Melta mine",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: an enemy within 3\" takes D3 mortal wounds on a 2+ (2D3 for a Vehicle)"
         },
         {
-          "name": "Vox-caster"
+          "name": "Vox-caster",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 5+ (+1 to the roll with an Officer within 6\")"
         }
       ],
       "points": 105,
@@ -22034,10 +23284,18 @@
       ],
       "abilities": [
         {
-          "name": "Hypersensory Abilities"
+          "name": "Hypersensory Abilities",
+          "summary": "Once per turn, an enemy ends a move 8\" or closer: shoots it, then moves D6\""
         },
         {
-          "name": "Heroic Fusillade"
+          "name": "Heroic Fusillade",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn: one infantry unit it hits tests Battle-shock"
         }
       ],
       "points": 60,
@@ -22325,13 +23583,40 @@
       ],
       "abilities": [
         {
-          "name": "Grenadiers"
+          "name": "Grenadiers",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, Explosives on it costs 0CP"
         },
         {
-          "name": "Signal Flares"
+          "name": "Signal Flares",
+          "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range"
         },
         {
-          "name": "Remote mine"
+          "name": "Remote mine",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: a visible enemy within 9\" takes D3 mortal wounds on 3+ (2D3 for a Vehicle)"
         }
       ],
       "points": 65,
@@ -22931,22 +24216,46 @@
       ],
       "abilities": [
         {
-          "name": "Grim Determination"
+          "name": "Grim Determination",
+          "summary": "With an Officer: Stratagems and Orders still work while Battle-shocked"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Alchemyk Counteragents"
+          "name": "Alchemyk Counteragents",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit has Feel No Pain 6+ against mortal wounds"
         },
         {
-          "name": "Servo-scribes"
+          "name": "Servo-scribes",
+          "summary": "Once per battle, the Lord Commissar issues one more Order"
         },
         {
-          "name": "Master Vox"
+          "name": "Master Vox",
+          "summary": "Its Officer can issue Orders to units up to 24\" away"
         },
         {
-          "name": "Regimental Standard"
+          "name": "Regimental Standard",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         }
       ],
       "points": 60,
@@ -23334,10 +24643,24 @@
       ],
       "abilities": [
         {
-          "name": "Final Duty"
+          "name": "Final Duty",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "With the Fire Coordinator: slain gunners still shoot on a 3+"
         },
         {
-          "name": "Embarking"
+          "name": "Embarking",
+          "summary": "In a Transport, each team takes two places and counts as two for Firing Deck"
         }
       ],
       "points": 70,
@@ -23679,10 +25002,41 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Spearhead"
+          "name": "Armoured Spearhead",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective you do not hold"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -24250,13 +25604,28 @@
       ],
       "abilities": [
         {
-          "name": "Death Befitting An Officer"
+          "name": "Death Befitting An Officer",
+          "summary": "Killed by shooting: on a 2+ shoots back at the attacker before exploding"
         },
         {
-          "name": "Vox-net"
+          "name": "Vox-net",
+          "summary": "Its Orders reach units up to 12\" away"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 195,
@@ -24793,10 +26162,24 @@
       ],
       "abilities": [
         {
-          "name": "Line-breaker"
+          "name": "Line-breaker",
+          "summary": "Its demolisher cannon can shoot engaged enemies, without the engaged hit penalty"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -25234,10 +26617,36 @@
       ],
       "abilities": [
         {
-          "name": "Urban Warfare"
+          "name": "Urban Warfare",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "cover"
+                }
+              ]
+            }
+          ],
+          "summary": "In cover: -1 Damage to ranged attacks against it"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 145,
@@ -25688,10 +27097,39 @@
       ],
       "abilities": [
         {
-          "name": "Gung-ho Executioners"
+          "name": "Gung-ho Executioners",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Its plasma cannon gets +1 to hit against units Below Half-strength"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 145,
@@ -26129,10 +27567,36 @@
       ],
       "abilities": [
         {
-          "name": "Withering Hail"
+          "name": "Withering Hail",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit its autocannon hits: friendly units get +1 AP against it this phase"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -26570,10 +28034,43 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Mow Down the Enemy"
+          "name": "Mow Down the Enemy",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its gatling cannon gains Devastating Wounds against non-Monster, non-Vehicle units"
         }
       ],
       "points": 130,
@@ -27010,10 +28507,54 @@
       ],
       "abilities": [
         {
-          "name": "Tank-killer"
+          "name": "Tank-killer",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its vanquisher cannon re-rolls wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 130,
@@ -27263,10 +28804,26 @@
       ],
       "abilities": [
         {
-          "name": "Pheromone Trail"
+          "name": "Pheromone Trail",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Rapid Ingress on it costs 0CP"
         },
         {
-          "name": "Feeder Tendrils"
+          "name": "Feeder Tendrils",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills an enemy Character: +1CP"
         }
       ],
       "points": 60,
@@ -27354,10 +28911,32 @@
       ],
       "abilities": [
         {
-          "name": "Sudden Assault"
+          "name": "Sudden Assault",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Fights First"
         },
         {
-          "name": "Bodyguard"
+          "name": "Bodyguard",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Character"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Leading: other attached Characters have Feel No Pain 4+"
         },
         {
           "name": "Leader"
@@ -27592,10 +29171,39 @@
       ],
       "abilities": [
         {
-          "name": "Battlefield Control"
+          "name": "Battlefield Control",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "On an objective you hold: re-roll 1s to hit when shooting"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 310,
@@ -27910,10 +29518,46 @@
       ],
       "abilities": [
         {
-          "name": "Overwhelming Short-range Firepower"
+          "name": "Overwhelming Short-range Firepower",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and wound against the closest target"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 310,
@@ -28233,10 +29877,54 @@
       ],
       "abilities": [
         {
-          "name": "Tank Hunter"
+          "name": "Tank Hunter",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its twin vanquisher cannon re-rolls hits against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 285,
@@ -28560,10 +30248,24 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Aggressor"
+          "name": "Armoured Aggressor",
+          "summary": "No hit penalty when shooting while engaged"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 310,
@@ -29656,13 +31358,23 @@
       ],
       "abilities": [
         {
-          "name": "Psychic Familiar"
+          "name": "Psychic Familiar",
+          "summary": "Once per battle: +6\" to its psychic ability’s range"
         },
         {
-          "name": "Mind Control (Psychic)"
+          "name": "Mind Control (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Shooting phase: an enemy 18\" or closer gets -1 to hit (and -1 to wound on a 6)"
         },
         {
-          "name": "Spiritual Leader"
+          "name": "Spiritual Leader",
+          "summary": "Once per battle: frees a cult unit 12\" or closer from Battle-shock"
         },
         {
           "name": "Leader"
@@ -29894,10 +31606,36 @@
       ],
       "abilities": [
         {
-          "name": "Rugged Reliability"
+          "name": "Rugged Reliability",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": 1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged attacks against it lose 1 AP"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 250,
@@ -30278,10 +32016,38 @@
       ],
       "abilities": [
         {
-          "name": "Battlefield Dominance"
+          "name": "Battlefield Dominance",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "half-range"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover at half range"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 270,
@@ -30603,10 +32369,31 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Defender"
+          "name": "Armoured Defender",
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it hits on 5+"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 310,
@@ -30945,10 +32732,36 @@
       ],
       "abilities": [
         {
-          "name": "Explosive Death"
+          "name": "Explosive Death",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Destroyed: on a 3+ fires its inferno gun once more before removal"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 235,
@@ -31225,10 +33038,31 @@
       ],
       "abilities": [
         {
-          "name": "Furious Barrage"
+          "name": "Furious Barrage",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit its rockets hit: -1 OC until your next Shooting phase"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 150,
@@ -31392,10 +33226,24 @@
       ],
       "abilities": [
         {
-          "name": "Reinforced Cover"
+          "name": "Reinforced Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Furious Barrage"
+          "name": "Furious Barrage",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-5-plus-models"
+                }
+              ]
+            }
+          ],
+          "summary": "Its rockets re-roll hits against units of five or more models"
         }
       ],
       "points": 95,
@@ -31507,10 +33355,31 @@
       ],
       "abilities": [
         {
-          "name": "Terror from the Deep"
+          "name": "Terror from the Deep",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "On Deep Strike: enemies 12\" or closer take D3 on 2-4, 3 and Battle-shock on 5+"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 130,
@@ -31625,7 +33494,14 @@
       ],
       "abilities": [
         {
-          "name": "Siege Bombardment"
+          "name": "Siege Bombardment",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         }
       ],
       "points": 125,
@@ -31740,10 +33616,31 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Frontis"
+          "name": "Armoured Frontis",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 225,
@@ -32058,7 +33955,18 @@
       ],
       "abilities": [
         {
-          "name": "Desert Riders"
+          "name": "Desert Riders",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Ignores Move, Advance and charge penalties; Fell Back, can still shoot and charge"
         }
       ],
       "points": 110,
@@ -32516,10 +34424,19 @@
       ],
       "abilities": [
         {
-          "name": "A Plan Generations in the Making"
+          "name": "A Plan Generations in the Making",
+          "summary": "An objective it holds as your Command phase ends stays yours after it leaves"
         },
         {
-          "name": "Cult Icon"
+          "name": "Cult Icon",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to 3 models (D3+3 on a held objective)"
         }
       ],
       "points": 70,
@@ -32819,13 +34736,58 @@
       ],
       "abilities": [
         {
-          "name": "Feeder Tendrils"
+          "name": "Feeder Tendrils",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills an enemy Character: +1CP"
         },
         {
-          "name": "Neural Disruption"
+          "name": "Neural Disruption",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Command phase: an enemy 12\" or closer tests Battle-shock"
         },
         {
-          "name": "Psychological Saboteur (Aura)"
+          "name": "Psychological Saboteur (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Tyranids"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-battle-shocked"
+                }
+              ]
+            }
+          ],
+          "summary": "Battle-shocked enemies 12\" or closer: -1 to hit, and Tyranids get +1 to wound them"
         }
       ],
       "points": 80,
@@ -32944,10 +34906,19 @@
       ],
       "abilities": [
         {
-          "name": "Battlefield Analysis"
+          "name": "Battlefield Analysis",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Cult Infiltration"
+          "name": "Cult Infiltration",
+          "summary": "Each Command phase: moves one Cult Ambush marker up to 6\""
         },
         {
           "name": "Leader"
@@ -33646,7 +35617,15 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Warrior"
+          "name": "Alpha Warrior",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1"
         },
         {
           "name": "Leader"
@@ -33851,10 +35830,18 @@
       ],
       "abilities": [
         {
-          "name": "Parasitic Infection"
+          "name": "Parasitic Infection",
+          "summary": "Infantry its ovipositor kills spawn new Ripper Swarms"
         },
         {
-          "name": "It Itches!"
+          "name": "It Itches!",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: an engaged enemy tests Battle-shock"
         }
       ],
       "points": 65,
@@ -33952,13 +35939,33 @@
       ],
       "abilities": [
         {
-          "name": "Might From Beyond"
+          "name": "Might From Beyond",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Devastating Wounds in melee"
         },
         {
-          "name": "Cosmic Horror (Psychic)"
+          "name": "Cosmic Horror (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: enemies 6\" or closer test Battle-shock"
         },
         {
-          "name": "Psychic Familiar"
+          "name": "Psychic Familiar",
+          "summary": "Once per battle: +6\" to its psychic ability’s range"
         },
         {
           "name": "Supreme Commander"
@@ -34247,10 +36254,24 @@
       ],
       "abilities": [
         {
-          "name": "Targeting Coordinates"
+          "name": "Targeting Coordinates",
+          "summary": "Under an Order: its launcher shoots unseen targets without penalty"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 275,
@@ -34454,13 +36475,34 @@
       ],
       "abilities": [
         {
-          "name": "Psychic Barrier (Psychic)"
+          "name": "Psychic Barrier (Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "Enemy Shooting phase: 4+ invulnerable on a 2+, D3 mortal wounds on a 1"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Malign Wardings (Psychic)"
+          "name": "Malign Wardings (Psychic)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Feel No Pain 4+ against Psychic attacks"
         }
       ],
       "points": 60,
@@ -35880,10 +37922,19 @@
       ],
       "abilities": [
         {
-          "name": "Cult Demagogue"
+          "name": "Cult Demagogue",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to hit"
         },
         {
-          "name": "Decoys and Misdirection"
+          "name": "Decoys and Misdirection",
+          "summary": "After deployment, redeploy up to three cult units, even into Strategic Reserves"
         },
         {
           "name": "Leader"
@@ -35989,7 +38040,14 @@
       ],
       "abilities": [
         {
-          "name": "Swift and Deadly"
+          "name": "Swift and Deadly",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         }
       ],
       "points": 75,
@@ -36154,10 +38212,31 @@
       ],
       "abilities": [
         {
-          "name": "Medicae Medi-packs"
+          "name": "Medicae Medi-packs",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "With a Medicae Servitor: Feel No Pain 5+"
         },
         {
-          "name": "Mindlock"
+          "name": "Mindlock",
+          "modifiers": [
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With a Revenant: +1 WS for its medical scalpels"
         },
         {
           "name": "Leader"
@@ -36286,7 +38365,25 @@
       ],
       "abilities": [
         {
-          "name": "Powerful Volley"
+          "name": "Powerful Volley",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                },
+                {
+                  "key": "under-order"
+                }
+              ]
+            }
+          ],
+          "summary": "Under an Order and Stationary: Heavy weapons gain Lethal Hits"
         }
       ],
       "points": 35,
@@ -36390,7 +38487,14 @@
       ],
       "abilities": [
         {
-          "name": "Death From Below"
+          "name": "Death From Below",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, unengaged: back into Strategic Reserves"
         }
       ],
       "points": 125,
@@ -36551,10 +38655,31 @@
       ],
       "abilities": [
         {
-          "name": "Primed and Ready"
+          "name": "Primed and Ready",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Explosives on one of them costs 0CP each Shooting phase"
         },
         {
-          "name": "Planted Explosives"
+          "name": "Planted Explosives",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3+3",
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: an enemy ending a move 8\" or closer takes D3+3 mortal wounds on 2+"
         }
       ],
       "points": 70,
@@ -36705,16 +38830,58 @@
       ],
       "abilities": [
         {
-          "name": "Aeronautica Commander"
+          "name": "Aeronautica Commander",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Aircraft"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One enemy within 30\": friendly Aircraft get +1 to hit it this phase"
         },
         {
-          "name": "Divination (Psychic)"
+          "name": "Divination (Psychic)",
+          "summary": "Enemy Reinforcements cannot arrive within 12\""
         },
         {
-          "name": "Attachés"
+          "name": "Attachés",
+          "summary": "Must join a Command Squad at deployment"
         },
         {
-          "name": "Artillery Commander"
+          "name": "Artillery Commander",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Artillery"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One enemy within 30\": friendly Artillery Blast weapons gain Sustained Hits 1 against it"
         }
       ],
       "points": 40,
@@ -36824,7 +38991,8 @@
       ],
       "abilities": [
         {
-          "name": "Chitinous Horrors (Aura)"
+          "name": "Chitinous Horrors (Aura)",
+          "summary": "Engaged enemies have their OC halved"
         }
       ],
       "points": 0,
@@ -37069,10 +39237,24 @@
       ],
       "abilities": [
         {
-          "name": "Ablative Plating"
+          "name": "Ablative Plating",
+          "summary": "Once per battle: an attack allocated to it deals no damage"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 260,
@@ -37486,13 +39668,28 @@
       ],
       "abilities": [
         {
-          "name": "Called Shots"
+          "name": "Called Shots",
+          "summary": "When it shoots: one hit, one wound and one Damage roll may be re-rolled"
         },
         {
-          "name": "Vox-net"
+          "name": "Vox-net",
+          "summary": "Its Orders reach units up to 12\" away"
         },
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 290,
@@ -37812,13 +40009,35 @@
       ],
       "abilities": [
         {
-          "name": "Sentinel Directives"
+          "name": "Sentinel Directives",
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it hits on 5+"
         },
         {
-          "name": "Fortification"
+          "name": "Fortification",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies only engaged with it can be shot at -1 to hit (Pistols excepted)"
         },
         {
-          "name": "Defence Searchlight"
+          "name": "Defence Searchlight",
+          "summary": "One visible enemy within 24\" loses the benefit of cover this phase"
         }
       ],
       "points": 45,
@@ -38069,7 +40288,8 @@
       ],
       "abilities": [
         {
-          "name": "Auspex Surveyor"
+          "name": "Auspex Surveyor",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         }
       ],
       "points": 80,
@@ -38299,7 +40519,8 @@
       ],
       "abilities": [
         {
-          "name": "Outflank"
+          "name": "Outflank",
+          "summary": "From Strategic Reserves: can arrive in the enemy deployment zone"
         }
       ],
       "points": 95,
@@ -38476,13 +40697,45 @@
       ],
       "abilities": [
         {
-          "name": "Creeping Shadow"
+          "name": "Creeping Shadow",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a 6\" Normal move"
         },
         {
-          "name": "Psychic Spoor"
+          "name": "Psychic Spoor",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits and wounds against its prey"
         },
         {
-          "name": "Cloaked Assassin"
+          "name": "Cloaked Assassin",
+          "summary": "Enemies cannot snap-shoot at it"
         }
       ],
       "points": 60,
@@ -38786,10 +41039,24 @@
       ],
       "abilities": [
         {
-          "name": "Daring Recon"
+          "name": "Daring Recon",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One visible enemy within 18\": friendly units re-roll 1s to hit it this phase"
         },
         {
-          "name": "Signal Flares"
+          "name": "Signal Flares",
+          "summary": "Shooting phase: marks a visible enemy 12\" or closer, which gets +3\" detection range"
         }
       ],
       "points": 55,
@@ -39754,7 +42021,15 @@
       ],
       "abilities": [
         {
-          "name": "Powerlifter Charge"
+          "name": "Powerlifter Charge",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge, one engaged enemy: D3 mortal wounds on 2-5, 3 on a 6"
         }
       ],
       "points": 55,
@@ -39999,10 +42274,62 @@
       ],
       "abilities": [
         {
-          "name": "Titan-killer"
+          "name": "Titan-killer",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its volcano cannon gains Devastating Wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 375,
@@ -40453,7 +42780,8 @@
       ],
       "abilities": [
         {
-          "name": "Mobile Command Vehicle"
+          "name": "Mobile Command Vehicle",
+          "summary": "An Officer embarked within it can issue Orders, measuring from the Transport"
         }
       ],
       "points": 90,
@@ -40771,10 +43099,49 @@
       ],
       "abilities": [
         {
-          "name": "Close-range Devastation"
+          "name": "Close-range Devastation",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "half-range"
+                }
+              ]
+            }
+          ],
+          "summary": "Its plasma blastgun re-rolls hits at half range"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 415,
@@ -41093,10 +43460,34 @@
       ],
       "abilities": [
         {
-          "name": "Mount Up!"
+          "name": "Mount Up!",
+          "summary": "End of the enemy Movement phase, empty: one infantry unit wholly within 6\" can embark"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 395,
@@ -41365,10 +43756,41 @@
       ],
       "abilities": [
         {
-          "name": "Concussive Wave"
+          "name": "Concussive Wave",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Its target and units within 3\": on a 5+, D3 mortal wounds once it has shot"
         },
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 430,
@@ -41629,10 +44051,40 @@
       ],
       "abilities": [
         {
-          "name": "Tank Hunter"
+          "name": "Tank Hunter",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound when shooting Vehicles"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 180,
@@ -41801,7 +44253,8 @@
       ],
       "abilities": [
         {
-          "name": "Sentry Programming"
+          "name": "Sentry Programming",
+          "summary": "Fire Overwatch on it costs 0CP, even if already used this phase"
         }
       ],
       "points": 40,
@@ -42017,7 +44470,15 @@
       ],
       "abilities": [
         {
-          "name": "Turbo-boost"
+          "name": "Turbo-boost",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         }
       ],
       "points": 50,
@@ -42206,7 +44667,32 @@
       ],
       "abilities": [
         {
-          "name": "Mobile Hunter-killer"
+          "name": "Mobile Hunter-killer",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Monsters and Vehicles"
         }
       ],
       "points": 50,
@@ -42376,7 +44862,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Deployment"
+          "name": "Rapid Deployment",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         }
       ],
       "points": 65,
@@ -42615,7 +45102,20 @@
       ],
       "abilities": [
         {
-          "name": "Transport Support"
+          "name": "Transport Support",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll hits against it this phase"
         }
       ],
       "points": 75,
@@ -42798,16 +45298,32 @@
       ],
       "abilities": [
         {
-          "name": "Tectonic Fragdrill"
+          "name": "Tectonic Fragdrill",
+          "summary": "Cult infantry can stand on its floors"
         },
         {
-          "name": "Underground Egress"
+          "name": "Underground Egress",
+          "summary": "Cult Ambush markers enemies come near can move beside it instead"
         },
         {
-          "name": "Manufactorum Cover"
+          "name": "Manufactorum Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Fortification"
+          "name": "Fortification",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies only engaged with it can be shot at -1 to hit (Pistols excepted)"
         }
       ],
       "points": 125,
@@ -43021,10 +45537,34 @@
       ],
       "abilities": [
         {
-          "name": "Swallow Whole"
+          "name": "Swallow Whole",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Its maw wounds Infantry, Mounted and Beasts critically, healing D3+2 per kill"
         },
         {
-          "name": "Subterranean Hunter"
+          "name": "Subterranean Hunter",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the Fight phase, unengaged: back into Strategic Reserves"
         }
       ],
       "points": 120,
@@ -43177,7 +45717,23 @@
       ],
       "abilities": [
         {
-          "name": "Support Vehicle"
+          "name": "Support Vehicle",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Vehicle within 3\" regains up to D3 wounds and re-rolls 1s to hit"
         }
       ],
       "points": 80,
@@ -43326,10 +45882,24 @@
       ],
       "abilities": [
         {
-          "name": "Subterranean Tunnels"
+          "name": "Subterranean Tunnels",
+          "summary": "Deep Strikes 6\" from enemies, then no charge"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 135,
@@ -43439,7 +46009,8 @@
       ],
       "abilities": [
         {
-          "name": "Aerial Seeding"
+          "name": "Aerial Seeding",
+          "summary": "Starts in Reserves without counting, lands in rounds 1-3; passengers disembark 8\" from enemies"
         }
       ],
       "points": 80,
@@ -43693,10 +46264,48 @@
       ],
       "abilities": [
         {
-          "name": "Power Overload"
+          "name": "Power Overload",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll Damage against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-7 Wounds Remaining"
+          "name": "Damaged: 1-7 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 285,
@@ -43983,10 +46592,24 @@
       ],
       "abilities": [
         {
-          "name": "Airborne Insertion"
+          "name": "Airborne Insertion",
+          "summary": "Units can disembark from it as the enemy Movement phase ends"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 170,
@@ -44221,10 +46844,36 @@
       ],
       "abilities": [
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 185,
@@ -44410,10 +47059,54 @@
       ],
       "abilities": [
         {
-          "name": "Anti-armour Gunship"
+          "name": "Anti-armour Gunship",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s for Damage against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 255,
@@ -45461,7 +48154,19 @@
       ],
       "abilities": [
         {
-          "name": "Pouncing Leap"
+          "name": "Pouncing Leap",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited"
         }
       ],
       "points": 55,
@@ -45748,10 +48453,30 @@
       ],
       "abilities": [
         {
-          "name": "Gunship Barrage"
+          "name": "Gunship Barrage",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 225,
@@ -46223,10 +48948,26 @@
       ],
       "abilities": [
         {
-          "name": "Paroxysm (Psychic)"
+          "name": "Paroxysm (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Fight phase: a visible enemy 12\" or closer gets -1 Attack on a 2+"
         },
         {
-          "name": "Will of the Hive Mind"
+          "name": "Will of the Hive Mind",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on a Tyranids unit 12\" or closer costs 1CP less"
         }
       ],
       "points": 185,
@@ -46373,10 +49114,31 @@
       ],
       "abilities": [
         {
-          "name": "Alpha Warrior"
+          "name": "Alpha Warrior",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1"
         },
         {
-          "name": "Death Blow"
+          "name": "Death Blow",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 4+"
         },
         {
           "name": "Leader"
@@ -46553,7 +49315,15 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Bombardment"
+          "name": "Suppression Bombardment",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         }
       ],
       "points": 95,
@@ -46652,7 +49422,8 @@
   "armyRules": [
     {
       "id": "cult-ambush",
-      "name": "Cult Ambush"
+      "name": "Cult Ambush",
+      "summary": "Resurgence points bring destroyed units back into Cult Ambush; markers 9\" from enemies let them return by ingress"
     }
   ],
   "detachments": [
@@ -46667,7 +49438,37 @@
       "rules": [
         {
           "id": "hypermorphic-fury",
-          "name": "Hypermorphic Fury"
+          "name": "Hypermorphic Fury",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Aberrants",
+              "Biophagus",
+              "Purestrain Genestealers"
+            ],
+            "noneOf": []
+          },
+          "summary": "Aberrants, Biophagi and Purestrains get +1 to charge, and +1 melee Attack after charging"
         }
       ],
       "enhancements": [
@@ -46689,7 +49490,15 @@
               "Biophagus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies engaged with its unit get -1 OC"
         },
         {
           "id": "biomorph-adaptation",
@@ -46706,7 +49515,30 @@
               "Patriarch"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP and Damage in melee"
         },
         {
           "id": "mutagenic-regeneration",
@@ -46726,7 +49558,15 @@
               "Biophagus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Command phase: one model regains 1 wound"
         },
         {
           "id": "predatory-instincts",
@@ -46746,7 +49586,19 @@
               "Patriarch"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Infiltrators; Heroic Intervention on it costs 1CP less and is not limited"
         }
       ]
     },
@@ -46759,12 +49611,12 @@
       ],
       "rules": [
         {
-          "id": "integrated-tactics",
-          "name": "Integrated Tactics"
-        },
-        {
           "id": "brood-brothers",
           "name": "Brood Brothers"
+        },
+        {
+          "id": "integrated-tactics",
+          "name": "Integrated Tactics"
         }
       ],
       "enhancements": [
@@ -46840,7 +49692,27 @@
       "rules": [
         {
           "id": "psionic-parasitism",
-          "name": "Psionic Parasitism"
+          "name": "Psionic Parasitism",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Genestealer Cults"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "near-tyranids"
+                }
+              ]
+            }
+          ],
+          "summary": "Up to 500-1500 points of Tyranids; Synapses drain Cult units to heal Tyranids, and cultists get +1 to hit foes near them"
         }
       ],
       "enhancements": [
@@ -46856,7 +49728,8 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies cannot Fire Overwatch at its unit"
         },
         {
           "id": "inhuman-integration",
@@ -46870,7 +49743,20 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-tyranids"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 against enemies 6\" or closer to friendly Tyranids"
         },
         {
           "id": "synaptic-auger",
@@ -46884,7 +49770,8 @@
               "Tyranids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Doubles the wounds it regains from Psionic Parasitism"
         },
         {
           "id": "vanguard-tyrant",
@@ -46898,7 +49785,30 @@
               "Winged Hive Tyrant"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and AP in melee"
         }
       ]
     },
@@ -46912,7 +49822,30 @@
       "rules": [
         {
           "id": "killer-reputation",
-          "name": "Killer Reputation"
+          "name": "Killer Reputation",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Kelermorph",
+              "Locus",
+              "Reductus Saboteur",
+              "Sanctus"
+            ],
+            "noneOf": []
+          },
+          "summary": "Kelermorphs, Loci, Saboteurs and Sanctus are Killers: re-roll 1s to hit and wound"
         }
       ],
       "enhancements": [
@@ -46933,7 +49866,20 @@
               "Reductus Saboteur"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 S when shooting"
         },
         {
           "id": "gene-tailored-toxins",
@@ -46952,7 +49898,15 @@
               "Sanctus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 Damage"
         }
       ]
     },
@@ -46968,7 +49922,36 @@
       "rules": [
         {
           "id": "a-perfect-ambush",
-          "name": "A Perfect Ambush"
+          "name": "A Perfect Ambush",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Genestealer Cults"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Units arriving as Reinforcements gain Sustained Hits 1 and Ignores Cover until your next Fight phase ends"
         }
       ],
       "enhancements": [
@@ -46984,7 +49967,22 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Arriving as Reinforcements: Lethal Hits when shooting until your next Fight phase ends"
         },
         {
           "id": "assassination-edict",
@@ -46998,7 +49996,21 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit gets +1 to hit Characters"
         },
         {
           "id": "our-time-is-nigh",
@@ -47012,7 +50024,20 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +2 to its unit’s charge"
         },
         {
           "id": "prowling-agitant",
@@ -47026,7 +50051,15 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         }
       ]
     },
@@ -47040,7 +50073,25 @@
       "rules": [
         {
           "id": "rapid-takeover",
-          "name": "Rapid Takeover"
+          "name": "Rapid Takeover",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Genestealer Cults"
+            ],
+            "anyOf": [
+              "Mounted",
+              "Vehicle"
+            ],
+            "noneOf": []
+          },
+          "summary": "Mounted and Vehicles get +1 OC; Atalan Jackals keep the objectives they hold"
         }
       ],
       "enhancements": [
@@ -47056,7 +50107,23 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "summary": "Disembarked this turn: re-roll hits when shooting"
         },
         {
           "id": "cartographic-data-leech",
@@ -47070,7 +50137,8 @@
               "Genestealer Cults"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Embarked: its Transport’s Firing Deck shots get +1 BS"
         },
         {
           "id": "serpentine-tactics",
@@ -47085,7 +50153,14 @@
               "Mounted"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can shoot after Falling Back"
         },
         {
           "id": "starfall-shells",
@@ -47100,7 +50175,15 @@
               "Mounted"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit its sniper rifle hits gets -1 to hit until your next Shooting phase"
         }
       ]
     },
@@ -47115,7 +50198,21 @@
       "rules": [
         {
           "id": "enemy-within",
-          "name": "Enemy Within"
+          "name": "Enemy Within",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Purestrain Genestealers"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "End of the enemy Fight phase: unengaged Purestrains can go back into Strategic Reserves"
         }
       ],
       "enhancements": [
@@ -47132,7 +50229,30 @@
               "Purestrain Genestealers"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "Sv",
+              "value": "4+",
+              "target": "self"
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 Toughness, Save 4+ and +1 melee Strength"
         },
         {
           "id": "talons-of-the-sire",
@@ -47147,7 +50267,15 @@
               "Patriarch"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to wound"
         }
       ]
     },
@@ -47161,7 +50289,37 @@
       "rules": [
         {
           "id": "unquestioning-fanaticism",
-          "name": "Unquestioning Fanaticism"
+          "name": "Unquestioning Fanaticism",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Acolyte Hybrids",
+              "Hybrid Metamorphs",
+              "Neophyte Hybrids"
+            ],
+            "noneOf": []
+          },
+          "summary": "Led hybrids re-roll Advance and charge rolls; a Magus, Primus or Iconward leading them has Feel No Pain 3+"
         }
       ],
       "enhancements": [
@@ -47183,7 +50341,8 @@
               "Acolyte Iconward"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "2 more Resurgence points at the start"
         },
         {
           "id": "denunciator-of-tyrants",
@@ -47203,7 +50362,32 @@
               "Primus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit gets +1 to hit and wound Characters"
         },
         {
           "id": "gene-sires-reliquant",
@@ -47223,7 +50407,8 @@
               "Acolyte Iconward"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its unit re-rolls Battle-shock tests"
         },
         {
           "id": "incendiary-inspiration",
@@ -47243,7 +50428,14 @@
               "Magus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit can charge after Advancing"
         }
       ]
     },
@@ -47258,7 +50450,22 @@
       "rules": [
         {
           "id": "hordes-of-the-faithful",
-          "name": "Hordes of the Faithful"
+          "name": "Hordes of the Faithful",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Neophyte Hybrids"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Neophytes in a terrain area heal 3 wounds each Command phase"
         }
       ],
       "enhancements": [
@@ -47275,7 +50482,8 @@
               "Neophyte Hybrids"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "-3\" detection range"
         },
         {
           "id": "inspired-to-greatness",
@@ -47294,7 +50502,15 @@
               "Primus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls Damage"
         }
       ]
     }
@@ -47322,7 +50538,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "charge-declared",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Charged: the charger takes D3 mortal wounds on 2-4, 3 on 5+"
     },
     {
       "id": "acceptable-losses",
@@ -47350,7 +50583,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves a Cult Ambush marker anywhere 8\" from enemies"
     },
     {
       "id": "avenge-the-star-children",
@@ -47363,7 +50605,39 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "after-enemy-attacks",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Tyranids",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "aura",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "aura",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A Tyranid Character’s killer: cultists get +1 to hit and wound it for the battle"
     },
     {
       "id": "bio-horror-revelation",
@@ -47375,7 +50649,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aberrants",
+          "Biophagus",
+          "Purestrain Genestealers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies 9\" or closer failing Leadership get -1 to hit it this phase"
     },
     {
       "id": "close-range-shoot-out",
@@ -47387,7 +50679,33 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vehicle"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-within",
+              "value": 18
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits against targets 18\" or closer this phase"
     },
     {
       "id": "coordinated-trap",
@@ -47400,7 +50718,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Two units focus one enemy with +1 to wound this phase"
     },
     {
       "id": "crawling-horror",
@@ -47411,7 +50750,16 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Purestrain Genestealers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "-6\" detection range this turn"
     },
     {
       "id": "darting-attacks",
@@ -47424,7 +50772,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can shoot and charge after Falling Back this phase"
     },
     {
       "id": "deft-manoeuvring",
@@ -47436,7 +50802,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Achilles Ridgerunners",
+          "Atalan Jackals"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "devoted-crew",
@@ -47449,7 +50832,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Goliath Rockgrinder",
+          "Goliath Truck"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks against it this phase"
     },
     {
       "id": "divine-imperative",
@@ -47461,7 +50861,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "charge-declared",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "charge",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 to charge; may re-roll it to reach a Tyranids unit’s foe"
     },
     {
       "id": "encircling-the-prey",
@@ -47473,7 +50889,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vehicle"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Wholly 9\" or closer to an edge, unengaged: back into Strategic Reserves"
     },
     {
       "id": "evasive-vanguard",
@@ -47489,7 +50923,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves a Cult Ambush marker anywhere 8\" from enemies"
     },
     {
       "id": "eyes-of-the-cult",
@@ -47500,7 +50943,16 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Neophyte Hybrids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Enemies in its terrain area get +6\" detection range"
     },
     {
       "id": "fanatical-hail",
@@ -47511,7 +50963,31 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Neophyte Hybrids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits when shooting one enemy unit"
     },
     {
       "id": "frenzied-devotion",
@@ -47523,7 +50999,48 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Acolyte Hybrids",
+          "Hybrid Metamorphs",
+          "Neophyte Hybrids"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "WS",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "hazardous",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Non-Characters get +1 melee A and WS, with Hazardous"
     },
     {
       "id": "gene-twisted-muscle",
@@ -47535,7 +51052,41 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aberrants",
+          "Biophagus",
+          "Purestrain Genestealers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound against Monsters and Vehicles this phase"
     },
     {
       "id": "hyper-metabolic-vigour",
@@ -47547,7 +51098,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aberrants",
+          "Biophagus",
+          "Purestrain Genestealers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "pile-in",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "Piles in and consolidates 6\" toward the closest unit"
     },
     {
       "id": "hyperferocity",
@@ -47559,7 +51127,32 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "near-tyranids"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to wound, all of them against enemies near friendly Tyranids"
     },
     {
       "id": "in-the-shadow-of-iron",
@@ -47586,7 +51179,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "enemy-moved",
+      "target": {
+        "allOf": [
+          "Purestrain Genestealers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move nearby: a D3+3\" Normal move"
     },
     {
       "id": "living-up-to-legend",
@@ -47598,7 +51207,16 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "unit-destroyed",
+      "target": {
+        "allOf": [
+          "Killer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Destroyed a unit: visible cult units 12\" or closer recover from Battle-shock"
     },
     {
       "id": "loyal-to-the-end",
@@ -47609,7 +51227,28 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Killer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "2+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on 2+ (a 1 deals a mortal wound back)"
     },
     {
       "id": "lurk-and-strike",
@@ -47620,7 +51259,26 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Purestrain Genestealers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Its move does not stop it from charging"
     },
     {
       "id": "lying-in-wait",
@@ -47632,7 +51290,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults",
+          "Battleline"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "From Cult Ambush: sets up wholly 6\" or closer to its marker"
     },
     {
       "id": "primed-and-readied",
@@ -47645,7 +51312,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Critical hits on 5+ this phase"
     },
     {
       "id": "psi-surge",
@@ -47661,7 +51343,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Tyranids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "+3\" to its Catalyst range until your next Command phase"
     },
     {
       "id": "rapid-feint",
@@ -47673,7 +51364,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Achilles Ridgerunners",
+          "Atalan Jackals"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move"
     },
     {
       "id": "regimental-reinforcements",
@@ -47694,11 +51402,27 @@
       "detachmentId": "final-day",
       "cp": 1,
       "phases": [
-        "fight"
+        "charge"
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Genestealer Cults",
+          "Tyranids"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "return-to-the-shadows",
@@ -47710,7 +51434,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "saintly-paroxysm",
@@ -47722,7 +51462,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Genestealer Cults",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "A slain Character: its killer takes D3 mortal wounds on 2+ (2D3 for an Abominant or Patriarch)"
     },
     {
       "id": "slunk-from-the-underbelly",
@@ -47733,7 +51489,28 @@
         "shooting"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Neophyte Hybrids"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": 1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged attacks against it lose 1 AP until the attacker is done"
     },
     {
       "id": "stimulated-bio-surge",
@@ -47745,7 +51522,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aberrants",
+          "Biophagus",
+          "Purestrain Genestealers"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "charge",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "summary": "+2 to charge"
     },
     {
       "id": "suppress-and-overwhelm",
@@ -47769,7 +51563,22 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Killer"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self"
+        }
+      ],
+      "summary": "Devastating Wounds"
     },
     {
       "id": "symbiotic-destruction",
@@ -47793,7 +51602,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Acolyte Hybrids",
+          "Hybrid Metamorphs",
+          "Neophyte Hybrids"
+        ],
+        "noneOf": []
+      },
+      "summary": "From Cult Ambush: sets up anywhere 6\" from enemies"
     },
     {
       "id": "the-path-of-anguish",
@@ -47805,7 +51625,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Acolyte Hybrids",
+          "Neophyte Hybrids"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "Lost models: a D6\" move toward the closest enemy, even into engagement"
     },
     {
       "id": "tireless-fervour",
@@ -47817,7 +51654,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Acolyte Hybrids",
+          "Hybrid Metamorphs",
+          "Neophyte Hybrids"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can charge after Advancing or Falling Back; may re-roll to reach a Character’s foe"
     },
     {
       "id": "transcendent-celerity",
@@ -47829,7 +51686,28 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Acolyte Hybrids",
+          "Hybrid Metamorphs",
+          "Neophyte Hybrids"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Assault this phase"
     },
     {
       "id": "tunnel-crawlers",
@@ -47841,7 +51719,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Genestealer Cults"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Deep Strikes 6\" from enemies, then no charge"
     },
     {
       "id": "vengeance-for-the-martyr",
@@ -47854,7 +51740,37 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Genestealer Cults",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "aura",
+          "keywords": {
+            "allOf": [],
+            "anyOf": [
+              "Acolyte Hybrids",
+              "Hybrid Metamorphs",
+              "Neophyte Hybrids"
+            ],
+            "noneOf": []
+          },
+          "conditions": [
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "A Character’s killer: hybrids re-roll 1s to hit it (all for a Magus, Primus or Iconward)"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "craftworlds",
   "name": "Craftworlds",
@@ -207,10 +207,19 @@
       ],
       "abilities": [
         {
-          "name": "The Path Least Travelled"
+          "name": "The Path Least Travelled",
+          "summary": "After deployment, redeploy a Rangers or Shroud Runners unit, even into Strategic Reserves"
         },
         {
-          "name": "Path of the Outcast"
+          "name": "Path of the Outcast",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         }
       ],
       "points": 75,
@@ -412,10 +421,33 @@
       ],
       "abilities": [
         {
-          "name": "Hand of Asuryan"
+          "name": "Hand of Asuryan",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: its Bloody Twins deal 3 Damage with Anti-Infantry 5+ and Devastating Wounds"
         },
         {
-          "name": "Tactical Acumen"
+          "name": "Tactical Acumen",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: a 6\" Normal move after shooting, then no charge"
         },
         {
           "name": "Leader"
@@ -676,16 +708,32 @@
       ],
       "abilities": [
         {
-          "name": "Superlative Strategist"
+          "name": "Superlative Strategist",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll Advances and Agile Manoeuvre rolls"
         },
         {
-          "name": "Path of Command"
+          "name": "Path of Command",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Aspect Training"
+          "name": "Aspect Training",
+          "summary": "Leading Banshees: Fights First; leading Scorpions: Infiltrators, Scouts 7\" and Stealth"
         }
       ],
       "points": 70,
@@ -990,13 +1038,29 @@
       ],
       "abilities": [
         {
-          "name": "Path of Command"
+          "name": "Path of Command",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Ride the WInd"
+          "name": "Ride the WInd",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: its unit Advances a flat 6\""
         }
       ],
       "points": 90,
@@ -1310,10 +1374,19 @@
       ],
       "abilities": [
         {
-          "name": "Path of Command"
+          "name": "Path of Command",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Indomitable Strength of Will"
+          "name": "Indomitable Strength of Will",
+          "summary": "Leading: each Battle Focus token spent on its unit comes back on a 3+"
         },
         {
           "name": "Leader"
@@ -1547,13 +1620,42 @@
       ],
       "abilities": [
         {
-          "name": "Molten Form"
+          "name": "Molten Form",
+          "summary": "Halves the Damage of attacks allocated to it"
         },
         {
-          "name": "The Bloody Handed (Aura)"
+          "name": "The Bloody Handed (Aura)",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 1,
+              "target": "aura",
+              "range": 6
+            },
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "aura",
+              "range": 6
+            }
+          ],
+          "summary": "Friendly units 6\" or closer get +1 to Advance and charge"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 250,
@@ -1681,10 +1783,33 @@
           "name": "Leader"
         },
         {
-          "name": "Cry of the Wind"
+          "name": "Cry of the Wind",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "The turn it arrives: every hit is critical when shooting"
         },
         {
-          "name": "Cloudstrider"
+          "name": "Cloudstrider",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: back into Strategic Reserves each enemy turn; Deep Strikes 6\" from enemies (no charge)"
         }
       ],
       "points": 125,
@@ -1960,13 +2085,42 @@
           "name": "Leader"
         },
         {
-          "name": "Way of the Shaper (Psychic)"
+          "name": "Way of the Shaper (Psychic)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Wraith Constructs get Feel No Pain 6+"
         },
         {
-          "name": "Bonesinger"
+          "name": "Bonesinger",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Wraith Construct or Vehicle (3\"), not leading: Lone Operative"
         },
         {
-          "name": "Psytronome Shaper"
+          "name": "Psytronome Shaper",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3
+            }
+          ],
+          "summary": "Command phase: a Wraith Construct or Vehicle 3\" or closer regains up to D3 wounds"
         }
       ],
       "points": 45,
@@ -2638,10 +2792,31 @@
       ],
       "abilities": [
         {
-          "name": "Cornered Prey"
+          "name": "Cornered Prey",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies Falling Back from it must escape desperately (-1 if Battle-shocked)"
         },
         {
-          "name": "Blade of the Clans"
+          "name": "Blade of the Clans",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 in melee"
         },
         {
           "name": "Leader"
@@ -2867,10 +3042,41 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         },
         {
-          "name": "D-Rift"
+          "name": "D-Rift",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Its D-impaler’s target and units 3\" or closer: D3 mortal wounds on a 5+"
         }
       ],
       "points": 415,
@@ -3127,7 +3333,19 @@
       ],
       "abilities": [
         {
-          "name": "Reckless Abandon"
+          "name": "Reckless Abandon",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited by other uses"
         }
       ],
       "points": 125,
@@ -3667,10 +3885,19 @@
       ],
       "abilities": [
         {
-          "name": "Reaver Band"
+          "name": "Reaver Band",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         },
         {
-          "name": "Corsairs"
+          "name": "Corsairs",
+          "summary": "Leaders of Voidreavers can lead it"
         }
       ],
       "points": 125,
@@ -4253,7 +4480,15 @@
       ],
       "abilities": [
         {
-          "name": "Raid and Run"
+          "name": "Raid and Run",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D3+3",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the Fight phase: a D3+3\" move, or Falls Back as far if engaged"
         }
       ],
       "points": 75,
@@ -4666,10 +4901,36 @@
       ],
       "abilities": [
         {
-          "name": "Reavers of the Void"
+          "name": "Reavers of the Void",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective"
         },
         {
-          "name": "Mistshield"
+          "name": "Mistshield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 65,
@@ -5222,16 +5483,57 @@
       ],
       "abilities": [
         {
-          "name": "Piratical Raiders"
+          "name": "Piratical Raiders",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits and Precision against one enemy unit chosen at the start"
         },
         {
           "name": "Channeler stones"
         },
         {
-          "name": "Faolchú"
+          "name": "Faolchú",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         },
         {
-          "name": "Mistshield"
+          "name": "Mistshield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 70,
@@ -6285,10 +6587,54 @@
       ],
       "abilities": [
         {
-          "name": "Skyhunter"
+          "name": "Skyhunter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit and wound when shooting units that can Fly"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -6459,13 +6805,42 @@
       ],
       "abilities": [
         {
-          "name": "Structural Collapse"
+          "name": "Structural Collapse",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            }
+          ],
+          "summary": "Its D-cannon re-rolls 1s for Damage, all of them against Titanic units"
         },
         {
-          "name": "Support Artillery"
+          "name": "Support Artillery",
+          "summary": "Joins a Guardian Defenders unit at deployment; that unit cannot embark"
         },
         {
-          "name": "Support Weapon"
+          "name": "Support Weapon",
+          "summary": "Toughness 3 while other models remain in its unit"
         }
       ],
       "points": 110,
@@ -6693,10 +7068,12 @@
       ],
       "abilities": [
         {
-          "name": "Inescapable Accuracy"
+          "name": "Inescapable Accuracy",
+          "summary": "Ignores BS and hit modifiers when shooting"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 95,
@@ -6879,16 +7256,71 @@
       ],
       "abilities": [
         {
-          "name": "Death is Not Enough"
+          "name": "Death is Not Enough",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits tests Battle-shock (-1 if it lost a model)"
         },
         {
-          "name": "Cruel Amusement"
+          "name": "Cruel Amusement",
+          "options": [
+            {
+              "name": "Ignores Cover",
+              "modifiers": [
+                {
+                  "key": "ignores-cover",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Precision",
+              "modifiers": [
+                {
+                  "key": "precision",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sustained Hits 3",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 3,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "ranged"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "summary": "Its shrieker cannon gains Ignores Cover, Precision or Sustained Hits 3 when it shoots"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         },
         {
-          "name": "Travelling Players"
+          "name": "Travelling Players",
+          "summary": "One per army unless stated otherwise"
         }
       ],
       "points": 65,
@@ -7073,13 +7505,38 @@
       ],
       "abilities": [
         {
-          "name": "Bladestorm"
+          "name": "Bladestorm",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "half-range"
+                }
+              ]
+            }
+          ],
+          "summary": "Sustained Hits 1 at half range"
         },
         {
-          "name": "Shimmershield"
+          "name": "Shimmershield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 70,
@@ -7320,13 +7777,33 @@
       ],
       "abilities": [
         {
-          "name": "Agile Reach"
+          "name": "Agile Reach",
+          "summary": "Unengaged models 3\" or closer to its foe can fight"
         },
         {
-          "name": "On the Hunt"
+          "name": "On the Hunt",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         },
         {
-          "name": "Drakolithe (Once per battle, per token)"
+          "name": "Drakolithe (Once per battle, per token)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per token: an enemy ending a move 8\" or closer takes a mortal wound on 3+"
         }
       ],
       "points": 85,
@@ -7499,7 +7976,20 @@
           "name": "Diviner of the Futures"
         },
         {
-          "name": "Doom (Psychic)"
+          "name": "Doom (Psychic)",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "End of your Movement phase: friendly Aeldari get +1 to wound one visible enemy 18\" or closer"
         },
         {
           "name": "Leader"
@@ -7748,10 +8238,36 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll wounds against it"
         }
       ],
       "points": 130,
@@ -7980,10 +8496,24 @@
       ],
       "abilities": [
         {
-          "name": "Branching Fates (Psychic)"
+          "name": "Branching Fates (Psychic)",
+          "summary": "Leading: once per phase, one hit, wound or Damage roll of its unit (not platforms) becomes a 6"
         },
         {
-          "name": "Guide (Psychic)"
+          "name": "Guide (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "End of your Movement phase: friendly Aeldari get +1 to hit one visible enemy 18\" or closer"
         },
         {
           "name": "Leader"
@@ -8236,10 +8766,19 @@
       ],
       "abilities": [
         {
-          "name": "Branching Fates (Psychic)"
+          "name": "Branching Fates (Psychic)",
+          "summary": "Leading: once per phase, one hit, wound or Damage roll of its unit becomes a 6"
         },
         {
-          "name": "Misfortune (Psychic)"
+          "name": "Misfortune (Psychic)",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: a visible enemy 18\" or closer gets -1 to wound"
         },
         {
           "name": "Leader"
@@ -8523,10 +9062,98 @@
       ],
       "abilities": [
         {
-          "name": "Assured Destruction"
+          "name": "Assured Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits, wounds and Damage when shooting Monsters and Vehicles"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 110,
@@ -8779,10 +9406,24 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Crystal Matrix"
+          "name": "Crystal Matrix",
+          "summary": "When shooting: one hit and one wound roll may be re-rolled"
         }
       ],
       "points": 150,
@@ -8973,10 +9614,24 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Skyfire"
+          "name": "Skyfire",
+          "summary": "Fire Overwatch on flyers also hits up to 3 other flyers on 6s"
         }
       ],
       "points": 115,
@@ -9534,10 +10189,12 @@
       ],
       "abilities": [
         {
-          "name": "Burning Lance"
+          "name": "Burning Lance",
+          "summary": "Leading: +6\" range for Melta weapons"
         },
         {
-          "name": "Unquenchable Resolve"
+          "name": "Unquenchable Resolve",
+          "summary": "First death: on a 2+ returns whole once the phase ends"
         },
         {
           "name": "Leader"
@@ -10514,10 +11171,12 @@
       ],
       "abilities": [
         {
-          "name": "Fleet of Foot"
+          "name": "Fleet of Foot",
+          "summary": "Fades Back for free, even if others have"
         },
         {
-          "name": "Crewed Platform"
+          "name": "Crewed Platform",
+          "summary": "Its platforms die with the last crew model"
         }
       ],
       "points": 90,
@@ -10768,10 +11427,31 @@
       ],
       "abilities": [
         {
-          "name": "Mindshock Pod (Aura, Psychic)"
+          "name": "Mindshock Pod (Aura, Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 9\" or closer: -1 to Battle-shock and Leadership tests"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 155,
@@ -10984,7 +11664,15 @@
       ],
       "abilities": [
         {
-          "name": "Lightning Assault"
+          "name": "Lightning Assault",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over infantry: six D6, each 4+ a mortal wound"
         }
       ],
       "points": 100,
@@ -11263,10 +11951,22 @@
       ],
       "abilities": [
         {
-          "name": "Acrobatic"
+          "name": "Acrobatic",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing or Falling Back"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 85,
@@ -11474,10 +12174,19 @@
       ],
       "abilities": [
         {
-          "name": "Bringer of the True Death"
+          "name": "Bringer of the True Death",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll wounds"
         },
         {
-          "name": "Hunter Unseen"
+          "name": "Hunter Unseen",
+          "summary": "Its unit can only be shot from 12\" or closer"
         },
         {
           "name": "Leader"
@@ -11806,10 +12515,26 @@
           "name": "Leader"
         },
         {
-          "name": "Reaper of Souls"
+          "name": "Reaper of Souls",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to hit"
         },
         {
-          "name": "Shadow of Death (Aura)"
+          "name": "Shadow of Death (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer: -1 to Battle-shock and Leadership tests"
         }
       ],
       "points": 105,
@@ -11935,10 +12660,32 @@
           "name": "Leader"
         },
         {
-          "name": "Whirling Death"
+          "name": "Whirling Death",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Advances a flat 6\", ignoring vertical distance"
         },
         {
-          "name": "Storm of Silence"
+          "name": "Storm of Silence",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Characters"
         }
       ],
       "points": 105,
@@ -12083,13 +12830,53 @@
           "name": "Leader"
         },
         {
-          "name": "Shadow Hunter"
+          "name": "Shadow Hunter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 to hit"
         },
         {
-          "name": "Sustained Assault"
+          "name": "Sustained Assault",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: critical hits on 4+ in melee"
         },
         {
-          "name": "The Scorpion's Bite"
+          "name": "The Scorpion's Bite",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            }
+          ],
+          "summary": "Devastating Wounds in melee against non-Titanic units"
         }
       ],
       "points": 90,
@@ -12225,10 +13012,24 @@
           "name": "Leader"
         },
         {
-          "name": "Aethersense (Psychic)"
+          "name": "Aethersense (Psychic)",
+          "summary": "Enemies from Reserves cannot arrive 12\" or closer"
         },
         {
-          "name": "Fury of the Void (Psychic)"
+          "name": "Fury of the Void (Psychic)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit its Dread of the Deep Void hits: Aeldari get +1 S against it this turn"
         }
       ],
       "points": 80,
@@ -12370,10 +13171,26 @@
       ],
       "abilities": [
         {
-          "name": "Panicked Quarry"
+          "name": "Panicked Quarry",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits tests Battle-shock at -1"
         },
         {
-          "name": "Drakolithe (Once per battle, per token)"
+          "name": "Drakolithe (Once per battle, per token)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per token: an enemy ending a move 8\" or closer takes a mortal wound on 3+"
         }
       ],
       "points": 75,
@@ -12526,10 +13343,24 @@
           "name": "Leader"
         },
         {
-          "name": "Empyric Ambush"
+          "name": "Empyric Ambush",
+          "summary": "Leading: can charge after a Flickerjump"
         },
         {
-          "name": "Whispering Web"
+          "name": "Whispering Web",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Aeldari score critical hits on 5+ against it this turn"
         }
       ],
       "points": 135,
@@ -12751,10 +13582,31 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Speed of Vaul"
+          "name": "Speed of Vaul",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 9,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 9\" without rolling"
         }
       ],
       "points": 180,
@@ -12991,10 +13843,26 @@
           "name": "Leader"
         },
         {
-          "name": "Harvester of Souls"
+          "name": "Harvester of Souls",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Leading, one target: it and units 3\" or closer take D3 mortal wounds on 5+"
         },
         {
-          "name": "Face of Death"
+          "name": "Face of Death",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests Battle-shock at -1"
         }
       ],
       "points": 100,
@@ -13152,10 +14020,36 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Monofilament Web"
+          "name": "Monofilament Web",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Its doomweaver pins what it hits: -2\" Move and -2 to charge until your next turn"
         }
       ],
       "points": 165,
@@ -13338,10 +14232,40 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         }
       ],
       "points": 150,
@@ -13563,16 +14487,52 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-16 Wounds Remaining"
+          "name": "Damaged: 1-16 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (16 wounds or fewer left)"
         },
         {
-          "name": "Titanic Advance"
+          "name": "Titanic Advance",
+          "summary": "Moves over non-Titanic models and terrain up to 4\" tall"
         },
         {
-          "name": "Towering Wraith Construct"
+          "name": "Towering Wraith Construct",
+          "summary": "Stratagems on it cost three times as much"
         },
         {
-          "name": "Flawless Poise"
+          "name": "Flawless Poise",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         }
       ],
       "points": 2100,
@@ -13898,10 +14858,40 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 175,
@@ -14642,10 +15632,24 @@
           "name": "Leader"
         },
         {
-          "name": "Piratical Hero"
+          "name": "Piratical Hero",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 and +1 to hit"
         },
         {
-          "name": "Prince of Corsairs"
+          "name": "Prince of Corsairs",
+          "summary": "After deployment, redeploy up to three units, even into Strategic Reserves"
         }
       ],
       "points": 95,
@@ -14790,7 +15794,15 @@
       ],
       "abilities": [
         {
-          "name": "Path of the Outcast"
+          "name": "Path of the Outcast",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: unengaged, a D6\" Normal move"
         }
       ],
       "points": 60,
@@ -14965,16 +15977,49 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -8 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Titanic Advance"
+          "name": "Titanic Advance",
+          "summary": "Moves over non-Titanic models and terrain up to 4\" tall"
         },
         {
-          "name": "Towering Wraith Construct"
+          "name": "Towering Wraith Construct",
+          "summary": "Stratagems on it cost twice as much"
         },
         {
-          "name": "Revenant Jet Pack"
+          "name": "Revenant Jet Pack",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 8,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 8\" without rolling"
         }
       ],
       "points": 1100,
@@ -15263,10 +16308,34 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-8 Wounds Remaining"
+          "name": "Damaged: 1-8 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         },
         {
-          "name": "Lanced Obliteration"
+          "name": "Lanced Obliteration",
+          "summary": "Models its pulsar destroys explode on 4+ instead of 6"
         }
       ],
       "points": 410,
@@ -15484,7 +16553,15 @@
       ],
       "abilities": [
         {
-          "name": "Shade of Twilight"
+          "name": "Shade of Twilight",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: a D6\" Normal move, then no charge"
         }
       ],
       "points": 30,
@@ -15640,13 +16717,23 @@
       ],
       "abilities": [
         {
-          "name": "Monofilament Snare"
+          "name": "Monofilament Snare",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it snares takes a mortal wound per 1 rolled for each model when it moves"
         },
         {
-          "name": "Support Artillery"
+          "name": "Support Artillery",
+          "summary": "Joins a Guardian Defenders unit at deployment; that unit cannot embark"
         },
         {
-          "name": "Support Weapon"
+          "name": "Support Weapon",
+          "summary": "Toughness 3 while other models remain in its unit"
         }
       ],
       "points": 60,
@@ -15800,16 +16887,20 @@
           "name": "Leader"
         },
         {
-          "name": "Fog of Dreams (Psychic)"
+          "name": "Fog of Dreams (Psychic)",
+          "summary": "Leading: its unit can only be shot from 18\" or closer"
         },
         {
-          "name": "Treacherous Illusion (Psychic)"
+          "name": "Treacherous Illusion (Psychic)",
+          "summary": "Enemy melee weapons gain Hazardous against its unit"
         },
         {
-          "name": "Travelling Players"
+          "name": "Travelling Players",
+          "summary": "One per army unless stated otherwise"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         }
       ],
       "points": 50,
@@ -16078,10 +17169,19 @@
       ],
       "abilities": [
         {
-          "name": "Extreme Mobility"
+          "name": "Extreme Mobility",
+          "summary": "Ignores vertical distance when moving"
         },
         {
-          "name": "Shimmershield"
+          "name": "Shimmershield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 100,
@@ -16330,7 +17430,8 @@
       ],
       "abilities": [
         {
-          "name": "Target Acquisition"
+          "name": "Target Acquisition",
+          "summary": "One unit its long rifles hit loses cover this phase"
         }
       ],
       "points": 90,
@@ -16555,16 +17656,55 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Agile"
+          "name": "Agile",
+          "summary": "Moves over non-Titanic models and terrain up to 4\" tall"
         },
         {
-          "name": "Webway Shunt Generator"
+          "name": "Webway Shunt Generator",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy turn, unengaged: into Strategic Reserves"
         },
         {
-          "name": "Scattershield"
+          "name": "Scattershield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 490,
@@ -17660,7 +18800,24 @@
       ],
       "abilities": [
         {
-          "name": "Acrobatic Grace"
+          "name": "Acrobatic Grace",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Stealth, and -1 to hit it in melee"
         }
       ],
       "points": 90,
@@ -17840,13 +18997,37 @@
       ],
       "abilities": [
         {
-          "name": "Blitz"
+          "name": "Blitz",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +2D6\" Move and +3 Attacks this turn"
         },
         {
-          "name": "Blur of Movement"
+          "name": "Blur of Movement",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Can charge after Advancing"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         }
       ],
       "points": 105,
@@ -18064,13 +19245,62 @@
       ],
       "abilities": [
         {
-          "name": "Spirit Mark (Psychic)"
+          "name": "Spirit Mark (Psychic)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Wraith Construct"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "A Wraith Construct unit 6\" or closer gains Sustained Hits 1 against one visible enemy"
         },
         {
-          "name": "Tears of Isha (Psychic)"
+          "name": "Tears of Isha (Psychic)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Wraith Construct"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Wraith Construct unit 6\" or closer gets a model back, or D3 wounds"
         },
         {
-          "name": "Spiritseer"
+          "name": "Spiritseer",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Wraith Construct (3\"): Lone Operative"
         }
       ],
       "points": 50,
@@ -18208,7 +19438,22 @@
       ],
       "abilities": [
         {
-          "name": "Hallucinogen Grenades"
+          "name": "Hallucinogen Grenades",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "aura",
+              "range": 36,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Enemy Shooting phase: a visible friendly infantry unit 36\" or closer gains Stealth"
         }
       ],
       "points": 70,
@@ -18343,7 +19588,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Embarkation"
+          "name": "Rapid Embarkation",
+          "summary": "End of the Fight phase: a small Harlequins unit wholly 6\" or closer embarks, even after leaving"
         }
       ],
       "points": 70,
@@ -18537,7 +19783,15 @@
       ],
       "abilities": [
         {
-          "name": "Elemental Ensnarement"
+          "name": "Elemental Ensnarement",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Fight phase: a non-Titanic Monster or Vehicle 18\" or closer gets -2\" Move (1: itself shocked)"
         },
         {
           "name": "Support"
@@ -18750,13 +20004,23 @@
       ],
       "abilities": [
         {
-          "name": "Stormblades"
+          "name": "Stormblades",
+          "summary": "An objective it holds as your Command phase ends stays yours until the enemy out-controls it"
         },
         {
-          "name": "Crewed Platform"
+          "name": "Crewed Platform",
+          "summary": "Its platforms die with the last crew model"
         },
         {
-          "name": "Serpent Shield"
+          "name": "Serpent Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has a 5+ invulnerable save"
         }
       ],
       "points": 100,
@@ -19042,10 +20306,27 @@
       ],
       "abilities": [
         {
-          "name": "Mandiblasters"
+          "name": "Mandiblasters",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: critical hits on 5+ in melee"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 75,
@@ -19340,10 +20621,19 @@
       ],
       "abilities": [
         {
-          "name": "Grenade Pack Flyover"
+          "name": "Grenade Pack Flyover",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 6,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, after arriving or moving: a D6 per model at an enemy 8\" or closer, each 4+ a mortal wound"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 95,
@@ -19660,16 +20950,39 @@
       ],
       "abilities": [
         {
-          "name": "Way of the Blade"
+          "name": "Way of the Blade",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Fights First"
         },
         {
-          "name": "Yvraine's Champion"
+          "name": "Yvraine's Champion",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Character"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Leading: other attached Characters have Feel No Pain 4+"
         },
         {
           "name": "Support"
         },
         {
-          "name": "Servant of the Whispering God"
+          "name": "Servant of the Whispering God",
+          "summary": "Excludes Epic Heroes other than Ynnari from its army"
         }
       ],
       "points": 80,
@@ -19806,13 +21119,23 @@
       ],
       "abilities": [
         {
-          "name": "Inevitable Death"
+          "name": "Inevitable Death",
+          "summary": "Once per enemy turn: teleports to where a friendly unit just died"
         },
         {
-          "name": "Ethereal Form"
+          "name": "Ethereal Form",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Each unit it destroys heals it up to D3 wounds"
         },
         {
-          "name": "Avatar of the Whispering God"
+          "name": "Avatar of the Whispering God",
+          "summary": "Excludes Epic Heroes other than Ynnari from its army"
         }
       ],
       "points": 230,
@@ -20018,10 +21341,44 @@
       ],
       "abilities": [
         {
-          "name": "Dance of Death"
+          "name": "Dance of Death",
+          "options": [
+            {
+              "name": "Hero’s Prowess: re-roll 1s to hit",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Villain’s Doom: +1 to wound",
+              "modifiers": [
+                {
+                  "key": "wound",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Trickster’s Grace: -1 to hit it",
+              "modifiers": [
+                {
+                  "key": "hit",
+                  "value": -1,
+                  "target": "enemy"
+                }
+              ]
+            }
+          ],
+          "summary": "Start of the Fight phase: re-roll 1s to hit, +1 to wound, or -1 to hit it"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         }
       ],
       "points": 85,
@@ -20354,16 +21711,49 @@
           "name": "Leader"
         },
         {
-          "name": "Choreographer of War"
+          "name": "Choreographer of War",
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: piles in and consolidates 6\" toward the closest unit"
         },
         {
-          "name": "Cegorach’s Favour"
+          "name": "Cegorach’s Favour",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and +1 to wound in melee"
         },
         {
-          "name": "Flip Belt"
+          "name": "Flip Belt",
+          "summary": "Ignores vertical distance when moving"
         },
         {
-          "name": "Travelling Players"
+          "name": "Travelling Players",
+          "summary": "One per army unless stated otherwise"
         }
       ],
       "points": 75,
@@ -20592,10 +21982,54 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Titan Hunter"
+          "name": "Titan Hunter",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s for Damage when shooting Monsters and Vehicles"
         }
       ],
       "points": 460,
@@ -20739,10 +22173,24 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Into the Foe"
+          "name": "Into the Foe",
+          "summary": "Units disembarking before it moves can charge after Advancing"
         },
         {
           "name": "Transport"
@@ -21040,13 +22488,16 @@
       ],
       "abilities": [
         {
-          "name": "Sonic Destruction"
+          "name": "Sonic Destruction",
+          "summary": "+1 S, AP and D per other vibro cannon that shot the same target"
         },
         {
-          "name": "Support Artillery"
+          "name": "Support Artillery",
+          "summary": "Joins a Guardian Defenders unit at deployment; that unit cannot embark"
         },
         {
-          "name": "Support Weapon"
+          "name": "Support Weapon",
+          "summary": "Toughness 3 while other models remain in its unit"
         }
       ],
       "points": 60,
@@ -21622,7 +23073,15 @@
       ],
       "abilities": [
         {
-          "name": "Harassment Fire"
+          "name": "Harassment Fire",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits is suppressed: -1 to hit until your next turn"
         }
       ],
       "points": 75,
@@ -22143,7 +23602,20 @@
       ],
       "abilities": [
         {
-          "name": "Crystalline Targeting"
+          "name": "Crystalline Targeting",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Aeldari get +1 AP against it this phase"
         }
       ],
       "points": 80,
@@ -22340,10 +23812,41 @@
           "name": "Support"
         },
         {
-          "name": "Runes of Fortune (Psychic)"
+          "name": "Runes of Fortune (Psychic)",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Charges against its unit get -2"
         },
         {
-          "name": "Psychic Communion (Psychic)"
+          "name": "Psychic Communion (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Destructors get +1 A and S per other Psyker 6\" or closer (+2 at most)"
         }
       ],
       "points": 40,
@@ -22565,10 +24068,46 @@
       ],
       "abilities": [
         {
-          "name": "Protect (Psychic)"
+          "name": "Protect (Psychic)",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Farseer: attacks against it get -1 to wound"
         },
         {
-          "name": "Psychic Communion (Psychic)"
+          "name": "Psychic Communion (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Destructors get +1 A and S per other Psyker 6\" or closer (+2 at most)"
         },
         {
           "name": "Support"
@@ -22828,13 +24367,43 @@
       ],
       "abilities": [
         {
-          "name": "Psychic Communion (Psychic)"
+          "name": "Psychic Communion (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Destructors get +1 A and S per other Psyker 6\" or closer (+2 at most)"
         },
         {
           "name": "Support"
         },
         {
-          "name": "Runes of Battle (Psychic)"
+          "name": "Runes of Battle (Psychic)",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self"
+            }
+          ],
+          "summary": "Ignores Cover"
         }
       ],
       "points": 45,
@@ -23057,10 +24626,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Devastating Assault"
+          "name": "Devastating Assault",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         }
       ],
       "points": 145,
@@ -23334,10 +24923,12 @@
       ],
       "abilities": [
         {
-          "name": "Flickerjump"
+          "name": "Flickerjump",
+          "summary": "Normal move at 24\", no charge, a mortal wound per 1 rolled afterwards"
         },
         {
-          "name": "Aspect Shrine Token"
+          "name": "Aspect Shrine Token",
+          "summary": "Once per battle per token: one hit or wound of a non-Character becomes a 6"
         }
       ],
       "points": 105,
@@ -23619,7 +25210,15 @@
       ],
       "abilities": [
         {
-          "name": "Cloudbreakers"
+          "name": "Cloudbreakers",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         }
       ],
       "points": 95,
@@ -23868,10 +25467,39 @@
       ],
       "abilities": [
         {
-          "name": "Wave Serpent Shield"
+          "name": "Wave Serpent Shield",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged attacks stronger than its Toughness get -1 to wound"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -24054,13 +25682,16 @@
       "weapons": [],
       "abilities": [
         {
-          "name": "Arcane Cover"
+          "name": "Arcane Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Webway Strike"
+          "name": "Webway Strike",
+          "summary": "Units from Strategic Reserves can arrive wholly 6\" from it, even into engagement"
         },
         {
-          "name": "Deployment"
+          "name": "Deployment",
+          "summary": "Its two arches are set up as one gate and count as one model"
         }
       ],
       "points": 105,
@@ -24206,7 +25837,33 @@
       ],
       "abilities": [
         {
-          "name": "Swift Demise"
+          "name": "Swift Demise",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit when shooting; all of them against the closest target"
         }
       ],
       "points": 80,
@@ -24366,13 +26023,47 @@
       ],
       "abilities": [
         {
-          "name": "Malevolent Souls"
+          "name": "Malevolent Souls",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "3+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 3+"
         },
         {
-          "name": "Psychic Guidance"
+          "name": "Psychic Guidance",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Psyker (12\"): Ld 6+ and +1 to hit"
         },
         {
-          "name": "Forceshield"
+          "name": "Forceshield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 140,
@@ -24530,10 +26221,30 @@
       ],
       "abilities": [
         {
-          "name": "War Construct"
+          "name": "War Construct",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot"
         },
         {
-          "name": "Psychic Guidance"
+          "name": "Psychic Guidance",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Psyker (12\"): Ld 6+ and +1 to hit"
         }
       ],
       "points": 145,
@@ -24757,16 +26468,54 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Titanic Strides"
+          "name": "Titanic Strides",
+          "summary": "Moves through models and low terrain; taller terrain risks Battle-shock"
         },
         {
-          "name": "Point-blank Devastation"
+          "name": "Point-blank Devastation",
+          "summary": "At half range, re-rolls the dice for its cannon’s Attacks"
         },
         {
-          "name": "Scattershield"
+          "name": "Scattershield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            },
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "4+ invulnerable save and -1 Damage to attacks allocated to it"
         }
       ],
       "points": 385,
@@ -25059,13 +26808,50 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Titanic Agility"
+          "name": "Titanic Agility",
+          "summary": "Moves through models and terrain"
         },
         {
-          "name": "Scattershield"
+          "name": "Scattershield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            },
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "4+ invulnerable save and -1 Damage to attacks allocated to it"
         }
       ],
       "points": 380,
@@ -25393,10 +27179,56 @@
       ],
       "abilities": [
         {
-          "name": "Fated Hero"
+          "name": "Fated Hero",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit and wound against a keyword chosen at the start"
         },
         {
-          "name": "Psychic Guidance"
+          "name": "Psychic Guidance",
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-psyker"
+                }
+              ]
+            },
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a Psyker (12\"): +1 BS and WS, Ld 6+"
         }
       ],
       "points": 125,
@@ -25770,7 +27602,14 @@
       ],
       "abilities": [
         {
-          "name": "Horrify (Psychic)"
+          "name": "Horrify (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         }
       ],
       "points": 160,
@@ -25987,13 +27826,40 @@
           "name": "Leader"
         },
         {
-          "name": "Overlord"
+          "name": "Overlord",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: re-roll 1s to wound, all of them while below Starting Strength"
         },
         {
-          "name": "Reborn Mastermind"
+          "name": "Reborn Mastermind",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
-          "name": "Shadow Field"
+          "name": "Shadow Field",
+          "summary": "Its invulnerable save cannot be re-rolled and is lost on the first failure"
         }
       ],
       "points": 85,
@@ -26167,7 +28033,14 @@
       ],
       "abilities": [
         {
-          "name": "Tormentors"
+          "name": "Tormentors",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: engaged enemies test for Battle-shock"
         }
       ],
       "points": 80,
@@ -26490,10 +28363,19 @@
       ],
       "abilities": [
         {
-          "name": "Sadistic Raiders"
+          "name": "Sadistic Raiders",
+          "summary": "An objective it holds as your Command phase ends stays yours until the enemy out-controls it"
         },
         {
-          "name": "Phantasm Grenade Launcher"
+          "name": "Phantasm Grenade Launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Grenades",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has the Grenades keyword"
         }
       ],
       "points": 110,
@@ -26756,7 +28638,15 @@
       ],
       "abilities": [
         {
-          "name": "Aethersails"
+          "name": "Aethersails",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         }
       ],
       "points": 70,
@@ -27001,7 +28891,15 @@
       ],
       "abilities": [
         {
-          "name": "Eviscerating Fly-by"
+          "name": "Eviscerating Fly-by",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over infantry: a D6 per model, each 4+ a mortal wound"
         }
       ],
       "points": 65,
@@ -27245,10 +29143,35 @@
       ],
       "abilities": [
         {
-          "name": "Empowered by Death"
+          "name": "Empowered by Death",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Below Starting Strength: Fights First"
         },
         {
-          "name": "Storm of Blades"
+          "name": "Storm of Blades",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
           "name": "Leader"
@@ -27428,7 +29351,8 @@
       ],
       "abilities": [
         {
-          "name": "Lithe Embarkation"
+          "name": "Lithe Embarkation",
+          "summary": "End of the Fight phase: a small unit wholly 6\" or closer embarks, even after leaving"
         }
       ],
       "points": 65,
@@ -27617,7 +29541,15 @@
       ],
       "abilities": [
         {
-          "name": "No Escape"
+          "name": "No Escape",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         }
       ],
       "points": 90,
@@ -27762,16 +29694,38 @@
       ],
       "abilities": [
         {
-          "name": "Herald of Ynnead"
+          "name": "Herald of Ynnead",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Fight phase: friendly Aeldari re-roll 1s to wound one engaged enemy"
         },
         {
-          "name": "Word of the Phoenix (Psychic)"
+          "name": "Word of the Phoenix (Psychic)",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3+1",
+              "target": "self"
+            }
+          ],
+          "summary": "Leading, Command phase: D3+1 Bodyguard models return on a 2+"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Servant of the Whispering God"
+          "name": "Servant of the Whispering God",
+          "summary": "Excludes Epic Heroes other than Ynnari from its army"
         }
       ],
       "points": 90,
@@ -27830,11 +29784,73 @@
   "armyRules": [
     {
       "id": "battle-focus",
-      "name": "Battle Focus"
+      "name": "Battle Focus",
+      "options": [
+        {
+          "name": "Swift as the Wind: +2\" Move",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Flitting Shadows: no Fire Overwatch against it",
+          "modifiers": []
+        },
+        {
+          "name": "Star Engines: Vehicles gain Assault after Advancing",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sudden Strike: pile in and consolidate 6\"",
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Opportunity Seized: a D6+1\" move when a foe Falls Back",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6+1",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "name": "Fade Back: a D6+1\" move after being shot",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6+1",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "summary": "Each battle round, 2-6 Battle Focus tokens buy Agile Manoeuvres: extra move, no Overwatch, Assault, longer pile-ins, evasion"
     },
     {
       "id": "disparate-paths",
-      "name": "Disparate Paths"
+      "name": "Disparate Paths",
+      "summary": "Harlequins can join an Asuryani army"
     }
   ],
   "detachments": [
@@ -27848,7 +29864,27 @@
       "rules": [
         {
           "id": "skilled-crews",
-          "name": "Skilled Crews"
+          "name": "Skilled Crews",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Aeldari",
+              "Vehicle"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Vehicles’ ranged weapons gain Assault"
         }
       ],
       "enhancements": [
@@ -27865,7 +29901,28 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible Vehicle 6\" or closer gets +1 to hit"
         },
         {
           "id": "spirit-stone-of-raelyth",
@@ -27880,7 +29937,32 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            },
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Lone Operative beside a Vehicle; moving, heals a Vehicle 3\" or closer D3 wounds"
         }
       ]
     },
@@ -27895,7 +29977,38 @@
       "rules": [
         {
           "id": "path-of-the-warrior",
-          "name": "Path of the Warrior"
+          "name": "Path of the Warrior",
+          "options": [
+            {
+              "name": "Re-roll 1s to hit",
+              "modifiers": [
+                {
+                  "key": "reroll-hit",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            },
+            {
+              "name": "Re-roll 1s to wound",
+              "modifiers": [
+                {
+                  "key": "reroll-wound",
+                  "value": 1,
+                  "target": "self"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Aspect Warriors",
+              "Avatar of Khaine"
+            ],
+            "noneOf": []
+          },
+          "summary": "Aspect Warriors and the Avatar re-roll 1s to hit or 1s to wound when they shoot or fight"
         }
       ],
       "enhancements": [
@@ -27914,7 +30027,29 @@
               "Autarch Wayleaper"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee Damage and Precision"
         },
         {
           "id": "mantle-of-wisdom",
@@ -27931,7 +30066,20 @@
               "Autarch"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading Aspect Warriors: both Path of the Warrior re-rolls"
         },
         {
           "id": "shimmerstone",
@@ -27948,7 +30096,23 @@
               "Autarch"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading Aspect Warriors: ranged attacks against them get -1 to wound"
         },
         {
           "id": "strategic-savant",
@@ -27965,7 +30129,15 @@
               "Autarch"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading Aspect Warriors: +1 OC"
         }
       ]
     },
@@ -27979,11 +30151,20 @@
       "rules": [
         {
           "id": "relentless-raiders",
-          "name": "Relentless Raiders"
+          "name": "Relentless Raiders",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies moving onto your objectives take D3 mortal wounds on 2+; Anhrathe keep objectives they leave"
         },
         {
           "id": "veterans-of-the-void",
-          "name": "Veterans of the Void"
+          "name": "Veterans of the Void",
+          "summary": "Each Anhrathe unit may buy one unique Corsair Enhancement"
         }
       ],
       "enhancements": [
@@ -28000,7 +30181,15 @@
               "Character"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an enemy Stratagem on a unit 12\" or closer costs 1CP more"
         },
         {
           "id": "infamy",
@@ -28014,7 +30203,15 @@
               "Anhrathe"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 3\" or closer get -1 OC"
         },
         {
           "id": "voidstone",
@@ -28029,7 +30226,15 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "5+ invulnerable save"
         },
         {
           "id": "webway-pathstone",
@@ -28043,7 +30248,14 @@
               "Anhrathe"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike; once per battle, back into Strategic Reserves"
         }
       ]
     },
@@ -28057,7 +30269,19 @@
       "rules": [
         {
           "id": "strength-from-death",
-          "name": "Strength from Death"
+          "name": "Strength from Death",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Ynnari move after losses, surge when Fading Back, and one weakened unit Fights First; Yvraine or the Yncarne leads"
         }
       ],
       "enhancements": [
@@ -28073,7 +30297,20 @@
               "Archon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 melee Attacks"
         },
         {
           "id": "gaze-of-ynnead",
@@ -28087,7 +30324,19 @@
               "Farseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Its Eldritch Storm gains Devastating Wounds"
         },
         {
           "id": "morbid-might",
@@ -28101,7 +30350,20 @@
               "Succubus"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds in melee"
         },
         {
           "id": "storm-of-whispers",
@@ -28115,7 +30377,14 @@
               "Warlock"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         }
       ]
     },
@@ -28128,12 +30397,33 @@
       ],
       "rules": [
         {
-          "id": "yriels-own",
-          "name": "Yriel’s Own"
+          "id": "veterans-of-the-void",
+          "name": "Veterans of the Void",
+          "summary": "Each Anhrathe unit may buy one unique Corsair Enhancement"
         },
         {
-          "id": "veterans-of-the-void",
-          "name": "Veterans of the Void"
+          "id": "yriels-own",
+          "name": "Yriel’s Own",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "reroll-advance",
+              "target": "self",
+              "keywords": {
+                "allOf": [],
+                "anyOf": [
+                  "Anhrathe",
+                  "Rangers",
+                  "Shroud Runners"
+                ],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Charge after Advancing; Anhrathe, Rangers and Shroud Runners re-roll Advances"
         }
       ],
       "enhancements": [
@@ -28150,7 +30440,8 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Fades Back for free, even if others have"
         },
         {
           "id": "alacritous-assault",
@@ -28164,7 +30455,23 @@
               "Anhrathe"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Melee weapons gain Lance"
         },
         {
           "id": "exotic-munitions",
@@ -28178,7 +30485,38 @@
               "Anhrathe"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Ranged weapons gain Anti-Monster 5+ and Anti-Vehicle 5+"
         },
         {
           "id": "pirate-prince",
@@ -28192,7 +30530,8 @@
               "Prince Yriel"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Each Battle Focus token spent on it comes back on a 3+"
         }
       ]
     },
@@ -28207,7 +30546,8 @@
       "rules": [
         {
           "id": "acrobatic-onslaught",
-          "name": "Acrobatic Onslaught"
+          "name": "Acrobatic Onslaught",
+          "summary": "Harlequins charge through enemy models"
         }
       ],
       "enhancements": [
@@ -28224,7 +30564,14 @@
               "Troupe Master"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit re-rolls charges"
         },
         {
           "id": "mistweave",
@@ -28239,7 +30586,14 @@
               "Shadowseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Infiltrators"
         }
       ]
     },
@@ -28254,7 +30608,8 @@
       "rules": [
         {
           "id": "acrobatic-onslaught",
-          "name": "Acrobatic Onslaught"
+          "name": "Acrobatic Onslaught",
+          "summary": "Harlequins charge through enemy models; Troupes are Battleline with OC 2"
         }
       ],
       "enhancements": [
@@ -28270,7 +30625,15 @@
               "Troupe Master"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 6,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: a D6 per engaged model, each 4+ a mortal wound (6 at most)"
         },
         {
           "id": "mask-of-secrets",
@@ -28284,7 +30647,15 @@
               "Harlequins"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry Falling Back from it take Desperate Escape tests (-1 if Battle-shocked)"
         },
         {
           "id": "mistweave",
@@ -28298,7 +30669,14 @@
               "Shadowseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Infiltrators"
         },
         {
           "id": "murders-jest",
@@ -28312,7 +30690,20 @@
               "Death Jester"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Every hit is critical against units Below Half-strength"
         }
       ]
     },
@@ -28326,7 +30717,40 @@
       "rules": [
         {
           "id": "defend-at-all-costs",
-          "name": "Defend At All Costs"
+          "name": "Defend At All Costs",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [],
+            "anyOf": [
+              "Dire Avengers",
+              "Guardians",
+              "Support Weapon",
+              "War Walkers"
+            ],
+            "noneOf": []
+          },
+          "summary": "Guardians, Avengers, platforms and War Walkers get +1 to hit when they or the target hold an objective"
         }
       ],
       "enhancements": [
@@ -28342,7 +30766,8 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leading Storm Guardians: re-roll flamer Attacks and fusion Damage"
         },
         {
           "id": "craftworlds-champion",
@@ -28356,7 +30781,8 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "OC 5"
         },
         {
           "id": "ethereal-pathway",
@@ -28370,7 +30796,21 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Guardians"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Up to two Guardians units gain Infiltrators"
         },
         {
           "id": "protector-of-the-paths",
@@ -28384,7 +30824,20 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Leading: once per battle round, free Fire Overwatch hitting on 5+ (4+ on your objective)"
         }
       ]
     },
@@ -28398,7 +30851,8 @@
       "rules": [
         {
           "id": "far-reaching-doom",
-          "name": "Far-reaching Doom"
+          "name": "Far-reaching Doom",
+          "summary": "Shooting Rangers and Shroud Runners give enemies +6\" detection range"
         }
       ],
       "enhancements": [
@@ -28419,7 +30873,24 @@
               "Shroud Runners"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Character"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP when shooting Characters"
         },
         {
           "id": "camouflaged-snipers",
@@ -28434,7 +30905,8 @@
               "Rangers"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its shooting does not stop it from being hidden"
         }
       ]
     },
@@ -28448,7 +30920,8 @@
       "rules": [
         {
           "id": "strands-of-fate",
-          "name": "Strands of Fate"
+          "name": "Strands of Fate",
+          "summary": "Roll 3-9 Fate dice at the start; spending the matching value makes a Seer Council Stratagem 1CP cheaper"
         }
       ],
       "enhancements": [
@@ -28465,7 +30938,8 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: nudges one Fate die by 1"
         },
         {
           "id": "runes-of-warding",
@@ -28480,7 +30954,20 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit: Feel No Pain 4+ against mortal wounds, Psychic attacks and Devastating Wounds"
         },
         {
           "id": "stone-of-eldritch-fury",
@@ -28495,7 +30982,8 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+12\" range for its ranged Psychic weapons"
         },
         {
           "id": "torc-of-morai-heg",
@@ -28510,7 +30998,15 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an enemy Stratagem on a unit 12\" or closer costs 1CP more"
         }
       ]
     },
@@ -28525,7 +31021,42 @@
       "rules": [
         {
           "id": "boons-of-the-brood",
-          "name": "Boons of the Brood"
+          "name": "Boons of the Brood",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Harlequins"
+                ],
+                "anyOf": [
+                  "Mounted",
+                  "Vehicle"
+                ],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Harlequins"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Mounted and Vehicle Harlequins, and those just disembarked, gain Sustained Hits 1; Troupes are Battleline"
         }
       ],
       "enhancements": [
@@ -28541,7 +31072,8 @@
               "Death Jester"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Its Cruel Amusement picks two abilities"
         },
         {
           "id": "key-of-ghosts",
@@ -28557,7 +31089,15 @@
           ],
           "excludes": [
             "Solitaire"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Scouts 6\""
         },
         {
           "id": "shedskin-raiment",
@@ -28571,7 +31111,8 @@
               "Shadowseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "After deployment, redeploy up to three Harlequins units, even into Strategic Reserves"
         },
         {
           "id": "weavers-wail",
@@ -28585,7 +31126,30 @@
               "Troupe Master"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+3 S and +1 A in melee"
         }
       ]
     },
@@ -28599,7 +31163,37 @@
       "rules": [
         {
           "id": "shepherds-of-the-dead",
-          "name": "Shepherds of the Dead"
+          "name": "Shepherds of the Dead",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Wraith Construct"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Killers of your Psykers are marked: Wraith Constructs get +1 to hit and wound them; Wraithblades and guard are Battleline"
         }
       ],
       "enhancements": [
@@ -28615,7 +31209,15 @@
               "Spiritseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move"
         },
         {
           "id": "light-of-clarity",
@@ -28629,7 +31231,23 @@
               "Spiritseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Wraith Construct"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Wraith Construct unit 12\" or closer gets +1 OC (+3 for Monsters)"
         },
         {
           "id": "rune-of-mists",
@@ -28643,7 +31261,27 @@
               "Spiritseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Wraith Construct"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Command phase: a Wraith Construct unit 12\" or closer has cover beyond 18\""
         },
         {
           "id": "stave-of-kurnous",
@@ -28657,7 +31295,8 @@
               "Spiritseer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Command phase: a Wraith Construct unit 12\" or closer gains Precision on critical wounds"
         }
       ]
     },
@@ -28672,7 +31311,21 @@
       "rules": [
         {
           "id": "dance-of-distortion",
-          "name": "Dance of Distortion"
+          "name": "Dance of Distortion",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Harlequins"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Harlequins have Stealth"
         }
       ],
       "enhancements": [
@@ -28688,7 +31341,15 @@
               "Harlequins"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Scouts 6\""
         },
         {
           "id": "shadowfall-masks",
@@ -28703,7 +31364,14 @@
               "Troupe"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self"
+            }
+          ],
+          "summary": "Fights First"
         }
       ]
     },
@@ -28717,7 +31385,8 @@
       "rules": [
         {
           "id": "martial-grace",
-          "name": "Martial Grace"
+          "name": "Martial Grace",
+          "summary": "One more Battle Focus token each round; Swift as the Wind gives +1\" more and manoeuvre dice get +1"
         }
       ],
       "enhancements": [
@@ -28733,7 +31402,15 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Command Re-roll on its unit costs 0CP"
         },
         {
           "id": "phoenix-gem",
@@ -28747,7 +31424,8 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "First death: on a 2+ returns whole once the phase ends"
         },
         {
           "id": "psychic-destroyer",
@@ -28762,7 +31440,20 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 Damage for its ranged Psychic weapons"
         },
         {
           "id": "timeless-strategist",
@@ -28776,7 +31467,8 @@
               "Asuryani"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "One more Battle Focus token each battle round"
         }
       ]
     },
@@ -28790,7 +31482,24 @@
       "rules": [
         {
           "id": "ride-the-wind",
-          "name": "Ride the Wind"
+          "name": "Ride the Wind",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Asuryani"
+            ],
+            "anyOf": [
+              "Mounted",
+              "Vyper"
+            ],
+            "noneOf": []
+          },
+          "summary": "Mounted and Vypers arrive from Reserves a round early and can go back each enemy turn; Windriders are Battleline"
         }
       ],
       "enhancements": [
@@ -28807,7 +31516,15 @@
               "Mounted"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: +1CP on 5+, better outside your zone"
         },
         {
           "id": "firstdrawn-blade",
@@ -28822,7 +31539,15 @@
               "Mounted"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "scouts",
+              "value": 9,
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Scouts 9\""
         },
         {
           "id": "mirage-field",
@@ -28837,7 +31562,15 @@
               "Mounted"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Attacks against its unit get -1 to hit"
         },
         {
           "id": "seersight-strike",
@@ -28853,7 +31586,38 @@
               "Psyker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "psychic"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Psychic weapons gain Anti-Monster 2+ and Anti-Vehicle 2+"
         }
       ]
     }
@@ -28881,7 +31645,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Wraithblades",
+          "Wraithlord",
+          "Wraithknight"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Devastating Wounds in melee this phase"
     },
     {
       "id": "blades-of-asuryan",
@@ -28893,7 +31678,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Dire Avengers",
+          "Guardians"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "pistol",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Pistol this phase"
     },
     {
       "id": "blitzing-firepower",
@@ -28905,7 +31710,31 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-within",
+              "value": 12
+            }
+          ]
+        }
+      ],
+      "summary": "Sustained Hits 1 against targets 12\" or closer (crits on 5+ if it had it)"
     },
     {
       "id": "bloody-dance",
@@ -28917,7 +31746,19 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
+        "noneOf": []
+      },
+      "summary": "End of the enemy Charge phase: charges a nearby enemy, without the charge bonus"
     },
     {
       "id": "captivating-performance",
@@ -28928,7 +31769,16 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Troupe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "An objective it controls is secured"
     },
     {
       "id": "casting-back-the-veil",
@@ -28939,7 +31789,17 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Rangers",
+          "Shroud Runners"
+        ],
+        "noneOf": []
+      },
+      "summary": "One unit it hit gets +6\" detection range"
     },
     {
       "id": "cloak-and-shadow",
@@ -28951,7 +31811,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Aeldari",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        }
+      ],
+      "summary": "On your objective: Stealth, and only shot from 18\" or closer"
     },
     {
       "id": "cloudstrike",
@@ -28975,7 +31851,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Guardians"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: into Strategic Reserves with all its fallen Guardians back"
     },
     {
       "id": "crushing-strides",
@@ -28987,7 +31878,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "after-own-action",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Wraithblades",
+          "Wraithlord",
+          "Wraithknight"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: dice per model (4 for a Wraithlord, 6 for a Wraithknight), each 3+ a mortal wound"
     },
     {
       "id": "daring-riders",
@@ -28999,7 +31908,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vyper"
+        ],
+        "noneOf": []
+      },
+      "summary": "Arrives 6\" from enemies (no charge if 8\" or closer)"
     },
     {
       "id": "death-answers-death",
@@ -29011,7 +31932,18 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Ynnari"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "summary": "Lost models this phase: shoots back at once"
     },
     {
       "id": "death-from-on-high",
@@ -29024,7 +31956,30 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vyper"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "arrived-this-turn"
+            }
+          ]
+        }
+      ],
+      "summary": "Arrived this turn: re-roll wounds this phase"
     },
     {
       "id": "deceptive-feint",
@@ -29036,14 +31991,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
+      "trigger": "enemy-moved",
       "target": {
         "allOf": [
-          "HARLEQUINS",
-          "INFANTRY"
+          "Harlequins",
+          "Infantry"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move nearby: a D3+3\" Normal move"
     },
     {
       "id": "doom-inescapable",
@@ -29055,7 +32019,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Avatar of Khaine"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its Wailing Doom has 18\" range and Damage 8 this phase"
     },
     {
       "id": "eldritch-suppression",
@@ -29066,7 +32038,23 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Rangers",
+          "Shroud Runners"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "One unit it hit tests Battle-shock (-1 if it lost a model)"
     },
     {
       "id": "emissaries-of-ynnead",
@@ -29078,7 +32066,34 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Ynnari",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "below-starting-strength"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit, all of them while below Starting Strength"
     },
     {
       "id": "exit-the-stage",
@@ -29089,7 +32104,22 @@
         "fight"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "exit-the-stage-2",
@@ -29101,7 +32131,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "fangs-of-the-brood",
@@ -29113,7 +32158,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "target": {
+        "allOf": [
+          "Troupe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Its Dance of Death picks all three abilities"
     },
     {
       "id": "fate-inescapable",
@@ -29125,7 +32178,29 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Near a Psyker (9\"): Ignores Cover, and critical wounds get +1 AP"
     },
     {
       "id": "feigned-retreat",
@@ -29137,7 +32212,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "fire-and-fade",
@@ -29149,7 +32243,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6+1",
+          "target": "self"
+        }
+      ],
+      "summary": "After shooting: a D6+1\" Normal move, then no charge or embarking"
     },
     {
       "id": "focused-firepower",
@@ -29161,7 +32271,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vyper"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 AP when shooting this phase"
     },
     {
       "id": "forewarned",
@@ -29173,7 +32306,31 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        },
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Near a Psyker (9\"): -1 to hit and to wound it this phase"
     },
     {
       "id": "heroes-fall",
@@ -29184,7 +32341,28 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+"
     },
     {
       "id": "heroes-fall-2",
@@ -29196,7 +32374,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+"
     },
     {
       "id": "impeding-fire",
@@ -29208,7 +32407,25 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "start-of-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Rangers",
+          "Shroud Runners",
+          "Starfangs"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "charge",
+          "value": -2,
+          "target": "enemy"
+        }
+      ],
+      "summary": "A visible non-Titanic enemy 36\" or closer gets -2 to charge this phase"
     },
     {
       "id": "into-the-breach",
@@ -29220,7 +32437,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "unit-destroyed",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Anhrathe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6+1",
+          "target": "self"
+        }
+      ],
+      "summary": "After shooting: a D6+1\" Normal move"
     },
     {
       "id": "ishas-fury",
@@ -29232,7 +32465,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "enemy-moved",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "6D6",
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy ends a move 9\" or closer: six D6, each 3+ a mortal wound"
     },
     {
       "id": "khaines-vengeance",
@@ -29244,7 +32494,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-falls-back",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aspect Warriors",
+          "Avatar of Khaine"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "desperate-escape",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy Falling Back from it takes Desperate Escape tests (-1 if Battle-shocked)"
     },
     {
       "id": "layered-wards",
@@ -29260,7 +32527,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Aeldari",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 5+ against mortal wounds"
     },
     {
       "id": "lethal-ruse",
@@ -29272,7 +32559,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-falls-back",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Aeldari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still charge; Anhrathe also roll six D6 for mortal wounds on 4+"
     },
     {
       "id": "lightning-fast-reactions",
@@ -29285,7 +32587,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to hit this phase"
     },
     {
       "id": "macabre-resilience",
@@ -29298,7 +32618,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Ynnari"
+        ],
+        "anyOf": [
+          "Infantry",
+          "Mounted"
+        ],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to wound this phase"
     },
     {
       "id": "mocking-flight",
@@ -29310,7 +32651,26 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "no-prey-too-big",
@@ -29322,7 +32682,29 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Anhrathe",
+          "Rangers",
+          "Shroud Runners"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "strength-below-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound when weaker than the target’s Toughness"
     },
     {
       "id": "nomads-of-the-hidden-way",
@@ -29333,7 +32715,24 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Rangers",
+          "Shroud Runners"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "After shooting: a D6\" Normal move, then no charge or embarking"
     },
     {
       "id": "outcast-ambush",
@@ -29345,7 +32744,50 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Rangers",
+          "Shroud Runners"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "half-range"
+            }
+          ]
+        },
+        {
+          "key": "AP",
+          "value": -1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ignores Cover, Rapid Fire 1 and +1 AP when shooting"
     },
     {
       "id": "overflight",
@@ -29358,7 +32800,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Mounted"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 7,
+          "target": "self"
+        }
+      ],
+      "summary": "Destroyed a unit: a 7\" Normal move"
     },
     {
       "id": "pall-of-dread",
@@ -29374,7 +32833,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Ynnari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Destroyed on a held objective: it stays yours until the enemy out-controls it"
     },
     {
       "id": "parting-the-veil",
@@ -29386,7 +32853,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Ynnari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "2+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: always fights back"
     },
     {
       "id": "phantasmal-mirage",
@@ -29397,7 +32885,24 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Harlequins",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "After shooting: a D6\" Normal move, then no charge"
     },
     {
       "id": "pirates-due",
@@ -29409,7 +32914,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Aeldari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Re-roll 1s to wound (Anhrathe: all of them against units on objectives)"
     },
     {
       "id": "presaged-rehearsal",
@@ -29420,7 +32940,31 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Troupe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Melee weapons gain Lance"
     },
     {
       "id": "presentiment-of-dread",
@@ -29432,7 +32976,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "A visible enemy 18\" or closer tests Battle-shock at -1"
     },
     {
       "id": "preternatural-precision",
@@ -29444,7 +33004,60 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Aspect Warriors"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "options": [
+        {
+          "name": "Ignores Cover",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lethal Hits",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sustained Hits 1",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "One of Ignores Cover, Lethal Hits or Sustained Hits 1 (two by spending a Shrine token)"
     },
     {
       "id": "psychic-shield",
@@ -29456,7 +33069,19 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "summary": "Near a Psyker (9\"): only shot from 18\" or closer this phase"
     },
     {
       "id": "raiders-spoils",
@@ -29468,7 +33093,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Anhrathe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "OC",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Engaged: +1 OC until the next Command phase"
     },
     {
       "id": "ruthless-killers",
@@ -29481,7 +33121,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Corsair Voidscarred"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "D",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 Damage this phase"
     },
     {
       "id": "seers-eye",
@@ -29494,7 +33149,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Wraith Construct"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Against one enemy: ignores AP and Damage modifiers this phase"
     },
     {
       "id": "shield-nodes",
@@ -29507,7 +33170,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Dire Avengers",
+          "Guardians"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "on-objective"
+            }
+          ]
+        }
+      ],
+      "summary": "On an objective: attacks against it get -1 to wound"
     },
     {
       "id": "skyborne-sanctuary",
@@ -29519,7 +33204,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "End of the Fight phase: embarks in a Transport wholly 6\" or closer"
     },
     {
       "id": "skyborne-sanctuary-2",
@@ -29531,7 +33225,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "End of the Fight phase: embarks in a Transport wholly 6\" or closer"
     },
     {
       "id": "skyward-lunge",
@@ -29543,7 +33246,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [
+          "Vehicle",
+          "Mounted"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: back into Strategic Reserves"
     },
     {
       "id": "soul-bridge",
@@ -29555,7 +33275,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Wraithblades",
+          "Wraithguard",
+          "Wraithlord"
+        ],
+        "noneOf": []
+      },
+      "summary": "Counts as near its Psyker for guidance until your next Command phase"
     },
     {
       "id": "soulsight",
@@ -29567,7 +33297,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Aeldari",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "When shooting: one hit, one wound and one Damage roll may be re-rolled"
     },
     {
       "id": "soulsight-2",
@@ -29579,7 +33318,35 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Ynnari"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "lethal-hits",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "ignores-cover",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Lethal Hits and Ignores Cover when shooting"
     },
     {
       "id": "spiralling-evasion",
@@ -29591,7 +33358,26 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vyper"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "4+ invulnerable save this phase"
     },
     {
       "id": "spirit-token",
@@ -29603,7 +33389,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Wraithblades",
+          "Wraithguard"
+        ],
+        "noneOf": []
+      },
+      "summary": "Its objective stays yours until the enemy out-controls it"
     },
     {
       "id": "staged-death",
@@ -29619,7 +33415,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Harlequins",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per model: a slain Character returns with half its wounds"
     },
     {
       "id": "striking-stride",
@@ -29631,7 +33436,20 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Harlequins"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can charge after Advancing this phase"
     },
     {
       "id": "swift-deployment",
@@ -29655,7 +33473,30 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Storm Guardians"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance",
+          "value": 6,
+          "target": "self"
+        },
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Advances a flat 6\", and can still shoot and charge"
     },
     {
       "id": "to-their-final-breath",
@@ -29667,7 +33508,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aspect Warriors",
+          "Avatar of Khaine"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+ (+1 for a Shrine token)"
     },
     {
       "id": "tricksters-retort",
@@ -29679,7 +33542,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Troupe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move"
     },
     {
       "id": "unshrouded-truth",
@@ -29691,7 +33570,28 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        },
+        {
+          "key": "ingress",
+          "target": "self"
+        }
+      ],
+      "summary": "Near a Psyker (9\"): blinks into Strategic Reserves and back by ingress"
     },
     {
       "id": "vauls-vengeance",
@@ -29704,7 +33604,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "War Walkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle round: shoots back at a unit that just attacked"
     },
     {
       "id": "vectored-engines",
@@ -29716,7 +33624,25 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Aeldari",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Its move does not stop it from shooting"
     },
     {
       "id": "vengeful-sorrow",
@@ -29728,7 +33654,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-enemy-attacks",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Aeldari",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "surge-move",
+          "value": "D6+1",
+          "target": "self"
+        }
+      ],
+      "summary": "Lost models to shooting: a D6+1\" surge move"
     },
     {
       "id": "venomous-wrath",
@@ -29740,7 +33683,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "target": {
+        "allOf": [
+          "Harlequins",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "After shooting: a 6\" Normal move, then no charge"
     },
     {
       "id": "warding-salvoes",
@@ -29753,7 +33711,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Dire Avengers",
+          "Guardians"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-on-objective"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll wounds against units on objectives this phase"
     },
     {
       "id": "warrior-focus",
@@ -29766,7 +33745,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [],
+        "anyOf": [
+          "Aspect Warriors",
+          "Avatar of Khaine"
+        ],
+        "noneOf": []
+      },
+      "summary": "Ignores BS, WS, S, AP, Damage and hit modifiers this phase"
     },
     {
       "id": "weavers-coils",
@@ -29778,7 +33766,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "target": {
+        "allOf": [
+          "Harlequins",
+          "Mounted"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the Fight phase: a Normal move, or a 6\" Fall Back if engaged"
     },
     {
       "id": "weaving-stride",
@@ -29790,7 +33793,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "target": {
+        "allOf": [
+          "Harlequins",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move"
     },
     {
       "id": "webway-tunnel",
@@ -29802,7 +33821,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Wholly 9\" or closer to an edge, unengaged: back into Strategic Reserves"
     },
     {
       "id": "wind-of-blades",
@@ -29814,7 +33849,36 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Asuryani"
+        ],
+        "anyOf": [
+          "Mounted",
+          "Vyper"
+        ],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Shoots and charges after Advancing or Falling Back this turn"
     },
     {
       "id": "withdraw-and-reinforce",
@@ -29826,7 +33890,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Anhrathe"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "Unengaged: into Strategic Reserves with all its fallen models back"
     },
     {
       "id": "wraithbone-armour",
@@ -29839,7 +33918,25 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Wraith Construct"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Titanic"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to it this phase"
     },
     {
       "id": "yriels-example",
@@ -29851,7 +33948,26 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Aeldari",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Wraith Construct"
+        ]
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Feel No Pain 5+ this phase"
     }
   ]
 }

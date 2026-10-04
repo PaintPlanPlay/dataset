@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "grey-knights",
   "name": "Grey Knights",
@@ -120,10 +120,58 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 785,
@@ -335,10 +383,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         }
       ],
       "points": 725,
@@ -1105,13 +1191,44 @@
       ],
       "abilities": [
         {
-          "name": "Death to the Alien"
+          "name": "Death to the Alien",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Imperium"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Chaos"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against non-Imperium, non-Chaos units"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Astartes shield"
+          "name": "Astartes shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 110,
@@ -1477,10 +1594,41 @@
       ],
       "abilities": [
         {
-          "name": "Suppression Protocols"
+          "name": "Suppression Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -1694,10 +1842,45 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 150,
@@ -1955,10 +2138,49 @@
       ],
       "abilities": [
         {
-          "name": "Impetuous Glory"
+          "name": "Impetuous Glory",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +1 Attack for the cleaver’s strike, +2 for its sweep"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -3 OC while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -2397,10 +2619,30 @@
           "name": "Leader"
         },
         {
-          "name": "Hammerhand (Psychic)"
+          "name": "Hammerhand (Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits in melee"
         },
         {
-          "name": "Eye of Judgement (Psychic)"
+          "name": "Eye of Judgement (Psychic)",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll wounds"
         }
       ],
       "points": 100,
@@ -2578,10 +2820,12 @@
           "name": "Leader"
         },
         {
-          "name": "Exemplar of the Silvered Host"
+          "name": "Exemplar of the Silvered Host",
+          "summary": "Leading: critical wounds in melee add a mortal wound"
         },
         {
-          "name": "Strands of Fate (Psychic)"
+          "name": "Strands of Fate (Psychic)",
+          "summary": "First death: on a 2+ he returns whole once the phase ends"
         }
       ],
       "points": 90,
@@ -2710,10 +2954,25 @@
           "name": "Leader"
         },
         {
-          "name": "Clarion of Haste (Psychic)"
+          "name": "Clarion of Haste (Psychic)",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: can charge after Advancing"
         },
         {
-          "name": "Inspiring Exemplar"
+          "name": "Inspiring Exemplar",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Kills a Character in melee: +1CP and +1 Attack for its force weapon for good"
         }
       ],
       "points": 75,
@@ -2836,13 +3095,21 @@
       ],
       "abilities": [
         {
-          "name": "Zealous Path"
+          "name": "Zealous Path",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll charge rolls"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Litanies of Sanctity"
+          "name": "Litanies of Sanctity",
+          "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock"
         }
       ],
       "points": 70,
@@ -3009,13 +3276,27 @@
       ],
       "abilities": [
         {
-          "name": "Haloed in Soulfire (Psychic)"
+          "name": "Haloed in Soulfire (Psychic)",
+          "summary": "Leading: its unit can only be shot from 18\" or closer"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Sanctic Hood"
+          "name": "Sanctic Hood",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Feel No Pain 4+ against Psychic attacks"
         }
       ],
       "points": 95,
@@ -3226,13 +3507,66 @@
           "name": "Leader"
         },
         {
-          "name": "Guardians of the Machine"
+          "name": "Guardians of the Machine",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy charges a nearby Vehicle: Heroic Intervention on it costs 1CP less"
         },
         {
-          "name": "Blessing of the Omnissiah"
+          "name": "Blessing of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "range": 3,
+              "keywords": {
+                "allOf": [
+                  "Vehicle"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Command phase: a Vehicle 3\" or closer regains up to D3 wounds and gets +1 to hit"
         },
         {
-          "name": "Techmarine"
+          "name": "Techmarine",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a friendly Vehicle (3\"): Lone Operative"
         }
       ],
       "points": 75,
@@ -3435,13 +3769,50 @@
       ],
       "abilities": [
         {
-          "name": "Force Edge (Psychic)"
+          "name": "Force Edge (Psychic)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP in melee against non-Monster, non-Vehicle units"
         },
         {
-          "name": "Ancient's Banner"
+          "name": "Ancient's Banner",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         },
         {
-          "name": "Apothecary's narthecium"
+          "name": "Apothecary's narthecium",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns one destroyed model"
         }
       ],
       "points": 150,
@@ -3735,16 +4106,27 @@
       ],
       "abilities": [
         {
-          "name": "Reign of Confusion"
+          "name": "Reign of Confusion",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per turn, an enemy Stratagem within 12\" costs 1CP more"
         },
         {
-          "name": "Acrobatic Escape"
+          "name": "Acrobatic Escape",
+          "summary": "Falls back D6\" after fighting; can vanish into Strategic Reserves and must return next turn"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
-          "name": "Decoy Targets"
+          "name": "Decoy Targets",
+          "summary": "Extremis: twice per battle, swaps places with another friendly Infantry model, which is destroyed"
         }
       ],
       "points": 100,
@@ -3972,13 +4354,50 @@
       ],
       "abilities": [
         {
-          "name": "Chainbreaker"
+          "name": "Chainbreaker",
+          "summary": "Once per battle: frees an Imperium unit 12\" or closer from Battle-shock"
         },
         {
-          "name": "Legendary Freeblade"
+          "name": "Legendary Freeblade",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per turn, a Stratagem on it costs 1CP less"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "Using Sir Hekhtur"
@@ -4141,7 +4560,20 @@
       ],
       "abilities": [
         {
-          "name": "Champion of the Order of Purifiers (Psychic)"
+          "name": "Champion of the Order of Purifiers (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 Attack for Purifying Flame weapons"
         },
         {
           "name": "Foesight (Psychic)"
@@ -4757,13 +5189,50 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Acheron’s Duty (Bondsman)"
+          "name": "Acheron’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: enemies engaged with it test Battle-shock at -1 as the Fight phase starts"
         }
       ],
       "points": 380,
@@ -4958,13 +5427,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Atrapos’ Duty (Bondsman)"
+          "name": "Atrapos’ Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll hits and wounds against Titanic or Towering models"
         }
       ],
       "points": 420,
@@ -5107,13 +5677,73 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Castigator’s Duty (Bondsman)"
+          "name": "Castigator’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1 and +1 AP when shooting"
         }
       ],
       "points": 380,
@@ -5254,13 +5884,56 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Lancer’s Duty (Bondsman)"
+          "name": "Lancer’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "advance-and-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: can charge after Advancing"
         }
       ],
       "points": 415,
@@ -5938,7 +6611,36 @@
       ],
       "abilities": [
         {
-          "name": "Might of Titan"
+          "name": "Might of Titan",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 melee Attacks and Strength"
         },
         {
           "name": "Leader"
@@ -6207,16 +6909,57 @@
       ],
       "abilities": [
         {
-          "name": "Blackstar Cluster Launcher"
+          "name": "Blackstar Cluster Launcher",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 5+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Auspex Array"
+          "name": "Auspex Array",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting"
         },
         {
-          "name": "Infernum Halo-launcher"
+          "name": "Infernum Halo-launcher",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Smoke",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has the Smoke keyword"
         }
       ],
       "points": 180,
@@ -6414,19 +7157,43 @@
       ],
       "abilities": [
         {
-          "name": "Abomination"
+          "name": "Abomination",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 2+ against Psychic attacks"
         },
         {
-          "name": "Soulless Horror"
+          "name": "Soulless Horror",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: enemies within 9\" test Battle-shock at -1 (-2 for Psykers)"
         },
         {
-          "name": "Etheric Emergence"
+          "name": "Etheric Emergence",
+          "summary": "Can Deep Strike 6\" from enemies, then no charge that turn"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
-          "name": "Esoteric Explosives"
+          "name": "Esoteric Explosives",
+          "summary": "Extremis: the Explosives Stratagem on it inflicts mortal wounds on 3+"
         }
       ],
       "points": 85,
@@ -6558,13 +7325,28 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Warding"
+          "name": "Malefic Warding",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by an Inquisitor: 5+ invulnerable save"
         },
         {
-          "name": "Bound Daemon"
+          "name": "Bound Daemon",
+          "summary": "Led by an Inquisitor: OC 1"
         },
         {
-          "name": "Inquisitorial Retinue"
+          "name": "Inquisitorial Retinue",
+          "summary": "Joins an Inquisitor-led Inquisitorial Agents unit; frees a Retinue slot for allies"
         }
       ],
       "points": 40,
@@ -6894,7 +7676,15 @@
       ],
       "abilities": [
         {
-          "name": "Grim Spectres"
+          "name": "Grim Spectres",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests Battle-shock at -1"
         }
       ],
       "points": 90,
@@ -8299,10 +9089,41 @@
       ],
       "abilities": [
         {
-          "name": "Death to the Alien"
+          "name": "Death to the Alien",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Imperium"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Chaos"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against non-Imperium, non-Chaos units"
         },
         {
-          "name": "Astartes shield"
+          "name": "Astartes shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 115,
@@ -8875,16 +9696,25 @@
       ],
       "abilities": [
         {
-          "name": "Terminatus Assault"
+          "name": "Terminatus Assault",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: engaged enemies test for Battle-shock"
         },
         {
-          "name": "Teleport Homer"
+          "name": "Teleport Homer",
+          "summary": "Once per battle, Rapid Ingress for 0CP next to its homer"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Storm shield"
+          "name": "Storm shield",
+          "summary": "The bearer has 4 Wounds"
         }
       ],
       "points": 190,
@@ -9675,10 +10505,110 @@
       ],
       "abilities": [
         {
-          "name": "Surge of Wrath"
+          "name": "Surge of Wrath",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits, wounds and Damage in melee against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 210,
@@ -10833,13 +11763,41 @@
       ],
       "abilities": [
         {
-          "name": "Frenzon"
+          "name": "Frenzon",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shoots and charges after Advancing"
         },
         {
-          "name": "Overkill"
+          "name": "Overkill",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +6\" Move and +3 melee Attacks this turn"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
           "name": "Intra-neural Biotech"
@@ -11123,16 +12081,64 @@
       ],
       "abilities": [
         {
-          "name": "Imperial Law"
+          "name": "Imperial Law",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            },
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits and Precision against one enemy unit chosen at the start"
         },
         {
-          "name": "Nuncio-aquila"
+          "name": "Nuncio-aquila",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: infantry on an objective within 6\" test for Battle-shock"
         },
         {
-          "name": "Arbites medi-kit"
+          "name": "Arbites medi-kit",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 Vigilants"
         },
         {
-          "name": "Soulguilt scanner"
+          "name": "Soulguilt scanner",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots with Ignores Cover"
         }
       ],
       "points": 90,
@@ -11842,7 +12848,20 @@
       ],
       "abilities": [
         {
-          "name": "Fortis Doctrines"
+          "name": "Fortis Doctrines",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units Below Half-strength"
         },
         {
           "name": "Attached Unit"
@@ -12377,13 +13396,50 @@
       ],
       "abilities": [
         {
-          "name": "Might of Titan (Psychic)"
+          "name": "Might of Titan (Psychic)",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 melee Attacks and Strength"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Warrior Strategist"
+          "name": "Warrior Strategist",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         }
       ],
       "points": 100,
@@ -12731,13 +13787,121 @@
       ],
       "abilities": [
         {
-          "name": "Surge of Wrath (Psychic)"
+          "name": "Surge of Wrath (Psychic)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits, wounds and Damage in melee against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         },
         {
-          "name": "Warrior Strategist"
+          "name": "Warrior Strategist",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         }
       ],
       "points": 210,
@@ -13034,10 +14198,35 @@
       ],
       "abilities": [
         {
-          "name": "Sanctuary (Psychic)"
+          "name": "Sanctuary (Psychic)",
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            },
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Stealth, and melee attacks against it get -1 to hit"
         },
         {
-          "name": "Hammer Aflame (Psychic)"
+          "name": "Hammer Aflame (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "When its unit fights: one engaged enemy takes 1 mortal wound on 2-3, D3 on 4-5, D3+3 on a 6"
         },
         {
           "name": "Leader"
@@ -13384,7 +14573,36 @@
       ],
       "abilities": [
         {
-          "name": "Wisdom of the Ancients (Aura)"
+          "name": "Wisdom of the Ancients (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Infantry"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Friendly infantry 6\" or closer re-roll 1s to hit and wound"
         }
       ],
       "points": 160,
@@ -13770,7 +14988,20 @@
       ],
       "abilities": [
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase"
         }
       ],
       "points": 95,
@@ -14024,16 +15255,48 @@
       ],
       "abilities": [
         {
-          "name": "Rites of Teleportation"
+          "name": "Rites of Teleportation",
+          "summary": "Inquisitors attached at deployment gain Deep Strike"
         },
         {
-          "name": "Hammerhand (Psychic)"
+          "name": "Hammerhand (Psychic)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits in melee after charging"
         },
         {
-          "name": "Narthecium"
+          "name": "Narthecium",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns one destroyed model"
         },
         {
-          "name": "Ancient's Banner"
+          "name": "Ancient's Banner",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         }
       ],
       "points": 175,
@@ -14329,13 +15592,41 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Aerial Assault"
+          "name": "Aerial Assault",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Thunderhawk cluster bombs"
+          "name": "Thunderhawk cluster bombs",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound"
         }
       ],
       "points": 805,
@@ -15035,16 +16326,58 @@
       ],
       "abilities": [
         {
-          "name": "Breaching Team"
+          "name": "Breaching Team",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound; every wound roll against units on an objective"
         },
         {
-          "name": "Gheistskull"
+          "name": "Gheistskull",
+          "summary": "Once per battle, Explosives on it reaches an unengaged target within 18\""
         },
         {
-          "name": "CAT Unit"
+          "name": "CAT Unit",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: Ignores Cover when shooting"
         },
         {
-          "name": "Endurant shield"
+          "name": "Endurant shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 90,
@@ -15330,7 +16663,15 @@
       ],
       "abilities": [
         {
-          "name": "Self-repair"
+          "name": "Self-repair",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Regains 1 wound each Command phase"
         }
       ],
       "points": 65,
@@ -15725,13 +17066,37 @@
       ],
       "abilities": [
         {
-          "name": "Indomitor Doctrines"
+          "name": "Indomitor Doctrines",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-starting-strength"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit below Starting Strength, +1 to wound too Below Half-strength"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Jump pack"
+          "name": "Jump pack",
+          "summary": "Move 10\" (12\" for some), over models and terrain"
         }
       ],
       "points": 280,
@@ -15977,16 +17342,41 @@
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Power of the Rosette"
+          "name": "Power of the Rosette",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 3+"
         },
         {
-          "name": "Blessed Wardings"
+          "name": "Blessed Wardings",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 6+ invulnerable save"
         },
         {
-          "name": "Psychic gifts"
+          "name": "Psychic gifts",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Psyker",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer is a Psyker"
         }
       ],
       "points": 55,
@@ -16218,19 +17608,37 @@
       ],
       "abilities": [
         {
-          "name": "Malefic Wardings (Psychic)"
+          "name": "Malefic Wardings (Psychic)",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 6+ invulnerable, 4+ against Psychic and Daemon attacks"
         },
         {
-          "name": "Spy Network"
+          "name": "Spy Network",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each CP your opponent gains from an ability: +1CP for you on a 2+"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Glovodan Psyber-eagle"
+          "name": "Glovodan Psyber-eagle",
+          "summary": "Command phase: an enemy within 18\" loses the benefit of cover until your next one"
         }
       ],
       "points": 75,
@@ -16399,16 +17807,36 @@
       ],
       "abilities": [
         {
-          "name": "Xenos Hunter"
+          "name": "Xenos Hunter",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-not-keyword",
+                  "value": "Imperium"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Chaos"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit against non-Imperium, non-Chaos units"
         },
         {
-          "name": "Psychic Veil (Psychic)"
+          "name": "Psychic Veil (Psychic)",
+          "summary": "Command phase: on 2+ its unit can only be shot from 18\" (D3 mortal wounds on a 1)"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         }
       ],
       "points": 75,
@@ -16580,13 +18008,16 @@
           "name": "Leader"
         },
         {
-          "name": "Malus Codicium"
+          "name": "Malus Codicium",
+          "summary": "Leading: Daemonhosts double their melee Attacks"
         },
         {
-          "name": "Dominate Will (Psychic)"
+          "name": "Dominate Will (Psychic)",
+          "summary": "Enemy Shooting phase: an infantry unit within 12\" gets -1 to hit (2-5) or cannot shoot (6)"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         }
       ],
       "points": 65,
@@ -16751,16 +18182,47 @@
       ],
       "abilities": [
         {
-          "name": "Psyoculum"
+          "name": "Psyoculum",
+          "modifiers": [
+            {
+              "key": "crit-wound",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Psyker"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: ranged weapons gain Anti-Psyker 4+"
         },
         {
-          "name": "No Mercy"
+          "name": "No Mercy",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: +1 to hit against units Below Half-strength"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         }
       ],
       "points": 65,
@@ -16993,16 +18455,41 @@
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Power of the Rosette"
+          "name": "Power of the Rosette",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on its unit: +1CP on a 3+"
         },
         {
-          "name": "Psychic Gifts"
+          "name": "Psychic Gifts",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Psyker",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer is a Psyker"
         },
         {
-          "name": "Blessed Wardings"
+          "name": "Blessed Wardings",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "6+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: 6+ invulnerable save"
         }
       ],
       "points": 70,
@@ -17214,10 +18701,19 @@
       ],
       "abilities": [
         {
-          "name": "Unsubtle Crusader"
+          "name": "Unsubtle Crusader",
+          "summary": "Up to three Agents Infantry units, or one Imperium Battleline unit, gain Scouts 6\""
         },
         {
-          "name": "Throne of Judgement (Aura)"
+          "name": "Throne of Judgement (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Friendly units within 6\": better Ld; enemy units there: worse Ld"
         }
       ],
       "points": 140,
@@ -17378,10 +18874,12 @@
       ],
       "abilities": [
         {
-          "name": "On My Signal, Fire!"
+          "name": "On My Signal, Fire!",
+          "summary": "One unit it hits: Agents and Imperium Battleline re-roll hits against it this phase"
         },
         {
-          "name": "Tox‑cycler"
+          "name": "Tox‑cycler",
+          "summary": "Once it hits, the Jindarii tox-cycler keeps +2 S and D (max D6) all battle"
         }
       ],
       "points": 100,
@@ -17551,19 +19049,30 @@
       ],
       "abilities": [
         {
-          "name": "Ward Against the Malefic Arts"
+          "name": "Ward Against the Malefic Arts",
+          "summary": "Leading: Psychic attacks against the unit get -1 to hit and to wound"
         },
         {
-          "name": "Vox‑cast Proclamations (Aura)"
+          "name": "Vox‑cast Proclamations (Aura)",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Stratagems on units within 12\" cost 1CP more"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Authority of the Inquisition"
+          "name": "Authority of the Inquisition",
+          "summary": "Leading: can ride in any Transport its Bodyguard can"
         },
         {
-          "name": "Vox-skull"
+          "name": "Vox-skull",
+          "summary": "Once per battle: an infantry unit within 12\" tests Battle-shock; if it fails, it loses cover"
         }
       ],
       "points": 65,
@@ -17852,13 +19361,28 @@
       ],
       "abilities": [
         {
-          "name": "Loyal Henchmen"
+          "name": "Loyal Henchmen",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by an Inquisitor: attacks against it get -1 to wound"
         },
         {
-          "name": "Inquisitorial Henchmen"
+          "name": "Inquisitorial Henchmen",
+          "summary": "In an allied army, one per Inquisitor does not count as a Retinue"
         },
         {
-          "name": "Tome-skull"
+          "name": "Tome-skull",
+          "summary": "Once per battle per skull: frees a unit within 6\" from Battle-shock, or makes an enemy test"
         }
       ],
       "points": 50,
@@ -18207,7 +19731,8 @@
       ],
       "abilities": [
         {
-          "name": "Rapid Deployment"
+          "name": "Rapid Deployment",
+          "summary": "Units can disembark after it Advanced, with a shock disembark"
         }
       ],
       "points": 60,
@@ -18574,7 +20099,15 @@
       ],
       "abilities": [
         {
-          "name": "Personal Teleporters"
+          "name": "Personal Teleporters",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After shooting, unengaged: a 6\" Normal move, then no charge this turn"
         }
       ],
       "points": 135,
@@ -18790,10 +20323,12 @@
           "name": "Leader"
         },
         {
-          "name": "Backroom Deals"
+          "name": "Backroom Deals",
+          "summary": "One of them gives Infiltrators to the unit it leads"
         },
         {
-          "name": "Warrant of Trade"
+          "name": "Warrant of Trade",
+          "summary": "After deployment, redeploy up to D3 Imperium Battleline units, even into Strategic Reserves"
         }
       ],
       "points": 40,
@@ -18929,16 +20464,30 @@
       ],
       "abilities": [
         {
-          "name": "Inconceivable Augmentation"
+          "name": "Inconceivable Augmentation",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Lethal Hits when shooting"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Inquisitorial Agent"
+          "name": "Inquisitorial Agent",
+          "summary": "Paired with Inquisitorial Agents in an allied army: one more Character slot"
         },
         {
-          "name": "A Weaponsmith, Not a Warlord"
+          "name": "A Weaponsmith, Not a Warlord",
+          "summary": "Cannot be your Warlord; OC 1 when led by an Inquisitor"
         }
       ],
       "points": 30,
@@ -19087,10 +20636,39 @@
       ],
       "abilities": [
         {
-          "name": "Untouchable Purity"
+          "name": "Untouchable Purity",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Feel No Pain 4+ against mortal wounds"
         },
         {
-          "name": "One With the Warp (Psychic)"
+          "name": "One With the Warp (Psychic)",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +3 to a charge the turn its unit arrived"
         },
         {
           "name": "Leader"
@@ -19529,16 +21107,43 @@
       ],
       "abilities": [
         {
-          "name": "Catechism of Death"
+          "name": "Catechism of Death",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With Cassius: Devastating Wounds in melee"
         },
         {
-          "name": "Unflinching"
+          "name": "Unflinching",
+          "summary": "Re-roll Battle-shock tests"
         },
         {
-          "name": "Jump Pack"
+          "name": "Jump Pack",
+          "summary": "Move 12\", over models and terrain"
         },
         {
-          "name": "Psychic Hood"
+          "name": "Psychic Hood",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Feel No Pain 4+ against Psychic attacks"
         }
       ],
       "points": 220,
@@ -19855,13 +21460,87 @@
       ],
       "abilities": [
         {
-          "name": "Titan Hunter"
+          "name": "Titan Hunter",
+          "modifiers": [
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-damage",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll Damage when shooting Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Ion Aegis (Aura)"
+          "name": "Ion Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Armigers 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 425,
@@ -20163,13 +21842,68 @@
       ],
       "abilities": [
         {
-          "name": "Punishing Salvoes"
+          "name": "Punishing Salvoes",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Crusader's Duty (Bondsman)"
+          "name": "Crusader's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: +1 to hit when shooting"
         }
       ],
       "points": 395,
@@ -20500,13 +22234,62 @@
       ],
       "abilities": [
         {
-          "name": "Selfless Protector"
+          "name": "Selfless Protector",
+          "summary": "Knights it partly hides get cover and a 4+ invulnerable against ranged attacks"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Warden's Duty (Bondsman)"
+          "name": "Warden's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1, and Ignores Cover when shooting"
         }
       ],
       "points": 385,
@@ -20749,16 +22532,75 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 Wounds Remaining"
+          "name": "Damaged: 1-6 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Thundercharge"
+          "name": "Thundercharge",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With spear and chainsword: +2 melee Attacks"
         },
         {
-          "name": "Ram Jets"
+          "name": "Ram Jets",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "+D3\" Move for Normal and Advance moves"
         },
         {
-          "name": "Saturation Fire"
+          "name": "Saturation Fire",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         }
       ],
       "points": 265,
@@ -21114,13 +22956,76 @@
       ],
       "abilities": [
         {
-          "name": "Aggressive Assault"
+          "name": "Aggressive Assault",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting the closest target"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Errant's Duty (Bondsman)"
+          "name": "Errant's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll Advance rolls; ranged weapons gain Assault"
         }
       ],
       "points": 355,
@@ -21391,13 +23296,62 @@
       ],
       "abilities": [
         {
-          "name": "Martial Pride"
+          "name": "Martial Pride",
+          "summary": "Consolidates 3\" further into engagement"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Gallant's Duty (Bondsman)"
+          "name": "Gallant's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll charge rolls and hits in melee"
         }
       ],
       "points": 355,
@@ -21680,13 +23634,80 @@
       ],
       "abilities": [
         {
-          "name": "Seasoned Noble"
+          "name": "Seasoned Noble",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 AP when shooting the closest target"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Paladin’s Duty (Bondsman)"
+          "name": "Paladin’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Lethal Hits, and Lance in melee"
         }
       ],
       "points": 375,
@@ -22004,13 +24025,65 @@
       ],
       "abilities": [
         {
-          "name": "Exemplar of the Code"
+          "name": "Exemplar of the Code",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its quarry, chosen anew whenever one dies"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Mentor (Bondsman)"
+          "name": "Mentor (Bondsman)",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: re-roll wounds against its mentor’s quarry"
         }
       ],
       "points": 365,
@@ -22282,13 +24355,64 @@
       ],
       "abilities": [
         {
-          "name": "Thundershock"
+          "name": "Thundershock",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Harpoon target and enemies 6\" or closer to it: D3 mortal wounds on a 4+"
         },
         {
-          "name": "Damaged: 1-10 Wounds Remaining"
+          "name": "Damaged: 1-10 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Ion Aegis (Aura)"
+          "name": "Ion Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Armiger"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly Armigers 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 390,
@@ -22589,13 +24713,81 @@
       ],
       "abilities": [
         {
-          "name": "Thin Their Ranks"
+          "name": "Thin Their Ranks",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Monster"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Devastating Wounds when shooting non-Monster, non-Vehicle units"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Warden's Duty (Bondsman)"
+          "name": "Warden's Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            },
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: Sustained Hits 1, and Ignores Cover when shooting"
         }
       ],
       "points": 365,
@@ -22818,10 +25010,30 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 220,
@@ -23043,10 +25255,30 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 220,
@@ -23268,10 +25500,30 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 260,
@@ -24524,10 +26776,52 @@
       ],
       "abilities": [
         {
-          "name": "Zealot"
+          "name": "Zealot",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +3 S and A in melee"
         },
         {
-          "name": "Holy Hatred"
+          "name": "Holy Hatred",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 in melee"
         },
         {
           "name": "Support"
@@ -24708,10 +27002,19 @@
       ],
       "abilities": [
         {
-          "name": "Third Eye (Psychic)"
+          "name": "Third Eye (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 3,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: an enemy within 12\" tests Battle-shock (-2 Infantry); 3 mortal wounds if it fails"
         },
         {
-          "name": "Gaze into the Empyrean (Psychic)"
+          "name": "Gaze into the Empyrean (Psychic)",
+          "summary": "Enemy Reinforcements cannot set up within 12\""
         },
         {
           "name": "Leader"
@@ -24940,10 +27243,42 @@
       ],
       "abilities": [
         {
-          "name": "Indomitable Spirit (Psychic)"
+          "name": "Indomitable Spirit (Psychic)",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Shoots and charges after Advancing or Falling Back"
         },
         {
-          "name": "Damaged: 1-4 Wounds Remaining"
+          "name": "Damaged: 1-4 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 205,
@@ -25178,10 +27513,12 @@
           "name": "Leader"
         },
         {
-          "name": "Backroom Deals"
+          "name": "Backroom Deals",
+          "summary": "One of them gives Infiltrators to the unit it leads"
         },
         {
-          "name": "Warrant of Trade"
+          "name": "Warrant of Trade",
+          "summary": "After deployment, redeploy up to D3 Imperium Battleline units, even into Strategic Reserves"
         }
       ],
       "points": 40,
@@ -25372,13 +27709,45 @@
       ],
       "abilities": [
         {
-          "name": "Attuned Onslaught (Psychic)"
+          "name": "Attuned Onslaught (Psychic)",
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: +1 Damage in melee this turn"
         },
         {
-          "name": "Ancient's Banner"
+          "name": "Ancient's Banner",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 OC for its unit"
         },
         {
-          "name": "Apothecary's narthecium"
+          "name": "Apothecary's narthecium",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns one destroyed model"
         }
       ],
       "points": 185,
@@ -26696,7 +29065,20 @@
       ],
       "abilities": [
         {
-          "name": "Proteus Doctrines"
+          "name": "Proteus Doctrines",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-not-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against units not Below Half-strength"
         },
         {
           "name": "Attached Unit"
@@ -26705,13 +29087,23 @@
           "name": "Invulnerable Save"
         },
         {
-          "name": "Storm shield"
+          "name": "Storm shield",
+          "summary": "The bearer has 4 Wounds"
         },
         {
-          "name": "Jump Pack"
+          "name": "Jump Pack",
+          "summary": "Move 12\", over models and terrain"
         },
         {
-          "name": "Astartes shield"
+          "name": "Astartes shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 160,
@@ -27299,7 +29691,20 @@
       ],
       "abilities": [
         {
-          "name": "Righteous Persecution"
+          "name": "Righteous Persecution",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is pinned: -2\" Move and -2 to charge until your next turn"
         }
       ],
       "points": 115,
@@ -27619,7 +30024,25 @@
       ],
       "abilities": [
         {
-          "name": "Sanctity of Purpose"
+          "name": "Sanctity of Purpose",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound; every wound roll against units on an objective"
         }
       ],
       "points": 145,
@@ -27918,13 +30341,79 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Magaera’s Duty (Bondsman)"
+          "name": "Magaera’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "bondsman"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: +1 S and AP when shooting the closest target"
         }
       ],
       "points": 385,
@@ -28172,13 +30661,62 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Damaged: 1-9 Wounds Remaining"
+          "name": "Damaged: 1-9 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Styrix’s Duty (Bondsman)"
+          "name": "Styrix’s Duty (Bondsman)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "bondsman"
+                }
+              ]
+            }
+          ],
+          "summary": "Bonded: after shooting or fighting, one unit it hit tests Battle-shock at -1"
         }
       ],
       "points": 375,
@@ -28399,7 +30937,20 @@
       ],
       "abilities": [
         {
-          "name": "Fire Focus"
+          "name": "Fire Focus",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn get +1 AP against it"
         }
       ],
       "points": 75,
@@ -28670,13 +31221,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-20 wounds remaining"
+          "name": "Damaged: 1-20 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (20 wounds or fewer left)"
         },
         {
-          "name": "God-machine"
+          "name": "God-machine",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2200,
@@ -28894,7 +31480,21 @@
       ],
       "abilities": [
         {
-          "name": "Truesilver Aegis (Psychic)"
+          "name": "Truesilver Aegis (Psychic)",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "mortal-or-psychic"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly units wholly 6\" or closer: Feel No Pain 6+ against mortal wounds"
         }
       ],
       "points": 70,
@@ -29154,16 +31754,26 @@
       ],
       "abilities": [
         {
-          "name": "Backroom Deals"
+          "name": "Backroom Deals",
+          "summary": "One of them gives Infiltrators to the unit it leads"
         },
         {
           "name": "Leader"
         },
         {
-          "name": "Warrant of Trade"
+          "name": "Warrant of Trade",
+          "summary": "After deployment, redeploy up to D3 Imperium Battleline units, even into Strategic Reserves"
         },
         {
-          "name": "Healing Serum"
+          "name": "Healing Serum",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase, below Starting Strength: returns up to D3 models"
         }
       ],
       "points": 75,
@@ -29485,19 +32095,42 @@
       ],
       "abilities": [
         {
-          "name": "Ministorum Sermon"
+          "name": "Ministorum Sermon",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With a Priest: +1 to wound in melee"
         },
         {
-          "name": "Cherub"
+          "name": "Cherub",
+          "summary": "Once per battle, Command Re-roll on it for 0CP"
         },
         {
           "name": "Attached Unit"
         },
         {
-          "name": "Salvationist Medikit"
+          "name": "Salvationist Medikit",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: returns up to D3 destroyed models"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "+1 Leadership for its unit"
         }
       ],
       "points": 110,
@@ -29834,13 +32467,49 @@
       ],
       "abilities": [
         {
-          "name": "Mindlock"
+          "name": "Mindlock",
+          "modifiers": [
+            {
+              "key": "BS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            },
+            {
+              "key": "WS",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Techmarine: Servitors get +1 BS and WS"
         },
         {
-          "name": "Servitor Retinue"
+          "name": "Servitor Retinue",
+          "summary": "Joins a unit led by a Techmarine at deployment"
         },
         {
-          "name": "Retinue"
+          "name": "Retinue",
+          "modifiers": [
+            {
+              "key": "deep-strike",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Led by a Techmarine: Deep Strike and Teleport Assault"
         }
       ],
       "points": 60,
@@ -30077,7 +32746,8 @@
       ],
       "abilities": [
         {
-          "name": "Purge and Cleanse"
+          "name": "Purge and Cleanse",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         }
       ],
       "points": 90,
@@ -30583,13 +33253,16 @@
       ],
       "abilities": [
         {
-          "name": "Defenders of the Faith"
+          "name": "Defenders of the Faith",
+          "summary": "Holding an objective as your Command phase ends keeps it yours after it leaves"
         },
         {
-          "name": "Incensor Cherub"
+          "name": "Incensor Cherub",
+          "summary": "Once per battle, Command Re-roll on it for 0CP"
         },
         {
-          "name": "Simulacrum Imperialis"
+          "name": "Simulacrum Imperialis",
+          "summary": "+1 Leadership for its unit"
         }
       ],
       "points": 100,
@@ -31244,16 +33917,40 @@
           "name": "Attached Unit"
         },
         {
-          "name": "Spectrus Doctrines"
+          "name": "Spectrus Doctrines",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "End of the enemy turn, 6\" from enemies: can go back into Strategic Reserves"
         },
         {
-          "name": "Helix Gauntlet"
+          "name": "Helix Gauntlet",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "6+",
+              "target": "self"
+            }
+          ],
+          "summary": "Feel No Pain 6+"
         },
         {
-          "name": "Infiltrator Comms Array"
+          "name": "Infiltrator Comms Array",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Each Stratagem on it: +1CP on a 5+"
         },
         {
-          "name": "Jump pack"
+          "name": "Jump pack",
+          "summary": "Move 10\" (12\" for some), over models and terrain"
         }
       ],
       "points": 185,
@@ -31736,7 +34433,24 @@
       ],
       "abilities": [
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         }
       ],
       "points": 160,
@@ -32093,10 +34807,31 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Resilience"
+          "name": "Armoured Resilience",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
-          "name": "Damaged: 1-5 Wounds Remaining"
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 280,
@@ -32410,7 +35145,24 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         }
       ],
       "points": 170,
@@ -32669,7 +35421,8 @@
       ],
       "abilities": [
         {
-          "name": "Sanctifying Ritual (Psychic)"
+          "name": "Sanctifying Ritual (Psychic)",
+          "summary": "An objective it holds as your Command phase ends stays yours after it leaves"
         }
       ],
       "points": 125,
@@ -32882,10 +35635,30 @@
       ],
       "abilities": [
         {
-          "name": "Dedication to Duty"
+          "name": "Dedication to Duty",
+          "modifiers": [
+            {
+              "key": "fight-on-death",
+              "value": "4+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Slain in melee before fighting: still fights on a 4+"
         },
         {
-          "name": "Nuncio-aquila"
+          "name": "Nuncio-aquila",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: infantry on an objective within 6\" test for Battle-shock"
         }
       ],
       "points": 85,
@@ -33115,10 +35888,25 @@
       ],
       "abilities": [
         {
-          "name": "Self Repair"
+          "name": "Self Repair",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Regains 1 wound each Command phase"
         },
         {
-          "name": "Evade and Survive"
+          "name": "Evade and Survive",
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "target": "self"
+            }
+          ],
+          "summary": "An enemy ends a move within 8\": unengaged, it makes a Normal move"
         }
       ],
       "points": 55,
@@ -33790,7 +36578,20 @@
       ],
       "abilities": [
         {
-          "name": "Guidance of the Ancients"
+          "name": "Guidance of the Ancients",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: your Grey Knights get +1 to hit it this phase"
         }
       ],
       "points": 175,
@@ -34070,7 +36871,20 @@
       ],
       "abilities": [
         {
-          "name": "Guidance of the Ancients (Psychic)"
+          "name": "Guidance of the Ancients (Psychic)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: your Grey Knights get +1 to hit it this phase"
         }
       ],
       "points": 130,
@@ -34502,10 +37316,26 @@
       ],
       "abilities": [
         {
-          "name": "Turbo-boost"
+          "name": "Turbo-boost",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 6\" without rolling"
         },
         {
-          "name": "Astartes Shield"
+          "name": "Astartes Shield",
+          "modifiers": [
+            {
+              "key": "invulnerable-save",
+              "value": "4+",
+              "target": "self"
+            }
+          ],
+          "summary": "The bearer has a 4+ invulnerable save"
         }
       ],
       "points": 70,
@@ -34830,10 +37660,33 @@
       ],
       "abilities": [
         {
-          "name": "Merciless Judgement"
+          "name": "Merciless Judgement",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound when shooting units Below Half-strength"
         },
         {
-          "name": "Nuncio-aquila"
+          "name": "Nuncio-aquila",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Once per battle: infantry on an objective within 6\" test for Battle-shock"
         }
       ],
       "points": 85,
@@ -35074,16 +37927,48 @@
       ],
       "abilities": [
         {
-          "name": "Shieldbreaker"
+          "name": "Shieldbreaker",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "crit-wound",
+              "value": "2+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +1 to wound and every wound is critical with the exitus rifle"
         },
         {
-          "name": "Dead-shot"
+          "name": "Dead-shot",
+          "summary": "Its shooting ignores Lone Operative and gives hidden enemies +15\" detection range"
         },
         {
-          "name": "Shadow Assignment"
+          "name": "Shadow Assignment",
+          "summary": "Cannot be your Warlord; can be swapped for another Assassin of no greater cost"
         },
         {
-          "name": "Micromelta Rounds"
+          "name": "Micromelta Rounds",
+          "summary": "Extremis: its exitus rifle gains Anti-Monster 4+ and Anti-Vehicle 4+"
         }
       ],
       "points": 110,
@@ -35343,7 +38228,22 @@
       ],
       "abilities": [
         {
-          "name": "Masters of Close Confines"
+          "name": "Masters of Close Confines",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                }
+              ]
+            }
+          ],
+          "summary": "Lethal Hits when shooting the closest target"
         },
         {
           "name": "Navy Bodyguards"
@@ -35984,13 +38884,38 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-26 wounds remaining"
+          "name": "Damaged: 1-26 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (26 wounds or fewer left)"
         },
         {
-          "name": "Titanic Fire Support"
+          "name": "Titanic Fire Support",
+          "summary": "One unit it hits: friendly critical wounds get +1 AP against it this phase"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2600,
@@ -36286,13 +39211,45 @@
       ],
       "abilities": [
         {
-          "name": "Flank Speed"
+          "name": "Flank Speed",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 8,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 8\" without rolling"
         },
         {
-          "name": "Damaged: 1-13 wounds remaining"
+          "name": "Damaged: 1-13 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -8 OC while damaged (13 wounds or fewer left)"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost twice as much"
         }
       ],
       "points": 1100,
@@ -36660,13 +39617,44 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-33 wounds remaining"
+          "name": "Damaged: 1-33 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -15,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -15 OC while damaged (33 wounds or fewer left)"
         },
         {
-          "name": "Wrath of the Omnissiah"
+          "name": "Wrath of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost four times as much"
         }
       ],
       "points": 3500,
@@ -36896,10 +39884,18 @@
       ],
       "abilities": [
         {
-          "name": "Tactical Instinct"
+          "name": "Tactical Instinct",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits"
         },
         {
-          "name": "Unstoppable Champion"
+          "name": "Unstoppable Champion",
+          "summary": "First death: on a 2+ he returns with 1 wound once the phase ends"
         },
         {
           "name": "Leader"
@@ -37035,10 +40031,37 @@
       ],
       "abilities": [
         {
-          "name": "Strategic Knowledge"
+          "name": "Strategic Knowledge",
+          "modifiers": [
+            {
+              "key": "advance-and-shoot",
+              "target": "attached"
+            },
+            {
+              "key": "advance-and-charge",
+              "target": "attached"
+            },
+            {
+              "key": "fall-back-and-shoot",
+              "target": "attached"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: shoots and charges after Advancing or Falling Back"
         },
         {
-          "name": "Rites of Battle"
+          "name": "Rites of Battle",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on its unit costs 1CP less"
         },
         {
           "name": "Leader"
@@ -37103,15 +40126,28 @@
   "armyRules": [
     {
       "id": "assigned-agents",
-      "name": "Assigned Agents"
+      "name": "Assigned Agents",
+      "summary": "Imperium armies can include a few Agents of the Imperium, by battle size"
     },
     {
       "id": "gate-of-infinity",
-      "name": "Gate of Infinity"
+      "name": "Gate of Infinity",
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        },
+        {
+          "key": "ingress",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Fight phase: up to 2-4 unengaged units go into Strategic Reserves and return by ingress"
     },
     {
       "id": "kill-team",
-      "name": "Kill Team"
+      "name": "Kill Team",
+      "summary": "Wounds against it use the majority Toughness; bulky models count double when embarking"
     }
   ],
   "detachments": [
@@ -37125,7 +40161,30 @@
       "rules": [
         {
           "id": "dauntless-champions",
-          "name": "DAUNTLESS CHAMPIONS"
+          "name": "DAUNTLESS CHAMPIONS",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "strength-below-toughness"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Paladin Squad"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Paladins get +1 to wound in melee when their Strength is below the target’s Toughness"
         }
       ],
       "enhancements": [
@@ -37141,7 +40200,15 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         },
         {
           "id": "vigilance-of-titan",
@@ -37155,7 +40222,8 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Start of your Shooting phase: a visible enemy 12\" or closer gets +6\" detection range"
         }
       ]
     },
@@ -37169,7 +40237,21 @@
       "rules": [
         {
           "id": "prescient-redeployment",
-          "name": "Prescient Redeployment"
+          "name": "Prescient Redeployment",
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Grey Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "From round 2, with a Gate of Infinity slot unused: one unit goes into Strategic Reserves as your Movement phase starts"
         }
       ],
       "enhancements": [
@@ -37185,7 +40267,15 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Arriving as Reinforcements: a visible enemy 12\" or closer tests Battle-shock at -1"
         },
         {
           "id": "grimoire-of-conjunctions",
@@ -37199,7 +40289,23 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, Fight phase: +4 S in melee"
         },
         {
           "id": "one-foot-in-the-future",
@@ -37213,7 +40319,15 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "normal-move",
+              "value": "D6",
+              "target": "self"
+            }
+          ],
+          "summary": "After an ingress move: a D6\" Normal move, then no charge this turn"
         },
         {
           "id": "shield-of-prophecy",
@@ -37227,7 +40341,20 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle, for a battle round: +2 Toughness for its unit"
         }
       ]
     },
@@ -37241,7 +40368,46 @@
       "rules": [
         {
           "id": "channelled-force",
-          "name": "Channelled Force"
+          "name": "Channelled Force",
+          "options": [
+            {
+              "name": "Sustained Hits 1 for Psychic melee weapons",
+              "modifiers": [
+                {
+                  "key": "sustained-hits",
+                  "value": 1,
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lethal Hits for Psychic melee weapons",
+              "modifiers": [
+                {
+                  "key": "lethal-hits",
+                  "target": "self",
+                  "conditions": [
+                    {
+                      "key": "melee"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Grey Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Selected to fight, passing Leadership: Psychic melee weapons gain Sustained Hits 1 or Lethal Hits"
         }
       ],
       "enhancements": [
@@ -37258,7 +40424,8 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Grey Knights Infantry only"
         },
         {
           "id": "pyresoul",
@@ -37268,7 +40435,15 @@
           "aura": false,
           "maxTargets": 1,
           "requires": [],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible enemy 24\" or closer takes D3 mortal wounds"
         },
         {
           "id": "sigil-of-the-hunt",
@@ -37282,7 +40457,20 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit re-rolls 1s to hit when shooting"
         },
         {
           "id": "sixty-sixth-seal",
@@ -37296,7 +40484,8 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Grey Knights only"
         }
       ]
     },
@@ -37310,7 +40499,30 @@
       "rules": [
         {
           "id": "fury-of-titan",
-          "name": "Fury of Titan"
+          "name": "Fury of Titan",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "Units that Deep Struck this turn re-roll 1s to hit and wound"
         }
       ],
       "enhancements": [
@@ -37322,7 +40534,15 @@
           "aura": false,
           "maxTargets": 1,
           "requires": [],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "On Deep Strike: each enemy 12\" or closer takes 1 mortal wound on 2-5, D3 on a 6"
         },
         {
           "id": "blinding-aura",
@@ -37336,7 +40556,8 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "The turn it Deep Strikes, enemies cannot Fire Overwatch at its unit"
         },
         {
           "id": "purity-of-purpose",
@@ -37350,7 +40571,19 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "arrived-this-turn"
+                }
+              ]
+            }
+          ],
+          "summary": "The turn it Deep Strikes, its unit re-rolls charge rolls"
         },
         {
           "id": "tome-of-forbidden-ways",
@@ -37364,7 +40597,8 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Gate of Infinity takes one more unit"
         }
       ]
     },
@@ -37378,7 +40612,22 @@
       "rules": [
         {
           "id": "searing-soulflame",
-          "name": "SEARING SOULFLAME"
+          "name": "SEARING SOULFLAME",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Purgation Squad"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "A unit pinned by Purgation Squads tests Battle-shock at -1"
         }
       ],
       "enhancements": [
@@ -37395,7 +40644,20 @@
               "Purgation Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 S when shooting"
         },
         {
           "id": "precognicient-volleys",
@@ -37410,7 +40672,15 @@
               "Purgation Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Its snap shots hit on 5+"
         }
       ]
     },
@@ -37424,7 +40694,26 @@
       "rules": [
         {
           "id": "duty-before-all",
-          "name": "Duty Before All"
+          "name": "Duty Before All",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Grey Knights",
+              "Terminator"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Terminators can shoot and charge after Falling Back"
         }
       ],
       "enhancements": [
@@ -37440,7 +40729,19 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 1CP less and is not limited by other uses"
         },
         {
           "id": "inescapable-judgement",
@@ -37450,7 +40751,15 @@
           "aura": false,
           "maxTargets": 1,
           "requires": [],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "An enemy Falls Back from its unit: D3 mortal wounds on 2-5, D3+3 on a 6"
         },
         {
           "id": "nemesis-rounds",
@@ -37465,7 +40774,15 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "overwatch",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Fire Overwatch on it hits on 5+"
         },
         {
           "id": "sanctic-reaper",
@@ -37480,7 +40797,20 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 3,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+3 melee Attacks"
         }
       ]
     },
@@ -37494,7 +40824,22 @@
       "rules": [
         {
           "id": "echojump",
-          "name": "ECHOJUMP"
+          "name": "ECHOJUMP",
+          "modifiers": [
+            {
+              "key": "surge-move",
+              "value": "D6+1",
+              "target": "self"
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Interceptor Squad"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "After shooting, instead of Personal Teleporters: a D6+1\" surge move"
         }
       ],
       "enhancements": [
@@ -37511,7 +40856,14 @@
               "Interceptor Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "summary": "Stealth"
         },
         {
           "id": "predestined-coordinates",
@@ -37526,7 +40878,14 @@
               "Interceptor Squad"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ingress",
+              "target": "self"
+            }
+          ],
+          "summary": "Can make an ingress move in your first Movement phase"
         }
       ]
     },
@@ -37540,7 +40899,35 @@
       "rules": [
         {
           "id": "mailed-fist",
-          "name": "Mailed Fist"
+          "name": "Mailed Fist",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 6,
+              "target": "self"
+            },
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "advanced-or-fell-back"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Grey Knights",
+              "Vehicle"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Vehicles Advance a flat 6\" and their ranged weapons gain Assault that turn"
         }
       ],
       "enhancements": [
@@ -37557,7 +40944,15 @@
               "Walker"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "pile-in",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "Piles in and consolidates up to 6\""
         },
         {
           "id": "quickening-foci",
@@ -37572,7 +40967,19 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-charge",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "summary": "Disembarked this turn: its unit re-rolls charge rolls"
         },
         {
           "id": "sigil-of-exigence",
@@ -37586,7 +40993,8 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle, targeted by shooting: its unit redeploys 8\" from enemies"
         },
         {
           "id": "spiritus-machina",
@@ -37601,7 +41009,23 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "disembarked"
+                }
+              ]
+            }
+          ],
+          "summary": "Disembarked this turn: its unit re-rolls wounds when shooting"
         }
       ]
     },
@@ -37616,7 +41040,32 @@
       "rules": [
         {
           "id": "hallowed-ground",
-          "name": "Hallowed Ground"
+          "name": "Hallowed Ground",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "hallowed-ground"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Grey Knights"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Re-roll 1s to hit; every hit roll for Purifiers or units wholly on Hallowed Ground"
         }
       ],
       "enhancements": [
@@ -37632,7 +41081,15 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 3,
+              "target": "self"
+            }
+          ],
+          "summary": "+3 OC while not Battle-shocked"
         },
         {
           "id": "paragon-of-sanctity",
@@ -37646,7 +41103,8 @@
               "Grey Knights"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle: a visible unit 18\" or closer counts as on Hallowed Ground this phase"
         },
         {
           "id": "phial-of-the-abyss",
@@ -37661,7 +41119,14 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stealth",
+              "target": "self"
+            }
+          ],
+          "summary": "Its unit has Stealth"
         },
         {
           "id": "radiant-champion",
@@ -37676,7 +41141,19 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "precision",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Precision in melee; on Hallowed Ground, each wound also inflicts a mortal wound"
         }
       ]
     }
@@ -37691,7 +41168,27 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Paladin Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "precision",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Precision in melee"
     },
     {
       "id": "abominus-class-targets",
@@ -37704,7 +41201,39 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Monster"
+            }
+          ]
+        },
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 to wound against Monsters and Vehicles this phase"
     },
     {
       "id": "aegis-eternal",
@@ -37716,7 +41245,29 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "invulnerable-save",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "hallowed-ground"
+            }
+          ]
+        }
+      ],
+      "summary": "Models wholly on Hallowed Ground have a 4+ invulnerable this phase"
     },
     {
       "id": "aggressive-anticipation",
@@ -37729,7 +41280,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self"
+        }
+      ],
+      "summary": "Re-roll hits this phase"
     },
     {
       "id": "appointed-hour",
@@ -37742,7 +41309,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Critical hits on 5+ this phase"
     },
     {
       "id": "argent-wrath",
@@ -37754,7 +41337,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: enemies 3\" or closer test Battle-shock at -1"
     },
     {
       "id": "armoured-aegis",
@@ -37766,7 +41366,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "heal",
+          "value": 3,
+          "target": "self"
+        }
+      ],
+      "summary": "One model regains up to 3 wounds"
     },
     {
       "id": "aura-of-vengeance",
@@ -37777,7 +41394,16 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "targeted",
+      "target": {
+        "allOf": [
+          "Paladin Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "The attacker’s melee weapons gain Hazardous"
     },
     {
       "id": "blades-from-the-beyond",
@@ -37788,7 +41414,31 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Interceptor Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            },
+            {
+              "key": "charged"
+            }
+          ]
+        }
+      ],
+      "summary": "Charged this turn: melee weapons gain Lance"
     },
     {
       "id": "by-thought-alone",
@@ -37799,7 +41449,15 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Interceptor Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Starting an action does not stop it from shooting"
     },
     {
       "id": "celerity",
@@ -37811,7 +41469,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "advance-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Can charge after Advancing this turn"
     },
     {
       "id": "chaos-bane",
@@ -37823,7 +41497,32 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-wound",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-keyword",
+              "value": "Chaos"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Anti-Chaos 4+ this phase"
     },
     {
       "id": "circle-of-sanctuary",
@@ -37835,7 +41534,17 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Enemy Reinforcements cannot arrive 12\" or closer to the model this phase"
     },
     {
       "id": "combat-manifestation",
@@ -37847,7 +41556,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Deep Strikes 6\" from enemies, then no charge that turn"
     },
     {
       "id": "duty-unending",
@@ -37859,7 +41576,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-falls-back",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "With Deep Strike: back into Strategic Reserves"
     },
     {
       "id": "expeditious-exit",
@@ -37871,7 +41603,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "End of the enemy Fight phase, even engaged: back into Strategic Reserves"
     },
     {
       "id": "fires-of-covenant",
@@ -37883,7 +41632,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Enemies arriving or moving 6\" or closer: D3 mortal wounds on 4+ (+2 on Hallowed Ground)"
     },
     {
       "id": "flames-of-sanctity",
@@ -37895,7 +41661,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Purifier Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "End of the Fight phase: each enemy 6\" or closer takes D3 mortal wounds on 4+"
     },
     {
       "id": "focused-immolation",
@@ -37906,7 +41688,43 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Purgation Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        },
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-marked"
+            }
+          ]
+        }
+      ],
+      "summary": "Against one enemy unit: Devastating Wounds and Sustained Hits 1"
     },
     {
       "id": "force-wave",
@@ -37919,7 +41737,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves and charges through terrain this phase"
     },
     {
       "id": "forewarned-evasion",
@@ -37932,7 +41759,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Walker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "hit",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Attacks against it get -1 to hit this phase"
     },
     {
       "id": "giants-of-the-battlefield",
@@ -37944,7 +41788,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 melee Attack this phase"
     },
     {
       "id": "grind-them-underfoot",
@@ -37956,7 +41821,24 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: a D6 per engaged model, each 4+ a mortal wound (6 at most)"
     },
     {
       "id": "hallowed-beacon",
@@ -37968,7 +41850,19 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "reinforcements",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": [
+          "Terminator"
+        ]
+      },
+      "summary": "Deep Strikes wholly on Hallowed Ground, 6\" from enemies"
     },
     {
       "id": "hexwrought-reprisal",
@@ -37984,7 +41878,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "end-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Hurt by mortal wounds this phase: one D6 per wound taken, each 2+ a mortal wound back on the culprit (6 at most)"
     },
     {
       "id": "mirage-of-echoes",
@@ -37996,7 +41907,23 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "With Deep Strike: back into Strategic Reserves"
     },
     {
       "id": "necessary-end",
@@ -38008,7 +41935,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights if a D6 beats the battle round number"
     },
     {
       "id": "point-blank-purgation",
@@ -38020,7 +41968,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Storm bolters gain Pistol and Twin-linked this phase"
     },
     {
       "id": "precognitive-strategies",
@@ -38032,7 +41989,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-moved",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D6",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a D6\" Normal move"
     },
     {
       "id": "purgation-pattern",
@@ -38044,7 +42018,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "sustained-hits",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "arrived-this-turn"
+            }
+          ]
+        }
+      ],
+      "summary": "Deep Struck this turn: Sustained Hits 1 this phase"
     },
     {
       "id": "redirected-strike",
@@ -38056,7 +42050,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "end-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "With Deep Strike: back into Strategic Reserves"
     },
     {
       "id": "redoubled-assault",
@@ -38068,7 +42078,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        },
+        {
+          "key": "fall-back-and-charge",
+          "target": "self"
+        }
+      ],
+      "summary": "Fell Back: can still shoot and charge this turn"
     },
     {
       "id": "repelling-sphere",
@@ -38080,7 +42110,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "start-of-phase",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "charge",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "Charges against it get -1 (-2 on Hallowed Ground) this phase"
     },
     {
       "id": "responsive-displacement",
@@ -38091,7 +42138,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Interceptor Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": "D3+3",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy Falls Back from it: a D3+3\" Normal move"
     },
     {
       "id": "sanctified-kill-zone",
@@ -38104,7 +42167,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "On Hallowed Ground: re-roll 1s to wound (Purifiers re-roll all) this phase"
     },
     {
       "id": "shadow-of-anarch",
@@ -38116,7 +42194,28 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "enemy-moved",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "normal-move",
+          "value": 6,
+          "target": "self"
+        },
+        {
+          "key": "strategic-reserves",
+          "target": "self"
+        }
+      ],
+      "summary": "An enemy ends a move 8\" or closer: a 6\" Normal move, or back into Strategic Reserves"
     },
     {
       "id": "shining-resolve",
@@ -38128,7 +42227,29 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "wound",
+          "value": -1,
+          "target": "enemy",
+          "conditions": [
+            {
+              "key": "strength-above-toughness"
+            }
+          ]
+        }
+      ],
+      "summary": "Attacks stronger than its Toughness get -1 to wound this phase"
     },
     {
       "id": "shining-veil",
@@ -38140,7 +42261,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Grey Knights"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "stealth",
+          "target": "self"
+        }
+      ],
+      "summary": "Stealth this phase"
     },
     {
       "id": "soul-locked",
@@ -38151,7 +42287,22 @@
         "movement"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Purgation Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fall-back-and-shoot",
+          "target": "self"
+        }
+      ],
+      "summary": "Falling Back: can still shoot"
     },
     {
       "id": "spiritsear",
@@ -38162,7 +42313,23 @@
         "shooting"
       ],
       "playerTurn": "your-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "after-own-action",
+      "target": {
+        "allOf": [
+          "Purgation Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3+1",
+          "target": "enemy"
+        }
+      ],
+      "summary": "A Battle-shocked unit it hit takes D3+1 mortal wounds"
     },
     {
       "id": "truesilver-aegis",
@@ -38177,7 +42344,27 @@
         "fight"
       ],
       "playerTurn": "either",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "target": {
+        "allOf": [
+          "Paladin Squad"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 4+ against mortal wounds"
     },
     {
       "id": "truesilver-channelling",
@@ -38189,7 +42376,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "devastating-wounds",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Psychic weapons gain Devastating Wounds this phase"
     },
     {
       "id": "truesilver-will",
@@ -38205,7 +42412,29 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "feel-no-pain",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "mortal-or-psychic"
+            }
+          ]
+        }
+      ],
+      "summary": "Feel No Pain 4+ against mortal wounds this phase"
     },
     {
       "id": "unending-fidelity",
@@ -38218,7 +42447,24 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self"
+        }
+      ],
+      "summary": "Slain before acting: still shoots or fights on a 4+"
     },
     {
       "id": "warding-chant",
@@ -38231,7 +42477,17 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "targeted",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Grey Knights",
+          "Psyker"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Feel No Pain 5+ against Damage 1 attacks this phase"
     }
   ]
 }

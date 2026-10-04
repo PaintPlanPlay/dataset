@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.5.0",
+  "schemaVersion": "2.6.0",
   "gameSystem": "wh40k-11e",
   "id": "death-guard",
   "name": "Death Guard",
@@ -434,7 +434,8 @@
       ],
       "abilities": [
         {
-          "name": "Grotesque Regeneration"
+          "name": "Grotesque Regeneration",
+          "summary": "Wounded Beasts heal fully as each phase ends"
         }
       ],
       "points": 70,
@@ -574,10 +575,30 @@
       ],
       "abilities": [
         {
-          "name": "Extraction of Fresh Disease"
+          "name": "Extraction of Fresh Disease",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 6,
+              "target": "self"
+            }
+          ],
+          "summary": "After its unit’s first melee kill of a unit: +6 OC for good"
         },
         {
-          "name": "Foul Infusion"
+          "name": "Foul Infusion",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "attached"
+            },
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Lethal Hits, critical hits on 5+"
         },
         {
           "name": "Leader"
@@ -833,7 +854,36 @@
       ],
       "abilities": [
         {
-          "name": "Blistering Fusillade"
+          "name": "Blistering Fusillade",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            },
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ],
+          "summary": "Five strong or led: +1 S and AP when shooting Afflicted units"
         }
       ],
       "points": 115,
@@ -1713,10 +1763,38 @@
       ],
       "abilities": [
         {
-          "name": "Atomantic Arc-reactor"
+          "name": "Atomantic Arc-reactor",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: its neutron pulse array gains Lethal Hits"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 270,
@@ -1980,10 +2058,48 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -2198,10 +2314,38 @@
       ],
       "abilities": [
         {
-          "name": "Bastion of Firepower"
+          "name": "Bastion of Firepower",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Lethal Hits when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -2438,13 +2582,34 @@
       ],
       "abilities": [
         {
-          "name": "Searing Flames"
+          "name": "Searing Flames",
+          "summary": "One unit its flame cannon hits loses the benefit of cover this phase"
         },
         {
-          "name": "Unrestrained Terror (Aura)"
+          "name": "Unrestrained Terror (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "War Dogs 6\" or closer: enemies engaged with them test Battle-shock as the Fight phase starts"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -2642,13 +2807,114 @@
       ],
       "abilities": [
         {
-          "name": "Macro-extinction Protocols"
+          "name": "Macro-extinction Protocols",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit against Monsters and Vehicles, and +1 to wound against Titanic or Towering ones"
         },
         {
-          "name": "Consumed with Hunger (Aura)"
+          "name": "Consumed with Hunger (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Titanic"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Towering"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer re-roll hits against Titanic or Towering units"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -2792,13 +3058,55 @@
       ],
       "abilities": [
         {
-          "name": "Storm of Bolts"
+          "name": "Storm of Bolts",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits is suppressed: -1 to hit until your next turn"
         },
         {
-          "name": "Offerings for the Dark Gods (Aura)"
+          "name": "Offerings for the Dark Gods (Aura)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer get Sustained Hits 1 when shooting"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -2943,13 +3251,54 @@
       ],
       "abilities": [
         {
-          "name": "Shock Charge"
+          "name": "Shock Charge",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Crushing Impact on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Dark Fervour (Aura)"
+          "name": "Dark Fervour (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         }
       ],
       "points": 385,
@@ -3155,10 +3504,30 @@
       ],
       "abilities": [
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 220,
@@ -3437,10 +3806,31 @@
       ],
       "abilities": [
         {
-          "name": "Metalophagic Infection"
+          "name": "Metalophagic Infection",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One Monster or Vehicle it hits: D3 mortal wounds on 5+ (+1 if Afflicted)"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 130,
@@ -3756,10 +4146,39 @@
       ],
       "abilities": [
         {
-          "name": "Hail of Corrosive Disease"
+          "name": "Hail of Corrosive Disease",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One non-Monster, non-Vehicle unit it hits: Death Guard get +1 AP against it this phase"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -4059,13 +4478,64 @@
       ],
       "abilities": [
         {
-          "name": "Repair Auto-simulacra"
+          "name": "Repair Auto-simulacra",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Regains up to D3 wounds as your Command phase ends"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
-          "name": "Huntmaster (Aura)"
+          "name": "Huntmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer gain Assault"
         }
       ],
       "points": 375,
@@ -4315,13 +4785,69 @@
       ],
       "abilities": [
         {
-          "name": "Grav-pinned"
+          "name": "Grav-pinned",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "charge",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its graviton crusher hits: -2\" Move and -2 to charge until the enemy’s next turn ends"
         },
         {
-          "name": "Preysight (Aura)"
+          "name": "Preysight (Aura)",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer shoot with Ignores Cover"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 365,
@@ -4529,7 +5055,20 @@
       ],
       "abilities": [
         {
-          "name": "Fire Support"
+          "name": "Fire Support",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: units that left it this turn re-roll wounds against it this phase"
         }
       ],
       "points": 75,
@@ -4677,7 +5216,15 @@
       ],
       "abilities": [
         {
-          "name": "Lethal Ichor"
+          "name": "Lethal Ichor",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": 6,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Each melee attack allocated to it: a D6, each 4+ a mortal wound back (six dice at most)"
         }
       ],
       "points": 80,
@@ -4853,13 +5400,41 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Aerial Assault"
+          "name": "Aerial Assault",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Thunderhawk cluster bombs"
+          "name": "Thunderhawk cluster bombs",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound"
         }
       ],
       "points": 840,
@@ -5033,13 +5608,46 @@
       ],
       "abilities": [
         {
-          "name": "Death Guard Defenders"
+          "name": "Death Guard Defenders",
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Near friendly infantry (3\"): Lone Operative"
         },
         {
-          "name": "Fevered Strategist"
+          "name": "Fevered Strategist",
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, a Stratagem on a unit 12\" or closer costs 1CP less"
         },
         {
-          "name": "Miasma of Pestilence (Aura)"
+          "name": "Miasma of Pestilence (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Friendly units 6\" or closer have the benefit of cover against ranged attacks"
         }
       ],
       "points": 185,
@@ -5174,10 +5782,26 @@
       ],
       "abilities": [
         {
-          "name": "Horrifying Visage"
+          "name": "Horrifying Visage",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "After its charge: one engaged enemy tests Battle-shock at -1"
         },
         {
-          "name": "Enfeebling Miasma (Aura)"
+          "name": "Enfeebling Miasma (Aura)",
+          "modifiers": [
+            {
+              "key": "desperate-escape",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry 6\" or closer Falling Back take Desperate Escape tests (-1 if Battle-shocked)"
         }
       ],
       "points": 160,
@@ -6830,7 +7454,15 @@
           "name": "Leader"
         },
         {
-          "name": "Chaos Lord"
+          "name": "Chaos Lord",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll 1s to hit"
         },
         {
           "name": "Dessication Conduit (Aura)"
@@ -7163,7 +7795,15 @@
           "name": "Leader"
         },
         {
-          "name": "Chaos Lord"
+          "name": "Chaos Lord",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: re-roll 1s to hit"
         },
         {
           "name": "Dessication Conduit (Aura)"
@@ -7589,10 +8229,35 @@
       ],
       "abilities": [
         {
-          "name": "Infectious Bloodshed"
+          "name": "Infectious Bloodshed",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: Sustained Hits 1 this turn"
         },
         {
-          "name": "Diseased icon"
+          "name": "Diseased icon",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit has Lethal Hits in melee"
         }
       ],
       "points": 155,
@@ -7848,10 +8513,41 @@
           "name": "Leader"
         },
         {
-          "name": "Putrescent Vitality (Psychic)"
+          "name": "Putrescent Vitality (Psychic)",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Fight phase: -1 Damage against its unit on a 2+, D3 mortal wounds on a 1"
         },
         {
-          "name": "Pestilent Familiar (Psychic)"
+          "name": "Pestilent Familiar (Psychic)",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: +2 S and Damage for one Psychic weapon this phase"
         }
       ],
       "points": 70,
@@ -8093,13 +8789,37 @@
       ],
       "abilities": [
         {
-          "name": "Silent Bodyguard"
+          "name": "Silent Bodyguard",
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "4+",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Character"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Its leading Character has Feel No Pain 4+"
         },
         {
-          "name": "Death Approaches"
+          "name": "Death Approaches",
+          "summary": "Deep Strikes 6\" from Afflicted enemies, 8\" from the rest"
         },
         {
-          "name": "Icon of Despair (Aura)"
+          "name": "Icon of Despair (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -1 Leadership"
         }
       ],
       "points": 150,
@@ -8430,13 +9150,28 @@
       ],
       "abilities": [
         {
-          "name": "Scuttling Walker"
+          "name": "Scuttling Walker",
+          "summary": "Moves over models and terrain, through engagement range; passes Desperate Escape"
         },
         {
-          "name": "Barrage of Filth"
+          "name": "Barrage of Filth",
+          "summary": "One unit it hits loses the benefit of cover this phase"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 300,
@@ -8895,10 +9630,39 @@
       ],
       "abilities": [
         {
-          "name": "Deredeo Strike"
+          "name": "Deredeo Strike",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll hits when shooting units not Below Half-strength"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -9278,10 +10042,62 @@
       ],
       "abilities": [
         {
-          "name": "Titan-killer"
+          "name": "Titan-killer",
+          "modifiers": [
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Its volcano cannon gains Devastating Wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 420,
@@ -9777,10 +10593,34 @@
       ],
       "abilities": [
         {
-          "name": "Rolling Fortress"
+          "name": "Rolling Fortress",
+          "summary": "Friendly models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Damaged: 1-8 wounds remaining"
+          "name": "Damaged: 1-8 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -4,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -4 OC while damaged (8 wounds or fewer left)"
         }
       ],
       "points": 480,
@@ -10130,10 +10970,40 @@
       ],
       "abilities": [
         {
-          "name": "Strafing Run"
+          "name": "Strafing Run",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-not-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that cannot Fly"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 290,
@@ -10574,7 +11444,18 @@
       ],
       "abilities": [
         {
-          "name": "Hovering Death"
+          "name": "Hovering Death",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         }
       ],
       "points": 100,
@@ -10737,7 +11618,8 @@
       ],
       "abilities": [
         {
-          "name": "Explosive Blight"
+          "name": "Explosive Blight",
+          "summary": "Destroys a unit: on 5+ enemies 6\" or closer are Afflicted until your next turn"
         }
       ],
       "points": 125,
@@ -11016,10 +11898,23 @@
       ],
       "abilities": [
         {
-          "name": "Putrefying Stink"
+          "name": "Putrefying Stink",
+          "summary": "Enemies cannot start or end an Advance 9\" or closer to it"
         },
         {
-          "name": "Blinding Spray"
+          "name": "Blinding Spray",
+          "modifiers": [
+            {
+              "key": "fights-first",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "once-per-battle"
+                }
+              ]
+            }
+          ],
+          "summary": "Once per battle: its unit Fights First"
         },
         {
           "name": "Leader"
@@ -11166,7 +12061,15 @@
       ],
       "abilities": [
         {
-          "name": "Fearsome (Aura)"
+          "name": "Fearsome (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer: -1 to Battle-shock and Leadership tests"
         }
       ],
       "points": 125,
@@ -11366,13 +12269,43 @@
       ],
       "abilities": [
         {
-          "name": "Daemon Lord of Nurgle (Aura)"
+          "name": "Daemon Lord of Nurgle (Aura)",
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "Plague Legions"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Friendly Plague Legions 6\" or closer get +1 Toughness"
         },
         {
-          "name": "Nurgle’s Rot (Psychic)"
+          "name": "Nurgle’s Rot (Psychic)",
+          "summary": "End of your Movement phase: an enemy 12\" or closer gets -1 Toughness until the next"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 265,
@@ -11581,7 +12514,18 @@
       ],
       "abilities": [
         {
-          "name": "Hovering Death"
+          "name": "Hovering Death",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         }
       ],
       "points": 150,
@@ -12028,10 +12972,36 @@
       ],
       "abilities": [
         {
-          "name": "Diseased Malice"
+          "name": "Diseased Malice",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound against Afflicted units"
         },
         {
-          "name": "Froth-spattered Frenzy"
+          "name": "Froth-spattered Frenzy",
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "With two melee weapons: +2 Attacks for each"
         }
       ],
       "points": 105,
@@ -12361,10 +13331,31 @@
       ],
       "abilities": [
         {
-          "name": "Bomb Rack"
+          "name": "Bomb Rack",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "6D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "After a Normal move over an enemy: six D6, each 3+ a mortal wound"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 140,
@@ -12537,7 +13528,24 @@
       ],
       "abilities": [
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         }
       ],
       "points": 115,
@@ -12691,10 +13699,19 @@
       ],
       "abilities": [
         {
-          "name": "Unclean Icon"
+          "name": "Unclean Icon",
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1 OC"
         },
         {
-          "name": "Blessed Icon of Disease"
+          "name": "Blessed Icon of Disease",
+          "summary": "Once per battle: frees a unit 12\" or closer from Battle-shock"
         },
         {
           "name": "Leader"
@@ -13753,16 +14770,54 @@
       ],
       "abilities": [
         {
-          "name": "Vortex Terrors (Psychic)"
+          "name": "Vortex Terrors (Psychic)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of your Shooting phase: a visible enemy 24\" or closer tests Battle-shock"
         },
         {
-          "name": "Warp Storms (Psychic)"
+          "name": "Warp Storms (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 9\" or closer take D3 mortal wounds on 3+"
         },
         {
           "name": "*Invulnerable Save"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         }
       ],
       "points": 350,
@@ -13958,13 +15013,58 @@
       ],
       "abilities": [
         {
-          "name": "Taskmaster (Aura)"
+          "name": "Taskmaster (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit when shooting"
         },
         {
-          "name": "Obsessive Ruthlessness"
+          "name": "Obsessive Ruthlessness",
+          "summary": "Shooting Monsters and Vehicles: ignores BS, hit and wound modifiers"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -14344,13 +15444,66 @@
       ],
       "abilities": [
         {
-          "name": "Dread Dominion (Aura)"
+          "name": "Dread Dominion (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            },
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "aura",
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 Leadership and OC"
         },
         {
-          "name": "Seething Hatred"
+          "name": "Seething Hatred",
+          "summary": "Shooting or fighting: one hit or one wound may be re-rolled"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -14738,13 +15891,73 @@
       ],
       "abilities": [
         {
-          "name": "Frenzied Rampage (Aura)"
+          "name": "Frenzied Rampage (Aura)",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer re-roll 1s to hit in melee"
         },
         {
-          "name": "Bloodlust"
+          "name": "Bloodlust",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "After charging: Sustained Hits 1 in melee; once per battle, charges after Advancing"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -14915,13 +16128,70 @@
       ],
       "abilities": [
         {
-          "name": "Methodical Destruction"
+          "name": "Methodical Destruction",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-quarry"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against its victim, chosen anew whenever one dies"
         },
         {
-          "name": "Close-range Killers (Aura)"
+          "name": "Close-range Killers (Aura)",
+          "modifiers": [
+            {
+              "key": "AP",
+              "value": -1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "closest-target"
+                }
+              ],
+              "range": 9,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 9\" or closer get +1 AP against the closest enemy"
         },
         {
-          "name": "Damaged: 1-9 wounds remaining"
+          "name": "Damaged: 1-9 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -5,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -5 OC while damaged (9 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -15191,13 +16461,42 @@
       ],
       "abilities": [
         {
-          "name": "Infernal Aegis (Aura)"
+          "name": "Infernal Aegis (Aura)",
+          "modifiers": [
+            {
+              "key": "cover",
+              "target": "aura",
+              "range": 6,
+              "keywords": {
+                "allOf": [
+                  "War Dog"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "War Dogs 6\" or closer have the benefit of cover"
         },
         {
-          "name": "Bastion of Corruption"
+          "name": "Bastion of Corruption",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer"
         },
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (10 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -15665,10 +16964,24 @@
       ],
       "abilities": [
         {
-          "name": "Line-breaker"
+          "name": "Line-breaker",
+          "summary": "Its Blast weapons shoot engaged enemies, without the engaged hit penalty"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 240,
@@ -16193,10 +17506,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         }
       ],
       "points": 230,
@@ -16527,13 +17860,34 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         },
         {
-          "name": "Explorator Augury Web"
+          "name": "Explorator Augury Web",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer, but its capacity is halved"
         }
       ],
       "points": 220,
@@ -16865,10 +18219,31 @@
       ],
       "abilities": [
         {
-          "name": "Duty Eternal"
+          "name": "Duty Eternal",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -17072,10 +18447,37 @@
       ],
       "abilities": [
         {
-          "name": "Vector of Disease"
+          "name": "Vector of Disease",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "charged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 and Lance in melee"
         },
         {
-          "name": "Unholy Resilience"
+          "name": "Unholy Resilience",
+          "summary": "First death in a battle round: on a 2+ returns with 3 wounds (once per battle)"
         },
         {
           "name": "Leader"
@@ -17216,10 +18618,12 @@
           "name": "Leader"
         },
         {
-          "name": "Gift of Poxes"
+          "name": "Gift of Poxes",
+          "summary": "+3\" Contagion Range"
         },
         {
-          "name": "Shroud of Disease"
+          "name": "Shroud of Disease",
+          "summary": "Leading: its unit can only be shot from 18\" or closer"
         }
       ],
       "points": 65,
@@ -17347,10 +18751,39 @@
       ],
       "abilities": [
         {
-          "name": "Virulent Aura"
+          "name": "Virulent Aura",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: re-roll wounds when shooting"
         },
         {
-          "name": "Blight Bombardment"
+          "name": "Blight Bombardment",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One visible enemy 30\" or closer: Death Guard re-roll 1s to hit it (all with Blast)"
         },
         {
           "name": "Leader"
@@ -17626,10 +19059,31 @@
       ],
       "abilities": [
         {
-          "name": "Gift of Contagion (Psychic)"
+          "name": "Gift of Contagion (Psychic)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 against Afflicted units"
         },
         {
-          "name": "Pestilent Fallout (Psychic)"
+          "name": "Pestilent Fallout (Psychic)",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Infantry its Plague Wind hits: -2\" Move through the enemy’s next turn"
         },
         {
           "name": "Leader"
@@ -17847,10 +19301,34 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-10 wounds remaining"
+          "name": "Damaged: 1-10 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -6,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -6 OC while damaged (10 wounds or fewer left)"
         },
         {
-          "name": "Inviolable Transport"
+          "name": "Inviolable Transport",
+          "summary": "Once per battle round: an attack allocated to it deals no damage"
         }
       ],
       "points": 540,
@@ -18062,13 +19540,16 @@
       ],
       "abilities": [
         {
-          "name": "Putrescent Fog (Aura)"
+          "name": "Putrescent Fog (Aura)",
+          "summary": "Enemy Reinforcements cannot arrive 12\" or closer"
         },
         {
-          "name": "Diseased Cover"
+          "name": "Diseased Cover",
+          "summary": "Models it partly hides get the benefit of cover against ranged attacks"
         },
         {
-          "name": "Deployment"
+          "name": "Deployment",
+          "summary": "Its two parts are set up 1\" apart and count as one model"
         }
       ],
       "points": 105,
@@ -18225,13 +19706,35 @@
       ],
       "abilities": [
         {
-          "name": "Host of Plagues"
+          "name": "Host of Plagues",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "End of your Movement phase: enemies 6\" or closer take D3 mortal wounds on 3+ (+1 if Afflicted)"
         },
         {
-          "name": "Lord of the Death Guard"
+          "name": "Lord of the Death Guard",
+          "summary": "Once per turn, uses one of its Lord of the Death Guard abilities"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 375,
@@ -18333,7 +19836,20 @@
       ],
       "abilities": [
         {
-          "name": "Mischief Makers (Aura)"
+          "name": "Mischief Makers (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -1 to hit in melee"
         }
       ],
       "points": 85,
@@ -18490,7 +20006,66 @@
       ],
       "abilities": [
         {
-          "name": "Tank Hunters"
+          "name": "Tank Hunters",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit and wound when shooting Monsters and Vehicles"
         }
       ],
       "points": 0,
@@ -18624,10 +20199,33 @@
       ],
       "abilities": [
         {
-          "name": "Sickening Vitality"
+          "name": "Sickening Vitality",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "reroll-advance",
+              "target": "attached"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1\" Move, and re-roll Advance and charge rolls"
         },
         {
-          "name": "Tocsin of Misery (Aura)"
+          "name": "Tocsin of Misery (Aura)",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 9\" or closer below Starting Strength must test for Battle-shock"
         },
         {
           "name": "Leader"
@@ -18730,7 +20328,20 @@
       ],
       "abilities": [
         {
-          "name": "Mischief Makers (Aura)"
+          "name": "Mischief Makers (Aura)",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Enemies engaged with it get -1 to hit in melee"
         }
       ],
       "points": 45,
@@ -18864,13 +20475,35 @@
       ],
       "abilities": [
         {
-          "name": "Death’s Heads"
+          "name": "Death’s Heads",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "aura",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One unit it hits: Plague Legions re-roll wounds against it this turn"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 110,
@@ -19555,7 +21188,8 @@
       ],
       "abilities": [
         {
-          "name": "Gift of Poxes"
+          "name": "Gift of Poxes",
+          "summary": "+3\" Contagion Range"
         },
         {
           "name": "Leader"
@@ -20031,10 +21665,19 @@
       ],
       "abilities": [
         {
-          "name": "Infused with the Blessings of Nurgle"
+          "name": "Infused with the Blessings of Nurgle",
+          "summary": "One unit it shoots and hits is Afflicted until your next turn"
         },
         {
-          "name": "Icon of Despair (Aura)"
+          "name": "Icon of Despair (Aura)",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -1 Leadership"
         },
         {
           "name": "Insectile Murmuration"
@@ -20938,7 +22581,20 @@
       ],
       "abilities": [
         {
-          "name": "Gift of Contagion (Psychic)"
+          "name": "Gift of Contagion (Psychic)",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "attached",
+              "conditions": [
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: Sustained Hits 1 against Afflicted units"
         },
         {
           "name": "Leader"
@@ -21179,10 +22835,31 @@
       ],
       "abilities": [
         {
-          "name": "Tainted Narthecium"
+          "name": "Tainted Narthecium",
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Leading, Command phase: returns one destroyed Bodyguard model"
         },
         {
-          "name": "Inflamed Infections"
+          "name": "Inflamed Infections",
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "One engaged enemy: critical hits on 5+ against it (4+ Below Half-strength)"
         },
         {
           "name": "Leader"
@@ -21285,13 +22962,23 @@
       ],
       "abilities": [
         {
-          "name": "Infected Outbreak"
+          "name": "Infected Outbreak",
+          "summary": "An objective it holds as your Command phase ends stays yours after it leaves"
         },
         {
-          "name": "Daemonic Icon"
+          "name": "Daemonic Icon",
+          "summary": "Its unit has Leadership 6+"
         },
         {
-          "name": "Instrument of Chaos"
+          "name": "Instrument of Chaos",
+          "modifiers": [
+            {
+              "key": "charge",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "+1 to its unit’s charge rolls"
         }
       ],
       "points": 115,
@@ -21474,10 +23161,31 @@
       ],
       "abilities": [
         {
-          "name": "Spore-laced Shock Waves"
+          "name": "Spore-laced Shock Waves",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Its mortar target and enemies 3\" or closer: D3 mortal wounds on a 6 (+1 if Afflicted)"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 170,
@@ -21755,7 +23463,8 @@
       ],
       "abilities": [
         {
-          "name": "Curse of the Walking Pox"
+          "name": "Curse of the Walking Pox",
+          "summary": "Each non-Monster, non-Vehicle model it kills returns a Poxwalker"
         }
       ],
       "points": 65,
@@ -22445,7 +24154,22 @@
       ],
       "abilities": [
         {
-          "name": "Powerful Volley"
+          "name": "Powerful Volley",
+          "modifiers": [
+            {
+              "key": "lethal-hits",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "stationary"
+                }
+              ]
+            }
+          ],
+          "summary": "Stationary: Heavy weapons gain Lethal Hits"
         }
       ],
       "points": 90,
@@ -22719,13 +24443,48 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-20 wounds remaining"
+          "name": "Damaged: 1-20 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (20 wounds or fewer left)"
         },
         {
-          "name": "God-machine"
+          "name": "God-machine",
+          "modifiers": [
+            {
+              "key": "fall-back-and-shoot",
+              "target": "self"
+            },
+            {
+              "key": "fall-back-and-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Fell Back: can still shoot and charge"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2200,
@@ -23225,7 +24984,8 @@
       ],
       "abilities": [
         {
-          "name": "Even In Death I Serve"
+          "name": "Even In Death I Serve",
+          "summary": "First death: no Deadly Demise, and on a 2+ it returns with D6 wounds once the phase ends"
         }
       ],
       "points": 140,
@@ -23479,13 +25239,59 @@
       ],
       "abilities": [
         {
-          "name": "Virulent Blessing (Psychic)"
+          "name": "Virulent Blessing (Psychic)",
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "aura",
+              "keywords": {
+                "allOf": [
+                  "Plague Legions"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              },
+              "conditions": [
+                {
+                  "key": "target-marked"
+                }
+              ]
+            }
+          ],
+          "summary": "Fight phase: Plague Legions get +1 Damage against one visible enemy 24\" or closer"
         },
         {
-          "name": "Deluge of Nurgle (Aura)"
+          "name": "Deluge of Nurgle (Aura)",
+          "modifiers": [
+            {
+              "key": "M",
+              "value": -2,
+              "target": "enemy"
+            },
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer get -2\" Move and -1 OC"
         },
         {
-          "name": "Damaged: 1-7 wounds remaining"
+          "name": "Damaged: 1-7 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (7 wounds or fewer left)"
         }
       ],
       "points": 280,
@@ -23743,10 +25549,41 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Spearhead"
+          "name": "Armoured Spearhead",
+          "modifiers": [
+            {
+              "key": "reroll-hit",
+              "value": 1,
+              "target": "self"
+            },
+            {
+              "key": "reroll-hit",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to hit; every hit roll against units on an objective you do not hold"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -23963,10 +25800,40 @@
       ],
       "abilities": [
         {
-          "name": "Rotating Death"
+          "name": "Rotating Death",
+          "modifiers": [
+            {
+              "key": "sustained-hits",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Infantry"
+                }
+              ]
+            }
+          ],
+          "summary": "Its rotary cannon gains Sustained Hits 1 against Infantry"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 160,
@@ -24183,10 +26050,60 @@
       ],
       "abilities": [
         {
-          "name": "Ferocious Assault"
+          "name": "Ferocious Assault",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "closest-target"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting the closest Monster or Vehicle"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 180,
@@ -24424,10 +26341,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-13 wounds remaining"
+          "name": "Damaged: 1-13 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (13 wounds or fewer left)"
         },
         {
-          "name": "Aerial Assault"
+          "name": "Aerial Assault",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Deep Strike units disembarking after its Normal move make an assault disembark"
         }
       ],
       "points": 900,
@@ -24669,10 +26606,30 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         },
         {
-          "name": "Assault Ramp"
+          "name": "Assault Ramp",
+          "modifiers": [
+            {
+              "key": "assault-disembark",
+              "target": "self"
+            }
+          ],
+          "summary": "Units disembarking after its Normal move make an assault disembark"
         }
       ],
       "points": 300,
@@ -25114,10 +27071,31 @@
       ],
       "abilities": [
         {
-          "name": "Armoured Resilience"
+          "name": "Armoured Resilience",
+          "modifiers": [
+            {
+              "key": "damage-reduction",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "-1 Damage to attacks allocated to it"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 250,
@@ -25318,10 +27296,19 @@
       ],
       "abilities": [
         {
-          "name": "Malicious Calculations"
+          "name": "Malicious Calculations",
+          "summary": "Leading: ignores hit, BS and WS modifiers"
         },
         {
-          "name": "Seven-fold Chant"
+          "name": "Seven-fold Chant",
+          "modifiers": [
+            {
+              "key": "cp",
+              "value": 1,
+              "target": "self"
+            }
+          ],
+          "summary": "Command phase: +1CP on 7+ on 2D6"
         },
         {
           "name": "Leader"
@@ -25499,10 +27486,24 @@
       ],
       "abilities": [
         {
-          "name": "Termite Assault"
+          "name": "Termite Assault",
+          "summary": "Starts in Reserves without counting, lands in rounds 1-3; passengers disembark 9\" from enemies"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         }
       ],
       "points": 200,
@@ -26957,10 +28958,48 @@
       ],
       "abilities": [
         {
-          "name": "Sunderer of Fortresses"
+          "name": "Sunderer of Fortresses",
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 S and Damage against Vehicles, +2 against Fortifications"
         },
         {
-          "name": "Damaged: 1-6 wounds remaining"
+          "name": "Damaged: 1-6 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (6 wounds or fewer left)"
         }
       ],
       "points": 320,
@@ -27183,10 +29222,34 @@
           "name": "Leader"
         },
         {
-          "name": "The Destroyer Hive"
+          "name": "The Destroyer Hive",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "led"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading: melee attacks against its unit get -1 to hit"
         },
         {
-          "name": "Eater Plague (Psychic)"
+          "name": "Eater Plague (Psychic)",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D6",
+              "target": "enemy"
+            }
+          ],
+          "summary": "A visible enemy 18\" or closer: D6 mortal wounds on 2-5, D3+3 on a 6 (D3 to itself on a 1)"
         }
       ],
       "points": 90,
@@ -27933,10 +29996,38 @@
       ],
       "abilities": [
         {
-          "name": "Brigand"
+          "name": "Brigand",
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "Ignores Cover when shooting units on an objective"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -28132,10 +30223,36 @@
       ],
       "abilities": [
         {
-          "name": "Executioner"
+          "name": "Executioner",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-below-half-strength"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit Below Half-strength units; its kills force Battle-shock 3\" around"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -28339,10 +30456,48 @@
       ],
       "abilities": [
         {
-          "name": "Huntsman"
+          "name": "Huntsman",
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Monster"
+                }
+              ]
+            },
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-keyword",
+                  "value": "Vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll wounds against Monsters and Vehicles"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -28538,10 +30693,34 @@
       ],
       "abilities": [
         {
-          "name": "Karnivore"
+          "name": "Karnivore",
+          "modifiers": [
+            {
+              "key": "reroll-advance",
+              "target": "self"
+            },
+            {
+              "key": "reroll-charge",
+              "target": "self"
+            }
+          ],
+          "summary": "Re-roll Advance and charge rolls"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -28792,10 +30971,35 @@
       ],
       "abilities": [
         {
-          "name": "Protection Protocols"
+          "name": "Protection Protocols",
+          "modifiers": [
+            {
+              "key": "heroic-intervention",
+              "target": "self"
+            },
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Heroic Intervention on it costs 0CP, even if already used this phase"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -29093,10 +31297,36 @@
       ],
       "abilities": [
         {
-          "name": "Stalker"
+          "name": "Stalker",
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-isolated"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to wound targets with no other enemy 6\" or closer"
         },
         {
-          "name": "Damaged: 1-5 wounds remaining"
+          "name": "Damaged: 1-5 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (5 wounds or fewer left)"
         },
         {
           "name": "*Invulnerable Save"
@@ -29443,13 +31673,38 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-26 wounds remaining"
+          "name": "Damaged: 1-26 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -10,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -10 OC while damaged (26 wounds or fewer left)"
         },
         {
-          "name": "Titanic Fire Support"
+          "name": "Titanic Fire Support",
+          "summary": "One unit it hits: friendly critical wounds get +1 AP against it this phase"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost three times as much"
         }
       ],
       "points": 2600,
@@ -29745,13 +32000,45 @@
       ],
       "abilities": [
         {
-          "name": "Flank Speed"
+          "name": "Flank Speed",
+          "modifiers": [
+            {
+              "key": "advance",
+              "value": 8,
+              "target": "self"
+            }
+          ],
+          "summary": "Advances a flat 8\" without rolling"
         },
         {
-          "name": "Damaged: 1-13 wounds remaining"
+          "name": "Damaged: 1-13 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -8,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -8 OC while damaged (13 wounds or fewer left)"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost twice as much"
         }
       ],
       "points": 1100,
@@ -30119,13 +32406,44 @@
       ],
       "abilities": [
         {
-          "name": "Damaged: 1-33 wounds remaining"
+          "name": "Damaged: 1-33 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -15,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit and -15 OC while damaged (33 wounds or fewer left)"
         },
         {
-          "name": "Wrath of the Omnissiah"
+          "name": "Wrath of the Omnissiah",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "One unit it hits tests for Battle-shock"
         },
         {
-          "name": "Striding Colossus"
+          "name": "Striding Colossus",
+          "summary": "Stratagems on it cost four times as much"
         }
       ],
       "points": 3500,
@@ -30383,10 +32701,30 @@
       ],
       "abilities": [
         {
-          "name": "Pinning Bombardment"
+          "name": "Pinning Bombardment",
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Hits an infantry unit: that unit tests for Battle-shock"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -30510,10 +32848,40 @@
       ],
       "abilities": [
         {
-          "name": "Interceptor"
+          "name": "Interceptor",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-keyword",
+                  "value": "Fly"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 to hit when shooting units that can Fly"
         },
         {
-          "name": "Damaged: 1-4 wounds remaining"
+          "name": "Damaged: 1-4 wounds remaining",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "damaged"
+                }
+              ]
+            }
+          ],
+          "summary": "-1 to hit while damaged (4 wounds or fewer left)"
         }
       ],
       "points": 115,
@@ -30556,7 +32924,57 @@
     },
     {
       "id": "nurgles-gift-aura",
-      "name": "Nurgle's Gift (Aura)"
+      "name": "Nurgle's Gift (Aura)",
+      "options": [
+        {
+          "name": "Skullsquirm Blight: cover against its shots, -1 to hit in melee",
+          "modifiers": [
+            {
+              "key": "hit",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "melee"
+                },
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rattlejoint Ague: Save worsened by 1",
+          "modifiers": []
+        },
+        {
+          "name": "Scabrous Soulrot: -1 Move, Leadership and OC",
+          "modifiers": [
+            {
+              "key": "Ld",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            },
+            {
+              "key": "OC",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": "Enemies in Contagion Range are Afflicted: -1 Toughness and the Plague chosen at deployment"
     },
     {
       "id": "warp-rifts",
@@ -30574,7 +32992,8 @@
       "rules": [
         {
           "id": "manifold-maladies",
-          "name": "Manifold Maladies"
+          "name": "Manifold Maladies",
+          "summary": "Each battle round you may switch your chosen Plague"
         }
       ],
       "enhancements": [
@@ -30590,7 +33009,8 @@
               "Lord of Poxes"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Enemies in its Contagion Range also suffer a second Plague chosen at deployment"
         },
         {
           "id": "final-ingredient",
@@ -30604,7 +33024,8 @@
               "Biologus Putrifier"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle, after killing a Character in melee: Afflicted enemies suffer one more Plague"
         },
         {
           "id": "needle-of-nurgle",
@@ -30618,7 +33039,15 @@
               "Plague Surgeon"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "Its Tainted Narthecium returns up to D3 models"
         },
         {
           "id": "visions-of-virulence",
@@ -30632,7 +33061,8 @@
               "Malignant Plaguecaster"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Units enfeebled by its Pestilent Fallout are also Afflicted"
         }
       ]
     },
@@ -30646,7 +33076,26 @@
       "rules": [
         {
           "id": "warped-and-rusted-animus",
-          "name": "Warped and Rusted Animus"
+          "name": "Warped and Rusted Animus",
+          "modifiers": [
+            {
+              "key": "assault",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "eligibility": {
+            "allOf": [
+              "Contagion Engine"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Bloat-drones, Helbrutes and Blight-haulers are Contagion Engines, with Assault on their ranged weapons"
         }
       ],
       "enhancements": [
@@ -30667,7 +33116,14 @@
               "Myphitic Blight-haulers"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "mobile",
+              "target": "self"
+            }
+          ],
+          "summary": "Mobile"
         },
         {
           "id": "parasitic-woe-reaper",
@@ -30681,7 +33137,15 @@
               "Contagion Engines"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "self"
+            }
+          ],
+          "summary": "After fighting: one model heals D3 wounds"
         }
       ]
     },
@@ -30695,7 +33159,15 @@
       "rules": [
         {
           "id": "deadly-vectors",
-          "name": "Deadly Vectors"
+          "name": "Deadly Vectors",
+          "modifiers": [
+            {
+              "key": "mortal-wounds",
+              "value": "D3",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemy Command phase: each Afflicted unit rolls 2D6, D3 mortal wounds on 6 or less"
         }
       ],
       "enhancements": [
@@ -30711,7 +33183,14 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "target": "enemy"
+            }
+          ],
+          "summary": "Start of the Fight phase: engaged enemies test for Battle-shock"
         },
         {
           "id": "helm-of-the-fly-king",
@@ -30725,7 +33204,8 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leading: its unit can only be shot from 18\" or closer"
         },
         {
           "id": "vile-vigour",
@@ -30739,7 +33219,19 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "M",
+              "value": 1,
+              "target": "attached"
+            },
+            {
+              "key": "reroll-advance",
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: +1\" Move and re-roll Advance rolls"
         },
         {
           "id": "warprot-talisman",
@@ -30753,7 +33245,14 @@
               "Terminator"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "strategic-reserves",
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle, end of the enemy turn, unengaged: into Strategic Reserves"
         }
       ]
     },
@@ -30767,7 +33266,21 @@
       "rules": [
         {
           "id": "verminous-haze",
-          "name": "Verminous Haze"
+          "name": "Verminous Haze",
+          "modifiers": [
+            {
+              "key": "infiltrators",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Plague Marines"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Up to two Plague Marines units gain Infiltrators"
         }
       ],
       "enhancements": [
@@ -30784,7 +33297,20 @@
               "Plague Marines"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ],
+          "summary": "Re-roll 1s to wound against units in a friendly Contagion Range"
         },
         {
           "id": "plagueveil",
@@ -30799,7 +33325,8 @@
               "Plague Marines"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "-3\" detection range"
         }
       ]
     },
@@ -30813,7 +33340,8 @@
       "rules": [
         {
           "id": "miasmic-bombardment",
-          "name": "Miasmic Bombardment"
+          "name": "Miasmic Bombardment",
+          "summary": "Each battle round: 1-3 enemy units 12\" from your army are Afflicted"
         }
       ],
       "enhancements": [
@@ -30829,7 +33357,8 @@
               "Malignant Plaguecaster"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "+12\" range for its Plague Wind this Shooting phase"
         },
         {
           "id": "eye-of-affliction",
@@ -30843,7 +33372,22 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "ignores-cover",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                },
+                {
+                  "key": "target-afflicted"
+                }
+              ]
+            }
+          ],
+          "summary": "Its unit shoots Afflicted enemies with Ignores Cover"
         },
         {
           "id": "shriekworm-familiar",
@@ -30857,7 +33401,15 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "stratagem-cost",
+              "value": -1,
+              "target": "self"
+            }
+          ],
+          "summary": "Once per battle round, Fire Overwatch on its unit costs 0CP"
         },
         {
           "id": "tendrilous-emissions",
@@ -30871,7 +33423,19 @@
               "Lord of Virulence"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "lone-operative",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "near-vehicle"
+                }
+              ]
+            }
+          ],
+          "summary": "Near a friendly Vehicle (3\"): Lone Operative, and those Vehicles re-roll 1s to wound targets it sees"
         }
       ]
     },
@@ -30885,7 +33449,16 @@
       "rules": [
         {
           "id": "hypervirulent-strains",
-          "name": "Hypervirulent Strains"
+          "name": "Hypervirulent Strains",
+          "eligibility": {
+            "allOf": [
+              "Death Guard",
+              "Character"
+            ],
+            "anyOf": [],
+            "noneOf": []
+          },
+          "summary": "Characters get +3\" Contagion Range (12\" at most)"
         }
       ],
       "enhancements": [
@@ -30902,7 +33475,8 @@
               "Infantry"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Once per battle: enemies in its Contagion Range suffer a second Plague for good"
         },
         {
           "id": "rejuvenating-swarm",
@@ -30919,7 +33493,20 @@
           ],
           "excludes": [
             "Terminator"
-          ]
+          ],
+          "modifiers": [
+            {
+              "key": "wound",
+              "value": -1,
+              "target": "enemy",
+              "conditions": [
+                {
+                  "key": "strength-above-toughness"
+                }
+              ]
+            }
+          ],
+          "summary": "Attacks stronger than its Toughness get -1 to wound"
         }
       ]
     },
@@ -30933,7 +33520,22 @@
       "rules": [
         {
           "id": "numberless-horde",
-          "name": "Numberless Horde"
+          "name": "Numberless Horde",
+          "modifiers": [
+            {
+              "key": "gain-keyword",
+              "value": "Battleline",
+              "target": "self",
+              "keywords": {
+                "allOf": [
+                  "Poxwalkers"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "From round 2, a new Poxwalkers unit of 10 joins your Strategic Reserves each Command phase; Poxwalkers are Battleline"
         }
       ],
       "enhancements": [
@@ -30949,7 +33551,8 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Leading Poxwalkers in Strategic Reserves: arrives as if in round 3"
         },
         {
           "id": "sorrowsyphon",
@@ -30963,7 +33566,20 @@
               "Malignant Plaguecaster"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "D",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "ranged"
+                }
+              ]
+            }
+          ],
+          "summary": "Leading Poxwalkers: +1 Damage for its Plague Wind, which kills D3 of them"
         },
         {
           "id": "talisman-of-burgeoning",
@@ -30977,7 +33593,15 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "T",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading: Poxwalkers get +1 Toughness"
         },
         {
           "id": "witherbone-pipes",
@@ -30991,7 +33615,15 @@
               "Noxious Blightbringer"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "OC",
+              "value": 1,
+              "target": "attached"
+            }
+          ],
+          "summary": "Leading Poxwalkers: +1 OC and +1 to Battle-shock and Leadership tests"
         }
       ]
     },
@@ -31005,7 +33637,8 @@
       "rules": [
         {
           "id": "reverberant-rancidity",
-          "name": "Reverberant Rancidity"
+          "name": "Reverberant Rancidity",
+          "summary": "Up to 500-1500 points of Plague Legions; they and Death Guard 7\" apart share Nurgle’s Gift and +3\" Contagion Range"
         }
       ],
       "enhancements": [
@@ -31021,7 +33654,8 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "summary": "Plague Legions Deep Striking wholly 12\" or closer to it can land 6\" from enemies"
         },
         {
           "id": "entropic-knell",
@@ -31035,7 +33669,15 @@
               "Great Unclean One"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "battle-shock",
+              "value": -1,
+              "target": "enemy"
+            }
+          ],
+          "summary": "Enemies 6\" or closer below Starting Strength test Battle-shock at -1"
         },
         {
           "id": "fell-harvester",
@@ -31049,7 +33691,20 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "A",
+              "value": 2,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+2 melee Attacks"
         },
         {
           "id": "tome-of-bounteous-blessings",
@@ -31063,7 +33718,23 @@
               "Malignant Plaguecaster"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "heal",
+              "value": "D3",
+              "target": "aura",
+              "range": 12,
+              "keywords": {
+                "allOf": [
+                  "Plague Legions"
+                ],
+                "anyOf": [],
+                "noneOf": []
+              }
+            }
+          ],
+          "summary": "Plague Legions 12\" or closer: +1 to Battle-shock tests, and heal D3 when passed"
         }
       ]
     },
@@ -31078,7 +33749,8 @@
       "rules": [
         {
           "id": "worldblight",
-          "name": "Worldblight"
+          "name": "Worldblight",
+          "summary": "Objectives you hold as your Command phase ends stay yours, and enemies on them are Afflicted"
         }
       ],
       "enhancements": [
@@ -31094,7 +33766,20 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "reroll-wound",
+              "value": "all",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "on-objective"
+                }
+              ]
+            }
+          ],
+          "summary": "On an objective you hold: its unit re-rolls wounds"
         },
         {
           "id": "daemon-weapon-of-nurgle",
@@ -31108,7 +33793,20 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "crit-hit",
+              "value": "5+",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "Critical hits on 5+ in melee"
         },
         {
           "id": "furnace-of-plagues",
@@ -31122,7 +33820,39 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "S",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "A",
+              "value": 1,
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            },
+            {
+              "key": "devastating-wounds",
+              "target": "self",
+              "conditions": [
+                {
+                  "key": "melee"
+                }
+              ]
+            }
+          ],
+          "summary": "+1 melee S and A, with Devastating Wounds"
         },
         {
           "id": "revolting-regeneration",
@@ -31136,7 +33866,15 @@
               "Death Guard"
             ]
           ],
-          "excludes": []
+          "excludes": [],
+          "modifiers": [
+            {
+              "key": "feel-no-pain",
+              "value": "5+",
+              "target": "self"
+            }
+          ],
+          "summary": "Feel No Pain 5+"
         }
       ]
     }
@@ -31152,6 +33890,7 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Death Guard",
@@ -31159,7 +33898,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A visible enemy in its Contagion Range gets +6\" detection range"
     },
     {
       "id": "all-is-rot",
@@ -31171,7 +33911,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Engaged: shoots as if unengaged, but may take mortal wounds as the enemy is hurt"
     },
     {
       "id": "avatars-of-decay",
@@ -31183,7 +33931,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Enemies 6\" or closer are Afflicted this phase"
     },
     {
       "id": "blessings-of-filth",
@@ -31196,7 +33952,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "crit-hit",
+          "value": "5+",
+          "target": "self"
+        }
+      ],
+      "summary": "Attached unit: critical hits on 5+ this phase"
     },
     {
       "id": "blighted-land",
@@ -31208,7 +33979,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "end-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Enemies 3\" or closer to a visible terrain feature are Afflicted until your next turn"
     },
     {
       "id": "bloodrust-deluge",
@@ -31220,13 +34001,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Contagion Engine"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "A visible enemy is Afflicted until the unit has attacked"
     },
     {
       "id": "blooming-pestilence",
@@ -31242,7 +34025,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "trigger": "start-of-phase",
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "+3\" Contagion Range this phase"
     },
     {
       "id": "clutching-corruption",
@@ -31254,7 +34046,27 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-engaged-with-legions"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits against enemies engaged with Plague Legions"
     },
     {
       "id": "creeping-blight",
@@ -31266,7 +34078,44 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Infantry"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-afflicted"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "target-afflicted"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits and wounds when shooting Afflicted units"
     },
     {
       "id": "deaths-heads",
@@ -31278,7 +34127,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Biologus Putrifier"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A visible non-Vehicle enemy 8\" or closer suffers every Plague until your next turn"
     },
     {
       "id": "disgustingly-resilient",
@@ -31291,7 +34148,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "damage-reduction",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "-1 Damage to attacks allocated to it this phase"
     },
     {
       "id": "drawn-to-despair",
@@ -31303,7 +34176,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-in-deployment-zone"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits against units in the enemy deployment zone (Aircraft excepted)"
     },
     {
       "id": "droning-horror",
@@ -31315,14 +34208,40 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Plague Marines"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "half-range"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll 1s to hit when shooting, and 1s to wound at half range"
     },
     {
       "id": "eye-of-the-swarm",
@@ -31334,14 +34253,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Plague Marines"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Ranged weapons gain Close-quarters"
     },
     {
       "id": "eyestinger-storm",
@@ -31353,7 +34273,22 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "target": "enemy"
+        }
+      ],
+      "summary": "Afflicted enemies on a visible objective test for Battle-shock"
     },
     {
       "id": "fleshy-avalanche",
@@ -31366,7 +34301,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions",
+          "Monster"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves and charges through terrain this phase"
     },
     {
       "id": "font-of-filth",
@@ -31378,7 +34322,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Assault this phase"
     },
     {
       "id": "fresh-vectors",
@@ -31391,13 +34355,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "after-own-action",
       "target": {
         "allOf": [
           "Contagion Engine"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "reroll-wound",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "Re-roll 1s to wound"
     },
     {
       "id": "gnawing-hunger",
@@ -31409,7 +34382,42 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "M",
+          "value": 1,
+          "target": "self"
+        },
+        {
+          "key": "A",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        },
+        {
+          "key": "S",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "+1 Move and +1 melee A and S this turn"
     },
     {
       "id": "grim-reapers",
@@ -31421,7 +34429,32 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-not-keyword",
+              "value": "Monster"
+            },
+            {
+              "key": "target-not-keyword",
+              "value": "Vehicle"
+            }
+          ]
+        }
+      ],
+      "summary": "Re-roll hits against non-Monster, non-Vehicle units this phase"
     },
     {
       "id": "grip-of-the-walking-pox",
@@ -31433,7 +34466,16 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "After the attacker fights: a D6 per Poxwalker lost, each 6 a mortal wound back"
     },
     {
       "id": "grotesque-fortitude",
@@ -31446,7 +34488,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "trigger": "targeted",
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "T",
+          "value": 2,
+          "target": "self"
+        }
+      ],
+      "summary": "Attached unit: +2 Toughness this phase"
     },
     {
       "id": "hidden-amongst-the-dead",
@@ -31458,7 +34516,22 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "deep-strike",
+          "target": "self"
+        }
+      ],
+      "summary": "In Strategic Reserves: gains Deep Strike this phase"
     },
     {
       "id": "leechspore-eruption",
@@ -31470,7 +34543,27 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        },
+        {
+          "key": "heal",
+          "value": 6,
+          "target": "self"
+        }
+      ],
+      "summary": "A D6 per wound lost: each 5+ a mortal wound to an enemy 3\" or closer and a wound back (6 at most)"
     },
     {
       "id": "malignance-magnified",
@@ -31483,7 +34576,37 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "battle-tactic"
+      "category": "battle-tactic",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "reroll-hit",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-below-starting-strength"
+            }
+          ]
+        },
+        {
+          "key": "reroll-wound",
+          "value": "all",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "target-below-starting-strength"
+            }
+          ]
+        }
+      ],
+      "summary": "Attached unit: re-roll hits and wounds against units below Starting Strength"
     },
     {
       "id": "mireslick",
@@ -31495,7 +34618,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "enemy-falls-back",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Plague Legions"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Engaged enemies must pass Leadership to Fall Back, or stay put"
     },
     {
       "id": "mobile-vector",
@@ -31507,7 +34639,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "reinforcements",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A lone Character joins a nearby unit it can lead"
     },
     {
       "id": "mortarions-teachings",
@@ -31519,7 +34661,39 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "assault",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            }
+          ]
+        },
+        {
+          "key": "hit",
+          "value": 1,
+          "target": "self",
+          "conditions": [
+            {
+              "key": "ranged"
+            },
+            {
+              "key": "short-move"
+            }
+          ]
+        }
+      ],
+      "summary": "Ranged weapons gain Assault and Heavy this phase"
     },
     {
       "id": "nauseating-paroxysms",
@@ -31531,14 +34705,22 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Plague Marines"
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "An engaged enemy tests Battle-shock at -1"
     },
     {
       "id": "overwhelming-generosity",
@@ -31550,7 +34732,17 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "wargear"
+      "trigger": "start-of-phase",
+      "category": "wargear",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Death Guard may re-roll their random Attacks against one visible enemy"
     },
     {
       "id": "persistent-pests",
@@ -31566,7 +34758,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Nurglings"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Once per battle: a destroyed Nurglings unit returns whole into Strategic Reserves"
     },
     {
       "id": "plaguesurge",
@@ -31578,7 +34778,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Warlord"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Your Warlord: +3\" Contagion Range for the army until your next Command phase"
     },
     {
       "id": "putrid-detonation",
@@ -31594,7 +34803,19 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Monster"
+        ],
+        "anyOf": [
+          "Vehicle",
+          "Death Guard"
+        ],
+        "noneOf": []
+      },
+      "summary": "Just destroyed: its Deadly Demise always triggers and Afflicts the units it hurts"
     },
     {
       "id": "rabid-infusion",
@@ -31606,7 +34827,23 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Character"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fights-first",
+          "target": "self"
+        }
+      ],
+      "summary": "A unit with two Characters: Fights First this phase"
     },
     {
       "id": "relentless-grind",
@@ -31619,7 +34856,16 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Moves and charges through terrain this phase"
     },
     {
       "id": "shambling-wall",
@@ -31631,7 +34877,16 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "A nearby visible Poxwalkers unit loses models instead, one per point of Damage"
     },
     {
       "id": "shock-and-horror",
@@ -31643,7 +34898,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "battle-shock",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: engaged enemies test Battle-shock at -1"
     },
     {
       "id": "sickening-impact",
@@ -31655,7 +34926,23 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "after-own-action",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": 6,
+          "target": "enemy"
+        }
+      ],
+      "summary": "After its charge: a D6 per engaged model, each 2+ a mortal wound (6 at most)"
     },
     {
       "id": "signal-pox",
@@ -31667,7 +34954,15 @@
       ],
       "playerTurn": "your-turn",
       "timing": "once-per-phase",
-      "category": "epic-deed"
+      "category": "epic-deed",
+      "target": {
+        "allOf": [
+          "Lord of Virulence"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Enemies on a visible objective 30\" or closer are Afflicted until your next turn"
     },
     {
       "id": "simultaneous-contamination",
@@ -31686,7 +34981,8 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "summary": "Starting an action does not stop it from shooting"
     },
     {
       "id": "smeared-with-filth",
@@ -31698,7 +34994,15 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Poxwalkers"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "summary": "Just destroyed: one unit that attacked it is Afflicted for the battle"
     },
     {
       "id": "soulrot-flux",
@@ -31709,7 +35013,23 @@
         "movement"
       ],
       "playerTurn": "opponent-turn",
-      "timing": "once-per-phase"
+      "timing": "once-per-phase",
+      "trigger": "enemy-falls-back",
+      "target": {
+        "allOf": [
+          "Contagion Engine"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "mortal-wounds",
+          "value": "D3",
+          "target": "enemy"
+        }
+      ],
+      "summary": "An enemy Falls Back from it: 1 mortal wound on a 1, D3 on 2-5, 3 on a 6"
     },
     {
       "id": "stinking-mire",
@@ -31721,7 +35041,24 @@
       ],
       "playerTurn": "opponent-turn",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "start-of-phase",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Death Guard",
+          "Vehicle"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "charge",
+          "value": -1,
+          "target": "enemy"
+        }
+      ],
+      "summary": "A visible enemy 12\" or closer gets -1 to its charge rolls"
     },
     {
       "id": "territorial-infection",
@@ -31731,8 +35068,9 @@
       "phases": [
         "command"
       ],
-      "playerTurn": "your-turn",
+      "playerTurn": "either",
       "timing": "once-per-phase",
+      "trigger": "start-of-phase",
       "target": {
         "allOf": [
           "Death Guard",
@@ -31740,7 +35078,15 @@
         ],
         "anyOf": [],
         "noneOf": []
-      }
+      },
+      "modifiers": [
+        {
+          "key": "OC",
+          "value": 1,
+          "target": "self"
+        }
+      ],
+      "summary": "+1 OC this turn"
     },
     {
       "id": "undying-spite",
@@ -31752,7 +35098,28 @@
       ],
       "playerTurn": "either",
       "timing": "once-per-phase",
-      "category": "strategic-ploy"
+      "trigger": "targeted",
+      "category": "strategic-ploy",
+      "target": {
+        "allOf": [
+          "Terminator"
+        ],
+        "anyOf": [],
+        "noneOf": []
+      },
+      "modifiers": [
+        {
+          "key": "fight-on-death",
+          "value": "4+",
+          "target": "self",
+          "conditions": [
+            {
+              "key": "melee"
+            }
+          ]
+        }
+      ],
+      "summary": "Slain before fighting: still fights on a 4+"
     }
   ]
 }
