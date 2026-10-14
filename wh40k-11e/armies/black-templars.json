@@ -702,6 +702,7 @@
         "Gravis",
         "Aggressor Squad",
         "Attacks Dx Weapon",
+        "Torrent Weapon",
         "Power Fist Weapon",
         "Melee Weapon"
       ],
@@ -1889,7 +1890,7 @@
       ],
       "models": [
         {
-          "name": "Primaris Apothecary",
+          "name": "Apothecary",
           "M": "6\"",
           "T": 5,
           "Sv": 3,
@@ -2008,7 +2009,7 @@
       "defaultModels": 1,
       "composition": [
         {
-          "name": "Primaris Apothecary",
+          "name": "Apothecary",
           "min": 0,
           "max": 0
         }
@@ -2349,7 +2350,7 @@
         {
           "name": "Kill Team Sergeant",
           "M": "6\"",
-          "T": 4,
+          "T": 5,
           "Sv": 3,
           "Inv": 7,
           "W": 2,
@@ -2359,7 +2360,7 @@
         {
           "name": "Deathwatch Veteran",
           "M": "6\"",
-          "T": 4,
+          "T": 5,
           "Sv": 3,
           "Inv": 7,
           "W": 2,
@@ -2392,7 +2393,7 @@
               "AP": -2,
               "D": "1",
               "keywords": [
-                "Pistol"
+                "Close-quarters"
               ]
             },
             {
@@ -2405,8 +2406,8 @@
               "AP": -3,
               "D": "2",
               "keywords": [
-                "Hazardous",
-                "Pistol"
+                "Close-quarters",
+                "Hazardous"
               ]
             }
           ],
@@ -2424,7 +2425,7 @@
               "skill": 3,
               "S": 5,
               "AP": -2,
-              "D": "2",
+              "D": "1",
               "keywords": [
                 "Sustained Hits 1"
               ]
@@ -2466,10 +2467,10 @@
               "skill": 3,
               "S": 7,
               "AP": -2,
-              "D": "1",
+              "D": "2",
               "keywords": [
                 "Assault",
-                "Heavy"
+                "Rapid Fire 1"
               ]
             },
             {
@@ -2484,7 +2485,7 @@
               "keywords": [
                 "Assault",
                 "Hazardous",
-                "Heavy"
+                "Rapid Fire 1"
               ]
             }
           ],
@@ -2500,28 +2501,27 @@
               "rangeInches": 12,
               "A": "1",
               "skill": 3,
-              "S": 4,
-              "AP": 0,
+              "S": 5,
+              "AP": -1,
               "D": "1",
               "keywords": [
-                "Pistol",
-                "Lethal Hits"
+                "Close-quarters"
               ]
             }
           ],
           "maxCarriers": 1
         },
         {
-          "name": "Close combat weapon",
+          "name": "Knives and Fists",
           "kind": "melee",
           "profiles": [
             {
-              "name": "Close combat weapon",
+              "name": "Knives and Fists",
               "range": "Melee",
               "rangeInches": 0,
               "A": "3",
               "skill": 3,
-              "S": 4,
+              "S": 5,
               "AP": 0,
               "D": "1",
               "keywords": []
@@ -2571,26 +2571,6 @@
           "maxCarriers": 1
         },
         {
-          "name": "Combat knife",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Combat knife",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "4",
-              "skill": 3,
-              "S": 4,
-              "AP": -1,
-              "D": "1",
-              "keywords": [
-                "Precision"
-              ]
-            }
-          ],
-          "maxCarriers": 1
-        },
-        {
           "name": "Special-issue bolt pistol",
           "kind": "ranged",
           "profiles": [
@@ -2600,13 +2580,13 @@
               "rangeInches": 18,
               "A": "1",
               "skill": 3,
-              "S": 4,
+              "S": 5,
               "AP": -1,
               "D": "1",
               "keywords": [
-                "Pistol",
-                "Precision",
-                "Lethal Hits"
+                "Close-quarters",
+                "Lethal Hits",
+                "Precision"
               ]
             }
           ],
@@ -2620,16 +2600,16 @@
               "name": "Frag cannon",
               "range": "18\"",
               "rangeInches": 18,
-              "A": "D3",
+              "A": "2",
               "skill": 3,
               "S": 7,
               "AP": -2,
               "D": "2",
               "keywords": [
-                "Blast",
+                "Blast 1",
                 "Heavy",
                 "Lethal Hits",
-                "Rapid Fire D3"
+                "Rapid Fire 1"
               ]
             }
           ],
@@ -2658,42 +2638,51 @@
           "maxCarriers": 1
         },
         {
-          "name": "Astartes grenade launcher",
+          "name": "Grenade Launcher (Frag)",
           "kind": "ranged",
           "profiles": [
             {
-              "name": "frag",
+              "name": "Grenade Launcher (Frag)",
               "range": "24\"",
               "rangeInches": 24,
-              "A": "D3",
+              "A": "4",
               "skill": 3,
               "S": 4,
-              "AP": 0,
+              "AP": -1,
               "D": "1",
               "keywords": [
-                "Blast"
+                "Blast 1"
               ]
-            },
-            {
-              "name": "krak",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "1",
-              "skill": 3,
-              "S": 9,
-              "AP": -2,
-              "D": "D3",
-              "keywords": []
             }
           ],
           "maxCarriers": 1
         },
         {
-          "name": "Infernus heavy bolter",
+          "name": "Grenade Launcher (Krak)",
           "kind": "ranged",
           "profiles": [
             {
-              "name": "heavy bolter",
+              "name": "Grenade Launcher (Krak)",
+              "range": "24\"",
+              "rangeInches": 24,
+              "A": "1",
+              "skill": 3,
+              "S": 10,
+              "AP": -2,
+              "D": "3",
+              "keywords": [
+                "Rapid Fire 1"
+              ]
+            }
+          ],
+          "maxCarriers": 1
+        },
+        {
+          "name": "Infernus heavy bolter (Bolt)",
+          "kind": "ranged",
+          "profiles": [
+            {
+              "name": "Infernus heavy bolter (Bolt)",
               "range": "36\"",
               "rangeInches": 36,
               "A": "3",
@@ -2702,20 +2691,29 @@
               "AP": -1,
               "D": "2",
               "keywords": [
+                "Heavy",
+                "Rapid Fire 2",
                 "Sustained Hits 1"
               ]
-            },
+            }
+          ],
+          "maxCarriers": 1
+        },
+        {
+          "name": "Infernus heavy bolter (Infernus)",
+          "kind": "ranged",
+          "profiles": [
             {
-              "name": "heavy flamer",
+              "name": "Infernus heavy bolter (Infernus)",
               "range": "12\"",
               "rangeInches": 12,
-              "A": "D6",
+              "A": "3",
               "skill": 7,
               "S": 5,
               "AP": -1,
               "D": "1",
               "keywords": [
-                "Ignores cover",
+                "Blast 1",
                 "Torrent"
               ]
             }
@@ -2771,18 +2769,7 @@
           "summary": "Re-roll 1s to hit; every hit roll against non-Imperium, non-Chaos units"
         },
         {
-          "name": "Attached Unit"
-        },
-        {
-          "name": "Astartes shield",
-          "modifiers": [
-            {
-              "key": "invulnerable-save",
-              "value": "4+",
-              "target": "self"
-            }
-          ],
-          "summary": "The bearer has a 4+ invulnerable save"
+          "name": "Storm shield"
         }
       ],
       "points": 110,
@@ -2836,11 +2823,6 @@
           "max": 1
         },
         {
-          "name": "Deathwatch Veteran",
-          "min": 1,
-          "max": 1
-        },
-        {
           "name": "Gravis Veteran",
           "min": 1,
           "max": 1
@@ -2867,15 +2849,16 @@
                 "ranged|Stalker bolt rifle",
                 "ranged|Plasma incinerator",
                 "ranged|Bolt pistol",
-                "melee|Close combat weapon",
+                "melee|Knives and Fists",
                 "melee|Heavy thunder hammer",
                 "ranged|Deathwatch marksman bolt carbine",
-                "melee|Combat knife",
                 "ranged|Special-issue bolt pistol",
                 "ranged|Frag cannon",
                 "ranged|Hellstorm bolt rifle",
-                "ranged|Astartes grenade launcher",
-                "ranged|Infernus heavy bolter"
+                "ranged|Grenade Launcher (Frag)",
+                "ranged|Grenade Launcher (Krak)",
+                "ranged|Infernus heavy bolter (Bolt)",
+                "ranged|Infernus heavy bolter (Infernus)"
               ],
               "maxCarriers": 1,
               "isDefault": false
@@ -2891,14 +2874,15 @@
                 "ranged|Stalker bolt rifle",
                 "ranged|Plasma incinerator",
                 "ranged|Bolt pistol",
-                "melee|Close combat weapon",
+                "melee|Knives and Fists",
                 "melee|Heavy thunder hammer",
                 "ranged|Deathwatch marksman bolt carbine",
-                "melee|Combat knife",
                 "ranged|Frag cannon",
                 "ranged|Hellstorm bolt rifle",
-                "ranged|Astartes grenade launcher",
-                "ranged|Infernus heavy bolter"
+                "ranged|Grenade Launcher (Frag)",
+                "ranged|Grenade Launcher (Krak)",
+                "ranged|Infernus heavy bolter (Bolt)",
+                "ranged|Infernus heavy bolter (Infernus)"
               ],
               "maxCarriers": 1,
               "isDefault": false
@@ -2926,7 +2910,7 @@
               "isDefault": true
             },
             {
-              "id": "159e-7f4d-5f85-685d",
+              "id": "c839-f647-afdf-5151",
               "name": "Plasma incinerator",
               "weapons": [
                 "ranged|Plasma incinerator"
@@ -2949,7 +2933,7 @@
           "options": [
             {
               "id": "b2b6-a3c3-f77c-d8b7",
-              "name": "Power weapon and Astartes shield",
+              "name": "Power weapon and Storm shield",
               "weapons": [
                 "melee|Power weapon"
               ],
@@ -2964,37 +2948,6 @@
               ],
               "maxCarriers": 1,
               "isDefault": true
-            }
-          ]
-        },
-        {
-          "id": "3a1c-4f3d-3010-e969",
-          "name": "Exchange carbine",
-          "tree": "ae81-1cbf-bd9d-bb9c",
-          "parent": "ae81-1cbf-bd9d-bb9c",
-          "slot": "Deathwatch Veteran w/ carbine",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "542e-e8cb-cf58-e32b",
-              "name": "Deathwatch marksman bolt carbine",
-              "weapons": [
-                "ranged|Deathwatch marksman bolt carbine"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
-            },
-            {
-              "id": "d2a2-f2ef-c279-93e4",
-              "name": "Combat knife",
-              "weapons": [
-                "melee|Combat knife"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
             }
           ]
         },
@@ -3023,7 +2976,8 @@
               "name": "Hellstorm bolt rifle and grenade launcher",
               "weapons": [
                 "ranged|Hellstorm bolt rifle",
-                "ranged|Astartes grenade launcher"
+                "ranged|Grenade Launcher (Frag)",
+                "ranged|Grenade Launcher (Krak)"
               ],
               "maxCarriers": 1,
               "isDefault": false
@@ -3032,7 +2986,8 @@
               "id": "7227-dd49-014c-a31c",
               "name": "Infernus heavy bolter",
               "weapons": [
-                "ranged|Infernus heavy bolter"
+                "ranged|Infernus heavy bolter (Bolt)",
+                "ranged|Infernus heavy bolter (Infernus)"
               ],
               "maxCarriers": 1,
               "isDefault": true
@@ -6939,7 +6894,7 @@
               "AP": -1,
               "D": "1",
               "keywords": [
-                "Blast"
+                "Blast 2"
               ]
             },
             {
@@ -10954,566 +10909,6 @@
       ]
     },
     {
-      "id": "faf9-bf62-8eb5-a3cb",
-      "name": "Captain on Bike [Legends]",
-      "source": "Imperium - Adeptus Astartes - Space Marines",
-      "ally": true,
-      "isLegends": true,
-      "keywords": [
-        "Character",
-        "Grenades",
-        "Captain",
-        "Imperium",
-        "Mounted",
-        "Ranged Weapon",
-        "Melee Weapon",
-        "Power Fist Weapon",
-        "Bolt Weapon",
-        "Pistol Weapon",
-        "Torrent Weapon",
-        "Attacks Dx Weapon",
-        "Damage Dx Weapon",
-        "Plasma",
-        "Warlord"
-      ],
-      "factionKeywords": [
-        "Adeptus Astartes"
-      ],
-      "armyRules": [
-        "Combat Doctrines"
-      ],
-      "models": [
-        {
-          "name": "Captain on Bike",
-          "M": "12\"",
-          "T": 5,
-          "Sv": 3,
-          "Inv": 4,
-          "W": 6,
-          "LD": "6+",
-          "OC": 2
-        }
-      ],
-      "weapons": [
-        {
-          "name": "Combi-weapon",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Combi-weapon",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "1",
-              "skill": 4,
-              "S": 4,
-              "AP": 0,
-              "D": "1",
-              "keywords": [
-                "Anti-Infantry 4+",
-                "Devastating Wounds",
-                "Rapid Fire 1"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Power fist",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Power fist",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "5",
-              "skill": 2,
-              "S": 8,
-              "AP": -2,
-              "D": "2",
-              "keywords": []
-            }
-          ]
-        },
-        {
-          "name": "Master-crafted boltgun",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Master-crafted boltgun",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "2",
-              "skill": 2,
-              "S": 4,
-              "AP": 0,
-              "D": "2",
-              "keywords": []
-            }
-          ]
-        },
-        {
-          "name": "Relic Weapon",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Relic Weapon",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "6",
-              "skill": 2,
-              "S": 5,
-              "AP": -2,
-              "D": "2",
-              "keywords": []
-            }
-          ]
-        },
-        {
-          "name": "Storm bolter",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Storm bolter",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "2",
-              "skill": 3,
-              "S": 5,
-              "AP": -1,
-              "D": "1",
-              "keywords": [
-                "Rapid Fire 2"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Hand flamer",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Hand flamer",
-              "range": "9\"",
-              "rangeInches": 9,
-              "A": "3",
-              "skill": 7,
-              "S": 4,
-              "AP": 0,
-              "D": "1",
-              "keywords": [
-                "Close-quarters",
-                "Torrent"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Inferno Pistol",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Inferno Pistol",
-              "range": "9\"",
-              "rangeInches": 9,
-              "A": "1",
-              "skill": 3,
-              "S": 8,
-              "AP": -3,
-              "D": "D3+2",
-              "keywords": [
-                "Close-quarters",
-                "Melta 1"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Bolt pistol",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Bolt pistol",
-              "range": "12\"",
-              "rangeInches": 12,
-              "A": "1",
-              "skill": 2,
-              "S": 5,
-              "AP": -1,
-              "D": "1",
-              "keywords": [
-                "Close-quarters"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Plasma pistol",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "supercharge",
-              "range": "12\"",
-              "rangeInches": 12,
-              "A": "1",
-              "skill": 3,
-              "S": 8,
-              "AP": -3,
-              "D": "2",
-              "keywords": [
-                "Hazardous",
-                "Close-quarters"
-              ]
-            },
-            {
-              "name": "standard",
-              "range": "12\"",
-              "rangeInches": 12,
-              "A": "1",
-              "skill": 3,
-              "S": 7,
-              "AP": -2,
-              "D": "1",
-              "keywords": [
-                "Close-quarters"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Thunder Hammer",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Thunder Hammer",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "5",
-              "skill": 3,
-              "S": 8,
-              "AP": -2,
-              "D": "3",
-              "keywords": [
-                "Devastating Wounds"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Close combat weapon",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Close combat weapon",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "6",
-              "skill": 2,
-              "S": 4,
-              "AP": 0,
-              "D": "1",
-              "keywords": []
-            }
-          ]
-        },
-        {
-          "name": "Astartes Chainsword",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Astartes Chainsword",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "7",
-              "skill": 2,
-              "S": 4,
-              "AP": -1,
-              "D": "1",
-              "keywords": []
-            }
-          ]
-        },
-        {
-          "name": "Twin boltgun",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Twin boltgun",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "2",
-              "skill": 3,
-              "S": 4,
-              "AP": 0,
-              "D": "1",
-              "keywords": [
-                "Twin-linked"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Twin lightning claws",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Twin lightning claws",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "6",
-              "skill": 2,
-              "S": 5,
-              "AP": -2,
-              "D": "1",
-              "keywords": [
-                "Twin-linked"
-              ]
-            }
-          ]
-        }
-      ],
-      "abilities": [
-        {
-          "name": "Swift Assault",
-          "modifiers": [
-            {
-              "key": "assault",
-              "target": "attached",
-              "conditions": [
-                {
-                  "key": "ranged"
-                }
-              ]
-            }
-          ],
-          "summary": "Leading: ranged weapons gain Assault"
-        },
-        {
-          "name": "Leader"
-        },
-        {
-          "name": "Strategic Acumen"
-        },
-        {
-          "name": "Relic Shield",
-          "modifiers": [
-            {
-              "key": "W",
-              "value": 7,
-              "target": "self"
-            }
-          ],
-          "summary": "The bearer has 7 Wounds"
-        }
-      ],
-      "points": 110,
-      "costBrackets": [],
-      "pricing": [
-        {
-          "from": 1,
-          "to": null,
-          "costs": [
-            {
-              "models": 1,
-              "points": 110
-            }
-          ]
-        }
-      ],
-      "leaderTargets": [
-        "Outrider Squad",
-        "Ravenwing Black Knights"
-      ],
-      "supportTargets": [],
-      "minModels": 1,
-      "maxModels": 1,
-      "defaultModels": 1,
-      "composition": [
-        {
-          "name": "Captain on Bike",
-          "min": 0,
-          "max": 0
-        }
-      ],
-      "defaultLoadout": [
-        {
-          "weapon": "Bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Astartes Chainsword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Twin boltgun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin lightning claws",
-          "kind": "melee",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "ff9b-7d31-69e6-1ef0",
-          "name": "Replace bolt pistol",
-          "tree": "60a8-e31a-c3c2-e247",
-          "parent": "",
-          "slot": "Captain on Bike [Legends]",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "53a0-4426-db16-be3c",
-              "name": "Combi-weapon",
-              "weapons": [
-                "ranged|Combi-weapon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "90cf-ed16-4591-c589",
-              "name": "Power fist",
-              "weapons": [
-                "melee|Power fist"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "51bf-de7-994a-4a70",
-              "name": "Master-crafted boltgun",
-              "weapons": [
-                "ranged|Master-crafted boltgun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "860a-46a7-6332-8b42",
-              "name": "Relic Weapon",
-              "weapons": [
-                "melee|Relic Weapon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "bb61-26af-a2c2-7f19",
-              "name": "Storm bolter",
-              "weapons": [
-                "ranged|Storm bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "3009-cd9f-4194-6c24",
-              "name": "Hand flamer",
-              "weapons": [
-                "ranged|Hand flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "e545-6cc-2ede-a29b",
-              "name": "Inferno Pistol",
-              "weapons": [
-                "ranged|Inferno Pistol"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "e25e-ba6e-b399-919",
-              "name": "Bolt pistol",
-              "weapons": [
-                "ranged|Bolt pistol"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
-            {
-              "id": "dcd9-244-4445-955c",
-              "name": "Plasma pistol",
-              "weapons": [
-                "ranged|Plasma pistol"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "a7a-e563-a16b-6e8b",
-              "name": "Thunder Hammer",
-              "weapons": [
-                "melee|Thunder Hammer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "9024-1cd9-2377-3627",
-          "name": "Replace Astartes chainsword",
-          "tree": "60a8-e31a-c3c2-e247",
-          "parent": "",
-          "slot": "Captain on Bike [Legends]",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "f7b5-30eb-4b9f-fcd",
-              "name": "Close Combat Weapon and Relic Shield",
-              "weapons": [
-                "melee|Close combat weapon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "d1b7-1054-477f-a2ae",
-              "name": "Power fist",
-              "weapons": [
-                "melee|Power fist"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "3969-72a0-3390-c0e3",
-              "name": "Relic Weapon",
-              "weapons": [
-                "melee|Relic Weapon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "7b88-6217-70a1-edb4",
-              "name": "Astartes Chainsword",
-              "weapons": [
-                "melee|Astartes Chainsword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            }
-          ]
-        }
-      ],
-      "armyRuleIds": [
-        "combat-doctrines"
-      ]
-    },
-    {
       "id": "1319-45d-bb95-dfd4",
       "name": "Captain with Jump Pack",
       "source": "Imperium - Adeptus Astartes - Space Marines",
@@ -11607,7 +11002,7 @@
               "range": "12\"",
               "rangeInches": 12,
               "A": "1",
-              "skill": 3,
+              "skill": 2,
               "S": 8,
               "AP": -3,
               "D": "2",
@@ -11621,7 +11016,7 @@
               "range": "12\"",
               "rangeInches": 12,
               "A": "1",
-              "skill": 3,
+              "skill": 2,
               "S": 7,
               "AP": -2,
               "D": "1",
@@ -22751,7 +22146,7 @@
         {
           "name": "Deathwatch Veteran",
           "M": "6\"",
-          "T": 4,
+          "T": 5,
           "Sv": 3,
           "Inv": 7,
           "W": 2,
@@ -22770,10 +22165,12 @@
               "rangeInches": 24,
               "A": "2",
               "skill": 3,
-              "S": 4,
-              "AP": 0,
+              "S": 5,
+              "AP": -1,
               "D": "1",
-              "keywords": []
+              "keywords": [
+                "Rapid Fire 1"
+              ]
             }
           ],
           "maxCarriers": 11
@@ -22797,11 +22194,11 @@
           "maxCarriers": 11
         },
         {
-          "name": "Deathwatch thunder hammer",
+          "name": "Heavy thunder hammer",
           "kind": "melee",
           "profiles": [
             {
-              "name": "Deathwatch thunder hammer",
+              "name": "Heavy thunder hammer",
               "range": "Melee",
               "rangeInches": 0,
               "A": "3",
@@ -22814,25 +22211,25 @@
               ]
             }
           ],
-          "maxCarriers": 5
+          "maxCarriers": 4
         },
         {
-          "name": "Close combat weapon",
+          "name": "Knives and Fists",
           "kind": "melee",
           "profiles": [
             {
-              "name": "Close combat weapon",
+              "name": "Knives and Fists",
               "range": "Melee",
               "rangeInches": 0,
               "A": "3",
               "skill": 3,
-              "S": 4,
+              "S": 5,
               "AP": 0,
               "D": "1",
               "keywords": []
             }
           ],
-          "maxCarriers": 5
+          "maxCarriers": 4
         },
         {
           "name": "Frag cannon",
@@ -22842,26 +22239,27 @@
               "name": "Frag cannon",
               "range": "18\"",
               "rangeInches": 18,
-              "A": "D3",
+              "A": "2",
               "skill": 4,
               "S": 7,
               "AP": -1,
               "D": "2",
               "keywords": [
-                "Blast",
+                "Blast 1",
                 "Heavy",
-                "Rapid Fire D3"
+                "Lethal Hits",
+                "Rapid Fire 1"
               ]
             }
           ],
-          "maxCarriers": 3
+          "maxCarriers": 2
         },
         {
-          "name": "Infernus heavy bolter",
+          "name": "Infernus heavy bolter (Bolt)",
           "kind": "ranged",
           "profiles": [
             {
-              "name": "heavy bolter",
+              "name": "Infernus heavy bolter (Bolt)",
               "range": "36\"",
               "rangeInches": 36,
               "A": "3",
@@ -22871,25 +22269,33 @@
               "D": "2",
               "keywords": [
                 "Heavy",
+                "Rapid Fire 2",
                 "Sustained Hits 1"
               ]
-            },
+            }
+          ],
+          "maxCarriers": 2
+        },
+        {
+          "name": "Infernus heavy bolter (Infernus)",
+          "kind": "ranged",
+          "profiles": [
             {
-              "name": "heavy flamer",
+              "name": "Infernus heavy bolter (Infernus)",
               "range": "12\"",
               "rangeInches": 12,
-              "A": "D6",
+              "A": "3",
               "skill": 7,
               "S": 5,
               "AP": -1,
               "D": "1",
               "keywords": [
-                "Ignores cover",
+                "Blast 1",
                 "Torrent"
               ]
             }
           ],
-          "maxCarriers": 3
+          "maxCarriers": 2
         },
         {
           "name": "Stalker-pattern boltgun",
@@ -22901,7 +22307,7 @@
               "rangeInches": 24,
               "A": "1",
               "skill": 3,
-              "S": 4,
+              "S": 5,
               "AP": -1,
               "D": "2",
               "keywords": [
@@ -22910,7 +22316,7 @@
               ]
             }
           ],
-          "maxCarriers": 3
+          "maxCarriers": 2
         },
         {
           "name": "Deathwatch shotgun",
@@ -22923,14 +22329,14 @@
               "A": "2",
               "skill": 3,
               "S": 4,
-              "AP": 0,
+              "AP": -1,
               "D": "2",
               "keywords": [
                 "Assault"
               ]
             }
           ],
-          "maxCarriers": 5
+          "maxCarriers": 4
         },
         {
           "name": "Black Shield blades",
@@ -22950,26 +22356,63 @@
               ]
             }
           ],
-          "maxCarriers": 2
+          "maxCarriers": 1
         },
         {
-          "name": "Combi-weapon",
+          "name": "Combi-weapon (Damnatus)",
           "kind": "ranged",
           "profiles": [
             {
-              "name": "Combi-weapon",
-              "range": "24\"",
-              "rangeInches": 24,
+              "name": "Combi-weapon (Damnatus)",
+              "range": "12\"",
+              "rangeInches": 12,
               "A": "1",
-              "skill": 4,
+              "skill": 3,
+              "S": 9,
+              "AP": -3,
+              "D": "D3+2",
+              "keywords": [
+                "Melta 2"
+              ]
+            }
+          ],
+          "maxCarriers": 1
+        },
+        {
+          "name": "Combi-weapon (Infernus)",
+          "kind": "ranged",
+          "profiles": [
+            {
+              "name": "Combi-weapon (Infernus)",
+              "range": "12\"",
+              "rangeInches": 12,
+              "A": "3",
+              "skill": 7,
               "S": 4,
               "AP": 0,
               "D": "1",
               "keywords": [
-                "Anti-Infantry 4+",
-                "Devastating Wounds",
-                "Rapid Fire 1"
+                "Blast 1",
+                "Torrent"
               ]
+            }
+          ],
+          "maxCarriers": 1
+        },
+        {
+          "name": "Combi-weapon (Purgatus)",
+          "kind": "ranged",
+          "profiles": [
+            {
+              "name": "Combi-weapon (Purgatus)",
+              "range": "24\"",
+              "rangeInches": 24,
+              "A": "2",
+              "skill": 3,
+              "S": 7,
+              "AP": -2,
+              "D": "2",
+              "keywords": []
             }
           ],
           "maxCarriers": 1
@@ -23023,15 +22466,7 @@
           "summary": "Re-roll 1s to hit; every hit roll against non-Imperium, non-Chaos units"
         },
         {
-          "name": "Astartes shield",
-          "modifiers": [
-            {
-              "key": "invulnerable-save",
-              "value": "4+",
-              "target": "self"
-            }
-          ],
-          "summary": "The bearer has a 4+ invulnerable save"
+          "name": "Storm Shield"
         }
       ],
       "points": 115,
@@ -23116,16 +22551,16 @@
               "id": "3ebf-ed52-93f0-406a",
               "name": "Veteran w/ Deathwatch thunder hammer",
               "weapons": [
-                "melee|Deathwatch thunder hammer"
+                "melee|Heavy thunder hammer"
               ],
               "maxCarriers": 4,
               "isDefault": false
             },
             {
               "id": "0e2e-ef12-74f0-938f",
-              "name": "Veteran w/ frag cannon and CCW",
+              "name": "Veteran w/ frag cannon",
               "weapons": [
-                "melee|Close combat weapon",
+                "melee|Knives and Fists",
                 "ranged|Frag cannon"
               ],
               "maxCarriers": 2,
@@ -23133,37 +22568,20 @@
             },
             {
               "id": "db4d-9666-5340-0ba2",
-              "name": "Veteran w/ infernus heavy bolter and CCW",
+              "name": "Veteran w/ infernus heavy bolter",
               "weapons": [
-                "melee|Close combat weapon",
-                "ranged|Infernus heavy bolter"
+                "melee|Knives and Fists",
+                "ranged|Infernus heavy bolter (Bolt)",
+                "ranged|Infernus heavy bolter (Infernus)"
               ],
               "maxCarriers": 2,
               "isDefault": false
             },
             {
-              "id": "8c00-6699-048c-83ef",
-              "name": "Veteran w/ Astartes shield and boltgun",
-              "weapons": [
-                "ranged|Boltgun"
-              ],
-              "maxCarriers": 4,
-              "isDefault": false
-            },
-            {
-              "id": "cc02-b24f-51d3-0823",
-              "name": "Veteran w/ Astartes shield and power weapon",
-              "weapons": [
-                "melee|Power weapon"
-              ],
-              "maxCarriers": 4,
-              "isDefault": false
-            },
-            {
               "id": "17e9-9a8c-abb9-0e38",
-              "name": "Veteran w/ stalker-pattern boltgun and CCW",
+              "name": "Veteran w/ stalker-pattern boltgun",
               "weapons": [
-                "melee|Close combat weapon",
+                "melee|Knives and Fists",
                 "ranged|Stalker-pattern boltgun"
               ],
               "maxCarriers": 2,
@@ -23171,9 +22589,9 @@
             },
             {
               "id": "befc-ec92-0d66-cf22",
-              "name": "Veteran w/ Deathwatch shotgun and CCW",
+              "name": "Veteran w/ Deathwatch shotgun",
               "weapons": [
-                "melee|Close combat weapon",
+                "melee|Knives and Fists",
                 "ranged|Deathwatch shotgun"
               ],
               "maxCarriers": 4,
@@ -23191,84 +22609,32 @@
           ]
         },
         {
-          "id": "4c9f-c0f3-4112-2adf",
-          "name": "Wargear",
-          "tree": "298e-03af-2749-87df",
-          "parent": "",
-          "slot": "Watch Sergeant",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
+          "id": "6869-f8e4-ccc7-04c7",
+          "name": "Storm Shield models",
+          "tree": "27c4-9de9-c036-9bdc",
+          "parent": "27c4-9de9-c036-9bdc",
+          "slot": "",
+          "pool": true,
+          "minPicks": 0,
+          "maxPicks": 4,
           "pickBrackets": [],
           "options": [
             {
-              "id": "a55a-63c0-e252-524e",
-              "name": "Boltgun and power weapon",
+              "id": "8c00-6699-048c-83ef",
+              "name": "Veteran w/ Storm shield and boltgun",
               "weapons": [
-                "ranged|Combi-weapon",
-                "ranged|Boltgun",
-                "melee|Xenophase blade",
+                "ranged|Boltgun"
+              ],
+              "maxCarriers": 4,
+              "isDefault": false
+            },
+            {
+              "id": "cc02-b24f-51d3-0823",
+              "name": "Veteran w/ Storm shield and power weapon",
+              "weapons": [
                 "melee|Power weapon"
               ],
-              "maxCarriers": 1,
-              "isDefault": true
-            },
-            {
-              "id": "618d-3f67-a4f7-20f6",
-              "name": "Deathwatch shotgun and close combat weapon",
-              "weapons": [
-                "ranged|Deathwatch shotgun",
-                "melee|Close combat weapon"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
-            {
-              "id": "9f21-dfa9-4120-2498",
-              "name": "Frag cannon and close combat weapon",
-              "weapons": [
-                "melee|Close combat weapon",
-                "ranged|Frag cannon"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
-            {
-              "id": "2960-b388-5313-5eb8",
-              "name": "Infernus heavy bolter and close combat weapon",
-              "weapons": [
-                "melee|Close combat weapon",
-                "ranged|Infernus heavy bolter"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
-            {
-              "id": "0b32-454c-ebdc-bff1",
-              "name": "Stalker-pattern boltgun and close combat weapon",
-              "weapons": [
-                "melee|Close combat weapon",
-                "ranged|Stalker-pattern boltgun"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
-            {
-              "id": "1275-1573-26db-0967",
-              "name": "Black Shield blades",
-              "weapons": [
-                "melee|Black Shield blades"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
-            {
-              "id": "ae30-1c49-2042-29c2",
-              "name": "Deathwatch thunder hammer",
-              "weapons": [
-                "melee|Deathwatch thunder hammer"
-              ],
-              "maxCarriers": 1,
+              "maxCarriers": 4,
               "isDefault": false
             }
           ]
@@ -23277,7 +22643,7 @@
           "id": "9038-94d5-0d25-9c6c",
           "name": "Boltgun",
           "tree": "298e-03af-2749-87df",
-          "parent": "4c9f-c0f3-4112-2adf",
+          "parent": "",
           "slot": "Watch Sergeant",
           "pool": false,
           "minPicks": 1,
@@ -23288,7 +22654,9 @@
               "id": "b493-f8bb-848f-64fe",
               "name": "Combi-weapon",
               "weapons": [
-                "ranged|Combi-weapon"
+                "ranged|Combi-weapon (Damnatus)",
+                "ranged|Combi-weapon (Infernus)",
+                "ranged|Combi-weapon (Purgatus)"
               ],
               "maxCarriers": 1,
               "isDefault": false
@@ -23308,7 +22676,7 @@
           "id": "27be-a701-314e-15e2",
           "name": "Power weapon",
           "tree": "298e-03af-2749-87df",
-          "parent": "4c9f-c0f3-4112-2adf",
+          "parent": "",
           "slot": "Watch Sergeant",
           "pool": false,
           "minPicks": 1,
@@ -31403,25 +30771,6 @@
           ]
         },
         {
-          "name": "Defensive Array",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Defensive Array",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "6",
-              "skill": 3,
-              "S": 5,
-              "AP": -1,
-              "D": "1",
-              "keywords": [
-                "Rapid Fire 6"
-              ]
-            }
-          ]
-        },
-        {
           "name": "Armoured Hull",
           "kind": "melee",
           "profiles": [
@@ -31453,6 +30802,25 @@
               "D": "D3+2",
               "keywords": [
                 "Melta 3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Defensive Array",
+          "kind": "ranged",
+          "profiles": [
+            {
+              "name": "Defensive Array",
+              "range": "24\"",
+              "rangeInches": 24,
+              "A": "6",
+              "skill": 3,
+              "S": 5,
+              "AP": -1,
+              "D": "1",
+              "keywords": [
+                "Rapid Fire 6"
               ]
             }
           ]
@@ -31513,17 +30881,17 @@
           "count": 1
         },
         {
-          "weapon": "Defensive Array",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
           "weapon": "Armoured Hull",
           "kind": "melee",
           "count": 1
         },
         {
           "weapon": "Multi-melta",
+          "kind": "ranged",
+          "count": 1
+        },
+        {
+          "weapon": "Defensive Array",
           "kind": "ranged",
           "count": 1
         }
@@ -33586,7 +32954,8 @@
         "Black Templars"
       ],
       "armyRules": [
-        "Combat Doctrines"
+        "Combat Doctrines",
+        "Transhuman Strategist"
       ],
       "models": [
         {
@@ -33738,7 +33107,8 @@
         }
       ],
       "armyRuleIds": [
-        "combat-doctrines"
+        "combat-doctrines",
+        "transhuman-strategist"
       ]
     },
     {
@@ -35938,7 +35308,7 @@
       "models": [
         {
           "name": "Incursor Sergeant",
-          "M": "6\"",
+          "M": "8\"",
           "T": 4,
           "Sv": 3,
           "Inv": 7,
@@ -40674,6 +40044,7 @@
               "AP": -1,
               "D": "2",
               "keywords": [
+                "Rapid Fire 2",
                 "Sustained Hits 1"
               ]
             }
@@ -48903,6 +48274,9 @@
           "name": "Transport"
         },
         {
+          "name": "Wrath of the Machine Spirit"
+        },
+        {
           "name": "Damaged: 1-5 Wounds Remaining",
           "modifiers": [
             {
@@ -49092,6 +48466,23 @@
           ]
         },
         {
+          "name": "Armoured Impact",
+          "kind": "melee",
+          "profiles": [
+            {
+              "name": "Armoured Impact",
+              "range": "Melee",
+              "rangeInches": 0,
+              "A": "3",
+              "skill": 4,
+              "S": 6,
+              "AP": 0,
+              "D": "1",
+              "keywords": []
+            }
+          ]
+        },
+        {
           "name": "Multi-melta",
           "kind": "ranged",
           "profiles": [
@@ -49107,23 +48498,6 @@
               "keywords": [
                 "Melta 3"
               ]
-            }
-          ]
-        },
-        {
-          "name": "Armoured Impact",
-          "kind": "melee",
-          "profiles": [
-            {
-              "name": "Armoured Impact",
-              "range": "Melee",
-              "rangeInches": 0,
-              "A": "3",
-              "skill": 4,
-              "S": 6,
-              "AP": 0,
-              "D": "1",
-              "keywords": []
             }
           ]
         }
@@ -49179,13 +48553,13 @@
           "count": 1
         },
         {
-          "weapon": "Multi-melta",
-          "kind": "ranged",
+          "weapon": "Armoured Impact",
+          "kind": "melee",
           "count": 1
         },
         {
-          "weapon": "Armoured Impact",
-          "kind": "melee",
+          "weapon": "Multi-melta",
+          "kind": "ranged",
           "count": 1
         }
       ],
@@ -49193,7 +48567,7 @@
         {
           "id": "a516-0086-9ffb-0692",
           "name": "Weapon Option",
-          "tree": "a516-0086-9ffb-0692",
+          "tree": "452f-f88b-d8be-48fc",
           "parent": "",
           "slot": "Land Speeder",
           "pool": false,
@@ -50579,7 +49953,7 @@
       "models": [
         {
           "name": "Librarian in Phobos Armor",
-          "M": "6\"",
+          "M": "8\"",
           "T": 4,
           "Sv": 3,
           "Inv": 7,
@@ -52896,6 +52270,23 @@
       ],
       "weapons": [
         {
+          "name": "Master-crafted Power Weapon",
+          "kind": "melee",
+          "profiles": [
+            {
+              "name": "Master-crafted Power Weapon",
+              "range": "Melee",
+              "rangeInches": 0,
+              "A": "5",
+              "skill": 2,
+              "S": 6,
+              "AP": -2,
+              "D": "2",
+              "keywords": []
+            }
+          ]
+        },
+        {
           "name": "Master-crafted power weapon",
           "kind": "melee",
           "profiles": [
@@ -53016,6 +52407,23 @@
           ]
         },
         {
+          "name": "Master-crafted bolter",
+          "kind": "ranged",
+          "profiles": [
+            {
+              "name": "Master-crafted bolter",
+              "range": "24\"",
+              "rangeInches": 24,
+              "A": "2",
+              "skill": 2,
+              "S": 5,
+              "AP": -1,
+              "D": "2",
+              "keywords": []
+            }
+          ]
+        },
+        {
           "name": "Plasma pistol",
           "kind": "ranged",
           "profiles": [
@@ -53044,26 +52452,6 @@
               "D": "1",
               "keywords": [
                 "Close-quarters"
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Master-crafted bolter",
-          "kind": "ranged",
-          "profiles": [
-            {
-              "name": "Master-crafted bolter",
-              "range": "24\"",
-              "rangeInches": 24,
-              "A": "2",
-              "skill": 2,
-              "S": 5,
-              "AP": -1,
-              "D": "2",
-              "keywords": [
-                "Assault",
-                "Rapid Fire 1"
               ]
             }
           ]
@@ -53150,11 +52538,6 @@
           "weapon": "Bolt pistol",
           "kind": "ranged",
           "count": 1
-        },
-        {
-          "weapon": "Master-crafted bolter",
-          "kind": "ranged",
-          "count": 1
         }
       ],
       "optionGroups": [
@@ -53171,8 +52554,9 @@
           "options": [
             {
               "id": "a1f2-12d9-5a4c-a524",
-              "name": "Neo-volkite pistol & Master-crafted Power Sword",
+              "name": "Neo-volkite pistol & Master-crafted Power Weapon",
               "weapons": [
+                "melee|Master-crafted Power Weapon",
                 "melee|Master-crafted power weapon",
                 "melee|Power fist",
                 "melee|Ceramite Fists",
@@ -53190,8 +52574,8 @@
                 "melee|Master-crafted power weapon",
                 "melee|Power fist",
                 "melee|Ceramite Fists",
-                "ranged|Plasma pistol",
-                "ranged|Master-crafted bolter"
+                "ranged|Master-crafted bolter",
+                "ranged|Plasma pistol"
               ],
               "maxCarriers": 0,
               "isDefault": true
@@ -53321,6 +52705,15 @@
           "pickBrackets": [],
           "options": [
             {
+              "id": "4666-e7ad-cd04-971d",
+              "name": "Master-crafted Bolter",
+              "weapons": [
+                "ranged|Master-crafted bolter"
+              ],
+              "maxCarriers": 0,
+              "isDefault": false
+            },
+            {
               "id": "4b58-7639-443a-205f",
               "name": "Plasma pistol",
               "weapons": [
@@ -53346,15 +52739,6 @@
               ],
               "maxCarriers": 0,
               "isDefault": false
-            },
-            {
-              "id": "f18d-3f66-30f4-2056",
-              "name": "Master-crafted bolter",
-              "weapons": [
-                "ranged|Master-crafted bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
             }
           ]
         }
@@ -56553,7 +55937,7 @@
       "composition": [
         {
           "name": "Outrider Squad",
-          "min": 2,
+          "min": 1,
           "max": 5
         },
         {
@@ -58535,7 +57919,7 @@
               "AP": -1,
               "D": "1",
               "keywords": [
-                "Ignores cover",
+                "Ignores Cover",
                 "Torrent"
               ]
             }
@@ -58999,8 +58383,8 @@
               "id": "e61d-07e0-bc1e-f495",
               "name": "Infernus heavy bolter & close combat weapon",
               "weapons": [
-                "melee|Close combat weapon",
-                "ranged|Infernus heavy bolter"
+                "ranged|Infernus heavy bolter",
+                "melee|Close combat weapon"
               ],
               "maxCarriers": 4,
               "isDefault": false
@@ -60946,7 +60330,7 @@
               "A": "1",
               "skill": 3,
               "S": 5,
-              "AP": -1,
+              "AP": -2,
               "D": "1",
               "keywords": [
                 "Close-quarters",
@@ -60980,8 +60364,8 @@
           "profiles": [
             {
               "name": "Bolt Carbine",
-              "range": "24\"",
-              "rangeInches": 24,
+              "range": "18\"",
+              "rangeInches": 18,
               "A": "3",
               "skill": 3,
               "S": 5,
@@ -72355,6 +71739,16 @@
           "W": 1,
           "LD": "7+",
           "OC": 1
+        },
+        {
+          "name": "Exaction Squad",
+          "M": "6\"",
+          "T": 3,
+          "Sv": 4,
+          "Inv": 7,
+          "W": 1,
+          "LD": "7+",
+          "OC": 1
         }
       ],
       "weapons": [
@@ -76940,7 +76334,6 @@
         "Vanguard Veteran Squad with Jump Packs",
         "Jump Pack",
         "Fly",
-        "Vanguard Veteran Squad",
         "Explosives",
         "Tacticus",
         "Ranged Weapon",
@@ -78944,6 +78337,16 @@
           "W": 1,
           "LD": "7+",
           "OC": 2
+        },
+        {
+          "name": "Exaction Squad",
+          "M": "6\"",
+          "T": 3,
+          "Sv": 4,
+          "Inv": 7,
+          "W": 1,
+          "LD": "7+",
+          "OC": 1
         }
       ],
       "weapons": [
