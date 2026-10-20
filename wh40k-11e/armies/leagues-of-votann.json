@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.6.0",
+  "schemaVersion": "3.0.0",
   "gameSystem": "wh40k-11e",
   "id": "leagues-of-votann",
   "name": "Leagues of Votann",
@@ -86,7 +86,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Aegis Defence Line with Weapon Emplacement",
@@ -94,42 +93,42 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
+          "name": "Aegis Defence Line with Weapon Emplacement [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Quad-gun",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "8b0c-3772-861a-a7cd",
-          "name": "Quad-gun",
-          "tree": "8b0c-3772-861a-a7cd",
-          "parent": "",
-          "slot": "Aegis Defence Line with Weapon Emplacement [Legends]",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Aegis Defence Line with Weapon Emplacement [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "870c-dae1-65e2-9cee",
-              "name": "Quad-gun",
-              "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Quad-gun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "352e-36c6-3ae5-ead0",
               "name": "Icarus lascannon",
               "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Icarus Lascannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -198,7 +197,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Ambull",
@@ -206,11 +204,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Enormous claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Ambull [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Enormous claws",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -367,7 +371,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Arkanyst Evaluator",
@@ -375,16 +378,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Transmatter inverter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
+          "name": "Arkanyst Evaluator",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Transmatter inverter",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -500,7 +508,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Bastion",
@@ -508,52 +515,63 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Icarus Lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Bastion [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "14be-d879-c755-3d93",
-          "name": "Weapons Array",
-          "tree": "14be-d879-c755-3d93",
-          "parent": "",
-          "slot": "Bastion [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Bastion [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "db5a-f3-5b74-3acb",
               "name": "Icarus lascannon",
               "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Icarus Lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "3cba-8def-5bb4-bb6d",
               "name": "Quad-gun",
               "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Quad-gun",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5db6-55c1-807b-6be",
+          "model": "Bastion [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 4,
+          "alternatives": [
+            {
+              "id": "5db6-55c1-807b-6be",
+              "name": "Heavy bolter",
+              "weapons": [
+                {
+                  "weapon": "ranged|Heavy bolter",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -703,7 +721,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Berehk Stornbröw",
@@ -711,16 +728,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Kromlôk's Revenge",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warforge gauntlets",
-          "kind": "melee",
-          "count": 1
+          "name": "Berehk Stornbröw",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Kromlôk's Revenge",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warforge gauntlets",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -793,7 +815,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Breaching Robot",
@@ -801,11 +822,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Cutting blade",
-          "kind": "melee",
-          "count": 1
+          "name": "Breaching Robot",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Cutting blade",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -1067,7 +1094,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Brôkhyr Iron-master",
@@ -1085,41 +1111,59 @@
           "max": 1
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Graviton hammer",
-          "kind": "melee",
-          "count": 1
+          "name": "Brôkhyr Iron-master",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Graviton hammer",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Graviton rifle",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Graviton rifle",
-          "kind": "ranged",
-          "count": 1
+          "name": "E-COG",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Autoch-pattern bolt pistol",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma torch",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Manipulator arms",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Plasma torch",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Manipulator arms",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Las-beam cutter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Ironkin Assistant",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Las-beam cutter",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1288,57 +1332,56 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Brôkhyr Thunderkyn",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Bolt cannon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "61ca-457c-aa33-d379",
-          "name": "Weapon",
-          "tree": "61ca-457c-aa33-d379",
-          "parent": "",
-          "slot": "Brôkhyr Thunderkyn",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Brôkhyr Thunderkyn",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "4d0a-154d-c18d-9b8c",
-              "name": "Bolt cannon",
-              "weapons": [
-                "ranged|Bolt cannon"
-              ],
-              "maxCarriers": 6,
-              "isDefault": true
-            },
+              "weapon": "ranged|Bolt cannon",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "a726-7fd4-2f40-4fa8",
               "name": "Graviton blast cannon",
               "weapons": [
-                "ranged|Graviton blast cannon"
-              ],
-              "maxCarriers": 6,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Graviton blast cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "5fbe-6fb1-3b14-a22b",
               "name": "SP conversion beamer",
               "weapons": [
-                "ranged|SP conversion beamer"
-              ],
-              "maxCarriers": 6,
-              "isDefault": false
+                {
+                  "weapon": "ranged|SP conversion beamer",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -1469,7 +1512,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Buri Aegnirssen",
@@ -1477,16 +1519,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bane",
-          "kind": "melee",
-          "count": 1
+          "name": "Buri Aegnirssen",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Autoch-pattern bolt pistol",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Bane",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1724,7 +1771,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 5,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Castellum Stronghold",
@@ -1732,212 +1778,184 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Castellum battle cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Whirlwind castellan launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Castellum Icarus quad lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Multi-melta",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy flamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Castellum air defence missiles",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin assault cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Castellum Stronghold [Legends]",
+          "min": 1,
+          "max": 5,
+          "defaultWargear": []
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "63b4-a4b0-6cb-8f4d",
-          "name": "Main Turrets",
-          "tree": "63b4-a4b0-6cb-8f4d",
-          "parent": "",
-          "slot": "Castellum Stronghold [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "model": "Castellum Stronghold [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 2,
+          "alternatives": [
             {
               "id": "9c9d-e47b-7f4-92cf",
               "name": "Castellum battle cannon",
               "weapons": [
-                "ranged|Castellum battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum battle cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "74fa-24db-eb7d-f115",
               "name": "Whirlwind castellan launcher",
               "weapons": [
-                "ranged|Whirlwind castellan launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Whirlwind castellan launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "e26a-8cf8-9d1d-7917",
               "name": "Castellum Icarus quad lascannon",
               "weapons": [
-                "ranged|Castellum Icarus quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum Icarus quad lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "864a-83b4-8ba-8e8c",
               "name": "Multi-melta",
               "weapons": [
-                "ranged|Multi-melta"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Multi-melta",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "d376-dc4b-215-941",
               "name": "Twin lascannon",
               "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f37e-5b13-3834-71b5",
               "name": "Twin heavy flamer",
               "weapons": [
-                "ranged|Twin heavy flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy flamer",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "c93b-fcc4-aa3b-f61f",
               "name": "Twin heavy bolter",
               "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy bolter",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "88e2-7b4-38a2-7d99",
               "name": "Castellum air defence missiles",
               "weapons": [
-                "ranged|Castellum air defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum air defence missiles",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "9482-dff5-c004-9a94",
               "name": "Twin assault cannon",
               "weapons": [
-                "ranged|Twin assault cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin assault cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "b2a1-cd28-8aaf-f0c",
-          "name": "Secondary Turrets",
-          "tree": "b2a1-cd28-8aaf-f0c",
-          "parent": "",
-          "slot": "Castellum Stronghold [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 3,
-          "pickBrackets": [],
-          "options": [
+          "model": "Castellum Stronghold [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 3,
+          "alternatives": [
             {
               "id": "8b69-a121-1e49-1595",
               "name": "Castellum air defence missiles",
               "weapons": [
-                "ranged|Castellum air defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum air defence missiles",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "362c-23d2-f49e-1599",
               "name": "Twin lascannon",
               "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "53de-5129-8401-4af6",
               "name": "Twin heavy flamer",
               "weapons": [
-                "ranged|Twin heavy flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy flamer",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "c8ac-946d-32ef-f91a",
               "name": "Twin heavy bolter",
               "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy bolter",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "bce4-c726-9961-bbe7",
               "name": "Multi-melta",
               "weapons": [
-                "ranged|Multi-melta"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Multi-melta",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "25a-bbfe-8c02-b52d",
               "name": "Twin assault cannon",
               "weapons": [
-                "ranged|Twin assault cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin assault cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -1991,7 +2009,8 @@
                 "Anti-VEHICLE 3+"
               ]
             }
-          ]
+          ],
+          "maxCarriers": 10
         },
         {
           "name": "Heavy plasma axe",
@@ -2008,7 +2027,8 @@
               "D": "3",
               "keywords": []
             }
-          ]
+          ],
+          "maxCarriers": 10
         },
         {
           "name": "Twin concussion gauntlets",
@@ -2105,7 +2125,6 @@
       "supportTargets": [],
       "minModels": 5,
       "maxModels": 10,
-      "defaultModels": 10,
       "composition": [
         {
           "name": "Beserk",
@@ -2113,42 +2132,108 @@
           "max": 10
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Heavy plasma axe",
-          "kind": "melee",
-          "count": 10
+          "name": "Beserk",
+          "min": 5,
+          "max": 10,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
-          "id": "6eb4-83c6-3025-a19c",
-          "name": "5 - 10 Beserks",
-          "tree": "6eb4-83c6-3025-a19c",
-          "parent": "",
-          "slot": "",
-          "pool": true,
-          "minPicks": 5,
-          "maxPicks": 10,
-          "pickBrackets": [],
-          "options": [
+          "id": "4894-87e8-1f3a-a7d9",
+          "model": "Beserk",
+          "who": {
+            "type": "up-to",
+            "models": 2
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "4894-87e8-1f3a-a7d9",
-              "name": "Beserk w/ twin concussion gauntlets",
+              "name": "twin concussion gauntlets",
               "weapons": [
-                "melee|Twin concussion gauntlets"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+                {
+                  "weapon": "melee|Twin concussion gauntlets",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2de1-61b9-615d-4056",
+          "model": "Beserk",
+          "who": {
+            "type": "up-to",
+            "models": 2
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "2de1-61b9-615d-4056+7719-aa64-5e16-9a9d",
+              "name": "Beserk w/ mole grenade launcher (Concussion maul)",
+              "weapons": [
+                {
+                  "weapon": "ranged|Mole grenade launcher",
+                  "count": 1
+                },
+                {
+                  "weapon": "melee|Concussion maul",
+                  "count": 1
+                }
+              ]
             },
             {
-              "id": "2de1-61b9-615d-4056",
-              "name": "Beserk w/ mole grenade launcher",
+              "id": "2de1-61b9-615d-4056+697f-710e-738d-4ee3",
+              "name": "Beserk w/ mole grenade launcher (Heavy plasma axe)",
               "weapons": [
-                "ranged|Mole grenade launcher"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Mole grenade launcher",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "34e2-9d32-58ea-3d85",
+          "model": "Beserk",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "e010-924b-804d-026f",
+              "name": "Concussion maul",
+              "weapons": [
+                {
+                  "weapon": "melee|Concussion maul",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -2319,7 +2404,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Cthonian Earthshaker",
@@ -2327,57 +2411,27 @@
           "max": 2
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Plasma picks",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Breacher ordnance",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Tremor shells",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "407f-7414-00fe-a189",
-          "name": "Main weapon",
-          "tree": "407f-7414-00fe-a189",
-          "parent": "",
-          "slot": "Cthonian Earthshaker",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Cthonian Earthshaker",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "9170-fbc8-e679-4182",
-              "name": "Breacher ordnance",
-              "weapons": [
-                "ranged|Breacher ordnance"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+              "weapon": "melee|Plasma picks",
+              "count": 1
             },
             {
-              "id": "84ba-4fd7-04ed-d283",
-              "name": "Tremor shells",
-              "weapons": [
-                "ranged|Tremor shells"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+              "weapon": "ranged|Autoch-pattern bolt pistol",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Breacher ordnance",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Tremor shells",
+              "count": 1
             }
           ]
         }
@@ -2550,7 +2604,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Einhyr Champion",
@@ -2558,47 +2611,46 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Mass hammer",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern combi-bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Einhyr Champion",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Mass hammer",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Autoch-pattern combi-bolter",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "aab6-e41b-da7f-10ed",
-          "name": "Melee weapon",
-          "tree": "efc5-6144-fcf2-f366",
-          "parent": "",
-          "slot": "Einhyr Champion",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Einhyr Champion",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "d302-52a9-ef8a-d430",
-              "name": "Mass hammer",
-              "weapons": [
-                "melee|Mass hammer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "melee|Mass hammer",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "ac4f-c500-41ba-07cf",
               "name": "Darkstar axe",
               "weapons": [
-                "melee|Darkstar axe"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Darkstar axe",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -2842,7 +2894,6 @@
       "supportTargets": [],
       "minModels": 4,
       "maxModels": 9,
-      "defaultModels": 9,
       "composition": [
         {
           "name": "Einhyr Hearthguard",
@@ -2850,154 +2901,154 @@
           "max": 1
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Exo-armour grenade launcher",
-          "kind": "ranged",
-          "count": 9
+          "name": "Hesyr",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Exo-armour grenade launcher",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|EtaCarn plasma gun",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "EtaCarn plasma gun",
-          "kind": "ranged",
-          "count": 9
-        },
-        {
-          "weapon": "Concussion gauntlet",
-          "kind": "melee",
-          "count": 9
+          "name": "Einhyr Hearthguard",
+          "min": 4,
+          "max": 9,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Exo-armour grenade launcher",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|EtaCarn plasma gun",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "2d48-f92f-50fa-df9f",
-          "name": "Ranged weapon",
-          "tree": "2d48-f92f-50fa-df9f",
-          "parent": "",
-          "slot": "Hesyr",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Hesyr",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "8619-9766-108e-f579",
-              "name": "EtaCarn plasma gun",
-              "weapons": [
-                "ranged|EtaCarn plasma gun"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
-            },
+              "weapon": "ranged|EtaCarn plasma gun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "ee96-471c-ef12-d689",
               "name": "Volkanite disintegrator",
               "weapons": [
-                "ranged|Volkanite disintegrator"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Volkanite disintegrator",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "6be0-87e2-a6a6-4d89",
-          "name": "Exchange melee weapon for hammer",
-          "tree": "6be0-87e2-a6a6-4d89",
-          "parent": "",
-          "slot": "Hesyr",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Hesyr",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "4af9-1fdc-54b3-617a",
-              "name": "Concussion gauntlet",
-              "weapons": [
-                "melee|Concussion gauntlet"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
-            },
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "e5aa-490d-0302-1725",
               "name": "Plasma blade gauntlet",
               "weapons": [
-                "melee|Plasma blade gauntlet"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+                {
+                  "weapon": "melee|Plasma blade gauntlet",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "65c7-0826-fdc5-4c70",
               "name": "Graviton hammer",
               "weapons": [
-                "melee|Graviton hammer"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+                {
+                  "weapon": "melee|Graviton hammer",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "ccb3-8ee6-568d-eee9",
-          "name": "Squad ranged weapon",
-          "tree": "131f-c2ab-895d-c54b",
-          "parent": "",
-          "slot": "Einhyr Hearthguard",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Einhyr Hearthguard",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "58c5-35f8-3823-bf60",
-              "name": "EtaCarn plasma gun",
-              "weapons": [
-                "ranged|EtaCarn plasma gun"
-              ],
-              "maxCarriers": 9,
-              "isDefault": true
-            },
+              "weapon": "ranged|EtaCarn plasma gun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "0263-c056-d80a-2192",
               "name": "Volkanite disintegrator",
               "weapons": [
-                "ranged|Volkanite disintegrator"
-              ],
-              "maxCarriers": 9,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Volkanite disintegrator",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "d243-2501-7db6-ba08",
-          "name": "Squad melee weapon",
-          "tree": "131f-c2ab-895d-c54b",
-          "parent": "",
-          "slot": "Einhyr Hearthguard",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Einhyr Hearthguard",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "62a4-5af9-8d4d-9d0d",
-              "name": "Concussion gauntlet",
-              "weapons": [
-                "melee|Concussion gauntlet"
-              ],
-              "maxCarriers": 9,
-              "isDefault": true
-            },
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "b37a-91d6-b8b2-f879",
               "name": "Plasma blade gauntlet",
               "weapons": [
-                "melee|Plasma blade gauntlet"
-              ],
-              "maxCarriers": 9,
-              "isDefault": false
+                {
+                  "weapon": "melee|Plasma blade gauntlet",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -3149,7 +3200,6 @@
       "supportTargets": [],
       "minModels": 2,
       "maxModels": 3,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Firestorm Redoubt",
@@ -3157,92 +3207,15 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Icarus Lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad lascannon",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "b2f0-fef3-2b51-8edc",
-          "name": "Weapons Array",
-          "tree": "b2f0-fef3-2b51-8edc",
-          "parent": "",
-          "slot": "Firestorm Redoubt [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Firestorm Redoubt [Legends]",
+          "min": 2,
+          "max": 3,
+          "defaultWargear": [
             {
-              "id": "c049-f816-4822-920c",
-              "name": "Icarus lascannon",
-              "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "efa1-186c-7f51-6ae0",
-              "name": "Quad-gun",
-              "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "9df9-6944-3f63-2226",
-          "name": "Turrets",
-          "tree": "9df9-6944-3f63-2226",
-          "parent": "",
-          "slot": "Firestorm Redoubt [Legends]",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "d6aa-a1ef-3d1c-54",
-              "name": "Battle cannon",
-              "weapons": [
-                "ranged|Battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "5f73-2391-368b-6c4a",
-              "name": "Punisher gatling cannon",
-              "weapons": [
-                "ranged|Punisher gatling cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "4d19-a2f6-5d6e-e53f",
-              "name": "Quad lascannon",
-              "weapons": [
-                "ranged|Quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Quad lascannon",
+              "count": 1
             }
           ]
         }
@@ -3368,7 +3341,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Fortress of Redemption",
@@ -3376,21 +3348,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Redemptor lascannons",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Redemptor missile silo",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Fortress of Redemption [Legends]",
+          "min": 1,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Redemptor lascannons",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Redemptor missile silo",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -3574,7 +3546,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Grimnyr",
@@ -3587,26 +3558,36 @@
           "max": 2
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Ancestral ward stave",
-          "kind": "melee",
-          "count": 1
+          "name": "Grimnyr",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Ancestral ward stave",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Ancestral Wrath",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Ancestral Wrath",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
+          "name": "CORV",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -3709,7 +3690,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Guardian Drone",
@@ -3717,21 +3697,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Destroyer pulse",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Guardian salvo launchers",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Manipulator limbs",
-          "kind": "melee",
-          "count": 1
+          "name": "Guardian Drone [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Destroyer pulse",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Guardian salvo launchers",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Manipulator limbs",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -3964,7 +3948,8 @@
               "D": "D6",
               "keywords": []
             }
-          ]
+          ],
+          "maxCarriers": 1
         },
         {
           "name": "Magna-rail rifle",
@@ -4063,180 +4048,221 @@
       "supportTargets": [],
       "minModels": 9,
       "maxModels": 9,
-      "defaultModels": 9,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 9
+          "name": "Theyn",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Autoch-pattern bolt pistol",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Theyn's melee weapon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 9
-        },
-        {
-          "weapon": "Autoch-pattern bolter",
-          "kind": "ranged",
-          "count": 9
+          "name": "Hearthkyn Warrior",
+          "min": 0,
+          "max": 9,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Autoch-pattern bolt pistol",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "6b3e-7051-ba8e-6ea9",
-          "name": "Weapon",
-          "tree": "6b3e-7051-ba8e-6ea9",
-          "parent": "",
-          "slot": "Theyn",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Theyn",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "77d1-ad07-5fa7-0006",
-              "name": "Autoch-pattern bolter",
-              "weapons": [
-                "ranged|Autoch-pattern bolter"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
-            },
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "6fc8-4163-7dbd-06cb",
               "name": "Ion blaster",
               "weapons": [
-                "ranged|Ion blaster"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Ion blaster",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "8dd9-560b-6d2d-1f2b",
               "name": "Theyn's pistol",
               "weapons": [
-                "ranged|Theyn's pistol"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Theyn's pistol",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
-          "id": "6bf0-d579-38eb-5bc9",
-          "name": "Hearthkyn Warriors",
-          "tree": "6bf0-d579-38eb-5bc9",
-          "parent": "",
-          "slot": "",
-          "pool": true,
-          "minPicks": 9,
-          "maxPicks": 9,
-          "pickBrackets": [],
-          "options": [
+          "id": "7802-9a4a-cc1c-7103",
+          "model": "Hearthkyn Warrior",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "4782-445d-730e-6b69",
-              "name": "Hearthkyn Warrior w/ bolter",
-              "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "ranged|Autoch-pattern bolter"
-              ],
-              "maxCarriers": 9,
-              "isDefault": true
-            },
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "7802-9a4a-cc1c-7103",
-              "name": "Hearthkyn Warrior w/ ion blaster",
+              "name": "ion blaster",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "ranged|Ion blaster"
-              ],
-              "maxCarriers": 9,
-              "isDefault": false
-            },
+                {
+                  "weapon": "ranged|Ion blaster",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6c9e-f7c7-6e0e-4dd7",
+          "model": "Hearthkyn Warrior",
+          "who": {
+            "type": "up-to",
+            "models": 2
+          },
+          "replaces": [
+            {
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "6c9e-f7c7-6e0e-4dd7",
-              "name": "Hearthkyn Warrior w/ plasma knife",
+              "name": "plasma knife",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+                {
+                  "weapon": "melee|Plasma knife",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "2a24-d1f1-d866-2bf5",
-          "name": "Heavy weapons",
-          "tree": "6bf0-d579-38eb-5bc9",
-          "parent": "6bf0-d579-38eb-5bc9",
-          "slot": "",
-          "pool": true,
-          "minPicks": 0,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "model": "Hearthkyn Warrior",
+          "replaces": [
+            {
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "ad43-fc9a-f768-62b7",
-              "name": "Hearthkyn Warrior w/ HYLas rotary cannon",
+              "name": "HYLas rotary cannon",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "ranged|HYLas rotary cannon"
+                {
+                  "weapon": "ranged|HYLas rotary cannon",
+                  "count": 1
+                }
               ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "max": 1
             },
             {
               "id": "6ba5-67fa-c681-f302",
-              "name": "Hearthkyn Warrior w/ HYLas auto rifle",
+              "name": "HYLas auto rifle",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "ranged|HYLas auto rifle"
+                {
+                  "weapon": "ranged|HYLas auto rifle",
+                  "count": 1
+                }
               ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "max": 1
             },
             {
               "id": "6028-01a8-a643-aea3",
-              "name": "Hearthkyn Warrior w/ L7 missile launcher",
+              "name": "L7 missile launcher",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon"
+                {
+                  "weapon": "ranged|L7 missile launcher",
+                  "count": 1
+                }
               ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "max": 1
             },
             {
               "id": "9bba-c4eb-ade6-2339",
-              "name": "Hearthkyn Warrior w/ magna-rail rifle",
+              "name": "magna-rail rifle",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "ranged|Magna-rail rifle"
+                {
+                  "weapon": "ranged|Magna-rail rifle",
+                  "count": 1
+                }
               ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "max": 1
             },
             {
               "id": "0fd5-2630-0aba-19cd",
-              "name": "Hearthkyn Warrior w/ EtaCarn plasma beamer",
+              "name": "EtaCarn plasma beamer",
               "weapons": [
-                "ranged|Autoch-pattern bolt pistol",
-                "melee|Close combat weapon",
-                "ranged|EtaCarn plasma beamer"
+                {
+                  "weapon": "ranged|EtaCarn plasma beamer",
+                  "count": 1
+                }
               ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "max": 1
+            }
+          ],
+          "who": {
+            "type": "up-to",
+            "models": 2
+          }
+        },
+        {
+          "id": "109f-0d09-6f70-136e",
+          "model": "Theyn",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
+            {
+              "id": "109f-0d09-6f70-136e",
+              "name": "Theyn's melee weapon",
+              "weapons": [
+                {
+                  "weapon": "melee|Theyn's melee weapon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -4526,7 +4552,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Hekaton Land Fortress",
@@ -4534,97 +4559,27 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Armoured wheels",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Cyclic ion cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin bolt cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "MATR autocannon",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "8bd8-ce25-04fb-0707",
-          "name": "Main weapon",
-          "tree": "c800-24e7-4c01-efc2",
-          "parent": "",
-          "slot": "Hekaton Land Fortress",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Hekaton Land Fortress",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "6a5d-d311-99dc-aa34",
-              "name": "SP heavy conversion beamer",
-              "weapons": [
-                "ranged|SP heavy conversion beamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "melee|Armoured wheels",
+              "count": 1
             },
             {
-              "id": "d4d5-abd4-b267-340f",
-              "name": "Heavy magna-rail cannon",
-              "weapons": [
-                "ranged|Heavy magna-rail cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Cyclic ion cannon",
+              "count": 1
             },
             {
-              "id": "542-3f3e-969b-c932",
-              "name": "Cyclic ion cannon",
-              "weapons": [
-                "ranged|Cyclic ion cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            }
-          ]
-        },
-        {
-          "id": "ed73-88aa-f7af-8490",
-          "name": "Sponson weapons",
-          "tree": "c800-24e7-4c01-efc2",
-          "parent": "",
-          "slot": "Hekaton Land Fortress",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "c84b-96c6-419b-fa92",
-              "name": "Twin ion beamer",
-              "weapons": [
-                "ranged|Twin ion beamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Twin bolt cannon",
+              "count": 1
             },
             {
-              "id": "88b4-8d32-cab2-7e2b",
-              "name": "Twin bolt cannon",
-              "weapons": [
-                "ranged|Twin bolt cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|MATR autocannon",
+              "count": 1
             }
           ]
         }
@@ -4865,129 +4820,110 @@
       "supportTargets": [],
       "minModels": 3,
       "maxModels": 6,
-      "defaultModels": 6,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Bolt revolver",
-          "kind": "ranged",
-          "count": 6
-        },
-        {
-          "weapon": "Bolt shotgun",
-          "kind": "ranged",
-          "count": 6
-        },
-        {
-          "weapon": "Magna-coil autocannon",
-          "kind": "ranged",
-          "count": 6
-        },
-        {
-          "weapon": "Plasma knife",
-          "kind": "melee",
-          "count": 6
+          "name": "Hernkyn Pioneer",
+          "min": 3,
+          "max": 6,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bolt revolver",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Magna-coil autocannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
-          "id": "6016-5c68-b821-0070",
-          "name": "3 - 6 Pioneers",
-          "tree": "6016-5c68-b821-0070",
-          "parent": "",
-          "slot": "",
-          "pool": true,
-          "minPicks": 3,
-          "maxPicks": 6,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "48b1-2aa0-4098-6661",
-              "name": "Hernkyn Pioneer",
-              "weapons": [
-                "ranged|Bolt revolver",
-                "ranged|Bolt shotgun",
-                "ranged|Magna-coil autocannon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 6,
-              "isDefault": true
-            },
+          "id": "bd9c-c54e-c236-ade3",
+          "model": "Hernkyn Pioneer",
+          "who": {
+            "type": "up-to",
+            "models": 1
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "bd9c-c54e-c236-ade3",
-              "name": "Hernkyn Pioneer w/ comms array",
-              "weapons": [
-                "ranged|Bolt revolver",
-                "ranged|Bolt shotgun",
-                "ranged|Magna-coil autocannon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
+              "name": "comms array",
+              "weapons": []
+            }
+          ]
+        },
+        {
+          "id": "e7c2-eaab-0dbb-9f36",
+          "model": "Hernkyn Pioneer",
+          "who": {
+            "type": "up-to",
+            "models": 1
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "e7c2-eaab-0dbb-9f36",
-              "name": "Hernkyn Pioneer w/ pan-spectral scanner",
-              "weapons": [
-                "ranged|Bolt revolver",
-                "ranged|Bolt shotgun",
-                "ranged|Magna-coil autocannon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
+              "name": "pan-spectral scanner",
+              "weapons": []
+            }
+          ]
+        },
+        {
+          "id": "1689-9abb-20cf-5c8b",
+          "model": "Hernkyn Pioneer",
+          "who": {
+            "type": "up-to",
+            "models": 1
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "1689-9abb-20cf-5c8b",
-              "name": "Hernkyn Pioneer w/ searchlight",
-              "weapons": [
-                "ranged|Bolt revolver",
-                "ranged|Bolt shotgun",
-                "ranged|Magna-coil autocannon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "name": "searchlight",
+              "weapons": []
             }
           ]
         },
         {
           "id": "087f-002e-3cc1-7623",
-          "name": "Heavy weapons",
-          "tree": "6016-5c68-b821-0070",
-          "parent": "6016-5c68-b821-0070",
-          "slot": "",
-          "pool": true,
-          "minPicks": 0,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "model": "Hernkyn Pioneer",
+          "replaces": [],
+          "alternatives": [
             {
               "id": "ce66-1679-9f1d-bbba",
-              "name": "Hernkyn Pioneer w/ HYLas rotary cannon",
+              "name": "HYLas rotary cannon",
               "weapons": [
-                "ranged|HYLas rotary cannon",
-                "ranged|Bolt revolver",
-                "ranged|Bolt shotgun",
-                "ranged|Magna-coil autocannon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+                {
+                  "weapon": "ranged|HYLas rotary cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "c8df-4536-bd14-5d05",
-              "name": "Hernkyn Pioneer w/ ion beamer",
+              "name": "ion beamer",
               "weapons": [
-                "ranged|Ion beamer",
-                "ranged|Bolt revolver",
-                "ranged|Bolt shotgun",
-                "ranged|Magna-coil autocannon",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Ion beamer",
+                  "count": 1
+                }
+              ]
             }
-          ]
+          ],
+          "who": {
+            "type": "up-to",
+            "models": 2
+          }
         }
       ],
       "armyRuleIds": [
@@ -5183,103 +5119,146 @@
       "supportTargets": [],
       "minModels": 10,
       "maxModels": 10,
-      "defaultModels": 10,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Bolt shotgun",
-          "kind": "ranged",
-          "count": 10
+          "name": "Hernkyn Yaegir",
+          "min": 0,
+          "max": 9,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 10
+          "name": "Yaegir Theyn",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
-          "id": "3416-40f4-a25c-0282",
-          "name": "9 Hernkyn Yaegir",
-          "tree": "3416-40f4-a25c-0282",
-          "parent": "",
-          "slot": "",
-          "pool": true,
-          "minPicks": 9,
-          "maxPicks": 9,
-          "pickBrackets": [],
-          "options": [
+          "id": "4ba2-a404-9610-744a",
+          "model": "Hernkyn Yaegir",
+          "who": {
+            "type": "up-to",
+            "models": 1
+          },
+          "replaces": [
             {
-              "id": "712c-437b-174b-a4bf",
-              "name": "Hernkyn Yaegir w/ bolt shotgun",
-              "weapons": [
-                "ranged|Bolt shotgun",
-                "melee|Close combat weapon"
-              ],
-              "maxCarriers": 9,
-              "isDefault": true
-            },
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "4ba2-a404-9610-744a",
-              "name": "Hernkyn Yaegir w/ APM launcher",
+              "name": "APM launcher",
               "weapons": [
-                "ranged|APM launcher",
-                "melee|Close combat weapon"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
+                {
+                  "weapon": "ranged|APM launcher",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6756-0984-a734-939b",
+          "model": "Hernkyn Yaegir",
+          "who": {
+            "type": "up-to",
+            "models": 1
+          },
+          "replaces": [
+            {
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "6756-0984-a734-939b",
-              "name": "Hernkyn Yaegir w/ magna-coil rifle",
+              "name": "magna-coil rifle",
               "weapons": [
-                "ranged|Magna-coil rifle",
-                "melee|Close combat weapon"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
+                {
+                  "weapon": "ranged|Magna-coil rifle",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "231c-6a2a-f0aa-aa88",
+          "model": "Hernkyn Yaegir",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "231c-6a2a-f0aa-aa88",
-              "name": "Hernkyn Yaegir w/ revolver and knife",
+              "name": "revolver and knife",
               "weapons": [
-                "ranged|Bolt revolver",
-                "melee|Plasma knife",
-                "melee|Close combat weapon"
-              ],
-              "maxCarriers": 9,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Bolt revolver",
+                  "count": 1
+                },
+                {
+                  "weapon": "melee|Plasma knife",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "3045-c937-84ba-82f6",
-          "name": "Weapon",
-          "tree": "fa70-1397-a2c5-879a",
-          "parent": "",
-          "slot": "Yaegir Theyn",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Yaegir Theyn",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "ranged|Bolt shotgun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "5457-5087-9e8a-7c4c",
               "name": "Bolt revolver and plasma knife",
               "weapons": [
-                "ranged|Bolt revolver",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
-            },
-            {
-              "id": "fafc-7d5c-f6b6-214b",
-              "name": "Bolt shotgun",
-              "weapons": [
-                "ranged|Bolt shotgun"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
+                {
+                  "weapon": "ranged|Bolt revolver",
+                  "count": 1
+                },
+                {
+                  "weapon": "melee|Plasma knife",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -5401,7 +5380,6 @@
       "supportTargets": [],
       "minModels": 2,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Imperial Fortress Walls",
@@ -5409,78 +5387,19 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Twin long-barrelled autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "65b8-ef30-87fb-c746",
-          "name": "Twin Heavy Bolters",
-          "tree": "65b8-ef30-87fb-c746",
-          "parent": "",
-          "slot": "Imperial Fortress Walls [Legends]",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "name": "Imperial Fortress Walls [Legends]",
+          "min": 2,
+          "max": 4,
+          "defaultWargear": [
             {
-              "id": "76e0-53b6-1a88-dee4",
-              "name": "Twin heavy bolter",
-              "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Twin long-barrelled autocannon",
+              "count": 1
             },
             {
-              "id": "68c3-73a2-6636-e4f3",
-              "name": "Twin lascannon",
-              "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "8ad5-d201-b2aa-cdc6",
-          "name": "Tower Sections",
-          "tree": "8ad5-d201-b2aa-cdc6",
-          "parent": "",
-          "slot": "Imperial Fortress Walls [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "dc-6d6f-6e75-994b",
-              "name": "Twin lascannon",
-              "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "8c01-8811-e567-fda8",
-              "name": "Twin heavy bolter",
-              "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Twin heavy bolter",
+              "count": 1
             }
           ]
         }
@@ -5656,50 +5575,69 @@
       "supportTargets": [],
       "minModels": 2,
       "maxModels": 5,
-      "defaultModels": 5,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Heavy volkanite disintegrator",
-          "kind": "ranged",
-          "count": 5
+          "name": "Steeljack Theyn",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Heavy volkanite disintegrator",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Plasma knife",
-          "kind": "melee",
-          "count": 5
+          "name": "Ironkin Steeljack",
+          "min": 2,
+          "max": 5,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Heavy volkanite disintegrator",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "e530-41fa-d5b5-86f5",
-          "name": "Weapons",
-          "tree": "e530-41fa-d5b5-86f5",
-          "parent": "",
-          "slot": "Steeljack Theyn",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Steeljack Theyn",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "4d4b-86d6-d7f8-ddaf",
-              "name": "Disintegrator and knife",
-              "weapons": [
-                "ranged|Heavy volkanite disintegrator",
-                "melee|Plasma knife"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
+              "weapon": "ranged|Heavy volkanite disintegrator",
+              "count": 1
             },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "c1b1-e7ce-f6ed-892b",
               "name": "Bolter and sword",
               "weapons": [
-                "ranged|Autoch-pattern bolter",
-                "melee|Plasma sword"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Autoch-pattern bolter",
+                  "count": 1
+                },
+                {
+                  "weapon": "melee|Plasma sword",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -5860,81 +5798,86 @@
       "supportTargets": [],
       "minModels": 2,
       "maxModels": 5,
-      "defaultModels": 5,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Plasma sword",
-          "kind": "melee",
-          "count": 5
-        },
-        {
-          "weapon": "Autoch-pattern bolter",
-          "kind": "ranged",
-          "count": 5
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "c775-3316-df7d-3fb8",
-          "name": "Melee Weapon",
-          "tree": "c775-3316-df7d-3fb8",
-          "parent": "",
-          "slot": "Steeljack Theyn",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Steeljack Theyn",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "b24b-956e-844e-88b2",
-              "name": "Plasma sword",
-              "weapons": [
-                "melee|Plasma sword"
-              ],
-              "maxCarriers": 1,
-              "isDefault": true
+              "weapon": "melee|Plasma sword",
+              "count": 1
             },
             {
-              "id": "1b22-3a89-551a-926c",
-              "name": "Concussion gauntlet",
-              "weapons": [
-                "melee|Concussion gauntlet"
-              ],
-              "maxCarriers": 1,
-              "isDefault": false
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
             }
           ]
         },
         {
-          "id": "1e4a-c7b6-74c1-9afd",
-          "name": "2-5 Ironkin Steeljacks",
-          "tree": "1e4a-c7b6-74c1-9afd",
-          "parent": "",
-          "slot": "",
-          "pool": true,
-          "minPicks": 2,
-          "maxPicks": 5,
-          "pickBrackets": [],
-          "options": [
+          "name": "Ironkin Steeljack",
+          "min": 0,
+          "max": 5,
+          "defaultWargear": [
             {
-              "id": "0242-6438-3327-ec21",
-              "name": "Ironkin Steeljack w/ concussion gauntlet",
-              "weapons": [
-                "ranged|Autoch-pattern bolter",
-                "melee|Concussion gauntlet"
-              ],
-              "maxCarriers": 5,
-              "isDefault": false
+              "weapon": "melee|Plasma sword",
+              "count": 1
             },
             {
-              "id": "79d8-6081-2fae-ff86",
-              "name": "Ironkin Steeljack w/ plasma sword",
+              "weapon": "ranged|Autoch-pattern bolter",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "id": "c775-3316-df7d-3fb8",
+          "model": "Steeljack Theyn",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Plasma sword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "1b22-3a89-551a-926c",
+              "name": "Concussion gauntlet",
               "weapons": [
-                "ranged|Autoch-pattern bolter",
-                "melee|Plasma sword"
-              ],
-              "maxCarriers": 5,
-              "isDefault": true
+                {
+                  "weapon": "melee|Concussion gauntlet",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0242-6438-3327-ec21",
+          "model": "Ironkin Steeljack",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Plasma sword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "0242-6438-3327-ec21",
+              "name": "concussion gauntlet",
+              "weapons": [
+                {
+                  "weapon": "melee|Concussion gauntlet",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -6112,7 +6055,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Kâhl",
@@ -6120,78 +6062,71 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Forgewrought plasma axe",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern combi-bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Kâhl",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Forgewrought plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Autoch-pattern combi-bolter",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "5fd9-0b10-8ba6-5b5e",
-          "name": "Melee weapon",
-          "tree": "1a8d-e45d-57bc-3872",
-          "parent": "",
-          "slot": "Kâhl",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Kâhl",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Forgewrought plasma axe",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "d3c6-b12e-a1d6-be7b",
               "name": "Mass gauntlet",
               "weapons": [
-                "melee|Mass gauntlet"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "e03d-99af-36d8-3789",
-              "name": "Forgewrought plasma axe",
-              "weapons": [
-                "melee|Forgewrought plasma axe"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+                {
+                  "weapon": "melee|Mass gauntlet",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "904c-b107-fe0b-82da",
-          "name": "Ranged weapon",
-          "tree": "1a8d-e45d-57bc-3872",
-          "parent": "",
-          "slot": "Kâhl",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Kâhl",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "5de2-b9fc-e92c-66cd",
-              "name": "Autoch-pattern combi-bolter",
-              "weapons": [
-                "ranged|Autoch-pattern combi-bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Autoch-pattern combi-bolter",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "c0ec-6a64-e285-85f7",
               "name": "Volkanite disintegrator",
               "weapons": [
-                "ranged|Volkanite disintegrator"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Volkanite disintegrator",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -6368,7 +6303,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Kapricus Carrier",
@@ -6376,21 +6310,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Magna-coil autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Armoured hull",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Twin magna-coil autocannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Kapricus Carrier",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Magna-coil autocannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Armoured hull",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin magna-coil autocannon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -6576,7 +6514,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Kapricus Defender",
@@ -6584,52 +6521,50 @@
           "max": 2
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Armoured hull",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Magna-rail cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin magna-coil autocannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Kapricus Defender",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Armoured hull",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Magna-rail cannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin magna-coil autocannon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "56bd-02fb-932d-236b",
-          "name": "Weapon",
-          "tree": "f740-c9ea-75cf-d1d8",
-          "parent": "",
-          "slot": "Kapricus Defender",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Kapricus Defender",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "c96f-9f3d-8a0b-7bda",
-              "name": "Magna-rail cannon",
-              "weapons": [
-                "ranged|Magna-rail cannon"
-              ],
-              "maxCarriers": 2,
-              "isDefault": true
-            },
+              "weapon": "ranged|Magna-rail cannon",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "0a28-6bcb-a0bc-b869",
               "name": "HYLas rotary cannon",
               "weapons": [
-                "ranged|HYLas rotary cannon"
-              ],
-              "maxCarriers": 2,
-              "isDefault": false
+                {
+                  "weapon": "ranged|HYLas rotary cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -7278,7 +7213,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Kinhost Commander",
@@ -7286,91 +7220,69 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Exo-armour grenade launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Magna-coil autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ancestral Wrath",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern combi-bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton blast cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt shotgun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "EtaCarn plasma gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton rifle",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ion blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "SP conversion beamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt revolver",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Theyn's pistol",
-          "kind": "ranged",
-          "count": 1
+          "name": "Kinhost Commander [Crucible]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Ancestral ward stave",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion maul",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Darkstar axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Forgewrought plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Graviton hammer",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Mass gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Mass hammer",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma blade gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma sword",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Theyn's melee weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8017,7 +7929,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Living Ancestor",
@@ -8025,91 +7936,69 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Exo-armour grenade launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Magna-coil autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ancestral Wrath",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern combi-bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton blast cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt shotgun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "EtaCarn plasma gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton rifle",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ion blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "SP conversion beamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt revolver",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Theyn's pistol",
-          "kind": "ranged",
-          "count": 1
+          "name": "Living Ancestor [Crucible]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Ancestral ward stave",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion maul",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Darkstar axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Forgewrought plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Graviton hammer",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Mass gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Mass hammer",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma blade gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma sword",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Theyn's melee weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8204,7 +8093,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Macro-cannon Aquila Strongpoint",
@@ -8212,16 +8100,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Aquila macro-cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Macro-cannon Aquila Strongpoint [Legends]",
+          "min": 1,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Aquila macro-cannon",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -8340,7 +8229,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Memnyr Strategist",
@@ -8348,16 +8236,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
+          "name": "Memnyr Strategist",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Autoch-pattern bolt pistol",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8445,7 +8338,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Plasma Obliterator",
@@ -8453,11 +8345,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Plasma obliterator",
-          "kind": "ranged",
-          "count": 1
+          "name": "Plasma Obliterator [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Plasma obliterator",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -8761,7 +8659,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Primaris Redoubt",
@@ -8769,183 +8666,158 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Primaris Redoubt turbo-laser destructor",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris air defence missiles",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris Icarus lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris Icarus quad lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris quad-gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris castellan launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris vengeance launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Battle cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Multi-melta",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy flamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Primaris Redoubt [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Primaris Redoubt turbo-laser destructor",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "bca0-9eff-5e78-5f16",
-          "name": "Seconday Weapon",
-          "tree": "bca0-9eff-5e78-5f16",
-          "parent": "",
-          "slot": "Primaris Redoubt [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Primaris Redoubt [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "2b2d-2d80-c99a-50bc",
               "name": "Primaris air defence missiles",
               "weapons": [
-                "ranged|Primaris air defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris air defence missiles",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "82f9-177b-779e-7780",
               "name": "Primaris Icarus lascannon",
               "weapons": [
-                "ranged|Primaris Icarus lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris Icarus lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "663c-1233-84a9-8909",
               "name": "Primaris Icarus quad lascannon",
               "weapons": [
-                "ranged|Primaris Icarus quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris Icarus quad lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "6f21-792e-17c6-c9dc",
               "name": "Primaris quad-gun",
               "weapons": [
-                "ranged|Primaris quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris quad-gun",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "2cde-a0ef-d7e0-53b3",
               "name": "Primaris castellan launcher",
               "weapons": [
-                "ranged|Primaris castellan launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris castellan launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "e500-1c20-8d3d-e4c5",
               "name": "Primaris vengeance launcher",
               "weapons": [
-                "ranged|Primaris vengeance launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris vengeance launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "6624-49e6-ab77-33a4",
               "name": "Battle cannon",
               "weapons": [
-                "ranged|Battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Battle cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f5-b408-3074-48e9",
               "name": "Multi-melta",
               "weapons": [
-                "ranged|Multi-melta"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Multi-melta",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "16e2-abe1-a564-a8f5",
               "name": "Twin lascannon",
               "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "8cec-fe90-d8a2-be83",
               "name": "Twin heavy bolter",
               "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy bolter",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "7a6f-b9c4-89ce-bdd9",
               "name": "Twin heavy flamer",
               "weapons": [
-                "ranged|Twin heavy flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy flamer",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f271-c70e-dbf1-bb1c",
+          "model": "Primaris Redoubt [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 4,
+          "alternatives": [
+            {
+              "id": "f271-c70e-dbf1-bb1c",
+              "name": "Heavy bolter",
+              "weapons": [
+                {
+                  "weapon": "ranged|Heavy bolter",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -9191,7 +9063,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Sagitaur",
@@ -9199,61 +9070,64 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Armoured wheels",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "HYLas beam cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin bolt cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Sagitaur",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Armoured wheels",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|HYLas beam cannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin bolt cannon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "acc4-06bc-93c2-f53b",
-          "name": "Turret weapon",
-          "tree": "f345-ef22-665e-8149",
-          "parent": "",
-          "slot": "Sagitaur",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Sagitaur",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "091e-06fa-a39a-1d8f",
-              "name": "HYLas beam cannon",
-              "weapons": [
-                "ranged|HYLas beam cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|HYLas beam cannon",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "deaa-766c-aaeb-4e0b",
               "name": "L7 missile launcher and Sagitaur missile launcher",
               "weapons": [
-                "ranged|Sagitaur missile launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Sagitaur missile launcher",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|L7 missile launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f8df-a23a-c129-49a1",
               "name": "MATR autocannon",
               "weapons": [
-                "ranged|MATR autocannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|MATR autocannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -9323,7 +9197,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Sentry Gun",
@@ -9331,11 +9204,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Sentry Gun",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Twin heavy bolter",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -9383,12 +9262,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skyshield Landing Pad",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Skyshield Landing Pad [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -9468,7 +9354,6 @@
       "supportTargets": [],
       "minModels": 4,
       "maxModels": 4,
-      "defaultModels": 4,
       "composition": [
         {
           "name": "Spindle Drone",
@@ -9476,16 +9361,21 @@
           "max": 4
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Drone pulse",
-          "kind": "ranged",
-          "count": 4
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 4
+          "name": "Spindle Drone",
+          "min": 4,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Drone pulse",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -10129,7 +10019,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Steeljack Elder",
@@ -10137,91 +10026,69 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Exo-armour grenade launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Magna-coil autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ancestral Wrath",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern combi-bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton blast cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt shotgun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "EtaCarn plasma gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton rifle",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ion blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "SP conversion beamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Autoch-pattern bolt pistol",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bolt revolver",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Theyn's pistol",
-          "kind": "ranged",
-          "count": 1
+          "name": "Steeljack Elder [Crucible]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Ancestral ward stave",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Concussion maul",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Darkstar axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Forgewrought plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Graviton hammer",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Heavy plasma axe",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Mass gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Mass hammer",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma blade gauntlet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma knife",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plasma sword",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Theyn's melee weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -10310,7 +10177,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "The Archivist",
@@ -10318,16 +10184,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Atomic disassembler",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Eradicator glove",
-          "kind": "melee",
-          "count": 1
+          "name": "The Archivist [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Atomic disassembler",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Eradicator glove",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -10459,7 +10330,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Ûthar the Destined",
@@ -10467,16 +10337,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Blade of the Ancestors",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Volkanite disintegrator",
-          "kind": "ranged",
-          "count": 1
+          "name": "Ûthar the Destined",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Blade of the Ancestors",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Volkanite disintegrator",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -10583,7 +10458,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Vengeance Weapon Battery",
@@ -10591,51 +10465,52 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Battle cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Vengeance Weapon Battery [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Battle cannon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "e0ba-5bb3-c836-c3aa",
-          "name": "Turret",
-          "tree": "e0ba-5bb3-c836-c3aa",
-          "parent": "",
-          "slot": "Vengeance Weapon Battery [Legends]",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Vengeance Weapon Battery [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "8be9-d977-344a-ba5b",
-              "name": "Battle cannon",
-              "weapons": [
-                "ranged|Battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Battle cannon",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "2a22-a567-eadd-b4c5",
               "name": "Punisher gatling cannon",
               "weapons": [
-                "ranged|Punisher gatling cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Punisher gatling cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "90e2-6517-c725-8535",
               "name": "Quad lascannon",
               "weapons": [
-                "ranged|Quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Quad lascannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -10682,12 +10557,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Void Shield Generator",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Void Shield Generator [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -10784,7 +10666,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Vortex Missile Strongpoint",
@@ -10792,16 +10673,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Vortex missile battery",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Vortex Missile Strongpoint [Legends]",
+          "min": 1,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Vortex missile battery",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -10895,7 +10777,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Wall of Martyrs Bunker",
@@ -10903,47 +10784,42 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Icarus Lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
+          "name": "Wall of Martyrs Bunker [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "44b8-6fae-e8ac-c347",
-          "name": "Weapons Array",
-          "tree": "44b8-6fae-e8ac-c347",
-          "parent": "",
-          "slot": "Wall of Martyrs Bunker [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Wall of Martyrs Bunker [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "1999-209e-c01e-b74d",
               "name": "Icarus lascannon",
               "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Icarus Lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f7aa-cc26-fbca-79c2",
               "name": "Quad-gun",
               "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Quad-gun",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -10994,12 +10870,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Wall of Martyrs Defence Emplacement",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Wall of Martyrs Defence Emplacement [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -11048,12 +10931,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Wall of Martyrs Defence Line",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Wall of Martyrs Defence Line [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     }

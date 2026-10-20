@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.6.0",
+  "schemaVersion": "3.0.0",
   "gameSystem": "wh40k-11e",
   "id": "titanicus-traitoris",
   "name": "Titanicus Traitoris",
@@ -86,7 +86,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Aegis Defence Line with Weapon Emplacement",
@@ -94,42 +93,42 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
+          "name": "Aegis Defence Line with Weapon Emplacement [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Quad-gun",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "8b0c-3772-861a-a7cd",
-          "name": "Quad-gun",
-          "tree": "8b0c-3772-861a-a7cd",
-          "parent": "",
-          "slot": "Aegis Defence Line with Weapon Emplacement [Legends]",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Aegis Defence Line with Weapon Emplacement [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "870c-dae1-65e2-9cee",
-              "name": "Quad-gun",
-              "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Quad-gun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "352e-36c6-3ae5-ead0",
               "name": "Icarus lascannon",
               "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Icarus Lascannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -337,7 +336,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Aetaos'rau'keres",
@@ -345,21 +343,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Bolt of Tzeentch",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Staff of cataclysm",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpfire talons",
-          "kind": "melee",
-          "count": 1
+          "name": "Aetaos'rau'keres [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bolt of Tzeentch",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Staff of cataclysm",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpfire talons",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -429,7 +431,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Ambull",
@@ -437,11 +438,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Enormous claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Ambull [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Enormous claws",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -580,7 +587,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "An'ggrath the Unbound",
@@ -588,16 +594,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Bloodlash",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Axe of Khorne",
-          "kind": "melee",
-          "count": 1
+          "name": "An'ggrath the Unbound [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bloodlash",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Axe of Khorne",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -713,7 +724,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Bastion",
@@ -721,52 +731,63 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Icarus Lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Bastion [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "14be-d879-c755-3d93",
-          "name": "Weapons Array",
-          "tree": "14be-d879-c755-3d93",
-          "parent": "",
-          "slot": "Bastion [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Bastion [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "db5a-f3-5b74-3acb",
               "name": "Icarus lascannon",
               "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Icarus Lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "3cba-8def-5bb4-bb6d",
               "name": "Quad-gun",
               "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Quad-gun",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5db6-55c1-807b-6be",
+          "model": "Bastion [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 4,
+          "alternatives": [
+            {
+              "id": "5db6-55c1-807b-6be",
+              "name": "Heavy bolter",
+              "weapons": [
+                {
+                  "weapon": "ranged|Heavy bolter",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -935,7 +956,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Be'lakor",
@@ -943,16 +963,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Betraying Shades",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "The Blade of Shadows",
-          "kind": "melee",
-          "count": 1
+          "name": "Be'lakor",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Betraying Shades",
+              "count": 1
+            },
+            {
+              "weapon": "melee|The Blade of Shadows",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1062,7 +1087,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Beast of Nurgle",
@@ -1070,11 +1094,17 @@
           "max": 2
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Putrid appendages",
-          "kind": "melee",
-          "count": 1
+          "name": "Beast of Nurgle",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Putrid appendages",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1237,17 +1267,36 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Hellblade",
-          "kind": "melee",
-          "count": 1
+          "name": "Bloodcrusher",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Hellblade",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Juggernaut's bladed horn",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Juggernaut's bladed horn",
-          "kind": "melee",
-          "count": 1
+          "name": "Bloodhunter",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Hellblade",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Juggernaut's bladed horn",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1367,12 +1416,28 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Hellblade",
-          "kind": "melee",
-          "count": 1
+          "name": "Bloodletter",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Hellblade",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "name": "Bloodreaper",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Hellblade",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1490,7 +1555,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Bloodmaster",
@@ -1498,11 +1562,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Blade of blood",
-          "kind": "melee",
-          "count": 1
+          "name": "Bloodmaster",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Blade of blood",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -1761,7 +1831,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Bloodthirster",
@@ -1769,56 +1838,64 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Hellfire breath",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Great axe of Khorne",
-          "kind": "melee",
-          "count": 1
+          "name": "Bloodthirster",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Hellfire breath",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Great axe of Khorne",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "7e92-60ac-7f9a-8e1c",
-          "name": "Replace great axe",
-          "tree": "7203-903a-f7c3-ede1",
-          "parent": "",
-          "slot": "Bloodthirster",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Bloodthirster",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "f55d-30fe-6117-ac",
-              "name": "Great axe of Khorne",
-              "weapons": [
-                "melee|Great axe of Khorne"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "melee|Great axe of Khorne",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "f504-1083-7663-a961",
               "name": "Axe and flail",
               "weapons": [
-                "ranged|Bloodflail"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Axe of Khorne",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Bloodflail",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "8a9d-93c9-8953-72b4",
               "name": "Axe and lash",
               "weapons": [
-                "ranged|Lash of Khorne"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Axe of Khorne",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Lash of Khorne",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -2004,7 +2081,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Blue Horror",
@@ -2012,26 +2088,29 @@
           "max": 10
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Coruscating Yellow flames (ref. only)",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Yellow claws (ref. only)",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Coruscating Blue flames",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Blue claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Blue Horror",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Coruscating Yellow flames (ref. only)",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Yellow claws (ref. only)",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Coruscating Blue flames",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blue claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -2104,7 +2183,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Breaching Robot",
@@ -2112,11 +2190,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Cutting blade",
-          "kind": "melee",
-          "count": 1
+          "name": "Breaching Robot",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Cutting blade",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -2275,7 +2359,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Burning Chariot",
@@ -2283,21 +2366,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Flamer mouths",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Screamer bites",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Fires of Tzeentch",
-          "kind": "ranged",
-          "count": 1
+          "name": "Burning Chariot",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Flamer mouths",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Screamer bites",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Fires of Tzeentch",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -2535,7 +2622,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 5,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Castellum Stronghold",
@@ -2543,212 +2629,184 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Castellum battle cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Whirlwind castellan launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Castellum Icarus quad lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Multi-melta",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy flamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Castellum air defence missiles",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin assault cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Castellum Stronghold [Legends]",
+          "min": 1,
+          "max": 5,
+          "defaultWargear": []
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "63b4-a4b0-6cb-8f4d",
-          "name": "Main Turrets",
-          "tree": "63b4-a4b0-6cb-8f4d",
-          "parent": "",
-          "slot": "Castellum Stronghold [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "model": "Castellum Stronghold [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 2,
+          "alternatives": [
             {
               "id": "9c9d-e47b-7f4-92cf",
               "name": "Castellum battle cannon",
               "weapons": [
-                "ranged|Castellum battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum battle cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "74fa-24db-eb7d-f115",
               "name": "Whirlwind castellan launcher",
               "weapons": [
-                "ranged|Whirlwind castellan launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Whirlwind castellan launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "e26a-8cf8-9d1d-7917",
               "name": "Castellum Icarus quad lascannon",
               "weapons": [
-                "ranged|Castellum Icarus quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum Icarus quad lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "864a-83b4-8ba-8e8c",
               "name": "Multi-melta",
               "weapons": [
-                "ranged|Multi-melta"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Multi-melta",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "d376-dc4b-215-941",
               "name": "Twin lascannon",
               "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f37e-5b13-3834-71b5",
               "name": "Twin heavy flamer",
               "weapons": [
-                "ranged|Twin heavy flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy flamer",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "c93b-fcc4-aa3b-f61f",
               "name": "Twin heavy bolter",
               "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy bolter",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "88e2-7b4-38a2-7d99",
               "name": "Castellum air defence missiles",
               "weapons": [
-                "ranged|Castellum air defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum air defence missiles",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "9482-dff5-c004-9a94",
               "name": "Twin assault cannon",
               "weapons": [
-                "ranged|Twin assault cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin assault cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "b2a1-cd28-8aaf-f0c",
-          "name": "Secondary Turrets",
-          "tree": "b2a1-cd28-8aaf-f0c",
-          "parent": "",
-          "slot": "Castellum Stronghold [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 3,
-          "pickBrackets": [],
-          "options": [
+          "model": "Castellum Stronghold [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 3,
+          "alternatives": [
             {
               "id": "8b69-a121-1e49-1595",
               "name": "Castellum air defence missiles",
               "weapons": [
-                "ranged|Castellum air defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Castellum air defence missiles",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "362c-23d2-f49e-1599",
               "name": "Twin lascannon",
               "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "53de-5129-8401-4af6",
               "name": "Twin heavy flamer",
               "weapons": [
-                "ranged|Twin heavy flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy flamer",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "c8ac-946d-32ef-f91a",
               "name": "Twin heavy bolter",
               "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy bolter",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "bce4-c726-9961-bbe7",
               "name": "Multi-melta",
               "weapons": [
-                "ranged|Multi-melta"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Multi-melta",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "25a-bbfe-8c02-b52d",
               "name": "Twin assault cannon",
               "weapons": [
-                "ranged|Twin assault cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin assault cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -2923,7 +2981,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Changecaster",
@@ -2931,16 +2988,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Arcane Fireball",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Herald combat weapon",
-          "kind": "melee",
-          "count": 1
+          "name": "Changecaster",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Arcane Fireball",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Herald combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -3137,7 +3199,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Acastus Knight Asterius",
@@ -3145,26 +3206,29 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Asterius volkite culverin",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Karacnos mortar battery",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin conversion beam cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Titanic feet",
-          "kind": "melee",
-          "count": 1
+          "name": "Chaos Acastus Knight Asterius",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Asterius volkite culverin",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Karacnos mortar battery",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin conversion beam cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Titanic feet",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -3383,7 +3447,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Acastus Knight Porphyrion",
@@ -3391,88 +3454,27 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Twin magna lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Acastus ironstorm missile pod",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Acastus autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Titanic feet",
-          "kind": "melee",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "3a86-44ef-e8e8-b7a0",
-          "name": "Carapace weapon",
-          "tree": "559b-9e67-c50e-0be3",
-          "parent": "",
-          "slot": "Chaos Acastus Knight Porphyrion",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Chaos Acastus Knight Porphyrion",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "2bd3-2771-a737-adee",
-              "name": "Acastus ironstorm missile pod",
-              "weapons": [
-                "ranged|Acastus ironstorm missile pod"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Twin magna lascannon",
+              "count": 1
             },
             {
-              "id": "e5d0-2359-8a2a-3601",
-              "name": "Helios defence missiles",
-              "weapons": [
-                "ranged|Helios defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "b24c-86fa-7e04-48a7",
-          "name": "Shoulder weapons",
-          "tree": "559b-9e67-c50e-0be3",
-          "parent": "",
-          "slot": "Chaos Acastus Knight Porphyrion",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "ba14-8cac-6b19-4318",
-              "name": "Acastus autocannon",
-              "weapons": [
-                "ranged|Acastus autocannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Acastus ironstorm missile pod",
+              "count": 1
             },
             {
-              "id": "1561-195a-c202-2f45",
-              "name": "Lascannon",
-              "weapons": [
-                "ranged|Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Acastus autocannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Titanic feet",
+              "count": 1
             }
           ]
         }
@@ -3647,7 +3649,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Cerastus Knight Acheron",
@@ -3655,21 +3656,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Acheron flame cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaper chainfist",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Chaos Cerastus Knight Acheron",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Acheron flame cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaper chainfist",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin heavy bolter",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -3949,7 +3954,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Cerastus Knight Atrapos",
@@ -3957,21 +3961,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Atrapos lascutter",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Atrapos lascutter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton singularity cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Chaos Cerastus Knight Atrapos",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Atrapos lascutter",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Atrapos lascutter",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Graviton singularity cannon",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -4144,7 +4152,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Cerastus Knight Castigator",
@@ -4152,16 +4159,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Castigator bolt cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Tempest warblade",
-          "kind": "melee",
-          "count": 1
+          "name": "Chaos Cerastus Knight Castigator",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Castigator bolt cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Tempest warblade",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -4333,7 +4345,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Cerastus Knight Lancer",
@@ -4341,16 +4352,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Cerastus shock lance",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Cerastus shock lance",
-          "kind": "melee",
-          "count": 1
+          "name": "Chaos Cerastus Knight Lancer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Cerastus shock lance",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Cerastus shock lance",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -4598,7 +4614,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Questoris Knight Magaera",
@@ -4606,53 +4621,54 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lightning cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Phased plasma-fusil",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaper chainsword",
-          "kind": "melee",
-          "count": 1
+          "name": "Chaos Questoris Knight Magaera",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Lightning cannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Phased plasma-fusil",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "ee33-43a7-5c5-dfe1",
-          "name": "Melee weapon",
-          "tree": "6bcd-fc7d-6947-223b",
-          "parent": "",
-          "slot": "Chaos Questoris Knight Magaera",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Chaos Questoris Knight Magaera",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "c4f1-17d8-3504-d457",
               "name": "Hekaton siege claw and twin rad cleanser",
               "weapons": [
-                "ranged|Twin rad cleanser",
-                "melee|Hekaton siege claw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "781a-8964-f92c-9a19",
-              "name": "Reaper chainsword",
-              "weapons": [
-                "melee|Reaper chainsword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+                {
+                  "weapon": "ranged|Twin rad cleanser",
+                  "count": 1
+                },
+                {
+                  "weapon": "melee|Hekaton siege claw",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -4910,7 +4926,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Chaos Questoris Knight Styrix",
@@ -4918,53 +4933,54 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Graviton crusher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Volkite chierovile",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaper chainsword",
-          "kind": "melee",
-          "count": 1
+          "name": "Chaos Questoris Knight Styrix",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Graviton crusher",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Volkite chierovile",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "7dc7-e65c-64c-fff3",
-          "name": "Melee weapon",
-          "tree": "4063-8e8e-6869-ec97",
-          "parent": "",
-          "slot": "Chaos Questoris Knight Styrix",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Chaos Questoris Knight Styrix",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "7b0f-b7a2-dde0-482b",
               "name": "Hekaton siege claw and twin rad cleanser",
               "weapons": [
-                "ranged|Twin rad cleanser",
-                "melee|Hekaton siege claw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "827-f925-c319-7b2c",
-              "name": "Reaper chainsword",
-              "weapons": [
-                "melee|Reaper chainsword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+                {
+                  "weapon": "ranged|Twin rad cleanser",
+                  "count": 1
+                },
+                {
+                  "weapon": "melee|Hekaton siege claw",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -5141,7 +5157,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Contorted Epitome",
@@ -5149,16 +5164,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Coiled tentacles",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Contorted Epitome",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Coiled tentacles",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -5334,7 +5354,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Daemon Prince of Chaos",
@@ -5342,16 +5361,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Hellforged weapons",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Daemon Prince of Chaos",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Hellforged weapons",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Infernal cannon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -5554,7 +5578,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Daemon Prince of Chaos with wings",
@@ -5562,16 +5585,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Hellforged weapons",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Daemon Prince of Chaos with wings",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Hellforged weapons",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Infernal cannon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -5708,12 +5736,28 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Slashing claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Alluress",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "name": "Daemonette",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -6299,7 +6343,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Daemonic Charioteer",
@@ -6307,111 +6350,53 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Juggernaut's bladed horn",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Attendant's hellblades",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Blade of blood",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Hellforged weapons",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Death's heads",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Disgusting sneezes",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Acidic maw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Diseased claws and teeth",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Foul balesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Foul mouthparts",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Tiny balesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Tiny corrupted staff",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lashes of torment",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bladed axle",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lashing tongue",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Seeker tongues",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Arcane Fireball",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Screamer bites",
-          "kind": "melee",
-          "count": 1
+          "name": "Daemonic Charioteer [Crucible]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Juggernaut's bladed horn",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Attendant's hellblades",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blade of blood",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Hellforged weapons",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Bladed axle",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Lashing tongue",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Seeker tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Screamer bites",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -6998,7 +6983,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Daemonic Herald",
@@ -7006,111 +6990,53 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Juggernaut's bladed horn",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Attendant's hellblades",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Blade of blood",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Hellforged weapons",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Death's heads",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Disgusting sneezes",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Acidic maw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Diseased claws and teeth",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Foul balesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Foul mouthparts",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Tiny balesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Tiny corrupted staff",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lashes of torment",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bladed axle",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lashing tongue",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Seeker tongues",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Arcane Fireball",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Screamer bites",
-          "kind": "melee",
-          "count": 1
+          "name": "Daemonic Herald [Crucible]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Juggernaut's bladed horn",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Attendant's hellblades",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blade of blood",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Hellforged weapons",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Bladed axle",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Lashing tongue",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Seeker tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Screamer bites",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -7222,7 +7148,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Epidemius",
@@ -7230,11 +7155,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Balesword and nurgling attendants",
-          "kind": "melee",
-          "count": 1
+          "name": "Epidemius",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Balesword and nurgling attendants",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -7403,7 +7334,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Exalted Flamer",
@@ -7411,16 +7341,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Flamer mouths",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Fires of Tzeentch",
-          "kind": "ranged",
-          "count": 1
+          "name": "Exalted Flamer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Flamer mouths",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Fires of Tzeentch",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -7616,7 +7551,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Fateskimmer",
@@ -7624,21 +7558,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Screamer bites",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Arcane Fireball",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Herald combat weapon",
-          "kind": "melee",
-          "count": 1
+          "name": "Fateskimmer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Screamer bites",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Arcane Fireball",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Herald combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -7738,12 +7676,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Feculent Gnarlmaw",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Feculent Gnarlmaw",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "armyRuleIds": [
@@ -7888,7 +7833,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Fiends",
@@ -7896,11 +7840,17 @@
           "max": 6
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Barbed tail and dissecting claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Fiends",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Barbed tail and dissecting claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8050,7 +8000,6 @@
       "supportTargets": [],
       "minModels": 2,
       "maxModels": 3,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Firestorm Redoubt",
@@ -8058,92 +8007,15 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Icarus Lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad lascannon",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "b2f0-fef3-2b51-8edc",
-          "name": "Weapons Array",
-          "tree": "b2f0-fef3-2b51-8edc",
-          "parent": "",
-          "slot": "Firestorm Redoubt [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Firestorm Redoubt [Legends]",
+          "min": 2,
+          "max": 3,
+          "defaultWargear": [
             {
-              "id": "c049-f816-4822-920c",
-              "name": "Icarus lascannon",
-              "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "efa1-186c-7f51-6ae0",
-              "name": "Quad-gun",
-              "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "9df9-6944-3f63-2226",
-          "name": "Turrets",
-          "tree": "9df9-6944-3f63-2226",
-          "parent": "",
-          "slot": "Firestorm Redoubt [Legends]",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "d6aa-a1ef-3d1c-54",
-              "name": "Battle cannon",
-              "weapons": [
-                "ranged|Battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "5f73-2391-368b-6c4a",
-              "name": "Punisher gatling cannon",
-              "weapons": [
-                "ranged|Punisher gatling cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "4d19-a2f6-5d6e-e53f",
-              "name": "Quad lascannon",
-              "weapons": [
-                "ranged|Quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Quad lascannon",
+              "count": 1
             }
           ]
         }
@@ -8284,17 +8156,36 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Flickering Flames",
-          "kind": "ranged",
-          "count": 1
+          "name": "Flamer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Flickering Flames",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Flamer mouths",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Flamer mouths",
-          "kind": "melee",
-          "count": 1
+          "name": "Pyrocaster",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Flickering Flames",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Flamer mouths",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8443,17 +8334,32 @@
       "supportTargets": [],
       "minModels": 5,
       "maxModels": 10,
-      "defaultModels": 10,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Gore-drenched fangs",
-          "kind": "melee",
-          "count": 10
+          "name": "Flesh Hound",
+          "min": 4,
+          "max": 9,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Gore-drenched fangs",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Burning roar",
-          "kind": "ranged",
-          "count": 1
+          "name": "Gore Hound",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Gore-drenched fangs",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Burning roar",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8628,7 +8534,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Fluxmaster",
@@ -8636,16 +8541,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Arcane Fireball",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Herald combat weapon",
-          "kind": "melee",
-          "count": 1
+          "name": "Fluxmaster",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Arcane Fireball",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Herald combat weapon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -8772,7 +8682,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Fortress of Redemption",
@@ -8780,21 +8689,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Redemptor lascannons",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Redemptor missile silo",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Fortress of Redemption [Legends]",
+          "min": 1,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Redemptor lascannons",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Redemptor missile silo",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -8982,7 +8891,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Furies",
@@ -8990,11 +8898,17 @@
           "max": 10
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Daemonic claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Fury",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Daemonic claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -9169,7 +9083,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Giant Chaos Spawn",
@@ -9177,11 +9090,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Churning fangs and claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Giant Chaos Spawn [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Churning fangs and claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -9426,7 +9345,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Great Unclean One",
@@ -9434,83 +9352,75 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Putrid vomit",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bilesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Plague flail",
-          "kind": "ranged",
-          "count": 1
+          "name": "Great Unclean One",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Putrid vomit",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Bilesword",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Plague flail",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "769f-27bd-d67c-1520",
-          "name": "Bilesword / Bell",
-          "tree": "7aa4-b95c-7ba6-8344",
-          "parent": "",
-          "slot": "Great Unclean One",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Great Unclean One",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "9f7c-9afa-4eee-8cca",
-              "name": "Bilesword",
-              "weapons": [
-                "melee|Bilesword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "melee|Bilesword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "2b79-2650-4b79-7ad9",
               "name": "Doomsday bell",
               "weapons": [
-                "melee|Doomsday bell"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Doomsday bell",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "c1c3-61fc-5acf-e5f9",
-          "name": "Flail / Bileblade",
-          "tree": "7aa4-b95c-7ba6-8344",
-          "parent": "",
-          "slot": "Great Unclean One",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Great Unclean One",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "fea6-d9bc-41b9-26f5",
-              "name": "Plague flail",
-              "weapons": [
-                "ranged|Plague flail"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Plague flail",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "7c03-9d0f-1bd7-fc65",
               "name": "Bileblade",
               "weapons": [
-                "melee|Bileblade"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Bileblade",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -9615,7 +9525,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Guardian Drone",
@@ -9623,21 +9532,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Destroyer pulse",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Guardian salvo launchers",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Manipulator limbs",
-          "kind": "melee",
-          "count": 1
+          "name": "Guardian Drone [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Destroyer pulse",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Guardian salvo launchers",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Manipulator limbs",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -9847,27 +9760,29 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lashes of torment",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Lashes of torment",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Seeker tongues",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Slashing claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Hellflayer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Lashes of torment",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Lashes of torment",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Seeker tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -10051,7 +9966,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Herald of Slaanesh on Steed of Slaanesh",
@@ -10059,16 +9973,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lashing tongue",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Herald of Slaanesh on Steed of Slaanesh [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Lashing tongue",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -10194,7 +10113,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Horticulous Slimux",
@@ -10202,16 +10120,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Acidic maw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lopping shears",
-          "kind": "melee",
-          "count": 1
+          "name": "Horticulous Slimux",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Acidic maw",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Lopping shears",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -10791,7 +10714,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Immortal Champion",
@@ -10799,111 +10721,53 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Juggernaut's bladed horn",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Attendant's hellblades",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Blade of blood",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Hellforged weapons",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Death's heads",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Disgusting sneezes",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Acidic maw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Diseased claws and teeth",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Foul balesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Foul mouthparts",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Tiny balesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Tiny corrupted staff",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lashes of torment",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Bladed axle",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Lashing tongue",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Seeker tongues",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Arcane Fireball",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Screamer bites",
-          "kind": "melee",
-          "count": 1
+          "name": "Immortal Champion [Crucible]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Juggernaut's bladed horn",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Attendant's hellblades",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blade of blood",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Hellforged weapons",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Bladed axle",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Lashing tongue",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Seeker tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Screamer bites",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -11023,7 +10887,6 @@
       "supportTargets": [],
       "minModels": 2,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Imperial Fortress Walls",
@@ -11031,78 +10894,19 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Twin long-barrelled autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "65b8-ef30-87fb-c746",
-          "name": "Twin Heavy Bolters",
-          "tree": "65b8-ef30-87fb-c746",
-          "parent": "",
-          "slot": "Imperial Fortress Walls [Legends]",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "name": "Imperial Fortress Walls [Legends]",
+          "min": 2,
+          "max": 4,
+          "defaultWargear": [
             {
-              "id": "76e0-53b6-1a88-dee4",
-              "name": "Twin heavy bolter",
-              "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Twin long-barrelled autocannon",
+              "count": 1
             },
             {
-              "id": "68c3-73a2-6636-e4f3",
-              "name": "Twin lascannon",
-              "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "8ad5-d201-b2aa-cdc6",
-          "name": "Tower Sections",
-          "tree": "8ad5-d201-b2aa-cdc6",
-          "parent": "",
-          "slot": "Imperial Fortress Walls [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "dc-6d6f-6e75-994b",
-              "name": "Twin lascannon",
-              "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "8c01-8811-e567-fda8",
-              "name": "Twin heavy bolter",
-              "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Twin heavy bolter",
+              "count": 1
             }
           ]
         }
@@ -11270,7 +11074,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Infernal Enrapturess",
@@ -11278,16 +11081,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Heartstring lyre",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Infernal Enrapturess",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Heartstring lyre",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -11453,7 +11261,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Kairos Fateweaver",
@@ -11461,16 +11268,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Staff of Tomorrow",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal Gateway",
-          "kind": "ranged",
-          "count": 1
+          "name": "Kairos Fateweaver",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Staff of Tomorrow",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Infernal Gateway",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -11630,7 +11442,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Karanak",
@@ -11638,16 +11449,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Soul-rending fangs",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Scalding Roar",
-          "kind": "ranged",
-          "count": 1
+          "name": "Karanak",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Soul-rending fangs",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Scalding Roar",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -11931,7 +11747,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Keeper of Secrets",
@@ -11939,62 +11754,55 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Phantasmagoria",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Snapping claws",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Witstealer sword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Living whip",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ritual knife",
-          "kind": "melee",
-          "count": 1
+          "name": "Keeper of Secrets",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Phantasmagoria",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Snapping claws",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Witstealer sword",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "a9d3-f6d5-e4a7-d2d0",
-          "name": "Wargear",
-          "tree": "2100-9d97-56df-0588",
-          "parent": "",
-          "slot": "Keeper of Secrets",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Keeper of Secrets",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "b8d9-92ad-63b2-bc74",
               "name": "Living whip",
               "weapons": [
-                "ranged|Living whip"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Living whip",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "1df1-a091-c2f2-eafc",
               "name": "Ritual knife",
               "weapons": [
-                "melee|Ritual knife"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Ritual knife",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -12175,27 +11983,56 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Torrent of burning blood",
-          "kind": "ranged",
-          "count": 1
-        },
+          "name": "Khorne Soul Grinder",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Torrent of burning blood",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Harvester cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Iron claw",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
         {
-          "weapon": "Harvester cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Iron claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpsword",
-          "kind": "melee",
-          "count": 1
+          "id": "46db-d986-248b-bd2b",
+          "model": "Khorne Soul Grinder",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "36a9-7135-9deb-5f95",
+              "name": "Warpclaw",
+              "weapons": [
+                {
+                  "weapon": "melee|Warpclaw",
+                  "count": 1
+                }
+              ]
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -12398,7 +12235,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Knight Abominant",
@@ -12406,26 +12242,29 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Balemace",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Electroscourge",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Volkite combustor",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
+          "name": "Knight Abominant",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Balemace",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Electroscourge",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Volkite combustor",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -12648,7 +12487,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Knight Desecrator",
@@ -12656,52 +12494,50 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Desecrator laser destructor",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaper chainsword",
-          "kind": "melee",
-          "count": 1
+          "name": "Knight Desecrator",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Desecrator laser destructor",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "ffd4-3748-8ded-ef0a",
-          "name": "Replace reaper chainsword",
-          "tree": "6128-b4e5-e879-21fe",
-          "parent": "",
-          "slot": "Knight Desecrator",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Knight Desecrator",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "d415-fd15-415d-4aac",
-              "name": "Reaper chainsword",
-              "weapons": [
-                "melee|Reaper chainsword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "571a-5fae-d415-fad0",
               "name": "Warpstrike claw",
               "weapons": [
-                "melee|Warpstrike claw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Warpstrike claw",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -13097,7 +12933,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Knight Despoiler",
@@ -13105,214 +12940,200 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Titanic feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Havoc missile pod",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ruinspear rocket pod",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Hellstorm autocannons",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaper chainsword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpstrike claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Daemonbreath meltagun",
-          "kind": "ranged",
-          "count": 1
+          "name": "Knight Despoiler",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Titanic feet",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpstrike claw",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Daemonbreath meltagun",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "d94e-6d0e-c5d3-30a3",
-          "name": "Carapace weapon",
-          "tree": "3018-3716-d944-ae36",
-          "parent": "",
-          "slot": "Knight Despoiler",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Knight Despoiler",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "4b16-d1fe-e59a-af23",
               "name": "Havoc missile pod",
               "weapons": [
-                "ranged|Havoc missile pod"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Havoc missile pod",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "9bee-2752-294d-c782",
               "name": "Ruinspear rocket pod",
               "weapons": [
-                "ranged|Ruinspear rocket pod"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Ruinspear rocket pod",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "4887-7e59-99bf-873e",
               "name": "Hellstorm autocannons",
               "weapons": [
-                "ranged|Hellstorm autocannons"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Hellstorm autocannons",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "55df-34d3-e508-13c4",
-          "name": "Replace reaper chainsword",
-          "tree": "3018-3716-d944-ae36",
-          "parent": "",
-          "slot": "Knight Despoiler",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Knight Despoiler",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "4268-2d76-f972-d7f5",
               "name": "Gatling cannon and flamer",
               "weapons": [
-                "ranged|Despoiler gatling cannon",
-                "ranged|Heavy darkflamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Despoiler gatling cannon",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Heavy darkflamer",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "eb49-0962-11ba-83c7",
               "name": "Battle cannon and heavy stubber",
               "weapons": [
-                "ranged|Despoiler battle cannon",
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "b862-bf16-4b95-f802",
-              "name": "Reaper chainsword",
-              "weapons": [
-                "melee|Reaper chainsword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+                {
+                  "weapon": "ranged|Despoiler battle cannon",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Diabolus heavy stubber",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "a983-291e-f14c-bb76",
               "name": "Daemonbreath thermal cannon",
               "weapons": [
-                "ranged|Daemonbreath thermal cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Daemonbreath thermal cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "aede-eb93-6a3e-2f62",
-          "name": "Replace warpstrike claw",
-          "tree": "3018-3716-d944-ae36",
-          "parent": "",
-          "slot": "Knight Despoiler",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Knight Despoiler",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Warpstrike claw",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "48a2-a603-9607-4df8",
               "name": "Gatling cannon and flamer",
               "weapons": [
-                "ranged|Despoiler gatling cannon",
-                "ranged|Heavy darkflamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Despoiler gatling cannon",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Heavy darkflamer",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "4379-207c-54b4-722a",
               "name": "Battle cannon and heavy stubber",
               "weapons": [
-                "ranged|Despoiler battle cannon",
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "0943-19c0-9efa-e46c",
-              "name": "Warpstrike claw",
-              "weapons": [
-                "melee|Warpstrike claw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+                {
+                  "weapon": "ranged|Despoiler battle cannon",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Diabolus heavy stubber",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "6005-8d6b-36b5-50ff",
               "name": "Daemonbreath thermal cannon",
               "weapons": [
-                "ranged|Daemonbreath thermal cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Daemonbreath thermal cannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "68b3-ab57-f708-140f",
-          "name": "Shoulder weapon",
-          "tree": "3018-3716-d944-ae36",
-          "parent": "",
-          "slot": "Knight Despoiler",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Knight Despoiler",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "ranged|Daemonbreath meltagun",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "bef4-9f67-21db-1f47",
               "name": "Diabolus heavy stubber",
               "weapons": [
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            },
-            {
-              "id": "65bc-c48f-4251-43fd",
-              "name": "Daemonbreath meltagun",
-              "weapons": [
-                "ranged|Daemonbreath meltagun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+                {
+                  "weapon": "ranged|Diabolus heavy stubber",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -13541,7 +13362,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Knight Rampager",
@@ -13549,21 +13369,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Reaper chainsword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpstrike claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
+          "name": "Knight Rampager",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Reaper chainsword",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpstrike claw",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -13775,7 +13599,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Knight Ruinator",
@@ -13783,21 +13606,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Darkflame lance",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Fellbore",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Terrorpulse missiles",
-          "kind": "ranged",
-          "count": 1
+          "name": "Knight Ruinator",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Darkflame lance",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Fellbore",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Terrorpulse missiles",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -14080,7 +13907,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Knight Tyrant",
@@ -14088,102 +13914,85 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Titanic feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Twin daemonbreath meltagun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Gheiststrike missile launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin desecrator cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Brimstone volcano lance",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ectoplasma decimator",
-          "kind": "ranged",
-          "count": 1
+          "name": "Knight Tyrant",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Titanic feet",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin daemonbreath meltagun",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Gheiststrike missile launcher",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Twin desecrator cannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Brimstone volcano lance",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Ectoplasma decimator",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "056b-59dd-0758-29ee",
-          "name": "Carapace weapons",
-          "tree": "575b-3eb5-4179-23d9",
-          "parent": "",
-          "slot": "Knight Tyrant",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "7264-ccf1-81a4-8cbe",
-              "name": "2 Gheiststrike missile launchers and 1 twin desecrator cannon",
-              "weapons": [
-                "ranged|Gheiststrike missile launcher",
-                "ranged|Twin desecrator cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+          "model": "Knight Tyrant",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "0122-c630-b6bb-8804",
               "name": "2 twin desecrator cannons and 1 gheiststrike missile launcher",
-              "weapons": [
-                "ranged|Gheiststrike missile launcher",
-                "ranged|Twin desecrator cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapons": []
             }
           ]
         },
         {
           "id": "53aa-af3d-5b81-5df6",
-          "name": "Main weapons",
-          "tree": "575b-3eb5-4179-23d9",
-          "parent": "",
-          "slot": "Knight Tyrant",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Knight Tyrant",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "0d51-1b09-1511-86e4",
-              "name": "Brimstone volcano lance and ectoplasma decimator",
-              "weapons": [
-                "ranged|Brimstone volcano lance",
-                "ranged|Ectoplasma decimator"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Brimstone volcano lance",
+              "count": 1
             },
+            {
+              "weapon": "ranged|Ectoplasma decimator",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "0d33-ceef-2c1f-e440",
               "name": "Darkflame cannon and warpshock harpoon",
               "weapons": [
-                "ranged|Darkflame cannon",
-                "ranged|Warpshock harpoon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Darkflame cannon",
+                  "count": 1
+                },
+                {
+                  "weapon": "ranged|Warpshock harpoon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -14465,7 +14274,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Lord of Change",
@@ -14473,57 +14281,51 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Bolt of Change",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Staff of Tzeentch",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Rod of sorcery",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Baleful sword",
-          "kind": "melee",
-          "count": 1
+          "name": "Lord of Change",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bolt of Change",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Staff of Tzeentch",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "46e5-5f26-e3ad-921b",
-          "name": "Wargear",
-          "tree": "45ec-3fff-8a88-7a4c",
-          "parent": "",
-          "slot": "Lord of Change",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Lord of Change",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "2b05-a636-23ce-28e",
               "name": "Rod of sorcery",
               "weapons": [
-                "ranged|Rod of sorcery"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Rod of sorcery",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f552-1495-3154-1e61",
               "name": "Baleful sword",
               "weapons": [
-                "melee|Baleful sword"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Baleful sword",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -14620,7 +14422,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Macro-cannon Aquila Strongpoint",
@@ -14628,16 +14429,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Aquila macro-cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Macro-cannon Aquila Strongpoint [Legends]",
+          "min": 1,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Aquila macro-cannon",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -14815,27 +14617,56 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Phlegm bombardment",
-          "kind": "ranged",
-          "count": 1
-        },
+          "name": "Nurgle Soul Grinder",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Phlegm bombardment",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Harvester cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Iron claw",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
         {
-          "weapon": "Harvester cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Iron claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpsword",
-          "kind": "melee",
-          "count": 1
+          "id": "46db-d986-248b-bd2b",
+          "model": "Nurgle Soul Grinder",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "36a9-7135-9deb-5f95",
+              "name": "Warpclaw",
+              "weapons": [
+                {
+                  "weapon": "melee|Warpclaw",
+                  "count": 1
+                }
+              ]
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -14958,12 +14789,17 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Diseased claws and teeth",
-          "kind": "melee",
-          "count": 1
+          "name": "Nurgling Swarm",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Diseased claws and teeth",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -15192,7 +15028,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Pink Horror",
@@ -15200,36 +15035,37 @@
           "max": 10
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Coruscating Yellow flames (ref. only)",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Yellow claws (ref. only)",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Blue claws (ref. only)",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Coruscating Blue flames (ref. only)",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Coruscating Pink flames",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Pink claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Pink Horror",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Coruscating Yellow flames (ref. only)",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Yellow claws (ref. only)",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blue claws (ref. only)",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Coruscating Blue flames (ref. only)",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Coruscating Pink flames",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Pink claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -15408,22 +15244,44 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Death's heads",
-          "kind": "ranged",
-          "count": 1
+          "name": "Plague Drone",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Death's heads",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Foul mouthparts",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plaguesword",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Foul mouthparts",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Plaguesword",
-          "kind": "melee",
-          "count": 1
+          "name": "Plaguebringer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Death's heads",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Foul mouthparts",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plaguesword",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -15559,17 +15417,21 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Grasping tongue",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Yawning maw",
-          "kind": "melee",
-          "count": 1
+          "name": "Plague Toad",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Grasping tongue",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Yawning maw",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -15686,12 +15548,28 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Plaguesword",
-          "kind": "melee",
-          "count": 1
+          "name": "Plagueridden",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Plaguesword",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "name": "Plaguebearer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Plaguesword",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -15779,7 +15657,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Plasma Obliterator",
@@ -15787,11 +15664,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Plasma obliterator",
-          "kind": "ranged",
-          "count": 1
+          "name": "Plasma Obliterator [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Plasma obliterator",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -15963,22 +15846,25 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Grasping tongue",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Pox rider plaguesword",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Yawning maw",
-          "kind": "melee",
-          "count": 1
+          "name": "Pox Rider",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Grasping tongue",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Pox rider plaguesword",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Yawning maw",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -16118,7 +16004,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Poxbringer",
@@ -16126,11 +16011,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Foul balesword",
-          "kind": "melee",
-          "count": 1
+          "name": "Poxbringer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Foul balesword",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -16437,7 +16328,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Primaris Redoubt",
@@ -16445,183 +16335,158 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Primaris Redoubt turbo-laser destructor",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris air defence missiles",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris Icarus lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris Icarus quad lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris quad-gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris castellan launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Primaris vengeance launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Battle cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Multi-melta",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Twin heavy flamer",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Primaris Redoubt [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Primaris Redoubt turbo-laser destructor",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "bca0-9eff-5e78-5f16",
-          "name": "Seconday Weapon",
-          "tree": "bca0-9eff-5e78-5f16",
-          "parent": "",
-          "slot": "Primaris Redoubt [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Primaris Redoubt [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "2b2d-2d80-c99a-50bc",
               "name": "Primaris air defence missiles",
               "weapons": [
-                "ranged|Primaris air defence missiles"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris air defence missiles",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "82f9-177b-779e-7780",
               "name": "Primaris Icarus lascannon",
               "weapons": [
-                "ranged|Primaris Icarus lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris Icarus lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "663c-1233-84a9-8909",
               "name": "Primaris Icarus quad lascannon",
               "weapons": [
-                "ranged|Primaris Icarus quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris Icarus quad lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "6f21-792e-17c6-c9dc",
               "name": "Primaris quad-gun",
               "weapons": [
-                "ranged|Primaris quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris quad-gun",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "2cde-a0ef-d7e0-53b3",
               "name": "Primaris castellan launcher",
               "weapons": [
-                "ranged|Primaris castellan launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris castellan launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "e500-1c20-8d3d-e4c5",
               "name": "Primaris vengeance launcher",
               "weapons": [
-                "ranged|Primaris vengeance launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Primaris vengeance launcher",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "6624-49e6-ab77-33a4",
               "name": "Battle cannon",
               "weapons": [
-                "ranged|Battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Battle cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f5-b408-3074-48e9",
               "name": "Multi-melta",
               "weapons": [
-                "ranged|Multi-melta"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Multi-melta",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "16e2-abe1-a564-a8f5",
               "name": "Twin lascannon",
               "weapons": [
-                "ranged|Twin lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "8cec-fe90-d8a2-be83",
               "name": "Twin heavy bolter",
               "weapons": [
-                "ranged|Twin heavy bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy bolter",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "7a6f-b9c4-89ce-bdd9",
               "name": "Twin heavy flamer",
               "weapons": [
-                "ranged|Twin heavy flamer"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Twin heavy flamer",
+                  "count": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f271-c70e-dbf1-bb1c",
+          "model": "Primaris Redoubt [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "upTo": 4,
+          "alternatives": [
+            {
+              "id": "f271-c70e-dbf1-bb1c",
+              "name": "Heavy bolter",
+              "weapons": [
+                {
+                  "weapon": "ranged|Heavy bolter",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -16864,7 +16729,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Reaver Titan",
@@ -16872,99 +16736,39 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Reaver feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver apocalypse launcher",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver gatling blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver laser blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver melta cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver volcano cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver power fist",
-          "kind": "melee",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "c009-c6dd-bfe2-f61f",
-          "name": "Weapons",
-          "tree": "9bab-d72b-c7bd-96c0",
-          "parent": "",
-          "slot": "Reaver Titan",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "name": "Reaver Titan",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "2545-b5ae-cee8-9563",
-              "name": "Reaver gatling blaster",
-              "weapons": [
-                "ranged|Reaver gatling blaster"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "melee|Reaver feet",
+              "count": 1
             },
             {
-              "id": "2017-e76f-d8fe-434e",
-              "name": "Reaver laser blaster",
-              "weapons": [
-                "ranged|Reaver laser blaster"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Reaver apocalypse launcher",
+              "count": 1
             },
             {
-              "id": "fce9-1859-d02-e0b6",
-              "name": "Reaver melta cannon",
-              "weapons": [
-                "ranged|Reaver melta cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Reaver gatling blaster",
+              "count": 1
             },
             {
-              "id": "8cec-19a1-6e8d-90d2",
-              "name": "Reaver volcano cannon",
-              "weapons": [
-                "ranged|Reaver volcano cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Reaver laser blaster",
+              "count": 1
             },
             {
-              "id": "1f9c-1176-b34c-540e",
-              "name": "Reaver power fist",
-              "weapons": [
-                "melee|Reaver power fist"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Reaver melta cannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Reaver volcano cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaver power fist",
+              "count": 1
             }
           ]
         }
@@ -17159,7 +16963,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Rendmaster on Blood Throne",
@@ -17167,16 +16970,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Attendant's hellblades",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Blade of blood",
-          "kind": "melee",
-          "count": 1
+          "name": "Rendmaster on Blood Throne",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Attendant's hellblades",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blade of blood",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -17356,7 +17164,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Rotigus",
@@ -17364,16 +17171,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Streams of brackish filth",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Gnarlrod",
-          "kind": "melee",
-          "count": 1
+          "name": "Rotigus",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Streams of brackish filth",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Gnarlrod",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -17514,7 +17326,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Scabeiathrax the Bloated",
@@ -17522,16 +17333,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Putrid vomit",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Blade of decay",
-          "kind": "melee",
-          "count": 1
+          "name": "Scabeiathrax the Bloated [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Putrid vomit",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Blade of decay",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -17654,7 +17470,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Screamer",
@@ -17662,11 +17477,17 @@
           "max": 6
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lamprey bite",
-          "kind": "melee",
-          "count": 1
+          "name": "Screamer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Lamprey bite",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -17809,7 +17630,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Seeker Chariot",
@@ -17817,21 +17637,25 @@
           "max": 2
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lashes of torment",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Seeker tongues",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Slashing claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Seeker Chariot",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Lashes of torment",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Seeker tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -18010,7 +17834,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Seeker",
@@ -18023,16 +17846,36 @@
           "max": 1
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lashing tongues",
-          "kind": "melee",
-          "count": 1
+          "name": "Seeker",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Lashing tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
         },
         {
-          "weapon": "Slashing claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Heartseeker",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Lashing tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -18100,7 +17943,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Sentry Gun",
@@ -18108,11 +17950,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Twin heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Sentry Gun",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Twin heavy bolter",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -18361,7 +18209,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Shalaxi Helbane",
@@ -18369,26 +18216,29 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lash of Slaanesh",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Pavane of Slaanesh",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Snapping claws",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Soulpiercer",
-          "kind": "melee",
-          "count": 1
+          "name": "Shalaxi Helbane",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Lash of Slaanesh",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Pavane of Slaanesh",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Snapping claws",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Soulpiercer",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -18558,7 +18408,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skarbrand",
@@ -18566,16 +18415,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Bellow of endless fury",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Slaughter and Carnage",
-          "kind": "melee",
-          "count": 1
+          "name": "Skarbrand",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Bellow of endless fury",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slaughter and Carnage",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -18659,12 +18513,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skull Altar",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Skull Altar",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "armyRuleIds": [
@@ -18805,7 +18666,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skull Cannon",
@@ -18813,21 +18673,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Attendant's hellblades",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Biting maw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Skull cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Skull Cannon",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Attendant's hellblades",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Biting maw",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Skull cannon",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -18978,7 +18842,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skullmaster",
@@ -18986,16 +18849,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Blade of blood",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Juggernaut's bladed horn",
-          "kind": "melee",
-          "count": 1
+          "name": "Skullmaster",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Blade of blood",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Juggernaut's bladed horn",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -19134,7 +19002,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skulltaker",
@@ -19142,11 +19009,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "The Slayer Sword",
-          "kind": "melee",
-          "count": 1
+          "name": "Skulltaker",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|The Slayer Sword",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -19197,12 +19070,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Skyshield Landing Pad",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Skyshield Landing Pad [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -19393,27 +19273,56 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Scream of despair",
-          "kind": "ranged",
-          "count": 1
-        },
+          "name": "Slaanesh Soul Grinder",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Scream of despair",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Harvester cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Iron claw",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
         {
-          "weapon": "Harvester cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Iron claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpsword",
-          "kind": "melee",
-          "count": 1
+          "id": "46db-d986-248b-bd2b",
+          "model": "Slaanesh Soul Grinder",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "36a9-7135-9deb-5f95",
+              "name": "Warpclaw",
+              "weapons": [
+                {
+                  "weapon": "melee|Warpclaw",
+                  "count": 1
+                }
+              ]
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -19545,7 +19454,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Sloppity Bilepiper",
@@ -19553,11 +19461,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Marotter",
-          "kind": "melee",
-          "count": 1
+          "name": "Sloppity Bilepiper",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Marotter",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -19640,7 +19554,6 @@
       "supportTargets": [],
       "minModels": 4,
       "maxModels": 4,
-      "defaultModels": 4,
       "composition": [
         {
           "name": "Spindle Drone",
@@ -19648,16 +19561,21 @@
           "max": 4
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Drone pulse",
-          "kind": "ranged",
-          "count": 4
-        },
-        {
-          "weapon": "Close combat weapon",
-          "kind": "melee",
-          "count": 4
+          "name": "Spindle Drone",
+          "min": 4,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Drone pulse",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Close combat weapon",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -19829,7 +19747,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Spined Chaos Beast",
@@ -19837,11 +19754,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Jagged claws and tusked maw",
-          "kind": "melee",
-          "count": 1
+          "name": "Spined Chaos Beast [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Jagged claws and tusked maw",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -19997,7 +19920,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Spoilpox Scrivener",
@@ -20005,16 +19927,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Disgusting Sneezes",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Plaguesword and distended maw",
-          "kind": "melee",
-          "count": 1
+          "name": "Spoilpox Scrivener",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Disgusting Sneezes",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Plaguesword and distended maw",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -20226,7 +20153,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Syll'esske",
@@ -20234,26 +20160,29 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Axe of Dominion",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Scourging whip",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Scourging whip",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Cacophonic choir",
-          "kind": "ranged",
-          "count": 1
+          "name": "Syll'esske",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Axe of Dominion",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Scourging whip",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Scourging whip",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Cacophonic choir",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -20342,7 +20271,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "The Archivist",
@@ -20350,16 +20278,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Atomic disassembler",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Eradicator glove",
-          "kind": "melee",
-          "count": 1
+          "name": "The Archivist [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Atomic disassembler",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Eradicator glove",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -20468,7 +20401,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "The Blue Scribes",
@@ -20476,11 +20408,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Sharp quills",
-          "kind": "melee",
-          "count": 1
+          "name": "The Blue Scribes",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Sharp quills",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -20618,7 +20556,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "The Changeling",
@@ -20626,16 +20563,21 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "The Trickster's Staff",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Infernal Flames",
-          "kind": "ranged",
-          "count": 1
+          "name": "The Changeling",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|The Trickster's Staff",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Infernal Flames",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -20789,7 +20731,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "The Masque of Slaanesh",
@@ -20797,11 +20738,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Serrated claws",
-          "kind": "melee",
-          "count": 1
+          "name": "The Masque of Slaanesh",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Serrated claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -21025,7 +20972,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Tormentbringer",
@@ -21033,26 +20979,29 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Lashes of torment",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Lashes of torment",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Seeker tongues",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Slashing claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Tormentbringer",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Lashes of torment",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Lashes of torment",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Seeker tongues",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slashing claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -21221,7 +21170,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Tranceweaver",
@@ -21229,11 +21177,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Ravaging claws",
-          "kind": "melee",
-          "count": 1
+          "name": "Tranceweaver",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Ravaging claws",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -21417,27 +21371,56 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Warp gaze",
-          "kind": "ranged",
-          "count": 1
-        },
+          "name": "Tzeentch Soul Grinder",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Warp gaze",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Harvester cannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Iron claw",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
         {
-          "weapon": "Harvester cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Iron claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warpsword",
-          "kind": "melee",
-          "count": 1
+          "id": "46db-d986-248b-bd2b",
+          "model": "Tzeentch Soul Grinder",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
+            {
+              "weapon": "melee|Warpsword",
+              "count": 1
+            }
+          ],
+          "alternatives": [
+            {
+              "id": "36a9-7135-9deb-5f95",
+              "name": "Warpclaw",
+              "weapons": [
+                {
+                  "weapon": "melee|Warpclaw",
+                  "count": 1
+                }
+              ]
+            }
+          ]
         }
       ],
       "armyRuleIds": [
@@ -21544,7 +21527,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Vengeance Weapon Battery",
@@ -21552,51 +21534,52 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Battle cannon",
-          "kind": "ranged",
-          "count": 1
+          "name": "Vengeance Weapon Battery [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Battle cannon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "e0ba-5bb3-c836-c3aa",
-          "name": "Turret",
-          "tree": "e0ba-5bb3-c836-c3aa",
-          "parent": "",
-          "slot": "Vengeance Weapon Battery [Legends]",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Vengeance Weapon Battery [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "8be9-d977-344a-ba5b",
-              "name": "Battle cannon",
-              "weapons": [
-                "ranged|Battle cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Battle cannon",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "2a22-a567-eadd-b4c5",
               "name": "Punisher gatling cannon",
               "weapons": [
-                "ranged|Punisher gatling cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Punisher gatling cannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "90e2-6517-c725-8535",
               "name": "Quad lascannon",
               "weapons": [
-                "ranged|Quad lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Quad lascannon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -21643,12 +21626,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Void Shield Generator",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Void Shield Generator [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -21745,7 +21735,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 4,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Vortex Missile Strongpoint",
@@ -21753,16 +21742,17 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Vortex missile battery",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Heavy bolter",
-          "kind": "ranged",
-          "count": 1
+          "name": "Vortex Missile Strongpoint [Legends]",
+          "min": 1,
+          "max": 4,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Vortex missile battery",
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -21856,7 +21846,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Wall of Martyrs Bunker",
@@ -21864,47 +21853,42 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Icarus Lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Quad-gun",
-          "kind": "ranged",
-          "count": 1
+          "name": "Wall of Martyrs Bunker [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "44b8-6fae-e8ac-c347",
-          "name": "Weapons Array",
-          "tree": "44b8-6fae-e8ac-c347",
-          "parent": "",
-          "slot": "Wall of Martyrs Bunker [Legends]",
-          "pool": false,
-          "minPicks": 0,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "Wall of Martyrs Bunker [Legends]",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [],
+          "alternatives": [
             {
               "id": "1999-209e-c01e-b74d",
               "name": "Icarus lascannon",
               "weapons": [
-                "ranged|Icarus Lascannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Icarus Lascannon",
+                  "count": 1
+                }
+              ]
             },
             {
               "id": "f7aa-cc26-fbca-79c2",
               "name": "Quad-gun",
               "weapons": [
-                "ranged|Quad-gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Quad-gun",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -21955,12 +21939,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Wall of Martyrs Defence Emplacement",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Wall of Martyrs Defence Emplacement [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -22009,12 +22000,19 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Wall of Martyrs Defence Line",
           "min": 0,
           "max": 0
+        }
+      ],
+      "modelTypes": [
+        {
+          "name": "Wall of Martyrs Defence Line [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
         }
       ]
     },
@@ -22202,7 +22200,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "War Dog Brigand",
@@ -22210,57 +22207,54 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Armoured feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Avenger chaincannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Daemonbreath spear",
-          "kind": "ranged",
-          "count": 1
+          "name": "War Dog Brigand",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Armoured feet",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Avenger chaincannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Daemonbreath spear",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "6b38-d599-2a21-b5db",
-          "name": "Carapace weapon",
-          "tree": "b650-3089-7379-b036",
-          "parent": "",
-          "slot": "War Dog Brigand",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Brigand",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "15c2-bab2-b57a-527f",
-              "name": "Diabolus heavy stubber",
-              "weapons": [
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "abb1-9d63-b31a-7502",
               "name": "Havoc multi-launcher",
               "weapons": [
-                "ranged|Havoc multi-launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Havoc multi-launcher",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -22427,7 +22421,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "War Dog Executioner",
@@ -22435,52 +22428,50 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "War Dog autocannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Armoured feet",
-          "kind": "melee",
-          "count": 1
+          "name": "War Dog Executioner",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|War Dog autocannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Armoured feet",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "7ab5-d4cd-c28f-b481",
-          "name": "Carapace weapon",
-          "tree": "2d04-234d-6303-6fa1",
-          "parent": "",
-          "slot": "War Dog Executioner",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Executioner",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "acd5-512d-654f-a53d",
-              "name": "Diabolus heavy stubber",
-              "weapons": [
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "919e-2f99-b24d-1d69",
               "name": "Daemonbreath meltagun",
               "weapons": [
-                "ranged|Daemonbreath meltagun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Daemonbreath meltagun",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -22672,7 +22663,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "War Dog Huntsman",
@@ -22680,52 +22670,50 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Daemonbreath spear",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaper chaintalon",
-          "kind": "melee",
-          "count": 1
+          "name": "War Dog Huntsman",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Daemonbreath spear",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Reaper chaintalon",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "936b-0b10-40c1-25bc",
-          "name": "Carapace weapon",
-          "tree": "7eb1-464a-daa4-9f30",
-          "parent": "",
-          "slot": "War Dog Huntsman",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Huntsman",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "6031-5519-22e8-6091",
-              "name": "Diabolus heavy stubber",
-              "weapons": [
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "f631-c2fc-a38d-b547",
               "name": "Daemonbreath meltagun",
               "weapons": [
-                "ranged|Daemonbreath meltagun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Daemonbreath meltagun",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -22895,7 +22883,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "War Dog Karnivore",
@@ -22903,52 +22890,50 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Reaper chaintalon",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Slaughterclaw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
+          "name": "War Dog Karnivore",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Reaper chaintalon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slaughterclaw",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "6c92-d9c2-33be-f547",
-          "name": "Carapace weapon",
-          "tree": "184a-3920-781a-3fa8",
-          "parent": "",
-          "slot": "War Dog Karnivore",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Karnivore",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "12c3-4c6a-108f-807a",
-              "name": "Diabolus heavy stubber",
-              "weapons": [
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "1cc6-dcc6-a65e-fbc2",
               "name": "Havoc multi-launcher",
               "weapons": [
-                "ranged|Havoc multi-launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Havoc multi-launcher",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -23184,7 +23169,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "War Dog Moirax",
@@ -23192,100 +23176,39 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Volkite veuglaire",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Conversion beam cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Graviton pulsar",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Lightning lock",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Rad cleanser",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Siege claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Armoured feet",
-          "kind": "melee",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "f9a1-251a-ee9f-707f",
-          "name": "Weapons",
-          "tree": "8429-5740-f1fd-0046",
-          "parent": "",
-          "slot": "War Dog Moirax",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "name": "War Dog Moirax",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "82bb-5188-3701-a846",
-              "name": "Volkite veuglaire",
-              "weapons": [
-                "ranged|Volkite veuglaire"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Volkite veuglaire",
+              "count": 1
             },
             {
-              "id": "cf3a-bab9-317c-17d6",
-              "name": "Conversion beam cannon",
-              "weapons": [
-                "ranged|Conversion beam cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Conversion beam cannon",
+              "count": 1
             },
             {
-              "id": "6721-d47f-74bf-6ffc",
-              "name": "Graviton pulsar",
-              "weapons": [
-                "ranged|Graviton pulsar"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Graviton pulsar",
+              "count": 1
             },
             {
-              "id": "3909-f5fb-f7d7-8f",
-              "name": "Lightning lock",
-              "weapons": [
-                "ranged|Lightning lock"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Lightning lock",
+              "count": 1
             },
             {
-              "id": "e9ea-196b-4d4d-83b1",
-              "name": "Siege claw and rad cleanser",
-              "weapons": [
-                "ranged|Rad cleanser",
-                "melee|Siege claw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Rad cleanser",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Siege claw",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Armoured feet",
+              "count": 1
             }
           ]
         }
@@ -23501,7 +23424,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "War Dog Stalker",
@@ -23509,114 +23431,100 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Diabolus heavy stubber",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Avenger chaincannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Slaughterclaw",
-          "kind": "melee",
-          "count": 1
+          "name": "War Dog Stalker",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Avenger chaincannon",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Slaughterclaw",
+              "count": 1
+            }
+          ]
         }
       ],
-      "optionGroups": [
+      "wargearOptions": [
         {
           "id": "b8a7-8d73-91ca-0a64",
-          "name": "Carapace weapon",
-          "tree": "19f8-0003-bff0-bca2",
-          "parent": "",
-          "slot": "War Dog Stalker",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Stalker",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "537a-10d9-d537-4a0d",
-              "name": "Diabolus heavy stubber",
-              "weapons": [
-                "ranged|Diabolus heavy stubber"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Diabolus heavy stubber",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "0186-508d-0e0e-22cd",
               "name": "Havoc multi-launcher",
               "weapons": [
-                "ranged|Havoc multi-launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Havoc multi-launcher",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "f768-f4d7-e564-fcc5",
-          "name": "Chaincannon/spear",
-          "tree": "19f8-0003-bff0-bca2",
-          "parent": "",
-          "slot": "War Dog Stalker",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Stalker",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "234f-aa25-c8fd-7124",
-              "name": "Avenger chaincannon",
-              "weapons": [
-                "ranged|Avenger chaincannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "ranged|Avenger chaincannon",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "0d87-322a-841d-a21b",
               "name": "Daemonbreath spear",
               "weapons": [
-                "ranged|Daemonbreath spear"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "ranged|Daemonbreath spear",
+                  "count": 1
+                }
+              ]
             }
           ]
         },
         {
           "id": "7374-c431-24dc-5b33",
-          "name": "Slaughterclaw/chaintalon",
-          "tree": "19f8-0003-bff0-bca2",
-          "parent": "",
-          "slot": "War Dog Stalker",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "model": "War Dog Stalker",
+          "who": {
+            "type": "each"
+          },
+          "replaces": [
             {
-              "id": "0269-9c9f-e914-a8c8",
-              "name": "Slaughterclaw",
-              "weapons": [
-                "melee|Slaughterclaw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
-            },
+              "weapon": "melee|Slaughterclaw",
+              "count": 1
+            }
+          ],
+          "alternatives": [
             {
               "id": "49d0-f4a4-dfbf-9e33",
               "name": "Reaper chaintalon",
               "weapons": [
-                "melee|Reaper chaintalon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+                {
+                  "weapon": "melee|Reaper chaintalon",
+                  "count": 1
+                }
+              ]
             }
           ]
         }
@@ -23875,7 +23783,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Warbringer Nemesis Titan",
@@ -23883,126 +23790,43 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Anvillus defence battery",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ardex-defensor mauler",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Nemesis feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Nemesis quake cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver gatling blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver laser blaster",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver melta cannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Reaver volcano cannon",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "8273-ddc7-1bea-6028",
-          "name": "Nemesis weapon",
-          "tree": "30eb-02c8-78f2-8361",
-          "parent": "",
-          "slot": "Warbringer Nemesis Titan",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
+          "name": "Warbringer Nemesis Titan",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "63ef-9709-7202-59a2",
-              "name": "Nemesis quake cannon",
-              "weapons": [
-                "ranged|Nemesis quake cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Anvillus defence battery",
+              "count": 1
             },
             {
-              "id": "ef9a-353f-e5d7-9b42",
-              "name": "Nemesis volcano cannon",
-              "weapons": [
-                "ranged|Nemesis volcano cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "b8fa-acab-2bbd-df6d",
-          "name": "Weapons",
-          "tree": "30eb-02c8-78f2-8361",
-          "parent": "",
-          "slot": "Warbringer Nemesis Titan",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "beb7-2dd8-7fe5-aef4",
-              "name": "Reaver gatling blaster",
-              "weapons": [
-                "ranged|Reaver gatling blaster"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Ardex-defensor mauler",
+              "count": 1
             },
             {
-              "id": "4e4a-a537-9256-1fce",
-              "name": "Reaver laser blaster",
-              "weapons": [
-                "ranged|Reaver laser blaster"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "melee|Nemesis feet",
+              "count": 1
             },
             {
-              "id": "5543-60ce-38f2-fd21",
-              "name": "Reaver melta cannon",
-              "weapons": [
-                "ranged|Reaver melta cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Nemesis quake cannon",
+              "count": 1
             },
             {
-              "id": "dfbf-f81d-55a4-58d6",
-              "name": "Reaver volcano cannon",
-              "weapons": [
-                "ranged|Reaver volcano cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Reaver gatling blaster",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Reaver laser blaster",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Reaver melta cannon",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Reaver volcano cannon",
+              "count": 1
             }
           ]
         }
@@ -24208,7 +24032,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Warhound Titan",
@@ -24216,80 +24039,31 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Warhound feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Warhound vulcan mega-bolter",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Warhound inferno gun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Warhound plasma blastgun",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Warhound turbo-laser destructor",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "67aa-cbe0-95c0-673f",
-          "name": "Weapons",
-          "tree": "073f-b834-4bb7-983c",
-          "parent": "",
-          "slot": "Warhound Titan",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "name": "Warhound Titan",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "6b81-c1fe-9fec-803f",
-              "name": "Warhound vulcan mega-bolter",
-              "weapons": [
-                "ranged|Warhound vulcan mega-bolter"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "melee|Warhound feet",
+              "count": 1
             },
             {
-              "id": "5f9e-bc47-6590-f83a",
-              "name": "Warhound inferno gun",
-              "weapons": [
-                "ranged|Warhound inferno gun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Warhound vulcan mega-bolter",
+              "count": 1
             },
             {
-              "id": "ad16-60c0-a420-4295",
-              "name": "Warhound plasma blastgun",
-              "weapons": [
-                "ranged|Warhound plasma blastgun"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Warhound inferno gun",
+              "count": 1
             },
             {
-              "id": "edca-c231-b8ed-93ff",
-              "name": "Warhound turbo-laser destructor",
-              "weapons": [
-                "ranged|Warhound turbo-laser destructor"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Warhound plasma blastgun",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Warhound turbo-laser destructor",
+              "count": 1
             }
           ]
         }
@@ -24612,7 +24386,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Warlord Titan",
@@ -24620,126 +24393,35 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Ardex-defensor lascannon",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Ardex-defensor mauler",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Warlord feet",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Arioch power claw",
-          "kind": "ranged",
-          "count": 1
-        },
-        {
-          "weapon": "Arioch power claw",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Apocalypse launcher",
-          "kind": "ranged",
-          "count": 1
-        }
-      ],
-      "optionGroups": [
-        {
-          "id": "bebc-1c05-79ee-864",
-          "name": "Main weapons",
-          "tree": "b4b1-10b8-0941-97d0",
-          "parent": "",
-          "slot": "Warlord Titan",
-          "pool": false,
-          "minPicks": 2,
-          "maxPicks": 2,
-          "pickBrackets": [],
-          "options": [
+          "name": "Warlord Titan",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
             {
-              "id": "49e4-a425-ec23-ec3d",
-              "name": "Arioch power claw",
-              "weapons": [
-                "ranged|Arioch power claw",
-                "melee|Arioch power claw"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "ranged|Ardex-defensor lascannon",
+              "count": 1
             },
             {
-              "id": "3fdd-684e-3fd3-f143",
-              "name": "Belicosa volcano cannon",
-              "weapons": [
-                "ranged|Belicosa volcano cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Ardex-defensor mauler",
+              "count": 1
             },
             {
-              "id": "ab37-e894-cd2c-7c7e",
-              "name": "Macro gatling blaster",
-              "weapons": [
-                "ranged|Macro gatling blaster"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "melee|Warlord feet",
+              "count": 1
             },
             {
-              "id": "8844-c4a-80cc-2acc",
-              "name": "Mori quake cannon",
-              "weapons": [
-                "ranged|Mori quake cannon"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Arioch power claw",
+              "count": 1
             },
             {
-              "id": "403d-7cf-5147-cdb2",
-              "name": "Sunfury plasma annihilator",
-              "weapons": [
-                "ranged|Sunfury plasma annihilator"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
-            }
-          ]
-        },
-        {
-          "id": "9428-40c9-d286-72ea",
-          "name": "Carapace weapons",
-          "tree": "b4b1-10b8-0941-97d0",
-          "parent": "",
-          "slot": "Warlord Titan",
-          "pool": false,
-          "minPicks": 1,
-          "maxPicks": 1,
-          "pickBrackets": [],
-          "options": [
-            {
-              "id": "e409-db1a-6a8-8b52",
-              "name": "Two apocalypse launchers",
-              "weapons": [
-                "ranged|Apocalypse launcher"
-              ],
-              "maxCarriers": 0,
-              "isDefault": true
+              "weapon": "melee|Arioch power claw",
+              "count": 1
             },
             {
-              "id": "e628-d98c-6924-a2f3",
-              "name": "Two laser blasters",
-              "weapons": [
-                "ranged|Laser blaster"
-              ],
-              "maxCarriers": 0,
-              "isDefault": false
+              "weapon": "ranged|Apocalypse launcher",
+              "count": 1
             }
           ]
         }
@@ -24933,7 +24615,6 @@
       "supportTargets": [],
       "minModels": 1,
       "maxModels": 1,
-      "defaultModels": 1,
       "composition": [
         {
           "name": "Zarakynel",
@@ -24941,21 +24622,25 @@
           "max": 0
         }
       ],
-      "defaultLoadout": [
+      "modelTypes": [
         {
-          "weapon": "Snapping claws",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Souleater blade",
-          "kind": "melee",
-          "count": 1
-        },
-        {
-          "weapon": "Phantasmagoria",
-          "kind": "ranged",
-          "count": 1
+          "name": "Zarakynel [Legends]",
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "weapon": "melee|Snapping claws",
+              "count": 1
+            },
+            {
+              "weapon": "melee|Souleater blade",
+              "count": 1
+            },
+            {
+              "weapon": "ranged|Phantasmagoria",
+              "count": 1
+            }
+          ]
         }
       ],
       "armyRuleIds": [
